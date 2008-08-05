@@ -1,0 +1,227 @@
+body {
+	margin: 0;
+	padding: 0;
+	font: normal small Arial, Helvetica, sans-serif;
+	background: #3e4053 url(/images/header.jpg) repeat-x;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	padding: 0;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: normal;
+	color: #666666;
+}
+
+a {
+	color: #333333;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #000000;
+}
+
+/* Logo */
+
+#header {
+	width: 780px;
+	height: 225px;
+	margin: 0 auto;
+	padding: 12px 0 0 0;
+}
+
+#logo {
+	float: left;
+	margin: 5px 0px 0px 10px;
+	background: url(/images/logo-bg.gif) repeat-x;
+	padding: 5px 5px 0px;
+}
+
+#logo img {
+	border: 1px solid #cbe4ff;
+}
+
+#main-header h1, #main-header h2, #main-header h3 {
+	margin: -75px 0 0;
+	padding: 10px 0 0 20px;
+}
+
+#main-header a {
+	color: #FFF;
+	text-decoration: none;
+}
+
+#main-header img {
+	border: 0px;
+}
+
+/* Content */
+
+#content {
+	width: 780px;
+	margin: 0 auto;
+	/* border-top: 1px solid #FFFFFF; */
+}
+
+#main {
+	float: right;
+	width: 510px;
+	padding: 0 30px 0 0;
+}
+
+div.section {
+	background: #FFF;
+	border: 3px solid #FF99CB;
+	margin: 1em;
+	padding: 1em;
+}
+
+/* Menu */
+div#menu {
+width: 194px;
+float: left;
+padding: 1em;
+}
+
+div#menu ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+div#menu a {
+height: 23px;
+border-style: solid;
+border-color: #ccc #888 #555 #bbb;
+margin: 0;
+padding: 7px 0 0 21px;
+text-decoration: none;
+}
+
+div#menu a,
+div#menu li#selected ul li a,
+div#menu li.active ul li a,
+div#menu ul li.active ul li a,
+div#menu ul li.active ul li.active li a,
+div#menu li.active ul li#selected ul li a {
+display: block;
+border-width: 1px;
+background: #cbe4ff url(/images/bluebox0.jpg) repeat-y;
+color: #000;
+}
+
+div#menu ul li.active {
+background: #cbe4ff url(/images/bluebox0.jpg) repeat-y;
+color: #000;
+}
+
+/*
+div#menu ul li.active:hover {
+background: #cbe4ff url(style/bluebox1.jpg) repeat-y;
+color: #000;
+}*/
+
+div#menu a:hover,
+div#menu ul li#selected ul li a:hover,
+div#menu li.active ul li a:hover,
+div#menu ul li.active ul li.active li a:hover,
+div#menu li.active ul li#selected ul li a:hover {
+background: #3E4053 url(/images/bluebox1.jpg) no-repeat;
+font: bold;
+color: #99caff;
+}
+
+div#menu ul li#selected a:hover,
+div#menu ul li.active ul li#selected a:hover {
+font: bold;
+color: #ff99cb;
+background: #3E4053 url(/images/pinkbox1.jpg) no-repeat;
+}
+
+div#menu ul li:hover ul {
+display: block;
+}
+
+/* Add dropdown menu */
+div#menu li {
+position: relative;
+}
+
+div#menu ul ul,
+div#menu ul li#selected ul {
+position: absolute;
+top: 0;
+left: 100%;
+width: 100%;
+display: none;
+}
+
+div#menu ul li#selected {
+background: url(/images/pinkbox0.jpg) repeat-y;
+color: #000;
+}
+
+/* Add current section markup */
+div#menu ul li#selected ul,
+div#menu ul li.active ul {
+display: block;
+position: relative;
+left:0;
+margin-left: 11px;
+width: 183px;
+}
+
+div#menu ul ul li#selected ul,
+div#menu ul ul li.active ul {
+width: 172px;
+}
+
+div#menu ul li#selected a,
+div#menu ul li.active ul li#selected a {
+display: block;
+background: #ffcce5 url(/images/pinkbox0.jpg) repeat-y;
+color: #000;
+}
+
+div#menu ul li#selected a,
+div#menu ul li.active a,
+div#menu ul li.active ul li.active a,
+div#menu ul li.active ul li#selected a {
+border-width: 1px 1px 0px 0px;
+}
+
+/* News */
+
+#news {
+}
+
+#news h2 {
+	font-size: 22px;
+}
+
+#news ul {
+	list-style-type: square;
+}
+
+/* Footer */
+
+#footer {
+	clear: both;
+	width: 780px;
+	margin: 0 auto;
+	border-top: 1px solid #666666;
+	background: #CCCCCC;
+}
+
+#footer p {
+	margin: 0;
+	padding: 30px 0;
+	text-align: center;
+	font-size: smaller;
+	color: #999999;
+}
+
+#footer a {
+	color: #999999;
+}

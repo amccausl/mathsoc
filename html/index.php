@@ -30,11 +30,14 @@ $smarty->caching = false;
 $smarty->compile_check = true;
 $smarty->cache_lifetime = -1;
 $smarty->template_dir = '../application/views/scripts';
-$smarty->compile_dir = '../data/cache';
+$smarty->compile_dir = '../data/compiled';
+$smarty->cache_dir = '../data/cache';
 $smarty->plugins_dir = array(
   SMARTY_DIR . 'plugins',
   '../application/views/helpers');
 $registry->set('smarty', $smarty);
+
+// Todo: add logging information to track users for use-case analysis
 
 // setup controller
 $frontController = Zend_Controller_Front::getInstance();
