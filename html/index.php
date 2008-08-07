@@ -18,32 +18,40 @@ $config = new Zend_Config_Ini('../config/main.ini', 'general');
 $registry = Zend_Registry::getInstance();
 $registry->set('config', $config);
 
-// load access control
-//include('');
+// Todo: load access control
 
 // load Smarty templating system
 include 'smarty/Smarty.class.php';
-$smarty = new Smarty();
-$smarty->debugging = false;
-$smarty->force_compile = true;
-$smarty->caching = false;
-$smarty->compile_check = true;
-$smarty->cache_lifetime = -1;
-$smarty->template_dir = '../application/views/scripts';
-$smarty->compile_dir = '../data/compiled';
-$smarty->cache_dir = '../data/cache';
-$smarty->plugins_dir = array(
-  SMARTY_DIR . 'plugins',
-  '../application/views/helpers');
-$registry->set('smarty', $smarty);
+require_once('local/SmartyView.php');
+
+//Create the view and set the compile dir to template_c
+$view = new SmartyView(array(
+                'compileDir' => '../data/compiled'
+                ));
+$view->title = 'The Mathematics Society of the University of Waterloo';
+$view->stylesheets = array('/css/main.css');
+
+// Todo: add menu settings
+require_once( '../application/views/helpers/menu.inc' );
+$view->menu = $menu;
+
+//Create a new ViewRenderer helper and assign our newly
+//created SmartyView object as the view instance
+$viewHelper = new Zend_Controller_Action_Helper_ViewRenderer($view);
+$viewHelper->setViewSuffix('tpl');
+
+//Save the helper to the HelperBroker
+Zend_Controller_Action_HelperBroker::addHelper($viewHelper);
 
 // Todo: add logging information to track users for use-case analysis
 
 // setup controller
 $frontController = Zend_Controller_Front::getInstance();
 $frontController->throwExceptions(true);
-$frontController->setControllerDirectory('../application/controllers');
-$frontController->setParam('noViewRenderer', true);
+$frontController->setControllerDirectory( array(
+		"default" => '../application/controllers',
+		"exambank" => '../application/controllers/exambank') );
+//$frontController->setParam('noViewRenderer', true);
 // run!
 $frontController->dispatch();
 
