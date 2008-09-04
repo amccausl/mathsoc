@@ -1,0 +1,460 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>17.7. Standard Form Decorators Shipped With Zend Framework</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="prev" href="zend.form.standardElements.html" title="17.6. Standard Form Elements Shipped With Zend Framework">
+<link rel="next" href="zend.form.i18n.html" title="17.8. Internationalization of Zend_Form">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.form.standardDecorators.html#zend.form.standardDecorators.callback" title="17.7.1. Zend_Form_Decorator_Callback">
+<link rel="subsection" href="zend.form.standardDecorators.html#zend.form.standardDecorators.description" title="17.7.2. Zend_Form_Decorator_Description">
+<link rel="subsection" href="zend.form.standardDecorators.html#zend.form.standardDecorators.dtDdWrapper" title="17.7.3. Zend_Form_Decorator_DtDdWrapper">
+<link rel="subsection" href="zend.form.standardDecorators.html#zend.form.standardDecorators.errors" title="17.7.4. Zend_Form_Decorator_Errors">
+<link rel="subsection" href="zend.form.standardDecorators.html#zend.form.standardDecorators.fieldset" title="17.7.5. Zend_Form_Decorator_Fieldset">
+<link rel="subsection" href="zend.form.standardDecorators.html#zend.form.standardDecorators.form" title="17.7.6. Zend_Form_Decorator_Form">
+<link rel="subsection" href="zend.form.standardDecorators.html#zend.form.standardDecorators.formElements" title="17.7.7. Zend_Form_Decorator_FormElements">
+<link rel="subsection" href="zend.form.standardDecorators.html#zend.form.standardDecorators.htmlTag" title="17.7.8. Zend_Form_Decorator_HtmlTag">
+<link rel="subsection" href="zend.form.standardDecorators.html#zend.form.standardDecorators.image" title="17.7.9. Zend_Form_Decorator_Image">
+<link rel="subsection" href="zend.form.standardDecorators.html#zend.form.standardDecorators.label" title="17.7.10. Zend_Form_Decorator_Label">
+<link rel="subsection" href="zend.form.standardDecorators.html#zend.form.standardDecorators.viewHelper" title="17.7.11. Zend_Form_Decorator_ViewHelper">
+<link rel="subsection" href="zend.form.standardDecorators.html#zend.form.standardDecorators.viewScript" title="17.7.12. Zend_Form_Decorator_ViewScript">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">17.7. Standard Form Decorators Shipped With Zend Framework</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.form.standardElements.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 17. Zend_Form</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.form.i18n.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.form.standardDecorators"></a>17.7. Standard Form Decorators Shipped With Zend Framework</h2></div></div></div>
+<p>
+        <code class="code">Zend_Form</code> ships with several standard decorators. For more
+        information on general decorator usage, see <a href="zend.form.decorators.html" title="17.5. Creating Custom Form Markup Using Zend_Form_Decorator">the Decorators section</a>.
+    </p>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.form.standardDecorators.callback"></a>17.7.1. Zend_Form_Decorator_Callback</h3></div></div></div>
+<p>
+            The Callback decorator can execute an arbitrary callback to
+            render content. Callbacks should be specified via the 'callback'
+            option passed in the decorator configuration, and can be any
+            valid PHP callback type. Callbacks should accept three
+            arguments, <code class="code">$content</code> (the original content passed to
+            the decorator), <code class="code">$element</code> (the item being
+            decorated), and an array of <code class="code">$options</code>. As an example
+            callback:
+        </p>
+<pre class="programlisting">&lt;?php
+class Util
+{
+    public static function label($content, $element, array $options)
+    {
+        return '&lt;span class="label"&gt;' . $element-&gt;getLabel() . "&lt;/span&gt;";
+    }
+}
+?&gt;</pre>
+<p>
+            This callback would be specified as <code class="code">array('Util',
+                'label')</code>, and would generate some (bad) HTML markup
+            for the label. The Callback decorator would then either replace,
+            append, or prepend the original content with the return value of
+            this.
+        </p>
+<p>
+            The Callback decorator allows specifying a null value for the
+            placement option, which will replace the original content with
+            the callback return value; 'prepend' and 'append' are still
+            valid as well.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.form.standardDecorators.description"></a>17.7.2. Zend_Form_Decorator_Description</h3></div></div></div>
+<p>
+            The Description decorator can be used to display a description set
+            on a <code class="code">Zend_Form</code>, <code class="code">Zend_Form_Element</code>, or
+            <code class="code">Zend_Form_DisplayGroup</code> item; it pulls the description
+            using the object's <code class="code">getDescription()</code> method. Common use
+            cases are for providing UI hints for your elements.
+        </p>
+<p>
+            By default, if no description is present, no output is generated. If
+            the description is present, then it is wrapped in an HTML
+            <code class="code">p</code> tag by default, though you may specify a tag by
+            passing a <code class="code">tag</code> option when creating the decorator, or
+            calling <code class="code">setTag()</code>. You may additionally specify a class
+            for the tag using the <code class="code">class</code> option or by calling
+            <code class="code">setClass()</code>; by default, the class 'hint' is used.
+        </p>
+<p>
+            The description is escaped using the view object's escaping
+            mechanisms by default. You can disable this by passing a
+            <code class="code">false</code> value to the decorator's 'escape' option or
+            <code class="code">setEscape()</code> method.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.form.standardDecorators.dtDdWrapper"></a>17.7.3. Zend_Form_Decorator_DtDdWrapper</h3></div></div></div>
+<p>
+            The default decorators utilize definition lists
+            (<code class="code">&lt;dl&gt;</code>) to render form elements. Since form
+            items can appear in any order, display groups and sub forms can
+            be interspersed with other form items. To keep these particular
+            item types within the definition list, the DtDdWrapper creates a
+            new, empty definition term (<code class="code">&lt;dt&gt;</code>) and wraps
+            its content in a new definition datum (<code class="code">&lt;dd&gt;</code>).
+            The output looks something like this:
+        </p>
+<pre class="programlisting">
+&lt;dt&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;fieldset id="subform"&gt;
+    &lt;legend&gt;User Information&lt;/legend&gt;
+    ...
+&lt;/fieldset&gt;&lt;/dd&gt;
+</pre>
+<p>
+            This decorator replaces the content provided to it by wrapping
+            it within the <code class="code">&lt;dd&gt;</code> element.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.form.standardDecorators.errors"></a>17.7.4. Zend_Form_Decorator_Errors</h3></div></div></div>
+<p>
+            Element errors get their own decorator with the Errors
+            decorator. This decorator proxies to the FormErrors view helper,
+            which renders error messages in an unordered list
+            (<code class="code">&lt;ul&gt;</code>) as list items. The
+            <code class="code">&lt;ul&gt;</code> element receives a class of "errors".
+        </p>
+<p>
+            The Errors decorator can either prepend or append the content
+            provided to it.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.form.standardDecorators.fieldset"></a>17.7.5. Zend_Form_Decorator_Fieldset</h3></div></div></div>
+<p>
+            Display groups and sub forms render their content within
+            fieldsets by default. The Fieldset decorator checks for either a
+            'legend' option or a <code class="code">getLegend()</code> method in the
+            registered element, and uses that as a legend if non-empty. Any
+            content passed in is wrapped in the HTML fieldset, replacing the
+            original content. Any attributes set in the decorated item are
+            passed to the fieldset as HTML attributes.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.form.standardDecorators.form"></a>17.7.6. Zend_Form_Decorator_Form</h3></div></div></div>
+<p>
+            <code class="code">Zend_Form</code> objects typically need to render an HTML
+            form tag. The Form decorator proxies to the Form view helper. It
+            wraps any provided content in an HTML form element, using the
+            <code class="code">Zend_Form</code> object's action and method, and any
+            attributes as HTML attributes.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.form.standardDecorators.formElements"></a>17.7.7. Zend_Form_Decorator_FormElements</h3></div></div></div>
+<p>
+            Forms, display groups, and sub forms are collections of
+            elements. In order to render these elements, they utilize the
+            FormElements decorator, which iterates through all items,
+            calling <code class="code">render()</code> on each and joining them with the
+            registered separator. It can either append or prepend content
+            passed to it.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.form.standardDecorators.htmlTag"></a>17.7.8. Zend_Form_Decorator_HtmlTag</h3></div></div></div>
+<p>
+            The HtmlTag decorator allows you to utilize HTML tags to
+            decorate content; the tag utilized is passed in the 'tag'
+            option, and any other options are used as HTML attributes to
+            that tag. The tag by default is assumed to be block level, and
+            replaces the content by wrapping it in the given tag. However,
+            you can specify a placement to append or prepend a tag as well.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.form.standardDecorators.image"></a>17.7.9. Zend_Form_Decorator_Image</h3></div></div></div>
+<p>
+            The Image decorator allows you to create an HTML image input
+            (<code class="code">&lt;input type="image" ... /&gt;</code>), and optionally
+            render it within another HTML tag.
+        </p>
+<p>
+            By default, the decorator uses the element's src property, which can
+            be set with the <code class="code">setImage()</code> method, as the image
+            source. Additionally, the element's label will be used as the alt
+            tag, and the <code class="code">imageValue</code> (manipulated with the Image
+            element's <code class="code">setImageValue()</code> and
+            <code class="code">getImageValue()</code> accessors) will be used for the value.
+        </p>
+<p>
+            To specify an HTML tag with which to wrap the element, either pass a
+            'tag' option to the decorator, or explicitly call
+            <code class="code">setTag()</code>.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.form.standardDecorators.label"></a>17.7.10. Zend_Form_Decorator_Label</h3></div></div></div>
+<p>
+            Form elements typically have labels, and the Label decorator is
+            used to render these labels. It proxies to the FormLabel view
+            helper, and pulls the element label using the
+            <code class="code">getLabel()</code> method of the element. If no label is
+            present, none is rendered. By default, labels are translated when a
+            translation adapter exists and a translation for the label exists.
+        </p>
+<p>
+            You may optionally specify a 'tag' option; if provided, it wraps
+            the label in that block-level tag. If the 'tag' option is
+            present, and no label present, the tag is rendered with no
+            content. You can specify the class to use with the tag with the
+            'class' option or by calling <code class="code">setClass()</code>.
+        </p>
+<p>
+            Additionally, you can specify prefixes and suffixes to use when
+            displaying the element, based on whether or not the label is for an
+            optional or required element. Common use cases would be to append a
+            ':' to the label, or a '*' indicating an item is required. You can
+            do so with the following options and methods:
+        </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                    <code class="code">optionalPrefix</code>: set the text to prefix the
+                    label with when the element is optional. Use the
+                    <code class="code">setOptionalPrefix()</code> and
+                    <code class="code">getOptionalPrefix()</code> accessors to manipulate it.
+            </p></li>
+<li><p>
+                    <code class="code">optionalSuffix</code>: set the text to append the
+                    label with when the element is optional. Use the
+                    <code class="code">setOptionalSuffix()</code> and
+                    <code class="code">getOptionalSuffix()</code> accessors to manipulate it.
+            </p></li>
+<li><p>
+                    <code class="code">requiredPrefix</code>: set the text to prefix the
+                    label with when the element is required. Use the
+                    <code class="code">setRequiredPrefix()</code> and
+                    <code class="code">getRequiredPrefix()</code> accessors to manipulate it.
+            </p></li>
+<li><p>
+                    <code class="code">requiredSuffix</code>: set the text to append the
+                    label with when the element is required. Use the
+                    <code class="code">setRequiredSuffix()</code> and
+                    <code class="code">getRequiredSuffix()</code> accessors to manipulate it.
+            </p></li>
+</ul></div>
+<p>
+            By default, the Label decorator prepends to the provided
+            content; specify a 'placement' option of 'append' to place it
+            after the content.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.form.standardDecorators.viewHelper"></a>17.7.11. Zend_Form_Decorator_ViewHelper</h3></div></div></div>
+<p>
+            Most elements utilize <code class="code">Zend_View</code> helpers for
+            rendering, and this is done with the ViewHelper decorator. With
+            it, you may specify a 'helper' tag to explicitly set the view
+            helper to utilize; if none is provided, it uses the last segment
+            of the element's class name to determine the helper, prepending
+            it with the string 'form': e.g., 'Zend_Form_Element_Text' would
+            look for a view helper of 'formText'. 
+        </p>
+<p>
+            Any attributes of the provided element are passed to the view
+            helper as element attributes.
+        </p>
+<p>
+            By default, this decorator appends content; use the 'placement'
+            option to specify alternate placement.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.form.standardDecorators.viewScript"></a>17.7.12. Zend_Form_Decorator_ViewScript</h3></div></div></div>
+<p>
+            Sometimes you may wish to use a view script for creating your
+            elements; this way you can have fine-grained control over your
+            elements, turn the view script over to a designer, or simply create
+            a way to easily override setting based on which module you're using
+            (each module could optionally override element view scripts to suit
+            their own needs). The ViewScript decorator solves this problem.
+        </p>
+<p>
+            The ViewScript decorator requires a 'viewScript' option, either
+            provided to the decorator, or as an attribute of the element. It
+            then renders that view script as a partial script, meaning each call
+            to it has its own variable scope; no variables from the view will be
+            injected other than the element itself. Several variables are then
+            populated:
+        </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                    <code class="code">element</code>: the element being decorated
+            </p></li>
+<li><p>
+                    <code class="code">content</code>: the content passed to the decorator
+            </p></li>
+<li><p>
+                    <code class="code">decorator</code>: the decorator object itself
+            </p></li>
+<li><p>
+                    Additionally, all options passed to the decorator via
+                    <code class="code">setOptions()</code> that are not used internally (such
+                    as placement, separator, etc.) are passed to the view script
+                    as view variables.
+            </p></li>
+</ul></div>
+<p>
+            As an example, you might have the following element:
+        </p>
+<pre class="programlisting">&lt;?php
+// Setting the decorator for the element to a single, ViewScript, decorator,
+// specifying the viewScript as an option, and some extra options:
+$element-&gt;setDecorators(array(array('ViewScript', array(
+    'viewScript' =&gt; '_element.phtml',
+    'class'      =&gt; 'form element'
+))));
+
+// OR specifying the viewScript as an element attribute:
+$element-&gt;viewScript = '_element.phtml';
+$element-&gt;setDecorators(array(array('ViewScript', array('class' =&gt; 'form element'))));
+?&gt;</pre>
+<p>
+            You could then have a view script something like this:
+        </p>
+<pre class="programlisting">
+&lt;div class="&lt;?= $this-&gt;class ?&gt;"&gt;
+    &lt;?= $this-&gt;formLabel($this-&gt;element-&gt;getName(), $this-&gt;element-&gt;getLabel()) ?&gt;
+    &lt;?= $this-&gt;{$this-&gt;element-&gt;helper}(
+        $this-&gt;element-&gt;getName(),
+        $this-&gt;element-&gt;getValue(), 
+        $this-&gt;element-&gt;getAttribs()
+    ) ?&gt;
+    &lt;?= $this-&gt;formErrors($this-&gt;element-&gt;getMessages()) ?&gt;
+    &lt;div class="hint"&gt;&lt;?= $this-&gt;element-&gt;getDescription() ?&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<div class="note"><table border="0" summary="Note: Replacing content with a view script">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Replacing content with a view script</th>
+</tr>
+<tr><td align="left" valign="top">
+<p>
+                You may find it useful for the view script to replace the
+                content provided to the decorator -- for instance, if you want
+                to wrap it. You can do so by specifying a boolean false value
+                for the decorator's 'placement' option:
+            </p>
+<pre class="programlisting">&lt;?php
+// At decorator creation:
+$element-&gt;addDecorator('ViewScript', array('placement' =&gt; false));
+
+// Applying to an existing decorator instance:
+$decorator-&gt;setOption('placement', false);
+
+// Applying to a decorator already attached to an element:
+$element-&gt;getDecorator('ViewScript')-&gt;setOption('placement', false);
+
+// Within a view script used by a decorator:
+$this-&gt;decorator-&gt;setOption('placement', false);
+?&gt;</pre>
+</td></tr>
+</table></div>
+<p>
+            Using the ViewScript decorator is recommended for when you want to
+            have very fine-grained control over how your elements are rendered.
+        </p>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.form.standardElements.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.form.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.form.i18n.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">17.6. Standard Form Elements Shipped With Zend Framework </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 17.8. Internationalization of Zend_Form</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

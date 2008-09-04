@@ -1,0 +1,268 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>26.2. Writers</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="prev" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="next" href="zend.log.formatters.html" title="26.3. Formatters">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.log.writers.html#zend.log.writers.stream" title="26.2.1. Writing to Streams">
+<link rel="subsection" href="zend.log.writers.html#zend.log.writers.database" title="26.2.2. Writing to Databases">
+<link rel="subsection" href="zend.log.writers.html#zend.log.writers.null" title="26.2.3. Stubbing Out the Writer">
+<link rel="subsection" href="zend.log.writers.html#zend.log.writers.mock" title="26.2.4. Testing with the Mock">
+<link rel="subsection" href="zend.log.writers.html#zend.log.writers.compositing" title="26.2.5. Compositing Writers">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">26.2. Writers</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.log.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 26. Zend_Log</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.log.formatters.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.log.writers"></a>26.2. Writers</h2></div></div></div>
+<p>
+    A Writer is an object that inherits from <code class="code">Zend_Log_Writer_Abstract</code>.  A Writer's
+    responsibility is to record log data to a storage backend.
+  </p>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.log.writers.stream"></a>26.2.1. Writing to Streams</h3></div></div></div>
+<p>
+      <code class="code">Zend_Log_Writer_Stream</code> sends log
+      data to a <a href="http://www.php.net/stream" target="_top">PHP stream</a>.
+    </p>
+<p>
+      To write log data to the PHP output buffer, use the URL <code class="code">php://output</code>.  Alternatively,
+      you can may like to send log data directly to a stream like <code class="code">STDERR</code>
+      (<code class="code">php://stderr</code>).
+
+      </p>
+<pre class="programlisting">&lt;?php
+$writer = new Zend_Log_Writer_Stream('php://output');
+$logger = new Zend_Log($writer);
+
+$logger-&gt;info('Informational message');
+      </pre>
+<p>
+    </p>
+<p>
+      To write data to a file, use one of the
+      <a href="http://www.php.net/manual/en/wrappers.php#wrappers.file" target="_top">Filesystem
+      URLs</a>:
+
+      </p>
+<pre class="programlisting">&lt;?php
+$writer = new Zend_Log_Writer_Stream('/path/to/logfile');
+$logger = new Zend_Log($writer);
+
+$logger-&gt;info('Informational message');
+      </pre>
+<p>
+
+      By default, the stream opens in the append mode (<code class="code">"a"</code>).
+      To open it with a different mode, the Zend_Log_Writer_Stream constructor
+      accepts an optional second parameter for the mode.
+    </p>
+<p>
+      The constructor of <code class="code">Zend_Log_Writer_Stream</code> also accepts an existing stream resource:
+
+      </p>
+<pre class="programlisting">&lt;?php
+$stream = @fopen('/path/to/logfile', 'a', false);
+if (! $stream) {
+    throw new Exception('Failed to open stream');
+}
+
+$writer = new Zend_Log_Writer_Stream($stream);
+$logger = new Zend_Log($writer);
+
+$logger-&gt;info('Informational message');
+      </pre>
+<p>
+
+      You cannot specify the mode for existing stream resources. Doing so
+      causes a <code class="code">Zend_Log_Exception</code> to be thrown.
+    </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.log.writers.database"></a>26.2.2. Writing to Databases</h3></div></div></div>
+<p>
+      <code class="code">Zend_Log_Writer_Db</code> writes log information to a database table using
+      <code class="code">Zend_Db</code>.  The constructor of <code class="code">Zend_Log_Writer_Db</code> receives
+      a <code class="code">Zend_Db_Adapter</code> instance, a table name, and a mapping of database
+      columns to event data items:
+
+      </p>
+<pre class="programlisting">&lt;?php
+$params = array ('host'     =&gt; '127.0.0.1',
+                 'username' =&gt; 'malory',
+                 'password' =&gt; '******',
+                 'dbname'   =&gt; 'camelot');
+$db = Zend_Db::factory('PDO_MYSQL', $params);
+
+$columnMapping = array('lvl' =&gt; 'priority', 'msg' =&gt; 'message');
+$writer = new Zend_Log_Writer_Db($db, 'log_table_name', $columnMapping);
+
+$logger = new Zend_Log($writer);
+
+$logger-&gt;info('Informational message');
+      </pre>
+<p>
+
+      The example above writes a single row of log data to the database table named
+      <code class="code">log_table_name</code> table.  The database column named <code class="code">lvl</code>
+      receives the priority number and the column named <code class="code">msg</code> receives the
+      log message.
+    </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.log.writers.null"></a>26.2.3. Stubbing Out the Writer</h3></div></div></div>
+<p>
+      The <code class="code">Zend_Log_Writer_Null</code> is a stub that does not write log data to anything.
+      It is useful for disabling logging or stubbing out logging during tests:
+
+      </p>
+<pre class="programlisting">&lt;?php
+$writer = new Zend_Log_Writer_Null;
+$logger = new Zend_Log($writer);
+
+// goes nowhere
+$logger-&gt;info('Informational message');
+      </pre>
+<p>
+    </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.log.writers.mock"></a>26.2.4. Testing with the Mock</h3></div></div></div>
+<p>
+      The <code class="code">Zend_Log_Writer_Mock</code> is a very simple writer that records
+      the raw data it receives in an array exposed as a public property.
+
+      </p>
+<pre class="programlisting">&lt;?php
+$mock = new Zend_Log_Writer_Mock;
+$logger = new Zend_Log($mock);
+
+$logger-&gt;info('Informational message');
+
+var_dump($mock-&gt;events[0]);
+
+// Array
+// (
+//    [timestamp] =&gt; 2007-04-06T07:16:37-07:00
+//    [message] =&gt; Informational message
+//    [priority] =&gt; 6
+//    [priorityName] =&gt; INFO
+// )
+      </pre>
+<p>
+    </p>
+<p>
+      To clear the events logged by the mock, simply set <code class="code">$mock-&gt;events = array()</code>.
+    </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.log.writers.compositing"></a>26.2.5. Compositing Writers</h3></div></div></div>
+<p>
+      There is no composite Writer object. However, a Log instance can write
+      to any number of Writers. To do this, use the <code class="code">addWriter()</code>
+      method:
+
+      </p>
+<pre class="programlisting">&lt;?php
+$writer1 = new Zend_Log_Writer_Stream('/path/to/first/logfile');
+$writer2 = new Zend_Log_Writer_Stream('/path/to/second/logfile');
+
+$logger = new Zend_Log();
+$logger-&gt;addWriter($writer1);
+$logger-&gt;addWriter($writer2);
+
+// goes to both writers
+$logger-&gt;info('Informational message');
+      </pre>
+<p>
+    </p>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.log.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.log.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.log.formatters.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">Chapter 26. Zend_Log </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 26.3. Formatters</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

@@ -1,0 +1,2369 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Controller_Action_Helper_ViewRenderer</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_Controller_Action_Helper_ViewRenderer</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">View script integration</p>
+<p class="description"><p>Zend_Controller_Action_Helper_ViewRenderer provides transparent view  integration for action controllers. It allows you to create a view object  once, and populate it throughout all actions. Several global options may be  set:</p><p><ul><li>noController: if set true, render() will not look for view scripts in
+   subdirectories named after the controller</li><li>viewSuffix: what view script filename suffix to use</li></ul>  The helper autoinitializes the action controller view preDispatch(). It  determines the path to the class file, and then determines the view base  directory from there. It also uses the module name as a class prefix for  helpers and views such that if your module name is 'Search', it will set the  helper class prefix to 'Search_View_Helper' and the filter class prefix to ;  'Search_View_Filter'.</p><p>Usage:  <div class="src-code"><ol><li><div class="src-line">&nbsp;<span class="src-comm">//&nbsp;In&nbsp;your&nbsp;bootstrap:</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-id"><a href="../../Zend_Controller/Zend_Controller_Action/Zend_Controller_Action_HelperBroker.html">Zend_Controller_Action_HelperBroker</a></span><span class="src-sym">::</span><a href="../../Zend_Controller/Zend_Controller_Action/Zend_Controller_Action_HelperBroker.html#methodaddHelper">addHelper</a><span class="src-sym">(</span><span class="src-key">new&nbsp;</span><span class="src-id"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span><span class="src-sym">(</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;<span class="src-comm">//&nbsp;In&nbsp;your&nbsp;action&nbsp;controller&nbsp;methods:</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$viewHelper&nbsp;</span>=&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">_helper</span><span class="src-sym">-&gt;</span><span class="src-id">getHelper</span><span class="src-sym">(</span><span class="src-str">'view'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;<span class="src-comm">//&nbsp;Don't&nbsp;use&nbsp;controller&nbsp;subdirectories</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$viewHelper</span><span class="src-sym">-&gt;</span><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html#methodsetNoController">setNoController</a><span class="src-sym">(</span><span class="src-id">true</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;<span class="src-comm">//&nbsp;Specify&nbsp;a&nbsp;different&nbsp;script&nbsp;to&nbsp;render:</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">_helper</span><span class="src-sym">-&gt;</span><span class="src-id"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html#var$view">view</a></span><span class="src-sym">(</span><span class="src-str">'form'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+</ol></div></p></p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+				<li><span class="field">uses:</span> <a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_Abstract.html">Zend_Controller_Action_Helper_Abstract</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Controller---Action---Helper---ViewRenderer.php.html">/Controller/Action/Helper/ViewRenderer.php</a> (line <span class="field">78</span>)
+		</p>
+		
+				
+		<pre><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_Abstract.html">Zend_Controller_Action_Helper_Abstract</a>
+   |
+   --Zend_Controller_Action_Helper_ViewRenderer</pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																																																																																																																								<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../../Zend_View/Zend_View_Interface.html">Zend_View_Interface</a></span>
+					<a href="#$view" title="details" class="var-name">$view</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$_delimiters" title="details" class="var-name">$_delimiters</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+					<a href="#$_frontController" title="details" class="var-name">$_frontController</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../../Zend_Filter/Zend_Filter_Inflector.html">Zend_Filter_Inflector</a></span>
+					<a href="#$_inflector" title="details" class="var-name">$_inflector</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_inflectorTarget" title="details" class="var-name">$_inflectorTarget</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_moduleDir" title="details" class="var-name">$_moduleDir</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">boolean</span>
+					<a href="#$_neverController" title="details" class="var-name">$_neverController</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">boolean</span>
+					<a href="#$_neverRender" title="details" class="var-name">$_neverRender</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">boolean</span>
+					<a href="#$_noController" title="details" class="var-name">$_noController</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">boolean</span>
+					<a href="#$_noRender" title="details" class="var-name">$_noRender</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string|array</span>
+					<a href="#$_pathDelimiters" title="details" class="var-name">$_pathDelimiters</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_responseSegment" title="details" class="var-name">$_responseSegment</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_scriptAction" title="details" class="var-name">$_scriptAction</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_viewBasePathSpec" title="details" class="var-name">$_viewBasePathSpec</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_viewScriptPathNoControllerSpec" title="details" class="var-name">$_viewScriptPathNoControllerSpec</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_viewScriptPathSpec" title="details" class="var-name">$_viewScriptPathSpec</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_viewSuffix" title="details" class="var-name">$_viewSuffix</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																																																																																																																																																																																																							
+				<div class="method-definition">
+					<img src="../../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$view</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#direct" title="details" class="method-name">direct</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$action</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">null</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$noController</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+										<a href="#getFrontController" title="details" class="method-name">getFrontController</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Filter/Zend_Filter_Inflector.html">Zend_Filter_Inflector</a></span>
+										<a href="#getInflector" title="details" class="method-name">getInflector</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getModule" title="details" class="method-name">getModule</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getModuleDirectory" title="details" class="method-name">getModuleDirectory</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#getNeverController" title="details" class="method-name">getNeverController</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#getNeverRender" title="details" class="method-name">getNeverRender</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#getNoController" title="details" class="method-name">getNoController</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#getNoRender" title="details" class="method-name">getNoRender</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getResponseSegment" title="details" class="method-name">getResponseSegment</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getScriptAction" title="details" class="method-name">getScriptAction</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getViewBasePathSpec" title="details" class="method-name">getViewBasePathSpec</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getViewScript" title="details" class="method-name">getViewScript</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$action</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$vars</span> = <span class="var-default">array()</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getViewScriptPathNoControllerSpec" title="details" class="method-name">getViewScriptPathNoControllerSpec</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getViewScriptPathSpec" title="details" class="method-name">getViewScriptPathSpec</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getViewSuffix" title="details" class="method-name">getViewSuffix</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#init" title="details" class="method-name">init</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#initView" title="details" class="method-name">initView</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$prefix</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#postDispatch" title="details" class="method-name">postDispatch</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#render" title="details" class="method-name">render</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$action</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">null</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$noController</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#renderBySpec" title="details" class="method-name">renderBySpec</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$action</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$vars</span> = <span class="var-default">array()</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#renderScript" title="details" class="method-name">renderScript</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$script</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+										<a href="#setInflector" title="details" class="method-name">setInflector</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$inflector</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$reference</span> = <span class="var-default">false</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+										<a href="#setNeverController" title="details" class="method-name">setNeverController</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$flag</span> = <span class="var-default">true</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+										<a href="#setNeverRender" title="details" class="method-name">setNeverRender</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$flag</span> = <span class="var-default">true</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+										<a href="#setNoController" title="details" class="method-name">setNoController</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$flag</span> = <span class="var-default">true</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+										<a href="#setNoRender" title="details" class="method-name">setNoRender</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$flag</span> = <span class="var-default">true</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+										<a href="#setRender" title="details" class="method-name">setRender</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$action</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">null</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$noController</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+										<a href="#setResponseSegment" title="details" class="method-name">setResponseSegment</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+										<a href="#setScriptAction" title="details" class="method-name">setScriptAction</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+										<a href="#setView" title="details" class="method-name">setView</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$view</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+										<a href="#setViewBasePathSpec" title="details" class="method-name">setViewBasePathSpec</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+										<a href="#setViewScriptPathNoControllerSpec" title="details" class="method-name">setViewScriptPathNoControllerSpec</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+										<a href="#setViewScriptPathSpec" title="details" class="method-name">setViewScriptPathSpec</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+										<a href="#setViewSuffix" title="details" class="method-name">setViewSuffix</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$suffix</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#_generateDefaultPrefix" title="details" class="method-name">_generateDefaultPrefix</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#_getBasePath" title="details" class="method-name">_getBasePath</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#_getModuleDir" title="details" class="method-name">_getModuleDir</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#_setInflectorTarget" title="details" class="method-name">_setInflectorTarget</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$target</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#_setModuleDir" title="details" class="method-name">_setModuleDir</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$dir</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+										<a href="#_setOptions" title="details" class="method-name">_setOptions</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$options</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#_shouldRender" title="details" class="method-name">_shouldRender</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#_translateSpec" title="details" class="method-name">_translateSpec</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$vars</span> = <span class="var-default">array()</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#__clone" title="details" class="method-name">__clone</a>
+										()
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$view" id="$view"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../../Zend_View/Zend_View_Interface.html">Zend_View_Interface</a></span>
+			<span class="var-name">$view</span>
+						(line <span class="line-number">83</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_delimiters" id="$_delimiters"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_delimiters</span>
+						(line <span class="line-number">89</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Word delimiters</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_frontController" id="$_frontController"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+			<span class="var-name">$_frontController</span>
+						(line <span class="line-number">95</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Front controller instance</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_Abstract.html#var$_frontController">Zend_Controller_Action_Helper_Abstract::$_frontController</a></dt>
+					</dl>
+		
+		
+
+</div>
+<a name="var$_inflector" id="$_inflector"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../../Zend_Filter/Zend_Filter_Inflector.html">Zend_Filter_Inflector</a></span>
+			<span class="var-name">$_inflector</span>
+						(line <span class="line-number">100</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_inflectorTarget" id="$_inflectorTarget"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_inflectorTarget</span>
+			 = <span class="var-default"> ''</span>			(line <span class="line-number">106</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Inflector target</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_moduleDir" id="$_moduleDir"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_moduleDir</span>
+			 = <span class="var-default"> ''</span>			(line <span class="line-number">112</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Current module directory</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_neverController" id="$_neverController"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$_neverController</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number">119</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Whether or not to autorender using controller name as subdirectory;</p>
+<p class="description"><p>global setting (not reset at next invocation)</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_neverRender" id="$_neverRender"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$_neverRender</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number">126</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Whether or not to autorender postDispatch; global setting (not reset at</p>
+<p class="description"><p>next invocation)</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_noController" id="$_noController"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$_noController</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number">132</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Whether or not to use a controller name as a subdirectory when rendering</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_noRender" id="$_noRender"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$_noRender</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number">139</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Whether or not to autorender postDispatch; per controller/action setting (reset</p>
+<p class="description"><p>at next invocation)</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_pathDelimiters" id="$_pathDelimiters"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string|array</span>
+			<span class="var-name">$_pathDelimiters</span>
+						(line <span class="line-number">145</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Characters representing path delimiters in the controller</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_responseSegment" id="$_responseSegment"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_responseSegment</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">151</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Which named segment of the response to utilize</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_scriptAction" id="$_scriptAction"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_scriptAction</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">157</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Which action view script to render</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_viewBasePathSpec" id="$_viewBasePathSpec"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_viewBasePathSpec</span>
+			 = <span class="var-default"> ':moduleDir/views'</span>			(line <span class="line-number">163</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">View object basePath</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_viewScriptPathNoControllerSpec" id="$_viewScriptPathNoControllerSpec"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_viewScriptPathNoControllerSpec</span>
+			 = <span class="var-default"> ':action.:suffix'</span>			(line <span class="line-number">175</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">View script path specification string, minus controller segment</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_viewScriptPathSpec" id="$_viewScriptPathSpec"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_viewScriptPathSpec</span>
+			 = <span class="var-default"> ':controller/:action.:suffix'</span>			(line <span class="line-number">169</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">View script path specification string</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_viewSuffix" id="$_viewSuffix"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_viewSuffix</span>
+			 = <span class="var-default"> 'phtml'</span>			(line <span class="line-number">181</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">View script suffix</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_Abstract.html">Zend_Controller_Action_Helper_Abstract</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_Abstract.html#var$_actionController">Zend_Controller_Action_Helper_Abstract::$_actionController</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">192</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructor</p>
+<p class="description"><p>Optionally set view object and options.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$view</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_View/Zend_View_Interface.html">Zend_View_Interface</a></span>
+				<span class="var-name">$view</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$options</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddirect" id="direct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">direct</span> (line <span class="line-number">998</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Use this helper as a method; proxies to setRender()</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			direct
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$action</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">null</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$noController</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$action</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$noController</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetFrontController" id="getFrontController"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getFrontController</span> (line <span class="line-number">233</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve front controller instance</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+		<span class="method-name">
+			getFrontController
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_Abstract.html#methodgetFrontController">Zend_Controller_Action_Helper_Abstract::getFrontController()</a></dt>
+						<dd>Retrieve front controller instance</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetInflector" id="getInflector"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getInflector</span> (line <span class="line-number">284</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get inflector</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Filter/Zend_Filter_Inflector.html">Zend_Filter_Inflector</a></span>
+		<span class="method-name">
+			getInflector
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetModule" id="getModule"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getModule</span> (line <span class="line-number">247</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get current module name</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getModule
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetModuleDirectory" id="getModuleDirectory"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getModuleDirectory</span> (line <span class="line-number">264</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get module directory</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Controller_Action_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getModuleDirectory
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetNeverController" id="getNeverController"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getNeverController</span> (line <span class="line-number">784</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve neverController flag value</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			getNeverController
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetNeverRender" id="getNeverRender"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getNeverRender</span> (line <span class="line-number">669</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve neverRender flag value</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			getNeverRender
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetNoController" id="getNoController"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getNoController</span> (line <span class="line-number">762</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve noController flag value</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			getNoController
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetNoRender" id="getNoRender"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getNoRender</span> (line <span class="line-number">691</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve noRender flag value</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			getNoRender
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetResponseSegment" id="getResponseSegment"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getResponseSegment</span> (line <span class="line-number">740</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve named response segment name</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getResponseSegment
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetScriptAction" id="getScriptAction"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getScriptAction</span> (line <span class="line-number">713</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve view script name</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getScriptAction
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetViewBasePathSpec" id="getViewBasePathSpec"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getViewBasePathSpec</span> (line <span class="line-number">555</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve the current view basePath specification string</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getViewBasePathSpec
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetViewScript" id="getViewScript"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getViewScript</span> (line <span class="line-number">630</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get a view script based on an action and/or other variables</p>
+<p class="description"><p>Uses values found in current request if no values passed in $vars.</p><p>If <a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html#var$_noController">$_noController</a> is set, uses <a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html#var$_viewScriptPathNoControllerSpec">$_viewScriptPathNoControllerSpec</a>;  otherwise, uses <a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html#var$_viewScriptPathSpec">$_viewScriptPathSpec</a>.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getViewScript
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$action</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$vars</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$action</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$vars</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetViewScriptPathNoControllerSpec" id="getViewScriptPathNoControllerSpec"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getViewScriptPathNoControllerSpec</span> (line <span class="line-number">613</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve the current view script path specification string (no controller variant)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getViewScriptPathNoControllerSpec
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetViewScriptPathSpec" id="getViewScriptPathSpec"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getViewScriptPathSpec</span> (line <span class="line-number">583</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve the current view script path specification string</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getViewScriptPathSpec
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetViewSuffix" id="getViewSuffix"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getViewSuffix</span> (line <span class="line-number">806</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get view script suffix</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getViewSuffix
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodinit" id="init"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">init</span> (line <span class="line-number">523</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">init - initialize view</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			init
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_Abstract.html#methodinit">Zend_Controller_Action_Helper_Abstract::init()</a></dt>
+						<dd>Hook into action controller initialization</dd>
+					</dl>
+			
+	</div>
+<a name="methodinitView" id="initView"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">initView</span> (line <span class="line-number">465</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Initialize the view object</p>
+<p class="description"><p>$options may contain the following keys: <ul><li>neverRender - flag dis/enabling postDispatch() autorender (affects all subsequent calls)</li><li>noController - flag indicating whether or not to look for view scripts in subdirectories named after the controller</li><li>noRender - flag indicating whether or not to autorender postDispatch()</li><li>responseSegment - which named response segment to render a view script to</li><li>scriptAction - what action script to render</li><li>viewBasePathSpec - specification to use for determining view base path</li><li>viewScriptPathSpec - specification to use for determining view script paths</li><li>viewScriptPathNoControllerSpec - specification to use for determining view script paths when noController flag is set</li><li>viewSuffix - what view script filename suffix to use</li></ul></p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Controller_Action_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			initView
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$prefix</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$path</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$prefix</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$options</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodpostDispatch" id="postDispatch"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">postDispatch</span> (line <span class="line-number">967</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">postDispatch - auto render a view</p>
+<p class="description"><p>Only autorenders if: <ul><li>_noRender is false</li><li>action controller is present</li><li>request has not been re-dispatched (i.e., _forward() has not been called)</li><li>response is not a redirect</li></ul></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			postDispatch
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_Abstract.html#methodpostDispatch">Zend_Controller_Action_Helper_Abstract::postDispatch()</a></dt>
+						<dd>Hook into action controller postDispatch() workflow</dd>
+					</dl>
+			
+	</div>
+<a name="methodrender" id="render"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">render</span> (line <span class="line-number">927</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Render a view based on path specifications</p>
+<p class="description"><p>Renders a view based on the view script path specifications.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			render
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$action</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">null</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$noController</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$action</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$noController</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrenderBySpec" id="renderBySpec"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">renderBySpec</span> (line <span class="line-number">945</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Render a script based on specification variables</p>
+<p class="description"><p>Pass an action, and one or more specification variables (view script suffix)  to determine the view script path, and render that script.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			renderBySpec
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$action</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$vars</span> = <span class="var-default">array()</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$action</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$vars</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrenderScript" id="renderScript"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">renderScript</span> (line <span class="line-number">903</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Render a view script (optionally to a named response segment)</p>
+<p class="description"><p>Sets the noRender flag to true when called.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			renderScript
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$script</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$script</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetInflector" id="setInflector"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setInflector</span> (line <span class="line-number">323</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set inflector</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+		<span class="method-name">
+			setInflector
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$inflector</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$reference</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_Filter/Zend_Filter_Inflector.html">Zend_Filter_Inflector</a></span>
+				<span class="var-name">$inflector</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$reference</span><span class="var-description">: Whether the moduleDir, target, and suffix should be set as references to ViewRenderer properties</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetNeverController" id="setNeverController"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setNeverController</span> (line <span class="line-number">773</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the neverController flag (i.e., whether or not to render into controller subdirectories)</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+		<span class="method-name">
+			setNeverController
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$flag</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$flag</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetNeverRender" id="setNeverRender"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setNeverRender</span> (line <span class="line-number">658</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the neverRender flag (i.e., globally dis/enable autorendering)</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+		<span class="method-name">
+			setNeverRender
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$flag</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$flag</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetNoController" id="setNoController"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setNoController</span> (line <span class="line-number">751</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the noController flag (i.e., whether or not to render into controller subdirectories)</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+		<span class="method-name">
+			setNoController
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$flag</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$flag</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetNoRender" id="setNoRender"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setNoRender</span> (line <span class="line-number">680</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the noRender flag (i.e., whether or not to autorender)</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+		<span class="method-name">
+			setNoRender
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$flag</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$flag</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetRender" id="setRender"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setRender</span> (line <span class="line-number">819</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set options for rendering a view script</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+		<span class="method-name">
+			setRender
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$action</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">null</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$noController</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$action</span><span class="var-description">: View script to render</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: Response named segment to render to</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$noController</span><span class="var-description">: Whether or not to render within a subdirectory named after the controller</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetResponseSegment" id="setResponseSegment"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setResponseSegment</span> (line <span class="line-number">724</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the response segment name</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+		<span class="method-name">
+			setResponseSegment
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetScriptAction" id="setScriptAction"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setScriptAction</span> (line <span class="line-number">702</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the view script to use</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+		<span class="method-name">
+			setScriptAction
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetView" id="setView"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setView</span> (line <span class="line-number">222</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the view object</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+		<span class="method-name">
+			setView
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$view</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_View/Zend_View_Interface.html">Zend_View_Interface</a></span>
+				<span class="var-name">$view</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetViewBasePathSpec" id="setViewBasePathSpec"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setViewBasePathSpec</span> (line <span class="line-number">544</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set view basePath specification</p>
+<p class="description"><p>Specification can contain one or more of the following: <ul><li>:moduleDir - current module directory</li><li>:controller - name of current controller in the request</li><li>:action - name of current action in the request</li><li>:module - name of current module in the request</li></ul></p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+		<span class="method-name">
+			setViewBasePathSpec
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$path</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetViewScriptPathNoControllerSpec" id="setViewScriptPathNoControllerSpec"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setViewScriptPathNoControllerSpec</span> (line <span class="line-number">602</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set view script path specification (no controller variant)</p>
+<p class="description"><p>Specification can contain one or more of the following: <ul><li>:moduleDir - current module directory</li><li>:controller - name of current controller in the request</li><li>:action - name of current action in the request</li><li>:module - name of current module in the request</li></ul>  :controller will likely be ignored in this variant.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+		<span class="method-name">
+			setViewScriptPathNoControllerSpec
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$path</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetViewScriptPathSpec" id="setViewScriptPathSpec"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setViewScriptPathSpec</span> (line <span class="line-number">572</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set view script path specification</p>
+<p class="description"><p>Specification can contain one or more of the following: <ul><li>:moduleDir - current module directory</li><li>:controller - name of current controller in the request</li><li>:action - name of current action in the request</li><li>:module - name of current module in the request</li></ul></p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+		<span class="method-name">
+			setViewScriptPathSpec
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$path</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetViewSuffix" id="setViewSuffix"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setViewSuffix</span> (line <span class="line-number">795</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set view script suffix</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+		<span class="method-name">
+			setViewSuffix
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$suffix</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$suffix</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_generateDefaultPrefix" id="_generateDefaultPrefix"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_generateDefaultPrefix</span> (line <span class="line-number">371</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generate a class prefix for helper and filter classes</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			_generateDefaultPrefix
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method_getBasePath" id="_getBasePath"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_getBasePath</span> (line <span class="line-number">388</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve base path based on location of current action controller</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			_getBasePath
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method_getModuleDir" id="_getModuleDir"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_getModuleDir</span> (line <span class="line-number">361</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get internal module directory representation</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			_getModuleDir
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method_setInflectorTarget" id="_setInflectorTarget"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_setInflectorTarget</span> (line <span class="line-number">340</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set inflector target</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_setInflectorTarget
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$target</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$target</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_setModuleDir" id="_setModuleDir"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_setModuleDir</span> (line <span class="line-number">351</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set internal module directory representation</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_setModuleDir
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$dir</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$dir</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_setOptions" id="_setOptions"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_setOptions</span> (line <span class="line-number">416</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set options</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></span>
+		<span class="method-name">
+			_setOptions
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$options</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$options</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_shouldRender" id="_shouldRender"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_shouldRender</span> (line <span class="line-number">979</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Should the ViewRenderer render a view script?</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			_shouldRender
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method_translateSpec" id="_translateSpec"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_translateSpec</span> (line <span class="line-number">849</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Inflect based on provided vars</p>
+<p class="description"><p>Allowed variables are: <ul><li>:moduleDir - current module directory</li><li>:module - current module name</li><li>:controller - current controller name</li><li>:action - current action name</li><li>:suffix - view script file suffix</li></ul></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			_translateSpec
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$vars</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$vars</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__clone" id="__clone"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">__clone</span> (line <span class="line-number">208</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Clone - also make sure the view is cloned.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__clone
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_Abstract.html">Zend_Controller_Action_Helper_Abstract</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_Abstract.html#methodgetActionController">Zend_Controller_Action_Helper_Abstract::getActionController()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_Abstract.html#methodgetFrontController">Zend_Controller_Action_Helper_Abstract::getFrontController()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_Abstract.html#methodgetName">Zend_Controller_Action_Helper_Abstract::getName()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_Abstract.html#methodgetRequest">Zend_Controller_Action_Helper_Abstract::getRequest()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_Abstract.html#methodgetResponse">Zend_Controller_Action_Helper_Abstract::getResponse()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_Abstract.html#methodinit">Zend_Controller_Action_Helper_Abstract::init()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_Abstract.html#methodpostDispatch">Zend_Controller_Action_Helper_Abstract::postDispatch()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_Abstract.html#methodpreDispatch">Zend_Controller_Action_Helper_Abstract::preDispatch()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_Abstract.html#methodsetActionController">Zend_Controller_Action_Helper_Abstract::setActionController()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:53:47 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

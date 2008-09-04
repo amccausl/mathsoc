@@ -1,0 +1,552 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>46.2. Standard Validation Classes</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="prev" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="next" href="zend.validate.validator_chains.html" title="46.3. Validator Chains">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.validate.set.html#zend.validate.set.alnum" title="46.2.1. Alnum">
+<link rel="subsection" href="zend.validate.set.html#zend.validate.set.alpha" title="46.2.2. Alpha">
+<link rel="subsection" href="zend.validate.set.html#zend.validate.set.barcode" title="46.2.3. Barcode">
+<link rel="subsection" href="zend.validate.set.html#zend.validate.set.between" title="46.2.4. Between">
+<link rel="subsection" href="zend.validate.set.html#zend.validate.set.ccnum" title="46.2.5. Ccnum">
+<link rel="subsection" href="zend.validate.set.html#zend.validate.set.date" title="46.2.6. Date">
+<link rel="subsection" href="zend.validate.set.html#zend.validate.set.digits" title="46.2.7. Digits">
+<link rel="subsection" href="zend.validate.set.html#zend.validate.set.email_address" title="46.2.8. EmailAddress">
+<link rel="subsection" href="zend.validate.set.html#zend.validate.set.float" title="46.2.9. Float">
+<link rel="subsection" href="zend.validate.set.html#zend.validate.set.greater_than" title="46.2.10. GreaterThan">
+<link rel="subsection" href="zend.validate.set.html#zend.validate.set.hex" title="46.2.11. Hex">
+<link rel="subsection" href="zend.validate.set.html#zend.validate.set.hostname" title="46.2.12. Hostname">
+<link rel="subsection" href="zend.validate.set.html#zend.validate.set.in_array" title="46.2.13. InArray">
+<link rel="subsection" href="zend.validate.set.html#zend.validate.set.int" title="46.2.14. Int">
+<link rel="subsection" href="zend.validate.set.html#zend.validate.set.ip" title="46.2.15. Ip">
+<link rel="subsection" href="zend.validate.set.html#zend.validate.set.less_than" title="46.2.16. LessThan">
+<link rel="subsection" href="zend.validate.set.html#zend.validate.set.not_empty" title="46.2.17. NotEmpty">
+<link rel="subsection" href="zend.validate.set.html#zend.validate.set.regex" title="46.2.18. Regex">
+<link rel="subsection" href="zend.validate.set.html#zend.validate.set.string_length" title="46.2.19. StringLength">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">46.2. Standard Validation Classes</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.validate.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 46. Zend_Validate</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.validate.validator_chains.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.validate.set"></a>46.2. Standard Validation Classes</h2></div></div></div>
+<p>
+        The Zend Framework comes with a standard set of validation classes, which are ready for you to use.
+    </p>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.validate.set.alnum"></a>46.2.1. Alnum</h3></div></div></div>
+<p>
+            Returns <code class="code">true</code> if and only if <code class="code">$value</code> contains only alphabetic and digit characters.
+            This validator includes an option to also consider white space characters as valid.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.validate.set.alpha"></a>46.2.2. Alpha</h3></div></div></div>
+<p>
+            Returns <code class="code">true</code> if and only if <code class="code">$value</code> contains only alphabetic characters. This
+            validator includes an option to also consider white space characters as valid.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.validate.set.barcode"></a>46.2.3. Barcode</h3></div></div></div>
+<p>
+            This validator is instantiated with a barcode type against which you wish to validate a barcode value.
+            It currently supports "<code class="code">UPC-A</code>" (Universal Product Code) and "<code class="code">EAN-13</code>" (European
+            Article Number) barcode types, and the <code class="code">isValid()</code> method returns true if and only if the input
+            successfully validates against the barcode validation algorithm. You should remove all characters other
+            than the digits zero through nine (0-9) from the input value before passing it on to the validator.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.validate.set.between"></a>46.2.4. Between</h3></div></div></div>
+<p>
+            Returns <code class="code">true</code> if and only if <code class="code">$value</code> is between the minimum and maximum boundary
+            values. The comparison is inclusive by default (<code class="code">$value</code> may equal a boundary value), though
+            this may be overridden in order to do a strict comparison, where <code class="code">$value</code> must be strictly
+            greater than the minimum and strictly less than the maximum.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.validate.set.ccnum"></a>46.2.5. Ccnum</h3></div></div></div>
+<p>
+            Returns <code class="code">true</code> if and only if <code class="code">$value</code> follows the Luhn algorithm (mod-10 checksum)
+            for credit card numbers.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.validate.set.date"></a>46.2.6. Date</h3></div></div></div>
+<p>
+            Returns <code class="code">true</code> if <code class="code">$value</code> is a valid date of the format <code class="code">YYYY-MM-DD</code>.
+            If the optional <code class="code">locale</code> option is set then the date will be validated according to the
+            set locale. And if the optional <code class="code">format</code> option is set this format is used for the
+            validation. For details about the optional parameters see
+            <a href="zend.date.overview.html#zend.date.others.comparison.table" title="Table 9.3. Date Comparison Methods">Zend_Date::isDate()</a>.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.validate.set.digits"></a>46.2.7. Digits</h3></div></div></div>
+<p>
+            Returns <code class="code">true</code> if and only if <code class="code">$value</code> only contains digit characters.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.validate.set.email_address"></a>46.2.8. EmailAddress</h3></div></div></div>
+<p>
+        <code class="code">Zend_Validate_EmailAddress</code> allows you to validate an email address. The validator first splits
+        the email address on local-part @ hostname and attempts to match these against known specifications for email
+        addresses and hostnames.
+    </p>
+<p>
+        <span class="strong"><strong>Basic usage</strong></span>
+    </p>
+<p>
+        A basic example of usage is below:
+
+        </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Validate/EmailAddress.php';
+$validator = new Zend_Validate_EmailAddress();
+if ($validator-&gt;isValid($email)) {
+    // email appears to be valid
+} else {
+    // email is invalid; print the reasons
+    foreach ($validator-&gt;getMessages() as $message) {
+        echo "$message\n";
+    }
+}
+        </pre>
+<p>
+
+        This will match the email address <code class="code">$email</code> and on failure populate
+        <code class="code">$validator-&gt;getMessages()</code> with useful error messages.
+    </p>
+<p>
+        <span class="strong"><strong>Complex local parts</strong></span>
+    </p>
+<p>
+        <code class="code">Zend_Validate_EmailAddress</code> will match any valid email address according to RFC2822. For example,
+        valid emails include <code class="code">bob@domain.com</code>, <code class="code">bob+jones@domain.us</code>,
+        <code class="code">"bob@jones"@domain.com</code> and <code class="code">"bob jones"@domain.com</code>
+    </p>
+<p>
+        Some obsolete email formats will not currently validate (e.g. carriage returns or a
+        "\" character in an email address).
+    </p>
+<p>
+        <span class="strong"><strong>Validating different types of hostnames</strong></span>
+    </p>
+<p>
+        The hostname part of an email address is validated against
+        <a href="zend.validate.set.html#zend.validate.set.hostname" title="46.2.12. Hostname"><code class="code">Zend_Validate_Hostname</code></a>. By default
+        only DNS hostnames of the form <code class="code">domain.com</code> are accepted, though if you wish you
+        can accept IP addresses and Local hostnames too.
+    </p>
+<p>
+        To do this you need to instantiate <code class="code">Zend_Validate_EmailAddress</code> passing a parameter to indicate
+        the type of hostnames you want to accept. More details are included in <code class="code">Zend_Validate_Hostname</code>,
+        though an example of how to accept both DNS and Local hostnames appears below:
+
+        </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Validate/EmailAddress.php';
+$validator = new Zend_Validate_EmailAddress(Zend_Validate_Hostname::ALLOW_DNS | Zend_Validate_Hostname::ALLOW_LOCAL);
+if ($validator-&gt;isValid($email)) {
+    // email appears to be valid
+} else {
+    // email is invalid; print the reasons
+    foreach ($validator-&gt;getMessages() as $message) {
+        echo "$message\n";
+    }
+}
+        </pre>
+<p>
+    </p>
+<p>
+        <span class="strong"><strong>Checking if the hostname actually accepts email</strong></span>
+    </p>
+<p>
+        Just because an email address is in the correct format, it doesn't necessarily mean that
+        email address actually exists. To help solve this problem, you can use MX validation to
+        check whether an MX (email) entry exists in the DNS record for the email's hostname.
+        This tells you that the hostname accepts email, but doesn't tell you the exact email
+        address itself is valid.
+    </p>
+<p>
+        MX checking is not enabled by default and at this time is only supported by UNIX platforms.
+        To enable MX checking you can pass a second parameter to the <code class="code">Zend_Validate_EmailAddress</code>
+        constructor.
+
+        </p>
+<pre class="programlisting">&lt;?php
+$validator = new Zend_Validate_EmailAddress(Zend_Validate_Hostname::ALLOW_DNS, true);
+        </pre>
+<p>
+
+        Alternatively you can either pass <code class="code">true</code> or <code class="code">false</code> to
+        <code class="code">$validator-&gt;setValidateMx()</code> to enable or disable MX validation.
+    </p>
+<p>
+        By enabling this setting network functions will be used to check for the presence of an
+        MX record on the hostname of the email address you wish to validate. Please be aware
+        this will likely slow your script down.
+    </p>
+<p>
+        <span class="strong"><strong>Validating International Domains Names</strong></span>
+    </p>
+<p>
+        <code class="code">Zend_Validate_EmailAddress</code> will also match international characters that exist in some domains.
+        This is known as International Domain Name (IDN) support. This is enabled by default, though
+        you can disable this by changing the setting via the internal <code class="code">Zend_Validate_Hostname</code> object
+        that exists within <code class="code">Zend_Validate_EmailAddress</code>.
+
+        </p>
+<pre class="programlisting">&lt;?php
+$validator-&gt;hostnameValidator-&gt;setValidateIdn(false);
+        </pre>
+<p>
+
+        More information on the usage of <code class="code">setValidateIdn()</code> appears in the
+        <code class="code">Zend_Validate_Hostname</code> documentation.
+    </p>
+<p>
+        Please note IDNs are only validated if you allow DNS hostnames to be validated.
+    </p>
+<p>
+        <span class="strong"><strong>Validating Top Level Domains</strong></span>
+    </p>
+<p>
+        By default a hostname will be checked against a list of known TLDs. This is enabled by
+        default, though you can disable this by changing the setting via the internal
+        <code class="code">Zend_Validate_Hostname</code> object that exists within <code class="code">Zend_Validate_EmailAddress</code>.
+
+        </p>
+<pre class="programlisting">&lt;?php
+$validator-&gt;hostnameValidator-&gt;setValidateTld(false);
+        </pre>
+<p>
+
+        More information on the usage of <code class="code">setValidateTld()</code> appears in the
+        <code class="code">Zend_Validate_Hostname</code> documentation.
+    </p>
+<p>
+        Please note TLDs are only validated if you allow DNS hostnames to be validated.
+    </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.validate.set.float"></a>46.2.9. Float</h3></div></div></div>
+<p>
+            Returns <code class="code">true</code> if and only if <code class="code">$value</code> is a floating-point value.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.validate.set.greater_than"></a>46.2.10. GreaterThan</h3></div></div></div>
+<p>
+            Returns <code class="code">true</code> if and only if <code class="code">$value</code> is greater than the minimum boundary.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.validate.set.hex"></a>46.2.11. Hex</h3></div></div></div>
+<p>
+            Returns <code class="code">true</code> if and only if <code class="code">$value</code> contains only hexadecimal digit characters.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.validate.set.hostname"></a>46.2.12. Hostname</h3></div></div></div>
+<p>
+        Zend_Validate_Hostname allows you to validate a hostname against a set of known specifications.
+        It is possible to check for three different types of hostnames: a DNS Hostname (i.e.
+        domain.com), IP address (i.e. 1.2.3.4), and Local hostnames (i.e. localhost). By default only
+        DNS hostnames are matched.
+    </p>
+<p>
+        <span class="strong"><strong>Basic usage</strong></span>
+    </p>
+<p>
+        A basic example of usage is below:
+
+        </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Validate/Hostname.php';
+$validator = new Zend_Validate_Hostname();
+if ($validator-&gt;isValid($hostname)) {
+    // hostname appears to be valid
+} else {
+    // hostname is invalid; print the reasons
+    foreach ($validator-&gt;getMessages() as $message) {
+        echo "$message\n";
+    }
+}
+        </pre>
+<p>
+
+        This will match the hostname <code class="code">$hostname</code> and on failure populate
+        <code class="code">$validator-&gt;getMessages()</code> with useful error messages.
+
+    </p>
+<p>
+        <span class="strong"><strong>Validating different types of hostnames</strong></span>
+    </p>
+<p>
+        You may find you also want to match IP addresses, Local hostnames, or a combination of all
+        allowed types. This can be done by passing a parameter to Zend_Validate_Hostname when you
+        instantiate it. The paramter should be an integer which determines what types of hostnames
+        are allowed. You are encouraged to use the Zend_Validate_Hostname constants to do this.
+    </p>
+<p>
+        The Zend_Validate_Hostname constants are: <code class="code">ALLOW_DNS</code> to allow only DNS hostnames,
+        <code class="code">ALLOW_IP</code> to allow IP addresses, <code class="code">ALLOW_LOCAL</code> to allow local network
+        names, and <code class="code">ALLOW_ALL</code> to allow all three types. To just check for IP addresses
+        you can use the example below:
+        </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Validate/Hostname.php';
+$validator = new Zend_Validate_Hostname(Zend_Validate_Hostname::ALLOW_IP);
+if ($validator-&gt;isValid($hostname)) {
+    // hostname appears to be valid
+} else {
+    // hostname is invalid; print the reasons
+    foreach ($validator-&gt;getMessages() as $message) {
+        echo "$message\n";
+    }
+}
+        </pre>
+<p>
+    </p>
+<p>
+        As well as using <code class="code">ALLOW_ALL</code> to accept all hostnames types you can combine
+        these types to allow for combinations. For example, to accept DNS and Local hostnames
+        instantiate your Zend_Validate_Hostname object as so:
+        </p>
+<pre class="programlisting">&lt;?php
+$validator = new Zend_Validate_Hostname(Zend_Validate_Hostname::ALLOW_DNS | Zend_Validate_Hostname::ALLOW_IP);
+        </pre>
+<p>
+
+    </p>
+<p>
+        <span class="strong"><strong>Validating International Domains Names</strong></span>
+    </p>
+<p>
+        Some Country Code Top Level Domains (ccTLDs), such as 'de' (Germany), support international
+        characters in domain names. These are known as International Domain Names (IDN). These domains
+        can be matched by Zend_Validate_Hostname via extended characters that are used in the validation
+        process.
+    </p>
+<p>
+        At present the list of supported ccTLDs include:
+   
+        </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>at (Austria)</p></li>
+<li><p>ch (Switzerland)</p></li>
+<li><p>li (Liechtenstein)</p></li>
+<li><p>de (Germany)</p></li>
+<li><p>fi (Finland)</p></li>
+<li><p>hu (Hungary)</p></li>
+<li><p>no (Norway)</p></li>
+<li><p>se (Sweden)</p></li>
+</ul></div>
+<p>
+    
+    </p>
+<p>
+        To match an IDN domain it's as simple as just using the standard Hostname validator since IDN
+        matching is enabled by default. If you wish to disable IDN validation this can be done by
+        by either passing a parameter to the Zend_Validate_Hostname constructor or via the
+        <code class="code">$validator-&gt;setValidateIdn()</code> method.
+    </p>
+<p>
+        You can disable IDN validation by passing a second parameter to the Zend_Validate_Hostname
+        constructor in the following way.
+
+        </p>
+<pre class="programlisting">&lt;?php
+$validator = new Zend_Validate_Hostname(Zend_Validate_Hostname::ALLOW_DNS, false);
+        </pre>
+<p>
+
+        Alternatively you can either pass TRUE or FALSE to
+        <code class="code">$validator-&gt;setValidateIdn()</code> to enable or disable IDN validation.
+
+        If you are trying to match an IDN hostname which isn't currently supported it is likely
+        it will fail validation if it has any international characters in it. Where a ccTLD file
+        doesn't exist in Zend/Validate/Hostname specifying the additional characters a normal
+        hostname validation is performed.
+    </p>
+<p>
+        Please note IDNs are only validated if you allow DNS hostnames to be validated.
+    </p>
+<p>
+        <span class="strong"><strong>Validating Top Level Domains</strong></span>
+    </p>
+<p>
+        By default a hostname will be checked against a list of known TLDs. If this functionality
+        is not required it can be disabled in much the same way as disabling IDN support.
+        You can disable TLD validation by passing a third parameter to the Zend_Validate_Hostname constructor.
+        In the example below we are supporting IDN validation via the second parameter.
+
+        </p>
+<pre class="programlisting">&lt;?php
+$validator = new Zend_Validate_Hostname(Zend_Validate_Hostname::ALLOW_DNS, true, false);
+        </pre>
+<p>
+
+        Alternatively you can either pass TRUE or FALSE to
+        <code class="code">$validator-&gt;setValidateTld()</code> to enable or disable TLD validation.
+    </p>
+<p>
+        Please note TLDs are only validated if you allow DNS hostnames to be validated.
+    </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.validate.set.in_array"></a>46.2.13. InArray</h3></div></div></div>
+<p>
+            Returns <code class="code">true</code> if and only if a "needle" <code class="code">$value</code> is contained in a "haystack"
+            array. If the strict option is <code class="code">true</code>, then the type of <code class="code">$value</code> is also checked.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.validate.set.int"></a>46.2.14. Int</h3></div></div></div>
+<p>
+            Returns <code class="code">true</code> if and only if <code class="code">$value</code> is a valid integer.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.validate.set.ip"></a>46.2.15. Ip</h3></div></div></div>
+<p>
+            Returns <code class="code">true</code> if and only if <code class="code">$value</code> is a valid IP address.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.validate.set.less_than"></a>46.2.16. LessThan</h3></div></div></div>
+<p>
+            Returns <code class="code">true</code> if and only if <code class="code">$value</code> is less than the maximum boundary.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.validate.set.not_empty"></a>46.2.17. NotEmpty</h3></div></div></div>
+<p>
+            Returns <code class="code">true</code> if and only if <code class="code">$value</code> is not an empty value.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.validate.set.regex"></a>46.2.18. Regex</h3></div></div></div>
+<p>
+            Returns <code class="code">true</code> if and only if <code class="code">$value</code> matches against a regular expression
+            pattern.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.validate.set.string_length"></a>46.2.19. StringLength</h3></div></div></div>
+<p>
+            Returns <code class="code">true</code> if and only if the string length of <code class="code">$value</code> is at least a minimum
+            and no greater than a maximum (when the max option is not <code class="code">null</code>). Since version 1.5.0, the
+            <code class="code">setMin()</code> method throws an exception if the minimum length is set to a value greater than the
+            set maximum length, and the <code class="code">setMax()</code> method throws an exception if the maximum length is set
+            to a value less than than the set minimum length. Since version 1.0.2, this class supports UTF-8 and other
+            character encodings, based on the current value of
+            <a href="http://www.php.net/manual/en/ref.iconv.php#iconv.configuration" target="_top"><code class="code">iconv.internal_encoding</code></a>.
+        </p>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.validate.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.validate.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.validate.validator_chains.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">Chapter 46. Zend_Validate </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 46.3. Validator Chains</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

@@ -1,0 +1,474 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>38.10. Zend_Service_StrikeIron</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="prev" href="zend.service.slideshare.html" title="38.9. Introduction">
+<link rel="next" href="zend.service.strikeiron.bundled-services.html" title="38.11. Zend_Service_StrikeIron: Bundled Services">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.service.strikeiron.html#zend.service.strikeiron.overview" title="38.10.1. Overview">
+<link rel="subsection" href="zend.service.strikeiron.html#zend.service.strikeiron.registering" title="38.10.2. Registering with StrikeIron">
+<link rel="subsection" href="zend.service.strikeiron.html#zend.service.strikeiron.getting-started" title="38.10.3. Getting Started">
+<link rel="subsection" href="zend.service.strikeiron.html#zend.service.strikeiron.making-first-query" title="38.10.4. Making Your First Query">
+<link rel="subsection" href="zend.service.strikeiron.html#zend.service.strikeiron.examining-results" title="38.10.5. Examining Results">
+<link rel="subsection" href="zend.service.strikeiron.html#zend.service.strikeiron.handling-errors" title="38.10.6. Handling Errors">
+<link rel="subsection" href="zend.service.strikeiron.html#zend.service.strikeiron.checking-subscription" title="38.10.7. Checking Your Subscription">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">38.10. Zend_Service_StrikeIron</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.service.slideshare.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 38. Zend_Service</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.service.strikeiron.bundled-services.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.service.strikeiron"></a>38.10. Zend_Service_StrikeIron</h2></div></div></div>
+<p>
+        Zend_Service_StrikeIron provides a PHP 5 client to StrikeIron
+        web services.  See the following sections:
+    </p>
+<p>
+        </p>
+<div class="itemizedlist"><ul type="disc"><li><p><a href="zend.service.strikeiron.html" title="38.10. Zend_Service_StrikeIron">Section 38.10, “Zend_Service_StrikeIron”</a></p></li></ul></div>
+<p>
+        </p>
+<div class="itemizedlist"><ul type="disc"><li><p><a href="zend.service.strikeiron.bundled-services.html" title="38.11. Zend_Service_StrikeIron: Bundled Services">Section 38.11, “Zend_Service_StrikeIron: Bundled Services”</a></p></li></ul></div>
+<p>
+        </p>
+<div class="itemizedlist"><ul type="disc"><li><p><a href="zend.service.strikeiron.advanced-uses.html" title="38.12. Zend_Service_StrikeIron: Advanced Uses">Section 38.12, “Zend_Service_StrikeIron: Advanced Uses”</a></p></li></ul></div>
+<p>
+    </p>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.service.strikeiron.overview"></a>38.10.1. Overview</h3></div></div></div>
+<p>
+          <a href="http://www.strikeiron.com" target="_top">StrikeIron</a>
+          offers hundreds of commercial data services ("Data as a Service")
+          such as Online Sales Tax, Currency Rates, Stock Quotes, Geocodes, Global
+          Address Verification, Yellow/White Pages, MapQuest Driving Directions,
+          Dun &amp; Bradstreet Business Credit Checks, and much, much more.
+        </p>
+<p>
+          Each StrikeIron web service service shares a standard SOAP (and REST)
+          API, making it easy to integrate and manage multiple services.
+          StrikeIron also manages customer billing for all services in a single
+          account, making it perfect for solution providers. Get
+          started with free web services at
+          <a href="http://www.strikeiron.com/sdp" target="_top">http://www.strikeiron.com/sdp</a>.
+        </p>
+<p>
+          StrikeIron's services may be used through the
+          <a href="http://us.php.net/soap" target="_top">PHP 5 SOAP extension</a> alone.
+          However, using StrikeIron this way does not give an ideal PHP-like interface.
+          The Zend_Service_StrikeIron component provides a lightweight layer on
+          top of the SOAP extension for working with StrikeIron services in a
+          more convenient, PHP-like manner.
+        </p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+            The PHP 5 SOAP extension must be installed and enabled to use
+            Zend_Service_StrikeIron.
+          </p></td></tr>
+</table></div>
+<p>
+          The Zend_Service_StrikeIron component provides:
+
+          </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                A single point for configuring your StrikeIron authentication credentials
+                that can be used across many StrikeIron services.
+              </p></li>
+<li><p>
+                A standard way of retrieving your StrikeIron subscription information
+                such as license status and the number of hits remaining to a service.
+              </p></li>
+<li><p>
+                The ability to use any StrikeIron service from its WSDL without
+                creating a PHP wrapper class, and the option of creating a wrapper for
+                a more convenient interface.
+              </p></li>
+<li><p>
+                Wrappers for three popular StrikeIron services.
+              </p></li>
+</ul></div>
+<p>
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.service.strikeiron.registering"></a>38.10.2. Registering with StrikeIron</h3></div></div></div>
+<p>
+        Before you can get started with Zend_Service_StrikeIron, you must first
+        <a href="http://strikeiron.com/Register.aspx" target="_top">register</a> for a
+        StrikeIron developer account.
+      </p>
+<p>
+        After registering, you will receive a StrikeIron username and password.
+        These will be used when connecting to StrikeIron using Zend_Service_StrikeIron.
+      </p>
+<p>
+        You will also need to <a href="http://www.strikeiron.com/ProductDetail.aspx?p=257" target="_top">sign up</a>
+        for StrikeIron's Super Data Pack Web Service.
+      </p>
+<p>
+        Both registration steps are free and can be done relatively quickly through
+        the StrikeIron website.
+      </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.service.strikeiron.getting-started"></a>38.10.3. Getting Started</h3></div></div></div>
+<p>
+        Once you have <a href="http://strikeiron.com/Register.aspx" target="_top">registered</a>
+        for a StrikeIron account and signed up for the
+        <a href="http://www.strikeiron.com/ProductDetail.aspx?p=257" target="_top">Super Data Pack</a>,
+        you're ready to start using Zend_Service_StrikeIron.
+      </p>
+<p>
+        StrikeIron consists of hundreds of different web services.
+        Zend_Service_StrikeIron can be used with many of these services but provides supported
+        wrappers for three of them:
+      </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p><a href="zend.service.strikeiron.bundled-services.html#zend.service.strikeiron.bundled-services.zip-code-information" title="38.11.1. ZIP Code Information">ZIP Code Information</a></p></li>
+<li><p><a href="zend.service.strikeiron.bundled-services.html#zend.service.strikeiron.bundled-services.us-address-verification" title="38.11.2. U.S. Address Verification">US Address Verification</a></p></li>
+<li><p><a href="zend.service.strikeiron.bundled-services.html#zend.service.strikeiron.bundled-services.sales-use-tax-basic" title="38.11.3. Sales &amp; Use Tax Basic">Sales &amp; Use Tax Basic</a></p></li>
+</ul></div>
+<p>
+        The class <code class="code">Zend_Service_StrikeIron</code> provides a simple way
+        of specifying your StrikeIron account information and other options in
+        its constructor. It also has a factory method that will return clients
+        for StrikeIron services:
+
+        </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Service/StrikeIron.php';
+
+$strikeIron = new Zend_Service_StrikeIron(array('username' =&gt; 'your-username',
+                                                'password' =&gt; 'your-password'));
+
+$taxBasic = $strikeIron-&gt;getService(array('class' =&gt; 'SalesUseTaxBasic'));
+        </pre>
+<p>
+      </p>
+<p>
+        The <code class="code">getService()</code> method will return a client for any
+        StrikeIron service by the name of its PHP wrapper class. In this case,
+        the name <code class="code">SalesUseTaxBasic</code> refers to the wrapper class
+        <code class="code">Zend_Service_StrikeIron_SalesUseTaxBasic</code>. Wrappers are
+        included for three services and described in
+        <a href="zend.service.strikeiron.bundled-services.html" title="38.11. Zend_Service_StrikeIron: Bundled Services">Bundled Services</a>.
+      </p>
+<p>
+        The <code class="code">getService()</code> method can also return a client for
+        a StrikeIron service that does not yet have a PHP wrapper.  This is
+        explained in
+        <a href="zend.service.strikeiron.advanced-uses.html#zend.service.strikeiron.advanced-uses.services-by-wsdl" title="38.12.1. Using Services by WSDL">Using Services by WSDL</a>.
+      </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.service.strikeiron.making-first-query"></a>38.10.4. Making Your First Query</h3></div></div></div>
+<p>
+        Once you have used the <code class="code">getService()</code> method to get a client
+        for a particular StrikeIron service, you can utilize that client
+        by calling methods on it just like any other PHP object.
+
+        </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Service/StrikeIron.php';
+
+$strikeIron = new Zend_Service_StrikeIron(array('username' =&gt; 'your-username',
+                                                'password' =&gt; 'your-password'));
+
+// Get a client for the Sales &amp; Use Tax Basic service
+$taxBasic = $strikeIron-&gt;getService(array('class' =&gt; 'SalesUseTaxBasic'));
+
+// Query tax rate for Ontario, Canada
+$rateInfo = $taxBasic-&gt;getTaxRateCanada(array('province' =&gt; 'ontario'));
+echo $rateInfo-&gt;province;
+echo $rateInfo-&gt;abbreviation;
+echo $rateInfo-&gt;GST;
+        </pre>
+<p>
+
+        In the example above, the <code class="code">getService()</code> method is used
+        to return a client to the
+        <a href="zend.service.strikeiron.bundled-services.html#zend.service.strikeiron.bundled-services.sales-use-tax-basic" title="38.11.3. Sales &amp; Use Tax Basic">Sales &amp; Use Tax Basic</a> service.
+        The client object is stored in <code class="code">$taxBasic</code>.
+      </p>
+<p>
+        The <code class="code">getTaxRateCanada()</code> method is then called on the
+        service. An associative array is used to supply keyword parameters to
+        the method. This is the way that all StrikeIron methods are called.
+      </p>
+<p>
+        The result from <code class="code">getTaxRateCanada()</code> is stored in
+        <code class="code">$rateInfo</code> and has properties like <code class="code">province</code>
+        and <code class="code">GST</code>.
+      </p>
+<p>
+        Many of the StrikeIron services are as simple to use as the example above.  See
+        <a href="zend.service.strikeiron.bundled-services.html" title="38.11. Zend_Service_StrikeIron: Bundled Services">Bundled Services</a>
+        for detailed information on three StrikeIron services.
+      </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.service.strikeiron.examining-results"></a>38.10.5. Examining Results</h3></div></div></div>
+<p>
+        When learning or debugging the StrikeIron services, it's often useful to dump the
+        result returned from a method call.  The result will always be an object that is an
+        instance of <code class="code">Zend_Service_StrikeIron_Decorator</code>.  This is a
+        small <a href="http://en.wikipedia.org/wiki/Decorator_pattern" target="_top">decorator</a>
+        object that wraps the results from the method call.
+      </p>
+<p>
+        The simplest way to examine a result from the service is to use the built-in
+        PHP functions like <a href="http://www.php.net/print_r" target="_top">print_r()</a>:
+
+        </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Service/StrikeIron.php';
+
+$strikeIron = new Zend_Service_StrikeIron(array('username' =&gt; 'your-username',
+                                                'password' =&gt; 'your-password'));
+
+$taxBasic = $strikeIron-&gt;getService(array('class' =&gt; 'SalesUseTaxBasic'));
+
+$rateInfo = $taxBasic-&gt;getTaxRateCanada(array('province' =&gt; 'ontario'));
+print_r($rateInfo);
+?&gt;
+
+
+Zend_Service_StrikeIron_Decorator Object
+(
+    [_name:protected] =&gt; GetTaxRateCanadaResult
+    [_object:protected] =&gt; stdClass Object
+        (
+            [abbreviation] =&gt; ON
+            [province] =&gt; ONTARIO
+            [GST] =&gt; 0.06
+            [PST] =&gt; 0.08
+            [total] =&gt; 0.14
+            [HST] =&gt; Y
+        )
+)
+        </pre>
+<p>
+      </p>
+<p>
+        In the output above, we see that the decorator (<code class="code">$rateInfo</code>) wraps an object
+        named <code class="code">GetTaxRateCanadaResult</code>, the result of the call to <code class="code">getTaxRateCanada()</code>.
+      </p>
+<p>
+        This means that <code class="code">$rateInfo</code> has public properties like <code class="code">abbreviation</code>,
+        <code class="code">province</code>, and <code class="code">GST</code>.  These are accessed like <code class="code">$rateInfo-&gt;province</code>.
+      </p>
+<div class="tip"><table border="0" summary="Tip">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.png"></td>
+<th align="left">Tip</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+          StrikeIron result properties sometimes start with an uppercase
+          letter such as <code class="code">Foo</code> or <code class="code">Bar</code> where most PHP object
+          properties normally start with a lowercase letter as in <code class="code">foo</code> or
+          <code class="code">bar</code>. The decorator will automatically do this inflection so you
+          may read a property <code class="code">Foo</code> as <code class="code">foo</code>.
+        </p></td></tr>
+</table></div>
+<p>
+        If you ever need to get the original object or its name out of the decorator, use the
+        respective methods <code class="code">getDecoratedObject()</code> and <code class="code">getDecoratedObjectName()</code>.
+      </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.service.strikeiron.handling-errors"></a>38.10.6. Handling Errors</h3></div></div></div>
+<p>
+        The previous examples are naive, i.e. no error handling was shown.
+        It's possible that StrikeIron will return a fault during a method
+        call. Events like bad account credentials or an expired subscription
+        can cause StrikeIron to raise a fault.
+      </p>
+<p>
+        An exception will be thrown when such a fault occurs. You should
+        anticipate and catch these exceptions when making method calls to the
+        service:
+
+        </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Service/StrikeIron.php';
+
+$strikeIron = new Zend_Service_StrikeIron(array('username' =&gt; 'your-username',
+                                                'password' =&gt; 'your-password'));
+
+$taxBasic = $strikeIron-&gt;getService(array('class' =&gt; 'SalesUseTaxBasic'));
+
+try {
+
+  $taxBasic-&gt;getTaxRateCanada(array('province' =&gt; 'ontario'));
+
+} catch (Zend_Service_StrikeIron_Exception $e) {
+
+  // error handling for events like connection
+  // problems or subscription errors
+
+}
+        </pre>
+<p>
+        The exceptions thrown will always be <code class="code">Zend_Service_StrikeIron_Exception</code>.
+      </p>
+<p>
+        It's important to understand the difference between exceptions and
+        normal failed method calls. Exceptions occur for
+        <span class="emphasis"><em>exceptional</em></span> conditions, such as
+        the network going down or your subscription expiring.
+        Failed method calls that are a common occurrence,
+        such as <code class="code">getTaxRateCanada()</code> not finding the
+        <code class="code">province</code> you supplied, will not result an in exception.
+      </p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+          Every time you make a method call to a StrikeIron service, you
+          should check the response object for validity and also be
+          prepared to catch an exception.
+        </p></td></tr>
+</table></div>
+<p></p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.service.strikeiron.checking-subscription"></a>38.10.7. Checking Your Subscription</h3></div></div></div>
+<p>
+        StrikeIron provides many different services.  Some of these are
+        free, some are available on a trial basis, and some are pay subscription only.
+        When using StrikeIron, it's important to be aware of your subscription
+        status for the services you are using and check it regularly.
+      </p>
+<p>
+        Each StrikeIron client returned by the <code class="code">getService</code> method
+        has the ability to check the subscription status for that service using
+        the <code class="code">getSubscriptionInfo()</code> method of the client:
+
+        </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Service/StrikeIron.php';
+
+// Get a client for the Sales &amp; Use Tax Basic service
+$strikeIron = new Zend_Service_StrikeIron(array('username' =&gt; 'your-username',
+                                                'password' =&gt; 'your-password'));
+
+$taxBasic = $strikeIron-&gt;getService(array('class =&gt; 'SalesUseTaxBasic'));
+
+// Check remaining hits for the Sales &amp; Use Tax Basic service
+$subscription = $taxBasic-&gt;getSubscriptionInfo();
+echo $subscription-&gt;remainingHits;
+        </pre>
+<p>
+      </p>
+<p>
+        The <code class="code">getSubscriptionInfo()</code> method will return an object
+        that typically has a <code class="code">remainingHits</code> property.  It's
+        important to check the status on each service that you are using.  If
+        a method call is made to StrikeIron after the remaining hits have been
+        used up, an exception will occur.
+      </p>
+<p>
+        Checking your subscription to a service does not use any remaining
+        hits to the service.  Each time any method call to the service is made,
+        the number of hits remaining will be cached and this cached value will
+        be returned by <code class="code">getSubscriptionInfo()</code> without connecting
+        to the service again.  To force <code class="code">getSubscriptionInfo()</code>
+        to override its cache and query the subscription information again, use
+        <code class="code">getSubscriptionInfo(true)</code>.
+      </p>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.service.slideshare.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.service.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.service.strikeiron.bundled-services.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">38.9. Introduction </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 38.11. Zend_Service_StrikeIron: Bundled Services</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

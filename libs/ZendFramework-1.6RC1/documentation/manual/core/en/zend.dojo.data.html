@@ -1,0 +1,379 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>12.2. Zend_Dojo_Data: dojo.data Envelopes</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="prev" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="next" href="zend.dojo.view.html" title="12.3. Dojo View Helpers">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.dojo.data.html#zend.dojo.data.usage" title="12.2.1. Zend_Dojo_Data Usage">
+<link rel="subsection" href="zend.dojo.data.html#zend.dojo.data.advanced" title="12.2.2. Advanced Use Cases">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">12.2. Zend_Dojo_Data: dojo.data Envelopes</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.dojo.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 12. Zend_Dojo</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.dojo.view.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.dojo.data"></a>12.2. Zend_Dojo_Data: dojo.data Envelopes</h2></div></div></div>
+<p>
+        Dojo provides data abstraction for data-enabled widgets via its
+        dojo.data component. This component provides the ability to attach a
+        datastore, provide some metadata regarding the identity field and
+        optionally a label field, and an API for querying, sorting, and
+        retrieving records and sets of records from the datastore.
+    </p>
+<p>
+        dojo.data is often used with XmlHttpRequest to pull dynamic data from
+        the server. The primary mechanism for this is to extend the
+        QueryReadStore to point at a URL and specify the query information; the
+        server side then returns data in the following JSON format:
+    </p>
+<pre class="programlisting">
+{ 
+    identifier: '&lt;name&gt;',
+    &lt;label: '&lt;label&gt;',&gt;
+    items: [
+        { name: '...', label: '...', someKey: '...' },
+        ...
+    ]
+}
+</pre>
+<p>
+        <code class="code">Zend_Dojo_Data</code> provides a simple interface for building
+        such structures programmatically, interacting with them, and serializing
+        them to an array or JSON.
+    </p>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.dojo.data.usage"></a>12.2.1. Zend_Dojo_Data Usage</h3></div></div></div>
+<p>
+            At its simplest, dojo.data requires that you provide the name of the
+            identifier field in each item, and a set of items (data). You
+            can either pass these in via the constructor, or via mutators:
+        </p>
+<div class="example">
+<a name="zend.dojo.data.usage.constructor"></a><p class="title"><b>Example 12.1. Zend_Dojo_Data initialization via constructor</b></p>
+<div class="example-contents"><pre class="programlisting">
+$data = new Zend_Dojo_Data('id', $items);
+</pre></div>
+</div>
+<br class="example-break"><div class="example">
+<a name="zend.dojo.data.usage.mutators"></a><p class="title"><b>Example 12.2. Zend_Dojo_Data initialization via mutators</b></p>
+<div class="example-contents"><pre class="programlisting">
+$data = new Zend_Dojo_Data();
+$data-&gt;setIdentifier('id')
+     -&gt;addItems($items);
+</pre></div>
+</div>
+<br class="example-break"><p>
+            You can also add a single item at a time, or append items, using
+            <code class="code">addItem()</code> and <code class="code">addItems()</code>.
+        </p>
+<div class="example">
+<a name="zend.dojo.data.usage.append"></a><p class="title"><b>Example 12.3. Appending data to Zend_Dojo_Data</b></p>
+<div class="example-contents"><pre class="programlisting">
+$data = new Zend_Dojo_Data($identifier, $items);
+$data-&gt;addItem($someItem);
+
+$data-&gt;addItems($someMoreItems);
+</pre></div>
+</div>
+<br class="example-break"><div class="note"><table border="0" summary="Note: Always use an identifier!">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Always use an identifier!</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+                Every dojo.data data store requires that the identifier column
+                be provided as metadata, and <code class="code">Zend_Dojo_Data</code> is no
+                different. In fact, if you attempt to add items without an
+                identifier, it will raise an exception.
+            </p></td></tr>
+</table></div>
+<p>
+            Individual items may be one of the following:
+        </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                Associative arrays
+            </p></li>
+<li><p>
+                Objects implementing a <code class="code">toArray()</code> method
+            </p></li>
+<li><p>
+                Any other objects (will serialize via get_object_vars())
+            </p></li>
+</ul></div>
+<p>
+            You can attach collections of the above items via
+            <code class="code">addItems()</code> or <code class="code">setItems()</code> (overwrites all
+            previously set items); when doing so, you may pass a single
+            argument:
+        </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                Arrays
+            </p></li>
+<li><p>
+                Objects implementing the <code class="code">Traversable</code> interface
+                (which includes the interfaces <code class="code">Iterator</code> and
+                <code class="code">ArrayAccess</code>).
+            </p></li>
+</ul></div>
+<p>
+            If you want to specify a field that will act as a label for the
+            item, call <code class="code">setLabel()</code>:
+        </p>
+<div class="example">
+<a name="zend.dojo.data.usage.label"></a><p class="title"><b>Example 12.4. Specifying a label field in Zend_Dojo_Data</b></p>
+<div class="example-contents"><pre class="programlisting">
+$data-&gt;setLabel('name');
+</pre></div>
+</div>
+<br class="example-break"><p>
+            Finally, you can also load a <code class="code">Zend_Dojo_Data</code> item from a
+            dojo.data JSON array, using the <code class="code">fromJson()</code> method.
+        </p>
+<div class="example">
+<a name="zend.dojo.data.usage.label"></a><p class="title"><b>Example 12.5. Populating Zend_Dojo_Data from JSON</b></p>
+<div class="example-contents"><pre class="programlisting">
+$data-&gt;fromJson($json);
+</pre></div>
+</div>
+<br class="example-break">
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.dojo.data.advanced"></a>12.2.2. Advanced Use Cases</h3></div></div></div>
+<p>
+            Besides acting as a serializable data container,
+            <code class="code">Zend_Dojo_Data</code> also provides the ability to manipulate
+            and traverse the data in a variety of ways.
+        </p>
+<p>
+            <code class="code">Zend_Dojo_Data</code> implements the interfaces
+            <code class="code">ArrayAccess</code>, <code class="code">Iterator</code>, and
+            <code class="code">Countable</code>. This means that you can use the data
+            collection almost as if it were an array.
+        </p>
+<p>
+            All items are referenced by the identifier field. Since identifiers
+            must be unique, you can then use the values of this field to pull
+            individual records. There are two ways to do this: via the
+            <code class="code">getItem()</code> method, or via array notation.
+        </p>
+<pre class="programlisting">
+// Using getItem():
+$item = $data-&gt;getItem('foo');
+
+// Or use array notation:
+$item = $data['foo'];
+</pre>
+<p>
+            If you know the identifier, you can use it to retrieve an item,
+            update it, delete it, create it, or test for it:
+        </p>
+<pre class="programlisting">
+// Update or create an item:
+$data['foo'] = array('title' =&gt; 'Foo', 'email' =&gt; 'foo@foo.com');
+
+// Delete an item:
+unset($data['foo']);
+
+// Test for an item:
+if (isset($data[foo])) {
+}
+</pre>
+<p>
+            You can loop over all items as well. Internally, all items are
+            stored as arrays.
+        </p>
+<pre class="programlisting">
+foreach ($data as $item) {
+    echo $item['title'] . ': ' . $item['description'] . "\n";
+}
+</pre>
+<p>
+            Or even count to see how many items you have:
+        </p>
+<pre class="programlisting">
+echo count($data), " items found!";
+</pre>
+<p>
+            Finally, as the class implements <code class="code">__toString()</code>, you can
+            also cast it to JSON simply by echoing it or casting to string:
+        </p>
+<pre class="programlisting">
+echo $data; // echo as JSON string
+
+$json = (string) $data; // cast to string == cast to JSON
+</pre>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.dojo.data.advanced.methods"></a>12.2.2.1. Available Methods</h4></div></div></div>
+<p>
+                Besides the methods necessary for implementing the interfaces
+                listed above, the following methods are available.
+            </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                    <code class="code">setItems($items)</code>: set multiple items at once,
+                    overwriting any items that were previously set in the
+                    object.  <code class="code">$items</code> should be an array or a
+                    <code class="code">Traversable</code> object.
+                </p></li>
+<li><p>
+                    <code class="code">setItem($item, $id = null)</code>: set an individual
+                    item, optionally passing an explicit identifier. Overwrites
+                    the item if previously in the collection. Valid items
+                    include associative arrays, objects implementing
+                    <code class="code">toArray()</code>, or any object with public
+                    properties.
+                </p></li>
+<li><p>
+                    <code class="code">addItem($item, $id = null)</code>: add an individual
+                    item, optionally passing an explicit identifier. Will raise
+                    an exception if the item already exists in the collection.
+                    Valid items include associative arrays, objects implementing
+                    <code class="code">toArray()</code>, or any object with public
+                    properties.
+                </p></li>
+<li><p>
+                    <code class="code">addItems($items)</code>: add multiple items at once,
+                    appending them to any current items. Will raise an exception
+                    if any of the new items have an identifier matching an
+                    identifier already in the collection. <code class="code">$items</code>
+                    should be an array or a <code class="code">Traversable</code> object.            
+                </p></li>
+<li><p>
+                    <code class="code">getItems()</code>: Retrieve all items as an array of
+                    arrays.
+                </p></li>
+<li><p>
+                    <code class="code">hasItem($id)</code>: determine whether an item with
+                    the given identifier exists in the collection.
+                </p></li>
+<li><p>
+                    <code class="code">getItem($id)</code>: retrieve an item with the given
+                    identifier from the collection; the item returned will be an
+                    associative array. If no item matches, a null value is
+                    returned.
+                </p></li>
+<li><p>
+                    <code class="code">removeItem($id)</code>: remove an item with the given
+                    identifier from the collection.
+                </p></li>
+<li><p>
+                    <code class="code">clearItems()</code>: remove all items from the
+                    collection.
+                </p></li>
+<li><p>
+                    <code class="code">setIdentifier($identifier)</code>: set the name of the
+                    field that represents the unique identifier for each item in
+                    the collection.
+                </p></li>
+<li><p>
+                    <code class="code">getIdentifier()</code>: retrieve the name of the
+                    identifier field.
+                </p></li>
+<li><p>
+                    <code class="code">setLabel($label)</code>: set the name of a field that
+                    should be used as a display label for an item.
+                </p></li>
+<li><p>
+                    <code class="code">getLabel()</code>: retrieve the label field name.
+                </p></li>
+<li><p>
+                    <code class="code">toArray()</code>: cast the object to an array. The
+                    array will contain minimally the keys 'identifier' and
+                    'items', and the key 'label' if a label field has been set
+                    in the object.
+                </p></li>
+<li><p>
+                    <code class="code">toJson()</code>: cast the object to a JSON
+                    representation.
+                </p></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.dojo.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.dojo.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.dojo.view.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">Chapter 12. Zend_Dojo </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 12.3. Dojo View Helpers</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

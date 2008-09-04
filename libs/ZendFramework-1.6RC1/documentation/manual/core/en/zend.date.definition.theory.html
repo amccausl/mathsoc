@@ -1,0 +1,152 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>9.2. Theory of Operation</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="prev" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="next" href="zend.date.basic.html" title="9.3. Basic Methods">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.date.definition.theory.html#zend.date.theory.internals" title="9.2.1. Internals">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">9.2. Theory of Operation</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.date.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 9. Zend_Date</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.date.basic.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.date.definition.theory"></a>9.2. Theory of Operation</h2></div></div></div>
+<p>
+        Why is there only one class <code class="code">Zend_Date</code> for handling dates and times in the Zend Framework?
+    </p>
+<p>
+        Many languages split the handling of times and calendar dates into two classes. However, the Zend Framework
+        strives for extreme simplicity, and forcing the developer to manage different objects with different methods for
+        times and dates becomes a burden in many situations. Since <code class="code">Zend_Date</code> methods support working with
+        ambiguous dates that might not include all parts (era, year, month, day, hour, minute, second, timezone),
+        developers enjoy the flexibility and ease of using the same class and the same methods to perform the same
+        manipulations (e.g. addition, subtraction, comparison, merging of date parts, etc.). Splitting the handling of
+        these date fragments into multiple classes would create complications when smooth interoperation is desired with
+        a small learning curve. A single class reduces code duplication for similar operations, without the need for a
+        complex inheritance hierarchy.
+    </p>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.date.theory.internals"></a>9.2.1. Internals</h3></div></div></div>
+<p>
+            </p>
+<div class="itemizedlist"><ul type="opencircle">
+<li style="list-style-type: circle">
+<p>
+                        UNIX Timestamp
+                    </p>
+<p>
+                        All dates and times, even ambiguous ones (e.g. no year), are represented internally as absolute
+                        moments in time, represented as a UNIX timestamp expressing the difference between the desired
+                        time and January 1st, 1970 00:00:00 GMT/UTC. This was only possible, because
+                        <code class="code">Zend_Date</code> is not limited to UNIX timestamps nor integer values. The BCMath
+                        extension is required to support extremely large dates outside of the range Fri, 13 Dec 1901
+                        20:45:54 GMT to Tue, 19 Jan 2038 03:14:07 GMT.  Additional, tiny math errors may arise due to
+                        the inherent limitations of float data types and rounding, unless using the BCMath extension.
+                    </p>
+</li>
+<li style="list-style-type: circle">
+<p>
+                        Date parts as timestamp offsets
+                    </p>
+<p>
+                        Thus, an instance object representing three hours would be expressed as three hours after
+                        January 1st, 1970 00:00:00 GMT/UTC -i.e. 0 + 3 * 60 * 60 = 10800.
+                    </p>
+</li>
+<li style="list-style-type: circle">
+<p>
+                        PHP functions
+                    </p>
+<p>
+                        Where possible, <code class="code">Zend_Date</code> usually uses PHP functions to improve performance.
+                    </p>
+</li>
+</ul></div>
+<p>
+        </p>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.date.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.date.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.date.basic.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">Chapter 9. Zend_Date </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 9.3. Basic Methods</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

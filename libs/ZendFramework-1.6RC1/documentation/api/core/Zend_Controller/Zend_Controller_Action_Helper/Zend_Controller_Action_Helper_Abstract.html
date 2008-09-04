@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Controller_Action_Helper_Abstract</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/AbstractClass_logo.png"
+														alt="Abstract Class"
+														title="Abstract Class"
+														style="vertical-align: middle"> Zend_Controller_Action_Helper_Abstract</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">usedby:</span> <a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_Json.html">Zend_Controller_Action_Helper_Json</a></li>
+				<li><span class="field">usedby:</span> <a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_FlashMessenger.html">Zend_Controller_Action_Helper_FlashMessenger</a></li>
+				<li><span class="field">usedby:</span> <a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a></li>
+				<li><span class="field">usedby:</span> <a href="../../Zend_Controller/Zend_Controller_Action/Zend_Layout_Controller_Action_Helper_Layout.html">Zend_Layout_Controller_Action_Helper_Layout</a></li>
+				<li><span class="field">usedby:</span> <a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_AjaxContext.html">Zend_Controller_Action_Helper_AjaxContext</a></li>
+				<li><span class="field">usedby:</span> <a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_Url.html">Zend_Controller_Action_Helper_Url</a></li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+				<li><span class="field">usedby:</span> <a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ActionStack.html">Zend_Controller_Action_Helper_ActionStack</a></li>
+				<li><span class="field">usedby:</span> <a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_AutoComplete_Abstract.html">Zend_Controller_Action_Helper_AutoComplete_Abstract</a></li>
+				<li><span class="field">usedby:</span> <a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ContextSwitch.html">Zend_Controller_Action_Helper_ContextSwitch</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Controller---Action---Helper---Abstract.php.html">/Controller/Action/Helper/Abstract.php</a> (line <span class="field">41</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_Redirector.html">Zend_Controller_Action_Helper_Redirector</a>
+					</td>
+					<td>
+											
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ActionStack.html">Zend_Controller_Action_Helper_ActionStack</a>
+					</td>
+					<td>
+											Add to action stack
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/AbstractClass.png"
+								 alt="Abstract class"
+								 title="Abstract class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_AutoComplete_Abstract.html">Zend_Controller_Action_Helper_AutoComplete_Abstract</a>
+					</td>
+					<td>
+											Create and send autocompletion lists
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_Url.html">Zend_Controller_Action_Helper_Url</a>
+					</td>
+					<td>
+											Helper for creating URLs for redirects and other tasks
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ContextSwitch.html">Zend_Controller_Action_Helper_ContextSwitch</a>
+					</td>
+					<td>
+											Simplify context switching based on requested format
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_Json.html">Zend_Controller_Action_Helper_Json</a>
+					</td>
+					<td>
+											Simplify AJAX context switching based on requested format
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_FlashMessenger.html">Zend_Controller_Action_Helper_FlashMessenger</a>
+					</td>
+					<td>
+											Flash Messenger - implement session-based messages
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html">Zend_Controller_Action_Helper_ViewRenderer</a>
+					</td>
+					<td>
+											View script integration
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Controller/Zend_Controller_Action/Zend_Layout_Controller_Action_Helper_Layout.html">Zend_Layout_Controller_Action_Helper_Layout</a>
+					</td>
+					<td>
+											Helper for interacting with Zend_Layout objects
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../../Zend_Controller/Zend_Controller_Action.html">Zend_Controller_Action</a></span>
+					<a href="#$_actionController" title="details" class="var-name">$_actionController</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$_frontController" title="details" class="var-name">$_frontController</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																							
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action.html">Zend_Controller_Action</a></span>
+										<a href="#getActionController" title="details" class="method-name">getActionController</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+										<a href="#getFrontController" title="details" class="method-name">getFrontController</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getName" title="details" class="method-name">getName</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Request_Abstract.html">Zend_Controller_Request_Abstract</a></span>
+										<a href="#getRequest" title="details" class="method-name">getRequest</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html">Zend_Controller_Response_Abstract</a></span>
+										<a href="#getResponse" title="details" class="method-name">getResponse</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#init" title="details" class="method-name">init</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#postDispatch" title="details" class="method-name">postDispatch</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#preDispatch" title="details" class="method-name">preDispatch</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">Zend_Controller_ActionHelper_Abstract</span>
+										<a href="#setActionController" title="details" class="method-name">setActionController</a>
+											([<span class="var-type"><a href="../../Zend_Controller/Zend_Controller_Action.html">Zend_Controller_Action</a></span>&nbsp;<span class="var-name">$actionController</span> = <span class="var-default">null</span>])
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_actionController" id="$_actionController"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../../Zend_Controller/Zend_Controller_Action.html">Zend_Controller_Action</a></span>
+			<span class="var-name">$_actionController</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">48</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">$_actionController</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_frontController" id="$_frontController"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_frontController</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">53</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html#var$_frontController">Zend_Controller_Action_Helper_ViewRenderer::$_frontController</a>
+								: Front controller instance
+							</li>
+					<li>
+				<a href="../../Zend_Controller/Zend_Controller_Action/Zend_Layout_Controller_Action_Helper_Layout.html#var$_frontController">Zend_Layout_Controller_Action_Helper_Layout::$_frontController</a>
+							</li>
+				</ul>
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodgetActionController" id="getActionController"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getActionController</span> (line <span class="line-number">72</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve current action controller</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Action.html">Zend_Controller_Action</a></span>
+		<span class="method-name">
+			getActionController
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetFrontController" id="getFrontController"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getFrontController</span> (line <span class="line-number">82</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve front controller instance</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+		<span class="method-name">
+			getFrontController
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html#methodgetFrontController">Zend_Controller_Action_Helper_ViewRenderer::getFrontController()</a>
+								: Retrieve front controller instance
+							</li>
+					<li>
+				<a href="../../Zend_Controller/Zend_Controller_Action/Zend_Layout_Controller_Action_Helper_Layout.html#methodgetFrontController">Zend_Layout_Controller_Action_Helper_Layout::getFrontController()</a>
+								: Get front controller instance
+							</li>
+				</ul>
+	</div>
+<a name="methodgetName" id="getName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getName</span> (line <span class="line-number">153</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getName()</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getName
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetRequest" id="getRequest"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getRequest</span> (line <span class="line-number">123</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getRequest() -</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Controller/Zend_Controller_Request_Abstract.html">Zend_Controller_Request_Abstract</a></span>
+		<span class="method-name">
+			getRequest
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetResponse" id="getResponse"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getResponse</span> (line <span class="line-number">138</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getResponse() -</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html">Zend_Controller_Response_Abstract</a></span>
+		<span class="method-name">
+			getResponse
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodinit" id="init"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">init</span> (line <span class="line-number">96</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Hook into action controller initialization</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			init
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html#methodinit">Zend_Controller_Action_Helper_ViewRenderer::init()</a>
+								: init - initialize view
+							</li>
+					<li>
+				<a href="../../Zend_Controller/Zend_Controller_Action/Zend_Layout_Controller_Action_Helper_Layout.html#methodinit">Zend_Layout_Controller_Action_Helper_Layout::init()</a>
+							</li>
+				</ul>
+	</div>
+<a name="methodpostDispatch" id="postDispatch"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">postDispatch</span> (line <span class="line-number">114</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Hook into action controller postDispatch() workflow</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			postDispatch
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ContextSwitch.html#methodpostDispatch">Zend_Controller_Action_Helper_ContextSwitch::postDispatch()</a>
+								: Post dispatch processing
+							</li>
+					<li>
+				<a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_FlashMessenger.html#methodpostDispatch">Zend_Controller_Action_Helper_FlashMessenger::postDispatch()</a>
+								: postDispatch() - runs after action is dispatched, in this  case, it is resetting the namespace in case we have forwarded to a different  action, Flashmessage will be 'clean' (default namespace)
+							</li>
+					<li>
+				<a href="../../Zend_Controller/Zend_Controller_Action_Helper/Zend_Controller_Action_Helper_ViewRenderer.html#methodpostDispatch">Zend_Controller_Action_Helper_ViewRenderer::postDispatch()</a>
+								: postDispatch - auto render a view
+							</li>
+					<li>
+				<a href="../../Zend_Controller/Zend_Controller_Action/Zend_Layout_Controller_Action_Helper_Layout.html#methodpostDispatch">Zend_Layout_Controller_Action_Helper_Layout::postDispatch()</a>
+								: Mark Action Controller (according to this plugin) as Running successfully
+							</li>
+				</ul>
+	</div>
+<a name="methodpreDispatch" id="preDispatch"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">preDispatch</span> (line <span class="line-number">105</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Hook into action controller preDispatch() workflow</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			preDispatch
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodsetActionController" id="setActionController"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setActionController</span> (line <span class="line-number">61</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">setActionController()</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Zend_Controller_ActionHelper_Abstract</span>
+		<span class="method-name">
+			setActionController
+		</span>
+					([<span class="var-type"><a href="../../Zend_Controller/Zend_Controller_Action.html">Zend_Controller_Action</a></span>&nbsp;<span class="var-name">$actionController</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_Controller/Zend_Controller_Action.html">Zend_Controller_Action</a></span>
+				<span class="var-name">$actionController</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 02:59:25 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

@@ -1,0 +1,217 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>3.6. Open ID Authentication</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="prev" href="zend.auth.adapter.ldap.html" title="3.5. LDAP Authentication">
+<link rel="next" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.auth.adapter.openid.html#zend.auth.adapter.openid.introduction" title="3.6.1. Introduction">
+<link rel="subsection" href="zend.auth.adapter.openid.html#zend.auth.adapter.openid.specifics" title="3.6.2. Specifics">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">3.6. Open ID Authentication</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.auth.adapter.ldap.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 3. Zend_Auth</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.cache.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.auth.adapter.openid"></a>3.6. Open ID Authentication</h2></div></div></div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.auth.adapter.openid.introduction"></a>3.6.1. Introduction</h3></div></div></div>
+<p>
+            <code class="code">Zend_Auth_Adapter_OpenId</code> allows authenticate user using
+            remote OpenID server. Such authentication process assumes that user
+            submits to web application only their OpenID identity. Then they are
+            redirected to their OpenID providers to prove the identity ownership
+            using password or some other method. This password is never known
+            to local web application.
+        </p>
+<p>
+            The OpenID identity is just an HTTP URL that points to some web page
+            with suitable information about the user and special tags which
+            describes which server to use and which identity to submit there.
+            You can read more about OpenID at
+            <a href="http://www.openid.net/" target="_top">OpenID official site</a>.
+        </p>
+<p>
+            The <code class="code">Zend_Auth_Adapter_OpenId</code> class is a wrapper on top
+            of <code class="code">Zend_OpenId_Consumer</code> component which implements the
+            OpenID authentication protocol itself.
+        </p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+                <code class="code">Zend_OpenId</code> takes advantage of the <a href="http://php.net/gmp" target="_top">GMP extension</a>,
+                where available. Consider enabling the GMP extension for better performance when using
+                <code class="code">Zend_Auth_Adapter_OpenId</code>.
+            </p></td></tr>
+</table></div>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.auth.adapter.openid.specifics"></a>3.6.2. Specifics</h3></div></div></div>
+<p>
+            As any other <code class="code">Zend_Auth</code> adapter the <code class="code">Zend_Auth_Adapter_OpenId</code>
+            class implements <code class="code">Zend_Auth_Adapter_Interface</code>, which
+            defines one method - <code class="code">authenticate()</code>. This method performs
+            the authentication itself, but the object must be prepared prior to
+            calling it. Such adapter preparation includes setting up OpenID
+            identity and some other <code class="code">Zend_OpenId</code> specific options.
+        </p>
+<p>
+            However in opposite to other <code class="code">Zend_Auth</code> adapters it
+            performs authentication on external server and it is done in two
+            separate HTTP requests. So the <code class="code">Zend_Auth_Adapter_OpenId::authenticate()</code>
+            must be called twice. First time the method won't return, but will
+            redirect user to their OpenID server. Then after authentication on
+            server they will be redirected back and the script for this second
+            request must call <code class="code">Zend_Auth_Adapter_OpenId::authenticate()</code>
+            again to verify signature which come with redirected request from the
+            server and complete the authentication process. This time the
+            method will return <code class="code">Zend_Auth_Result</code> object as expected.
+        </p>
+<p>
+            The following example shows the usage of <code class="code">Zend_Auth_Adapter_OpenId</code>.
+            As was said before the <code class="code">Zend_Auth_Adapter_OpenId::authenticate()</code>
+            is called two times. First time - after submitting of HTML form when
+            <code class="code">$_POST['openid_action']</code> is set to <code class="code">"login"</code>,
+            and the second time after HTTP redirection from OpenID server when
+            <code class="code">$_GET['openid_mode']</code> or <code class="code">$_POST['openid_mode']</code>
+            is set.
+        </p>
+<pre class="programlisting">&lt;?php
+require_once "Zend/Auth.php";
+require_once "Zend/Auth/Adapter/OpenId.php";
+
+$status = "";
+$auth = Zend_Auth::getInstance();
+if ((isset($_POST['openid_action']) &amp;&amp;
+     $_POST['openid_action'] == "login" &amp;&amp;
+     !empty($_POST['openid_identifier'])) ||
+    isset($_GET['openid_mode']) ||
+    isset($_POST['openid_mode'])) {
+    $result = $auth-&gt;authenticate(
+        new Zend_Auth_Adapter_OpenId(@$_POST['openid_identifier']));
+    if ($result-&gt;isValid()) {
+        $status = "You are logged-in as " . $auth-&gt;getIdentity() . "&lt;br&gt;\n";
+    } else {
+        $auth-&gt;clearIdentity();
+        foreach ($result-&gt;getMessages() as $message) {
+            $status .= "$message&lt;br&gt;\n";
+        }
+    }
+} else if ($auth-&gt;hasIdentity()) {
+    if (isset($_POST['openid_action']) &amp;&amp;
+        $_POST['openid_action'] == "logout") {
+        $auth-&gt;clearIdentity();
+    } else {
+        $status = "You are logged-in as " . $auth-&gt;getIdentity() . "&lt;br&gt;\n";
+    }
+}
+?&gt;
+&lt;html&gt;&lt;body&gt;
+&lt;?php echo htmlspecialchars($status);?&gt;
+&lt;form method="post"&gt;&lt;fieldset&gt;
+&lt;legend&gt;OpenID Login&lt;/legend&gt;
+&lt;input type="text" name="openid_identifier" value=""&gt;
+&lt;input type="submit" name="openid_action" value="login"&gt;
+&lt;input type="submit" name="openid_action" value="logout"&gt;
+&lt;/fieldset&gt;&lt;/form&gt;&lt;/body&gt;&lt;/html&gt;
+*/
+        </pre>
+<p>
+            It is allowed customize the OpenID authentication process with:
+            receiving redirection from the OpenID server on separate page,
+            specifying the "root" of web site. In this case, using custom
+            <code class="code">Zend_OpenId_Consumer_Storage</code> or custom
+            <code class="code">Zend_Controller_Response</code>. It is also possible to use
+            Simple Registration Extension to retrieve information about
+            user from the OpenID server. All these possibilities described
+            in more details in <code class="code">Zend_OpenId_Consumer</code>
+            reference.
+        </p>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.auth.adapter.ldap.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.auth.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.cache.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">3.5. LDAP Authentication </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> Chapter 4. Zend_Cache</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

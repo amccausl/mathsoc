@@ -1,0 +1,273 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>24.2. Loading Plugins</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="prev" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="next" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.loader.pluginloader.html#zend.loader.pluginloader.usage" title="24.2.1. Basic Use Case">
+<link rel="subsection" href="zend.loader.pluginloader.html#zend.loader.pluginloader.paths" title="24.2.2. Manipulating Plugin Paths">
+<link rel="subsection" href="zend.loader.pluginloader.html#zend.loader.pluginloader.checks" title="24.2.3. Testing for Plugins and Retrieving Class Names">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">24.2. Loading Plugins</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.loader.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 24. Zend_Loader</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.locale.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.loader.pluginloader"></a>24.2. Loading Plugins</h2></div></div></div>
+<p>
+        A number of Zend Framework components are pluggable, and allow loading
+        of dynamic functionality by specifying a class prefix and path to class
+        files that are not necessarily on the <code class="code">include_path</code> or do
+        not necessarily follow traditional naming conventions.
+        <code class="code">Zend_Loader_PluginLoader</code> provides common functionality for
+        this process.
+    </p>
+<p>
+        The basic usage of the <code class="code">PluginLoader</code> follows Zend Framework
+        naming conventions of one class per file, using the underscore as a
+        directory separator when resolving paths. It allows passing an optional
+        class prefix to prepend when determining if a particular plugin class is
+        loaded. Additionally, paths are searched in LIFO order. Due to the LIFO
+        search and the class prefixes, this allows you to namespace your
+        plugins, and thus override plugins from paths registered earlier. 
+    </p>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.loader.pluginloader.usage"></a>24.2.1. Basic Use Case</h3></div></div></div>
+<p>
+            First, let's assume the following directory structure and class
+            files, and that the toplevel directory and library directory are on
+            the include_path:
+        </p>
+<pre class="programlisting">
+application/
+    modules/
+        foo/
+            views/
+                helpers/
+                    FormLabel.php
+                    FormSubmit.php
+        bar/
+            views/
+                helpers/
+                    FormSubmit.php
+library/
+    Zend/
+        View/
+            Helper/
+                FormLabel.php
+                FormSubmit.php
+                FormText.php
+</pre>
+<p>
+            Now, let's create a plugin loader to address the various view
+            helper repositories available:
+        </p>
+<pre class="programlisting">&lt;?php
+$loader = new Zend_Loader_PluginLoader();
+$loader-&gt;addPrefixPath('Zend_View_Helper', 'Zend/View/Helper/')
+       -&gt;addPrefixPath('Foo_View_Helper', 'application/modules/foo/views/helpers')
+       -&gt;addPrefixPath('Bar_View_Helper', 'application/modules/bar/views/helpers');
+?&gt;</pre>
+<p>
+            We can then load a given view helper using just the portion of the
+            class name following the prefixes as defined when adding the paths:
+        </p>
+<pre class="programlisting">&lt;?php
+// load 'FormText' helper:
+$formTextClass = $loader-&gt;load('FormText'); // 'Zend_View_Helper_FormText';
+
+// load 'FormLabel' helper:
+$formLabelClass = $loader-&gt;load('FormLabel'); // 'Foo_View_Helper_FormLabel' 
+
+// load 'FormSubmit' helper:
+$formSubmitClass = $loader-&gt;load('FormSubmit'); // 'Bar_View_Helper_FormSubmit' 
+?&gt;</pre>
+<p>
+            Once the class is loaded, we can now instantiate it.
+        </p>
+<div class="note"><table border="0" summary="Note: Multiple paths may be registered for a given prefix">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Multiple paths may be registered for a given prefix</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+                In some cases, you may use the same prefix for multiple paths.
+                <code class="code">Zend_Loader_PluginLoader</code> actually registers an
+                array of paths for each given prefix; the last one registered
+                will be the first one checked. This is particularly useful if
+                you are utilizing incubator components.
+            </p></td></tr>
+</table></div>
+<div class="note"><table border="0" summary="Note: Paths may be defined at instantiation">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Paths may be defined at instantiation</th>
+</tr>
+<tr><td align="left" valign="top">
+<p>
+                You may optionally provide an array of prefix / path pairs (or
+                prefix / paths -- plural paths are allowed) as a parameter to
+                the constructor:
+            </p>
+<pre class="programlisting">&lt;?php
+$loader = new Zend_Loader_PluginLoader(array(
+    'Zend_View_Helper' =&gt; 'Zend/View/Helper/',
+    'Foo_View_Helper'  =&gt; 'application/modules/foo/views/helpers',
+    'Bar_View_Helper'  =&gt; 'application/modules/bar/views/helpers'
+));
+?&gt;</pre>
+</td></tr>
+</table></div>
+<p>
+            <code class="code">Zend_Loader_PluginLoader</code> also optionally allows you to
+            share plugins across plugin-aware objects, without needing to
+            utilize a singleton instance. It does so via a static registry.
+            Indicate the registry name at instantiation as the second parameter
+            to the constructor:
+        </p>
+<pre class="programlisting">&lt;?php
+// Store plugins in static registry 'foobar':
+$loader = new Zend_Loader_PluginLoader(array(), 'foobar');
+?&gt;</pre>
+<p>
+            Other components that instantiate the <code class="code">PluginLoader</code>
+            using the same registry name will then have access to already loaded
+            paths and plugins.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.loader.pluginloader.paths"></a>24.2.2. Manipulating Plugin Paths</h3></div></div></div>
+<p>
+            The example in the previous section shows how to add paths to a
+            plugin loader. What if you want to determine the paths already
+            loaded, or remove one or more?
+        </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                    <code class="code">getPaths($prefix = null)</code> returns all paths as
+                    prefix / path pairs if no <code class="code">$prefix</code> is provided,
+                    or just the paths registered for a given prefix if a
+                    <code class="code">$prefix</code> is present.
+            </p></li>
+<li><p>
+                    <code class="code">clearPaths($prefix = null)</code> will clear all
+                    registered paths by default, or only those associated with a
+                    given prefix, if the <code class="code">$prefix</code> is provided and
+                    present in the stack.
+            </p></li>
+<li><p>
+                    <code class="code">removePrefixPath($prefix, $path = null)</code> allows
+                    you to selectively remove a specific path associated with a
+                    given prefix. If no <code class="code">$path</code> is provided, all
+                    paths for that prefix are removed. If a <code class="code">$path</code>
+                    is provided and exists for that prefix, only that path will
+                    be removed.
+            </p></li>
+</ul></div>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.loader.pluginloader.checks"></a>24.2.3. Testing for Plugins and Retrieving Class Names</h3></div></div></div>
+<p>
+            Sometimes you simply want to determine if a plugin class has been
+            loaded before you perform an action. <code class="code">isLoaded()</code> takes a
+            plugin name, and returns the status.
+        </p>
+<p>
+            Another common use case for the <code class="code">PluginLoader</code> is to
+            determine fully qualified plugin class names of loaded classes;
+            <code class="code">getClassName()</code> provides this functionality.  Typically,
+            this would be used in conjunction with <code class="code">isLoaded()</code>:
+        </p>
+<pre class="programlisting">&lt;?php
+if ($loader-&gt;isLoaded('Adapter')) {
+    $class   = $loader-&gt;getClassName('Adapter');
+    $adapter = call_user_func(array($class, 'getInstance'));
+}
+?&gt;</pre>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.loader.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.loader.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.locale.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">Chapter 24. Zend_Loader </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> Chapter 25. Zend_Locale</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

@@ -1,0 +1,1977 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Controller_Front</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_Controller_Front</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Controller---Front.php.html">/Controller/Front.php</a> (line <span class="field">52</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																				<div class="var-title">
+					<img src="../media/images/StaticVariable.png" alt=" " />
+					static <span class="var-type"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+					<a href="#$_instance" title="details" class="var-name">$_instance</a>
+				</div>
+																																																																																				<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_baseUrl" title="details" class="var-name">$_baseUrl</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">string|array</span>
+					<a href="#$_controllerDir" title="details" class="var-name">$_controllerDir</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../Zend_Controller/Dispatcher/Zend_Controller_Dispatcher_Interface.html">Zend_Controller_Dispatcher_Interface</a></span>
+					<a href="#$_dispatcher" title="details" class="var-name">$_dispatcher</a>
+				</div>
+																								<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$_invokeParams" title="details" class="var-name">$_invokeParams</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_moduleControllerDirectoryName" title="details" class="var-name">$_moduleControllerDirectoryName</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../Zend_Controller/Plugins/Zend_Controller_Plugin_Broker.html">Zend_Controller_Plugin_Broker</a></span>
+					<a href="#$_plugins" title="details" class="var-name">$_plugins</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../Zend_Controller/Zend_Controller_Request_Abstract.html">Zend_Controller_Request_Abstract</a></span>
+					<a href="#$_request" title="details" class="var-name">$_request</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../Zend_Controller/Response/Zend_Controller_Response_Abstract.html">Zend_Controller_Response_Abstract</a></span>
+					<a href="#$_response" title="details" class="var-name">$_response</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">boolean</span>
+					<a href="#$_returnResponse" title="details" class="var-name">$_returnResponse</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../Zend_Controller/Router/Zend_Controller_Router_Interface.html">Zend_Controller_Router_Interface</a></span>
+					<a href="#$_router" title="details" class="var-name">$_router</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">boolean</span>
+					<a href="#$_throwExceptions" title="details" class="var-name">$_throwExceptions</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																			
+				<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+					static 						<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+										<a href="#getInstance" title="details" class="method-name">getInstance</a>
+										()
+									</div>
+																																																																																																																							
+				<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+					static 						<span class="method-result">void</span>
+										<a href="#run" title="details" class="method-name">run</a>
+											(<span class="var-type">string|array</span>&nbsp;<span class="var-name">$controllerDirectory</span>)
+									</div>
+																																																																																																																																			
+				<div class="method-definition">
+					<img src="../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+										<a href="#addControllerDirectory" title="details" class="method-name">addControllerDirectory</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$module</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+										<a href="#addModuleDirectory" title="details" class="method-name">addModuleDirectory</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+										<a href="#clearParams" title="details" class="method-name">clearParams</a>
+											([<span class="var-type">null|string|array</span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void|<a href="../Zend_Controller/Response/Zend_Controller_Response_Abstract.html">Zend_Controller_Response_Abstract</a></span>
+										<a href="#dispatch" title="details" class="method-name">dispatch</a>
+											([<span class="var-type"><a href="../Zend_Controller/Zend_Controller_Request_Abstract.html">Zend_Controller_Request_Abstract</a></span>&nbsp;<span class="var-name">$request</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../Zend_Controller/Response/Zend_Controller_Response_Abstract.html">Zend_Controller_Response_Abstract</a></span>&nbsp;<span class="var-name">$response</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getBaseUrl" title="details" class="method-name">getBaseUrl</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">array|string|null</span>
+										<a href="#getControllerDirectory" title="details" class="method-name">getControllerDirectory</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getDefaultAction" title="details" class="method-name">getDefaultAction</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getDefaultControllerName" title="details" class="method-name">getDefaultControllerName</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getDefaultModule" title="details" class="method-name">getDefaultModule</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Controller/Dispatcher/Zend_Controller_Dispatcher_Interface.html">Zend_Controller_Dispatcher_Interface</a></span>
+										<a href="#getDispatcher" title="details" class="method-name">getDispatcher</a>
+										()
+									</div>
+																							
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getModuleControllerDirectoryName" title="details" class="method-name">getModuleControllerDirectoryName</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#getParam" title="details" class="method-name">getParam</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#getParams" title="details" class="method-name">getParams</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">false|<a href="../Zend_Controller/Plugins/Zend_Controller_Plugin_Abstract.html">Zend_Controller_Plugin_Abstract</a>|array</span>
+										<a href="#getPlugin" title="details" class="method-name">getPlugin</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#getPlugins" title="details" class="method-name">getPlugins</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">null|<a href="../Zend_Controller/Zend_Controller_Request_Abstract.html">Zend_Controller_Request_Abstract</a></span>
+										<a href="#getRequest" title="details" class="method-name">getRequest</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">null|<a href="../Zend_Controller/Response/Zend_Controller_Response_Abstract.html">Zend_Controller_Response_Abstract</a></span>
+										<a href="#getResponse" title="details" class="method-name">getResponse</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Controller/Router/Zend_Controller_Router_Interface.html">Zend_Controller_Router_Interface</a></span>
+										<a href="#getRouter" title="details" class="method-name">getRouter</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#hasPlugin" title="details" class="method-name">hasPlugin</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+										<a href="#registerPlugin" title="details" class="method-name">registerPlugin</a>
+											(<span class="var-type"><a href="../Zend_Controller/Plugins/Zend_Controller_Plugin_Abstract.html">Zend_Controller_Plugin_Abstract</a></span>&nbsp;<span class="var-name">$plugin</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$stackIndex</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#removeControllerDirectory" title="details" class="method-name">removeControllerDirectory</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$module</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#resetInstance" title="details" class="method-name">resetInstance</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean|<a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+										<a href="#returnResponse" title="details" class="method-name">returnResponse</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$flag</span> = <span class="var-default">null</span>])
+									</div>
+																							
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+										<a href="#setBaseUrl" title="details" class="method-name">setBaseUrl</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$base</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+										<a href="#setControllerDirectory" title="details" class="method-name">setControllerDirectory</a>
+											(<span class="var-type">string|array</span>&nbsp;<span class="var-name">$directory</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$module</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+										<a href="#setDefaultAction" title="details" class="method-name">setDefaultAction</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$action</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+										<a href="#setDefaultControllerName" title="details" class="method-name">setDefaultControllerName</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$controller</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+										<a href="#setDefaultModule" title="details" class="method-name">setDefaultModule</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$module</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+										<a href="#setDispatcher" title="details" class="method-name">setDispatcher</a>
+											(<span class="var-type"><a href="../Zend_Controller/Dispatcher/Zend_Controller_Dispatcher_Interface.html">Zend_Controller_Dispatcher_Interface</a></span>&nbsp;<span class="var-name">$dispatcher</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+										<a href="#setModuleControllerDirectoryName" title="details" class="method-name">setModuleControllerDirectoryName</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">'controllers'</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+										<a href="#setParam" title="details" class="method-name">setParam</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+										<a href="#setParams" title="details" class="method-name">setParams</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+										<a href="#setRequest" title="details" class="method-name">setRequest</a>
+											(<span class="var-type">string|<a href="../Zend_Controller/Zend_Controller_Request_Abstract.html">Zend_Controller_Request_Abstract</a></span>&nbsp;<span class="var-name">$request</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+										<a href="#setResponse" title="details" class="method-name">setResponse</a>
+											(<span class="var-type">string|<a href="../Zend_Controller/Response/Zend_Controller_Response_Abstract.html">Zend_Controller_Response_Abstract</a></span>&nbsp;<span class="var-name">$response</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+										<a href="#setRouter" title="details" class="method-name">setRouter</a>
+											(<span class="var-type">string|<a href="../Zend_Controller/Router/Zend_Controller_Router_Interface.html">Zend_Controller_Router_Interface</a></span>&nbsp;<span class="var-name">$router</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean|<a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+										<a href="#throwExceptions" title="details" class="method-name">throwExceptions</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$flag</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+										<a href="#unregisterPlugin" title="details" class="method-name">unregisterPlugin</a>
+											(<span class="var-type">string|<a href="../Zend_Controller/Plugins/Zend_Controller_Plugin_Abstract.html">Zend_Controller_Plugin_Abstract</a></span>&nbsp;<span class="var-name">$plugin</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$_instance" id="$_instance"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/StaticVariable.png" />
+		<span class="var-title">
+			static <span class="var-type"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+			<span class="var-name">$_instance</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">81</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Singleton instance</p>
+<p class="description"><p>Marked only as protected to allow extension of the class. To extend,  simply override <a href="../Zend_Controller/Zend_Controller_Front.html#methodgetInstance">getInstance()</a>.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+
+<a name="var$_baseUrl" id="$_baseUrl"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_baseUrl</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">58</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Base URL</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_controllerDir" id="$_controllerDir"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string|array</span>
+			<span class="var-name">$_controllerDir</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">65</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Directory|ies where controllers are stored</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_dispatcher" id="$_dispatcher"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../Zend_Controller/Dispatcher/Zend_Controller_Dispatcher_Interface.html">Zend_Controller_Dispatcher_Interface</a></span>
+			<span class="var-name">$_dispatcher</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">71</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Instance of Zend_Controller_Dispatcher_Interface</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_invokeParams" id="$_invokeParams"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_invokeParams</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number">88</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Array of invocation parameters to use when instantiating action</p>
+<p class="description"><p>controllers</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_moduleControllerDirectoryName" id="$_moduleControllerDirectoryName"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_moduleControllerDirectoryName</span>
+			 = <span class="var-default"> 'controllers'</span>			(line <span class="line-number">94</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Subdirectory within a module containing controllers; defaults to 'controllers'</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_plugins" id="$_plugins"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../Zend_Controller/Plugins/Zend_Controller_Plugin_Broker.html">Zend_Controller_Plugin_Broker</a></span>
+			<span class="var-name">$_plugins</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">100</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Instance of Zend_Controller_Plugin_Broker</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_request" id="$_request"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../Zend_Controller/Zend_Controller_Request_Abstract.html">Zend_Controller_Request_Abstract</a></span>
+			<span class="var-name">$_request</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">106</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Instance of Zend_Controller_Request_Abstract</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_response" id="$_response"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../Zend_Controller/Response/Zend_Controller_Response_Abstract.html">Zend_Controller_Response_Abstract</a></span>
+			<span class="var-name">$_response</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">112</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Instance of Zend_Controller_Response_Abstract</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_returnResponse" id="$_returnResponse"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$_returnResponse</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number">119</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Whether or not to return the response prior to rendering output while in  dispatch(); default is to send headers and render output.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_router" id="$_router"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../Zend_Controller/Router/Zend_Controller_Router_Interface.html">Zend_Controller_Router_Interface</a></span>
+			<span class="var-name">$_router</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">125</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Instance of Zend_Controller_Router_Interface</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_throwExceptions" id="$_throwExceptions"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$_throwExceptions</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number">132</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Whether or not exceptions encountered in dispatch() should be</p>
+<p class="description"><p>thrown or trapped in the response object</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodgetInstance" id="getInstance"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static getInstance</span> (line <span class="line-number">163</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Singleton instance</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		static <span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+		<span class="method-name">
+			getInstance
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodrun" id="run"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static run</span> (line <span class="line-number">222</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Convenience feature, calls setControllerDirectory()-&gt;setRouter()-&gt;dispatch()</p>
+<p class="description"><p>In PHP 5.1.x, a call to a static method never populates $this -- so run()  may actually be called after setting up your front controller.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Controller_Exception if called from an object instance</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		static <span class="method-result">void</span>
+		<span class="method-name">
+			run
+		</span>
+					(<span class="var-type">string|array</span>&nbsp;<span class="var-name">$controllerDirectory</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|array</span>
+				<span class="var-name">$controllerDirectory</span><span class="var-description">: Path to Zend_Controller_Action  controller classes or array of such paths</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">144</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructor</p>
+<p class="description"><p>Instantiate using <a href="../Zend_Controller/Zend_Controller_Front.html#methodgetInstance">getInstance()</a>; front controller is a singleton  object.</p><p>Instantiates the plugin broker.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__construct
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodaddControllerDirectory" id="addControllerDirectory"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">addControllerDirectory</span> (line <span class="line-number">240</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add a controller directory to the controller directory stack</p>
+<p class="description"><p>If $args is presented and is a string, uses it for the array key mapping  to the directory specified.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Controller_Exception if directory not found or readable</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+		<span class="method-name">
+			addControllerDirectory
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$module</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$directory</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$module</span><span class="var-description">: Optional argument; module with which to associate directory. If none provided, assumes 'default'</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddModuleDirectory" id="addModuleDirectory"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">addModuleDirectory</span> (line <span class="line-number">300</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specify a directory as containing modules</p>
+<p class="description"><p>Iterates through the directory, adding any subdirectories as modules;  the subdirectory within each module named after <a href="../Zend_Controller/Zend_Controller_Front.html#var$_moduleControllerDirectoryName">$_moduleControllerDirectoryName</a>  will be used as the controller directory path.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+		<span class="method-name">
+			addModuleDirectory
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$path</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodclearParams" id="clearParams"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">clearParams</span> (line <span class="line-number">680</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Clear the controller parameter stack</p>
+<p class="description"><p>By default, clears all parameters. If a parameter name is given, clears  only that parameter; if an array of parameter names is provided, clears  each.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+		<span class="method-name">
+			clearParams
+		</span>
+					([<span class="var-type">null|string|array</span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">null|string|array</span>
+				<span class="var-name">$name</span><span class="var-description">: single key or array of keys for params to clear</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddispatch" id="dispatch"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">dispatch</span> (line <span class="line-number">808</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Dispatch an HTTP request to a controller/action.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns response object if returnResponse() is true</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void|<a href="../Zend_Controller/Response/Zend_Controller_Response_Abstract.html">Zend_Controller_Response_Abstract</a></span>
+		<span class="method-name">
+			dispatch
+		</span>
+					([<span class="var-type"><a href="../Zend_Controller/Zend_Controller_Request_Abstract.html">Zend_Controller_Request_Abstract</a></span>&nbsp;<span class="var-name">$request</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../Zend_Controller/Response/Zend_Controller_Response_Abstract.html">Zend_Controller_Response_Abstract</a></span>&nbsp;<span class="var-name">$response</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Controller/Zend_Controller_Request_Abstract.html">Zend_Controller_Request_Abstract</a>|null</span>
+				<span class="var-name">$request</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Controller/Response/Zend_Controller_Response_Abstract.html">Zend_Controller_Response_Abstract</a>|null</span>
+				<span class="var-name">$response</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetBaseUrl" id="getBaseUrl"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getBaseUrl</span> (line <span class="line-number">541</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve the currently set base URL</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getBaseUrl
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetControllerDirectory" id="getControllerDirectory"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getControllerDirectory</span> (line <span class="line-number">274</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve controller directory</p>
+<p class="description"><p>Retrieves: <ul><li>Array of all controller directories if no $name passed</li><li>String path if $name passed and exists as a key in controller directory array</li><li>null if $name passed but does not exist in controller directory keys</li></ul></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array|string|null</span>
+		<span class="method-name">
+			getControllerDirectory
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: Default null</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetDefaultAction" id="getDefaultAction"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getDefaultAction</span> (line <span class="line-number">390</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve the default action (unformatted string)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getDefaultAction
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetDefaultControllerName" id="getDefaultControllerName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getDefaultControllerName</span> (line <span class="line-number">367</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve the default controller (unformatted string)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getDefaultControllerName
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetDefaultModule" id="getDefaultModule"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getDefaultModule</span> (line <span class="line-number">413</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve the default module</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getDefaultModule
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetDispatcher" id="getDispatcher"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getDispatcher</span> (line <span class="line-number">570</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the dispatcher object.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Controller/Dispatcher/Zend_Controller_Dispatcher_Interface.html">Zend_Controller_Dispatcher_Interface</a></span>
+		<span class="method-name">
+			getDispatcher
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetModuleControllerDirectoryName" id="getModuleControllerDirectoryName"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getModuleControllerDirectoryName</span> (line <span class="line-number">344</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the directory name within a module containing controllers</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getModuleControllerDirectoryName
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetParam" id="getParam"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getParam</span> (line <span class="line-number">651</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve a single parameter from the controller parameter stack</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getParam
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetParams" id="getParams"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getParams</span> (line <span class="line-number">665</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve action controller instantiation parameters</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getParams
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetPlugin" id="getPlugin"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getPlugin</span> (line <span class="line-number">739</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve a plugin or plugins by class</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">false|<a href="../Zend_Controller/Plugins/Zend_Controller_Plugin_Abstract.html">Zend_Controller_Plugin_Abstract</a>|array</span>
+		<span class="method-name">
+			getPlugin
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetPlugins" id="getPlugins"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getPlugins</span> (line <span class="line-number">749</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve all plugins</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getPlugins
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetRequest" id="getRequest"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getRequest</span> (line <span class="line-number">449</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the request object.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">null|<a href="../Zend_Controller/Zend_Controller_Request_Abstract.html">Zend_Controller_Request_Abstract</a></span>
+		<span class="method-name">
+			getRequest
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetResponse" id="getResponse"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getResponse</span> (line <span class="line-number">614</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the response object.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">null|<a href="../Zend_Controller/Response/Zend_Controller_Response_Abstract.html">Zend_Controller_Response_Abstract</a></span>
+		<span class="method-name">
+			getResponse
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetRouter" id="getRouter"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getRouter</span> (line <span class="line-number">491</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the router object.</p>
+<p class="description"><p>Instantiates a Zend_Controller_Router_Rewrite object if no router currently set.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Controller/Router/Zend_Controller_Router_Interface.html">Zend_Controller_Router_Interface</a></span>
+		<span class="method-name">
+			getRouter
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodhasPlugin" id="hasPlugin"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">hasPlugin</span> (line <span class="line-number">728</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Is a particular plugin registered?</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			hasPlugin
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodregisterPlugin" id="registerPlugin"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">registerPlugin</span> (line <span class="line-number">704</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Register a plugin.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+		<span class="method-name">
+			registerPlugin
+		</span>
+					(<span class="var-type"><a href="../Zend_Controller/Plugins/Zend_Controller_Plugin_Abstract.html">Zend_Controller_Plugin_Abstract</a></span>&nbsp;<span class="var-name">$plugin</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$stackIndex</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Controller/Plugins/Zend_Controller_Plugin_Abstract.html">Zend_Controller_Plugin_Abstract</a></span>
+				<span class="var-name">$plugin</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$stackIndex</span><span class="var-description">: Optional; stack index for plugin</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodremoveControllerDirectory" id="removeControllerDirectory"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">removeControllerDirectory</span> (line <span class="line-number">285</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Remove a controller directory by module name</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			removeControllerDirectory
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$module</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$module</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodresetInstance" id="resetInstance"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">resetInstance</span> (line <span class="line-number">181</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Resets all object properties of the singleton instance</p>
+<p class="description"><p>Primarily used for testing; could be used to chain front controllers.</p><p>Also resets action helper broker, clearing all registered helpers.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			resetInstance
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodreturnResponse" id="returnResponse"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">returnResponse</span> (line <span class="line-number">788</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set whether dispatch() should return the response without first  rendering output. By default, output is rendered and dispatch() returns  nothing.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Used as a setter, returns object; as a getter, returns boolean</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean|<a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+		<span class="method-name">
+			returnResponse
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$flag</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$flag</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetBaseUrl" id="setBaseUrl"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setBaseUrl</span> (line <span class="line-number">521</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the base URL used for requests</p>
+<p class="description"><p>Use to set the base URL segment of the REQUEST_URI to use when  determining PATH_INFO, etc. Examples: <ul><li>/admin</li><li>/myapp</li><li>/subdir/index.php</li></ul>  Note that the URL should not include the full URI. Do not use: <ul><li>http://example.com/admin</li><li>http://example.com/myapp</li><li>http://example.com/subdir/index.php</li></ul>  If a null value is passed, this can be used as well for autodiscovery (default).</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Controller_Exception for non-string $base</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+		<span class="method-name">
+			setBaseUrl
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$base</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$base</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetControllerDirectory" id="setControllerDirectory"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setControllerDirectory</span> (line <span class="line-number">257</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set controller directory</p>
+<p class="description"><p>Stores controller directory(ies) in dispatcher. May be an array of  directories or a string containing a single directory.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+		<span class="method-name">
+			setControllerDirectory
+		</span>
+					(<span class="var-type">string|array</span>&nbsp;<span class="var-name">$directory</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$module</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|array</span>
+				<span class="var-name">$directory</span><span class="var-description">: Path to Zend_Controller_Action controller  classes or array of such paths</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$module</span><span class="var-description">: Optional module name to use with string $directory</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetDefaultAction" id="setDefaultAction"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setDefaultAction</span> (line <span class="line-number">378</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the default action (unformatted string)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+		<span class="method-name">
+			setDefaultAction
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$action</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$action</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetDefaultControllerName" id="setDefaultControllerName"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setDefaultControllerName</span> (line <span class="line-number">355</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the default controller (unformatted string)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+		<span class="method-name">
+			setDefaultControllerName
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$controller</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$controller</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetDefaultModule" id="setDefaultModule"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setDefaultModule</span> (line <span class="line-number">401</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the default module name</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+		<span class="method-name">
+			setDefaultModule
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$module</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$module</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetDispatcher" id="setDispatcher"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setDispatcher</span> (line <span class="line-number">559</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the dispatcher object.  The dispatcher is responsible for  taking a Zend_Controller_Dispatcher_Token object, instantiating the controller, and  call the action method of the controller.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+		<span class="method-name">
+			setDispatcher
+		</span>
+					(<span class="var-type"><a href="../Zend_Controller/Dispatcher/Zend_Controller_Dispatcher_Interface.html">Zend_Controller_Dispatcher_Interface</a></span>&nbsp;<span class="var-name">$dispatcher</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Controller/Dispatcher/Zend_Controller_Dispatcher_Interface.html">Zend_Controller_Dispatcher_Interface</a></span>
+				<span class="var-name">$dispatcher</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetModuleControllerDirectoryName" id="setModuleControllerDirectoryName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setModuleControllerDirectoryName</span> (line <span class="line-number">332</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the directory name within a module containing controllers</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+		<span class="method-name">
+			setModuleControllerDirectoryName
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">'controllers'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetParam" id="setParam"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setParam</span> (line <span class="line-number">626</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add or modify a parameter to use when instantiating an action controller</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+		<span class="method-name">
+			setParam
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetParams" id="setParams"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setParams</span> (line <span class="line-number">639</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set parameters to pass to action controller constructors</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+		<span class="method-name">
+			setParams
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetRequest" id="setRequest"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setRequest</span> (line <span class="line-number">429</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set request class/object</p>
+<p class="description"><p>Set the request object.  The request holds the request environment.</p><p>If a class name is provided, it will instantiate it</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Controller_Exception if invalid request class</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+		<span class="method-name">
+			setRequest
+		</span>
+					(<span class="var-type">string|<a href="../Zend_Controller/Zend_Controller_Request_Abstract.html">Zend_Controller_Request_Abstract</a></span>&nbsp;<span class="var-name">$request</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|<a href="../Zend_Controller/Zend_Controller_Request_Abstract.html">Zend_Controller_Request_Abstract</a></span>
+				<span class="var-name">$request</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetResponse" id="setResponse"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setResponse</span> (line <span class="line-number">594</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set response class/object</p>
+<p class="description"><p>Set the response object.  The response is a container for action  responses and headers. Usage is optional.</p><p>If a class name is provided, instantiates a response object.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Controller_Exception if invalid response class</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+		<span class="method-name">
+			setResponse
+		</span>
+					(<span class="var-type">string|<a href="../Zend_Controller/Response/Zend_Controller_Response_Abstract.html">Zend_Controller_Response_Abstract</a></span>&nbsp;<span class="var-name">$response</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|<a href="../Zend_Controller/Response/Zend_Controller_Response_Abstract.html">Zend_Controller_Response_Abstract</a></span>
+				<span class="var-name">$response</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetRouter" id="setRouter"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setRouter</span> (line <span class="line-number">467</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set router class/object</p>
+<p class="description"><p>Set the router object.  The router is responsible for mapping  the request to a controller and action.</p><p>If a class name is provided, instantiates router with any parameters  registered via <a href="../Zend_Controller/Zend_Controller_Front.html#methodsetParam">setParam()</a> or <a href="../Zend_Controller/Zend_Controller_Front.html#methodsetParams">setParams()</a>.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Controller_Exception if invalid router class</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+		<span class="method-name">
+			setRouter
+		</span>
+					(<span class="var-type">string|<a href="../Zend_Controller/Router/Zend_Controller_Router_Interface.html">Zend_Controller_Router_Interface</a></span>&nbsp;<span class="var-name">$router</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|<a href="../Zend_Controller/Router/Zend_Controller_Router_Interface.html">Zend_Controller_Router_Interface</a></span>
+				<span class="var-name">$router</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodthrowExceptions" id="throwExceptions"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">throwExceptions</span> (line <span class="line-number">770</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the throwExceptions flag and retrieve current status</p>
+<p class="description"><p>Set whether exceptions encounted in the dispatch loop should be thrown  or caught and trapped in the response object.</p><p>Default behaviour is to trap them in the response object; call this  method to have them thrown.</p><p>Passing no value will return the current value of the flag; passing a  boolean true or false value will set the flag and return the current  object instance.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Used as a setter, returns object; as a getter, returns boolean</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean|<a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+		<span class="method-name">
+			throwExceptions
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$flag</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$flag</span><span class="var-description">: Defaults to null (return flag state)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodunregisterPlugin" id="unregisterPlugin"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">unregisterPlugin</span> (line <span class="line-number">716</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Unregister a plugin.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Controller/Zend_Controller_Front.html">Zend_Controller_Front</a></span>
+		<span class="method-name">
+			unregisterPlugin
+		</span>
+					(<span class="var-type">string|<a href="../Zend_Controller/Plugins/Zend_Controller_Plugin_Abstract.html">Zend_Controller_Plugin_Abstract</a></span>&nbsp;<span class="var-name">$plugin</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|<a href="../Zend_Controller/Plugins/Zend_Controller_Plugin_Abstract.html">Zend_Controller_Plugin_Abstract</a></span>
+				<span class="var-name">$plugin</span><span class="var-description">: Plugin class or object to unregister</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:27:01 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

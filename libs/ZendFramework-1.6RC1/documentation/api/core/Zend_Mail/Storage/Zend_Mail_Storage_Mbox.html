@@ -1,0 +1,1135 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Mail_Storage_Mbox</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_Mail_Storage_Mbox</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Mail---Storage---Mbox.php.html">/Mail/Storage/Mbox.php</a> (line <span class="field">48</span>)
+		</p>
+		
+				
+		<pre><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html">Zend_Mail_Storage_Abstract</a>
+   |
+   --Zend_Mail_Storage_Mbox</pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Folder_Mbox.html">Zend_Mail_Storage_Folder_Mbox</a>
+					</td>
+					<td>
+											
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																								<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">null|resource</span>
+					<a href="#$_fh" title="details" class="var-name">$_fh</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">int</span>
+					<a href="#$_filemtime" title="details" class="var-name">$_filemtime</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_filename" title="details" class="var-name">$_filename</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_messageClass" title="details" class="var-name">$_messageClass</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$_positions" title="details" class="var-name">$_positions</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																															
+				<div class="method-definition">
+					<img src="../../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">Zend_Mail_Storage_Mbox</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type">$params</span>&nbsp;<span class="var-name">$params</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#close" title="details" class="method-name">close</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">int</span>
+										<a href="#countMessages" title="details" class="method-name">countMessages</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Mail/Zend_Mail_Message_File.html">Zend_Mail_Message_File</a></span>
+										<a href="#getMessage" title="details" class="method-name">getMessage</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">int</span>
+										<a href="#getNumberByUniqueId" title="details" class="method-name">getNumberByUniqueId</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#getRawContent" title="details" class="method-name">getRawContent</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$part</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#getRawHeader" title="details" class="method-name">getRawHeader</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$part</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$topLines</span> = <span class="var-default">0</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">int|array</span>
+										<a href="#getSize" title="details" class="method-name">getSize</a>
+											([<span class="var-type">int|null</span>&nbsp;<span class="var-name">$id</span> = <span class="var-default">0</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array|string</span>
+										<a href="#getUniqueId" title="details" class="method-name">getUniqueId</a>
+											([<span class="var-type">int|null</span>&nbsp;<span class="var-name">$id</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#noop" title="details" class="method-name">noop</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">null</span>
+										<a href="#removeMessage" title="details" class="method-name">removeMessage</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#_getPos" title="details" class="method-name">_getPos</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#_isMboxFile" title="details" class="method-name">_isMboxFile</a>
+											(<span class="var-type">resource|string</span>&nbsp;<span class="var-name">$file</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$fileIsString</span> = <span class="var-default">true</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">null</span>
+										<a href="#_openMboxFile" title="details" class="method-name">_openMboxFile</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$filename</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#__sleep" title="details" class="method-name">__sleep</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">null</span>
+										<a href="#__wakeup" title="details" class="method-name">__wakeup</a>
+										()
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_fh" id="$_fh"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">null|resource</span>
+			<span class="var-name">$_fh</span>
+						(line <span class="line-number">54</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">file handle to mbox file</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_filemtime" id="$_filemtime"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">int</span>
+			<span class="var-name">$_filemtime</span>
+						(line <span class="line-number">66</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">modification date of mbox file for __wakeup</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_filename" id="$_filename"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_filename</span>
+						(line <span class="line-number">60</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">filename of mbox file for __wakeup</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_messageClass" id="$_messageClass"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_messageClass</span>
+			 = <span class="var-default"> 'Zend_Mail_Message_File'</span>			(line <span class="line-number">78</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">used message class, change it in an extened class to extend the returned message class</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#var$_messageClass">Zend_Mail_Storage_Abstract::$_messageClass</a></dt>
+						<dd>used message class, change it in an extened class to extend the returned message class</dd>
+					</dl>
+		
+		
+
+</div>
+<a name="var$_positions" id="$_positions"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_positions</span>
+						(line <span class="line-number">72</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">start and end position of messages as array('start' =&gt; start, 'seperator' =&gt; headersep, 'end' =&gt; end)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html">Zend_Mail_Storage_Abstract</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#var$_has">Zend_Mail_Storage_Abstract::$_has</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#var$_iterationMax">Zend_Mail_Storage_Abstract::$_iterationMax</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#var$_iterationPos">Zend_Mail_Storage_Abstract::$_iterationPos</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">222</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Create instance with parameters  Supported parameters are: <ul><li>filename filename of mbox file</li></ul></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Mail_Storage_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Zend_Mail_Storage_Mbox</span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type">$params</span>&nbsp;<span class="var-name">$params</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">$params</span>
+				<span class="var-name">$params</span><span class="var-description">: array mail reader specific parameters</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#method__construct">Zend_Mail_Storage_Abstract::__construct()</a></dt>
+						<dd>Create instance with parameters</dd>
+					</dl>
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Folder_Mbox.html#method__construct">Zend_Mail_Storage_Folder_Mbox::__construct()</a>
+								: Create instance with parameters
+							</li>
+				</ul>
+	</div>
+<a name="methodclose" id="close"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">close</span> (line <span class="line-number">336</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Close resource for mail lib. If you need to control, when the resource  is closed. Otherwise the destructor would call this.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			close
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodclose">Zend_Mail_Storage_Abstract::close()</a></dt>
+						<dd>Close resource for mail lib. If you need to control, when the resource  is closed. Otherwise the destructor would call this.</dd>
+					</dl>
+			
+	</div>
+<a name="methodcountMessages" id="countMessages"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">countMessages</span> (line <span class="line-number">86</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Count messages all messages in current box</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> number of messages</li>
+				<li><span class="field">throws:</span> Zend_Mail_Storage_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			countMessages
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodcountMessages">Zend_Mail_Storage_Abstract::countMessages()</a></dt>
+						<dd>Count messages messages in current box/folder</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetMessage" id="getMessage"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getMessage</span> (line <span class="line-number">142</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetch a message</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Mail_Storage_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Mail/Zend_Mail_Message_File.html">Zend_Mail_Message_File</a></span>
+		<span class="method-name">
+			getMessage
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$id</span><span class="var-description">: number of message</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodgetMessage">Zend_Mail_Storage_Abstract::getMessage()</a></dt>
+						<dd>Get a message with headers and body</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetNumberByUniqueId" id="getNumberByUniqueId"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getNumberByUniqueId</span> (line <span class="line-number">402</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">get a message number from a unique id</p>
+<p class="description"><p>I.e. if you have a webmailer that supports deleting messages you should use unique ids  as parameter and use this method to translate it to message number right before calling removeMessage()</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> message number</li>
+				<li><span class="field">throws:</span> Zend_Mail_Storage_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			getNumberByUniqueId
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: unique id</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodgetNumberByUniqueId">Zend_Mail_Storage_Abstract::getNumberByUniqueId()</a></dt>
+						<dd>get a message number from a unique id</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetRawContent" id="getRawContent"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getRawContent</span> (line <span class="line-number">200</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getRawContent
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$part</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$part</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodgetRawContent">Zend_Mail_Storage_Abstract::getRawContent()</a></dt>
+						<dd>Get raw content of message or part</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetRawHeader" id="getRawHeader"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getRawHeader</span> (line <span class="line-number">176</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getRawHeader
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$part</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$topLines</span> = <span class="var-default">0</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$part</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$topLines</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodgetRawHeader">Zend_Mail_Storage_Abstract::getRawHeader()</a></dt>
+						<dd>Get raw header of message or part</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetSize" id="getSize"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getSize</span> (line <span class="line-number">98</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get a list of messages with number and size</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> size of given message of list with all messages as array(num =&gt; size)</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int|array</span>
+		<span class="method-name">
+			getSize
+		</span>
+					([<span class="var-type">int|null</span>&nbsp;<span class="var-name">$id</span> = <span class="var-default">0</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int|null</span>
+				<span class="var-name">$id</span><span class="var-description">: number of message or null for all messages</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodgetSize">Zend_Mail_Storage_Abstract::getSize()</a></dt>
+						<dd>Get a list of messages with number and size</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetUniqueId" id="getUniqueId"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getUniqueId</span> (line <span class="line-number">380</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">get unique id for one or all messages</p>
+<p class="description"><p>Mbox does not support unique ids (yet) - it's always the same as the message number.  That shouldn't be a problem, because we can't change mbox files. Therefor the message  number is save enough.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> message number for given message or all messages as array</li>
+				<li><span class="field">throws:</span> Zend_Mail_Storage_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array|string</span>
+		<span class="method-name">
+			getUniqueId
+		</span>
+					([<span class="var-type">int|null</span>&nbsp;<span class="var-name">$id</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int|null</span>
+				<span class="var-name">$id</span><span class="var-description">: message number</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodgetUniqueId">Zend_Mail_Storage_Abstract::getUniqueId()</a></dt>
+						<dd>get unique id for one or all messages</dd>
+					</dl>
+			
+	</div>
+<a name="methodnoop" id="noop"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">noop</span> (line <span class="line-number">348</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Waste some CPU cycles doing nothing.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			noop
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodnoop">Zend_Mail_Storage_Abstract::noop()</a></dt>
+						<dd>Keep the resource alive.</dd>
+					</dl>
+			
+	</div>
+<a name="methodremoveMessage" id="removeMessage"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">removeMessage</span> (line <span class="line-number">360</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">stub for not supported message deletion</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Mail_Storage_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">null</span>
+		<span class="method-name">
+			removeMessage
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodremoveMessage">Zend_Mail_Storage_Abstract::removeMessage()</a></dt>
+						<dd>delete a message from current box/folder</dd>
+					</dl>
+			
+	</div>
+<a name="method_getPos" id="_getPos"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_getPos</span> (line <span class="line-number">121</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get positions for mail message or throw exeption if id is invalid</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> positions as in _positions</li>
+				<li><span class="field">throws:</span> Zend_Mail_Storage_Exception</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			_getPos
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$id</span><span class="var-description">: number of message</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_isMboxFile" id="_isMboxFile"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_isMboxFile</span> (line <span class="line-number">250</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">check if given file is a mbox file</p>
+<p class="description"><p>if $file is a resource its file pointer is moved after the first line</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> file is mbox file</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			_isMboxFile
+		</span>
+					(<span class="var-type">resource|string</span>&nbsp;<span class="var-name">$file</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$fileIsString</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">resource|string</span>
+				<span class="var-name">$file</span><span class="var-description">: stream resource of name of file</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$fileIsString</span><span class="var-description">: file is string or resource</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_openMboxFile" id="_openMboxFile"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_openMboxFile</span> (line <span class="line-number">282</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">open given file as current mbox file</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Mail_Storage_Exception</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">null</span>
+		<span class="method-name">
+			_openMboxFile
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$filename</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$filename</span><span class="var-description">: filename of mbox file</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__sleep" id="__sleep"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">__sleep</span> (line <span class="line-number">416</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">magic method for serialize()</p>
+<p class="description"><p>with this method you can cache the mbox class</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> name of variables</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			__sleep
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Folder_Mbox.html#method__sleep">Zend_Mail_Storage_Folder_Mbox::__sleep()</a>
+								: magic method for serialize()
+							</li>
+				</ul>
+	</div>
+<a name="method__wakeup" id="__wakeup"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">__wakeup</span> (line <span class="line-number">430</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">magic method for unserialize()</p>
+<p class="description"><p>with this method you can cache the mbox class  for cache validation the mtime of the mbox file is used</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Mail_Storage_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">null</span>
+		<span class="method-name">
+			__wakeup
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Folder_Mbox.html#method__wakeup">Zend_Mail_Storage_Folder_Mbox::__wakeup()</a>
+								: magic method for unserialize()
+							</li>
+				</ul>
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html">Zend_Mail_Storage_Abstract</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#method__construct">Zend_Mail_Storage_Abstract::__construct()</a></span><br>
+													<img src="../../media/images/AbstractMethod.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodclose">Zend_Mail_Storage_Abstract::close()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodcount">Zend_Mail_Storage_Abstract::count()</a></span><br>
+													<img src="../../media/images/AbstractMethod.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodcountMessages">Zend_Mail_Storage_Abstract::countMessages()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodcurrent">Zend_Mail_Storage_Abstract::current()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodgetCapabilities">Zend_Mail_Storage_Abstract::getCapabilities()</a></span><br>
+													<img src="../../media/images/AbstractMethod.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodgetMessage">Zend_Mail_Storage_Abstract::getMessage()</a></span><br>
+													<img src="../../media/images/AbstractMethod.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodgetNumberByUniqueId">Zend_Mail_Storage_Abstract::getNumberByUniqueId()</a></span><br>
+													<img src="../../media/images/AbstractMethod.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodgetRawContent">Zend_Mail_Storage_Abstract::getRawContent()</a></span><br>
+													<img src="../../media/images/AbstractMethod.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodgetRawHeader">Zend_Mail_Storage_Abstract::getRawHeader()</a></span><br>
+													<img src="../../media/images/AbstractMethod.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodgetSize">Zend_Mail_Storage_Abstract::getSize()</a></span><br>
+													<img src="../../media/images/AbstractMethod.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodgetUniqueId">Zend_Mail_Storage_Abstract::getUniqueId()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodkey">Zend_Mail_Storage_Abstract::key()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodnext">Zend_Mail_Storage_Abstract::next()</a></span><br>
+													<img src="../../media/images/AbstractMethod.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodnoop">Zend_Mail_Storage_Abstract::noop()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodoffsetExists">Zend_Mail_Storage_Abstract::offsetExists()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodoffsetGet">Zend_Mail_Storage_Abstract::offsetGet()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodoffsetSet">Zend_Mail_Storage_Abstract::offsetSet()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodoffsetUnset">Zend_Mail_Storage_Abstract::offsetUnset()</a></span><br>
+													<img src="../../media/images/AbstractMethod.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodremoveMessage">Zend_Mail_Storage_Abstract::removeMessage()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodrewind">Zend_Mail_Storage_Abstract::rewind()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodseek">Zend_Mail_Storage_Abstract::seek()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#methodvalid">Zend_Mail_Storage_Abstract::valid()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#method__destruct">Zend_Mail_Storage_Abstract::__destruct()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Mail/Storage/Zend_Mail_Storage_Abstract.html#method__get">Zend_Mail_Storage_Abstract::__get()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:38:53 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

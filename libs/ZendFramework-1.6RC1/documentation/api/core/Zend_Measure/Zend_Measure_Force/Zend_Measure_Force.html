@@ -1,0 +1,1123 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Measure_Force</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_Measure_Force</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-methods">Methods</a>
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Class for handling force conversions</p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Measure---Force.php.html">/Measure/Force.php</a> (line <span class="field">38</span>)
+		</p>
+		
+				
+		<pre><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html">Zend_Measure_Abstract</a>
+   |
+   --Zend_Measure_Force</pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-methods">Methods</a>
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ATTONEWTON" title="details" class="const-name">ATTONEWTON</a> = 					<span class="var-type"> 'ATTONEWTON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CENTINEWTON" title="details" class="const-name">CENTINEWTON</a> = 					<span class="var-type"> 'CENTINEWTON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DECIGRAM_FORCE" title="details" class="const-name">DECIGRAM_FORCE</a> = 					<span class="var-type"> 'DECIGRAM_FORCE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DECINEWTON" title="details" class="const-name">DECINEWTON</a> = 					<span class="var-type"> 'DECINEWTON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DEKAGRAM_FORCE" title="details" class="const-name">DEKAGRAM_FORCE</a> = 					<span class="var-type"> 'DEKAGRAM_FORCE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DEKANEWTON" title="details" class="const-name">DEKANEWTON</a> = 					<span class="var-type"> 'DEKANEWTON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DYNE" title="details" class="const-name">DYNE</a> = 					<span class="var-type"> 'DYNE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#EXANEWTON" title="details" class="const-name">EXANEWTON</a> = 					<span class="var-type"> 'EXANEWTON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#FEMTONEWTON" title="details" class="const-name">FEMTONEWTON</a> = 					<span class="var-type"> 'FEMTONEWTON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GIGANEWTON" title="details" class="const-name">GIGANEWTON</a> = 					<span class="var-type"> 'GIGANEWTON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GRAM_FORCE" title="details" class="const-name">GRAM_FORCE</a> = 					<span class="var-type"> 'GRAM_FORCE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#HECTONEWTON" title="details" class="const-name">HECTONEWTON</a> = 					<span class="var-type"> 'HECTONEWTON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#JOULE_PER_METER" title="details" class="const-name">JOULE_PER_METER</a> = 					<span class="var-type"> 'JOULE_PER_METER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#KILOGRAM_FORCE" title="details" class="const-name">KILOGRAM_FORCE</a> = 					<span class="var-type"> 'KILOGRAM_FORCE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#KILONEWTON" title="details" class="const-name">KILONEWTON</a> = 					<span class="var-type"> 'KILONEWTON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#KILOPOND" title="details" class="const-name">KILOPOND</a> = 					<span class="var-type"> 'KILOPOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#KIP" title="details" class="const-name">KIP</a> = 					<span class="var-type"> 'KIP'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MEGANEWTON" title="details" class="const-name">MEGANEWTON</a> = 					<span class="var-type"> 'MEGANEWTON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MEGAPOND" title="details" class="const-name">MEGAPOND</a> = 					<span class="var-type"> 'MEGAPOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MICRONEWTON" title="details" class="const-name">MICRONEWTON</a> = 					<span class="var-type"> 'MICRONEWTON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MILLINEWTON" title="details" class="const-name">MILLINEWTON</a> = 					<span class="var-type"> 'MILLINEWTON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#NANONEWTON" title="details" class="const-name">NANONEWTON</a> = 					<span class="var-type"> 'NANONEWTON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#NEWTON" title="details" class="const-name">NEWTON</a> = 					<span class="var-type"> 'NEWTON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#OUNCE_FORCE" title="details" class="const-name">OUNCE_FORCE</a> = 					<span class="var-type"> 'OUNCE_FORCE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PETANEWTON" title="details" class="const-name">PETANEWTON</a> = 					<span class="var-type"> 'PETANEWTON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PICONEWTON" title="details" class="const-name">PICONEWTON</a> = 					<span class="var-type"> 'PICONEWTON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#POND" title="details" class="const-name">POND</a> = 					<span class="var-type"> 'POND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#POUNDAL" title="details" class="const-name">POUNDAL</a> = 					<span class="var-type"> 'POUNDAL'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#POUND_FORCE" title="details" class="const-name">POUND_FORCE</a> = 					<span class="var-type"> 'POUND_FORCE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#STANDARD" title="details" class="const-name">STANDARD</a> = 					<span class="var-type"> 'NEWTON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#STHENE" title="details" class="const-name">STHENE</a> = 					<span class="var-type"> 'STHENE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TERANEWTON" title="details" class="const-name">TERANEWTON</a> = 					<span class="var-type"> 'TERANEWTON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TON_FORCE" title="details" class="const-name">TON_FORCE</a> = 					<span class="var-type"> 'TON_FORCE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TON_FORCE_LONG" title="details" class="const-name">TON_FORCE_LONG</a> = 					<span class="var-type"> 'TON_FORCE_LONG'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TON_FORCE_SHORT" title="details" class="const-name">TON_FORCE_SHORT</a> = 					<span class="var-type"> 'TON_FORCE_SHORT'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#YOCTONEWTON" title="details" class="const-name">YOCTONEWTON</a> = 					<span class="var-type"> 'YOCTONEWTON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#YOTTANEWTON" title="details" class="const-name">YOTTANEWTON</a> = 					<span class="var-type"> 'YOTTANEWTON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ZEPTONEWTON" title="details" class="const-name">ZEPTONEWTON</a> = 					<span class="var-type"> 'ZEPTONEWTON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ZETTANEWTON" title="details" class="const-name">ZETTANEWTON</a> = 					<span class="var-type"> 'ZETTANEWTON'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-methods">Methods</a>
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																								<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$_units" title="details" class="var-name">$_units</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<span class="disabled">Vars</span>
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-methods">Methods</a>
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_units" id="$_units"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_units</span>
+			 = <span class="var-default">array(<br />        'ATTONEWTON'      =&gt; array('1.0e-18',     'aN'),'CENTINEWTON'=&gt;array('0.01','cN'),'DECIGRAM_FORCE'=&gt;array('0.000980665','dgf'),'DECINEWTON'=&gt;array('0.1','dN'),'DEKAGRAM_FORCE'=&gt;array('0.0980665','dagf'),'DEKANEWTON'=&gt;array('10','daN'),'DYNE'=&gt;array('0.00001','dyn'),'EXANEWTON'=&gt;array('1.0e+18','EN'),'FEMTONEWTON'=&gt;array('1.0e-15','fN'),'GIGANEWTON'=&gt;array('1.0e+9','GN'),'GRAM_FORCE'=&gt;array('0.00980665','gf'),'HECTONEWTON'=&gt;array('100','hN'),'JOULE_PER_METER'=&gt;array('1','J/m'),'KILOGRAM_FORCE'=&gt;array('9.80665','kgf'),'KILONEWTON'=&gt;array('1000','kN'),'KILOPOND'=&gt;array('9.80665','kp'),'KIP'=&gt;array('4448.2216','kip'),'MEGANEWTON'=&gt;array('1000000','Mp'),'MEGAPOND'=&gt;array('9806.65','MN'),'MICRONEWTON'=&gt;array('0.000001','µN'),'MILLINEWTON'=&gt;array('0.001','mN'),'NANONEWTON'=&gt;array('0.000000001','nN'),'NEWTON'=&gt;array('1','N'),'OUNCE_FORCE'=&gt;array('0.27801385','ozf'),'PETANEWTON'=&gt;array('1.0e+15','PN'),'PICONEWTON'=&gt;array('1.0e-12','pN'),'POND'=&gt;array('0.00980665','pond'),'POUND_FORCE'=&gt;array('4.4482216','lbf'),'POUNDAL'=&gt;array('0.13825495','pdl'),'STHENE'=&gt;array('1000','sn'),'TERANEWTON'=&gt;array('1.0e+12','TN'),'TON_FORCE_LONG'=&gt;array('9964.016384','tnf'),'TON_FORCE'=&gt;array('9806.65','tnf'),'TON_FORCE_SHORT'=&gt;array('8896.4432','tnf'),'YOCTONEWTON'=&gt;array('1.0e-24','yN'),'YOTTANEWTON'=&gt;array('1.0e+24','YN'),'ZEPTONEWTON'=&gt;array('1.0e-21','zN'),'ZETTANEWTON'=&gt;array('1.0e+21','ZN'),'STANDARD'=&gt;'NEWTON')</span>			(line <span class="line-number">86</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Calculations for all force units</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#var$_units">Zend_Measure_Abstract::$_units</a></dt>
+						<dd>Unit types for this measurement</dd>
+					</dl>
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html">Zend_Measure_Abstract</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#var$_locale">Zend_Measure_Abstract::$_locale</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#var$_type">Zend_Measure_Abstract::$_type</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#var$_value">Zend_Measure_Abstract::$_value</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<span class="disabled">Methods</span>
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html">Zend_Measure_Abstract</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#method__construct">Zend_Measure_Abstract::__construct()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodadd">Zend_Measure_Abstract::add()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodcompare">Zend_Measure_Abstract::compare()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodconvertTo">Zend_Measure_Abstract::convertTo()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodequals">Zend_Measure_Abstract::equals()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodgetConversionList">Zend_Measure_Abstract::getConversionList()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodgetType">Zend_Measure_Abstract::getType()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodgetValue">Zend_Measure_Abstract::getValue()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodsetType">Zend_Measure_Abstract::setType()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodsetValue">Zend_Measure_Abstract::setValue()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodsub">Zend_Measure_Abstract::sub()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodtoString">Zend_Measure_Abstract::toString()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#method__toString">Zend_Measure_Abstract::__toString()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<span class="disabled">Constants</span>
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-methods">Methods</a>
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constATTONEWTON" id="ATTONEWTON"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTONEWTON</span>
+			 = <span class="const-default"> 'ATTONEWTON'</span>
+			(line <span class="line-number">42</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCENTINEWTON" id="CENTINEWTON"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CENTINEWTON</span>
+			 = <span class="const-default"> 'CENTINEWTON'</span>
+			(line <span class="line-number">43</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constDECIGRAM_FORCE" id="DECIGRAM_FORCE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DECIGRAM_FORCE</span>
+			 = <span class="const-default"> 'DECIGRAM_FORCE'</span>
+			(line <span class="line-number">44</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constDECINEWTON" id="DECINEWTON"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DECINEWTON</span>
+			 = <span class="const-default"> 'DECINEWTON'</span>
+			(line <span class="line-number">45</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constDEKAGRAM_FORCE" id="DEKAGRAM_FORCE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DEKAGRAM_FORCE</span>
+			 = <span class="const-default"> 'DEKAGRAM_FORCE'</span>
+			(line <span class="line-number">46</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constDEKANEWTON" id="DEKANEWTON"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DEKANEWTON</span>
+			 = <span class="const-default"> 'DEKANEWTON'</span>
+			(line <span class="line-number">47</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constDYNE" id="DYNE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DYNE</span>
+			 = <span class="const-default"> 'DYNE'</span>
+			(line <span class="line-number">48</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constEXANEWTON" id="EXANEWTON"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">EXANEWTON</span>
+			 = <span class="const-default"> 'EXANEWTON'</span>
+			(line <span class="line-number">49</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFEMTONEWTON" id="FEMTONEWTON"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FEMTONEWTON</span>
+			 = <span class="const-default"> 'FEMTONEWTON'</span>
+			(line <span class="line-number">50</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGIGANEWTON" id="GIGANEWTON"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GIGANEWTON</span>
+			 = <span class="const-default"> 'GIGANEWTON'</span>
+			(line <span class="line-number">51</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGRAM_FORCE" id="GRAM_FORCE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GRAM_FORCE</span>
+			 = <span class="const-default"> 'GRAM_FORCE'</span>
+			(line <span class="line-number">52</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constHECTONEWTON" id="HECTONEWTON"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HECTONEWTON</span>
+			 = <span class="const-default"> 'HECTONEWTON'</span>
+			(line <span class="line-number">53</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constJOULE_PER_METER" id="JOULE_PER_METER"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">JOULE_PER_METER</span>
+			 = <span class="const-default"> 'JOULE_PER_METER'</span>
+			(line <span class="line-number">54</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constKILOGRAM_FORCE" id="KILOGRAM_FORCE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">KILOGRAM_FORCE</span>
+			 = <span class="const-default"> 'KILOGRAM_FORCE'</span>
+			(line <span class="line-number">55</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constKILONEWTON" id="KILONEWTON"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">KILONEWTON</span>
+			 = <span class="const-default"> 'KILONEWTON'</span>
+			(line <span class="line-number">56</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constKILOPOND" id="KILOPOND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">KILOPOND</span>
+			 = <span class="const-default"> 'KILOPOND'</span>
+			(line <span class="line-number">57</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constKIP" id="KIP"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">KIP</span>
+			 = <span class="const-default"> 'KIP'</span>
+			(line <span class="line-number">58</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMEGANEWTON" id="MEGANEWTON"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MEGANEWTON</span>
+			 = <span class="const-default"> 'MEGANEWTON'</span>
+			(line <span class="line-number">59</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMEGAPOND" id="MEGAPOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MEGAPOND</span>
+			 = <span class="const-default"> 'MEGAPOND'</span>
+			(line <span class="line-number">60</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMICRONEWTON" id="MICRONEWTON"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MICRONEWTON</span>
+			 = <span class="const-default"> 'MICRONEWTON'</span>
+			(line <span class="line-number">61</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMILLINEWTON" id="MILLINEWTON"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MILLINEWTON</span>
+			 = <span class="const-default"> 'MILLINEWTON'</span>
+			(line <span class="line-number">62</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constNANONEWTON" id="NANONEWTON"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">NANONEWTON</span>
+			 = <span class="const-default"> 'NANONEWTON'</span>
+			(line <span class="line-number">63</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constNEWTON" id="NEWTON"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">NEWTON</span>
+			 = <span class="const-default"> 'NEWTON'</span>
+			(line <span class="line-number">64</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constOUNCE_FORCE" id="OUNCE_FORCE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">OUNCE_FORCE</span>
+			 = <span class="const-default"> 'OUNCE_FORCE'</span>
+			(line <span class="line-number">65</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPETANEWTON" id="PETANEWTON"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PETANEWTON</span>
+			 = <span class="const-default"> 'PETANEWTON'</span>
+			(line <span class="line-number">66</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPICONEWTON" id="PICONEWTON"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PICONEWTON</span>
+			 = <span class="const-default"> 'PICONEWTON'</span>
+			(line <span class="line-number">67</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPOND" id="POND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">POND</span>
+			 = <span class="const-default"> 'POND'</span>
+			(line <span class="line-number">68</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPOUNDAL" id="POUNDAL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">POUNDAL</span>
+			 = <span class="const-default"> 'POUNDAL'</span>
+			(line <span class="line-number">70</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPOUND_FORCE" id="POUND_FORCE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">POUND_FORCE</span>
+			 = <span class="const-default"> 'POUND_FORCE'</span>
+			(line <span class="line-number">69</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSTANDARD" id="STANDARD"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">STANDARD</span>
+			 = <span class="const-default"> 'NEWTON'</span>
+			(line <span class="line-number">40</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSTHENE" id="STHENE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">STHENE</span>
+			 = <span class="const-default"> 'STHENE'</span>
+			(line <span class="line-number">71</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTERANEWTON" id="TERANEWTON"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TERANEWTON</span>
+			 = <span class="const-default"> 'TERANEWTON'</span>
+			(line <span class="line-number">72</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTON_FORCE" id="TON_FORCE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TON_FORCE</span>
+			 = <span class="const-default"> 'TON_FORCE'</span>
+			(line <span class="line-number">74</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTON_FORCE_LONG" id="TON_FORCE_LONG"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TON_FORCE_LONG</span>
+			 = <span class="const-default"> 'TON_FORCE_LONG'</span>
+			(line <span class="line-number">73</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTON_FORCE_SHORT" id="TON_FORCE_SHORT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TON_FORCE_SHORT</span>
+			 = <span class="const-default"> 'TON_FORCE_SHORT'</span>
+			(line <span class="line-number">75</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constYOCTONEWTON" id="YOCTONEWTON"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">YOCTONEWTON</span>
+			 = <span class="const-default"> 'YOCTONEWTON'</span>
+			(line <span class="line-number">76</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constYOTTANEWTON" id="YOTTANEWTON"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">YOTTANEWTON</span>
+			 = <span class="const-default"> 'YOTTANEWTON'</span>
+			(line <span class="line-number">77</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constZEPTONEWTON" id="ZEPTONEWTON"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ZEPTONEWTON</span>
+			 = <span class="const-default"> 'ZEPTONEWTON'</span>
+			(line <span class="line-number">78</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constZETTANEWTON" id="ZETTANEWTON"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ZETTANEWTON</span>
+			 = <span class="const-default"> 'ZETTANEWTON'</span>
+			(line <span class="line-number">79</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:25:54 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

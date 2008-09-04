@@ -1,0 +1,424 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>10.3. Zend_Db_Profiler</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="prev" href="zend.db.statement.html" title="10.2. Zend_Db_Statement">
+<link rel="next" href="zend.db.select.html" title="10.4. Zend_Db_Select">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.db.profiler.html#zend.db.profiler.introduction" title="10.3.1. Introduction">
+<link rel="subsection" href="zend.db.profiler.html#zend.db.profiler.using" title="10.3.2. Using the Profiler">
+<link rel="subsection" href="zend.db.profiler.html#zend.db.profiler.advanced" title="10.3.3. Advanced Profiler Usage">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">10.3. Zend_Db_Profiler</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.db.statement.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 10. Zend_Db</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.db.select.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.db.profiler"></a>10.3. Zend_Db_Profiler</h2></div></div></div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.db.profiler.introduction"></a>10.3.1. Introduction</h3></div></div></div>
+<p>
+            <code class="code">Zend_Db_Profiler</code> can be enabled to allow profiling of
+            queries. Profiles include the queries processed by the adapter as
+            well as elapsed time to run the queries, allowing inspection of the
+            queries that have been performed without needing to add extra
+            debugging code to classes. Advanced usage also allows the
+            developer to filter which queries are profiled.
+        </p>
+<p>
+            Enable the profiler by either passing a directive to the adapter
+            constructor, or by asking the adapter to enable it later.
+        </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Db.php';
+
+$params = array(
+    'host'     =&gt; '127.0.0.1',
+    'username' =&gt; 'webuser',
+    'password' =&gt; 'xxxxxxxx',
+    'dbname'   =&gt; 'test'
+    'profiler' =&gt; true  // turn on profiler; set to false to disable (default)
+);
+
+$db = Zend_Db::factory('PDO_MYSQL', $params);
+
+// turn off profiler:
+$db-&gt;getProfiler()-&gt;setEnabled(false);
+
+// turn on profiler:
+$db-&gt;getProfiler()-&gt;setEnabled(true);
+        </pre>
+<p>
+            The value of the '<code class="code">profiler</code>' option is flexible. It is interpreted differently depending on its
+            type.  Most often, you should use a simple boolean value, but other types enable you to customize the
+            profiler behavior.
+        </p>
+<p>
+            A boolean argument sets the profiler to enabled if it is a <code class="code">true</code> value, or disabled if
+            <code class="code">false</code>.  The profiler class is the adapter's default profiler class,
+            <code class="code">Zend_Db_Profiler</code>.
+            </p>
+<pre class="programlisting">
+$params['profiler'] = true;
+$db = Zend_Db::factory('PDO_MYSQL', $params);
+            </pre>
+<p>
+        </p>
+<p>
+            An instance of a profiler object makes the adapter use that object.  The object type must be
+            <code class="code">Zend_Db_Profiler</code> or a subclass thereof. Enabling the profiler is done separately.
+            </p>
+<pre class="programlisting">
+$profiler = MyProject_Db_Profiler();
+$profiler-&gt;setEnabled(true);
+$params['profiler'] = $profiler;
+$db = Zend_Db::factory('PDO_MYSQL', $params);
+            </pre>
+<p>
+        </p>
+<p>
+            The argument can be an associative array containing any or all of the keys '<code class="code">enabled</code>',
+            '<code class="code">instance</code>', and '<code class="code">class</code>'. The '<code class="code">enabled</code>' and '<code class="code">instance</code>'
+            keys correspond to the boolean and instance types documented above. The '<code class="code">class</code>' key is used
+            to name a class to use for a custom profiler. The class must be <code class="code">Zend_Db_Profiler</code> or a
+            subclass. The class is instantiated with no constructor arguments. The '<code class="code">class</code>' option is
+            ignored when the '<code class="code">instance</code>' option is supplied.
+            </p>
+<pre class="programlisting">
+$params['profiler'] = array(
+    'enabled' =&gt; true,
+    'class'   =&gt; 'MyProject_Db_Profiler'
+);
+$db = Zend_Db::factory('PDO_MYSQL', $params);
+            </pre>
+<p>
+        </p>
+<p>
+            Finally, the argument can be an object of type <code class="code">Zend_Config</code> containing properties, which are treated as the array keys described above.  For example, a file "config.ini" might contain the following data:
+            </p>
+<pre class="programlisting">
+[main]
+db.profiler.class   = "MyProject_Db_Profiler"
+db.profiler.enabled = true
+            </pre>
+<p>
+
+            This configuration can be applied by the following PHP code:
+
+            </p>
+<pre class="programlisting">
+$config = new Zend_Config_Ini('config.ini', 'main');
+$params['profiler'] = $config-&gt;db-&gt;profiler;
+$db = Zend_Db::factory('PDO_MYSQL', $params);
+            </pre>
+<p>
+
+            The '<code class="code">instance</code>' property may be used as in the following:
+            </p>
+<pre class="programlisting">
+$profiler = new MyProject_Db_Profiler();
+$profiler-&gt;setEnabled(true);
+$configData = array(
+    'instance' =&gt; $profiler
+    );
+$config = new Zend_Config($configData);
+$params['profiler'] = $config;
+$db = Zend_Db::factory('PDO_MYSQL', $params);
+            </pre>
+<p>
+
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.db.profiler.using"></a>10.3.2. Using the Profiler</h3></div></div></div>
+<p>
+            At any point, grab the profiler using the adapter's
+            <code class="code">getProfiler()</code> method:
+        </p>
+<pre class="programlisting">&lt;?php
+$profiler = $db-&gt;getProfiler();
+        </pre>
+<p>
+            This returns a <code class="code">Zend_Db_Profiler</code> object instance. With
+            that instance, the developer can examine your queries using a
+            variety of methods:
+        </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                    <code class="code">getTotalNumQueries()</code> returns the total number
+                    of queries that have been profiled.
+                </p></li>
+<li><p>
+                    <code class="code">getTotalElapsedSecs()</code> returns the total
+                    number of seconds elapsed for all profiled queries.
+                </p></li>
+<li><p>
+                    <code class="code">getQueryProfiles()</code> returns an array of all
+                    query profiles.
+                </p></li>
+<li><p>
+                    <code class="code">getLastQueryProfile()</code> returns the last (most
+                    recent) query profile, regardless of whether or not the query
+                    has finished (if it hasn't, the end time will be null)
+                </p></li>
+<li><p>
+                    <code class="code">clear()</code> clears any past query profiles
+                    from the stack.
+                </p></li>
+</ul></div>
+<p>
+            The return value of <code class="code">getLastQueryProfile()</code> and the
+            individual elements of <code class="code">getQueryProfiles()</code> are
+            <code class="code">Zend_Db_Profiler_Query</code> objects, which provide the
+            ability to inspect the individual queries themselves:
+        </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                    <code class="code">getQuery()</code> returns the SQL text of the query.
+                    The SQL text of a prepared statement with parameters is the
+                    text at the time the query was prepared, so it contains
+                    parameter placeholders, not the values used when the
+                    statement is executed.
+                </p></li>
+<li><p>
+                    <code class="code">getQueryParams()</code> returns an array of
+                    parameter values used when executing a prepared query.
+                    This includes both bound parameters and arguments to the
+                    statement's <code class="code">execute()</code> method.  The keys of
+                    the array are the positional (1-based) or named (string)
+                    parameter indices.
+                </p></li>
+<li><p>
+                    <code class="code">getElapsedSecs()</code> returns the number of
+                    seconds the query ran.
+                </p></li>
+</ul></div>
+<p>
+            The information <code class="code">Zend_Db_Profiler</code> provides is useful for
+            profiling bottlenecks in applications, and for debugging queries
+            that have been run. For instance, to see the exact query that was
+            last run:
+        </p>
+<pre class="programlisting">&lt;?php
+$query = $profiler-&gt;getLastQueryProfile();
+
+echo $query-&gt;getQuery();
+        </pre>
+<p>
+            Perhaps a page is generating slowly; use the profiler to determine
+            first the total number of seconds of all queries, and then step
+            through the queries to find the one that ran longest:
+        </p>
+<pre class="programlisting">&lt;?php
+$totalTime    = $profiler-&gt;getTotalElapsedSecs();
+$queryCount   = $profiler-&gt;getTotalNumQueries();
+$longestTime  = 0;
+$longestQuery = null;
+
+foreach ($profiler-&gt;getQueryProfiles() as $query) {
+    if ($query-&gt;getElapsedSecs() &gt; $longestTime) {
+        $longestTime  = $query-&gt;getElapsedSecs();
+        $longestQuery = $query-&gt;getQuery();
+    }
+}
+
+echo 'Executed ' . $queryCount . ' queries in ' . $totalTime . ' seconds' . "\n";
+echo 'Average query length: ' . $totalTime / $queryCount . ' seconds' . "\n";
+echo 'Queries per second: ' . $queryCount / $totalTime . "\n";
+echo 'Longest query length: ' . $longestTime . "\n";
+echo "Longest query: \n" . $longestQuery . "\n";
+        </pre>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.db.profiler.advanced"></a>10.3.3. Advanced Profiler Usage</h3></div></div></div>
+<p>
+            In addition to query inspection, the profiler also allows the
+            developer to filter which queries get profiled. The following
+            methods operate on a <code class="code">Zend_Db_Profiler</code> instance:
+        </p>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.db.profiler.advanced.filtertime"></a>10.3.3.1. Filter by query elapsed time</h4></div></div></div>
+<p>
+                <code class="code">setFilterElapsedSecs()</code> allows the developer to set
+                a minimum query time before a query is profiled. To remove the
+                filter, pass the method a null value.
+            </p>
+<pre class="programlisting">&lt;?php
+// Only profile queries that take at least 5 seconds:
+$profiler-&gt;setFilterElapsedSecs(5);
+
+// Profile all queries regardless of length:
+$profiler-&gt;setFilterElapsedSecs(null);
+            </pre>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.db.profiler.advanced.filtertype"></a>10.3.3.2. Filter by query type</h4></div></div></div>
+<p>
+                <code class="code">setFilterQueryType()</code> allows the developer to set
+                which types of queries should be profiled; to profile multiple
+                types, logical OR them. Query types are defined as the following
+                <code class="code">Zend_Db_Profiler</code> constants:
+            </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                        <code class="code">Zend_Db_Profiler::CONNECT</code>: connection
+                        operations, or selecting a database.
+                    </p></li>
+<li><p>
+                        <code class="code">Zend_Db_Profiler::QUERY</code>: general database
+                        queries that do not match other types.
+                    </p></li>
+<li><p>
+                        <code class="code">Zend_Db_Profiler::INSERT</code>: any query that
+                        adds new data to the database, generally SQL INSERT.
+                    </p></li>
+<li><p>
+                        <code class="code">Zend_Db_Profiler::UPDATE</code>: any query that
+                        updates existing data, usually SQL UPDATE.
+                    </p></li>
+<li><p>
+                        <code class="code">Zend_Db_Profiler::DELETE</code>: any query that
+                        deletes existing data, usually SQL DELETE.
+                    </p></li>
+<li><p>
+                        <code class="code">Zend_Db_Profiler::SELECT</code>: any query that
+                        retrieves existing data, usually SQL SELECT.
+                    </p></li>
+<li><p>
+                        <code class="code">Zend_Db_Profiler::TRANSACTION</code>: any
+                        transactional operation, such as start transaction, commit,
+                        or rollback.
+                    </p></li>
+</ul></div>
+<p>
+                As with <code class="code">setFilterElapsedSecs()</code>, you can remove any
+                existing filters by passing <code class="code">null</code> as the sole
+                argument.
+            </p>
+<pre class="programlisting">&lt;?php
+// profile only SELECT queries
+$profiler-&gt;setFilterQueryType(Zend_Db_Profiler::SELECT);
+
+// profile SELECT, INSERT, and UPDATE queries
+$profiler-&gt;setFilterQueryType(Zend_Db_Profiler::SELECT | Zend_Db_Profiler::INSERT | Zend_Db_Profiler::UPDATE);
+
+// profile DELETE queries (so we can figure out why data keeps disappearing)
+$profiler-&gt;setFilterQueryType(Zend_Db_Profiler::DELETE);
+
+// Remove all filters
+$profiler-&gt;setFilterQueryType(null);
+            </pre>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.db.profiler.advanced.getbytype"></a>10.3.3.3. Retrieve profiles by query type</h4></div></div></div>
+<p>
+                Using <code class="code">setFilterQueryType()</code> can cut down on the
+                profiles generated. However, sometimes it can be more useful to
+                keep all profiles, but view only those you need at a given
+                moment. Another feature of <code class="code">getQueryProfiles()</code> is
+                that it can do this filtering on-the-fly, by passing a query
+                type (or logical combination of query types) as its first
+                argument; see <a href="zend.db.profiler.html#zend.db.profiler.advanced.filtertype" title="10.3.3.2. Filter by query type">Section 10.3.3.2, “Filter by query type”</a>
+                for a list of the query type constants.
+            </p>
+<pre class="programlisting">&lt;?php
+// Retrieve only SELECT query profiles
+$profiles = $profiler-&gt;getQueryProfiles(Zend_Db_Profiler::SELECT);
+
+// Retrieve only SELECT, INSERT, and UPDATE query profiles
+$profiles = $profiler-&gt;getQueryProfiles(Zend_Db_Profiler::SELECT | Zend_Db_Profiler::INSERT | Zend_Db_Profiler::UPDATE);
+
+// Retrieve DELETE query profiles (so we can figure out why data keeps
+// disappearing)
+$profiles = $profiler-&gt;getQueryProfiles(Zend_Db_Profiler::DELETE);
+            </pre>
+</div>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.db.statement.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.db.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.db.select.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">10.2. Zend_Db_Statement </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 10.4. Zend_Db_Select</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

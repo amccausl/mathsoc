@@ -1,0 +1,335 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>6.4. Configuring Zend_Console_Getopt</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="prev" href="zend.console.getopt.fetching.html" title="6.3. Fetching Options and Arguments">
+<link rel="next" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.console.getopt.configuration.html#zend.console.getopt.configuration.addrules" title="6.4.1. Adding Option Rules">
+<link rel="subsection" href="zend.console.getopt.configuration.html#zend.console.getopt.configuration.addhelp" title="6.4.2. Adding Help Messages">
+<link rel="subsection" href="zend.console.getopt.configuration.html#zend.console.getopt.configuration.addaliases" title="6.4.3. Adding Option Aliases">
+<link rel="subsection" href="zend.console.getopt.configuration.html#zend.console.getopt.configuration.addargs" title="6.4.4. Adding Argument Lists">
+<link rel="subsection" href="zend.console.getopt.configuration.html#zend.console.getopt.configuration.config" title="6.4.5. Adding Configuration">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">6.4. Configuring Zend_Console_Getopt</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.console.getopt.fetching.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 6. Zend_Console_Getopt</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.controller.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.console.getopt.configuration"></a>6.4. Configuring Zend_Console_Getopt</h2></div></div></div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.console.getopt.configuration.addrules"></a>6.4.1. Adding Option Rules</h3></div></div></div>
+<p>
+            You can add more option rules in addition to those you specified
+            in the <code class="code">Zend_Console_Getopt</code> constructor, using the
+            <code class="code">addRules()</code> method.  The argument to
+            <code class="code">addRules()</code> is the same as the first argument to the
+            class constructor.  It is either a string in the format of the
+            short syntax options specification, or else an associative array
+            in the format of a long syntax options specification.
+            See <a href="zend.console.getopt.rules.html" title="6.2. Declaring Getopt Rules">Declaring Getopt Rules</a>
+            for details on the syntax for specifying options.
+        </p>
+<div class="example">
+<a name="zend.console.getopt.configuration.addrules.example"></a><p class="title"><b>Example 6.7. Using addRules()</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$opts = new Zend_Console_Getopt('abp:');
+$opts-&gt;addRules(
+  array(
+    'verbose|v' =&gt; 'Print verbose output'
+  )
+);
+            </pre></div>
+</div>
+<br class="example-break"><p>
+            The example above shows adding the "<code class="code">--verbose</code>" option
+            with an alias of "<code class="code">-v</code>" to a set of options
+            defined in the call to the constructor.  Notice that you can mix
+            short format options and long format options in the same instance
+            of <code class="code">Zend_Console_Getopt</code>.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.console.getopt.configuration.addhelp"></a>6.4.2. Adding Help Messages</h3></div></div></div>
+<p>
+            In addition to specifying the help strings when declaring option
+            rules in the long format, you can associate help strings
+            with option rules using the <code class="code">setHelp()</code>
+            method.  The argument to the <code class="code">setHelp()</code> method is an
+            associative array, in which the key is a flag, and the value is a
+            corresponding help string.
+        </p>
+<div class="example">
+<a name="zend.console.getopt.configuration.addhelp.example"></a><p class="title"><b>Example 6.8. Using setHelp()</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$opts = new Zend_Console_Getopt('abp:');
+$opts-&gt;setHelp(
+    array(
+        'a' =&gt; 'This option chooses apple, with no parameter',
+        'b' =&gt; 'This option chooses banana, with required integer parameter',
+        'p' =&gt; 'This option chooses pear, with optional string parameter'
+    )
+);
+            </pre></div>
+</div>
+<br class="example-break"><p>
+            If you declared options with aliases, you can use any of the
+            aliases as the key of the associative array.
+        </p>
+<p>
+            The <code class="code">setHelp()</code> method is the only way to define help
+            strings if you declared the options using the short syntax.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.console.getopt.configuration.addaliases"></a>6.4.3. Adding Option Aliases</h3></div></div></div>
+<p>
+            You can declare aliases for options using the <code class="code">setAliases</code>
+            method.  The argument is an associative array, whose key is
+            a flag string declared previously, and whose value is a new
+            alias for that flag.  These aliases are merged with any existing
+            aliases.  In other words, aliases you declared earlier are
+            still in effect.
+        </p>
+<p>
+            An alias may be declared only once.  If you try to redefine
+            an alias, a <code class="code">Zend_Console_Getopt_Exception</code> is thrown.
+        </p>
+<div class="example">
+<a name="zend.console.getopt.configuration.addaliases.example"></a><p class="title"><b>Example 6.9. Using setAliases()</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$opts = new Zend_Console_Getopt('abp:');
+$opts-&gt;setAliases(
+    array(
+        'a' =&gt; 'apple',
+        'a' =&gt; 'apfel',
+        'p' =&gt; 'pear'
+    )
+);
+            </pre></div>
+</div>
+<br class="example-break"><p>
+            In the example above, after declaring these aliases,
+            "<code class="code">-a</code>", "<code class="code">--apple</code>" and
+            "<code class="code">--apfel</code>" are aliases for each other.
+            Also "<code class="code">-p</code>" and "<code class="code">--pear</code>" are aliases
+            for each other.
+        </p>
+<p>
+            The <code class="code">setAliases()</code> method is the only way to define aliases
+            if you declared the options using the short syntax.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.console.getopt.configuration.addargs"></a>6.4.4. Adding Argument Lists</h3></div></div></div>
+<p>
+            By default, <code class="code">Zend_Console_Getopt</code> uses
+            <code class="code">$_SERVER['argv']</code> for the array of command-line
+            arguments to parse.  You can alternatively specify the array of
+            arguments as the second constructor argument.  Finally, you
+            can append more arguments to those already used using the
+            <code class="code">addArguments()</code> method, or you can replace the current
+            array of arguments using the <code class="code">setArguments()</code> method.
+            In both cases, the parameter to these methods is a simple array of
+            strings.  The former method appends the array to the current
+            arguments, and the latter method substitutes the array for the
+            current arguments.
+        </p>
+<div class="example">
+<a name="zend.console.getopt.configuration.addargs.example"></a><p class="title"><b>Example 6.10. Using addArguments() and setArguments()</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+// By default, the constructor uses $_SERVER['argv']
+$opts = new Zend_Console_Getopt('abp:');
+
+// Append an array to the existing arguments
+$opts-&gt;addArguments(array('-a', '-p', 'p_parameter', 'non_option_arg'));
+
+// Substitute a new array for the existing arguments
+$opts-&gt;setArguments(array('-a', '-p', 'p_parameter', 'non_option_arg'));
+            </pre></div>
+</div>
+<br class="example-break">
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.console.getopt.configuration.config"></a>6.4.5. Adding Configuration</h3></div></div></div>
+<p>
+            The third parameter to the <code class="code">Zend_Console_Getopt</code>
+            constructor is an array of configuration options that affect
+            the behavior of the object instance returned. You can also
+            specify configuration options using the <code class="code">setOptions()</code>
+            method, or you can set an individual option using the
+            <code class="code">setOption()</code> method.
+        </p>
+<div class="note"><table border="0" summary='Note: Clarifying the term "option"'>
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Clarifying the term "option"</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+                The term "option" is used for configuration of the
+                <code class="code">Zend_Console_Getopt</code> class to match terminology
+                used elsewhere in the Zend Framework.  These are not the same
+                things as the command-line options that are parsed by
+                the <code class="code">Zend_Console_Getopt</code> class.
+            </p></td></tr>
+</table></div>
+<p>
+            The currently supported
+            options have const definitions in the class.  The options,
+            their const identifiers (with literal values in parentheses)
+            are listed below:
+        </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                    <code class="code">Zend_Console_Getopt::CONFIG_DASHDASH</code> ("dashDash"),
+                    if true, enables the special flag "<code class="code">--</code>" to
+                    signify the end of flags.  Command-line arguments following
+                    the double-dash signifier are not interpreted as options,
+                    even if the arguments start with a dash.  This configuration
+                    option is true by default.
+                </p></li>
+<li><p>
+                    <code class="code">Zend_Console_Getopt::CONFIG_IGNORECASE</code> ("ignoreCase"),
+                    if true, makes flags aliases of each other if they differ
+                    only in their case.  That is, "<code class="code">-a</code>" and
+                    "<code class="code">-A</code>" will be considered to be synonymous flags.
+                    This configuration option is false by default.
+                </p></li>
+<li><p>
+                    <code class="code">Zend_Console_Getopt::CONFIG_RULEMODE</code>
+                    ("ruleMode") may have values <code class="code">Zend_Console_Getopt::MODE_ZEND</code>
+                    ("zend") and <code class="code">Zend_Console_Getopt::MODE_GNU</code>
+                    ("gnu").  It should not be necessary to use this option
+                    unless you extend the class with additional syntax forms.
+                    The two modes supported in the base <code class="code">Zend_Console_Getopt</code>
+                    class are unambiguous.  If the specifier is a string, the
+                    class assumes <code class="code">MODE_GNU</code>, otherwise it assumes
+                    <code class="code">MODE_ZEND</code>.  But if you extend the class and
+                    add more syntax forms, you may need to specify the mode
+                    using this option.
+                </p></li>
+</ul></div>
+<p>
+            More configuration options may be added as future enhancements
+            of this class.
+        </p>
+<p>
+            The two arguments to the <code class="code">setOption()</code> method are
+            a configuration option name and an option value.
+        </p>
+<div class="example">
+<a name="zend.console.getopt.configuration.config.example.setoption"></a><p class="title"><b>Example 6.11. Using setOption()</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$opts = new Zend_Console_Getopt('abp:');
+$opts-&gt;setOption('ignoreCase', true);
+            </pre></div>
+</div>
+<br class="example-break"><p>
+            The argument to the <code class="code">setOptions()</code> method is
+            an associative array.  The keys of this array are the configuration
+            option names, and the values are configuration values.
+            This is also the array format used in the class constructor.
+            The configuration values you specify are merged with the current
+            configuration; you don't have to list all options.
+        </p>
+<div class="example">
+<a name="zend.console.getopt.configuration.config.example.setoptions"></a><p class="title"><b>Example 6.12. Using setOptions()</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$opts = new Zend_Console_Getopt('abp:');
+$opts-&gt;setOptions(
+    array(
+        'ignoreCase' =&gt; true,
+        'dashDash'   =&gt; false
+    )
+);
+            </pre></div>
+</div>
+<br class="example-break">
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.console.getopt.fetching.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.console.getopt.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.controller.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">6.3. Fetching Options and Arguments </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> Chapter 7. Zend_Controller</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

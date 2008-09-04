@@ -1,0 +1,479 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Chapter 40. Zend_Soap</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="index.html" title="Programmer's Reference Guide">
+<link rel="prev" href="zend.session.savehandler.dbtable.html" title="39.5. Zend_Session_SaveHandler_DbTable">
+<link rel="next" href="zend.soap.client.html" title="40.2. Zend_Soap_Client">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="section" href="zend.soap.html#zend.soap.server" title="40.1. Zend_Soap_Server">
+<link rel="section" href="zend.soap.client.html" title="40.2. Zend_Soap_Client">
+<link rel="section" href="zend.soap.wsdl.html" title="40.3. WSDL Accessor">
+<link rel="section" href="zend.soap.autodiscovery.introduction.html" title="40.4. AutoDiscovery. Introduction">
+<link rel="section" href="zend.soap.autodiscovery.class.html" title="40.5. Class autodiscovering.">
+<link rel="section" href="zend.soap.autodiscovery.functions.html" title="40.6. Functions autodiscovering.">
+<link rel="section" href="zend.soap.autodiscovery.datatypes.html" title="40.7. Autodiscovering. Datatypes.">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">Chapter 40. Zend_Soap</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.session.savehandler.dbtable.html">Prev</a> </td>
+<th width="60%" align="center"> </th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.soap.client.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="chapter" lang="en">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="zend.soap"></a>Chapter 40. Zend_Soap</h2></div></div></div>
+<div class="toc">
+<p><b>Table of Contents</b></p>
+<dl>
+<dt><span class="sect1"><a href="zend.soap.html#zend.soap.server">40.1. Zend_Soap_Server</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.soap.html#zend.soap.server.constructor">40.1.1. <code class="code">Zend_Soap_Server</code> constructor.</a></span></dt>
+<dd><dl>
+<dt><span class="sect3"><a href="zend.soap.html#zend.soap.server.constructor.wsdl_mode">40.1.1.1. <code class="code">Zend_Soap_Server</code> constructor for the WSDL mode.</a></span></dt>
+<dt><span class="sect3"><a href="zend.soap.html#zend.soap.server.wsdl_mode">40.1.1.2. <code class="code">Zend_Soap_Server</code> constructor for the non-WSDL mode.</a></span></dt>
+</dl></dd>
+<dt><span class="sect2"><a href="zend.soap.html#zend.soap.server.api_define_methods">40.1.2. Methods to define Web Service API.</a></span></dt>
+<dt><span class="sect2"><a href="zend.soap.html#zend.soap.server.request_response">40.1.3. Request and response objects handling.</a></span></dt>
+<dd><dl>
+<dt><span class="sect3"><a href="zend.soap.html#zend.soap.server.request_response.request">40.1.3.1. Request processing.</a></span></dt>
+<dt><span class="sect3"><a href="zend.soap.html#zend.soap.server.request_response.response">40.1.3.2. Response pre-processing.</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.soap.client.html">40.2. Zend_Soap_Client</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.soap.client.html#zend.soap.client.constructor">40.2.1. <code class="code">Zend_Soap_Client</code> constructor.</a></span></dt>
+<dt><span class="sect2"><a href="zend.soap.client.html#zend.soap.client.calls">40.2.2. Performing SOAP requests.</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.soap.wsdl.html">40.3. WSDL Accessor</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.soap.wsdl.html#zend.soap.wsdl.constructor">40.3.1. <code class="code">Zend_Soap_Wsdl</code> constructor.</a></span></dt>
+<dt><span class="sect2"><a href="zend.soap.wsdl.html#zend.soap.wsdl.addmessage">40.3.2. <code class="code">addMessage()</code> method.</a></span></dt>
+<dt><span class="sect2"><a href="zend.soap.wsdl.html#zend.soap.wsdl.add_port_type">40.3.3. <code class="code">addPortType()</code> method.</a></span></dt>
+<dt><span class="sect2"><a href="zend.soap.wsdl.html#zend.soap.wsdl.add_port_operation">40.3.4. <code class="code">addPortOperation()</code> method.</a></span></dt>
+<dt><span class="sect2"><a href="zend.soap.wsdl.html#zend.soap.wsdl.add_binding">40.3.5. <code class="code">addBinding()</code> method.</a></span></dt>
+<dt><span class="sect2"><a href="zend.soap.wsdl.html#zend.soap.wsdl.add_binding_operation">40.3.6. <code class="code">addBindingOperation()</code> method.</a></span></dt>
+<dt><span class="sect2"><a href="zend.soap.wsdl.html#zend.soap.wsdl.add_soap_binding">40.3.7. <code class="code">addSoapBinding()</code> method.</a></span></dt>
+<dt><span class="sect2"><a href="zend.soap.wsdl.html#zend.soap.wsdl.add_soap_operation">40.3.8. <code class="code">addSoapOperation()</code> method.</a></span></dt>
+<dt><span class="sect2"><a href="zend.soap.wsdl.html#zend.soap.wsdl.add_service">40.3.9. <code class="code">addService()</code> method.</a></span></dt>
+<dt><span class="sect2"><a href="zend.soap.wsdl.html#zend.soap.wsdl.types">40.3.10. Type mapping.</a></span></dt>
+<dd><dl>
+<dt><span class="sect3"><a href="zend.soap.wsdl.html#zend.soap.wsdl.types.retrieve">40.3.10.1. Retrieving type information.</a></span></dt>
+<dt><span class="sect3"><a href="zend.soap.wsdl.html#zend.soap.wsdl.types.add_complex">40.3.10.2. Retrieving type information.</a></span></dt>
+</dl></dd>
+<dt><span class="sect2"><a href="zend.soap.wsdl.html#zend.soap.wsdl.add_documentation">40.3.11. <code class="code">addDocumentation()</code> method.</a></span></dt>
+<dt><span class="sect2"><a href="zend.soap.wsdl.html#zend.soap.wsdl.retrieve">40.3.12. Get finilised WSDL document.</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.soap.autodiscovery.introduction.html">40.4. AutoDiscovery. Introduction</a></span></dt>
+<dt><span class="sect1"><a href="zend.soap.autodiscovery.class.html">40.5. Class autodiscovering.</a></span></dt>
+<dt><span class="sect1"><a href="zend.soap.autodiscovery.functions.html">40.6. Functions autodiscovering.</a></span></dt>
+<dt><span class="sect1"><a href="zend.soap.autodiscovery.datatypes.html">40.7. Autodiscovering. Datatypes.</a></span></dt>
+</dl>
+</div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.soap.server"></a>40.1. Zend_Soap_Server</h2></div></div></div>
+<p>
+        <code class="code">Zend_Soap_Server</code> class is intended to simplify Web Services server part development for PHP programmers. 
+    </p>
+<p>
+        It may be used in WSDL or non-WSDL mode, and using classes or functions to define Web Service API.
+    </p>
+<p>
+        When Zend_Soap_Server component works in the WSDL mode, it uses already prepared WSDL document to define 
+        server object behavior and transport layer options. 
+    </p>
+<p>
+        WSDL document may be auto-generated with functionality provided by 
+        <a href="">Zend_Soap_AutoDiscovery component</a> or should be constructed manually using 
+        <a href="zend.soap.wsdl.html" title="40.3. WSDL Accessor"><code class="code">Zend_Soap_Wsdl</code> class</a> or any other XML generating tool.
+    </p>
+<p>
+        If the non-WSDL mode is used, then all protocol options have to be set using options mechanism.  
+    </p>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.soap.server.constructor"></a>40.1.1. <code class="code">Zend_Soap_Server</code> constructor.</h3></div></div></div>
+<p>
+            <code class="code">Zend_Soap_Server</code> constructor should be used a bit differently for WSDL and non-WSDL modes.
+        </p>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.soap.server.constructor.wsdl_mode"></a>40.1.1.1. <code class="code">Zend_Soap_Server</code> constructor for the WSDL mode.</h4></div></div></div>
+<p>
+                <code class="code">Zend_Soap_Server</code> constructor takes two optional parameters when it works in WSDL mode:
+                </p>
+<div class="orderedlist"><ol type="1">
+<li>
+                            <code class="code">$wsdl</code>, which is an URI of a WSDL file<sup>[<a name="id2802385" href="#ftn.id2802385">18</a>]</sup>.
+                        </li>
+<li>
+<p>
+                            <code class="code">$options</code> - options to create SOAP server object<sup>[<a name="id2802415" href="#ftn.id2802415">19</a>]</sup>.
+                        </p>
+<p>
+                            The following options are recognized in the WSDL mode:
+                            </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                                        'soap_version' ('soapVersion') - soap version to use (SOAP_1_1 or SOAP_1_2).
+                                    </p></li>
+<li><p>
+                                        'actor' - the actor URI for the server.
+                                    </p></li>
+<li>
+<p>
+                                        'classmap' ('classMap') which can be used to map some WSDL types to PHP classes. 
+                                    </p>
+<p>
+                                        The option must be an array with WSDL types as keys and names of PHP classes as values. 
+                                    </p>
+</li>
+<li><p>
+                                        'encoding' - internal character encoding (UTF-8 is always used as an external encoding).
+                                    </p></li>
+<li><p>
+                                        'wsdl' which is equivalent to <code class="code">setWsdl($wsdlValue)</code> call.
+                                    </p></li>
+</ul></div>
+<p>
+                        </p>
+</li>
+</ol></div>
+<p>
+            </p>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.soap.server.wsdl_mode"></a>40.1.1.2. <code class="code">Zend_Soap_Server</code> constructor for the non-WSDL mode.</h4></div></div></div>
+<p>
+                The first constructor parameter <span class="strong"><strong>must</strong></span> be set to <code class="code">null</code> if you
+                plan to use <code class="code">Zend_Soap_Server</code> functionality in non-WSDL mode. 
+            </p>
+<p>
+                You also have to set 'uri' option in this case (see below).
+            </p>
+<p>
+	            The second constructor parameter (<code class="code">$options</code>) is an array with options to create 
+	            SOAP server object<sup>[<a name="id2802559" href="#ftn.id2802559">20</a>]</sup>.
+            </p>
+<p>
+                The following options are recognized in the non-WSDL mode:
+                </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                            'soap_version' ('soapVersion') - soap version to use (SOAP_1_1 or SOAP_1_2).
+                        </p></li>
+<li><p>
+                            'actor' - the actor URI for the server.
+                        </p></li>
+<li>
+<p>
+                            'classmap' ('classMap') which can be used to map some WSDL types to PHP classes. 
+                        </p>
+<p>
+                            The option must be an array with WSDL types as keys and names of PHP classes as values. 
+                        </p>
+</li>
+<li><p>
+                            'encoding' - internal character encoding (UTF-8 is always used as an external encoding).
+                        </p></li>
+<li><p>
+                            'uri' (required) - URI namespace for SOAP server. 
+                        </p></li>
+</ul></div>
+<p>
+            </p>
+</div>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.soap.server.api_define_methods"></a>40.1.2. Methods to define Web Service API.</h3></div></div></div>
+<p>
+            There are two ways to define Web Service API when your want to give access to your PHP code through SOAP.  
+        </p>
+<p>
+            The first one is to attach some class to the <code class="code">Zend_Soap_Server</code> object which has to completely describe
+            Web Service API:
+            </p>
+<pre class="programlisting">&lt;?php
+...
+class MyClass {
+    /**
+     * This method takes ...
+     *
+     * @param integer $inputParam
+     * @return string
+     */
+    public function method1($inputParam) {
+        ...
+    }
+    
+    /**
+     * This method takes ...
+     *
+     * @param integer $inputParam1
+     * @param string  $inputParam2
+     * @return float
+     */
+    public function method2($inputParam1, $inputParam2) {
+        ...
+    }
+    
+    ...
+}
+...
+$server = new Zend_Soap_Server(null, $options);
+$server-&gt;setClass('MyClass');
+...
+$server-&gt;handle();</pre>
+<p>
+	        </p>
+<div class="note"><table border="0" summary="Note: Important!">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Important!</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+	                You should completely describe each method using method docblock if you plan to use autodiscover functionality
+	                to prepare corresponding Web Service WSDL.
+	            </p></td></tr>
+</table></div>
+<p>
+        </p>
+<p>
+            The second method of defining Web Service API is using set of functions and <code class="code">addFunction()</code> or
+            <code class="code">loadFunctions()</code> methods:
+            </p>
+<pre class="programlisting">&lt;?php
+...
+/**
+ * This function ...
+ *
+ * @param integer $inputParam
+ * @return string
+ */
+function function1($inputParam) {
+    ...
+}
+    
+/**
+ * This function ...
+ *
+ * @param integer $inputParam1
+ * @param string  $inputParam2
+ * @return float
+ */
+function function2($inputParam1, $inputParam2) {
+    ...
+}
+...
+$server = new Zend_Soap_Server(null, $options);
+$server-&gt;addFunction('function1');
+$server-&gt;addFunction('function2');
+...
+$server-&gt;handle();</pre>
+<p>
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.soap.server.request_response"></a>40.1.3. Request and response objects handling.</h3></div></div></div>
+<div class="note"><table border="0" summary="Note: Advanced">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Advanced</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+                This section describes advanced request/response processing options and may be skipped.
+            </p></td></tr>
+</table></div>
+<p>
+            Zend_Soap_Server component performs request/response processing automatically, 
+            but allows to catch it and do some pre- and post-processing.
+        </p>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.soap.server.request_response.request"></a>40.1.3.1. Request processing.</h4></div></div></div>
+<p>
+                <code class="code">Zend_Soap_Server::handle()</code> method takes request from the standard input stream ('php://input').
+                It may be overridden either by supplying optional parameter to the <code class="code">handle()</code> method or
+                by setting request using <code class="code">setRequest()</code> method:
+                </p>
+<pre class="programlisting">&lt;?php
+...
+$server = new Zend_Soap_Server(...);
+...
+// Set request using optional $request parameter
+$server-&gt;handle($request);
+...
+// Set request using setRequest() method
+$server-&gt;setRequest();
+$server-&gt;handle();</pre>
+<p>
+            </p>
+<p>
+                Request object may be represented using any of the following:
+                </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                            DOMDocument (casted to XML)
+                        </p></li>
+<li><p>
+                            DOMNode (owner document is grabbed and casted to XML)
+                        </p></li>
+<li><p>
+                            SimpleXMLElement (casted to XML)
+                        </p></li>
+<li><p>
+                            stdClass (__toString() is called and verified to be valid XML)
+                        </p></li>
+<li><p>
+                            string (verified to be valid XML)
+                        </p></li>
+</ul></div>
+<p>
+            </p>
+<p>
+                Last processed request may be retrieved using <code class="code">getLastRequest()</code> method as an XML string:
+                </p>
+<pre class="programlisting">&lt;?php
+...
+$server = new Zend_Soap_Server(...);
+...
+$server-&gt;handle();
+$request = $server-&gt;getLastRequest();</pre>
+<p>
+                
+            </p>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.soap.server.request_response.response"></a>40.1.3.2. Response pre-processing.</h4></div></div></div>
+<p>
+                <code class="code">Zend_Soap_Server::handle()</code> method automatically emits generated response to the output stream.   
+                It may be blocked using <code class="code">setReturnResponse()</code> with <code class="code">true</code> or <code class="code">false</code> 
+                as a parameter<sup>[<a name="id2803955" href="#ftn.id2803955">21</a>]</sup>.
+                Generated response is returned by <code class="code">handle()</code> method in this case.  
+                </p>
+<pre class="programlisting">&lt;?php
+...
+$server = new Zend_Soap_Server(...);
+...
+// Get a response as a return value of handle() method instead of emitting it to the standard output
+$server-&gt;setReturnResponse(true);
+...
+$response = $server-&gt;handle();
+...</pre>
+<p>
+            </p>
+<p>
+                Last response may be also retrieved by <code class="code">getLastResyponse()</code> method for some post-processing:
+                </p>
+<pre class="programlisting">&lt;?php
+...
+$server = new Zend_Soap_Server(...);
+...
+$server-&gt;handle();
+$response = $server-&gt;getLastResyponse();
+...</pre>
+<p>
+            </p>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<br><hr width="100" align="left">
+<div class="footnote"><p><sup>[<a name="ftn.id2802385" href="#id2802385">18</a>] </sup>
+                                                                                      May be set later using <code class="code">setWsdl($wsdl)</code> method.
+                                                                                  </p></div>
+<div class="footnote"><p><sup>[<a name="ftn.id2802415" href="#id2802415">19</a>] </sup>
+                                                                                                Options may be set later using 
+                                                                                                <code class="code">setOptions($options)</code> method.
+                                                                                            </p></div>
+<div class="footnote"><p><sup>[<a name="ftn.id2802559" href="#id2802559">20</a>] </sup>
+                                          Options may be set later using <code class="code">setOptions($options)</code> method.
+                                      </p></div>
+<div class="footnote"><p><sup>[<a name="ftn.id2803955" href="#id2803955">21</a>] </sup>
+                                    Current state of the Return Response flag may be requested with
+                                    <code class="code">setReturnResponse()</code> method.
+                                </p></div>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.session.savehandler.dbtable.html">Prev</a> </td>
+<td width="20%" align="center"> </td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.soap.client.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">39.5. Zend_Session_SaveHandler_DbTable </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 40.2. Zend_Soap_Client</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

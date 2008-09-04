@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Db_Statement_Pdo_Ibm</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_Db_Statement_Pdo_Ibm</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Proxy class to wrap a PDOStatement object for IBM Databases.</p>
+<p class="description"><p>Matches the interface of PDOStatement.  All methods simply proxy to the  matching method in PDOStatement.  PDOExceptions thrown by PDOStatement  are re-thrown as Zend_Db_Statement_Exception.</p></p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Db---Statement---Pdo---Ibm.php.html">/Db/Statement/Pdo/Ibm.php</a> (line <span class="field">40</span>)
+		</p>
+		
+				
+		<pre><a href="../../Zend_Db/Statement/Zend_Db_Statement.html">Zend_Db_Statement</a>
+   |
+   --<a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html">Zend_Db_Statement_Pdo</a>
+      |
+      --Zend_Db_Statement_Pdo_Ibm</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#fetchAll" title="details" class="method-name">fetchAll</a>
+											([<span class="var-type">int</span>&nbsp;<span class="var-name">$style</span> = <span class="var-default">null</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$col</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#_bindParam" title="details" class="method-name">_bindParam</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$parameter</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$variable</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$length</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">null</span>], <span class="var-type">mixed</span>&nbsp;<span class="var-name">$variable</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html">Zend_Db_Statement_Pdo</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html#var$_fetchMode">Zend_Db_Statement_Pdo::$_fetchMode</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html#var$_stmt">Zend_Db_Statement_Pdo::$_stmt</a></span><br>
+							</span>
+											</blockquote> 
+									<p>Inherited from <span class="classname"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html">Zend_Db_Statement</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#var$_adapter">Zend_Db_Statement::$_adapter</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#var$_attribute">Zend_Db_Statement::$_attribute</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#var$_bindColumn">Zend_Db_Statement::$_bindColumn</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#var$_bindParam">Zend_Db_Statement::$_bindParam</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#var$_queryId">Zend_Db_Statement::$_queryId</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#var$_sqlParam">Zend_Db_Statement::$_sqlParam</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#var$_sqlSplit">Zend_Db_Statement::$_sqlSplit</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-vars">Vars</a>
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodfetchAll" id="fetchAll"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">fetchAll</span> (line <span class="line-number">54</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns an array containing all of the result set rows.</p>
+<p class="description"><p>Behaves like parent, but if limit()  is used, the final result removes the extra column  'zend_db_rownum'</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Collection of rows, each in a format by the fetch mode.</li>
+				<li><span class="field">throws:</span> Zend_Db_Statement_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			fetchAll
+		</span>
+					([<span class="var-type">int</span>&nbsp;<span class="var-name">$style</span> = <span class="var-default">null</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$col</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$style</span><span class="var-description">: OPTIONAL Fetch mode.</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$col</span><span class="var-description">: OPTIONAL Column number, if fetch mode is by column.</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html#methodfetchAll">Zend_Db_Statement_Pdo::fetchAll()</a></dt>
+						<dd>Returns an array containing all of the result set rows.</dd>
+					</dl>
+			
+	</div>
+<a name="method_bindParam" id="_bindParam"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_bindParam</span> (line <span class="line-number">80</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Binds a parameter to the specified variable name.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Db_Statement_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			_bindParam
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$parameter</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$variable</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$length</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">null</span>], <span class="var-type">mixed</span>&nbsp;<span class="var-name">$variable</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$parameter</span><span class="var-description">: Name the parameter, either integer or string.</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$variable</span><span class="var-description">: Reference to PHP variable containing the value.</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$type</span><span class="var-description">: OPTIONAL Datatype of SQL parameter.</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$length</span><span class="var-description">: OPTIONAL Length of SQL parameter.</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$options</span><span class="var-description">: OPTIONAL Other options.</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$variable</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html#method_bindParam">Zend_Db_Statement_Pdo::_bindParam()</a></dt>
+						<dd>Binds a parameter to the specified variable name.</dd>
+					</dl>
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html">Zend_Db_Statement_Pdo</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html#methodbindColumn">Zend_Db_Statement_Pdo::bindColumn()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html#methodbindValue">Zend_Db_Statement_Pdo::bindValue()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html#methodcloseCursor">Zend_Db_Statement_Pdo::closeCursor()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html#methodcolumnCount">Zend_Db_Statement_Pdo::columnCount()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html#methoderrorCode">Zend_Db_Statement_Pdo::errorCode()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html#methoderrorInfo">Zend_Db_Statement_Pdo::errorInfo()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html#methodfetch">Zend_Db_Statement_Pdo::fetch()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html#methodfetchAll">Zend_Db_Statement_Pdo::fetchAll()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html#methodfetchColumn">Zend_Db_Statement_Pdo::fetchColumn()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html#methodfetchObject">Zend_Db_Statement_Pdo::fetchObject()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html#methodgetAttribute">Zend_Db_Statement_Pdo::getAttribute()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html#methodgetColumnMeta">Zend_Db_Statement_Pdo::getColumnMeta()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html#methodnextRowset">Zend_Db_Statement_Pdo::nextRowset()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html#methodrowCount">Zend_Db_Statement_Pdo::rowCount()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html#methodsetAttribute">Zend_Db_Statement_Pdo::setAttribute()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html#methodsetFetchMode">Zend_Db_Statement_Pdo::setFetchMode()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html#method_bindParam">Zend_Db_Statement_Pdo::_bindParam()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html#method_execute">Zend_Db_Statement_Pdo::_execute()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo.html#method_prepare">Zend_Db_Statement_Pdo::_prepare()</a></span><br>
+											</blockquote>
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html">Zend_Db_Statement</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#method__construct">Zend_Db_Statement::__construct()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodbindColumn">Zend_Db_Statement::bindColumn()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodbindParam">Zend_Db_Statement::bindParam()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodbindValue">Zend_Db_Statement::bindValue()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodexecute">Zend_Db_Statement::execute()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodfetchAll">Zend_Db_Statement::fetchAll()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodfetchColumn">Zend_Db_Statement::fetchColumn()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodfetchObject">Zend_Db_Statement::fetchObject()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodgetAttribute">Zend_Db_Statement::getAttribute()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodsetAttribute">Zend_Db_Statement::setAttribute()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodsetFetchMode">Zend_Db_Statement::setFetchMode()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#method_fetchBound">Zend_Db_Statement::_fetchBound()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#method_parseParameters">Zend_Db_Statement::_parseParameters()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#method_stripQuoted">Zend_Db_Statement::_stripQuoted()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:32:18 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

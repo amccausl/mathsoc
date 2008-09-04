@@ -1,0 +1,245 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>B.3. Naming Conventions</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="prev" href="coding-standard.php-file-formatting.html" title="B.2. PHP File Formatting">
+<link rel="next" href="coding-standard.coding-style.html" title="B.4. Coding Style">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="coding-standard.naming-conventions.html#coding-standard.naming-conventions.classes" title="B.3.1. Classes">
+<link rel="subsection" href="coding-standard.naming-conventions.html#coding-standard.naming-conventions.filenames" title="B.3.2. Filenames">
+<link rel="subsection" href="coding-standard.naming-conventions.html#coding-standard.naming-conventions.functions-and-methods" title="B.3.3. Functions and Methods">
+<link rel="subsection" href="coding-standard.naming-conventions.html#coding-standard.naming-conventions.variables" title="B.3.4. Variables">
+<link rel="subsection" href="coding-standard.naming-conventions.html#coding-standard.naming-conventions.constants" title="B.3.5. Constants">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">B.3. Naming Conventions</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="coding-standard.php-file-formatting.html">Prev</a> </td>
+<th width="60%" align="center">Appendix B. Zend Framework Coding Standard for PHP</th>
+<td width="20%" align="right"> <a accesskey="n" href="coding-standard.coding-style.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="coding-standard.naming-conventions"></a>B.3. Naming Conventions</h2></div></div></div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="coding-standard.naming-conventions.classes"></a>B.3.1. Classes</h3></div></div></div>
+<p>
+                Zend Framework standardizes on a class naming convention whereby the names
+                of the classes directly map to the directories in which they are stored.
+                The root level directory of the ZF standard library is the "Zend/" directory, whereas
+                the root level directory of the ZF extras library is the "ZendX/" directory. All 
+                Zend Framework classes are stored hierarchially under these root directories..
+            </p>
+<p>
+                Class names may only contain alphanumeric characters. Numbers are permitted
+                in class names but are discouraged in most cases. Underscores are only permitted in place
+                of the path separator; the filename "Zend/Db/Table.php" must map to the
+                class name "Zend_Db_Table".
+            </p>
+<p>
+                If a class name is comprised of more than one word, the first letter of each new
+                word must be capitalized.  Successive capitalized letters are not allowed, e.g.
+                a class "Zend_PDF" is not allowed while "Zend_Pdf" is acceptable.
+            </p>
+<p>
+                These conventions define a pseudo-namespace mechanism for Zend Framework. Zend Framework
+                will adopt the PHP namespace feature when it becomes available and is feasible for our developers to use in their applications.
+            </p>
+<p>
+                See the class names in the standard and extras libraries for examples of this classname convention. 
+
+                <span class="emphasis"><em>IMPORTANT:</em></span> Code that must be deployed alongside ZF libraries but is not
+                part of the standard or extras libraries (e.g. application code or libraries that are not distributed by Zend)
+                must never start with "Zend_" or "ZendX_".
+            </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="coding-standard.naming-conventions.filenames"></a>B.3.2. Filenames</h3></div></div></div>
+<p>
+                For all other files, only alphanumeric characters, underscores, and the dash
+                character ("-") are permitted. Spaces are strictly prohibited.
+            </p>
+<p>
+                Any file that contains PHP code should end with the extension ".php", with the notable exception of view scripts. The following
+                examples show acceptable filenames for Zend Framework classes.:
+
+                </p>
+<pre class="programlisting">
+Zend/Db.php
+
+Zend/Controller/Front.php
+
+Zend/View/Helper/FormRadio.php
+                </pre>
+<p>
+
+                File names must map to class names as described above.
+            </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="coding-standard.naming-conventions.functions-and-methods"></a>B.3.3. Functions and Methods</h3></div></div></div>
+<p>
+                Function names may only contain alphanumeric characters. Underscores are not permitted.
+                Numbers are permitted in function names but are discouraged in most cases.
+            </p>
+<p>
+                Function names must always start with a lowercase letter. When a function name consists
+                of more than one word, the first letter of each new word must be capitalized. This is
+                commonly called "camelCase" formatting.
+            </p>
+<p>
+                Verbosity is generally encouraged. Function names should be as verbose as is practical to fully describe their purpose and behavior.
+            </p>
+<p>
+                These are examples of acceptable names for functions:
+
+                </p>
+<pre class="programlisting">
+filterInput()
+
+getElementById()
+
+widgetFactory()
+                </pre>
+<p>
+            </p>
+<p>
+                For object-oriented programming, accessors for instance or static variables should always be prefixed with
+                "get" or "set". In implementing design patterns, such as the singleton or factory
+                patterns, the name of the method should contain the pattern name where practical to more thoroughly describe behavior.
+            </p>
+<p>
+                For methods on objects that are declared with the "private" or "protected" modified,
+                the first character of the variable name must be an underscore. This is the only
+                acceptable application of an underscore in a method name. Methods declared "public"
+                should never contain an underscore.
+            </p>
+<p>
+                Functions in the global scope (a.k.a "floating functions") are permitted but discouraged in most cases.
+                Consider wrapping these functions in a static class.
+            </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="coding-standard.naming-conventions.variables"></a>B.3.4. Variables</h3></div></div></div>
+<p>
+                Variable names may only contain alphanumeric characters. Underscores are not permitted.
+                Numbers are permitted in variable names but are discouraged in most cases.
+            </p>
+<p>
+                For instance variables that are declared with the "private" or "protected" modifier,
+                the first character of the variable name must be a single underscore. This is the only
+                acceptable application of an underscore in a variable name. Member variables declared "public"
+                should never start with an underscore.
+            </p>
+<p>
+                As with function names (see section 3.3) variable names must always start with a
+                lowercase letter and follow the "camelCaps" capitalization convention.
+            </p>
+<p>
+                Verbosity is generally encouraged. Variables should always be as verbose as practical to describe the data that the developer
+                intends to store in them. Terse variable names such as "$i" and "$n" are discouraged for all but the smallest loop contexts.
+                If a loop contains more than 20 lines of code, the index variables should have more descriptive names.
+            </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="coding-standard.naming-conventions.constants"></a>B.3.5. Constants</h3></div></div></div>
+<p>
+                Constants may contain both alphanumeric characters and underscores. Numbers are permitted
+                in constant names.
+            </p>
+<p>
+                All letters used in a constant name must be capitalized.
+            </p>
+<p>
+                Words in constant names must be separated by underscore characters. For
+                example, <code class="code">EMBED_SUPPRESS_EMBED_EXCEPTION</code> is permitted but
+                <code class="code">EMBED_SUPPRESSEMBEDEXCEPTION</code> is not.
+            </p>
+<p>
+                Constants must be defined as class members with the "const" modifier. Defining constants
+                in the global scope with the "define" function is permitted but strongly discouraged.
+            </p>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="coding-standard.php-file-formatting.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="coding-standard.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="coding-standard.coding-style.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">B.2. PHP File Formatting </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> B.4. Coding Style</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

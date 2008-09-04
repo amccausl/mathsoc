@@ -1,0 +1,359 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Chapter 26. Zend_Log</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="index.html" title="Programmer's Reference Guide">
+<link rel="prev" href="zend.locale.regions.html" title="25.6. Supported Regions for Locales">
+<link rel="next" href="zend.log.writers.html" title="26.2. Writers">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="section" href="zend.log.html#zend.log.overview" title="26.1. Overview">
+<link rel="section" href="zend.log.writers.html" title="26.2. Writers">
+<link rel="section" href="zend.log.formatters.html" title="26.3. Formatters">
+<link rel="section" href="zend.log.filters.html" title="26.4. Filters">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">Chapter 26. Zend_Log</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.locale.regions.html">Prev</a> </td>
+<th width="60%" align="center"> </th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.log.writers.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="chapter" lang="en">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="zend.log"></a>Chapter 26. Zend_Log</h2></div></div></div>
+<div class="toc">
+<p><b>Table of Contents</b></p>
+<dl>
+<dt><span class="sect1"><a href="zend.log.html#zend.log.overview">26.1. Overview</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.log.html#zend.log.overview.creating-a-logger">26.1.1. Creating a Log</a></span></dt>
+<dt><span class="sect2"><a href="zend.log.html#zend.log.overview.logging-messages">26.1.2. Logging Messages</a></span></dt>
+<dt><span class="sect2"><a href="zend.log.html#zend.log.overview.destroying-a-logger">26.1.3. Destroying a Log</a></span></dt>
+<dt><span class="sect2"><a href="zend.log.html#zend.log.overview.builtin-priorities">26.1.4. Using Built-in Priorities</a></span></dt>
+<dt><span class="sect2"><a href="zend.log.html#zend.log.overview.user-defined-priorities">26.1.5. Adding User-defined Priorities</a></span></dt>
+<dt><span class="sect2"><a href="zend.log.html#zend.log.overview.understanding-fields">26.1.6. Understanding Log Events</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.log.writers.html">26.2. Writers</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.log.writers.html#zend.log.writers.stream">26.2.1. Writing to Streams</a></span></dt>
+<dt><span class="sect2"><a href="zend.log.writers.html#zend.log.writers.database">26.2.2. Writing to Databases</a></span></dt>
+<dt><span class="sect2"><a href="zend.log.writers.html#zend.log.writers.null">26.2.3. Stubbing Out the Writer</a></span></dt>
+<dt><span class="sect2"><a href="zend.log.writers.html#zend.log.writers.mock">26.2.4. Testing with the Mock</a></span></dt>
+<dt><span class="sect2"><a href="zend.log.writers.html#zend.log.writers.compositing">26.2.5. Compositing Writers</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.log.formatters.html">26.3. Formatters</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.log.formatters.html#zend.log.formatters.simple">26.3.1. Simple Formatting</a></span></dt>
+<dt><span class="sect2"><a href="zend.log.formatters.html#zend.log.formatters.xml">26.3.2. Formatting to XML</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.log.filters.html">26.4. Filters</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.log.filters.html#zend.log.filters.all-writers">26.4.1. Filtering for All Writers</a></span></dt>
+<dt><span class="sect2"><a href="zend.log.filters.html#zend.log.filters.single-writer">26.4.2. Filtering for a Writer Instance</a></span></dt>
+</dl></dd>
+</dl>
+</div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.log.overview"></a>26.1. Overview</h2></div></div></div>
+<p>
+      <code class="code">Zend_Log</code> is a component for general purpose logging.
+      It supports multiple log backends, formatting messages sent to the log,
+      and filtering messages from being logged. These functions are divided
+      into the following objects:
+
+      </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+            A Log (instance of <code class="code">Zend_Log</code>) is the object that your
+            application uses the most. You can have as many Log objects as you
+            like; they do not interact. A Log object must contain at
+            least one Writer, and can optionally contain one or more Filters.
+          </p></li>
+<li><p>
+            A Writer (inherits from <code class="code">Zend_Log_Writer_Abstract</code>) is
+            responsible for saving data to storage.
+          </p></li>
+<li><p>
+            A Filter (implements <code class="code">Zend_Log_Filter_Interface</code>)
+            blocks log data from being saved. A filter may be applied to an
+            individual Writer, or to a Log where it is applied before all
+            Writers. In either case, filters may be chained.
+          </p></li>
+<li><p>
+            A Formatter (implements <code class="code">Zend_Log_Formatter_Interface</code>)
+            can format the log data before it is written by a Writer. Each
+            Writer has exactly one Formatter.
+          </p></li>
+</ul></div>
+<p>
+    </p>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.log.overview.creating-a-logger"></a>26.1.1. Creating a Log</h3></div></div></div>
+<p>
+        To get started logging, instantiate a Writer and then pass it to a Log
+        instance:
+
+        </p>
+<pre class="programlisting">&lt;?php
+$logger = new Zend_Log();
+$writer = new Zend_Log_Writer_Stream('php://output');
+
+$logger-&gt;addWriter($writer);
+        </pre>
+<p>
+
+        It is important to note that the Log must
+        have at least one Writer.  You can add any number of Writers using the
+        Log's <code class="code">addWriter()</code> method.
+      </p>
+<p>
+        Alternatively, you can pass a Writer directly to constructor of Log as
+        a shortcut:
+
+        </p>
+<pre class="programlisting">&lt;?php
+$writer = new Zend_Log_Writer_Stream('php://output');
+$logger = new Zend_Log($writer);
+        </pre>
+<p>
+
+        The Log is now ready to use.
+      </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.log.overview.logging-messages"></a>26.1.2. Logging Messages</h3></div></div></div>
+<p>
+        To log a message, call the <code class="code">log()</code> method of a Log instance
+        and pass it the message with a corresponding priority:
+
+      </p>
+<pre class="programlisting">&lt;?php
+$logger-&gt;log('Informational message', Zend_Log::INFO);
+      </pre>
+<p>
+
+      The first parameter of the <code class="code">log()</code> method is a string <code class="code">message</code> and the second
+      parameter is an integer <code class="code">priority</code>.  The priority must be one of the priorities recognized
+      by the Log instance.  This is explained in the next section.
+    </p>
+<p>
+      A shortcut is also available. Instead of calling the <code class="code">log()</code> method, you can
+      call a method by the same name as the priority:
+
+      </p>
+<pre class="programlisting">&lt;?php
+$logger-&gt;log('Informational message', Zend_Log::INFO);
+$logger-&gt;info('Informational message');
+
+$logger-&gt;log('Emergency message', Zend_Log::EMERG);
+$logger-&gt;emerg('Emergency message');
+      </pre>
+<p>
+    </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.log.overview.destroying-a-logger"></a>26.1.3. Destroying a Log</h3></div></div></div>
+<p>
+      If the Log object is no longer needed, set the variable containing it to
+      <code class="code">null</code> to destroy it. This will automatically call the
+      <code class="code">shutdown()</code> instance method of each attached Writer before
+      the Log object is destroyed:
+
+      </p>
+<pre class="programlisting">&lt;?php
+$logger = null;
+      </pre>
+<p>
+
+      Explicitly destroying the log in this way is optional and is performed
+      automatically at PHP shutdown.
+    </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.log.overview.builtin-priorities"></a>26.1.4. Using Built-in Priorities</h3></div></div></div>
+<p>
+      The <code class="code">Zend_Log</code> class defines the following priorities:
+
+      </p>
+<pre class="programlisting">
+EMERG   = 0;  // Emergency: system is unusable
+ALERT   = 1;  // Alert: action must be taken immediately
+CRIT    = 2;  // Critical: critical conditions
+ERR     = 3;  // Error: error conditions
+WARN    = 4;  // Warning: warning conditions
+NOTICE  = 5;  // Notice: normal but significant condition
+INFO    = 6;  // Informational: informational messages
+DEBUG   = 7;  // Debug: debug messages
+      </pre>
+<p>
+
+      These priorities are always available, and a convenience method of the same name
+      is available for each one.
+    </p>
+<p>
+      The priorities are not arbitrary. They come from the BSD <code class="code">syslog</code> protocol,
+      which is described in <a href="http://tools.ietf.org/html/rfc3164" target="_top">RFC-3164</a>.
+      The names and corresponding priority numbers are also
+      compatible with another PHP logging system,
+      <a href="http://pear.php.net/package/log" target="_top">PEAR Log</a>,
+      which perhaps promotes interoperability between it and <code class="code">Zend_Log</code>.
+    </p>
+<p>
+      Priority numbers descend in order of importance. <code class="code">EMERG</code> (0)
+      is the most important priority. <code class="code">DEBUG</code> (7) is the least
+      important priority of the built-in priorities. You may define priorities
+      of lower importance than <code class="code">DEBUG</code>. When
+      selecting the priority for your log message, be aware of this priority
+      hierarchy and choose appropriately.
+    </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.log.overview.user-defined-priorities"></a>26.1.5. Adding User-defined Priorities</h3></div></div></div>
+<p>
+      User-defined priorities can be added at runtime using the Log's
+      <code class="code">addPriority()</code> method:
+
+      </p>
+<pre class="programlisting">&lt;?php
+$logger-&gt;addPriority('FOO', 8);
+      </pre>
+<p>
+
+      The snippet above creates a new priority, <code class="code">FOO</code>, whose
+      value is <code class="code">8</code>. The new priority is then available for logging:
+
+      </p>
+<pre class="programlisting">&lt;?php
+$logger-&gt;log('Foo message', 8);
+$logger-&gt;foo('Foo Message');
+      </pre>
+<p>
+
+      New priorities cannot overwrite existing ones.
+    </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.log.overview.understanding-fields"></a>26.1.6. Understanding Log Events</h3></div></div></div>
+<p>
+      When you call the <code class="code">log()</code> method or one of its shortcuts, a
+      log event is created. This is simply an associative array with data
+      describing the event that is passed to the writers. The following keys
+      are always created in this array: <code class="code">timestamp</code>,
+      <code class="code">message</code>, <code class="code">priority</code>, and
+      <code class="code">priorityName</code>.
+    </p>
+<p>
+      The creation of the <code class="code">event</code> array is completely transparent.
+      However, knowledge of the <code class="code">event</code> array is required for adding an
+      item that does not exist in the default set above.
+    </p>
+<p>
+      To add a new item to every future event, call the <code class="code">setEventItem()</code>
+      method giving a key and a value:
+
+      </p>
+<pre class="programlisting">&lt;?php
+$logger-&gt;setEventItem('pid', getmypid());
+      </pre>
+<p>
+
+      The example above sets a new item named <code class="code">pid</code> and populates
+      it with the PID of the current process. Once a new item has been
+      set, it is available automatically to all writers along with all of the
+      other data event data during logging. An item can be overwritten at any
+      time by calling the <code class="code">setEventItem()</code> method again.
+    </p>
+<p>
+      Setting a new event item with <code class="code">setEventItem()</code> causes the
+      new item to be sent to all writers of the logger. However, this does
+      not guarantee that the writers actually record the item. This is
+      because the writers won't know what to do with it unless a formatter
+      object is informed of the new item. Please see the section on Formatters
+      to learn more.
+    </p>
+</div>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.locale.regions.html">Prev</a> </td>
+<td width="20%" align="center"> </td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.log.writers.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">25.6. Supported Regions for Locales </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 26.2. Writers</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

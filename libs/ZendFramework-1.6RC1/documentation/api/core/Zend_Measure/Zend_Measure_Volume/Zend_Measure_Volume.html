@@ -1,0 +1,2026 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Measure_Volume</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_Measure_Volume</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-methods">Methods</a>
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Class for handling acceleration conversions</p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Measure---Volume.php.html">/Measure/Volume.php</a> (line <span class="field">38</span>)
+		</p>
+		
+				
+		<pre><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html">Zend_Measure_Abstract</a>
+   |
+   --Zend_Measure_Volume</pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-methods">Methods</a>
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ACRE_FOOT" title="details" class="const-name">ACRE_FOOT</a> = 					<span class="var-type"> 'ACRE_FOOT'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ACRE_FOOT_SURVEY" title="details" class="const-name">ACRE_FOOT_SURVEY</a> = 					<span class="var-type"> 'ACRE_FOOT_SURVEY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ACRE_INCH" title="details" class="const-name">ACRE_INCH</a> = 					<span class="var-type"> 'ACRE_INCH'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL" title="details" class="const-name">BARREL</a> = 					<span class="var-type"> 'BARREL'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL_US" title="details" class="const-name">BARREL_US</a> = 					<span class="var-type"> 'BARREL_US'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL_US_DRY" title="details" class="const-name">BARREL_US_DRY</a> = 					<span class="var-type"> 'BARREL_US_DRY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL_US_FEDERAL" title="details" class="const-name">BARREL_US_FEDERAL</a> = 					<span class="var-type"> 'BARREL_US_FEDERAL'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL_US_PETROLEUM" title="details" class="const-name">BARREL_US_PETROLEUM</a> = 					<span class="var-type"> 'BARREL_US_PETROLEUM'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL_WINE" title="details" class="const-name">BARREL_WINE</a> = 					<span class="var-type"> 'BARREL_WINE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BOARD_FOOT" title="details" class="const-name">BOARD_FOOT</a> = 					<span class="var-type"> 'BOARD_FOOT'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BUCKET" title="details" class="const-name">BUCKET</a> = 					<span class="var-type"> 'BUCKET'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BUCKET_US" title="details" class="const-name">BUCKET_US</a> = 					<span class="var-type"> 'BUCKET_US'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BUSHEL" title="details" class="const-name">BUSHEL</a> = 					<span class="var-type"> 'BUSHEL'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BUSHEL_US" title="details" class="const-name">BUSHEL_US</a> = 					<span class="var-type"> 'BUSHEL_US'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CENTILTER" title="details" class="const-name">CENTILTER</a> = 					<span class="var-type"> 'CENTILITER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CORD" title="details" class="const-name">CORD</a> = 					<span class="var-type"> 'CORD'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CORD_FOOT" title="details" class="const-name">CORD_FOOT</a> = 					<span class="var-type"> 'CORD_FOOT'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_CENTIMETER" title="details" class="const-name">CUBIC_CENTIMETER</a> = 					<span class="var-type"> 'CUBIC_CENTIMETER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_CUBIT" title="details" class="const-name">CUBIC_CUBIT</a> = 					<span class="var-type"> 'CUBIC_CUBIT'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_DECIMETER" title="details" class="const-name">CUBIC_DECIMETER</a> = 					<span class="var-type"> 'CUBIC_DECIMETER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_DEKAMETER" title="details" class="const-name">CUBIC_DEKAMETER</a> = 					<span class="var-type"> 'CUBIC_DEKAMETER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_FOOT" title="details" class="const-name">CUBIC_FOOT</a> = 					<span class="var-type"> 'CUBIC_FOOT'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_INCH" title="details" class="const-name">CUBIC_INCH</a> = 					<span class="var-type"> 'CUBIC_INCH'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_KILOMETER" title="details" class="const-name">CUBIC_KILOMETER</a> = 					<span class="var-type"> 'CUBIC_KILOMETER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_METER" title="details" class="const-name">CUBIC_METER</a> = 					<span class="var-type"> 'CUBIC_METER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_MICROMETER" title="details" class="const-name">CUBIC_MICROMETER</a> = 					<span class="var-type"> 'CUBIC_MICROMETER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_MILE" title="details" class="const-name">CUBIC_MILE</a> = 					<span class="var-type"> 'CUBIC_MILE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_MILLIMETER" title="details" class="const-name">CUBIC_MILLIMETER</a> = 					<span class="var-type"> 'CUBIC_MILLIMETER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_YARD" title="details" class="const-name">CUBIC_YARD</a> = 					<span class="var-type"> 'CUBIC_YARD'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUP" title="details" class="const-name">CUP</a> = 					<span class="var-type"> 'CUP'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUP_CANADA" title="details" class="const-name">CUP_CANADA</a> = 					<span class="var-type"> 'CUP_CANADA'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUP_US" title="details" class="const-name">CUP_US</a> = 					<span class="var-type"> 'CUP_US'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DECILITER" title="details" class="const-name">DECILITER</a> = 					<span class="var-type"> 'DECILITER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DEKALITER" title="details" class="const-name">DEKALITER</a> = 					<span class="var-type"> 'DEKALITER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DRAM" title="details" class="const-name">DRAM</a> = 					<span class="var-type"> 'DRAM'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DRUM" title="details" class="const-name">DRUM</a> = 					<span class="var-type"> 'DRUM'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DRUM_US" title="details" class="const-name">DRUM_US</a> = 					<span class="var-type"> 'DRUM_US'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#FIFTH" title="details" class="const-name">FIFTH</a> = 					<span class="var-type"> 'FIFTH'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON" title="details" class="const-name">GALLON</a> = 					<span class="var-type"> 'GALLON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_US" title="details" class="const-name">GALLON_US</a> = 					<span class="var-type"> 'GALLON_US'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_US_DRY" title="details" class="const-name">GALLON_US_DRY</a> = 					<span class="var-type"> 'GALLON_US_DRY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GILL" title="details" class="const-name">GILL</a> = 					<span class="var-type"> 'GILL'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GILL_US" title="details" class="const-name">GILL_US</a> = 					<span class="var-type"> 'GILL_US'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#HECTARE_METER" title="details" class="const-name">HECTARE_METER</a> = 					<span class="var-type"> 'HECTARE_METER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#HECTOLITER" title="details" class="const-name">HECTOLITER</a> = 					<span class="var-type"> 'HECTOLITER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#HOGSHEAD" title="details" class="const-name">HOGSHEAD</a> = 					<span class="var-type"> 'HOGSHEAD'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#HOGSHEAD_US" title="details" class="const-name">HOGSHEAD_US</a> = 					<span class="var-type"> 'HOGSHEAD_US'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#JIGGER" title="details" class="const-name">JIGGER</a> = 					<span class="var-type"> 'JIGGER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#KILOLITER" title="details" class="const-name">KILOLITER</a> = 					<span class="var-type"> 'KILOLITER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#LITER" title="details" class="const-name">LITER</a> = 					<span class="var-type"> 'LITER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MEASURE" title="details" class="const-name">MEASURE</a> = 					<span class="var-type"> 'MEASURE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MEGALITER" title="details" class="const-name">MEGALITER</a> = 					<span class="var-type"> 'MEGALITER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MICROLITER" title="details" class="const-name">MICROLITER</a> = 					<span class="var-type"> 'MICROLITER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MILLILITER" title="details" class="const-name">MILLILITER</a> = 					<span class="var-type"> 'MILLILITER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MINIM" title="details" class="const-name">MINIM</a> = 					<span class="var-type"> 'MINIM'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MINIM_US" title="details" class="const-name">MINIM_US</a> = 					<span class="var-type"> 'MINIM_US'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#OUNCE" title="details" class="const-name">OUNCE</a> = 					<span class="var-type"> 'OUNCE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#OUNCE_US" title="details" class="const-name">OUNCE_US</a> = 					<span class="var-type"> 'OUNCE_US'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PECK" title="details" class="const-name">PECK</a> = 					<span class="var-type"> 'PECK'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PECK_US" title="details" class="const-name">PECK_US</a> = 					<span class="var-type"> 'PECK_US'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PINT" title="details" class="const-name">PINT</a> = 					<span class="var-type"> 'PINT'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PINT_US" title="details" class="const-name">PINT_US</a> = 					<span class="var-type"> 'PINT_US'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PINT_US_DRY" title="details" class="const-name">PINT_US_DRY</a> = 					<span class="var-type"> 'PINT_US_DRY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PIPE" title="details" class="const-name">PIPE</a> = 					<span class="var-type"> 'PIPE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PIPE_US" title="details" class="const-name">PIPE_US</a> = 					<span class="var-type"> 'PIPE_US'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PONY" title="details" class="const-name">PONY</a> = 					<span class="var-type"> 'PONY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#QUART" title="details" class="const-name">QUART</a> = 					<span class="var-type"> 'QUART'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#QUART_ANCIENT" title="details" class="const-name">QUART_ANCIENT</a> = 					<span class="var-type"> 'QUART_ANCIENT'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#QUART_GERMANY" title="details" class="const-name">QUART_GERMANY</a> = 					<span class="var-type"> 'QUART_GERMANY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#QUART_UK" title="details" class="const-name">QUART_UK</a> = 					<span class="var-type"> 'QUART_UK'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#QUART_US" title="details" class="const-name">QUART_US</a> = 					<span class="var-type"> 'QUART_US'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#QUART_US_DRY" title="details" class="const-name">QUART_US_DRY</a> = 					<span class="var-type"> 'QUART_US_DRY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SHOT" title="details" class="const-name">SHOT</a> = 					<span class="var-type"> 'SHOT'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#STANDARD" title="details" class="const-name">STANDARD</a> = 					<span class="var-type"> 'CUBIC_METER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#STERE" title="details" class="const-name">STERE</a> = 					<span class="var-type"> 'STERE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TABLESPOON" title="details" class="const-name">TABLESPOON</a> = 					<span class="var-type"> 'TABLESPOON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TABLESPOON_UK" title="details" class="const-name">TABLESPOON_UK</a> = 					<span class="var-type"> 'TABLESPOON_UK'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TABLESPOON_US" title="details" class="const-name">TABLESPOON_US</a> = 					<span class="var-type"> 'TABLESPOON_US'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TEASPOON" title="details" class="const-name">TEASPOON</a> = 					<span class="var-type"> 'TEASPOON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TEASPOON_UK" title="details" class="const-name">TEASPOON_UK</a> = 					<span class="var-type"> 'TEASPOON_UK'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TEASPOON_US" title="details" class="const-name">TEASPOON_US</a> = 					<span class="var-type"> 'TEASPOON_US'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#YARD" title="details" class="const-name">YARD</a> = 					<span class="var-type"> 'YARD'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-methods">Methods</a>
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																								<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$_units" title="details" class="var-name">$_units</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<span class="disabled">Vars</span>
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-methods">Methods</a>
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_units" id="$_units"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_units</span>
+			 = <span class="var-default">array(<br />        'ACRE_FOOT'           =&gt; array('1233.48185532', 'ac ft'),'ACRE_FOOT_SURVEY'=&gt;array('1233.489','ac ft'),'ACRE_INCH'=&gt;array('102.79015461','ac in'),'BARREL_WINE'=&gt;array('0.143201835','bbl'),'BARREL'=&gt;array('0.16365924','bbl'),'BARREL_US_DRY'=&gt;array(array(''=&gt;'26.7098656608','/'=&gt;'231'),'bbl'),'BARREL_US_FEDERAL'=&gt;array('0.1173477658','bbl'),'BARREL_US'=&gt;array('0.1192404717','bbl'),'BARREL_US_PETROLEUM'=&gt;array('0.1589872956','bbl'),'BOARD_FOOT'=&gt;array(array(''=&gt;'6.5411915904','/'=&gt;'2772'),'board foot'),'BUCKET'=&gt;array('0.01818436','bucket'),'BUCKET_US'=&gt;array('0.018927059','bucket'),'BUSHEL'=&gt;array('0.03636872','bu'),'BUSHEL_US'=&gt;array('0.03523907','bu'),'CENTILITER'=&gt;array('0.00001','cl'),'CORD'=&gt;array('3.624556416','cd'),'CORD_FOOT'=&gt;array('0.453069552','cd ft'),'CUBIC_CENTIMETER'=&gt;array('0.000001','cm³'),'CUBIC_CUBIT'=&gt;array('0.144','cubit³'),'CUBIC_DECIMETER'=&gt;array('0.001','dm³'),'CUBIC_DEKAMETER'=&gt;array('1000','dam³'),'CUBIC_FOOT'=&gt;array(array(''=&gt;'6.54119159','/'=&gt;'231'),'ft³'),'CUBIC_INCH'=&gt;array(array(''=&gt;'0.0037854118','/'=&gt;'231'),'in³'),'CUBIC_KILOMETER'=&gt;array('1.0e+9','km³'),'CUBIC_METER'=&gt;array('1','m³'),'CUBIC_MILE'=&gt;array(array(''=&gt;'0.0037854118','/'=&gt;'231','*'=&gt;'75271680','*'=&gt;'3379200'),'mi³'),'CUBIC_MICROMETER'=&gt;array('1.0e-18','µm³'),'CUBIC_MILLIMETER'=&gt;array('1.0e-9','mm³'),'CUBIC_YARD'=&gt;array(array(''=&gt;'0.0037854118','/'=&gt;'231','*'=&gt;'46656'),'yd³'),'CUP_CANADA'=&gt;array('0.0002273045','c'),'CUP'=&gt;array('0.00025','c'),'CUP_US'=&gt;array(array(''=&gt;'0.0037854118','/'=&gt;'16'),'c'),'DECILITER'=&gt;array('0.0001','dl'),'DEKALITER'=&gt;array('0.001','dal'),'DRAM'=&gt;array(array(''=&gt;'0.0037854118','/'=&gt;'1024'),'dr'),'DRUM_US'=&gt;array('0.208197649','drum'),'DRUM'=&gt;array('0.2','drum'),'FIFTH'=&gt;array('0.00075708236','fifth'),'GALLON'=&gt;array('0.00454609','gal'),'GALLON_US_DRY'=&gt;array('0.0044048838','gal'),'GALLON_US'=&gt;array('0.0037854118','gal'),'GILL'=&gt;array(array(''=&gt;'0.00454609','/'=&gt;'32'),'gi'),'GILL_US'=&gt;array(array(''=&gt;'0.0037854118','/'=&gt;'32'),'gi'),'HECTARE_METER'=&gt;array('10000','ha m'),'HECTOLITER'=&gt;array('0.1','hl'),'HOGSHEAD'=&gt;array('0.28640367','hhd'),'HOGSHEAD_US'=&gt;array('0.2384809434','hhd'),'JIGGER'=&gt;array(array(''=&gt;'0.0037854118','/'=&gt;'128','*'=&gt;'1.5'),'jigger'),'KILOLITER'=&gt;array('1','kl'),'LITER'=&gt;array('0.001','l'),'MEASURE'=&gt;array('0.0077','measure'),'MEGALITER'=&gt;array('1000','Ml'),'MICROLITER'=&gt;array('1.0e-9','µl'),'MILLILITER'=&gt;array('0.000001','ml'),'MINIM'=&gt;array(array(''=&gt;'0.00454609','/'=&gt;'76800'),'min'),'MINIM_US'=&gt;array(array(''=&gt;'0.0037854118','/'=&gt;'61440'),'min'),'OUNCE'=&gt;array(array(''=&gt;'0.00454609','/'=&gt;'160'),'oz'),'OUNCE_US'=&gt;array(array(''=&gt;'0.0037854118','/'=&gt;'128'),'oz'),'PECK'=&gt;array('0.00909218','pk'),'PECK_US'=&gt;array('0.0088097676','pk'),'PINT'=&gt;array(array(''=&gt;'0.00454609','/'=&gt;'8'),'pt'),'PINT_US_DRY'=&gt;array(array(''=&gt;'0.0044048838','/'=&gt;'8'),'pt'),'PINT_US'=&gt;array(array(''=&gt;'0.0037854118','/'=&gt;'8'),'pt'),'PIPE'=&gt;array('0.49097772','pipe'),'PIPE_US'=&gt;array('0.4769618868','pipe'),'PONY'=&gt;array(array(''=&gt;'0.0037854118','/'=&gt;'128'),'pony'),'QUART_GERMANY'=&gt;array('0.00114504','qt'),'QUART_ANCIENT'=&gt;array('0.00108','qt'),'QUART'=&gt;array(array(''=&gt;'0.00454609','/'=&gt;'4'),'qt'),'QUART_US_DRY'=&gt;array(array(''=&gt;'0.0044048838','/'=&gt;'4'),'qt'),'QUART_US'=&gt;array(array(''=&gt;'0.0037854118','/'=&gt;'4'),'qt'),'QUART_UK'=&gt;array('0.29094976','qt'),'SHOT'=&gt;array(array(''=&gt;'0.0037854118','/'=&gt;'128'),'shot'),'STERE'=&gt;array('1','st'),'TABLESPOON'=&gt;array('0.000015','tbsp'),'TABLESPOON_UK'=&gt;array(array(''=&gt;'0.00454609','/'=&gt;'320'),'tbsp'),'TABLESPOON_US'=&gt;array(array(''=&gt;'0.0037854118','/'=&gt;'256'),'tbsp'),'TEASPOON'=&gt;array('0.000005','tsp'),'TEASPOON_UK'=&gt;array(array(''=&gt;'0.00454609','/'=&gt;'1280'),'tsp'),'TEASPOON_US'=&gt;array(array(''=&gt;'0.0037854118','/'=&gt;'768'),'tsp'),'YARD'=&gt;array(array(''=&gt;'176.6121729408','/'=&gt;'231'),'yd'),'STANDARD'=&gt;'CUBIC_METER')</span>			(line <span class="line-number">129</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Calculations for all volume units</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#var$_units">Zend_Measure_Abstract::$_units</a></dt>
+						<dd>Unit types for this measurement</dd>
+					</dl>
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html">Zend_Measure_Abstract</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#var$_locale">Zend_Measure_Abstract::$_locale</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#var$_type">Zend_Measure_Abstract::$_type</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#var$_value">Zend_Measure_Abstract::$_value</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<span class="disabled">Methods</span>
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html">Zend_Measure_Abstract</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#method__construct">Zend_Measure_Abstract::__construct()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodadd">Zend_Measure_Abstract::add()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodcompare">Zend_Measure_Abstract::compare()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodconvertTo">Zend_Measure_Abstract::convertTo()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodequals">Zend_Measure_Abstract::equals()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodgetConversionList">Zend_Measure_Abstract::getConversionList()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodgetType">Zend_Measure_Abstract::getType()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodgetValue">Zend_Measure_Abstract::getValue()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodsetType">Zend_Measure_Abstract::setType()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodsetValue">Zend_Measure_Abstract::setValue()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodsub">Zend_Measure_Abstract::sub()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodtoString">Zend_Measure_Abstract::toString()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#method__toString">Zend_Measure_Abstract::__toString()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<span class="disabled">Constants</span>
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-methods">Methods</a>
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constACRE_FOOT" id="ACRE_FOOT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ACRE_FOOT</span>
+			 = <span class="const-default"> 'ACRE_FOOT'</span>
+			(line <span class="line-number">42</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constACRE_FOOT_SURVEY" id="ACRE_FOOT_SURVEY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ACRE_FOOT_SURVEY</span>
+			 = <span class="const-default"> 'ACRE_FOOT_SURVEY'</span>
+			(line <span class="line-number">43</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constACRE_INCH" id="ACRE_INCH"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ACRE_INCH</span>
+			 = <span class="const-default"> 'ACRE_INCH'</span>
+			(line <span class="line-number">44</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL" id="BARREL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL</span>
+			 = <span class="const-default"> 'BARREL'</span>
+			(line <span class="line-number">46</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL_US" id="BARREL_US"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL_US</span>
+			 = <span class="const-default"> 'BARREL_US'</span>
+			(line <span class="line-number">49</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL_US_DRY" id="BARREL_US_DRY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL_US_DRY</span>
+			 = <span class="const-default"> 'BARREL_US_DRY'</span>
+			(line <span class="line-number">47</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL_US_FEDERAL" id="BARREL_US_FEDERAL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL_US_FEDERAL</span>
+			 = <span class="const-default"> 'BARREL_US_FEDERAL'</span>
+			(line <span class="line-number">48</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL_US_PETROLEUM" id="BARREL_US_PETROLEUM"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL_US_PETROLEUM</span>
+			 = <span class="const-default"> 'BARREL_US_PETROLEUM'</span>
+			(line <span class="line-number">50</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL_WINE" id="BARREL_WINE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL_WINE</span>
+			 = <span class="const-default"> 'BARREL_WINE'</span>
+			(line <span class="line-number">45</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBOARD_FOOT" id="BOARD_FOOT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BOARD_FOOT</span>
+			 = <span class="const-default"> 'BOARD_FOOT'</span>
+			(line <span class="line-number">51</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBUCKET" id="BUCKET"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BUCKET</span>
+			 = <span class="const-default"> 'BUCKET'</span>
+			(line <span class="line-number">52</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBUCKET_US" id="BUCKET_US"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BUCKET_US</span>
+			 = <span class="const-default"> 'BUCKET_US'</span>
+			(line <span class="line-number">53</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBUSHEL" id="BUSHEL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BUSHEL</span>
+			 = <span class="const-default"> 'BUSHEL'</span>
+			(line <span class="line-number">54</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBUSHEL_US" id="BUSHEL_US"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BUSHEL_US</span>
+			 = <span class="const-default"> 'BUSHEL_US'</span>
+			(line <span class="line-number">55</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCENTILTER" id="CENTILTER"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CENTILTER</span>
+			 = <span class="const-default"> 'CENTILITER'</span>
+			(line <span class="line-number">56</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCORD" id="CORD"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CORD</span>
+			 = <span class="const-default"> 'CORD'</span>
+			(line <span class="line-number">57</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCORD_FOOT" id="CORD_FOOT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CORD_FOOT</span>
+			 = <span class="const-default"> 'CORD_FOOT'</span>
+			(line <span class="line-number">58</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_CENTIMETER" id="CUBIC_CENTIMETER"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_CENTIMETER</span>
+			 = <span class="const-default"> 'CUBIC_CENTIMETER'</span>
+			(line <span class="line-number">59</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_CUBIT" id="CUBIC_CUBIT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_CUBIT</span>
+			 = <span class="const-default"> 'CUBIC_CUBIT'</span>
+			(line <span class="line-number">60</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_DECIMETER" id="CUBIC_DECIMETER"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_DECIMETER</span>
+			 = <span class="const-default"> 'CUBIC_DECIMETER'</span>
+			(line <span class="line-number">61</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_DEKAMETER" id="CUBIC_DEKAMETER"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_DEKAMETER</span>
+			 = <span class="const-default"> 'CUBIC_DEKAMETER'</span>
+			(line <span class="line-number">62</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_FOOT" id="CUBIC_FOOT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_FOOT</span>
+			 = <span class="const-default"> 'CUBIC_FOOT'</span>
+			(line <span class="line-number">63</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_INCH" id="CUBIC_INCH"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_INCH</span>
+			 = <span class="const-default"> 'CUBIC_INCH'</span>
+			(line <span class="line-number">64</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_KILOMETER" id="CUBIC_KILOMETER"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_KILOMETER</span>
+			 = <span class="const-default"> 'CUBIC_KILOMETER'</span>
+			(line <span class="line-number">65</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_METER" id="CUBIC_METER"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_METER</span>
+			 = <span class="const-default"> 'CUBIC_METER'</span>
+			(line <span class="line-number">66</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_MICROMETER" id="CUBIC_MICROMETER"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_MICROMETER</span>
+			 = <span class="const-default"> 'CUBIC_MICROMETER'</span>
+			(line <span class="line-number">68</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_MILE" id="CUBIC_MILE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_MILE</span>
+			 = <span class="const-default"> 'CUBIC_MILE'</span>
+			(line <span class="line-number">67</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_MILLIMETER" id="CUBIC_MILLIMETER"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_MILLIMETER</span>
+			 = <span class="const-default"> 'CUBIC_MILLIMETER'</span>
+			(line <span class="line-number">69</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_YARD" id="CUBIC_YARD"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_YARD</span>
+			 = <span class="const-default"> 'CUBIC_YARD'</span>
+			(line <span class="line-number">70</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUP" id="CUP"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUP</span>
+			 = <span class="const-default"> 'CUP'</span>
+			(line <span class="line-number">72</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUP_CANADA" id="CUP_CANADA"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUP_CANADA</span>
+			 = <span class="const-default"> 'CUP_CANADA'</span>
+			(line <span class="line-number">71</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUP_US" id="CUP_US"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUP_US</span>
+			 = <span class="const-default"> 'CUP_US'</span>
+			(line <span class="line-number">73</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constDECILITER" id="DECILITER"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DECILITER</span>
+			 = <span class="const-default"> 'DECILITER'</span>
+			(line <span class="line-number">74</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constDEKALITER" id="DEKALITER"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DEKALITER</span>
+			 = <span class="const-default"> 'DEKALITER'</span>
+			(line <span class="line-number">75</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constDRAM" id="DRAM"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DRAM</span>
+			 = <span class="const-default"> 'DRAM'</span>
+			(line <span class="line-number">76</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constDRUM" id="DRUM"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DRUM</span>
+			 = <span class="const-default"> 'DRUM'</span>
+			(line <span class="line-number">78</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constDRUM_US" id="DRUM_US"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DRUM_US</span>
+			 = <span class="const-default"> 'DRUM_US'</span>
+			(line <span class="line-number">77</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFIFTH" id="FIFTH"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FIFTH</span>
+			 = <span class="const-default"> 'FIFTH'</span>
+			(line <span class="line-number">79</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON" id="GALLON"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON</span>
+			 = <span class="const-default"> 'GALLON'</span>
+			(line <span class="line-number">80</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_US" id="GALLON_US"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_US</span>
+			 = <span class="const-default"> 'GALLON_US'</span>
+			(line <span class="line-number">82</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_US_DRY" id="GALLON_US_DRY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_US_DRY</span>
+			 = <span class="const-default"> 'GALLON_US_DRY'</span>
+			(line <span class="line-number">81</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGILL" id="GILL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GILL</span>
+			 = <span class="const-default"> 'GILL'</span>
+			(line <span class="line-number">83</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGILL_US" id="GILL_US"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GILL_US</span>
+			 = <span class="const-default"> 'GILL_US'</span>
+			(line <span class="line-number">84</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constHECTARE_METER" id="HECTARE_METER"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HECTARE_METER</span>
+			 = <span class="const-default"> 'HECTARE_METER'</span>
+			(line <span class="line-number">85</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constHECTOLITER" id="HECTOLITER"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HECTOLITER</span>
+			 = <span class="const-default"> 'HECTOLITER'</span>
+			(line <span class="line-number">86</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constHOGSHEAD" id="HOGSHEAD"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HOGSHEAD</span>
+			 = <span class="const-default"> 'HOGSHEAD'</span>
+			(line <span class="line-number">87</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constHOGSHEAD_US" id="HOGSHEAD_US"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HOGSHEAD_US</span>
+			 = <span class="const-default"> 'HOGSHEAD_US'</span>
+			(line <span class="line-number">88</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constJIGGER" id="JIGGER"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">JIGGER</span>
+			 = <span class="const-default"> 'JIGGER'</span>
+			(line <span class="line-number">89</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constKILOLITER" id="KILOLITER"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">KILOLITER</span>
+			 = <span class="const-default"> 'KILOLITER'</span>
+			(line <span class="line-number">90</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constLITER" id="LITER"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">LITER</span>
+			 = <span class="const-default"> 'LITER'</span>
+			(line <span class="line-number">91</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMEASURE" id="MEASURE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MEASURE</span>
+			 = <span class="const-default"> 'MEASURE'</span>
+			(line <span class="line-number">92</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMEGALITER" id="MEGALITER"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MEGALITER</span>
+			 = <span class="const-default"> 'MEGALITER'</span>
+			(line <span class="line-number">93</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMICROLITER" id="MICROLITER"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MICROLITER</span>
+			 = <span class="const-default"> 'MICROLITER'</span>
+			(line <span class="line-number">94</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMILLILITER" id="MILLILITER"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MILLILITER</span>
+			 = <span class="const-default"> 'MILLILITER'</span>
+			(line <span class="line-number">95</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMINIM" id="MINIM"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MINIM</span>
+			 = <span class="const-default"> 'MINIM'</span>
+			(line <span class="line-number">96</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMINIM_US" id="MINIM_US"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MINIM_US</span>
+			 = <span class="const-default"> 'MINIM_US'</span>
+			(line <span class="line-number">97</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constOUNCE" id="OUNCE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">OUNCE</span>
+			 = <span class="const-default"> 'OUNCE'</span>
+			(line <span class="line-number">98</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constOUNCE_US" id="OUNCE_US"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">OUNCE_US</span>
+			 = <span class="const-default"> 'OUNCE_US'</span>
+			(line <span class="line-number">99</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPECK" id="PECK"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PECK</span>
+			 = <span class="const-default"> 'PECK'</span>
+			(line <span class="line-number">100</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPECK_US" id="PECK_US"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PECK_US</span>
+			 = <span class="const-default"> 'PECK_US'</span>
+			(line <span class="line-number">101</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPINT" id="PINT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PINT</span>
+			 = <span class="const-default"> 'PINT'</span>
+			(line <span class="line-number">102</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPINT_US" id="PINT_US"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PINT_US</span>
+			 = <span class="const-default"> 'PINT_US'</span>
+			(line <span class="line-number">104</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPINT_US_DRY" id="PINT_US_DRY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PINT_US_DRY</span>
+			 = <span class="const-default"> 'PINT_US_DRY'</span>
+			(line <span class="line-number">103</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPIPE" id="PIPE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PIPE</span>
+			 = <span class="const-default"> 'PIPE'</span>
+			(line <span class="line-number">105</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPIPE_US" id="PIPE_US"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PIPE_US</span>
+			 = <span class="const-default"> 'PIPE_US'</span>
+			(line <span class="line-number">106</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPONY" id="PONY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PONY</span>
+			 = <span class="const-default"> 'PONY'</span>
+			(line <span class="line-number">107</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constQUART" id="QUART"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">QUART</span>
+			 = <span class="const-default"> 'QUART'</span>
+			(line <span class="line-number">110</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constQUART_ANCIENT" id="QUART_ANCIENT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">QUART_ANCIENT</span>
+			 = <span class="const-default"> 'QUART_ANCIENT'</span>
+			(line <span class="line-number">109</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constQUART_GERMANY" id="QUART_GERMANY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">QUART_GERMANY</span>
+			 = <span class="const-default"> 'QUART_GERMANY'</span>
+			(line <span class="line-number">108</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constQUART_UK" id="QUART_UK"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">QUART_UK</span>
+			 = <span class="const-default"> 'QUART_UK'</span>
+			(line <span class="line-number">113</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constQUART_US" id="QUART_US"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">QUART_US</span>
+			 = <span class="const-default"> 'QUART_US'</span>
+			(line <span class="line-number">112</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constQUART_US_DRY" id="QUART_US_DRY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">QUART_US_DRY</span>
+			 = <span class="const-default"> 'QUART_US_DRY'</span>
+			(line <span class="line-number">111</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSHOT" id="SHOT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SHOT</span>
+			 = <span class="const-default"> 'SHOT'</span>
+			(line <span class="line-number">114</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSTANDARD" id="STANDARD"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">STANDARD</span>
+			 = <span class="const-default"> 'CUBIC_METER'</span>
+			(line <span class="line-number">40</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSTERE" id="STERE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">STERE</span>
+			 = <span class="const-default"> 'STERE'</span>
+			(line <span class="line-number">115</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTABLESPOON" id="TABLESPOON"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TABLESPOON</span>
+			 = <span class="const-default"> 'TABLESPOON'</span>
+			(line <span class="line-number">116</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTABLESPOON_UK" id="TABLESPOON_UK"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TABLESPOON_UK</span>
+			 = <span class="const-default"> 'TABLESPOON_UK'</span>
+			(line <span class="line-number">117</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTABLESPOON_US" id="TABLESPOON_US"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TABLESPOON_US</span>
+			 = <span class="const-default"> 'TABLESPOON_US'</span>
+			(line <span class="line-number">118</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTEASPOON" id="TEASPOON"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TEASPOON</span>
+			 = <span class="const-default"> 'TEASPOON'</span>
+			(line <span class="line-number">119</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTEASPOON_UK" id="TEASPOON_UK"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TEASPOON_UK</span>
+			 = <span class="const-default"> 'TEASPOON_UK'</span>
+			(line <span class="line-number">120</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTEASPOON_US" id="TEASPOON_US"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TEASPOON_US</span>
+			 = <span class="const-default"> 'TEASPOON_US'</span>
+			(line <span class="line-number">121</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constYARD" id="YARD"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">YARD</span>
+			 = <span class="const-default"> 'YARD'</span>
+			(line <span class="line-number">122</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:53:56 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

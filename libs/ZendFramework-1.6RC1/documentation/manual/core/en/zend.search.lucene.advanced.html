@@ -1,0 +1,234 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>36.9. Advanced</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="prev" href="zend.search.lucene.java-lucene.html" title="36.8. Interoperating with Java Lucene">
+<link rel="next" href="zend.search.lucene.best-practice.html" title="36.10. Best Practices">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.search.lucene.advanced.html#zend.search.lucene.advanced.format_migration" title="36.9.1. Starting from 1.6, handling index format transformations.">
+<link rel="subsection" href="zend.search.lucene.advanced.html#zend.search.lucene.advanced.static" title="36.9.2. Using the index as static property">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">36.9. Advanced</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.search.lucene.java-lucene.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 36. Zend_Search_Lucene</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.search.lucene.best-practice.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.search.lucene.advanced"></a>36.9. Advanced</h2></div></div></div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.search.lucene.advanced.format_migration"></a>36.9.1. Starting from 1.6, handling index format transformations.</h3></div></div></div>
+<p>
+            Zend_Search_Lucene component works with Java Lucene 1.4-1.9, 2.1 and 2.3 index format.
+        </p>
+<p>
+            Current index format may be requested using <code class="code">$index-&gt;getFormatVersion()</code> call.
+            It returns one of the following values:
+            </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                        <code class="code">Zend_Search_Lucene::FORMAT_PRE_2_1</code> for Java Lucene 1.4-1.9 index format. 
+                    </p></li>
+<li><p>
+                        <code class="code">Zend_Search_Lucene::FORMAT_2_1</code> for Java Lucene 2.1 index format (also used for Lucene 2.2). 
+                    </p></li>
+<li><p>
+                        <code class="code">Zend_Search_Lucene::FORMAT_2_3</code> for Java Lucene 2.3 index format. 
+                    </p></li>
+</ul></div>
+<p>
+        </p>
+<p>
+            Index modifications are performed <span class="strong"><strong>only</strong></span> if any index update is done. 
+            That happens if a new document is added to an index or index optimization is started manually 
+            by <code class="code">$index-&gt;optimize()</code> call. 
+        </p>
+<p>
+            In a such case Zend_Search_Lucene may convert index to the higher format version. 
+            That <span class="strong"><strong>always</strong></span> happens for the indices in <code class="code">Zend_Search_Lucene::FORMAT_PRE_2_1</code> format, 
+            which are automatically converted to 2.1 format.
+        </p>
+<p>
+            You may manage conversion process and assign target index format by <code class="code">$index-&gt;setFormatVersion()</code> which may take
+            <code class="code">Zend_Search_Lucene::FORMAT_2_1</code> or <code class="code">Zend_Search_Lucene::FORMAT_2_3</code> constant:
+            </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                        <code class="code">Zend_Search_Lucene::FORMAT_2_1</code> actually does nothing since pre-2.1 indices are automatically converted 
+                        to 2.1 format. 
+                    </p></li>
+<li><p>
+                        <code class="code">Zend_Search_Lucene::FORMAT_2_3</code> forces conversion to the 2.3 format. 
+                    </p></li>
+</ul></div>
+<p>
+        </p>
+<p>
+            Backward conversions are not supported.
+        </p>
+<div class="note"><table border="0" summary="Note: Important!">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Important!</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+                Once index is converted to upper version it can't be converted back. So make a backup of your index when you plan
+                migration to upper version, but want to have possibility to go back.
+            </p></td></tr>
+</table></div>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.search.lucene.advanced.static"></a>36.9.2. Using the index as static property</h3></div></div></div>
+<p>
+            The <code class="code">Zend_Search_Lucene</code> object uses the destructor method to commit changes and clean up resources.
+        </p>
+<p>
+            It stores added documents in memory and dumps new index segment to disk depending on <code class="code">MaxBufferedDocs</code> parameter.
+        </p>
+<p>
+            If <code class="code">MaxBufferedDocs</code> limit is not reached then there are some "unsaved" documents which are saved as a new segment in the object's destructor method.
+            The index auto-optimization procedure is invoked if necessary depending on the values of the <code class="code">MaxBufferedDocs</code>, <code class="code">MaxMergeDocs</code> and
+            <code class="code">MergeFactor</code> parameters.
+        </p>
+<p>
+            Static object properties (see below) are destroyed <span class="emphasis"><em>after</em></span> the last line of the executed script.
+
+            </p>
+<pre class="programlisting">&lt;?php
+class Searcher {
+    private static $_index;
+
+    public static function initIndex() {
+        self::$_index = Zend_Search_Lucene::open('path/to/index');
+    }
+}
+
+Searcher::initIndex();
+            </pre>
+<p>
+        </p>
+<p>
+            All the same, the destructor for static properties is correctly invoked at this point in the program's execution.
+        </p>
+<p>
+            One potential problem is exception handling. Exceptions thrown by destructors of static objects don't have context, because the destructor is executed after the script has already completed.
+        </p>
+<p>
+            You might see a "Fatal error: Exception thrown without a stack frame in Unknown on line 0" error message instead of exception description in such cases.
+        </p>
+<p>
+            Zend_Search_Lucene provides a workaround to this problem with the <code class="code">commit()</code> method. It saves all unsaved changes and frees memory used for storing new segments.
+            You are free to use the commit operation any time- or even several times- during script execution. You can still use the <code class="code">Zend_Search_Lucene</code> object for searching,
+            adding or deleting document after the commit operation. But the <code class="code">commit()</code> call guarantees that if there are no document added or deleted after the call to <code class="code">commit()</code>, then
+            the <code class="code">Zend_Search_Lucene</code> destructor has nothing to do and will not throw exception:
+
+            </p>
+<pre class="programlisting">&lt;?php
+class Searcher {
+    private static $_index;
+
+    public static function initIndex() {
+        self::$_index = Zend_Search_Lucene::open('path/to/index');
+    }
+
+    ...
+
+    public static function commit() {
+        self::$_index-&gt;commit();
+    }
+}
+
+Searcher::initIndex();
+
+...
+
+// Script shutdown routine
+...
+Searcher::commit();
+...
+            </pre>
+<p>
+        </p>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.search.lucene.java-lucene.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.search.lucene.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.search.lucene.best-practice.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">36.8. Interoperating with Java Lucene </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 36.10. Best Practices</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

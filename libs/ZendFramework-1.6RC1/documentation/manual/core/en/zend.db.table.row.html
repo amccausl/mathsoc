@@ -1,0 +1,665 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>10.6. Zend_Db_Table_Row</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="prev" href="zend.db.table.html" title="10.5. Zend_Db_Table">
+<link rel="next" href="zend.db.table.rowset.html" title="10.7. Zend_Db_Table_Rowset">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.db.table.row.html#zend.db.table.row.introduction" title="10.6.1. Introduction">
+<link rel="subsection" href="zend.db.table.row.html#zend.db.table.row.read" title="10.6.2. Fetching a Row">
+<link rel="subsection" href="zend.db.table.row.html#zend.db.table.row.write" title="10.6.3. Writing rows to the database">
+<link rel="subsection" href="zend.db.table.row.html#zend.db.table.row.serialize" title="10.6.4. Serializing and unserializing rows">
+<link rel="subsection" href="zend.db.table.row.html#zend.db.table.row.extending" title="10.6.5. Extending the Row class">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">10.6. Zend_Db_Table_Row</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.db.table.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 10. Zend_Db</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.db.table.rowset.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.db.table.row"></a>10.6. Zend_Db_Table_Row</h2></div></div></div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.db.table.row.introduction"></a>10.6.1. Introduction</h3></div></div></div>
+<p>
+            Zend_Db_Table_Row is a class that contains an individual row of a Zend_Db_Table object.
+            When you run a query against a Table class, the result is returned in a set of
+            Zend_Db_Table_Row objects. You can also use this object to create new rows and add them
+            to the database table.
+        </p>
+<p>
+            Zend_Db_Table_Row is an implementation of the <a href="http://www.martinfowler.com/eaaCatalog/rowDataGateway.html" target="_top">Row Data Gateway</a>
+            pattern.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.db.table.row.read"></a>10.6.2. Fetching a Row</h3></div></div></div>
+<p>
+            Zend_Db_Table_Abstract provides methods <code class="code">find()</code> and
+            <code class="code">fetchAll()</code>, which each return an object of type Zend_Db_Table_Rowset, and
+            the method <code class="code">fetchRow()</code>, which returns an object of type Zend_Db_Table_Row.
+        </p>
+<div class="example">
+<a name="zend.db.table.row.read.example"></a><p class="title"><b>Example 10.108. Example of fetching a row</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$bugs = new Bugs();
+$row = $bugs-&gt;fetchRow($bugs-&gt;select()-&gt;where('bug_id = ?', 1));
+            </pre></div>
+</div>
+<br class="example-break"><p>
+            A Zend_Db_Table_Rowset object contains a collection of Zend_Db_Table_Row objects. See
+            <a href="zend.db.table.rowset.html" title="10.7. Zend_Db_Table_Rowset">Section 10.7, “Zend_Db_Table_Rowset”</a>.
+        </p>
+<div class="example">
+<a name="zend.db.table.row.read.example-rowset"></a><p class="title"><b>Example 10.109. Example of reading a row in a rowset</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$bugs = new Bugs();
+$rowset = $bugs-&gt;fetchAll($bugs-&gt;select()-&gt;where('bug_status = ?', 1));
+$row = $rowset-&gt;current();
+            </pre></div>
+</div>
+<br class="example-break"><div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.db.table.row.read.get"></a>10.6.2.1. Reading column values from a row</h4></div></div></div>
+<p>
+                Zend_Db_Table_Row_Abstract provides accessor methods so you can reference columns
+                in the row as object properties.
+            </p>
+<div class="example">
+<a name="zend.db.table.row.read.get.example"></a><p class="title"><b>Example 10.110. Example of reading a column in a row</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$bugs = new Bugs();
+$row = $bugs-&gt;fetchRow($bugs-&gt;select()-&gt;where('bug_id = ?', 1));
+
+// Echo the value of the bug_description column
+echo $row-&gt;bug_description;
+                </pre></div>
+</div>
+<br class="example-break"><div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top">
+<p>
+                    Earlier versions of Zend_Db_Table_Row mapped these column accessors to the
+                    database column names using a string transformation called
+                    <span class="emphasis"><em>inflection</em></span>.
+                </p>
+<p>
+                    Currently, Zend_Db_Table_Row does not implement inflection. Accessed property
+                    names need to match the spelling of the column names as they appear in your
+                    database.
+                </p>
+</td></tr>
+</table></div>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.db.table.row.read.to-array"></a>10.6.2.2. Retrieving Row Data as an Array</h4></div></div></div>
+<p>
+                You can access the row's data as an array using the <code class="code">toArray()</code> method
+                of the Row object. This returns an associative array of the column names to the
+                column values.
+            </p>
+<div class="example">
+<a name="zend.db.table.row.read.to-array.example"></a><p class="title"><b>Example 10.111. Example of using the toArray() method</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$bugs = new Bugs();
+$row = $bugs-&gt;fetchRow($bugs-&gt;select()-&gt;where('bug_id = ?', 1));
+
+// Get the column/value associative array from the Row object
+$rowArray = $row-&gt;toArray();
+
+// Now use it as a normal array
+foreach ($rowArray as $column =&gt; $value) {
+    echo "Column: $column\n";
+    echo "Value:  $value\n";
+}
+                </pre></div>
+</div>
+<br class="example-break"><p>
+                The array returned from <code class="code">toArray()</code> is not updateable. You can modify
+                values in the array as you can with any array, but you cannot save changes to this
+                array to the database directly.
+            </p>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.db.table.row.read.relationships"></a>10.6.2.3. Fetching data from related tables</h4></div></div></div>
+<p>
+                The Zend_Db_Table_Row_Abstract class provides methods for fetching rows and rowsets
+                from related tables. See <a href="zend.db.table.relationships.html" title="10.8. Zend_Db_Table Relationships">Section 10.8, “Zend_Db_Table Relationships”</a> for more
+                information on table relationships.
+            </p>
+</div>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.db.table.row.write"></a>10.6.3. Writing rows to the database</h3></div></div></div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.db.table.row.write.set"></a>10.6.3.1. Changing column values in a row</h4></div></div></div>
+<p>
+                You can set individual column values using column accessors, similar to how the
+                columns are read as object properties in the example above.
+            </p>
+<p>
+                Using a column accessor to set a value changes the column value of the row object
+                in your application, but it does not commit the change to the database yet. You can
+                do that with the <code class="code">save()</code> method.
+            </p>
+<div class="example">
+<a name="zend.db.table.row.write.set.example"></a><p class="title"><b>Example 10.112. Example of changing a column in a row</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$bugs = new Bugs();
+$row = $bugs-&gt;fetchRow($bugs-&gt;select()-&gt;where('bug_id = ?', 1));
+
+// Change the value of one or more columns
+$row-&gt;bug_status = 'FIXED';
+
+// UPDATE the row in the database with new values
+$row-&gt;save();
+                </pre></div>
+</div>
+<br class="example-break">
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.db.table.row.write.insert"></a>10.6.3.2. Inserting a new row</h4></div></div></div>
+<p>
+                You can create a new row for a given table with the <code class="code">createRow()</code> method
+                of the table class. You can access fields of this row with the object-oriented
+                interface, but the row is not stored in the database until you call the
+                <code class="code">save()</code> method.
+            </p>
+<div class="example">
+<a name="zend.db.table.row.write.insert.example"></a><p class="title"><b>Example 10.113. Example of creating a new row for a table</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$bugs = new Bugs();
+$newRow = $bugs-&gt;createRow();
+
+// Set column values as appropriate for your application
+$newRow-&gt;bug_description = '...description...';
+$newRow-&gt;bug_status = 'NEW';
+
+// INSERT the new row to the database
+$newRow-&gt;save();
+                </pre></div>
+</div>
+<br class="example-break"><p>
+                The optional argument to the createRow() method is an associative array, with which
+                you can populate fields of the new row.
+            </p>
+<div class="example">
+<a name="zend.db.table.row.write.insert.example2"></a><p class="title"><b>Example 10.114. Example of populating a new row for a table</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$data = array(
+    'bug_description' =&gt; '...description...',
+    'bug_status'      =&gt; 'NEW'
+);
+
+$bugs = new Bugs();
+$newRow = $bugs-&gt;createRow($data);
+
+// INSERT the new row to the database
+$newRow-&gt;save();
+                </pre></div>
+</div>
+<br class="example-break"><div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+                    The <code class="code">createRow()</code> method was called <code class="code">fetchNew()</code> in
+                    earlier releases of Zend_Db_Table. You are encouraged to use the new method
+                    name, even though the old name continues to work for the sake of backward
+                    compatibility.
+                </p></td></tr>
+</table></div>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.db.table.row.write.set-from-array"></a>10.6.3.3. Changing values in multiple columns</h4></div></div></div>
+<p>
+                Zend_Db_Table_Row_Abstract provides the <code class="code">setFromArray()</code> method to
+                enable you to set several columns in a single row at once, specified in an
+                associative array that maps the column names to values. You may find this method
+                convenient for setting values both for new rows and for rows you need to update.
+            </p>
+<div class="example">
+<a name="zend.db.table.row.write.set-from-array.example"></a><p class="title"><b>Example 10.115. Example of using setFromArray() to set values in a new Row</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$bugs = new Bugs();
+$newRow = $bugs-&gt;createRow();
+
+// Data are arranged in an associative array
+$data = array(
+    'bug_description' =&gt; '...description...',
+    'bug_status'      =&gt; 'NEW'
+);
+
+// Set all the column values at once
+$newRow-&gt;setFromArray($data);
+
+// INSERT the new row to the database
+$newRow-&gt;save();
+                </pre></div>
+</div>
+<br class="example-break">
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.db.table.row.write.delete"></a>10.6.3.4. Deleting a row</h4></div></div></div>
+<p>
+                You can call the <code class="code">delete()</code> method on a Row object. This deletes rows in
+                the database matching the primary key in the Row object.
+            </p>
+<div class="example">
+<a name="zend.db.table.row.write.delete.example"></a><p class="title"><b>Example 10.116. Example of deleting a row</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$bugs = new Bugs();
+$row = $bugs-&gt;fetchRow('bug_id = 1');
+
+// DELETE this row
+$row-&gt;delete();
+                </pre></div>
+</div>
+<br class="example-break"><p>
+                You do not have to call <code class="code">save()</code> to apply the delete; it is executed
+                against the database immediately.
+            </p>
+</div>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.db.table.row.serialize"></a>10.6.4. Serializing and unserializing rows</h3></div></div></div>
+<p>
+            It is often convenient to save the contents of a database row to be used later.
+            <span class="emphasis"><em>Serialization</em></span> is the name for the operation that converts an
+            object into a form that is easy to save in offline storage (for example, a file).
+            Objects of type Zend_Db_Table_Row_Abstract are serializable.
+        </p>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.db.table.row.serialize.serializing"></a>10.6.4.1. Serializing a Row</h4></div></div></div>
+<p>
+                Simply use PHP's <code class="code">serialize()</code> function to create a string containing a
+                byte-stream representation of the Row object argument.
+            </p>
+<div class="example">
+<a name="zend.db.table.row.serialize.serializing.example"></a><p class="title"><b>Example 10.117. Example of serializing a row</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$bugs = new Bugs();
+$row = $bugs-&gt;fetchRow('bug_id = 1');
+
+// Convert object to serialized form
+$serializedRow = serialize($row);
+
+// Now you can write $serializedRow to a file, etc.
+                </pre></div>
+</div>
+<br class="example-break">
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.db.table.row.serialize.unserializing"></a>10.6.4.2. Unserializing Row Data</h4></div></div></div>
+<p>
+                Use PHP's <code class="code">unserialize()</code> function to restore a string containing a
+                byte-stream representation of an object. The function returns the original object.
+            </p>
+<p>
+                Note that the Row object returned is in a <span class="emphasis"><em>disconnected</em></span> state.
+                You can read the Row object and its properties, but you cannot change values in the
+                Row or execute other methods that require a database connection (for example,
+                queries against related tables).
+            </p>
+<div class="example">
+<a name="zend.db.table.row.serialize.unserializing.example"></a><p class="title"><b>Example 10.118. Example of unserializing a serialized row</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$rowClone = unserialize($serializedRow);
+
+// Now you can use object properties, but read-only
+echo $rowClone-&gt;bug_description;
+                </pre></div>
+</div>
+<br class="example-break"><div class="note"><table border="0" summary="Note: Why do Rows unserialize in a disconnected state?">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Why do Rows unserialize in a disconnected state?</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+                    A serialized object is a string that is readable to anyone who possesses it. It
+                    could be a security risk to store parameters such as database account and
+                    password in plain, unencrypted text in the serialized string. You would not
+                    want to store such data to a text file that is not protected, or send it in an
+                    email or other medium that is easily read by potential attackers. The reader of
+                    the serialized object should not be able to use it to gain access to your
+                    database without knowing valid credentials.
+                </p></td></tr>
+</table></div>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.db.table.row.serialize.set-table"></a>10.6.4.3. Reactivating a Row as Live Data</h4></div></div></div>
+<p>
+                You can reactivate a disconnected Row, using the <code class="code">setTable()</code> method.
+                The argument to this method is a valid object of type Zend_Db_Table_Abstract, which
+                you create. Creating a Table object requires a live connection to the database, so
+                by reassociating the Table with the Row, the Row gains access to the database.
+                Subsequently, you can change values in the Row object and save the changes to the
+                database.
+            </p>
+<div class="example">
+<a name="zend.db.table.row.serialize.set-table.example"></a><p class="title"><b>Example 10.119. Example of reactivating a row</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$rowClone = unserialize($serializedRow);
+
+$bugs = new Bugs();
+
+// Reconnect the row to a table, and
+// thus to a live database connection
+$rowClone-&gt;setTable($bugs);
+
+// Now you can make changes to the row and save them
+$rowClone-&gt;bug_status = 'FIXED';
+$rowClone-&gt;save();
+                </pre></div>
+</div>
+<br class="example-break">
+</div>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.db.table.row.extending"></a>10.6.5. Extending the Row class</h3></div></div></div>
+<p>
+            Zend_Db_Table_Row is the default concrete class that extends
+            Zend_Db_Table_Row_Abstract. You can define your own concrete class for instances of Row
+            by extending Zend_Db_Table_Row_Abstract. To use your new Row class to store results of
+            Table queries, specify the custom Row class by name either in the
+            <code class="code">$_rowClass</code> protected member of a Table class, or in the array argument of
+            the constructor of a Table object.
+        </p>
+<div class="example">
+<a name="zend.db.table.row.extending.example"></a><p class="title"><b>Example 10.120. Specifying a custom Row class</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+class MyRow extends Zend_Db_Table_Row_Abstract
+{
+    // ...customizations
+}
+
+// Specify a custom Row to be used by default
+// in all instances of a Table class.
+class Products extends Zend_Db_Table_Abstract
+{
+    protected $_name = 'products';
+    protected $_rowClass = 'MyRow';
+}
+
+// Or specify a custom Row to be used in one
+// instance of a Table class.
+$bugs = new Bugs(array('rowClass' =&gt; 'MyRow'));
+            </pre></div>
+</div>
+<br class="example-break"><div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.db.table.row.extending.overriding"></a>10.6.5.1. Row initialization</h4></div></div></div>
+<p>
+                If application-specific logic needs to be initialized when a row is constructed,
+                you can select to move your tasks to the <code class="code">init()</code> method, which is
+                called after all row metadata has been processed. This is recommended over the
+                <code class="code">__construct</code> method if you do not need to alter the metadata in any
+                programmatic way.
+
+                </p>
+<div class="example">
+<a name="zend.db.table.row.init.usage.example"></a><p class="title"><b>Example 10.121. Example usage of init() method</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+class MyApplicationRow extends Zend_Db_Table_Row_Abstract
+{
+    protected $_role;
+
+    public function init()
+    {
+        $this-&gt;_role = new MyRoleClass();
+    }
+}
+                    </pre></div>
+</div>
+<p><br class="example-break">
+
+            </p>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.db.table.row.extending.insert-update"></a>10.6.5.2. Defining Custom Logic for Insert, Update, and Delete in Zend_Db_Table_Row</h4></div></div></div>
+<p>
+                The Row class calls protected methods <code class="code">_insert()</code>,
+                <code class="code">_update()</code>, and <code class="code">_delete()</code> before performing the
+                corresponding operations <code class="code">INSERT</code>, <code class="code">UPDATE</code>, and
+                <code class="code">DELETE</code>. You can add logic to these methods in your custom Row
+                subclass.
+            </p>
+<p>
+                If you need to do custom logic in a specific table, and the custom logic must occur
+                for every operation on that table, it may make more sense to implement your custom
+                code in the <code class="code">insert()</code>, <code class="code">update()</code> and <code class="code">delete()</code>
+                methods of your Table class. However, sometimes it may be necessary to do custom
+                logic in the Row class.
+            </p>
+<p>
+                Below are some example cases where it might make sense to implement custom logic in
+                a Row class instead of in the Table class:
+            </p>
+<div class="example">
+<a name="zend.db.table.row.extending.overriding-example1"></a><p class="title"><b>Example 10.122. Example of custom logic in a Row class</b></p>
+<div class="example-contents">
+<p>
+                    The custom logic may not apply in all cases of operations on the respective
+                    Table. You can provide custom logic on demand by implementing it in a Row class
+                    and creating an instance of the Table class with that custom Row class
+                    specified. Otherwise, the Table uses the default Row class.
+                </p>
+<p>
+                    You need data operations on this table to record the operation to a
+                    Zend_Log object, but only if the application configuration has enabled this
+                    behavior.
+                </p>
+<pre class="programlisting">&lt;?php
+class MyLoggingRow extends Zend_Db_Table_Row_Abstract
+{
+    protected function _insert()
+    {
+        $log = Zend_Registry::get('database_log');
+        $log-&gt;info(Zend_Debug::dump($this-&gt;_data, "INSERT: $this-&gt;_tableClass", false));
+    }
+}
+
+// $loggingEnabled is an example property that depends
+// on your application configuration
+if ($loggingEnabled) {
+    $bugs = new Bugs(array('rowClass' =&gt; 'MyLoggingRow'));
+} else {
+    $bugs = new Bugs();
+}
+                </pre>
+</div>
+</div>
+<br class="example-break"><div class="example">
+<a name="zend.db.table.row.extending.overriding-example2"></a><p class="title"><b>Example 10.123. Example of a Row class that logs insert data for multiple tables</b></p>
+<div class="example-contents">
+<p>
+                    The custom logic may be common to multiple tables. Instead of implementing the
+                    same custom logic in every one of your Table classes, you can implement the
+                    code for such actions in the definition of a Row class, and use this Row in
+                    each of your Table classes.
+                </p>
+<p>
+                    In this example, the logging code is identical in all table classes.
+                </p>
+<pre class="programlisting">&lt;?php
+class MyLoggingRow extends Zend_Db_Table_Row_Abstract
+{
+    protected function _insert()
+    {
+        $log = Zend_Registry::get('database_log');
+        $log-&gt;info(Zend_Debug::dump($this-&gt;_data, "INSERT: $this-&gt;_tableClass", false));
+    }
+}
+
+class Bugs extends Zend_Db_Table_Abstract
+{
+    protected $_name = 'bugs';
+    protected $_rowClass = 'MyLoggingRow';
+}
+
+class Products extends Zend_Db_Table_Abstract
+{
+    protected $_name = 'products';
+    protected $_rowClass = 'MyLoggingRow';
+}
+                </pre>
+</div>
+</div>
+<br class="example-break">
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.db.table.row.extending.inflection"></a>10.6.5.3. Define Inflection in Zend_Db_Table_Row</h4></div></div></div>
+<p>
+                Some people prefer that the table class name match a table name in the RDBMS by
+                using a string transformation called <span class="emphasis"><em>inflection</em></span>.
+            </p>
+<p>
+                Zend_Db classes do not implement inflection by default. See
+                <a href="zend.db.table.html#zend.db.table.extending.inflection" title="10.5.12.4. Define Inflection in Zend_Db_Table">Section 10.5.12.4, “Define Inflection in Zend_Db_Table”</a> for an explanation of this
+                policy.
+            </p>
+<p>
+                If you prefer to use inflection, then you must implement the transformation yourself,
+                by overriding the <code class="code">_transformColumn()</code> method in a custom Row class, and
+                using that custom Row class when you perform queries against your Table class.
+            </p>
+<div class="example">
+<a name="zend.db.table.row.extending.inflection.example"></a><p class="title"><b>Example 10.124. Example of defining an inflection transformation</b></p>
+<div class="example-contents">
+<p>
+                    This allows you to use an inflected version of the column name in the
+                    accessors. The Row class uses the <code class="code">_transformColumn()</code> method to
+                    change the name you use to the native column name in the database table.
+                </p>
+<pre class="programlisting">&lt;?php
+class MyInflectedRow extends Zend_Db_Table_Row_Abstract
+{
+    protected function _transformColumn($columnName)
+    {
+        $nativeColumnName = myCustomInflector($columnName);
+        return $nativeColumnName;
+    }
+}
+
+class Bugs extends Zend_Db_Table_Abstract
+{
+    protected $_name = 'bugs';
+    protected $_rowClass = 'MyInflectedRow';
+}
+
+$bugs = new Bugs();
+$row = $bugs-&gt;fetchNew();
+
+// Use camelcase column names, and rely on the
+// transformation function to change it into the
+// native representation.
+$row-&gt;bugDescription = 'New description';
+                </pre>
+</div>
+</div>
+<br class="example-break"><p>
+                You are responsible for writing the functions to perform inflection transformation.
+                Zend Framework does not provide such a function.
+            </p>
+</div>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.db.table.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.db.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.db.table.rowset.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">10.5. Zend_Db_Table </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 10.7. Zend_Db_Table_Rowset</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

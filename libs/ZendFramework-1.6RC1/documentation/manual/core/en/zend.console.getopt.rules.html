@@ -1,0 +1,211 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>6.2. Declaring Getopt Rules</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="prev" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="next" href="zend.console.getopt.fetching.html" title="6.3. Fetching Options and Arguments">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.console.getopt.rules.html#zend.console.getopt.rules.short" title="6.2.1. Declaring Options with the Short Syntax">
+<link rel="subsection" href="zend.console.getopt.rules.html#zend.console.getopt.rules.long" title="6.2.2. Declaring Options with the Long Syntax">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">6.2. Declaring Getopt Rules</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.console.getopt.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 6. Zend_Console_Getopt</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.console.getopt.fetching.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.console.getopt.rules"></a>6.2. Declaring Getopt Rules</h2></div></div></div>
+<p>
+        The constructor for the <code class="code">Zend_Console_Getopt</code> class takes
+        from one to three arguments.  The first argument
+        declares which options are supported by your application.
+        This class supports alternative syntax forms for declaring the options.
+        See the sections below for the format and usage of these syntax forms.
+    </p>
+<p>
+        The constructor takes two more arguments, both of which are optional.
+        The second argument may contain the command-line arguments.
+        This defaults to <code class="code">$_SERVER['argv']</code>.
+    </p>
+<p>
+        The third argument of the constructor may contain an
+        configuration options to customize the behavior of
+        <code class="code">Zend_Console_Getopt</code>.
+        See <a href="zend.console.getopt.configuration.html#zend.console.getopt.configuration.config" title="6.4.5. Adding Configuration">Adding Configuration</a>
+        for reference on the options available.
+    </p>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.console.getopt.rules.short"></a>6.2.1. Declaring Options with the Short Syntax</h3></div></div></div>
+<p>
+            <code class="code">Zend_Console_Getopt</code> supports a compact syntax similar
+            to that used by GNU Getopt (see
+            <a href="http://www.gnu.org/software/libc/manual/html_node/Getopt.html" target="_top">http://www.gnu.org/software/libc/manual/html_node/Getopt.html</a>.
+            This syntax supports only single-character flags.  In a single
+            string, you type each of the letters that correspond to flags
+            supported by your application.  A letter followed by a colon
+            character ("<code class="code">:</code>") indicates a flag that requires a
+            parameter.
+        </p>
+<div class="example">
+<a name="zend.console.getopt.rules.short.example"></a><p class="title"><b>Example 6.1. Using the Short Syntax</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+require_once 'Zend/Console/Getopt.php';
+$opts = new Zend_Console_Getopt('abp:');
+            </pre></div>
+</div>
+<br class="example-break"><p>
+            The example above shows using <code class="code">Zend_Console_Getopt</code>
+            to declare that options may be given as "<code class="code">-a</code>",
+            "<code class="code">-b</code>", or "<code class="code">-p</code>".  The latter flag
+            requires a parameter.
+        </p>
+<p>
+            The short syntax is limited to flags of a single character.
+            Aliases, parameter types, and help strings are not supported
+            in the short syntax.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.console.getopt.rules.long"></a>6.2.2. Declaring Options with the Long Syntax</h3></div></div></div>
+<p>
+            A different syntax with more features is also available.  This
+            syntax allows you to specify aliases for flags, types of option
+            parameters, and also help strings to describe usage to the user.
+            Instead of the single string used in the short syntax to declare
+            the options, the long syntax uses an associative array as the
+            first argument to the constructor.
+        </p>
+<p>
+            The key of each element of the associative array is a string with
+            a format that names the flag, with any aliases, separated by the
+            pipe symbol ("<code class="code">|</code>").  Following this series of flag
+            aliases, if the option requires a parameter, is an equals symbol
+            ("<code class="code">=</code>") with a letter that stands for the
+            <span class="emphasis"><em>type</em></span> of the parameter:
+        </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                    "<code class="code">=s</code>" for a string parameter
+                </p></li>
+<li><p>
+                    "<code class="code">=w</code>" for a word parameter
+                    (a string containing no whitespace)
+                </p></li>
+<li><p>
+                    "<code class="code">=i</code>" for an integer parameter
+                </p></li>
+</ul></div>
+<p>
+            If the parameter is optional, use a dash ("<code class="code">-</code>")
+            instead of the equals symbol.
+        </p>
+<p>
+            The value of each element in the associative array is a help string
+            to describe to a user how to use your program.
+        </p>
+<div class="example">
+<a name="zend.console.getopt.rules.long.example"></a><p class="title"><b>Example 6.2. Using the Long Syntax</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+require_once 'Zend/Console/Getopt.php';
+$opts = new Zend_Console_Getopt(
+  array(
+    'apple|a'    =&gt; 'This option chooses apple, with no parameter',
+    'banana|b=i' =&gt; 'This option chooses banana, with required integer parameter',
+    'pear|p-s'   =&gt; 'This option chooses pear, with optional string parameter'
+  )
+);
+            </pre></div>
+</div>
+<br class="example-break"><p>
+            In the example declaration above, there are three options.
+            "<code class="code">--apple</code>" and "<code class="code">-a</code>" are aliases for each
+            other, and the option takes no parameter.
+            "<code class="code">--banana</code>" and "<code class="code">-b</code>" are aliases for each
+            other, and the option takes a mandatory integer parameter.
+            Finally, "<code class="code">--pear</code>" and "<code class="code">-p</code>" are aliases
+            for each other, and the option may take an optional string parameter.
+        </p>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.console.getopt.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.console.getopt.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.console.getopt.fetching.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">Chapter 6. Zend_Console_Getopt </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 6.3. Fetching Options and Arguments</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

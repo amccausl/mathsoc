@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Search_Lucene_Search_Query_Term</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_Search_Lucene_Search_Query_Term</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Search---Lucene---Search---Query---Term.php.html">/Search/Lucene/Search/Query/Term.php</a> (line <span class="field">37</span>)
+		</p>
+		
+				
+		<pre><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html">Zend_Search_Lucene_Search_Query</a>
+   |
+   --Zend_Search_Lucene_Search_Query_Term</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																															
+				<div class="method-definition">
+					<img src="../../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">Zend_Search_Lucene_Search_Query_Term</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type"><a href="../../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a></span>&nbsp;<span class="var-name">$term</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$sign</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Weight.html">Zend_Search_Lucene_Search_Weight</a></span>
+										<a href="#createWeight" title="details" class="method-name">createWeight</a>
+											(<span class="var-type"><a href="../../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html">Zend_Search_Lucene_Interface</a></span>&nbsp;<span class="var-name">$reader</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#execute" title="details" class="method-name">execute</a>
+											(<span class="var-type"><a href="../../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html">Zend_Search_Lucene_Interface</a></span>&nbsp;<span class="var-name">$reader</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#getQueryTerms" title="details" class="method-name">getQueryTerms</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a></span>
+										<a href="#getTerm" title="details" class="method-name">getTerm</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#getTerms" title="details" class="method-name">getTerms</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#highlightMatchesDOM" title="details" class="method-name">highlightMatchesDOM</a>
+											(<span class="var-type"><a href="../../Zend_Search_Lucene/Document/Zend_Search_Lucene_Document_Html.html">Zend_Search_Lucene_Document_Html</a></span>&nbsp;<span class="var-name">$doc</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">&$colorIndex</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#matchedDocs" title="details" class="method-name">matchedDocs</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html">Zend_Search_Lucene_Search_Query</a></span>
+										<a href="#optimize" title="details" class="method-name">optimize</a>
+											(<span class="var-type"><a href="../../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html">Zend_Search_Lucene_Interface</a></span>&nbsp;<span class="var-name">$index</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html">Zend_Search_Lucene_Search_Query</a></span>
+										<a href="#rewrite" title="details" class="method-name">rewrite</a>
+											(<span class="var-type"><a href="../../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html">Zend_Search_Lucene_Interface</a></span>&nbsp;<span class="var-name">$index</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">float</span>
+										<a href="#score" title="details" class="method-name">score</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$docId</span>, <span class="var-type"><a href="../../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html">Zend_Search_Lucene_Interface</a></span>&nbsp;<span class="var-name">$reader</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#__toString" title="details" class="method-name">__toString</a>
+										()
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html">Zend_Search_Lucene_Search_Query</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html#var$_weight">Zend_Search_Lucene_Search_Query::$_weight</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-vars">Vars</a>
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">68</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Zend_Search_Lucene_Search_Query_Term constructor</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Zend_Search_Lucene_Search_Query_Term</span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type"><a href="../../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a></span>&nbsp;<span class="var-name">$term</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$sign</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a></span>
+				<span class="var-name">$term</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$sign</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcreateWeight" id="createWeight"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">createWeight</span> (line <span class="line-number">120</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructs an appropriate Weight implementation for this query.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Weight.html">Zend_Search_Lucene_Search_Weight</a></span>
+		<span class="method-name">
+			createWeight
+		</span>
+					(<span class="var-type"><a href="../../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html">Zend_Search_Lucene_Interface</a></span>&nbsp;<span class="var-name">$reader</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html">Zend_Search_Lucene_Interface</a></span>
+				<span class="var-name">$reader</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html#methodcreateWeight">Zend_Search_Lucene_Search_Query::createWeight()</a></dt>
+						<dd>Constructs an appropriate Weight implementation for this query.</dd>
+					</dl>
+			
+	</div>
+<a name="methodexecute" id="execute"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">execute</span> (line <span class="line-number">132</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Execute query in context of index reader  It also initializes necessary internal structures</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			execute
+		</span>
+					(<span class="var-type"><a href="../../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html">Zend_Search_Lucene_Interface</a></span>&nbsp;<span class="var-name">$reader</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html">Zend_Search_Lucene_Interface</a></span>
+				<span class="var-name">$reader</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html#methodexecute">Zend_Search_Lucene_Search_Query::execute()</a></dt>
+						<dd>Execute query in context of index reader  It also initializes necessary internal structures</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetQueryTerms" id="getQueryTerms"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getQueryTerms</span> (line <span class="line-number">177</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return query terms</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getQueryTerms
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html#methodgetQueryTerms">Zend_Search_Lucene_Search_Query::getQueryTerms()</a></dt>
+						<dd>Return query terms</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetTerm" id="getTerm"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getTerm</span> (line <span class="line-number">187</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return query term</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a></span>
+		<span class="method-name">
+			getTerm
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetTerms" id="getTerms"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getTerms</span> (line <span class="line-number">197</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns query term</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getTerms
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodhighlightMatchesDOM" id="highlightMatchesDOM"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">highlightMatchesDOM</span> (line <span class="line-number">208</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Highlight query terms</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			highlightMatchesDOM
+		</span>
+					(<span class="var-type"><a href="../../Zend_Search_Lucene/Document/Zend_Search_Lucene_Document_Html.html">Zend_Search_Lucene_Document_Html</a></span>&nbsp;<span class="var-name">$doc</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">&$colorIndex</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">&$colorIndex</span>			</li>
+					<li>
+				<span class="var-type"><a href="../../Zend_Search_Lucene/Document/Zend_Search_Lucene_Document_Html.html">Zend_Search_Lucene_Document_Html</a></span>
+				<span class="var-name">$doc</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html#methodhighlightMatchesDOM">Zend_Search_Lucene_Search_Query::highlightMatchesDOM()</a></dt>
+						<dd>Highlight query terms</dd>
+					</dl>
+			
+	</div>
+<a name="methodmatchedDocs" id="matchedDocs"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">matchedDocs</span> (line <span class="line-number">148</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get document ids likely matching the query</p>
+<p class="description"><p>It's an array with document ids as keys (performance considerations)</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			matchedDocs
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html#methodmatchedDocs">Zend_Search_Lucene_Search_Query::matchedDocs()</a></dt>
+						<dd>Get document ids likely matching the query</dd>
+					</dl>
+			
+	</div>
+<a name="methodoptimize" id="optimize"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">optimize</span> (line <span class="line-number">103</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Optimize query in the context of specified index</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html">Zend_Search_Lucene_Search_Query</a></span>
+		<span class="method-name">
+			optimize
+		</span>
+					(<span class="var-type"><a href="../../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html">Zend_Search_Lucene_Interface</a></span>&nbsp;<span class="var-name">$index</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html">Zend_Search_Lucene_Interface</a></span>
+				<span class="var-name">$index</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html#methodoptimize">Zend_Search_Lucene_Search_Query::optimize()</a></dt>
+						<dd>Optimize query in the context of specified index</dd>
+					</dl>
+			
+	</div>
+<a name="methodrewrite" id="rewrite"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">rewrite</span> (line <span class="line-number">79</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Re-write query into primitive queries in the context of specified index</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html">Zend_Search_Lucene_Search_Query</a></span>
+		<span class="method-name">
+			rewrite
+		</span>
+					(<span class="var-type"><a href="../../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html">Zend_Search_Lucene_Interface</a></span>&nbsp;<span class="var-name">$index</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html">Zend_Search_Lucene_Interface</a></span>
+				<span class="var-name">$index</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html#methodrewrite">Zend_Search_Lucene_Search_Query::rewrite()</a></dt>
+						<dd>Re-write query into primitive queries in the context of specified index</dd>
+					</dl>
+			
+	</div>
+<a name="methodscore" id="score"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">score</span> (line <span class="line-number">160</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Score specified document</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">float</span>
+		<span class="method-name">
+			score
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$docId</span>, <span class="var-type"><a href="../../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html">Zend_Search_Lucene_Interface</a></span>&nbsp;<span class="var-name">$reader</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$docId</span>			</li>
+					<li>
+				<span class="var-type"><a href="../../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html">Zend_Search_Lucene_Interface</a></span>
+				<span class="var-name">$reader</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html#methodscore">Zend_Search_Lucene_Search_Query::score()</a></dt>
+						<dd>Score specified document</dd>
+					</dl>
+			
+	</div>
+<a name="method__toString" id="__toString"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">__toString</span> (line <span class="line-number">218</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Print a query</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			__toString
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html#method__toString">Zend_Search_Lucene_Search_Query::__toString()</a></dt>
+						<dd>Print a query</dd>
+					</dl>
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html">Zend_Search_Lucene_Search_Query</a></span></p>
+					<blockquote>
+													<img src="../../media/images/AbstractMethod.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html#methodcreateWeight">Zend_Search_Lucene_Search_Query::createWeight()</a></span><br>
+													<img src="../../media/images/AbstractMethod.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html#methodexecute">Zend_Search_Lucene_Search_Query::execute()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html#methodgetBoost">Zend_Search_Lucene_Search_Query::getBoost()</a></span><br>
+													<img src="../../media/images/AbstractMethod.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html#methodgetQueryTerms">Zend_Search_Lucene_Search_Query::getQueryTerms()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html#methodhighlightMatches">Zend_Search_Lucene_Search_Query::highlightMatches()</a></span><br>
+													<img src="../../media/images/AbstractMethod.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html#methodhighlightMatchesDOM">Zend_Search_Lucene_Search_Query::highlightMatchesDOM()</a></span><br>
+													<img src="../../media/images/AbstractMethod.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html#methodmatchedDocs">Zend_Search_Lucene_Search_Query::matchedDocs()</a></span><br>
+													<img src="../../media/images/AbstractMethod.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html#methodoptimize">Zend_Search_Lucene_Search_Query::optimize()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html#methodreset">Zend_Search_Lucene_Search_Query::reset()</a></span><br>
+													<img src="../../media/images/AbstractMethod.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html#methodrewrite">Zend_Search_Lucene_Search_Query::rewrite()</a></span><br>
+													<img src="../../media/images/AbstractMethod.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html#methodscore">Zend_Search_Lucene_Search_Query::score()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html#methodsetBoost">Zend_Search_Lucene_Search_Query::setBoost()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html#method_getHighlightColor">Zend_Search_Lucene_Search_Query::_getHighlightColor()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html#method_initWeight">Zend_Search_Lucene_Search_Query::_initWeight()</a></span><br>
+													<img src="../../media/images/AbstractMethod.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html#method__toString">Zend_Search_Lucene_Search_Query::__toString()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:51:08 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

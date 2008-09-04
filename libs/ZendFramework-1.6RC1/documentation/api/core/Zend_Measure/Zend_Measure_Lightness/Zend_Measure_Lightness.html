@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Measure_Lightness</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_Measure_Lightness</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-methods">Methods</a>
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Class for handling temperature conversions</p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Measure---Lightness.php.html">/Measure/Lightness.php</a> (line <span class="field">38</span>)
+		</p>
+		
+				
+		<pre><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html">Zend_Measure_Abstract</a>
+   |
+   --Zend_Measure_Lightness</pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-methods">Methods</a>
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#APOSTILB" title="details" class="const-name">APOSTILB</a> = 					<span class="var-type"> 'APOSTILB'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BLONDEL" title="details" class="const-name">BLONDEL</a> = 					<span class="var-type"> 'BLONDEL'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CANDELA_PER_SQUARE_CENTIMETER" title="details" class="const-name">CANDELA_PER_SQUARE_CENTIMETER</a> = 					<span class="var-type"> 'CANDELA_PER_SQUARE_CENTIMETER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CANDELA_PER_SQUARE_FOOT" title="details" class="const-name">CANDELA_PER_SQUARE_FOOT</a> = 					<span class="var-type"> 'CANDELA_PER_SQUARE_FOOT'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CANDELA_PER_SQUARE_INCH" title="details" class="const-name">CANDELA_PER_SQUARE_INCH</a> = 					<span class="var-type"> 'CANDELA_PER_SQUARE_INCH'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CANDELA_PER_SQUARE_METER" title="details" class="const-name">CANDELA_PER_SQUARE_METER</a> = 					<span class="var-type"> 'CANDELA_PER_SQUARE_METER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#FOOTLAMBERT" title="details" class="const-name">FOOTLAMBERT</a> = 					<span class="var-type"> 'FOOTLAMBERT'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#KILOCANDELA_PER_SQUARE_CENTIMETER" title="details" class="const-name">KILOCANDELA_PER_SQUARE_CENTIMETER</a> = 					<span class="var-type"> 'KILOCANDELA_PER_SQUARE_CENTIMETER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#KILOCANDELA_PER_SQUARE_FOOT" title="details" class="const-name">KILOCANDELA_PER_SQUARE_FOOT</a> = 					<span class="var-type"> 'KILOCANDELA_PER_SQUARE_FOOT'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#KILOCANDELA_PER_SQUARE_INCH" title="details" class="const-name">KILOCANDELA_PER_SQUARE_INCH</a> = 					<span class="var-type"> 'KILOCANDELA_PER_SQUARE_INCH'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#KILOCANDELA_PER_SQUARE_METER" title="details" class="const-name">KILOCANDELA_PER_SQUARE_METER</a> = 					<span class="var-type"> 'KILOCANDELA_PER_SQUARE_METER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#LAMBERT" title="details" class="const-name">LAMBERT</a> = 					<span class="var-type"> 'LAMBERT'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MILLILAMBERT" title="details" class="const-name">MILLILAMBERT</a> = 					<span class="var-type"> 'MILLILAMBERT'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#NIT" title="details" class="const-name">NIT</a> = 					<span class="var-type"> 'NIT'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#STANDARD" title="details" class="const-name">STANDARD</a> = 					<span class="var-type"> 'CANDELA_PER_SQUARE_METER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#STILB" title="details" class="const-name">STILB</a> = 					<span class="var-type"> 'STILB'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-methods">Methods</a>
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																								<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$_units" title="details" class="var-name">$_units</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<span class="disabled">Vars</span>
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-methods">Methods</a>
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_units" id="$_units"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_units</span>
+			 = <span class="var-default">array(<br />        'APOSTILB'                      =&gt; array('0.31830989',   'asb'),'BLONDEL'=&gt;array('0.31830989','blondel'),'CANDELA_PER_SQUARE_CENTIMETER'=&gt;array('10000','cd/cm²'),'CANDELA_PER_SQUARE_FOOT'=&gt;array('10.76391','cd/ft²'),'CANDELA_PER_SQUARE_INCH'=&gt;array('1550.00304','cd/in²'),'CANDELA_PER_SQUARE_METER'=&gt;array('1','cd/m²'),'FOOTLAMBERT'=&gt;array('3.4262591','ftL'),'KILOCANDELA_PER_SQUARE_CENTIMETER'=&gt;array('10000000','kcd/cm²'),'KILOCANDELA_PER_SQUARE_FOOT'=&gt;array('10763.91','kcd/ft²'),'KILOCANDELA_PER_SQUARE_INCH'=&gt;array('1550003.04','kcd/in²'),'KILOCANDELA_PER_SQUARE_METER'=&gt;array('1000','kcd/m²'),'LAMBERT'=&gt;array('3183.0989','L'),'MILLILAMBERT'=&gt;array('3.1830989','mL'),'NIT'=&gt;array('1','nt'),'STILB'=&gt;array('10000','sb'),'STANDARD'=&gt;'CANDELA_PER_SQUARE_METER')</span>			(line <span class="line-number">63</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Calculations for all lightness units</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#var$_units">Zend_Measure_Abstract::$_units</a></dt>
+						<dd>Unit types for this measurement</dd>
+					</dl>
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html">Zend_Measure_Abstract</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#var$_locale">Zend_Measure_Abstract::$_locale</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#var$_type">Zend_Measure_Abstract::$_type</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#var$_value">Zend_Measure_Abstract::$_value</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<span class="disabled">Methods</span>
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html">Zend_Measure_Abstract</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#method__construct">Zend_Measure_Abstract::__construct()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodadd">Zend_Measure_Abstract::add()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodcompare">Zend_Measure_Abstract::compare()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodconvertTo">Zend_Measure_Abstract::convertTo()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodequals">Zend_Measure_Abstract::equals()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodgetConversionList">Zend_Measure_Abstract::getConversionList()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodgetType">Zend_Measure_Abstract::getType()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodgetValue">Zend_Measure_Abstract::getValue()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodsetType">Zend_Measure_Abstract::setType()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodsetValue">Zend_Measure_Abstract::setValue()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodsub">Zend_Measure_Abstract::sub()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodtoString">Zend_Measure_Abstract::toString()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#method__toString">Zend_Measure_Abstract::__toString()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<span class="disabled">Constants</span>
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-methods">Methods</a>
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constAPOSTILB" id="APOSTILB"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">APOSTILB</span>
+			 = <span class="const-default"> 'APOSTILB'</span>
+			(line <span class="line-number">42</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBLONDEL" id="BLONDEL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BLONDEL</span>
+			 = <span class="const-default"> 'BLONDEL'</span>
+			(line <span class="line-number">43</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCANDELA_PER_SQUARE_CENTIMETER" id="CANDELA_PER_SQUARE_CENTIMETER"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CANDELA_PER_SQUARE_CENTIMETER</span>
+			 = <span class="const-default"> 'CANDELA_PER_SQUARE_CENTIMETER'</span>
+			(line <span class="line-number">44</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCANDELA_PER_SQUARE_FOOT" id="CANDELA_PER_SQUARE_FOOT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CANDELA_PER_SQUARE_FOOT</span>
+			 = <span class="const-default"> 'CANDELA_PER_SQUARE_FOOT'</span>
+			(line <span class="line-number">45</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCANDELA_PER_SQUARE_INCH" id="CANDELA_PER_SQUARE_INCH"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CANDELA_PER_SQUARE_INCH</span>
+			 = <span class="const-default"> 'CANDELA_PER_SQUARE_INCH'</span>
+			(line <span class="line-number">46</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCANDELA_PER_SQUARE_METER" id="CANDELA_PER_SQUARE_METER"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CANDELA_PER_SQUARE_METER</span>
+			 = <span class="const-default"> 'CANDELA_PER_SQUARE_METER'</span>
+			(line <span class="line-number">47</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFOOTLAMBERT" id="FOOTLAMBERT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FOOTLAMBERT</span>
+			 = <span class="const-default"> 'FOOTLAMBERT'</span>
+			(line <span class="line-number">48</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constKILOCANDELA_PER_SQUARE_CENTIMETER" id="KILOCANDELA_PER_SQUARE_CENTIMETER"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">KILOCANDELA_PER_SQUARE_CENTIMETER</span>
+			 = <span class="const-default"> 'KILOCANDELA_PER_SQUARE_CENTIMETER'</span>
+			(line <span class="line-number">49</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constKILOCANDELA_PER_SQUARE_FOOT" id="KILOCANDELA_PER_SQUARE_FOOT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">KILOCANDELA_PER_SQUARE_FOOT</span>
+			 = <span class="const-default"> 'KILOCANDELA_PER_SQUARE_FOOT'</span>
+			(line <span class="line-number">50</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constKILOCANDELA_PER_SQUARE_INCH" id="KILOCANDELA_PER_SQUARE_INCH"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">KILOCANDELA_PER_SQUARE_INCH</span>
+			 = <span class="const-default"> 'KILOCANDELA_PER_SQUARE_INCH'</span>
+			(line <span class="line-number">51</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constKILOCANDELA_PER_SQUARE_METER" id="KILOCANDELA_PER_SQUARE_METER"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">KILOCANDELA_PER_SQUARE_METER</span>
+			 = <span class="const-default"> 'KILOCANDELA_PER_SQUARE_METER'</span>
+			(line <span class="line-number">52</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constLAMBERT" id="LAMBERT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">LAMBERT</span>
+			 = <span class="const-default"> 'LAMBERT'</span>
+			(line <span class="line-number">53</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMILLILAMBERT" id="MILLILAMBERT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MILLILAMBERT</span>
+			 = <span class="const-default"> 'MILLILAMBERT'</span>
+			(line <span class="line-number">54</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constNIT" id="NIT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">NIT</span>
+			 = <span class="const-default"> 'NIT'</span>
+			(line <span class="line-number">55</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSTANDARD" id="STANDARD"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">STANDARD</span>
+			 = <span class="const-default"> 'CANDELA_PER_SQUARE_METER'</span>
+			(line <span class="line-number">40</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSTILB" id="STILB"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">STILB</span>
+			 = <span class="const-default"> 'STILB'</span>
+			(line <span class="line-number">56</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:36:11 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

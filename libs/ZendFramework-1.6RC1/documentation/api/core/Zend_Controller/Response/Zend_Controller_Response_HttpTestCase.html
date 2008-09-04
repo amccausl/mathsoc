@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Controller_Response_HttpTestCase</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_Controller_Response_HttpTestCase</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Zend_Controller_Response_Http</p>
+<p class="description"><p>HTTP response for controllers</p></p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Controller---Response---HttpTestCase.php.html">/Controller/Response/HttpTestCase.php</a> (line <span class="field">5</span>)
+		</p>
+		
+				
+		<pre><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html">Zend_Controller_Response_Abstract</a>
+   |
+   --<a href="../../Zend_Controller/Response/Zend_Controller_Response_Http.html">Zend_Controller_Response_Http</a>
+      |
+      --Zend_Controller_Response_HttpTestCase</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																							
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#canSendHeaders" title="details" class="method-name">canSendHeaders</a>
+											([<span class="var-type">bool</span>&nbsp;<span class="var-name">$throw</span> = <span class="var-default">false</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string|array|null</span>
+										<a href="#getBody" title="details" class="method-name">getBody</a>
+											([<span class="var-type">bool|string</span>&nbsp;<span class="var-name">$spec</span> = <span class="var-default">false</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#outputBody" title="details" class="method-name">outputBody</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#sendHeaders" title="details" class="method-name">sendHeaders</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#sendResponse" title="details" class="method-name">sendResponse</a>
+										()
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html">Zend_Controller_Response_Abstract</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#var$headersSentThrowsException">Zend_Controller_Response_Abstract::$headersSentThrowsException</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#var$_body">Zend_Controller_Response_Abstract::$_body</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#var$_exceptions">Zend_Controller_Response_Abstract::$_exceptions</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#var$_headers">Zend_Controller_Response_Abstract::$_headers</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#var$_headersRaw">Zend_Controller_Response_Abstract::$_headersRaw</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#var$_httpResponseCode">Zend_Controller_Response_Abstract::$_httpResponseCode</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#var$_isRedirect">Zend_Controller_Response_Abstract::$_isRedirect</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#var$_renderExceptions">Zend_Controller_Response_Abstract::$_renderExceptions</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-vars">Vars</a>
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodcanSendHeaders" id="canSendHeaders"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">canSendHeaders</span> (line <span class="line-number">38</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Can we send headers?</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			canSendHeaders
+		</span>
+					([<span class="var-type">bool</span>&nbsp;<span class="var-name">$throw</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$throw</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodcanSendHeaders">Zend_Controller_Response_Abstract::canSendHeaders()</a></dt>
+						<dd>Can we send headers?</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetBody" id="getBody"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getBody</span> (line <span class="line-number">63</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get body and/or body segments</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string|array|null</span>
+		<span class="method-name">
+			getBody
+		</span>
+					([<span class="var-type">bool|string</span>&nbsp;<span class="var-name">$spec</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool|string</span>
+				<span class="var-name">$spec</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodgetBody">Zend_Controller_Response_Abstract::getBody()</a></dt>
+						<dd>Return the body content</dd>
+					</dl>
+			
+	</div>
+<a name="methodoutputBody" id="outputBody"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">outputBody</span> (line <span class="line-number">48</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the concatenated body segments</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			outputBody
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodoutputBody">Zend_Controller_Response_Abstract::outputBody()</a></dt>
+						<dd>Echo the body segments</dd>
+					</dl>
+			
+	</div>
+<a name="methodsendHeaders" id="sendHeaders"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">sendHeaders</span> (line <span class="line-number">12</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">&quot;send&quot; headers by returning array of all headers that would be sent</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			sendHeaders
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodsendHeaders">Zend_Controller_Response_Abstract::sendHeaders()</a></dt>
+						<dd>Send all headers</dd>
+					</dl>
+			
+	</div>
+<a name="methodsendResponse" id="sendResponse"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">sendResponse</span> (line <span class="line-number">84</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">&quot;send&quot; Response</p>
+<p class="description"><p>Concats all response headers, and then final body (separated by two  newlines)</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			sendResponse
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodsendResponse">Zend_Controller_Response_Abstract::sendResponse()</a></dt>
+						<dd>Send the response, including all headers, rendering exceptions if so  requested.</dd>
+					</dl>
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html">Zend_Controller_Response_Abstract</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodappend">Zend_Controller_Response_Abstract::append()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodappendBody">Zend_Controller_Response_Abstract::appendBody()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodcanSendHeaders">Zend_Controller_Response_Abstract::canSendHeaders()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodclearAllHeaders">Zend_Controller_Response_Abstract::clearAllHeaders()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodclearBody">Zend_Controller_Response_Abstract::clearBody()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodclearHeaders">Zend_Controller_Response_Abstract::clearHeaders()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodclearRawHeaders">Zend_Controller_Response_Abstract::clearRawHeaders()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodgetBody">Zend_Controller_Response_Abstract::getBody()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodgetException">Zend_Controller_Response_Abstract::getException()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodgetExceptionByCode">Zend_Controller_Response_Abstract::getExceptionByCode()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodgetExceptionByMessage">Zend_Controller_Response_Abstract::getExceptionByMessage()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodgetExceptionByType">Zend_Controller_Response_Abstract::getExceptionByType()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodgetHeaders">Zend_Controller_Response_Abstract::getHeaders()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodgetHttpResponseCode">Zend_Controller_Response_Abstract::getHttpResponseCode()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodgetRawHeaders">Zend_Controller_Response_Abstract::getRawHeaders()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodhasExceptionOfCode">Zend_Controller_Response_Abstract::hasExceptionOfCode()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodhasExceptionOfMessage">Zend_Controller_Response_Abstract::hasExceptionOfMessage()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodhasExceptionOfType">Zend_Controller_Response_Abstract::hasExceptionOfType()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodinsert">Zend_Controller_Response_Abstract::insert()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodisException">Zend_Controller_Response_Abstract::isException()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodisRedirect">Zend_Controller_Response_Abstract::isRedirect()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodoutputBody">Zend_Controller_Response_Abstract::outputBody()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodprepend">Zend_Controller_Response_Abstract::prepend()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodrenderExceptions">Zend_Controller_Response_Abstract::renderExceptions()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodsendHeaders">Zend_Controller_Response_Abstract::sendHeaders()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodsendResponse">Zend_Controller_Response_Abstract::sendResponse()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodsetBody">Zend_Controller_Response_Abstract::setBody()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodsetException">Zend_Controller_Response_Abstract::setException()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodsetHeader">Zend_Controller_Response_Abstract::setHeader()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodsetHttpResponseCode">Zend_Controller_Response_Abstract::setHttpResponseCode()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodsetRawHeader">Zend_Controller_Response_Abstract::setRawHeader()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#methodsetRedirect">Zend_Controller_Response_Abstract::setRedirect()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#method_normalizeHeader">Zend_Controller_Response_Abstract::_normalizeHeader()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html#method__toString">Zend_Controller_Response_Abstract::__toString()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:31:42 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

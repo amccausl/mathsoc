@@ -1,0 +1,393 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Chapter 34. Zend_Registry</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="index.html" title="Programmer's Reference Guide">
+<link rel="prev" href="zend.pdf.usage.html" title="33.7. Zend_Pdf module usage example.">
+<link rel="next" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="section" href="zend.registry.html#zend.registry.using" title="34.1. Using the Registry">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">Chapter 34. Zend_Registry</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.pdf.usage.html">Prev</a> </td>
+<th width="60%" align="center"> </th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.rest.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="chapter" lang="en">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="zend.registry"></a>Chapter 34. Zend_Registry</h2></div></div></div>
+<div class="toc">
+<p><b>Table of Contents</b></p>
+<dl>
+<dt><span class="sect1"><a href="zend.registry.html#zend.registry.using">34.1. Using the Registry</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.registry.html#zend.registry.using.storing">34.1.1. Setting Values in the Registry</a></span></dt>
+<dt><span class="sect2"><a href="zend.registry.html#zend.registry.using.retrieving">34.1.2. Getting Values from the Registry</a></span></dt>
+<dt><span class="sect2"><a href="zend.registry.html#zend.registry.using.constructing">34.1.3. Constructing a Registry Object</a></span></dt>
+<dt><span class="sect2"><a href="zend.registry.html#zend.registry.using.array-access">34.1.4. Accessing the Registry as an Array</a></span></dt>
+<dt><span class="sect2"><a href="zend.registry.html#zend.registry.using.array-object">34.1.5. Accessing the Registry as an Object</a></span></dt>
+<dt><span class="sect2"><a href="zend.registry.html#zend.registry.using.isset">34.1.6. Querying if an index exists</a></span></dt>
+<dt><span class="sect2"><a href="zend.registry.html#zend.registry.using.subclassing">34.1.7. Extending the Registry</a></span></dt>
+<dt><span class="sect2"><a href="zend.registry.html#zend.registry.using.unsetting">34.1.8. Unsetting the Static Registry</a></span></dt>
+</dl></dd>
+</dl>
+</div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.registry.using"></a>34.1. Using the Registry</h2></div></div></div>
+<p>
+        The registry is a container for storing objects and values in the
+        application space.  By storing the value in the registry, the same
+        object is always available throughout your application.
+        This mechanism is an alternative to using global storage.
+    </p>
+<p>
+        The typical usage of the registry is through static methods in the
+        Zend_Registry class.  Alternatively, the class is an array object,
+        so you can access elements stored within it with a convenient
+        array-like interface.
+    </p>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.registry.using.storing"></a>34.1.1. Setting Values in the Registry</h3></div></div></div>
+<p>
+            To store an entry in the registry, use the static method
+            <code class="code">set()</code>.
+        </p>
+<div class="example">
+<a name="zend.registry.using.storing.example"></a><p class="title"><b>Example 34.1. Example of set() method</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+Zend_Registry::set('index', $value);
+            </pre></div>
+</div>
+<br class="example-break"><p>
+            The value can be an object, an array, or a scalar.
+            You can change the value stored in a specific entry of
+            the registry by using <code class="code">set()</code> to set it
+            to a new value.
+        </p>
+<p>
+            The index can be a scalar, either string or integer,
+            like an ordinary array.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.registry.using.retrieving"></a>34.1.2. Getting Values from the Registry</h3></div></div></div>
+<p>
+            To retrieve an entry from the registry, use the static method
+            <code class="code">get()</code>.
+        </p>
+<div class="example">
+<a name="zend.registry.using.retrieving.example"></a><p class="title"><b>Example 34.2. Example of get() method</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$value = Zend_Registry::get('index');
+            </pre></div>
+</div>
+<br class="example-break"><p>
+            The <code class="code">getInstance()</code> method returns the static registry object.
+        </p>
+<p>
+            A registry object is iterable.
+        </p>
+<div class="example">
+<a name="zend.registry.using.retrieving.example-iterating"></a><p class="title"><b>Example 34.3. Example of iterating over the registry</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$registry = Zend_Registry::getInstance();
+
+foreach ($registry as $index =&gt; $value) {
+    echo "Registry index $index contains:\n";
+    var_dump($value);
+}
+            </pre></div>
+</div>
+<br class="example-break">
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.registry.using.constructing"></a>34.1.3. Constructing a Registry Object</h3></div></div></div>
+<p>
+            In addition to accessing the static registry through
+            static methods, you can create an instance directly and
+            use it as an object.
+        </p>
+<p>
+            The registry instance you access through the
+            static methods is simply one such instance, and it is
+            for convenience that it is stored statically, so you
+            can access it from anywhere in your appliation.
+        </p>
+<p>
+            Use a traditional <code class="code">new</code> constructor to create
+            an instance of the registry.  This gives you the opportunity
+            to initialize the entries in the registry as an associatve
+            array.
+        </p>
+<div class="example">
+<a name="zend.registry.using.constructing.example"></a><p class="title"><b>Example 34.4. Example of constructing a registry</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$registry = new Zend_Registry(array('index' =&gt; $value));
+            </pre></div>
+</div>
+<br class="example-break"><p>
+            After constructing this instance, you can use it using
+            array-object methods, or you can set this instance
+            to become the static instance using the static method
+            <code class="code">setInstance()</code>.
+        </p>
+<div class="example">
+<a name="zend.registry.using.constructing.example-setinstance"></a><p class="title"><b>Example 34.5. Example of initializing the static registry</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$registry = new Zend_Registry(array('index' =&gt; $value));
+
+Zend_Registry::setInstance($registry);
+            </pre></div>
+</div>
+<br class="example-break"><p>
+            The <code class="code">setInstance()</code> method throws a Zend_Exception
+            if the static registry has already been initialized by its
+            first access.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.registry.using.array-access"></a>34.1.4. Accessing the Registry as an Array</h3></div></div></div>
+<p>
+            If you have several values to get or set, you may find it
+            convenient to access the registry with array notation.
+        </p>
+<div class="example">
+<a name="zend.registry.using.array-access.example"></a><p class="title"><b>Example 34.6. Example of array access</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$registry = Zend_Registry::getInstance();
+
+$registry['index'] = $value;
+
+var_dump( $registry['index'] );
+            </pre></div>
+</div>
+<br class="example-break">
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.registry.using.array-object"></a>34.1.5. Accessing the Registry as an Object</h3></div></div></div>
+<p>
+            You may also find it convenient to access the registry
+            in an object-oriented fashion, using index names as object
+            properties.
+            To do this, you need to specifically construct the registry
+            object using the <code class="code">ArrayObject::ARRAY_AS_PROPS</code> option,
+            and initialize the static instance.  You must do this before
+            the static registry has been accessed for the first time.
+            <span class="strong"><strong>Beware</strong></span> of using this option,
+            since some versions of PHP have bugs when using the registry
+            with this option.
+        </p>
+<div class="example">
+<a name="zend.registry.using.array-object.example"></a><p class="title"><b>Example 34.7. Example of object access</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+// in your application bootstrap:
+$registry = new Zend_Registry(array(), ArrayObject::ARRAY_AS_PROPS)
+Zend_Registry::setInstance($registry);
+$registry-&gt;tree = 'apple';
+
+.
+.
+.
+
+// in a different function, elsewhere in your application:
+$registry = Zend_Registry::getInstance();
+
+echo $registry-&gt;tree; // echo's "apple"
+
+$registry-&gt;index = $value;
+
+var_dump($registry-&gt;index);
+            </pre></div>
+</div>
+<br class="example-break">
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.registry.using.isset"></a>34.1.6. Querying if an index exists</h3></div></div></div>
+<p>
+            To find out if a particular index in the registry
+            has a value, use the static method <code class="code">isRegistered()</code>.
+        </p>
+<div class="example">
+<a name="zend.registry.using.isset.example-isregistered"></a><p class="title"><b>Example 34.8. Example of isRegistered() method</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+if (Zend_Registry::isRegistered($index)) {
+    $value = Zend_Registry::get($index);
+}
+            </pre></div>
+</div>
+<br class="example-break"><p>
+            To find out if a particular index in a registry
+            array-object has a value, use <code class="code">isset()</code>
+            like you would with an ordinary array.
+        </p>
+<div class="example">
+<a name="zend.registry.using.isset.example-isset"></a><p class="title"><b>Example 34.9. Example of isset() method</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$registry = Zend_Registry::getInstance();
+
+// using array-access syntax
+if (isset($registry['index'])) {
+    var_dump( $registry['index'] );
+}
+
+// using object-access syntax, if enabled
+if (isset($registry-&gt;index)) {
+    var_dump( $registry-&gt;index );
+}
+            </pre></div>
+</div>
+<br class="example-break">
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.registry.using.subclassing"></a>34.1.7. Extending the Registry</h3></div></div></div>
+<p>
+            The static registry is an instance of the class Zend_Registry.
+            If you want to add functionality to the registry, you can
+            create a class that extends Zend_Registry, and then you can
+            specify this class as the class to use for the static registry.
+            Use the static method <code class="code">setClassName()</code> to specify
+            the class.  The class must extend Zend_Registry.
+        </p>
+<div class="example">
+<a name="zend.registry.using.subclassing.example"></a><p class="title"><b>Example 34.10. Example of specifying the static registry's class name</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+Zend_Registry::setClassName('My_Registry');
+
+Zend_Registry::set('index', $value);
+            </pre></div>
+</div>
+<br class="example-break"><p>
+            The registry throws a Zend_Exception if you try to set the
+            classname after the registry has been accessed for the first time.
+            It is recommended that you specify the classname for your
+            static registry in your application bootstrap.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.registry.using.unsetting"></a>34.1.8. Unsetting the Static Registry</h3></div></div></div>
+<p>
+            Although it is not normally necessary, you can
+            unset the static instance of the registry.
+            Use the static method <code class="code">_unsetInstance()</code>.
+        </p>
+<div class="note"><table border="0" summary="Note: Data loss risk">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Data loss risk</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+                When you use <code class="code">_unsetInstance()</code>,
+                all data in the static registry are
+                discarded and cannot be recovered.
+            </p></td></tr>
+</table></div>
+<p>
+            You might use this method, for example, if you want to
+            use <code class="code">setInstance()</code> or <code class="code">setClassName()</code>
+            after the static registry object has been initialized.
+            Unsetting the static instance allows you to use these methods.
+        </p>
+<div class="example">
+<a name="zend.registry.using.unsetting.example"></a><p class="title"><b>Example 34.11. Example of _unsetInstance() method</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+Zend_Registry::set('index', $value);
+
+Zend_Registry::_unsetInstance();
+
+// change the class
+Zend_Registry::setClassName('My_Registry');
+
+Zend_Registry::set('index', $value);
+            </pre></div>
+</div>
+<br class="example-break">
+</div>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.pdf.usage.html">Prev</a> </td>
+<td width="20%" align="center"> </td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.rest.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">33.7. Zend_Pdf module usage example. </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> Chapter 35. Zend_Rest</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

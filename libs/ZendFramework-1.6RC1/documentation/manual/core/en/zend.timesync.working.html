@@ -1,0 +1,360 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>43.2. Working with Zend_TimeSync</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="prev" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="next" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.timesync.working.html#zend.timesync.working.generic" title="43.2.1. Generic timeserver request">
+<link rel="subsection" href="zend.timesync.working.html#zend.timesync.working.multiple" title="43.2.2. Multiple timeservers">
+<link rel="subsection" href="zend.timesync.working.html#zend.timesync.working.protocol" title="43.2.3. Protocols of timeservers">
+<link rel="subsection" href="zend.timesync.working.html#zend.timesync.working.ports" title="43.2.4. Using ports for timeservers">
+<link rel="subsection" href="zend.timesync.working.html#zend.timesync.working.options" title="43.2.5. Options for timeservers">
+<link rel="subsection" href="zend.timesync.working.html#zend.timesync.working.different" title="43.2.6. Using different timeservers">
+<link rel="subsection" href="zend.timesync.working.html#zend.timesync.working.informations" title="43.2.7. Informations from timeservers">
+<link rel="subsection" href="zend.timesync.working.html#zend.timesync.working.exceptions" title="43.2.8. Taking care of exceptions">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">43.2. Working with Zend_TimeSync</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.timesync.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 43. Zend_TimeSync</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.translate.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.timesync.working"></a>43.2. Working with Zend_TimeSync</h2></div></div></div>
+<p>
+        <code class="code">Zend_TimeSync</code> can return the actual time from any given
+        <span class="strong"><strong>NTP</strong></span> or <span class="strong"><strong>SNTP</strong></span> timeserver.
+        It can automatically handle multiple servers and provides a simple interface.
+    </p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+            In all examples within this chapter we are using one of the available public generic timeservers.
+            In our case <span class="strong"><strong>0.europe.pool.ntp.org</strong></span>. For your environment
+            it is recommended that you are using a public generic timeserver which is nearly to the location
+            of your server. See <a href="http://www.pool.ntp.org" target="_top">http://www.pool.ntp.org</a> for
+            details.
+        </p></td></tr>
+</table></div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.timesync.working.generic"></a>43.2.1. Generic timeserver request</h3></div></div></div>
+<p>
+            Requesting the time from a timeserver is quite simple. All you have to give is the timeserver
+            from which you want to have the time.
+        </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/TimeSync.php';
+
+$server = new Zend_TimeSync('0.pool.ntp.org');
+
+print $server-&gt;getDate()-&gt;getIso();
+        </pre>
+<p>
+            So what is happening in the background of <code class="code">Zend_TimeSync</code>? First the syntax of the
+            given server is checked. So in our example '<code class="code">0.pool.ntp.org</code>' is checked and
+            recognised as possible correct adress for a timeserver. Then when calling
+            <code class="code">getDate()</code> the actual set timeserver is requested and it will return it's own
+            time. <code class="code">Zend_TimeSync</code> then calculates the difference to the actual time of the
+            server running the script and returns a <code class="code">Zend_Date</code> object with the actual,
+            corrected time.
+        </p>
+<p>
+            For details about <code class="code">Zend_Date</code> and it's methods you can refer to
+            <a href="zend.date.html#zend.date.introduction" title="9.1. Introduction">Zend_Date</a>.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.timesync.working.multiple"></a>43.2.2. Multiple timeservers</h3></div></div></div>
+<p>
+            Not all timeservers are always available and will return their time. Servers will have a time
+            where they can not be reached, for example when having a maintenance. In such cases, when the
+            time can not be requested from the timeserver, you would get an exception.
+        </p>
+<p>
+            As simple solution <code class="code">Zend_TimeSync</code> can handle multiple timeservers and supports a
+            automatic fallback machanism. There are two supported ways. You can either give an array
+            of timeservers when creating the instance. Or you can add additionally timeservers afterwards
+            with the <code class="code">addServer()</code> method.
+        </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/TimeSync.php';
+
+$server = new Zend_TimeSync(array('0.pool.ntp.org',
+                                  '1.pool.ntp.org',
+                                  '2.pool.ntp.org'));
+$server-&gt;addServer('3.pool.ntp.org');
+
+print $server-&gt;getDate()-&gt;getIso();
+        </pre>
+<p>
+            There is no limitation in the ammount of timeservers you can add. When a timeserver can not
+            be reached <code class="code">Zend_TimeSync</code> will fallback and try to connect to the next given timeserver.
+        </p>
+<p>
+            When you give more than one timeserver, which should be your default behaviour, you should name
+            your servers. You can either name your servers with the array key, but also with the second
+            parameter at initiation or addition of an other timeserver.
+        </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/TimeSync.php';
+
+$server = new Zend_TimeSync(array('generic'  =&gt; '0.pool.ntp.org',
+                                  'fallback' =&gt; '1.pool.ntp.org',
+                                  'reserve'  =&gt; '2.pool.ntp.org'));
+$server-&gt;addServer('3.pool.ntp.org', 'additional');
+
+print $server-&gt;getDate()-&gt;getIso();
+        </pre>
+<p>
+            Naming the timeservers gives you the ability to request a specific timeserver as we will see
+            later in this chapter.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.timesync.working.protocol"></a>43.2.3. Protocols of timeservers</h3></div></div></div>
+<p>
+            There are different types of timeservers. The most public timeservers are using
+            <span class="strong"><strong>NTP</strong></span> as protocol. But there are different other
+            protocols available.
+        </p>
+<p>
+            You can set the proper protocol within the address of the timeserver. Actual there are two
+            protocols which are supported by <code class="code">Zend_TimeSync</code>. The default protocol is
+            <span class="strong"><strong>NTP</strong></span>. If you are only using NTP you can ommit the protocol
+            within the address as show in the previous examples.
+        </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/TimeSync.php';
+
+$server = new Zend_TimeSync(array('generic'  =&gt; 'ntp:\\0.pool.ntp.org',
+                                  'fallback' =&gt; 'ntp:\\1.pool.ntp.org',
+                                  'reserve'  =&gt; 'ntp:\\2.pool.ntp.org'));
+$server-&gt;addServer('sntp:\\internal.myserver.com', 'additional');
+
+print $server-&gt;getDate()-&gt;getIso();
+        </pre>
+<p>
+            <code class="code">Zend_TimeSync</code> is able to handle mixed timeservers. So you are not restricted to
+            only one protocol, but you can add any server independently from it's protocol.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.timesync.working.ports"></a>43.2.4. Using ports for timeservers</h3></div></div></div>
+<p>
+            As every protocol within the world wide web, the <span class="strong"><strong>NTP</strong></span> and
+            <span class="strong"><strong>SNTP</strong></span> protocols are using standard ports. NTP uses port
+            <span class="strong"><strong>123</strong></span> and SNTP uses <span class="strong"><strong>37</strong></span>.
+        </p>
+<p>
+            But sometimes the used port differ from the standard one. You can define the port which
+            has to be used for each server within the address. Just add the number of the port behind the
+            address. If no port is defined, then <code class="code">Zend_TimeSync</code> will use the standard port.
+        </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/TimeSync.php';
+
+$server = new Zend_TimeSync(array('generic'  =&gt; 'ntp:\\0.pool.ntp.org:200',
+                                  'fallback' =&gt; 'ntp:\\1.pool.ntp.org'));
+$server-&gt;addServer('sntp:\\internal.myserver.com:399', 'additional');
+
+print $server-&gt;getDate()-&gt;getIso();
+        </pre>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.timesync.working.options"></a>43.2.5. Options for timeservers</h3></div></div></div>
+<p>
+            Actually there is only one option within <code class="code">Zend_TimeSync</code> which will be used internally.
+            But you can set any self defined option you are in need for and request it.
+        </p>
+<p>
+            The option <span class="strong"><strong>timeout</strong></span> defines the number of seconds after which
+            a connection is detected as broken when there was no response. The default value is
+            <span class="strong"><strong>1</strong></span>, which means that <code class="code">Zend_TimeSync</code> will
+            fallback to the next timeserver is the actual requested timeserver does not respond in one second.
+        </p>
+<p>
+            With the <code class="code">setOptions()</code> method, you can set any option. It accepts an array where the
+            key is the option to set and the value is the value of that option. Any previous set option will
+            be overwritten by the new value. If you want to know which options are set, use the
+            <code class="code">getOptions()</code> method. It accepts either a key which returns the given option if set
+            or, if no key is set, it will return all set options.
+        </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/TimeSync.php';
+
+Zend_TimeSync::setOptions(array('timeout' =&gt; 3, 'myoption' =&gt; 'timesync'));
+$server = new Zend_TimeSync(array('generic'  =&gt; 'ntp:\\0.pool.ntp.org',
+                                  'fallback' =&gt; 'ntp:\\1.pool.ntp.org'));
+$server-&gt;addServer('sntp:\\internal.myserver.com', 'additional');
+
+print $server-&gt;getDate()-&gt;getIso();
+print_r(Zend_TimeSync::getOptions();
+print "Timeout = " . Zend_TimeSync::getOptions('timeout');
+        </pre>
+<p>
+            As you can see the options for <code class="code">Zend_TimeSync</code> are static, which means that each
+            instance of <code class="code">Zend_TimeSync</code> will act with the same options.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.timesync.working.different"></a>43.2.6. Using different timeservers</h3></div></div></div>
+<p>
+            The default behaviour for requesting a time is to request it from the first given server.
+            But sometimes it is useful to set a different timeserver from which to request the time.
+            This can be done with the <code class="code">setServer()</code> method. To define the used timeserver
+            just set the alias as parameter within the method. And to get the actual used timeserver
+            just call the <code class="code">getServer()</code> method. It accepts an alias as parameter which
+            defined the timeserver to be returned. If no parameter is given, the current timeserver will
+            be returned.
+        </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/TimeSync.php';
+
+$server = new Zend_TimeSync(array('generic'  =&gt; 'ntp:\\0.pool.ntp.org',
+                                  'fallback' =&gt; 'ntp:\\1.pool.ntp.org'));
+$server-&gt;addServer('sntp:\\internal.myserver.com', 'additional');
+
+$actual = $server-&gt;getServer();
+$server = $server-&gt;setServer('additional');
+        </pre>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.timesync.working.informations"></a>43.2.7. Informations from timeservers</h3></div></div></div>
+<p>
+            Timeservers offer not only the time itself but also additionally informations. You can
+            get these informations with the <code class="code">getInfo()</code> method.
+        </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/TimeSync.php';
+
+$server = new Zend_TimeSync(array('generic'  =&gt; 'ntp:\\0.pool.ntp.org',
+                                  'fallback' =&gt; 'ntp:\\1.pool.ntp.org'));
+
+print_r ($server-&gt;getInfo());
+        </pre>
+<p>
+            The returned informations differ with the used protocols and they can also differ with the used
+            servers.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.timesync.working.exceptions"></a>43.2.8. Taking care of exceptions</h3></div></div></div>
+<p>
+            Exceptions are collected for all timeserver and will be returned as array. So you are able
+            to iterate through all throwed exceptions like shown in the following example:
+        </p>
+<pre class="programlisting">&lt;?php
+$serverlist = array(
+        // invalid servers
+        'invalid_a'  =&gt; 'ntp://a.foo.bar.org',
+        'invalid_b'  =&gt; 'sntp://b.foo.bar.org',
+);
+
+$server = new Zend_TimeSync($serverlist);
+
+try {
+    $result = $server-&gt;getDate();
+    echo $result-&gt;getIso();
+} catch (Zend_TimeSync_Exception $e) {
+
+    $exceptions = $e-&gt;get();
+
+    foreach ($exceptions as $key =&gt; $myException) {
+        echo $myException-&gt;getMessage();
+        echo '&lt;br /&gt;';
+    }
+}
+        </pre>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.timesync.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.timesync.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.translate.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">Chapter 43. Zend_TimeSync </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> Chapter 44. Zend_Translate</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

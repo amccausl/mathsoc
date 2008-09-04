@@ -1,0 +1,913 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Measure_Viscosity_Kinematic</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_Measure_Viscosity_Kinematic</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-methods">Methods</a>
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Class for handling acceleration conversions</p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Measure---Viscosity---Kinematic.php.html">/Measure/Viscosity/Kinematic.php</a> (line <span class="field">38</span>)
+		</p>
+		
+				
+		<pre><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html">Zend_Measure_Abstract</a>
+   |
+   --Zend_Measure_Viscosity_Kinematic</pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-methods">Methods</a>
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CENTISTOKES" title="details" class="const-name">CENTISTOKES</a> = 					<span class="var-type"> 'CENTISTOKES'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#LENTOR" title="details" class="const-name">LENTOR</a> = 					<span class="var-type"> 'LENTOR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#LITER_PER_CENTIMETER_DAY" title="details" class="const-name">LITER_PER_CENTIMETER_DAY</a> = 					<span class="var-type"> 'LITER_PER_CENTIMETER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#LITER_PER_CENTIMETER_HOUR" title="details" class="const-name">LITER_PER_CENTIMETER_HOUR</a> = 					<span class="var-type"> 'LITER_PER_CENTIMETER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#LITER_PER_CENTIMETER_MINUTE" title="details" class="const-name">LITER_PER_CENTIMETER_MINUTE</a> = 					<span class="var-type"> 'LITER_PER_CENTIMETER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#LITER_PER_CENTIMETER_SECOND" title="details" class="const-name">LITER_PER_CENTIMETER_SECOND</a> = 					<span class="var-type"> 'LITER_PER_CENTIMETER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#POISE_CUBIC_CENTIMETER_PER_GRAM" title="details" class="const-name">POISE_CUBIC_CENTIMETER_PER_GRAM</a> = 					<span class="var-type"> 'POISE_CUBIC_CENTIMETER_PER_GRAM'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SQUARE_CENTIMETER_PER_DAY" title="details" class="const-name">SQUARE_CENTIMETER_PER_DAY</a> = 					<span class="var-type"> 'SQUARE_CENTIMETER_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SQUARE_CENTIMETER_PER_HOUR" title="details" class="const-name">SQUARE_CENTIMETER_PER_HOUR</a> = 					<span class="var-type"> 'SQUARE_CENTIMETER_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SQUARE_CENTIMETER_PER_MINUTE" title="details" class="const-name">SQUARE_CENTIMETER_PER_MINUTE</a> = 					<span class="var-type"> 'SQUARE_CENTIMETER_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SQUARE_CENTIMETER_PER_SECOND" title="details" class="const-name">SQUARE_CENTIMETER_PER_SECOND</a> = 					<span class="var-type"> 'SQUARE_CENTIMETER_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SQUARE_FOOT_PER_DAY" title="details" class="const-name">SQUARE_FOOT_PER_DAY</a> = 					<span class="var-type"> 'SQUARE_FOOT_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SQUARE_FOOT_PER_HOUR" title="details" class="const-name">SQUARE_FOOT_PER_HOUR</a> = 					<span class="var-type"> 'SQUARE_FOOT_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SQUARE_FOOT_PER_MINUTE" title="details" class="const-name">SQUARE_FOOT_PER_MINUTE</a> = 					<span class="var-type"> 'SQUARE_FOOT_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SQUARE_FOOT_PER_SECOND" title="details" class="const-name">SQUARE_FOOT_PER_SECOND</a> = 					<span class="var-type"> 'SQUARE_FOOT_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SQUARE_INCH_PER_DAY" title="details" class="const-name">SQUARE_INCH_PER_DAY</a> = 					<span class="var-type"> 'SQUARE_INCH_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SQUARE_INCH_PER_HOUR" title="details" class="const-name">SQUARE_INCH_PER_HOUR</a> = 					<span class="var-type"> 'SQUARE_INCH_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SQUARE_INCH_PER_MINUTE" title="details" class="const-name">SQUARE_INCH_PER_MINUTE</a> = 					<span class="var-type"> 'SQUARE_INCH_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SQUARE_INCH_PER_SECOND" title="details" class="const-name">SQUARE_INCH_PER_SECOND</a> = 					<span class="var-type"> 'SQUARE_INCH_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SQUARE_METER_PER_DAY" title="details" class="const-name">SQUARE_METER_PER_DAY</a> = 					<span class="var-type"> 'SQUARE_METER_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SQUARE_METER_PER_HOUR" title="details" class="const-name">SQUARE_METER_PER_HOUR</a> = 					<span class="var-type"> 'SQUARE_METER_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SQUARE_METER_PER_MINUTE" title="details" class="const-name">SQUARE_METER_PER_MINUTE</a> = 					<span class="var-type"> 'SQUARE_METER_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SQUARE_METER_PER_SECOND" title="details" class="const-name">SQUARE_METER_PER_SECOND</a> = 					<span class="var-type"> 'SQUARE_METER_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SQUARE_MILLIMETER_PER_DAY" title="details" class="const-name">SQUARE_MILLIMETER_PER_DAY</a> = 					<span class="var-type"> 'SQUARE_MILLIMETER_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SQUARE_MILLIMETER_PER_HOUR" title="details" class="const-name">SQUARE_MILLIMETER_PER_HOUR</a> = 					<span class="var-type"> 'SQUARE_MILLIMETER_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SQUARE_MILLIMETER_PER_MINUTE" title="details" class="const-name">SQUARE_MILLIMETER_PER_MINUTE</a> = 					<span class="var-type"> 'SQUARE_MILLIMETER_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SQUARE_MILLIMETER_PER_SECOND" title="details" class="const-name">SQUARE_MILLIMETER_PER_SECOND</a> = 					<span class="var-type"> 'SQUARE_MILLIMETER_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#STANDARD" title="details" class="const-name">STANDARD</a> = 					<span class="var-type"> 'SQUARE_METER_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#STOKES" title="details" class="const-name">STOKES</a> = 					<span class="var-type"> 'STOKES'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-methods">Methods</a>
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																								<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$_units" title="details" class="var-name">$_units</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<span class="disabled">Vars</span>
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-methods">Methods</a>
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_units" id="$_units"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_units</span>
+			 = <span class="var-default">array(<br />        'CENTISTOKES'                  =&gt; array('0.000001',        'cSt'),'LENTOR'=&gt;array('0.0001','lentor'),'LITER_PER_CENTIMETER_DAY'=&gt;array(array(''=&gt;'1','/'=&gt;'864000'),'l/cm day'),'LITER_PER_CENTIMETER_HOUR'=&gt;array(array(''=&gt;'1','/'=&gt;'36000'),'l/cm h'),'LITER_PER_CENTIMETER_MINUTE'=&gt;array(array(''=&gt;'1','/'=&gt;'600'),'l/cm m'),'LITER_PER_CENTIMETER_SECOND'=&gt;array('0.1','l/cm s'),'POISE_CUBIC_CENTIMETER_PER_GRAM'=&gt;array('0.0001','P cm³/g'),'SQUARE_CENTIMETER_PER_DAY'=&gt;array(array(''=&gt;'1','/'=&gt;'864000000'),'cm²/day'),'SQUARE_CENTIMETER_PER_HOUR'=&gt;array(array(''=&gt;'1','/'=&gt;'36000000'),'cm²/h'),'SQUARE_CENTIMETER_PER_MINUTE'=&gt;array(array(''=&gt;'1','/'=&gt;'600000'),'cm²/m'),'SQUARE_CENTIMETER_PER_SECOND'=&gt;array('0.0001','cm²/s'),'SQUARE_FOOT_PER_DAY'=&gt;array('0.0000010752667','ft²/day'),'SQUARE_FOOT_PER_HOUR'=&gt;array('0.0000258064','ft²/h'),'SQUARE_FOOT_PER_MINUTE'=&gt;array('0.001548384048','ft²/m'),'SQUARE_FOOT_PER_SECOND'=&gt;array('0.09290304','ft²/s'),'SQUARE_INCH_PER_DAY'=&gt;array('7.4671296e-9','in²/day'),'SQUARE_INCH_PER_HOUR'=&gt;array('0.00000017921111','in²/h'),'SQUARE_INCH_PER_MINUTE'=&gt;array('0.000010752667','in²/m'),'SQUARE_INCH_PER_SECOND'=&gt;array('0.00064516','in²/s'),'SQUARE_METER_PER_DAY'=&gt;array(array(''=&gt;'1','/'=&gt;'86400'),'m²/day'),'SQUARE_METER_PER_HOUR'=&gt;array(array(''=&gt;'1','/'=&gt;'3600'),'m²/h'),'SQUARE_METER_PER_MINUTE'=&gt;array(array(''=&gt;'1','/'=&gt;'60'),'m²/m'),'SQUARE_METER_PER_SECOND'=&gt;array('1','m²/s'),'SQUARE_MILLIMETER_PER_DAY'=&gt;array(array(''=&gt;'1','/'=&gt;'86400000000'),'mm²/day'),'SQUARE_MILLIMETER_PER_HOUR'=&gt;array(array(''=&gt;'1','/'=&gt;'3600000000'),'mm²/h'),'SQUARE_MILLIMETER_PER_MINUTE'=&gt;array(array(''=&gt;'1','/'=&gt;'60000000'),'mm²/m'),'SQUARE_MILLIMETER_PER_SECOND'=&gt;array('0.000001','mm²/s'),'STOKES'=&gt;array('0.0001','St'),'STANDARD'=&gt;'SQUARE_METER_PER_SECOND')</span>			(line <span class="line-number">76</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Calculations for all kinematic viscosity units</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#var$_units">Zend_Measure_Abstract::$_units</a></dt>
+						<dd>Unit types for this measurement</dd>
+					</dl>
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html">Zend_Measure_Abstract</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#var$_locale">Zend_Measure_Abstract::$_locale</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#var$_type">Zend_Measure_Abstract::$_type</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#var$_value">Zend_Measure_Abstract::$_value</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<span class="disabled">Methods</span>
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html">Zend_Measure_Abstract</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#method__construct">Zend_Measure_Abstract::__construct()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodadd">Zend_Measure_Abstract::add()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodcompare">Zend_Measure_Abstract::compare()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodconvertTo">Zend_Measure_Abstract::convertTo()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodequals">Zend_Measure_Abstract::equals()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodgetConversionList">Zend_Measure_Abstract::getConversionList()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodgetType">Zend_Measure_Abstract::getType()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodgetValue">Zend_Measure_Abstract::getValue()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodsetType">Zend_Measure_Abstract::setType()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodsetValue">Zend_Measure_Abstract::setValue()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodsub">Zend_Measure_Abstract::sub()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodtoString">Zend_Measure_Abstract::toString()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#method__toString">Zend_Measure_Abstract::__toString()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<span class="disabled">Constants</span>
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-methods">Methods</a>
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constCENTISTOKES" id="CENTISTOKES"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CENTISTOKES</span>
+			 = <span class="const-default"> 'CENTISTOKES'</span>
+			(line <span class="line-number">42</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constLENTOR" id="LENTOR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">LENTOR</span>
+			 = <span class="const-default"> 'LENTOR'</span>
+			(line <span class="line-number">43</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constLITER_PER_CENTIMETER_DAY" id="LITER_PER_CENTIMETER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">LITER_PER_CENTIMETER_DAY</span>
+			 = <span class="const-default"> 'LITER_PER_CENTIMETER_DAY'</span>
+			(line <span class="line-number">44</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constLITER_PER_CENTIMETER_HOUR" id="LITER_PER_CENTIMETER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">LITER_PER_CENTIMETER_HOUR</span>
+			 = <span class="const-default"> 'LITER_PER_CENTIMETER_HOUR'</span>
+			(line <span class="line-number">45</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constLITER_PER_CENTIMETER_MINUTE" id="LITER_PER_CENTIMETER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">LITER_PER_CENTIMETER_MINUTE</span>
+			 = <span class="const-default"> 'LITER_PER_CENTIMETER_MINUTE'</span>
+			(line <span class="line-number">46</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constLITER_PER_CENTIMETER_SECOND" id="LITER_PER_CENTIMETER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">LITER_PER_CENTIMETER_SECOND</span>
+			 = <span class="const-default"> 'LITER_PER_CENTIMETER_SECOND'</span>
+			(line <span class="line-number">47</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPOISE_CUBIC_CENTIMETER_PER_GRAM" id="POISE_CUBIC_CENTIMETER_PER_GRAM"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">POISE_CUBIC_CENTIMETER_PER_GRAM</span>
+			 = <span class="const-default"> 'POISE_CUBIC_CENTIMETER_PER_GRAM'</span>
+			(line <span class="line-number">48</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSQUARE_CENTIMETER_PER_DAY" id="SQUARE_CENTIMETER_PER_DAY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SQUARE_CENTIMETER_PER_DAY</span>
+			 = <span class="const-default"> 'SQUARE_CENTIMETER_PER_DAY'</span>
+			(line <span class="line-number">49</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSQUARE_CENTIMETER_PER_HOUR" id="SQUARE_CENTIMETER_PER_HOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SQUARE_CENTIMETER_PER_HOUR</span>
+			 = <span class="const-default"> 'SQUARE_CENTIMETER_PER_HOUR'</span>
+			(line <span class="line-number">50</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSQUARE_CENTIMETER_PER_MINUTE" id="SQUARE_CENTIMETER_PER_MINUTE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SQUARE_CENTIMETER_PER_MINUTE</span>
+			 = <span class="const-default"> 'SQUARE_CENTIMETER_PER_MINUTE'</span>
+			(line <span class="line-number">51</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSQUARE_CENTIMETER_PER_SECOND" id="SQUARE_CENTIMETER_PER_SECOND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SQUARE_CENTIMETER_PER_SECOND</span>
+			 = <span class="const-default"> 'SQUARE_CENTIMETER_PER_SECOND'</span>
+			(line <span class="line-number">52</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSQUARE_FOOT_PER_DAY" id="SQUARE_FOOT_PER_DAY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SQUARE_FOOT_PER_DAY</span>
+			 = <span class="const-default"> 'SQUARE_FOOT_PER_DAY'</span>
+			(line <span class="line-number">53</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSQUARE_FOOT_PER_HOUR" id="SQUARE_FOOT_PER_HOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SQUARE_FOOT_PER_HOUR</span>
+			 = <span class="const-default"> 'SQUARE_FOOT_PER_HOUR'</span>
+			(line <span class="line-number">54</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSQUARE_FOOT_PER_MINUTE" id="SQUARE_FOOT_PER_MINUTE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SQUARE_FOOT_PER_MINUTE</span>
+			 = <span class="const-default"> 'SQUARE_FOOT_PER_MINUTE'</span>
+			(line <span class="line-number">55</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSQUARE_FOOT_PER_SECOND" id="SQUARE_FOOT_PER_SECOND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SQUARE_FOOT_PER_SECOND</span>
+			 = <span class="const-default"> 'SQUARE_FOOT_PER_SECOND'</span>
+			(line <span class="line-number">56</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSQUARE_INCH_PER_DAY" id="SQUARE_INCH_PER_DAY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SQUARE_INCH_PER_DAY</span>
+			 = <span class="const-default"> 'SQUARE_INCH_PER_DAY'</span>
+			(line <span class="line-number">57</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSQUARE_INCH_PER_HOUR" id="SQUARE_INCH_PER_HOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SQUARE_INCH_PER_HOUR</span>
+			 = <span class="const-default"> 'SQUARE_INCH_PER_HOUR'</span>
+			(line <span class="line-number">58</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSQUARE_INCH_PER_MINUTE" id="SQUARE_INCH_PER_MINUTE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SQUARE_INCH_PER_MINUTE</span>
+			 = <span class="const-default"> 'SQUARE_INCH_PER_MINUTE'</span>
+			(line <span class="line-number">59</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSQUARE_INCH_PER_SECOND" id="SQUARE_INCH_PER_SECOND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SQUARE_INCH_PER_SECOND</span>
+			 = <span class="const-default"> 'SQUARE_INCH_PER_SECOND'</span>
+			(line <span class="line-number">60</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSQUARE_METER_PER_DAY" id="SQUARE_METER_PER_DAY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SQUARE_METER_PER_DAY</span>
+			 = <span class="const-default"> 'SQUARE_METER_PER_DAY'</span>
+			(line <span class="line-number">61</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSQUARE_METER_PER_HOUR" id="SQUARE_METER_PER_HOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SQUARE_METER_PER_HOUR</span>
+			 = <span class="const-default"> 'SQUARE_METER_PER_HOUR'</span>
+			(line <span class="line-number">62</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSQUARE_METER_PER_MINUTE" id="SQUARE_METER_PER_MINUTE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SQUARE_METER_PER_MINUTE</span>
+			 = <span class="const-default"> 'SQUARE_METER_PER_MINUTE'</span>
+			(line <span class="line-number">63</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSQUARE_METER_PER_SECOND" id="SQUARE_METER_PER_SECOND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SQUARE_METER_PER_SECOND</span>
+			 = <span class="const-default"> 'SQUARE_METER_PER_SECOND'</span>
+			(line <span class="line-number">64</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSQUARE_MILLIMETER_PER_DAY" id="SQUARE_MILLIMETER_PER_DAY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SQUARE_MILLIMETER_PER_DAY</span>
+			 = <span class="const-default"> 'SQUARE_MILLIMETER_PER_DAY'</span>
+			(line <span class="line-number">65</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSQUARE_MILLIMETER_PER_HOUR" id="SQUARE_MILLIMETER_PER_HOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SQUARE_MILLIMETER_PER_HOUR</span>
+			 = <span class="const-default"> 'SQUARE_MILLIMETER_PER_HOUR'</span>
+			(line <span class="line-number">66</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSQUARE_MILLIMETER_PER_MINUTE" id="SQUARE_MILLIMETER_PER_MINUTE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SQUARE_MILLIMETER_PER_MINUTE</span>
+			 = <span class="const-default"> 'SQUARE_MILLIMETER_PER_MINUTE'</span>
+			(line <span class="line-number">67</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSQUARE_MILLIMETER_PER_SECOND" id="SQUARE_MILLIMETER_PER_SECOND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SQUARE_MILLIMETER_PER_SECOND</span>
+			 = <span class="const-default"> 'SQUARE_MILLIMETER_PER_SECOND'</span>
+			(line <span class="line-number">68</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSTANDARD" id="STANDARD"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">STANDARD</span>
+			 = <span class="const-default"> 'SQUARE_METER_PER_SECOND'</span>
+			(line <span class="line-number">40</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSTOKES" id="STOKES"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">STOKES</span>
+			 = <span class="const-default"> 'STOKES'</span>
+			(line <span class="line-number">69</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:35:45 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

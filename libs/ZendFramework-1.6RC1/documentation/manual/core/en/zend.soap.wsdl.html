@@ -1,0 +1,490 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>40.3. WSDL Accessor</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="prev" href="zend.soap.client.html" title="40.2. Zend_Soap_Client">
+<link rel="next" href="zend.soap.autodiscovery.introduction.html" title="40.4. AutoDiscovery. Introduction">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.soap.wsdl.html#zend.soap.wsdl.constructor" title="40.3.1. Zend_Soap_Wsdl constructor.">
+<link rel="subsection" href="zend.soap.wsdl.html#zend.soap.wsdl.addmessage" title="40.3.2. addMessage() method.">
+<link rel="subsection" href="zend.soap.wsdl.html#zend.soap.wsdl.add_port_type" title="40.3.3. addPortType() method.">
+<link rel="subsection" href="zend.soap.wsdl.html#zend.soap.wsdl.add_port_operation" title="40.3.4. addPortOperation() method.">
+<link rel="subsection" href="zend.soap.wsdl.html#zend.soap.wsdl.add_binding" title="40.3.5. addBinding() method.">
+<link rel="subsection" href="zend.soap.wsdl.html#zend.soap.wsdl.add_binding_operation" title="40.3.6. addBindingOperation() method.">
+<link rel="subsection" href="zend.soap.wsdl.html#zend.soap.wsdl.add_soap_binding" title="40.3.7. addSoapBinding() method.">
+<link rel="subsection" href="zend.soap.wsdl.html#zend.soap.wsdl.add_soap_operation" title="40.3.8. addSoapOperation() method.">
+<link rel="subsection" href="zend.soap.wsdl.html#zend.soap.wsdl.add_service" title="40.3.9. addService() method.">
+<link rel="subsection" href="zend.soap.wsdl.html#zend.soap.wsdl.types" title="40.3.10. Type mapping.">
+<link rel="subsection" href="zend.soap.wsdl.html#zend.soap.wsdl.add_documentation" title="40.3.11. addDocumentation() method.">
+<link rel="subsection" href="zend.soap.wsdl.html#zend.soap.wsdl.retrieve" title="40.3.12. Get finilised WSDL document.">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">40.3. WSDL Accessor</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.soap.client.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 40. Zend_Soap</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.soap.autodiscovery.introduction.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.soap.wsdl"></a>40.3. WSDL Accessor</h2></div></div></div>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top">
+<p>
+            <code class="code">Zend_Soap_Wsdl</code> class is used by Zend_Soap_Server component internally to operate with WSDL
+            documents. Nevertheless, you could also use functionality provided by this class for your own needs. 
+        </p>
+<p>
+            If you don't plan to do this, you can skip this documentation section.
+        </p>
+</td></tr>
+</table></div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.soap.wsdl.constructor"></a>40.3.1. <code class="code">Zend_Soap_Wsdl</code> constructor.</h3></div></div></div>
+<p>
+            <code class="code">Zend_Soap_Wsdl</code> constructor takes three parameters:
+            </p>
+<div class="orderedlist"><ol type="1">
+<li>
+<code class="code">$name</code> - name of the Web Service being described.</li>
+<li>
+                        <code class="code">$uri</code> - URI where the WSDL will be available 
+                        (could also be a reference to the file in the filesystem.)
+                    </li>
+<li>
+                        <code class="code">$extractComplexTypes</code> - optional flag used to identify that complex types (objects)
+                        should be extracted.
+                    </li>
+</ol></div>
+<p>
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.soap.wsdl.addmessage"></a>40.3.2. <code class="code">addMessage()</code> method.</h3></div></div></div>
+<p>
+            <code class="code">addMessage($name, $parts)</code> method adds new message description to the WSDL document 
+            (/definitions/message element).
+        </p>
+<p>
+            Each message correspond to methods in terms of <code class="code">Zend_Soap_Server</code> and 
+            <code class="code">Zend_Soap_Client</code> functionality.
+        </p>
+<p>
+           <code class="code">$name</code> parameter represents message name.
+        </p>
+<p>
+           <code class="code">$parts</code> parameter is an array of message parts which describe SOAP call parameters.
+           It's an associative array: 'part name' (SOAP call parameter name) =&gt; 'part type'.
+        </p>
+<p>
+            Type mapping management is performrd using <code class="code">addTypes()</code>, <code class="code">addTypes()</code> and
+            <code class="code">addComplexType()</code> methods (see below). 
+        </p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top">
+<p>
+                Messages parts can use either 'element' or 'type' attribute for typing 
+                (see <a href="http://www.w3.org/TR/wsdl#_messages" target="_top">http://www.w3.org/TR/wsdl#_messages</a>).
+            </p>
+<p>
+                'element' attribute must refer to a corresponding element of data type definition. 'type' attribute refers 
+                to a corresponding complexType entry.
+            </p>
+<p>
+                All standard XSD types have both 'element' and 'complexType' definitions 
+                (see <a href="http://schemas.xmlsoap.org/soap/encoding/" target="_top">http://schemas.xmlsoap.org/soap/encoding/</a>).
+            </p>
+<p>
+                All non-standard types, which may be added using <code class="code">Zend_Soap_Wsdl::addComplexType()</code> method, are
+                described using 'complexType' node of '/definitions/types/schema/' section of WSDL document.
+            </p>
+<p>
+                So <code class="code">addMessage()</code> method always uses 'type' attribute to describe types.
+            </p>
+</td></tr>
+</table></div>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.soap.wsdl.add_port_type"></a>40.3.3. <code class="code">addPortType()</code> method.</h3></div></div></div>
+<p>
+            <code class="code">addPortType($name)</code> method adds new port type to the WSDL document 
+            (/definitions/portType) with the specified port type name.
+        </p>
+<p>
+            It joins a set of Web Service methods defined in terms of Zend_Soap_Server implementation.
+        </p>
+<p>
+            See <a href="http://www.w3.org/TR/wsdl#_porttypes" target="_top">http://www.w3.org/TR/wsdl#_porttypes</a> for the details.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.soap.wsdl.add_port_operation"></a>40.3.4. <code class="code">addPortOperation()</code> method.</h3></div></div></div>
+<p>
+            <code class="code">addPortOperation($portType, $name, $input = false, $output = false, $fault = false)</code> method 
+            adds new port operation to the specified port type of the WSDL document 
+            (/definitions/portType/operation).
+        </p>
+<p>
+            Each port operation corresponds to a class method (if Web Service is based on a class) or function
+            (if Web Service is based on a set of methods) in terms of Zend_Soap_Server implementation.
+        </p>
+<p>
+            It also adds corresponding port operation messages depending on specified 
+            <code class="code">$input</code>, <code class="code">$output</code> and <code class="code">$fault</code> parameters.
+            
+            </p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top">
+<p>
+                    Zend_Soap_Server component generates two messages for each port operation while describing service based on
+                    <code class="code">Zend_Soap_Server</code> class:
+                    </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                                input message with name <code class="code">$methodName . 'Request'</code>.
+                            </p></li>
+<li><p>
+                                output message with name <code class="code">$methodName . 'Response'</code>.
+                            </p></li>
+</ul></div>
+<p>
+                </p>
+</td></tr>
+</table></div>
+<p>
+        </p>
+<p>
+            See <a href="http://www.w3.org/TR/wsdl#_request-response" target="_top">http://www.w3.org/TR/wsdl#_request-response</a> for the details.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.soap.wsdl.add_binding"></a>40.3.5. <code class="code">addBinding()</code> method.</h3></div></div></div>
+<p>
+            <code class="code">addBinding($name, $portType)</code> method adds new binding to the WSDL document (/definitions/binding). 
+        </p>
+<p>
+            'binding' WSDL document node defines message format and protocol details for operations and messages 
+            defined by a particular portType (see <a href="http://www.w3.org/TR/wsdl#_bindings" target="_top">http://www.w3.org/TR/wsdl#_bindings</a>).
+        </p>
+<p>
+            The method creates binding node and returns it. Then it may be used to fill with actual data.
+        </p>
+<p>
+            Zend_Soap_Server implementation uses <code class="code">$serviceName . 'Binding'</code> name for 'binding' element of WSDL document.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.soap.wsdl.add_binding_operation"></a>40.3.6. <code class="code">addBindingOperation()</code> method.</h3></div></div></div>
+<p>
+            <code class="code">addBindingOperation($binding, $name, $input = false, $output = false, $fault = false)</code> method adds 
+            an operation to a binding element (/definitions/binding/operation) with the specified name.
+        </p>
+<p>
+            It takes <code class="code">XML_Tree_Node</code> object returned by <code class="code">addBinding()</code> as an input 
+            (<code class="code">$binding</code> parameter) to add 'operation' element with input/output/false entries depending on
+            specified parameters    
+        </p>
+<p>
+            Zend_Soap_Server implementation adds corresponding binding entry for each Web Service method with input and output 
+            entries defining 'soap:body' element as 
+            '&lt;soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/&gt; 
+        </p>
+<p>
+            See <a href="http://www.w3.org/TR/wsdl#_bindings" target="_top">http://www.w3.org/TR/wsdl#_bindings</a> for the details.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.soap.wsdl.add_soap_binding"></a>40.3.7. <code class="code">addSoapBinding()</code> method.</h3></div></div></div>
+<p>
+            <code class="code">addSoapBinding($binding, $style = 'document', $transport = 'http://schemas.xmlsoap.org/soap/http')</code> 
+            method adds SOAP binding ('soap:binding') entry to the binding element (which is already linked to some port type) 
+            with the specified style and transport (Zend_Soap_Server implementation uses RPC style over HTTP).
+        </p>
+<p>
+            '/definitions/binding/soap:binding' element is used to signify that the binding is bound to the SOAP protocol format. 
+        </p>
+<p>
+            See <a href="http://www.w3.org/TR/wsdl#_bindings" target="_top">http://www.w3.org/TR/wsdl#_bindings</a> for the details.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.soap.wsdl.add_soap_operation"></a>40.3.8. <code class="code">addSoapOperation()</code> method.</h3></div></div></div>
+<p>
+            <code class="code">addSoapOperation($binding, $soap_action)</code> 
+            method adds SOAP operation ('soap:operation') entry to the binding element with the specified action. 
+            'style' attribute of the 'soap:operation' element is not used since programming model (RPC-oriented or document-oriented)
+            may be st using <code class="code">addSoapBinding()</code> method 
+        </p>
+<p>
+            'soapAction' attribute of '/definitions/binding/soap:operation' element specifies the value of the SOAPAction header 
+            for this operation. This attribute is required for SOAP over HTTP and <span class="emphasis"><em>must not</em></span> be
+            specified for other transports. 
+        </p>
+<p>
+            Zend_Soap_Server implementation uses <code class="code">$serviceUri . '#' . $methodName</code> for SOAP operation action name. 
+        </p>
+<p>
+            See <a href="http://www.w3.org/TR/wsdl#_soap:operation" target="_top">http://www.w3.org/TR/wsdl#_soap:operation</a> for the details.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.soap.wsdl.add_service"></a>40.3.9. <code class="code">addService()</code> method.</h3></div></div></div>
+<p>
+            <code class="code">addService($name, $port_name, $binding, $location)</code> method adds '/definitions/service' element to 
+            the WSDL document with the specified Wed Service name, port name, binding, and location.
+        </p>
+<p>
+            WSDL 1.1 allows to have several port types (sets of operations) per service. This ability is not used by 
+            Zend_Soap_Server implementation and not supported by <code class="code">Zend_Soap_Wsdl</code> class.   
+        </p>
+<p>
+            Zend_Soap_Server implementation uses:
+            </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                        <code class="code">$name . 'Service'</code> as a Web Service name,
+                    </p></li>
+<li><p>
+                        <code class="code">$name . 'Port'</code> as a port type name,
+                    </p></li>
+<li><p>
+                        <code class="code">'tns:' . $name . 'Binding'</code>
+                            <sup>[<a name="id2805395" href="#ftn.id2805395">22</a>]</sup> 
+                            as binding name,
+                    </p></li>
+<li><p>
+                        script URI<sup>[<a name="id2805423" href="#ftn.id2805423">23</a>]</sup>
+                        as a service URI for Web Service definition using classes.
+                    </p></li>
+</ul></div>
+<p>
+            where <code class="code">$name</code> is a class name for the Web Service definition mode using class and
+            script name for  the Web Service definition mode using set of functions.
+        </p>
+<p>
+            See <a href="http://www.w3.org/TR/wsdl#_services" target="_top">http://www.w3.org/TR/wsdl#_services</a> for the details.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.soap.wsdl.types"></a>40.3.10. Type mapping.</h3></div></div></div>
+<p>
+            Zend_Soap WSDL accessor implementation uses the following type mapping between PHP and SOAP types:
+
+            </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>PHP strings &lt;-&gt; <code class="code">xsd:string</code>.</p></li>
+<li><p>PHP integers &lt;-&gt; <code class="code">xsd:int</code>.</p></li>
+<li><p>PHP floats and doubles &lt;-&gt; <code class="code">xsd:float</code>.</p></li>
+<li><p>PHP booleans &lt;-&gt; <code class="code">xsd:boolean</code>.</p></li>
+<li><p>PHP arrays &lt;-&gt; <code class="code">soap-enc:Array</code>.</p></li>
+<li><p>PHP object &lt;-&gt; <code class="code">xsd:struct</code>.</p></li>
+<li><p>
+                        PHP class &lt;-&gt; <code class="code">tns:$className</code>
+                        <sup>[<a name="id2805551" href="#ftn.id2805551">24</a>]</sup>.
+                    </p></li>
+<li><p>PHP void &lt;-&gt; empty type.</p></li>
+<li><p>If type is not matched to any of these types by some reason, then <code class="code">xsd:anyType</code> is used.</p></li>
+</ul></div>
+<p>
+            
+            Where <code class="code">xsd:</code> is "http://www.w3.org/2001/XMLSchema" namespace, 
+            <code class="code">soap-enc:</code> is a "http://schemas.xmlsoap.org/soap/encoding/" namespace,
+            <code class="code">tns:</code> is a "target namespace" for a service.
+        </p>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.soap.wsdl.types.retrieve"></a>40.3.10.1. Retrieving type information.</h4></div></div></div>
+<p>
+                <code class="code">getType($type)</code> method may be used to get mapping for a specified PHP type: 
+
+            </p>
+<pre class="programlisting">&lt;?php
+...
+$wsdl = new Zend_Soap_Wsdl('My_Web_Service', $myWebServiceUri);
+
+...
+$soapIntType = $wsdl-&gt;getType('int');
+
+...
+class MyClass {
+    ...
+}
+...
+$soapMyClassType = $wsdl-&gt;getType('MyClass');</pre>
+<p>
+            </p>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.soap.wsdl.types.add_complex"></a>40.3.10.2. Retrieving type information.</h4></div></div></div>
+<p>
+                <code class="code">addComplexType($type)</code> method is used to add complex types (PHP classes) to a WSDL document.
+            </p>
+<p>
+                It's automatically used by <code class="code">getType()</code> method to add corresponding complex type 
+                if <code class="code">$extractComplexTypes</code> parameter of the constructor is set tu <code class="code">true</code>
+                (otherwise classes are mapped to 'xsd:anyType' SOAP type). 
+            </p>
+<p>
+                <code class="code">addComplexType()</code> method creates '/definitions/types/xsd:schema/xsd:complexType' element for 
+                each described complex type with name of the specified PHP class.  
+            </p>
+<p>
+                All class public properties are described as corresponding elements of 'xsd:all' node attached to 'xsd:complexType'.  
+            </p>
+<p>
+                Class property <span class="emphasis"><em>MUST</em></span> have docblock section with the described PHP type to have property
+                included into WSDL description.
+            </p>
+<p>
+                <code class="code">addComplexType()</code> checks if type is already described within types section of the WSDL document.  
+            </p>
+<p>
+                It prevent duplications if this method is called two or more times and recursion in the types defenition
+                section.
+            </p>
+</div>
+<p>
+            See <a href="http://www.w3.org/TR/wsdl#_types" target="_top">http://www.w3.org/TR/wsdl#_types</a> for the details.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.soap.wsdl.add_documentation"></a>40.3.11. <code class="code">addDocumentation()</code> method.</h3></div></div></div>
+<p>
+            <code class="code">addDocumentation($input_node, $documentation)</code> method adds human readable documentation using 
+            optional 'wsdl:document' element. 
+        </p>
+<p>
+            '/definitions/binding/soap:binding' element is used to signify that the binding is bound to the SOAP protocol format. 
+        </p>
+<p>
+            See <a href="http://www.w3.org/TR/wsdl#_documentation" target="_top">http://www.w3.org/TR/wsdl#_documentation</a> for the details.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.soap.wsdl.retrieve"></a>40.3.12. Get finilised WSDL document.</h3></div></div></div>
+<p>
+            <code class="code">toXML()</code>, <code class="code">toDomDocument()</code> and <code class="code">dump($filename = false)</code> methods may be used to get
+            WSDL document as an XML, DOM structure or a file. 
+        </p>
+</div>
+<div class="footnotes">
+<br><hr width="100" align="left">
+<div class="footnote"><p><sup>[<a name="ftn.id2805395" href="#id2805395">22</a>] </sup>
+                                    <code class="code">'tns:' namespace</code> is defined as script URI 
+                                    (<code class="code">'http://'  .$_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME']</code>).
+                                </p></div>
+<div class="footnote"><p><sup>[<a name="ftn.id2805423" href="#id2805423">23</a>] </sup><code class="code">'http://'  .$_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME']</code></p></div>
+<div class="footnote">
+<p><sup>[<a name="ftn.id2805551" href="#id2805551">24</a>] </sup>
+                                If <code class="code">Zend_Soap_Wsdl</code> object is created with <code class="code">$extractComplexTypes</code>
+                                parameter turned off, then classes are translated to <code class="code">xsd:anyType</code>.
+                            </p>
+<p>
+                                Otherwise, <code class="code">tns:$className</code> is used and type is described in details in &lt;types&gt;
+                                WSDL section.
+                            </p>
+</div>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.soap.client.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.soap.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.soap.autodiscovery.introduction.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">40.2. Zend_Soap_Client </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 40.4. AutoDiscovery. Introduction</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

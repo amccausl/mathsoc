@@ -1,0 +1,242 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>17.8. Internationalization of Zend_Form</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="prev" href="zend.form.standardDecorators.html" title="17.7. Standard Form Decorators Shipped With Zend Framework">
+<link rel="next" href="zend.form.advanced.html" title="17.9. Advanced Zend_Form Usage">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.form.i18n.html#zend.form.i18n.initialization" title="17.8.1. Initializing I18n in Forms">
+<link rel="subsection" href="zend.form.i18n.html#zend.form.i18n.standard" title="17.8.2. Standard I18n Targets">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">17.8. Internationalization of Zend_Form</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.form.standardDecorators.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 17. Zend_Form</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.form.advanced.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.form.i18n"></a>17.8. Internationalization of Zend_Form</h2></div></div></div>
+<p>
+        Increasingly, developers need to tailor their content for multiple
+        languages and regions. Zend_Form aims to make such a task trivial, and
+        leverages functionality in both <a href="zend.translate.html" title="Chapter 44. Zend_Translate">Zend_Translate</a> and <a href="zend.validate.html" title="Chapter 46. Zend_Validate">Zend_Validate</a> to do so.
+    </p>
+<p>
+        By default, no internationalisation (I18n) is performed. To turn on I18n
+        features in <code class="code">Zend_Form</code>, you will need to instantiate a
+        <code class="code">Zend_Translate</code> object with an appropriate adapter, and
+        attach it to <code class="code">Zend_Form</code> and/or <code class="code">Zend_Validate</code>.
+        See the <a href="zend.translate.html" title="Chapter 44. Zend_Translate">Zend_Translate
+            documentation</a> for more information on creating the translate
+        object and translation files
+    </p>
+<div class="note"><table border="0" summary="Note: Translation Can Be Turned Off Per Item">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Translation Can Be Turned Off Per Item</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+            You can disable translation for any form, element, display group, or
+            sub form by calling its <code class="code">setDisableTranslator($flag)</code>
+            method or passing a <code class="code">disableTranslator</code> option to the
+            object. This can be useful when you want to selectively disable
+            translation for individual elements or sets of elements.
+        </p></td></tr>
+</table></div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.form.i18n.initialization"></a>17.8.1. Initializing I18n in Forms</h3></div></div></div>
+<p>
+            In order to initialize I18n in forms, you will need either a
+            <code class="code">Zend_Translate</code> object or a
+            <code class="code">Zend_Translate_Adapter</code> object, as detailed in the
+            <code class="code">Zend_Translate</code> documentation.  Once you have a
+            translation object, you have several options:
+        </p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<p>
+                    <span class="emphasis"><em>Easiest:</em></span> add it to the registry. All I18n
+                    aware components of Zend Framework will autodiscover a translate
+                    object that is in the registry under the 'Zend_Translate' key
+                    and use it to perform translation and/or localization:
+                </p>
+<pre class="programlisting">&lt;?php
+// use the 'Zend_Translate' key; $translate is a Zend_Translate object:
+Zend_Registry::set('Zend_Translate', $translate);
+?&gt;</pre>
+<p>
+                    This will be picked up by <code class="code">Zend_Form</code>,
+                    <code class="code">Zend_Validate</code>, and
+                    <code class="code">Zend_View_Helper_Translate</code>.
+                </p>
+</li>
+<li>
+<p>
+                    If all you are worried about is translating validation error
+                    messages, you can register the translation object with
+                    <code class="code">Zend_Validate_Abstract</code>:
+                </p>
+<pre class="programlisting">&lt;?php
+// Tell all validation classes to use a specific translate adapter:
+Zend_Validate_Abstract::setDefaultTranslator($translate);
+?&gt;</pre>
+</li>
+<li>
+<p>
+                    Alternatively, you can attach to the <code class="code">Zend_Form</code>
+                    object as a global translator. This has the side effect of also
+                    translating validation error messages:
+                </p>
+<pre class="programlisting">&lt;?php
+// Tell all form classes to use a specific translate adapter, as well as use
+// this adapter to translate validation error messages:
+Zend_Form::setDefaultTranslator($translate);
+?&gt;</pre>
+</li>
+<li>
+<p>
+                    Finally, you can attach a translator to a specific form instance
+                    or to specific elements using their <code class="code">setTranslator()</code>
+                    methods:
+                </p>
+<pre class="programlisting">&lt;?php
+// Tell *this* form instance to use a specific translate adapter; it will also
+// be used to translate validation error messages for all elements:
+$form-&gt;setTranslator($translate);
+
+// Tell *this* element to use a specific translate adapter; it will also be used
+// to translate validation error messages for this particular element:
+$element-&gt;setTranslator($translate);
+?&gt;</pre>
+</li>
+</ul></div>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.form.i18n.standard"></a>17.8.2. Standard I18n Targets</h3></div></div></div>
+<p>
+            Now that you've attached a translation object to, what exactly can
+            you translate by default?
+        </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                    <span class="emphasis"><em>Validation error messages.</em></span> Validation
+                    error messages may be translated. To do so, use the various
+                    error code constants from the <code class="code">Zend_Validate</code>
+                    validation classes as the message IDs. For more information
+                    on these codes, see the <a href="zend.validate.html" title="Chapter 46. Zend_Validate">Zend_Validate</a>
+                    documentation.
+                </p></li>
+<li><p>
+                    <span class="emphasis"><em>Labels.</em></span> Element labels will be
+                    translated, if a translation exists.
+                </p></li>
+<li><p>
+                    <span class="emphasis"><em>Fieldset Legends.</em></span> Display groups and
+                    sub forms render in fieldsets by default. The Fieldset
+                    decorator attempts to translate the legend before rendering
+                    the fieldset.
+                </p></li>
+<li><p>
+                    <span class="emphasis"><em>Form and Element Descriptions.</em></span> All form
+                    types (element, form, display group, sub form) allow
+                    specifying an optional item description. The Description
+                    decorator can be used to render this, and by default will
+                    take the value and attempt to translate it.
+                </p></li>
+<li><p>
+                    <span class="emphasis"><em>Multi-option Values.</em></span> For the various
+                    items inheriting from <code class="code">Zend_Form_Element_Multi</code>
+                    (including the MultiCheckbox, Multiselect, and Radio
+                    elements), the option values (not keys) will be translated
+                    if a translation is available; this means that the option
+                    labels presented to the user will be translated.
+                </p></li>
+<li><p>
+                    <span class="emphasis"><em>Submit and Button Labels.</em></span> The various
+                    Submit and Button elements (Button, Submit, and Reset) will
+                    translate the label displayed to the user.
+                </p></li>
+</ul></div>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.form.standardDecorators.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.form.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.form.advanced.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">17.7. Standard Form Decorators Shipped With Zend Framework </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 17.9. Advanced Zend_Form Usage</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_View_Helper_Translate</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_View_Helper_Translate</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Translation view helper</p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_View---Helper---Translate.php.html">/View/Helper/Translate.php</a> (line <span class="field">34</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																								<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../../Zend_Translate/Zend_Translate_Adapter/Zend_Translate_Adapter.html">Zend_Translate_Adapter</a></span>
+					<a href="#$_translator" title="details" class="var-name">$_translator</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																															
+				<div class="method-definition">
+					<img src="../../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">Zend_View_Helper_Translate</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type"><a href="../../Zend_Translate/Zend_Translate.html">Zend_Translate</a>|<a href="../../Zend_Translate/Zend_Translate_Adapter/Zend_Translate_Adapter.html">Zend_Translate_Adapter</a></span>&nbsp;<span class="var-name">$translate</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string|<a href="../../Zend_Locale/Zend_Locale.html">Zend_Locale</a></span>
+										<a href="#getLocale" title="details" class="method-name">getLocale</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Translate/Zend_Translate_Adapter/Zend_Translate_Adapter.html">Zend_Translate_Adapter</a>|null</span>
+										<a href="#getTranslator" title="details" class="method-name">getTranslator</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_View/Helper/Zend_View_Helper_Translate.html">Zend_View_Helper_Translate</a></span>
+										<a href="#setLocale" title="details" class="method-name">setLocale</a>
+											([<span class="var-type">string|<a href="../../Zend_Locale/Zend_Locale.html">Zend_Locale</a></span>&nbsp;<span class="var-name">$locale</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_View/Helper/Zend_View_Helper_Translate.html">Zend_View_Helper_Translate</a></span>
+										<a href="#setTranslator" title="details" class="method-name">setTranslator</a>
+											(<span class="var-type"><a href="../../Zend_Translate/Zend_Translate.html">Zend_Translate</a>|<a href="../../Zend_Translate/Zend_Translate_Adapter/Zend_Translate_Adapter.html">Zend_Translate_Adapter</a></span>&nbsp;<span class="var-name">$translate</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#translate" title="details" class="method-name">translate</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$messageid</span> = <span class="var-default">null</span>])
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_translator" id="$_translator"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../../Zend_Translate/Zend_Translate_Adapter/Zend_Translate_Adapter.html">Zend_Translate_Adapter</a></span>
+			<span class="var-name">$_translator</span>
+						(line <span class="line-number">41</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Translation object</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">48</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructor for manually handling</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Zend_View_Helper_Translate</span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type"><a href="../../Zend_Translate/Zend_Translate.html">Zend_Translate</a>|<a href="../../Zend_Translate/Zend_Translate_Adapter/Zend_Translate_Adapter.html">Zend_Translate_Adapter</a></span>&nbsp;<span class="var-name">$translate</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_Translate/Zend_Translate.html">Zend_Translate</a>|<a href="../../Zend_Translate/Zend_Translate_Adapter/Zend_Translate_Adapter.html">Zend_Translate_Adapter</a></span>
+				<span class="var-name">$translate</span><span class="var-description">: Instance of Zend_Translate</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetLocale" id="getLocale"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getLocale</span> (line <span class="line-number">165</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the set locale for translations</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_View_Exception When no Zend_Translate instance was set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string|<a href="../../Zend_Locale/Zend_Locale.html">Zend_Locale</a></span>
+		<span class="method-name">
+			getLocale
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetTranslator" id="getTranslator"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getTranslator</span> (line <span class="line-number">128</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve translation object</p>
+<p class="description"><p>If none is currently registered, attempts to pull it from the registry  using the key 'Zend_Translate'.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Translate/Zend_Translate_Adapter/Zend_Translate_Adapter.html">Zend_Translate_Adapter</a>|null</span>
+		<span class="method-name">
+			getTranslator
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodsetLocale" id="setLocale"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setLocale</span> (line <span class="line-number">147</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set's an new locale for all further translations</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_View_Exception When no Zend_Translate instance was set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_View/Helper/Zend_View_Helper_Translate.html">Zend_View_Helper_Translate</a></span>
+		<span class="method-name">
+			setLocale
+		</span>
+					([<span class="var-type">string|<a href="../../Zend_Locale/Zend_Locale.html">Zend_Locale</a></span>&nbsp;<span class="var-name">$locale</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|<a href="../../Zend_Locale/Zend_Locale.html">Zend_Locale</a></span>
+				<span class="var-name">$locale</span><span class="var-description">: New locale to set</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetTranslator" id="setTranslator"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setTranslator</span> (line <span class="line-number">106</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets a translation Adapter for translation</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_View_Exception When no or a false instance was set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_View/Helper/Zend_View_Helper_Translate.html">Zend_View_Helper_Translate</a></span>
+		<span class="method-name">
+			setTranslator
+		</span>
+					(<span class="var-type"><a href="../../Zend_Translate/Zend_Translate.html">Zend_Translate</a>|<a href="../../Zend_Translate/Zend_Translate_Adapter/Zend_Translate_Adapter.html">Zend_Translate_Adapter</a></span>&nbsp;<span class="var-name">$translate</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_Translate/Zend_Translate.html">Zend_Translate</a>|<a href="../../Zend_Translate/Zend_Translate_Adapter/Zend_Translate_Adapter.html">Zend_Translate_Adapter</a></span>
+				<span class="var-name">$translate</span><span class="var-description">: Instance of Zend_Translate</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtranslate" id="translate"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">translate</span> (line <span class="line-number">65</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Translate a message  You can give multiple params or an array of params.</p>
+<p class="description"><p>If you want to output another locale just set it as last single parameter  Example 1: translate('%1\$s + %2\$s', $value1, $value2, $locale);  Example 2: translate('%1\$s + %2\$s', array($value1, $value2), $locale);</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Translated message</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			translate
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$messageid</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$messageid</span><span class="var-description">: Id of the message to be translated</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:52:19 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

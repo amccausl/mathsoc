@@ -1,0 +1,313 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>3.2. Database Table Authentication</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="prev" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="next" href="zend.auth.adapter.digest.html" title="3.3. Digest Authentication">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.auth.adapter.dbtable.html#zend.auth.adapter.dbtable.introduction" title="3.2.1. Introduction">
+<link rel="subsection" href="zend.auth.adapter.dbtable.html#zend.auth.adapter.dbtable.advanced.storing_result_row" title="3.2.2. Advanced Use: Persisting a DbTable Result Object">
+<link rel="subsection" href="zend.auth.adapter.dbtable.html#zend.auth.adapter.dbtable.advanced.advanced_usage" title="3.2.3. Advanced Usage By Example">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">3.2. Database Table Authentication</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.auth.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 3. Zend_Auth</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.auth.adapter.digest.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.auth.adapter.dbtable"></a>3.2. Database Table Authentication</h2></div></div></div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.auth.adapter.dbtable.introduction"></a>3.2.1. Introduction</h3></div></div></div>
+<p>
+            <code class="code">Zend_Auth_Adapter_DbTable</code> provides the ability to authenticate against credentials stored in a
+            database table. Because <code class="code">Zend_Auth_Adapter_DbTable</code> requires an instance of
+            <code class="code">Zend_Db_Adapter_Abstract</code> to be passed to its constructor, each instance is bound to a
+            particular database connection. Other configuration options may be set through the constructor and through
+            instance methods, one for each option.
+        </p>
+<p>
+            The available configuration options include:
+            </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                        <code class="code">tableName</code>: This is the name of the database table that contains the authentication
+                        credentials, and against which the database authentication query is performed.
+                    </p></li>
+<li><p>
+                        <code class="code">identityColumn</code>: This is the name of the database table column used to represent the
+                        identity. The identity column must contain unique values, such as a username or e-mail address.
+                    </p></li>
+<li><p>
+                        <code class="code">credentialColumn</code>: This is the name of the database table column used to represent
+                        the credential. Under a simple identity and password authentication scheme, the credential value
+                        corresponds to the password. See also the <code class="code">credentialTreatment</code> option.
+                    </p></li>
+<li><p>
+                        <code class="code">credentialTreatment</code>: In many cases, passwords and other sensitive data are
+                        encrypted, hashed, encoded, obscured, or otherwise treated through some function or algorithm.
+                        By specifying a parameterized treatment string with this method, such as <code class="code">'MD5(?)'</code>
+                        or <code class="code">'PASSWORD(?)'</code>, a developer may apply such arbitrary SQL upon input credential
+                        data. Since these functions are specific to the underlying RDBMS, check the database manual for
+                        the availability of such functions for your database system.
+                    </p></li>
+</ul></div>
+<p>
+        </p>
+<div class="example">
+<a name="zend.auth.adapter.dbtable.introduction.example.basic_usage"></a><p class="title"><b>Example 3.3. Basic Usage</b></p>
+<div class="example-contents">
+<p>
+                As explained in the introduction, the <code class="code">Zend_Auth_Adapter_DbTable</code> constructor requires an
+                instance of <code class="code">Zend_Db_Adapter_Abstract</code> that serves as the database connection to which the
+                authentication adapter instance is bound. First, the database connection should be created.
+            </p>
+<p>
+                The following code creates an adapter for an in-memory database, creates a simple table schema, and
+                inserts a row against which we can perform an authentication query later. This example requires the PDO
+                SQLite extension to be available:
+
+                </p>
+<pre class="programlisting">&lt;?php
+// Create an in-memory SQLite database connection
+require_once 'Zend/Db/Adapter/Pdo/Sqlite.php';
+$dbAdapter = new Zend_Db_Adapter_Pdo_Sqlite(array('dbname' =&gt; ':memory:'));
+
+// Build a simple table creation query
+$sqlCreate = 'CREATE TABLE [users] ( '
+           . '[id] INTEGER  NOT NULL PRIMARY KEY, '
+           . '[username] VARCHAR(50) UNIQUE NOT NULL, '
+           . '[password] VARCHAR(32) NULL, '
+           . '[real_name] VARCHAR(150) NULL)';
+
+// Create the authentication credentials table
+$dbAdapter-&gt;query($sqlCreate);
+
+// Build a query to insert a row for which authentication may succeed
+$sqlInsert = 'INSERT INTO users (username, password, real_name) '
+           . 'VALUES ("my_username", "my_password", "My Real Name")';
+
+// Insert the data
+$dbAdapter-&gt;query($sqlInsert);
+                </pre>
+<p>
+
+            </p>
+<p>
+                With the database connection and table data available, an instance of
+                <code class="code">Zend_Auth_Adapter_DbTable</code> may be created. Configuration option values may be passed to the
+                constructor or deferred as parameters to setter methods after instantiation:
+
+                </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Auth/Adapter/DbTable.php';
+
+// Configure the instance with constructor parameters...
+$authAdapter = new Zend_Auth_Adapter_DbTable($dbAdapter, 'users', 'username', 'password');
+
+// ...or configure the instance with setter methods
+$authAdapter = new Zend_Auth_Adapter_DbTable($dbAdapter);
+$authAdapter-&gt;setTableName('users')
+            -&gt;setIdentityColumn('username')
+            -&gt;setCredentialColumn('password');
+                </pre>
+<p>
+
+            </p>
+<p>
+                At this point, the authentication adapter instance is ready to accept authentication queries. In order
+                to formulate an authentication query, the input credential values are passed to the adapter prior to
+                calling the <code class="code">authenticate()</code> method:
+
+                </p>
+<pre class="programlisting">&lt;?php
+// Set the input credential values (e.g., from a login form)
+$authAdapter-&gt;setIdentity('my_username')
+            -&gt;setCredential('my_password');
+
+// Perform the authentication query, saving the result
+$result = $authAdapter-&gt;authenticate();
+                </pre>
+<p>
+
+            </p>
+<p>
+                In addition to the availability of the <code class="code">getIdentity()</code> method upon the authentication result
+                object, <code class="code">Zend_Auth_Adapter_DbTable</code> also supports retrieving the table row upon
+                authentication success:
+
+                </p>
+<pre class="programlisting">&lt;?php
+// Print the identity
+echo $result-&gt;getIdentity() . "\n\n";
+
+// Print the result row
+print_r($authAdapter-&gt;getResultRowObject());
+
+/* Output:
+my_username
+
+Array
+(
+    [id] =&gt; 1
+    [username] =&gt; my_username
+    [password] =&gt; my_password
+    [real_name] =&gt; My Real Name
+)
+*/
+                </pre>
+<p>
+
+                Since the table row contains the credential value, it is important to secure the values against
+                unintended access.
+            </p>
+</div>
+</div>
+<br class="example-break">
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.auth.adapter.dbtable.advanced.storing_result_row"></a>3.2.2. Advanced Use: Persisting a DbTable Result Object</h3></div></div></div>
+<p>
+            By default, <code class="code">Zend_Auth_Adapter_DbTable</code> returns the identity supplied back to the auth object
+            upon successful authentication. Another use case scenario, where developers want to store to the persistent
+            storage mechanism of <code class="code">Zend_Auth</code> an identity object containing other useful information, is
+            solved by using the <code class="code">getResultRowObject()</code> method to return a <code class="code">stdClass</code> object. The
+            following code snippet illustrates its use:
+
+            </p>
+<pre class="programlisting">&lt;?php
+// authenticate with Zend_Auth_Adapter_DbTable
+$result = $this-&gt;_auth-&gt;authenticate($adapter);
+
+if ($result-&gt;isValid()) {
+
+    // store the identity as an object where only the username and real_name have been returned
+    $this-&gt;_auth-&gt;getStorage()-&gt;write($adapter-&gt;getResultRowObject(array('username', 'real_name')));
+
+    // store the identity as an object where the password column has been omitted
+    $this-&gt;_auth-&gt;getStorage()-&gt;write($adapter-&gt;getResultRowObject(null, 'password'));
+
+    /* ... */
+
+} else {
+
+    /* ... */
+
+}
+            </pre>
+<p>
+
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.auth.adapter.dbtable.advanced.advanced_usage"></a>3.2.3. Advanced Usage By Example</h3></div></div></div>
+<p>
+            While the primary purpose of Zend_Auth (and consequently Zend_Auth_Adapter_DbTable) is primarily
+            <span class="strong"><strong>authentication</strong></span> and not <span class="strong"><strong>authorization</strong></span>,
+            there exist a few instances and problems
+            that toe the line upon which domain the fit within.  Depending on how you've decided to explain
+            your problem, it sometimes makes sense to solve what could look like an authorization problem
+            within the authentication adapter.
+        </p>
+<p>
+            With that bit of a disclaimer out of the way, Zend_Auth_Adapter_DbTable has some built in
+            mechanisms that can be leveraged to add additional checks at authentication time to solve
+            some common user problems.
+
+            </p>
+<pre class="programlisting">&lt;?php
+// The status field value of an account is not equal to "compromised"
+$adapter = new Zend_Auth_Adapter_DbTable($db, 'users', 'username', 'password', 'MD5(?) AND status != "compromised"');
+
+// The active field value of an account is equal to "TRUE"
+$adapter = new Zend_Auth_Adapter_DbTable($db, 'users', 'username', 'password', 'MD5(?) AND active = "TRUE"');
+
+
+            </pre>
+<p>
+
+        </p>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.auth.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.auth.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.auth.adapter.digest.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">Chapter 3. Zend_Auth </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 3.3. Digest Authentication</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

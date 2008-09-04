@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Dojo_Form_DisplayGroup</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_Dojo_Form_DisplayGroup</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Dijit-enabled DisplayGroup</p>
+	<ul class="tags">
+				<li><span class="field">version:</span> $Id: DisplayGroup.php 10076 2008-07-13 12:58:08Z matthew $</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">uses:</span> <a href="../../Zend_Form/Zend_Form_DisplayGroup.html">Zend_Form_DisplayGroup</a></li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Dojo---Form---DisplayGroup.php.html">/Dojo/Form/DisplayGroup.php</a> (line <span class="field">35</span>)
+		</p>
+		
+				
+		<pre><a href="../../Zend_Form/Zend_Form_DisplayGroup.html">Zend_Form_DisplayGroup</a>
+   |
+   --Zend_Dojo_Form_DisplayGroup</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																															
+				<div class="method-definition">
+					<img src="../../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$loader</span>, [<span class="var-type">array|<a href="../../Zend_Config/Zend_Config.html">Zend_Config</a>|null</span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Dojo/Form_Element/Zend_Dojo_Form_Element_Dijit.html">Zend_Dojo_Form_Element_Dijit</a></span>
+										<a href="#setView" title="details" class="method-name">setView</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$view</span> = <span class="var-default">null</span>])
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html">Zend_Form_DisplayGroup</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#var$_attribs">Zend_Form_DisplayGroup::$_attribs</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#var$_decorators">Zend_Form_DisplayGroup::$_decorators</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#var$_description">Zend_Form_DisplayGroup::$_description</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#var$_disableLoadDefaultDecorators">Zend_Form_DisplayGroup::$_disableLoadDefaultDecorators</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#var$_elementOrder">Zend_Form_DisplayGroup::$_elementOrder</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#var$_elements">Zend_Form_DisplayGroup::$_elements</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#var$_groupUpdated">Zend_Form_DisplayGroup::$_groupUpdated</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#var$_loader">Zend_Form_DisplayGroup::$_loader</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#var$_name">Zend_Form_DisplayGroup::$_name</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#var$_order">Zend_Form_DisplayGroup::$_order</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#var$_translator">Zend_Form_DisplayGroup::$_translator</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#var$_translatorDisabled">Zend_Form_DisplayGroup::$_translatorDisabled</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#var$_view">Zend_Form_DisplayGroup::$_view</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-vars">Vars</a>
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">45</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructor</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$loader</span>, [<span class="var-type">array|<a href="../../Zend_Config/Zend_Config.html">Zend_Config</a>|null</span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span>			</li>
+					<li>
+				<span class="var-type"><a href="../../Zend_Loader/PluginLoader/Zend_Loader_PluginLoader.html">Zend_Loader_PluginLoader</a></span>
+				<span class="var-name">$loader</span>			</li>
+					<li>
+				<span class="var-type">array|<a href="../../Zend_Config/Zend_Config.html">Zend_Config</a>|null</span>
+				<span class="var-name">$options</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#method__construct">Zend_Form_DisplayGroup::__construct()</a></dt>
+						<dd>Constructor</dd>
+					</dl>
+			
+	</div>
+<a name="methodsetView" id="setView"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setView</span> (line <span class="line-number">59</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the view object</p>
+<p class="description"><p>Ensures that the view object has the dojo view helper path set.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Dojo/Form_Element/Zend_Dojo_Form_Element_Dijit.html">Zend_Dojo_Form_Element_Dijit</a></span>
+		<span class="method-name">
+			setView
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$view</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_View/Zend_View_Interface.html">Zend_View_Interface</a></span>
+				<span class="var-name">$view</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodsetView">Zend_Form_DisplayGroup::setView()</a></dt>
+						<dd>Set view</dd>
+					</dl>
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html">Zend_Form_DisplayGroup</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#method__construct">Zend_Form_DisplayGroup::__construct()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodaddAttribs">Zend_Form_DisplayGroup::addAttribs()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodaddDecorator">Zend_Form_DisplayGroup::addDecorator()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodaddDecorators">Zend_Form_DisplayGroup::addDecorators()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodaddElement">Zend_Form_DisplayGroup::addElement()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodaddElements">Zend_Form_DisplayGroup::addElements()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodaddPrefixPath">Zend_Form_DisplayGroup::addPrefixPath()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodaddPrefixPaths">Zend_Form_DisplayGroup::addPrefixPaths()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodclearAttribs">Zend_Form_DisplayGroup::clearAttribs()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodclearDecorators">Zend_Form_DisplayGroup::clearDecorators()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodclearElements">Zend_Form_DisplayGroup::clearElements()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodcount">Zend_Form_DisplayGroup::count()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodcurrent">Zend_Form_DisplayGroup::current()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodfilterName">Zend_Form_DisplayGroup::filterName()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodgetAttrib">Zend_Form_DisplayGroup::getAttrib()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodgetAttribs">Zend_Form_DisplayGroup::getAttribs()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodgetDecorator">Zend_Form_DisplayGroup::getDecorator()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodgetDecorators">Zend_Form_DisplayGroup::getDecorators()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodgetDescription">Zend_Form_DisplayGroup::getDescription()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodgetElement">Zend_Form_DisplayGroup::getElement()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodgetElements">Zend_Form_DisplayGroup::getElements()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodgetFullyQualifiedName">Zend_Form_DisplayGroup::getFullyQualifiedName()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodgetId">Zend_Form_DisplayGroup::getId()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodgetLegend">Zend_Form_DisplayGroup::getLegend()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodgetName">Zend_Form_DisplayGroup::getName()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodgetOrder">Zend_Form_DisplayGroup::getOrder()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodgetPluginLoader">Zend_Form_DisplayGroup::getPluginLoader()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodgetTranslator">Zend_Form_DisplayGroup::getTranslator()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodgetView">Zend_Form_DisplayGroup::getView()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodinit">Zend_Form_DisplayGroup::init()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodkey">Zend_Form_DisplayGroup::key()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodloadDefaultDecorators">Zend_Form_DisplayGroup::loadDefaultDecorators()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodloadDefaultDecoratorsIsDisabled">Zend_Form_DisplayGroup::loadDefaultDecoratorsIsDisabled()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodnext">Zend_Form_DisplayGroup::next()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodremoveAttrib">Zend_Form_DisplayGroup::removeAttrib()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodremoveDecorator">Zend_Form_DisplayGroup::removeDecorator()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodremoveElement">Zend_Form_DisplayGroup::removeElement()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodrender">Zend_Form_DisplayGroup::render()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodrewind">Zend_Form_DisplayGroup::rewind()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodsetAttrib">Zend_Form_DisplayGroup::setAttrib()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodsetAttribs">Zend_Form_DisplayGroup::setAttribs()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodsetConfig">Zend_Form_DisplayGroup::setConfig()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodsetDecorators">Zend_Form_DisplayGroup::setDecorators()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodsetDescription">Zend_Form_DisplayGroup::setDescription()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodsetDisableLoadDefaultDecorators">Zend_Form_DisplayGroup::setDisableLoadDefaultDecorators()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodsetDisableTranslator">Zend_Form_DisplayGroup::setDisableTranslator()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodsetElements">Zend_Form_DisplayGroup::setElements()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodsetLegend">Zend_Form_DisplayGroup::setLegend()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodsetName">Zend_Form_DisplayGroup::setName()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodsetOptions">Zend_Form_DisplayGroup::setOptions()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodsetOrder">Zend_Form_DisplayGroup::setOrder()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodsetPluginLoader">Zend_Form_DisplayGroup::setPluginLoader()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodsetTranslator">Zend_Form_DisplayGroup::setTranslator()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodsetView">Zend_Form_DisplayGroup::setView()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodtranslatorIsDisabled">Zend_Form_DisplayGroup::translatorIsDisabled()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#methodvalid">Zend_Form_DisplayGroup::valid()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#method_getDecorator">Zend_Form_DisplayGroup::_getDecorator()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#method_loadDecorator">Zend_Form_DisplayGroup::_loadDecorator()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#method_sort">Zend_Form_DisplayGroup::_sort()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Form/Zend_Form_DisplayGroup.html#method__toString">Zend_Form_DisplayGroup::__toString()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:17:39 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

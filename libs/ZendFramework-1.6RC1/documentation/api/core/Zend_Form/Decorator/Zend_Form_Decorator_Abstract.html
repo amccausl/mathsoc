@@ -1,0 +1,1217 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Form_Decorator_Abstract</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/AbstractClass_logo.png"
+														alt="Abstract Class"
+														title="Abstract Class"
+														style="vertical-align: middle"> Zend_Form_Decorator_Abstract</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+                <p class="implements">
+            Implements interfaces:
+            <ul>
+                <li><a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Interface.html">Zend_Form_Decorator_Interface</a></li>            </ul>
+        </p>
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Zend_Form_Decorator_Abstract</p>
+	<ul class="tags">
+				<li><span class="field">version:</span> $Id: Abstract.php 8892 2008-03-18 19:47:46Z thomas $</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">usedby:</span> <a href="../../Zend_Dojo/Form_Decorator/Zend_Dojo_Form_Decorator_DijitContainer.html">Zend_Dojo_Form_Decorator_DijitContainer</a></li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Form---Decorator---Abstract.php.html">/Form/Decorator/Abstract.php</a> (line <span class="field">34</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_HtmlTag.html">Zend_Form_Decorator_HtmlTag</a>
+					</td>
+					<td>
+											Zend_Form_Decorator_Element_HtmlTag
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Fieldset.html">Zend_Form_Decorator_Fieldset</a>
+					</td>
+					<td>
+											Zend_Form_Decorator_Fieldset
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Callback.html">Zend_Form_Decorator_Callback</a>
+					</td>
+					<td>
+											Zend_Form_Decorator_Callback
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Description.html">Zend_Form_Decorator_Description</a>
+					</td>
+					<td>
+											Zend_Form_Decorator_Description
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Errors.html">Zend_Form_Decorator_Errors</a>
+					</td>
+					<td>
+											Zend_Form_Decorator_Errors
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Label.html">Zend_Form_Decorator_Label</a>
+					</td>
+					<td>
+											Zend_Form_Decorator_Label
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_ViewHelper.html">Zend_Form_Decorator_ViewHelper</a>
+					</td>
+					<td>
+											Zend_Form_Decorator_ViewHelper
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_FormElements.html">Zend_Form_Decorator_FormElements</a>
+					</td>
+					<td>
+											Zend_Form_Decorator_FormElements
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Image.html">Zend_Form_Decorator_Image</a>
+					</td>
+					<td>
+											Zend_Form_Decorator_Image
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_DtDdWrapper.html">Zend_Form_Decorator_DtDdWrapper</a>
+					</td>
+					<td>
+											Zend_Form_Decorator_DtDdWrapper
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Form.html">Zend_Form_Decorator_Form</a>
+					</td>
+					<td>
+											Zend_Form_Decorator_Form
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_ViewScript.html">Zend_Form_Decorator_ViewScript</a>
+					</td>
+					<td>
+											Zend_Form_Decorator_ViewScript
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/AbstractClass.png"
+								 alt="Abstract class"
+								 title="Abstract class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Dojo/Form_Decorator/Zend_Dojo_Form_Decorator_DijitContainer.html">Zend_Dojo_Form_Decorator_DijitContainer</a>
+					</td>
+					<td>
+											Zend_Dojo_Form_Decorator_DijitContainer
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#APPEND" title="details" class="const-name">APPEND</a> = 					<span class="var-type"> 'APPEND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PREPEND" title="details" class="const-name">PREPEND</a> = 					<span class="var-type"> 'PREPEND'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../../Zend_Form/Element/Zend_Form_Element.html">Zend_Form_Element</a>|<a href="../../Zend_Form/Zend_Form.html">Zend_Form</a></span>
+					<a href="#$_element" title="details" class="var-name">$_element</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$_options" title="details" class="var-name">$_options</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_placement" title="details" class="var-name">$_placement</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_separator" title="details" class="var-name">$_separator</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																							
+				<div class="method-definition">
+					<img src="../../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type">array|<a href="../../Zend_Config/Zend_Config.html">Zend_Config</a></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Abstract.html">Zend_Form_Decorator_Abstract</a></span>
+										<a href="#clearOptions" title="details" class="method-name">clearOptions</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Form/Element/Zend_Form_Element.html">Zend_Form_Element</a>|<a href="../../Zend_Form/Zend_Form.html">Zend_Form</a></span>
+										<a href="#getElement" title="details" class="method-name">getElement</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#getOption" title="details" class="method-name">getOption</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#getOptions" title="details" class="method-name">getOptions</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getPlacement" title="details" class="method-name">getPlacement</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getSeparator" title="details" class="method-name">getSeparator</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#removeOption" title="details" class="method-name">removeOption</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$key</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#render" title="details" class="method-name">render</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$content</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Abstract.html">Zend_Form_Decorator_Abstract</a></span>
+										<a href="#setConfig" title="details" class="method-name">setConfig</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$config</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Abstract.html">Zend_Form_Decorator_Abstract</a></span>
+										<a href="#setElement" title="details" class="method-name">setElement</a>
+											(<span class="var-type"><a href="../../Zend_Form/Element/Zend_Form_Element.html">Zend_Form_Element</a>|<a href="../../Zend_Form/Zend_Form.html">Zend_Form</a></span>&nbsp;<span class="var-name">$element</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Abstract.html">Zend_Form_Decorator_Abstract</a></span>
+										<a href="#setOption" title="details" class="method-name">setOption</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Abstract.html">Zend_Form_Decorator_Abstract</a></span>
+										<a href="#setOptions" title="details" class="method-name">setOptions</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$options</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_element" id="$_element"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../../Zend_Form/Element/Zend_Form_Element.html">Zend_Form_Element</a>|<a href="../../Zend_Form/Zend_Form.html">Zend_Form</a></span>
+			<span class="var-name">$_element</span>
+						(line <span class="line-number">51</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_options" id="$_options"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_options</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number">57</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Decorator options</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_placement" id="$_placement"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_placement</span>
+			 = <span class="var-default"> 'APPEND'</span>			(line <span class="line-number">46</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Default placement: append</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_HtmlTag.html#var$_placement">Zend_Form_Decorator_HtmlTag::$_placement</a>
+								: Placement; default to surround content
+							</li>
+					<li>
+				<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Fieldset.html#var$_placement">Zend_Form_Decorator_Fieldset::$_placement</a>
+								: Default placement: surround content
+							</li>
+					<li>
+				<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Description.html#var$_placement">Zend_Form_Decorator_Description::$_placement</a>
+								: Default placement: append
+							</li>
+					<li>
+				<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Label.html#var$_placement">Zend_Form_Decorator_Label::$_placement</a>
+								: Default placement: prepend
+							</li>
+					<li>
+				<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Image.html#var$_placement">Zend_Form_Decorator_Image::$_placement</a>
+								: Default placement: append
+							</li>
+					<li>
+				<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_DtDdWrapper.html#var$_placement">Zend_Form_Decorator_DtDdWrapper::$_placement</a>
+								: Default placement: surround content
+							</li>
+					<li>
+				<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_ViewScript.html#var$_placement">Zend_Form_Decorator_ViewScript::$_placement</a>
+								: Default placement: append
+							</li>
+				</ul>
+		
+
+</div>
+<a name="var$_separator" id="$_separator"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_separator</span>
+			 = <span class="var-default"> PHP_EOL</span>			(line <span class="line-number">63</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Separator between new content and old</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">71</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructor</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type">array|<a href="../../Zend_Config/Zend_Config.html">Zend_Config</a></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array|<a href="../../Zend_Config/Zend_Config.html">Zend_Config</a></span>
+				<span class="var-name">$options</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Interface.html#method__construct">Zend_Form_Decorator_Interface::__construct()</a></dt>
+						<dd>Constructor</dd>
+					</dl>
+			
+	</div>
+<a name="methodclearOptions" id="clearOptions"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">clearOptions</span> (line <span class="line-number">163</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Clear all options</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Abstract.html">Zend_Form_Decorator_Abstract</a></span>
+		<span class="method-name">
+			clearOptions
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Interface.html#methodclearOptions">Zend_Form_Decorator_Interface::clearOptions()</a></dt>
+						<dd>Clear all options</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetElement" id="getElement"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getElement</span> (line <span class="line-number">195</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve current element</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Form/Element/Zend_Form_Element.html">Zend_Form_Element</a>|<a href="../../Zend_Form/Zend_Form.html">Zend_Form</a></span>
+		<span class="method-name">
+			getElement
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Interface.html#methodgetElement">Zend_Form_Decorator_Interface::getElement()</a></dt>
+						<dd>Retrieve current element</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetOption" id="getOption"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getOption</span> (line <span class="line-number">122</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get option</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getOption
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$key</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Interface.html#methodgetOption">Zend_Form_Decorator_Interface::getOption()</a></dt>
+						<dd>Retrieve a single option</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetOptions" id="getOptions"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getOptions</span> (line <span class="line-number">137</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve options</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getOptions
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Interface.html#methodgetOptions">Zend_Form_Decorator_Interface::getOptions()</a></dt>
+						<dd>Retrieve decorator options</dd>
+					</dl>
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Fieldset.html#methodgetOptions">Zend_Form_Decorator_Fieldset::getOptions()</a>
+								: Get options
+							</li>
+					<li>
+				<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Form.html#methodgetOptions">Zend_Form_Decorator_Form::getOptions()</a>
+								: Retrieve decorator options
+							</li>
+				</ul>
+	</div>
+<a name="methodgetPlacement" id="getPlacement"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getPlacement</span> (line <span class="line-number">205</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Determine if decorator should append or prepend content</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getPlacement
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetSeparator" id="getSeparator"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getSeparator</span> (line <span class="line-number">232</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve separator to use between old and new content</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getSeparator
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodremoveOption" id="removeOption"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">removeOption</span> (line <span class="line-number">148</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Remove single option</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			removeOption
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$key</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$key</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Interface.html#methodremoveOption">Zend_Form_Decorator_Interface::removeOption()</a></dt>
+						<dd>Delete a single option</dd>
+					</dl>
+			
+	</div>
+<a name="methodrender" id="render"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">render</span> (line <span class="line-number">249</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Decorate content and/or element</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Dorm_Decorator_Exception when unimplemented</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			render
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$content</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$content</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Interface.html#methodrender">Zend_Form_Decorator_Interface::render()</a></dt>
+						<dd>Render the element</dd>
+					</dl>
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_HtmlTag.html#methodrender">Zend_Form_Decorator_HtmlTag::render()</a>
+								: Render content wrapped in an HTML tag
+							</li>
+					<li>
+				<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Fieldset.html#methodrender">Zend_Form_Decorator_Fieldset::render()</a>
+								: Render a fieldset
+							</li>
+					<li>
+				<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Callback.html#methodrender">Zend_Form_Decorator_Callback::render()</a>
+								: Render
+							</li>
+					<li>
+				<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Description.html#methodrender">Zend_Form_Decorator_Description::render()</a>
+								: Render a description
+							</li>
+					<li>
+				<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Errors.html#methodrender">Zend_Form_Decorator_Errors::render()</a>
+								: Render errors
+							</li>
+					<li>
+				<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Label.html#methodrender">Zend_Form_Decorator_Label::render()</a>
+								: Render a label
+							</li>
+					<li>
+				<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_ViewHelper.html#methodrender">Zend_Form_Decorator_ViewHelper::render()</a>
+								: Render an element using a view helper
+							</li>
+					<li>
+				<a href="../../Zend_Dojo/Form_Decorator/Zend_Dojo_Form_Decorator_DijitElement.html#methodrender">Zend_Dojo_Form_Decorator_DijitElement::render()</a>
+								: Render an element using a view helper
+							</li>
+					<li>
+				<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_FormElements.html#methodrender">Zend_Form_Decorator_FormElements::render()</a>
+								: Render form elements
+							</li>
+					<li>
+				<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Image.html#methodrender">Zend_Form_Decorator_Image::render()</a>
+								: Render a form image
+							</li>
+					<li>
+				<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_DtDdWrapper.html#methodrender">Zend_Form_Decorator_DtDdWrapper::render()</a>
+								: Render
+							</li>
+					<li>
+				<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Form.html#methodrender">Zend_Form_Decorator_Form::render()</a>
+								: Render a form
+							</li>
+					<li>
+				<a href="../../Zend_Form/Decorator/Zend_Form_Decorator_ViewScript.html#methodrender">Zend_Form_Decorator_ViewScript::render()</a>
+								: Render a view script
+							</li>
+					<li>
+				<a href="../../Zend_Dojo/Form_Decorator/Zend_Dojo_Form_Decorator_DijitContainer.html#methodrender">Zend_Dojo_Form_Decorator_DijitContainer::render()</a>
+								: Render a dijit layout container
+							</li>
+					<li>
+				<a href="../../Zend_Dojo/Form_Decorator/Zend_Dojo_Form_Decorator_DijitForm.html#methodrender">Zend_Dojo_Form_Decorator_DijitForm::render()</a>
+								: Render a form
+							</li>
+				</ul>
+	</div>
+<a name="methodsetConfig" id="setConfig"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setConfig</span> (line <span class="line-number">98</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set options from config object</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Abstract.html">Zend_Form_Decorator_Abstract</a></span>
+		<span class="method-name">
+			setConfig
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$config</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_Config/Zend_Config.html">Zend_Config</a></span>
+				<span class="var-name">$config</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Interface.html#methodsetConfig">Zend_Form_Decorator_Interface::setConfig()</a></dt>
+						<dd>Set decorator options from a config object</dd>
+					</dl>
+			
+	</div>
+<a name="methodsetElement" id="setElement"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setElement</span> (line <span class="line-number">176</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set current form element</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Form_Decorator_Exception on invalid element type</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Abstract.html">Zend_Form_Decorator_Abstract</a></span>
+		<span class="method-name">
+			setElement
+		</span>
+					(<span class="var-type"><a href="../../Zend_Form/Element/Zend_Form_Element.html">Zend_Form_Element</a>|<a href="../../Zend_Form/Zend_Form.html">Zend_Form</a></span>&nbsp;<span class="var-name">$element</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_Form/Element/Zend_Form_Element.html">Zend_Form_Element</a>|<a href="../../Zend_Form/Zend_Form.html">Zend_Form</a></span>
+				<span class="var-name">$element</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Interface.html#methodsetElement">Zend_Form_Decorator_Interface::setElement()</a></dt>
+						<dd>Set an element to decorate</dd>
+					</dl>
+			
+	</div>
+<a name="methodsetOption" id="setOption"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setOption</span> (line <span class="line-number">110</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set option</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Abstract.html">Zend_Form_Decorator_Abstract</a></span>
+		<span class="method-name">
+			setOption
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$key</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Interface.html#methodsetOption">Zend_Form_Decorator_Interface::setOption()</a></dt>
+						<dd>Set a single option</dd>
+					</dl>
+			
+	</div>
+<a name="methodsetOptions" id="setOptions"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setOptions</span> (line <span class="line-number">86</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set options</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Abstract.html">Zend_Form_Decorator_Abstract</a></span>
+		<span class="method-name">
+			setOptions
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$options</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$options</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Zend_Form/Decorator/Zend_Form_Decorator_Interface.html#methodsetOptions">Zend_Form_Decorator_Interface::setOptions()</a></dt>
+						<dd>Set decorator options from an array</dd>
+					</dl>
+			
+	</div>
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constAPPEND" id="APPEND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">APPEND</span>
+			 = <span class="const-default"> 'APPEND'</span>
+			(line <span class="line-number">39</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Placement constants</p>
+	
+	
+</div>
+<a name="constPREPEND" id="PREPEND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PREPEND</span>
+			 = <span class="const-default"> 'PREPEND'</span>
+			(line <span class="line-number">40</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 02:58:50 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

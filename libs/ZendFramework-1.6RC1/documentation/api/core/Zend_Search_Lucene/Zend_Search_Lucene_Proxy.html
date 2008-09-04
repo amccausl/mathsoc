@@ -1,0 +1,2002 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Search_Lucene_Proxy</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_Search_Lucene_Proxy</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+                <p class="implements">
+            Implements interfaces:
+            <ul>
+                <li><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html">Zend_Search_Lucene_Interface</a></li>            </ul>
+        </p>
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Proxy class intended to be used in userland.</p>
+<p class="description"><p>It tracks, when index object goes out of scope and forces ndex closing</p></p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Search---Lucene---Proxy.php.html">/Search/Lucene/Proxy.php</a> (line <span class="field">35</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																			
+				<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+					static 						<span class="method-result">integer</span>
+										<a href="#getActualGeneration" title="details" class="method-name">getActualGeneration</a>
+											(<span class="var-type"><a href="../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_Directory.html">Zend_Search_Lucene_Storage_Directory</a></span>&nbsp;<span class="var-name">$directory</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+					static 						<span class="method-result">string</span>
+										<a href="#getDefaultSearchField" title="details" class="method-name">getDefaultSearchField</a>
+										()
+									</div>
+																																																																							
+				<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+					static 						<span class="method-result">integer</span>
+										<a href="#getResultSetLimit" title="details" class="method-name">getResultSetLimit</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+					static 						<span class="method-result">string</span>
+										<a href="#getSegmentFileName" title="details" class="method-name">getSegmentFileName</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$generation</span>)
+									</div>
+																																																																																																							
+				<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+					static 						<span class="method-result">void</span>
+										<a href="#setDefaultSearchField" title="details" class="method-name">setDefaultSearchField</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$fieldName</span>)
+									</div>
+																																															
+				<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+					static 						<span class="method-result">void</span>
+										<a href="#setResultSetLimit" title="details" class="method-name">setResultSetLimit</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$limit</span>)
+									</div>
+																																																																			
+				<div class="method-definition">
+					<img src="../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">Zend_Search_Lucene_Proxy</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type"><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html">Zend_Search_Lucene_Interface</a></span>&nbsp;<span class="var-name">$index</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Destructor.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#__destruct" title="details" class="method-name">__destruct</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#addDocument" title="details" class="method-name">addDocument</a>
+											(<span class="var-type"><a href="../Zend_Search_Lucene/Document/Zend_Search_Lucene_Document.html">Zend_Search_Lucene_Document</a></span>&nbsp;<span class="var-name">$document</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#addReference" title="details" class="method-name">addReference</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#closeTermsStream" title="details" class="method-name">closeTermsStream</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#commit" title="details" class="method-name">commit</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer</span>
+										<a href="#count" title="details" class="method-name">count</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a>|null</span>
+										<a href="#currentTerm" title="details" class="method-name">currentTerm</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#delete" title="details" class="method-name">delete</a>
+											(<span class="var-type">integer|<a href="../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_QueryHit.html">Zend_Search_Lucene_Search_QueryHit</a></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer</span>
+										<a href="#docFreq" title="details" class="method-name">docFreq</a>
+											(<span class="var-type"><a href="../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a></span>&nbsp;<span class="var-name">$term</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#find" title="details" class="method-name">find</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$query</span>)
+									</div>
+																															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_Directory.html">Zend_Search_Lucene_Storage_Directory</a></span>
+										<a href="#getDirectory" title="details" class="method-name">getDirectory</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Search_Lucene/Document/Zend_Search_Lucene_Document.html">Zend_Search_Lucene_Document</a></span>
+										<a href="#getDocument" title="details" class="method-name">getDocument</a>
+											(<span class="var-type">integer|<a href="../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_QueryHit.html">Zend_Search_Lucene_Search_QueryHit</a></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#getFieldNames" title="details" class="method-name">getFieldNames</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$indexed</span> = <span class="var-default">false</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer</span>
+										<a href="#getFormatVersion" title="details" class="method-name">getFormatVersion</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer</span>
+										<a href="#getMaxBufferedDocs" title="details" class="method-name">getMaxBufferedDocs</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer</span>
+										<a href="#getMaxMergeDocs" title="details" class="method-name">getMaxMergeDocs</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer</span>
+										<a href="#getMergeFactor" title="details" class="method-name">getMergeFactor</a>
+										()
+									</div>
+																															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Similarity.html">Zend_Search_Lucene_Search_Similarity</a></span>
+										<a href="#getSimilarity" title="details" class="method-name">getSimilarity</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#hasDeletions" title="details" class="method-name">hasDeletions</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#hasTerm" title="details" class="method-name">hasTerm</a>
+											(<span class="var-type"><a href="../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a></span>&nbsp;<span class="var-name">$term</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#isDeleted" title="details" class="method-name">isDeleted</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer</span>
+										<a href="#maxDoc" title="details" class="method-name">maxDoc</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a>|null</span>
+										<a href="#nextTerm" title="details" class="method-name">nextTerm</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">float</span>
+										<a href="#norm" title="details" class="method-name">norm</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$id</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$fieldName</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer</span>
+										<a href="#numDocs" title="details" class="method-name">numDocs</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#optimize" title="details" class="method-name">optimize</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#removeReference" title="details" class="method-name">removeReference</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#resetTermsStream" title="details" class="method-name">resetTermsStream</a>
+										()
+									</div>
+																							
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setFormatVersion" title="details" class="method-name">setFormatVersion</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$formatVersion</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setMaxBufferedDocs" title="details" class="method-name">setMaxBufferedDocs</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$maxBufferedDocs</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setMaxMergeDocs" title="details" class="method-name">setMaxMergeDocs</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$maxMergeDocs</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setMergeFactor" title="details" class="method-name">setMergeFactor</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$mergeFactor</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$maxMergeDocs</span>)
+									</div>
+																							
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#skipTo" title="details" class="method-name">skipTo</a>
+											(<span class="var-type"><a href="../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a></span>&nbsp;<span class="var-name">$prefix</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#termDocs" title="details" class="method-name">termDocs</a>
+											(<span class="var-type"><a href="../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a></span>&nbsp;<span class="var-name">$term</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer</span>
+										<a href="#termFreqs" title="details" class="method-name">termFreqs</a>
+											(<span class="var-type"><a href="../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a></span>&nbsp;<span class="var-name">$term</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#termPositions" title="details" class="method-name">termPositions</a>
+											(<span class="var-type"><a href="../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a></span>&nbsp;<span class="var-name">$term</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#terms" title="details" class="method-name">terms</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#undeleteAll" title="details" class="method-name">undeleteAll</a>
+										()
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodgetActualGeneration" id="getActualGeneration"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static getActualGeneration</span> (line <span class="line-number">78</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get current generation number</p>
+<p class="description"><p>Returns generation number <ol><li>means pre-2.1 index format</li></ol> -1 means there are no segments files.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Search_Lucene_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		static <span class="method-result">integer</span>
+		<span class="method-name">
+			getActualGeneration
+		</span>
+					(<span class="var-type"><a href="../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_Directory.html">Zend_Search_Lucene_Storage_Directory</a></span>&nbsp;<span class="var-name">$directory</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_Directory.html">Zend_Search_Lucene_Storage_Directory</a></span>
+				<span class="var-name">$directory</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodgetActualGeneration">Zend_Search_Lucene_Interface::getActualGeneration()</a></dt>
+						<dd>Get current generation number</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetDefaultSearchField" id="getDefaultSearchField"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static getDefaultSearchField</span> (line <span class="line-number">191</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get default search field.</p>
+<p class="description"><p>Null means, that search is performed through all fields by default</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		static <span class="method-result">string</span>
+		<span class="method-name">
+			getDefaultSearchField
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodgetDefaultSearchField">Zend_Search_Lucene_Interface::getDefaultSearchField()</a></dt>
+						<dd>Get default search field.</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetResultSetLimit" id="getResultSetLimit"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static getResultSetLimit</span> (line <span class="line-number">215</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set result set limit.</p>
+<p class="description"><p><ol><li>means no limit</li></ol></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		static <span class="method-result">integer</span>
+		<span class="method-name">
+			getResultSetLimit
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodgetResultSetLimit">Zend_Search_Lucene_Interface::getResultSetLimit()</a></dt>
+						<dd>Set result set limit.</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetSegmentFileName" id="getSegmentFileName"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static getSegmentFileName</span> (line <span class="line-number">89</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get segments file name</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		static <span class="method-result">string</span>
+		<span class="method-name">
+			getSegmentFileName
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$generation</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$generation</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodgetSegmentFileName">Zend_Search_Lucene_Interface::getSegmentFileName()</a></dt>
+						<dd>Get segments file name</dd>
+					</dl>
+			
+	</div>
+<a name="methodsetDefaultSearchField" id="setDefaultSearchField"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static setDefaultSearchField</span> (line <span class="line-number">179</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set default search field.</p>
+<p class="description"><p>Null means, that search is performed through all fields by default</p><p>Default value is null</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		static <span class="method-result">void</span>
+		<span class="method-name">
+			setDefaultSearchField
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$fieldName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$fieldName</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodsetDefaultSearchField">Zend_Search_Lucene_Interface::setDefaultSearchField()</a></dt>
+						<dd>Set default search field.</dd>
+					</dl>
+			
+	</div>
+<a name="methodsetResultSetLimit" id="setResultSetLimit"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static setResultSetLimit</span> (line <span class="line-number">203</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set result set limit.</p>
+<p class="description"><p><ol><li>(default) means no limit</li></ol></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		static <span class="method-result">void</span>
+		<span class="method-name">
+			setResultSetLimit
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$limit</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$limit</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodsetResultSetLimit">Zend_Search_Lucene_Interface::setResultSetLimit()</a></dt>
+						<dd>Set result set limit.</dd>
+					</dl>
+			
+	</div>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">49</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Object constructor</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Zend_Search_Lucene_Proxy</span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type"><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html">Zend_Search_Lucene_Interface</a></span>&nbsp;<span class="var-name">$index</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html">Zend_Search_Lucene_Interface</a></span>
+				<span class="var-name">$index</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__destruct" id="__destruct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Destructor.png" />
+		<span class="method-title">Destructor __destruct</span> (line <span class="line-number">58</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Object destructor</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__destruct
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodaddDocument" id="addDocument"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">addDocument</span> (line <span class="line-number">479</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a document to this index.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addDocument
+		</span>
+					(<span class="var-type"><a href="../Zend_Search_Lucene/Document/Zend_Search_Lucene_Document.html">Zend_Search_Lucene_Document</a></span>&nbsp;<span class="var-name">$document</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Search_Lucene/Document/Zend_Search_Lucene_Document.html">Zend_Search_Lucene_Document</a></span>
+				<span class="var-name">$document</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodaddDocument">Zend_Search_Lucene_Interface::addDocument()</a></dt>
+						<dd>Adds a document to this index.</dd>
+					</dl>
+			
+	</div>
+<a name="methodaddReference" id="addReference"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">addReference</span> (line <span class="line-number">577</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add reference to the index object</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addReference
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodaddReference">Zend_Search_Lucene_Interface::addReference()</a></dt>
+						<dd>Add reference to the index object</dd>
+					</dl>
+			
+	</div>
+<a name="methodcloseTermsStream" id="closeTermsStream"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">closeTermsStream</span> (line <span class="line-number">558</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Close terms stream</p>
+<p class="description"><p>Should be used for resources clean up if stream is not read up to the end</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			closeTermsStream
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodcloseTermsStream">Zend_Search_Lucene_Interface::closeTermsStream()</a></dt>
+						<dd>Close terms stream</dd>
+					</dl>
+			
+	</div>
+<a name="methodcommit" id="commit"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">commit</span> (line <span class="line-number">487</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Commit changes resulting from delete() or undeleteAll() operations.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			commit
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodcommit">Zend_Search_Lucene_Interface::commit()</a></dt>
+						<dd>Commit changes resulting from delete() or undeleteAll() operations.</dd>
+					</dl>
+			
+	</div>
+<a name="methodcount" id="count"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">count</span> (line <span class="line-number">131</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the total number of documents in this index (including deleted documents).</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			count
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodcount">Zend_Search_Lucene_Interface::count()</a></dt>
+						<dd>Returns the total number of documents in this index (including deleted documents).</dd>
+					</dl>
+			
+	</div>
+<a name="methodcurrentTerm" id="currentTerm"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">currentTerm</span> (line <span class="line-number">548</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns term in current position</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a>|null</span>
+		<span class="method-name">
+			currentTerm
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodcurrentTerm">Zend_Search_Lucene_Interface::currentTerm()</a></dt>
+						<dd>Returns term in current position</dd>
+					</dl>
+			
+	</div>
+<a name="methoddelete" id="delete"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">delete</span> (line <span class="line-number">469</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Deletes a document from the index.</p>
+<p class="description"><p>$id is an internal document id</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Search_Lucene_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			delete
+		</span>
+					(<span class="var-type">integer|<a href="../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_QueryHit.html">Zend_Search_Lucene_Search_QueryHit</a></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer|<a href="../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_QueryHit.html">Zend_Search_Lucene_Search_QueryHit</a></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methoddelete">Zend_Search_Lucene_Interface::delete()</a></dt>
+						<dd>Deletes a document from the index.</dd>
+					</dl>
+			
+	</div>
+<a name="methoddocFreq" id="docFreq"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">docFreq</span> (line <span class="line-number">425</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the number of documents in this index containing the $term.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			docFreq
+		</span>
+					(<span class="var-type"><a href="../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a></span>&nbsp;<span class="var-name">$term</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a></span>
+				<span class="var-name">$term</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methoddocFreq">Zend_Search_Lucene_Interface::docFreq()</a></dt>
+						<dd>Returns the number of documents in this index containing the $term.</dd>
+					</dl>
+			
+	</div>
+<a name="methodfind" id="find"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">find</span> (line <span class="line-number">339</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Performs a query against the index and returns an array  of Zend_Search_Lucene_Search_QueryHit objects.</p>
+<p class="description"><p>Input is a string or Zend_Search_Lucene_Search_Query.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Zend_Search_Lucene_Search_QueryHit</li>
+				<li><span class="field">throws:</span> Zend_Search_Lucene_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			find
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$query</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$query</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodfind">Zend_Search_Lucene_Interface::find()</a></dt>
+						<dd>Performs a query against the index and returns an array  of Zend_Search_Lucene_Search_QueryHit objects.</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetDirectory" id="getDirectory"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getDirectory</span> (line <span class="line-number">121</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the Zend_Search_Lucene_Storage_Directory instance for this index.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_Directory.html">Zend_Search_Lucene_Storage_Directory</a></span>
+		<span class="method-name">
+			getDirectory
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodgetDirectory">Zend_Search_Lucene_Interface::getDirectory()</a></dt>
+						<dd>Returns the Zend_Search_Lucene_Storage_Directory instance for this index.</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetDocument" id="getDocument"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getDocument</span> (line <span class="line-number">366</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a Zend_Search_Lucene_Document object for the document  number $id in this index.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Search_Lucene/Document/Zend_Search_Lucene_Document.html">Zend_Search_Lucene_Document</a></span>
+		<span class="method-name">
+			getDocument
+		</span>
+					(<span class="var-type">integer|<a href="../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_QueryHit.html">Zend_Search_Lucene_Search_QueryHit</a></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer|<a href="../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_QueryHit.html">Zend_Search_Lucene_Search_QueryHit</a></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodgetDocument">Zend_Search_Lucene_Interface::getDocument()</a></dt>
+						<dd>Returns a Zend_Search_Lucene_Document object for the document  number $id in this index.</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetFieldNames" id="getFieldNames"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getFieldNames</span> (line <span class="line-number">354</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a list of all unique field names that exist in this index.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getFieldNames
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$indexed</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$indexed</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodgetFieldNames">Zend_Search_Lucene_Interface::getFieldNames()</a></dt>
+						<dd>Returns a list of all unique field names that exist in this index.</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetFormatVersion" id="getFormatVersion"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getFormatVersion</span> (line <span class="line-number">99</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get index format version</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getFormatVersion
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodgetFormatVersion">Zend_Search_Lucene_Interface::getFormatVersion()</a></dt>
+						<dd>Get index format version</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetMaxBufferedDocs" id="getMaxBufferedDocs"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getMaxBufferedDocs</span> (line <span class="line-number">230</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve index maxBufferedDocs option</p>
+<p class="description"><p>maxBufferedDocs is a minimal number of documents required before  the buffered in-memory documents are written into a new Segment</p><p>Default value is 10</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getMaxBufferedDocs
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodgetMaxBufferedDocs">Zend_Search_Lucene_Interface::getMaxBufferedDocs()</a></dt>
+						<dd>Retrieve index maxBufferedDocs option</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetMaxMergeDocs" id="getMaxMergeDocs"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getMaxMergeDocs</span> (line <span class="line-number">263</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve index maxMergeDocs option</p>
+<p class="description"><p>maxMergeDocs is a largest number of documents ever merged by addDocument().  Small values (e.g., less than 10,000) are best for interactive indexing,  as this limits the length of pauses while indexing to a few seconds.  Larger values are best for batched indexing and speedier searches.</p><p>Default value is PHP_INT_MAX</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getMaxMergeDocs
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodgetMaxMergeDocs">Zend_Search_Lucene_Interface::getMaxMergeDocs()</a></dt>
+						<dd>Retrieve index maxMergeDocs option</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetMergeFactor" id="getMergeFactor"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getMergeFactor</span> (line <span class="line-number">303</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve index mergeFactor option</p>
+<p class="description"><p>mergeFactor determines how often segment indices are merged by addDocument().  With smaller values, less RAM is used while indexing,  and searches on unoptimized indices are faster,  but indexing speed is slower.  With larger values, more RAM is used during indexing,  and while searches on unoptimized indices are slower,  indexing is faster.  Thus larger values (&gt; 10) are best for batch index creation,  and smaller values (&lt; 10) for indices that are interactively maintained.</p><p>Default value is 10</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getMergeFactor
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodgetMergeFactor">Zend_Search_Lucene_Interface::getMergeFactor()</a></dt>
+						<dd>Retrieve index mergeFactor option</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetSimilarity" id="getSimilarity"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getSimilarity</span> (line <span class="line-number">435</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrive similarity used by index reader</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Similarity.html">Zend_Search_Lucene_Search_Similarity</a></span>
+		<span class="method-name">
+			getSimilarity
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodgetSimilarity">Zend_Search_Lucene_Interface::getSimilarity()</a></dt>
+						<dd>Retrive similarity used by index reader</dd>
+					</dl>
+			
+	</div>
+<a name="methodhasDeletions" id="hasDeletions"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">hasDeletions</span> (line <span class="line-number">457</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns true if any documents have been deleted from this index.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			hasDeletions
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodhasDeletions">Zend_Search_Lucene_Interface::hasDeletions()</a></dt>
+						<dd>Returns true if any documents have been deleted from this index.</dd>
+					</dl>
+			
+	</div>
+<a name="methodhasTerm" id="hasTerm"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">hasTerm</span> (line <span class="line-number">379</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns true if index contain documents with specified term.</p>
+<p class="description"><p>Is used for query optimization.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			hasTerm
+		</span>
+					(<span class="var-type"><a href="../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a></span>&nbsp;<span class="var-name">$term</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a></span>
+				<span class="var-name">$term</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodhasTerm">Zend_Search_Lucene_Interface::hasTerm()</a></dt>
+						<dd>Returns true if index contain documents with specified term.</dd>
+					</dl>
+			
+	</div>
+<a name="methodisDeleted" id="isDeleted"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">isDeleted</span> (line <span class="line-number">165</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks, that document is deleted</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Search_Lucene_Exception    Exception is thrown if $id is out of the range</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			isDeleted
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodisDeleted">Zend_Search_Lucene_Interface::isDeleted()</a></dt>
+						<dd>Checks, that document is deleted</dd>
+					</dl>
+			
+	</div>
+<a name="methodmaxDoc" id="maxDoc"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">maxDoc</span> (line <span class="line-number">143</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns one greater than the largest possible document number.</p>
+<p class="description"><p>This may be used to, e.g., determine how big to allocate a structure which will have  an element for every document number in an index.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			maxDoc
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodmaxDoc">Zend_Search_Lucene_Interface::maxDoc()</a></dt>
+						<dd>Returns one greater than the largest possible document number.</dd>
+					</dl>
+			
+	</div>
+<a name="methodnextTerm" id="nextTerm"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">nextTerm</span> (line <span class="line-number">538</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Scans terms dictionary and returns next term</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a>|null</span>
+		<span class="method-name">
+			nextTerm
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodnextTerm">Zend_Search_Lucene_Interface::nextTerm()</a></dt>
+						<dd>Scans terms dictionary and returns next term</dd>
+					</dl>
+			
+	</div>
+<a name="methodnorm" id="norm"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">norm</span> (line <span class="line-number">447</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a normalization factor for &quot;field, document&quot; pair.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">float</span>
+		<span class="method-name">
+			norm
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$id</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$fieldName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$id</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$fieldName</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodnorm">Zend_Search_Lucene_Interface::norm()</a></dt>
+						<dd>Returns a normalization factor for &quot;field, document&quot; pair.</dd>
+					</dl>
+			
+	</div>
+<a name="methodnumDocs" id="numDocs"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">numDocs</span> (line <span class="line-number">153</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the total number of non-deleted documents in this index.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			numDocs
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodnumDocs">Zend_Search_Lucene_Interface::numDocs()</a></dt>
+						<dd>Returns the total number of non-deleted documents in this index.</dd>
+					</dl>
+			
+	</div>
+<a name="methodoptimize" id="optimize"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">optimize</span> (line <span class="line-number">497</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Optimize index.</p>
+<p class="description"><p>Merges all segments into one</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			optimize
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodoptimize">Zend_Search_Lucene_Interface::optimize()</a></dt>
+						<dd>Optimize index.</dd>
+					</dl>
+			
+	</div>
+<a name="methodremoveReference" id="removeReference"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">removeReference</span> (line <span class="line-number">589</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Remove reference from the index object</p>
+<p class="description"><p>When reference count becomes zero, index is closed and resources are cleaned up</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			removeReference
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodremoveReference">Zend_Search_Lucene_Interface::removeReference()</a></dt>
+						<dd>Remove reference from the index object</dd>
+					</dl>
+			
+	</div>
+<a name="methodresetTermsStream" id="resetTermsStream"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">resetTermsStream</span> (line <span class="line-number">516</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Reset terms stream.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			resetTermsStream
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodresetTermsStream">Zend_Search_Lucene_Interface::resetTermsStream()</a></dt>
+						<dd>Reset terms stream.</dd>
+					</dl>
+			
+	</div>
+<a name="methodsetFormatVersion" id="setFormatVersion"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setFormatVersion</span> (line <span class="line-number">111</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set index format version.</p>
+<p class="description"><p>Index is converted to this format at the nearest upfdate time</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Search_Lucene_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setFormatVersion
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$formatVersion</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$formatVersion</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodsetFormatVersion">Zend_Search_Lucene_Interface::setFormatVersion()</a></dt>
+						<dd>Set index format version.</dd>
+					</dl>
+			
+	</div>
+<a name="methodsetMaxBufferedDocs" id="setMaxBufferedDocs"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setMaxBufferedDocs</span> (line <span class="line-number">245</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set index maxBufferedDocs option</p>
+<p class="description"><p>maxBufferedDocs is a minimal number of documents required before  the buffered in-memory documents are written into a new Segment</p><p>Default value is 10</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setMaxBufferedDocs
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$maxBufferedDocs</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$maxBufferedDocs</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodsetMaxBufferedDocs">Zend_Search_Lucene_Interface::setMaxBufferedDocs()</a></dt>
+						<dd>Set index maxBufferedDocs option</dd>
+					</dl>
+			
+	</div>
+<a name="methodsetMaxMergeDocs" id="setMaxMergeDocs"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setMaxMergeDocs</span> (line <span class="line-number">280</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set index maxMergeDocs option</p>
+<p class="description"><p>maxMergeDocs is a largest number of documents ever merged by addDocument().  Small values (e.g., less than 10,000) are best for interactive indexing,  as this limits the length of pauses while indexing to a few seconds.  Larger values are best for batched indexing and speedier searches.</p><p>Default value is PHP_INT_MAX</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setMaxMergeDocs
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$maxMergeDocs</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$maxMergeDocs</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodsetMaxMergeDocs">Zend_Search_Lucene_Interface::setMaxMergeDocs()</a></dt>
+						<dd>Set index maxMergeDocs option</dd>
+					</dl>
+			
+	</div>
+<a name="methodsetMergeFactor" id="setMergeFactor"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setMergeFactor</span> (line <span class="line-number">325</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set index mergeFactor option</p>
+<p class="description"><p>mergeFactor determines how often segment indices are merged by addDocument().  With smaller values, less RAM is used while indexing,  and searches on unoptimized indices are faster,  but indexing speed is slower.  With larger values, more RAM is used during indexing,  and while searches on unoptimized indices are slower,  indexing is faster.  Thus larger values (&gt; 10) are best for batch index creation,  and smaller values (&lt; 10) for indices that are interactively maintained.</p><p>Default value is 10</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setMergeFactor
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$mergeFactor</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$maxMergeDocs</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$maxMergeDocs</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$mergeFactor</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodsetMergeFactor">Zend_Search_Lucene_Interface::setMergeFactor()</a></dt>
+						<dd>Set index mergeFactor option</dd>
+					</dl>
+			
+	</div>
+<a name="methodskipTo" id="skipTo"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">skipTo</span> (line <span class="line-number">528</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Skip terms stream up to specified term preffix.</p>
+<p class="description"><p>Prefix contains fully specified field info and portion of searched term</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			skipTo
+		</span>
+					(<span class="var-type"><a href="../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a></span>&nbsp;<span class="var-name">$prefix</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a></span>
+				<span class="var-name">$prefix</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodskipTo">Zend_Search_Lucene_Interface::skipTo()</a></dt>
+						<dd>Skip terms stream up to specified term preffix.</dd>
+					</dl>
+			
+	</div>
+<a name="methodtermDocs" id="termDocs"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">termDocs</span> (line <span class="line-number">390</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns IDs of all the documents containing term.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			termDocs
+		</span>
+					(<span class="var-type"><a href="../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a></span>&nbsp;<span class="var-name">$term</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a></span>
+				<span class="var-name">$term</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodtermDocs">Zend_Search_Lucene_Interface::termDocs()</a></dt>
+						<dd>Returns IDs of all the documents containing term.</dd>
+					</dl>
+			
+	</div>
+<a name="methodtermFreqs" id="termFreqs"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">termFreqs</span> (line <span class="line-number">402</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns an array of all term freqs.</p>
+<p class="description"><p>Return array structure: array( docId =&gt; freq, ...)</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			termFreqs
+		</span>
+					(<span class="var-type"><a href="../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a></span>&nbsp;<span class="var-name">$term</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a></span>
+				<span class="var-name">$term</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodtermFreqs">Zend_Search_Lucene_Interface::termFreqs()</a></dt>
+						<dd>Returns an array of all term freqs.</dd>
+					</dl>
+			
+	</div>
+<a name="methodtermPositions" id="termPositions"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">termPositions</span> (line <span class="line-number">414</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns an array of all term positions in the documents.</p>
+<p class="description"><p>Return array structure: array( docId =&gt; array( pos1, pos2, ...), ...)</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			termPositions
+		</span>
+					(<span class="var-type"><a href="../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a></span>&nbsp;<span class="var-name">$term</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html">Zend_Search_Lucene_Index_Term</a></span>
+				<span class="var-name">$term</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodtermPositions">Zend_Search_Lucene_Interface::termPositions()</a></dt>
+						<dd>Returns an array of all term positions in the documents.</dd>
+					</dl>
+			
+	</div>
+<a name="methodterms" id="terms"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">terms</span> (line <span class="line-number">507</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns an array of all terms in this index.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			terms
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodterms">Zend_Search_Lucene_Interface::terms()</a></dt>
+						<dd>Returns an array of all terms in this index.</dd>
+					</dl>
+			
+	</div>
+<a name="methodundeleteAll" id="undeleteAll"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">undeleteAll</span> (line <span class="line-number">567</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Undeletes all documents currently marked as deleted in this index.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			undeleteAll
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../Zend_Search_Lucene/Zend_Search_Lucene_Interface.html#methodundeleteAll">Zend_Search_Lucene_Interface::undeleteAll()</a></dt>
+						<dd>Undeletes all documents currently marked as deleted in this index.</dd>
+					</dl>
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:45:45 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

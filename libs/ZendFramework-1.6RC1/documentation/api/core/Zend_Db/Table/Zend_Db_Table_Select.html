@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Db_Table_Select</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_Db_Table_Select</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-consts">Constants</a>
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Class for SQL SELECT query manipulation for the Zend_Db_Table component.</p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Db---Table---Select.php.html">/Db/Table/Select.php</a> (line <span class="field">46</span>)
+		</p>
+		
+				
+		<pre><a href="../../Zend_Db/Select/Zend_Db_Select.html">Zend_Db_Select</a>
+   |
+   --Zend_Db_Table_Select</pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-consts">Constants</a>
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$_info" title="details" class="var-name">$_info</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$_integrityCheck" title="details" class="var-name">$_integrityCheck</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-consts">Constants</a>
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																															
+				<div class="method-definition">
+					<img src="../../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">Zend_Db_Table_Select</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html">Zend_Db_Table_Abstract</a></span>&nbsp;<span class="var-name">$table</span>, <span class="var-type"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html">Zend_Db_Table_Abstract</a></span>&nbsp;<span class="var-name">$adapter</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#assemble" title="details" class="method-name">assemble</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Db/Table/Zend_Db_Table_Select.html">Zend_Db_Table_Select</a></span>
+										<a href="#from" title="details" class="method-name">from</a>
+											(<span class="var-type">array|string|<a href="../../Zend_Db/Expr/Zend_Db_Expr.html">Zend_Db_Expr</a>|<a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html">Zend_Db_Table_Abstract</a></span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type">array|string|<a href="../../Zend_Db/Expr/Zend_Db_Expr.html">Zend_Db_Expr</a></span>&nbsp;<span class="var-name">$cols</span> = <span class="var-default">self::SQL_WILDCARD</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$schema</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#isReadOnly" title="details" class="method-name">isReadOnly</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Db/Select/Zend_Db_Select.html">Zend_Db_Select</a></span>
+										<a href="#setIntegrityCheck" title="details" class="method-name">setIntegrityCheck</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$flag</span> = <span class="var-default">true</span>], <span class="var-type"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html">Zend_Db_Table_Abstract</a></span>&nbsp;<span class="var-name">$adapter</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Db/Select/Zend_Db_Select.html">Zend_Db_Select</a></span>
+										<a href="#setTable" title="details" class="method-name">setTable</a>
+											(<span class="var-type"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html">Zend_Db_Table_Abstract</a></span>&nbsp;<span class="var-name">$table</span>, <span class="var-type"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html">Zend_Db_Table_Abstract</a></span>&nbsp;<span class="var-name">$adapter</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-consts">Constants</a>
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_info" id="$_info"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_info</span>
+						(line <span class="line-number">53</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Table schema for parent Zend_Db_Table.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_integrityCheck" id="$_integrityCheck"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_integrityCheck</span>
+			 = <span class="var-default"> true</span>			(line <span class="line-number">60</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Table integrity override.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Zend_Db/Select/Zend_Db_Select.html">Zend_Db_Select</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#var$_adapter">Zend_Db_Select::$_adapter</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#var$_joinTypes">Zend_Db_Select::$_joinTypes</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#var$_parts">Zend_Db_Select::$_parts</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#var$_partsInit">Zend_Db_Select::$_partsInit</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#var$_tableCols">Zend_Db_Select::$_tableCols</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#var$_unionTypes">Zend_Db_Select::$_unionTypes</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-consts">Constants</a>
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">67</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Class constructor</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Zend_Db_Table_Select</span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html">Zend_Db_Table_Abstract</a></span>&nbsp;<span class="var-name">$table</span>, <span class="var-type"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html">Zend_Db_Table_Abstract</a></span>&nbsp;<span class="var-name">$adapter</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html">Zend_Db_Table_Abstract</a></span>
+				<span class="var-name">$adapter</span>			</li>
+					<li>
+				<span class="var-type"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html">Zend_Db_Table_Abstract</a></span>
+				<span class="var-name">$table</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Db/Select/Zend_Db_Select.html#method__construct">Zend_Db_Select::__construct()</a></dt>
+						<dd>Class constructor</dd>
+					</dl>
+			
+	</div>
+<a name="methodassemble" id="assemble"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">assemble</span> (line <span class="line-number">170</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Performs a validation on the select query before passing back to the parent class.</p>
+<p class="description"><p>Ensures that only columns from the primary Zend_Db_Table are returned in the result.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> This object as a SELECT string.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			assemble
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Db/Select/Zend_Db_Select.html#methodassemble">Zend_Db_Select::assemble()</a></dt>
+						<dd>Converts this object to an SQL SELECT string.</dd>
+					</dl>
+			
+	</div>
+<a name="methodfrom" id="from"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">from</span> (line <span class="line-number">151</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a FROM table and optional columns to the query.</p>
+<p class="description"><p>The table name can be expressed</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> This Zend_Db_Table_Select object.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Db/Table/Zend_Db_Table_Select.html">Zend_Db_Table_Select</a></span>
+		<span class="method-name">
+			from
+		</span>
+					(<span class="var-type">array|string|<a href="../../Zend_Db/Expr/Zend_Db_Expr.html">Zend_Db_Expr</a>|<a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html">Zend_Db_Table_Abstract</a></span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type">array|string|<a href="../../Zend_Db/Expr/Zend_Db_Expr.html">Zend_Db_Expr</a></span>&nbsp;<span class="var-name">$cols</span> = <span class="var-default">self::SQL_WILDCARD</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$schema</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array|string|<a href="../../Zend_Db/Expr/Zend_Db_Expr.html">Zend_Db_Expr</a>|<a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html">Zend_Db_Table_Abstract</a></span>
+				<span class="var-name">$name</span><span class="var-description">: The table name or an</span>			</li>
+					<li>
+				<span class="var-type">array|string|<a href="../../Zend_Db/Expr/Zend_Db_Expr.html">Zend_Db_Expr</a></span>
+				<span class="var-name">$cols</span><span class="var-description">: The columns to select from this table.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$schema</span><span class="var-description">: The schema name to specify, if any.</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Db/Select/Zend_Db_Select.html#methodfrom">Zend_Db_Select::from()</a></dt>
+						<dd>Adds a FROM table and optional columns to the query.</dd>
+					</dl>
+			
+	</div>
+<a name="methodisReadOnly" id="isReadOnly"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">isReadOnly</span> (line <span class="line-number">106</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Tests query to determine if expressions or aliases columns exist.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			isReadOnly
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodsetIntegrityCheck" id="setIntegrityCheck"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setIntegrityCheck</span> (line <span class="line-number">95</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the integrity check flag.</p>
+<p class="description"><p>Setting this flag to false skips the checks for table joins, allowing  'hybrid' table rows to be created.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> This Zend_Db_Select object.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Db/Select/Zend_Db_Select.html">Zend_Db_Select</a></span>
+		<span class="method-name">
+			setIntegrityCheck
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$flag</span> = <span class="var-default">true</span>], <span class="var-type"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html">Zend_Db_Table_Abstract</a></span>&nbsp;<span class="var-name">$adapter</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html">Zend_Db_Table_Abstract</a></span>
+				<span class="var-name">$adapter</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$flag</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetTable" id="setTable"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setTable</span> (line <span class="line-number">79</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the primary table name and retrieves the table schema.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> This Zend_Db_Select object.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Db/Select/Zend_Db_Select.html">Zend_Db_Select</a></span>
+		<span class="method-name">
+			setTable
+		</span>
+					(<span class="var-type"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html">Zend_Db_Table_Abstract</a></span>&nbsp;<span class="var-name">$table</span>, <span class="var-type"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html">Zend_Db_Table_Abstract</a></span>&nbsp;<span class="var-name">$adapter</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html">Zend_Db_Table_Abstract</a></span>
+				<span class="var-name">$adapter</span>			</li>
+					<li>
+				<span class="var-type"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html">Zend_Db_Table_Abstract</a></span>
+				<span class="var-name">$table</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Zend_Db/Select/Zend_Db_Select.html">Zend_Db_Select</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#method__construct">Zend_Db_Select::__construct()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#methodassemble">Zend_Db_Select::assemble()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#methodcolumns">Zend_Db_Select::columns()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#methoddistinct">Zend_Db_Select::distinct()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#methodforUpdate">Zend_Db_Select::forUpdate()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#methodfrom">Zend_Db_Select::from()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#methodgetPart">Zend_Db_Select::getPart()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#methodgroup">Zend_Db_Select::group()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#methodhaving">Zend_Db_Select::having()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#methodjoin">Zend_Db_Select::join()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#methodjoinCross">Zend_Db_Select::joinCross()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#methodjoinFull">Zend_Db_Select::joinFull()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#methodjoinInner">Zend_Db_Select::joinInner()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#methodjoinLeft">Zend_Db_Select::joinLeft()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#methodjoinNatural">Zend_Db_Select::joinNatural()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#methodjoinRight">Zend_Db_Select::joinRight()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#methodlimit">Zend_Db_Select::limit()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#methodlimitPage">Zend_Db_Select::limitPage()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#methodorder">Zend_Db_Select::order()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#methodorHaving">Zend_Db_Select::orHaving()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#methodorWhere">Zend_Db_Select::orWhere()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#methodquery">Zend_Db_Select::query()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#methodreset">Zend_Db_Select::reset()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#methodunion">Zend_Db_Select::union()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#methodwhere">Zend_Db_Select::where()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#method_getDummyTable">Zend_Db_Select::_getDummyTable()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#method_getQuotedSchema">Zend_Db_Select::_getQuotedSchema()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#method_getQuotedTable">Zend_Db_Select::_getQuotedTable()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#method_join">Zend_Db_Select::_join()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#method_joinUsing">Zend_Db_Select::_joinUsing()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#method_renderColumns">Zend_Db_Select::_renderColumns()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#method_renderDistinct">Zend_Db_Select::_renderDistinct()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#method_renderForupdate">Zend_Db_Select::_renderForupdate()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#method_renderFrom">Zend_Db_Select::_renderFrom()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#method_renderGroup">Zend_Db_Select::_renderGroup()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#method_renderHaving">Zend_Db_Select::_renderHaving()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#method_renderLimitoffset">Zend_Db_Select::_renderLimitoffset()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#method_renderOrder">Zend_Db_Select::_renderOrder()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#method_renderUnion">Zend_Db_Select::_renderUnion()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#method_renderWhere">Zend_Db_Select::_renderWhere()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#method_tableCols">Zend_Db_Select::_tableCols()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#method_where">Zend_Db_Select::_where()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#method__call">Zend_Db_Select::__call()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#method__toString">Zend_Db_Select::__toString()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Constants</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Zend_Db/Select/Zend_Db_Select.html">Zend_Db_Select</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constCOLUMNS">Zend_Db_Select::COLUMNS</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constCROSS_JOIN">Zend_Db_Select::CROSS_JOIN</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constDISTINCT">Zend_Db_Select::DISTINCT</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constFOR_UPDATE">Zend_Db_Select::FOR_UPDATE</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constFROM">Zend_Db_Select::FROM</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constFULL_JOIN">Zend_Db_Select::FULL_JOIN</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constGROUP">Zend_Db_Select::GROUP</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constHAVING">Zend_Db_Select::HAVING</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constINNER_JOIN">Zend_Db_Select::INNER_JOIN</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constLEFT_JOIN">Zend_Db_Select::LEFT_JOIN</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constLIMIT_COUNT">Zend_Db_Select::LIMIT_COUNT</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constLIMIT_OFFSET">Zend_Db_Select::LIMIT_OFFSET</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constNATURAL_JOIN">Zend_Db_Select::NATURAL_JOIN</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constORDER">Zend_Db_Select::ORDER</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constRIGHT_JOIN">Zend_Db_Select::RIGHT_JOIN</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constSQL_AND">Zend_Db_Select::SQL_AND</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constSQL_AS">Zend_Db_Select::SQL_AS</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constSQL_ASC">Zend_Db_Select::SQL_ASC</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constSQL_DESC">Zend_Db_Select::SQL_DESC</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constSQL_DISTINCT">Zend_Db_Select::SQL_DISTINCT</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constSQL_FOR_UPDATE">Zend_Db_Select::SQL_FOR_UPDATE</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constSQL_FROM">Zend_Db_Select::SQL_FROM</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constSQL_GROUP_BY">Zend_Db_Select::SQL_GROUP_BY</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constSQL_HAVING">Zend_Db_Select::SQL_HAVING</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constSQL_ON">Zend_Db_Select::SQL_ON</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constSQL_OR">Zend_Db_Select::SQL_OR</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constSQL_ORDER_BY">Zend_Db_Select::SQL_ORDER_BY</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constSQL_SELECT">Zend_Db_Select::SQL_SELECT</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constSQL_UNION">Zend_Db_Select::SQL_UNION</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constSQL_UNION_ALL">Zend_Db_Select::SQL_UNION_ALL</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constSQL_WHERE">Zend_Db_Select::SQL_WHERE</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constSQL_WILDCARD">Zend_Db_Select::SQL_WILDCARD</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constUNION">Zend_Db_Select::UNION</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Select/Zend_Db_Select.html#constWHERE">Zend_Db_Select::WHERE</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:47:45 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

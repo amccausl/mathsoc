@@ -1,0 +1,197 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>18.3. Authenticating with ClientLogin</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="prev" href="zend.gdata.authsub.html" title="18.2. Authenticating with AuthSub">
+<link rel="next" href="zend.gdata.calendar.html" title="18.4. Using Google Calendar">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.gdata.clientlogin.html#zend.gdata.clientlogin.login" title="18.3.1. Creating a ClientLogin authenticated Http Client">
+<link rel="subsection" href="zend.gdata.clientlogin.html#zend.gdata.clientlogin.terminating" title="18.3.2. Terminating a ClientLogin authenticated Http Client">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">18.3. Authenticating with ClientLogin</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.gdata.authsub.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 18. Zend_Gdata</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.gdata.calendar.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.gdata.clientlogin"></a>18.3. Authenticating with ClientLogin</h2></div></div></div>
+<p>
+        The ClientLogin mechanism enables you to write PHP application
+        that acquire authenticated access to Google Services,
+        specifying a user's credentials in the Http Client.
+    </p>
+<p>
+        See
+        <a href="http://code.google.com/apis/accounts/AuthForInstalledApps.html" target="_top"> http://code.google.com/apis/accounts/AuthForInstalledApps.html </a>
+        for more information about Google Data ClientLogin authentication.
+    </p>
+<p>
+        The Google documentation says the ClientLogin mechanism is appropriate
+        for "installed applications" whereas the AuthSub mechanism is
+        for "web applications."  The difference is that AuthSub requires
+        interaction from the user, and a browser interface that can react
+        to redirection requests.  The ClientLogin solution uses PHP code to
+        supply the account credentials; the user is not required to enter her
+        credentials interactively.
+    </p>
+<p>
+        The account credentials supplied via the ClientLogin mechanism must
+        be valid credentials for Google services, but they are not required
+        to be those of the user who is using the PHP application.
+    </p>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.gdata.clientlogin.login"></a>18.3.1. Creating a ClientLogin authenticated Http Client</h3></div></div></div>
+<p>
+            The process of creating an authenticated Http client using
+            the ClientLogin mechanism is to call the static function
+            <code class="code">Zend_Gdata_ClientLogin::getHttpClient()</code>
+            and pass the Google account credentials in plain text.
+            The return value of this function is an object of class
+            Zend_Http_Client.
+        </p>
+<p>
+            The optional third parameter is the name of the Google Data
+            service.  For instance, this can be 'cl' for Google Calendar.
+            The default is "xapi", which is recognized by Google Data
+            servers as a generic service name.
+        </p>
+<p>
+            The optional fourth parameter is an instance of Zend_Http_Client.
+            This allows you to set options in the client, such as proxy
+            server settings.  If you pass <code class="code">null</code> for this
+            parameter, a generic Zend_Http_Client object is created.
+        </p>
+<p>
+            The optional fifth parameter is a short string that Google Data
+            servers use to identify the client application for logging
+            purposes.  By default this is string "Zend-ZendFramework";
+        </p>
+<p>
+          The optional sixth parameter is a string ID for a 
+          <span class="trademark">CAPTCHA</span>™ challenge that has been issued by 
+          the server. It is only necessary when logging in after receiving 
+          a <span class="trademark">CAPTCHA</span>™ challenge from a previous
+          login attempt.
+        </p>
+<p>
+          The optional seventh parameter is a user's response to a 
+          <span class="trademark">CAPTCHA</span>™ challenge that has been issued by 
+          the server. It is only necessary when logging in after receiving 
+          a <span class="trademark">CAPTCHA</span>™ challenge from a previous
+          login attempt.
+        </p>
+<p>
+            Below is an example of PHP code for a web application
+            to acquire authentication to use the Google Calendar service
+            and create a Zend_Gdata client object using that authenticated
+            Zend_Http_Client.
+        </p>
+<pre class="programlisting">&lt;?php
+// Enter your Google account credentials
+$email = 'johndoe@gmail.com';
+$passwd = 'xxxxxxxx';
+try {
+   $client = Zend_Gdata_ClientLogin::getHttpClient($email, $passwd, 'cl');
+} catch (Zend_Gdata_App_CaptchaRequiredException $cre) {
+    echo 'URL of CAPTCHA image: ' . $cre-&gt;getCaptchaUrl() . "\n";
+    echo 'Token ID: ' . $cre-&gt;getCaptchaToken() . "\n"; 
+} catch (Zend_Gdata_App_AuthException $ae) {
+   echo 'Problem authenticating: ' . $ae-&gt;exception() . "\n";
+}
+
+$cal = new Zend_Gdata_Calendar($client);
+        </pre>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.gdata.clientlogin.terminating"></a>18.3.2. Terminating a ClientLogin authenticated Http Client</h3></div></div></div>
+<p>
+            There is no method to revoke ClientLogin authentication as there
+            is in the AuthSub token-based solution.  The credentials used
+            in the ClientLogin authentication are the login and password
+            to a Google account, and therefore these can be used repeatedly
+            in the future.
+        </p>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.gdata.authsub.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.gdata.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.gdata.calendar.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">18.2. Authenticating with AuthSub </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 18.4. Using Google Calendar</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

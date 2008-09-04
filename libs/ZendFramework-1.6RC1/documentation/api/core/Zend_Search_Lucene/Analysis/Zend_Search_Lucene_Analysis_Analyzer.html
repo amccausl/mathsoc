@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Search_Lucene_Analysis_Analyzer</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/AbstractClass_logo.png"
+														alt="Abstract Class"
+														title="Abstract Class"
+														style="vertical-align: middle"> Zend_Search_Lucene_Analysis_Analyzer</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">An Analyzer is used to analyze text.</p>
+<p class="description"><p>It thus represents a policy for extracting index terms from text.</p><p>Note:  Lucene Java implementation is oriented to streams. It provides effective work  with a huge documents (more then 20Mb).  But engine itself is not oriented such documents.  Thus Zend_Search_Lucene analysis API works with data strings and sets (arrays).</p></p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Search---Lucene---Analysis---Analyzer.php.html">/Search/Lucene/Analysis/Analyzer.php</a> (line <span class="field">74</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/AbstractClass.png"
+								 alt="Abstract class"
+								 title="Abstract class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer_Common.html">Zend_Search_Lucene_Analysis_Analyzer_Common</a>
+					</td>
+					<td>
+											Common implementation of the Zend_Search_Lucene_Analysis_Analyzer interface.
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_encoding" title="details" class="var-name">$_encoding</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_input" title="details" class="var-name">$_input</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+											
+				<div class="method-definition">
+					<img src="../../media/images/StaticMethod.png" alt=" "/>
+					static 						<span class="method-result"><a href="../../Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer.html">Zend_Search_Lucene_Analysis_Analyzer</a></span>
+										<a href="#getDefault" title="details" class="method-name">getDefault</a>
+										()
+									</div>
+																															
+				<div class="method-definition">
+					<img src="../../media/images/StaticMethod.png" alt=" "/>
+					static 						<span class="method-result">void</span>
+										<a href="#setDefault" title="details" class="method-name">setDefault</a>
+											(<span class="var-type"><a href="../../Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer.html">Zend_Search_Lucene_Analysis_Analyzer</a></span>&nbsp;<span class="var-name">$analyzer</span>, <span class="var-type"><a href="../../Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer.html">Zend_Search_Lucene_Analysis_Analyzer</a></span>&nbsp;<span class="var-name">$similarity</span>)
+									</div>
+																																											
+				<div class="method-definition">
+					<img src="../../media/images/AbstractMethod.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Token.html">Zend_Search_Lucene_Analysis_Token</a>|null</span>
+										<a href="#nextToken" title="details" class="method-name">nextToken</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/AbstractMethod.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#reset" title="details" class="method-name">reset</a>
+										()
+									</div>
+																							
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setInput" title="details" class="method-name">setInput</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$encoding</span> = <span class="var-default">''</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#tokenize" title="details" class="method-name">tokenize</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$encoding</span> = <span class="var-default">''</span>])
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_encoding" id="$_encoding"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_encoding</span>
+			 = <span class="var-default"> ''</span>			(line <span class="line-number">95</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Input string encoding</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_input" id="$_input"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_input</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">88</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Input string</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodgetDefault" id="getDefault"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/StaticMethod.png" />
+		<span class="method-title">static getDefault</span> (line <span class="line-number">167</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the default Analyzer implementation used by indexing code.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		static <span class="method-result"><a href="../../Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer.html">Zend_Search_Lucene_Analysis_Analyzer</a></span>
+		<span class="method-name">
+			getDefault
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodsetDefault" id="setDefault"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/StaticMethod.png" />
+		<span class="method-title">static setDefault</span> (line <span class="line-number">156</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the default Analyzer implementation used by indexing code.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		static <span class="method-result">void</span>
+		<span class="method-name">
+			setDefault
+		</span>
+					(<span class="var-type"><a href="../../Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer.html">Zend_Search_Lucene_Analysis_Analyzer</a></span>&nbsp;<span class="var-name">$analyzer</span>, <span class="var-type"><a href="../../Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer.html">Zend_Search_Lucene_Analysis_Analyzer</a></span>&nbsp;<span class="var-name">$similarity</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer.html">Zend_Search_Lucene_Analysis_Analyzer</a></span>
+				<span class="var-name">$similarity</span>			</li>
+					<li>
+				<span class="var-type"><a href="../../Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer.html">Zend_Search_Lucene_Analysis_Analyzer</a></span>
+				<span class="var-name">$analyzer</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodnextToken" id="nextToken"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/AbstractMethod.png" />
+		<span class="method-title">nextToken</span> (line <span class="line-number">146</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Tokenization stream API  Get next token  Returns null at the end of stream</p>
+<p class="description"><p>Tokens are returned in UTF-8 (internal Zend_Search_Lucene encoding)</p></p>
+	<ul class="tags">
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Token.html">Zend_Search_Lucene_Analysis_Token</a>|null</span>
+		<span class="method-name">
+			nextToken
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer_Common_Utf8Num.html#methodnextToken">Zend_Search_Lucene_Analysis_Analyzer_Common_Utf8Num::nextToken()</a>
+								: Tokenization stream API  Get next token  Returns null at the end of stream
+							</li>
+					<li>
+				<a href="../../Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer_Common_Utf8.html#methodnextToken">Zend_Search_Lucene_Analysis_Analyzer_Common_Utf8::nextToken()</a>
+								: Tokenization stream API  Get next token  Returns null at the end of stream
+							</li>
+					<li>
+				<a href="../../Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer_Common_Text.html#methodnextToken">Zend_Search_Lucene_Analysis_Analyzer_Common_Text::nextToken()</a>
+								: Tokenization stream API  Get next token  Returns null at the end of stream
+							</li>
+					<li>
+				<a href="../../Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer_Common_TextNum.html#methodnextToken">Zend_Search_Lucene_Analysis_Analyzer_Common_TextNum::nextToken()</a>
+								: Tokenization stream API  Get next token  Returns null at the end of stream
+							</li>
+				</ul>
+	</div>
+<a name="methodreset" id="reset"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/AbstractMethod.png" />
+		<span class="method-title">reset</span> (line <span class="line-number">135</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Reset token stream</p>
+	<ul class="tags">
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			reset
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer_Common_Utf8Num.html#methodreset">Zend_Search_Lucene_Analysis_Analyzer_Common_Utf8Num::reset()</a>
+								: Reset token stream
+							</li>
+					<li>
+				<a href="../../Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer_Common_Utf8.html#methodreset">Zend_Search_Lucene_Analysis_Analyzer_Common_Utf8::reset()</a>
+								: Reset token stream
+							</li>
+					<li>
+				<a href="../../Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer_Common_Text.html#methodreset">Zend_Search_Lucene_Analysis_Analyzer_Common_Text::reset()</a>
+								: Reset token stream
+							</li>
+					<li>
+				<a href="../../Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer_Common_TextNum.html#methodreset">Zend_Search_Lucene_Analysis_Analyzer_Common_TextNum::reset()</a>
+								: Reset token stream
+							</li>
+				</ul>
+	</div>
+<a name="methodsetInput" id="setInput"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setInput</span> (line <span class="line-number">125</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Tokenization stream API  Set input</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setInput
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$encoding</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$data</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$encoding</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtokenize" id="tokenize"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">tokenize</span> (line <span class="line-number">106</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Tokenize text to a terms  Returns array of Zend_Search_Lucene_Analysis_Token objects</p>
+<p class="description"><p>Tokens are returned in UTF-8 (internal Zend_Search_Lucene encoding)</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			tokenize
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$encoding</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$data</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$encoding</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:03:10 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

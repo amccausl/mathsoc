@@ -1,0 +1,4021 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Measure_Flow_Volume</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_Measure_Flow_Volume</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-methods">Methods</a>
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Class for handling flow volume conversions</p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Measure---Flow---Volume.php.html">/Measure/Flow/Volume.php</a> (line <span class="field">38</span>)
+		</p>
+		
+				
+		<pre><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html">Zend_Measure_Abstract</a>
+   |
+   --Zend_Measure_Flow_Volume</pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-methods">Methods</a>
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ACRE_FOOT_PER_DAY" title="details" class="const-name">ACRE_FOOT_PER_DAY</a> = 					<span class="var-type"> 'ACRE_FOOT_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ACRE_FOOT_PER_HOUR" title="details" class="const-name">ACRE_FOOT_PER_HOUR</a> = 					<span class="var-type"> 'ACRE_FOOT_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ACRE_FOOT_PER_MINUTE" title="details" class="const-name">ACRE_FOOT_PER_MINUTE</a> = 					<span class="var-type"> 'ACRE_FOOT_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ACRE_FOOT_PER_SECOND" title="details" class="const-name">ACRE_FOOT_PER_SECOND</a> = 					<span class="var-type"> 'ACRE_FOOT_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ACRE_FOOT_SURVEY_PER_DAY" title="details" class="const-name">ACRE_FOOT_SURVEY_PER_DAY</a> = 					<span class="var-type"> 'ACRE_FOOT_SURVEY_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ACRE_FOOT_SURVEY_PER_HOUR" title="details" class="const-name">ACRE_FOOT_SURVEY_PER_HOUR</a> = 					<span class="var-type"> 'ACRE_FOOT_SURVEY_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ACRE_FOOT_SURVEY_PER_MINUTE" title="details" class="const-name">ACRE_FOOT_SURVEY_PER_MINUTE</a> = 					<span class="var-type"> 'ACRE_FOOT_SURVEY_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ACRE_FOOT_SURVEY_PER_SECOND" title="details" class="const-name">ACRE_FOOT_SURVEY_PER_SECOND</a> = 					<span class="var-type"> 'ACRE_FOOT_SURVEY_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ACRE_INCH_PER_DAY" title="details" class="const-name">ACRE_INCH_PER_DAY</a> = 					<span class="var-type"> 'ACRE_INCH_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ACRE_INCH_PER_HOUR" title="details" class="const-name">ACRE_INCH_PER_HOUR</a> = 					<span class="var-type"> 'ACRE_INCH_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ACRE_INCH_PER_MINUTE" title="details" class="const-name">ACRE_INCH_PER_MINUTE</a> = 					<span class="var-type"> 'ACRE_INCH_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ACRE_INCH_PER_SECOND" title="details" class="const-name">ACRE_INCH_PER_SECOND</a> = 					<span class="var-type"> 'ACRE_INCH_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ACRE_INCH_SURVEY_PER_DAY" title="details" class="const-name">ACRE_INCH_SURVEY_PER_DAY</a> = 					<span class="var-type"> 'ACRE_INCH_SURVEY_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ACRE_INCH_SURVEY_PER_HOUR" title="details" class="const-name">ACRE_INCH_SURVEY_PER_HOUR</a> = 					<span class="var-type"> 'ACRE_INCH_SURVEY_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ACRE_INCH_SURVEY_PER_MINUTE" title="details" class="const-name">ACRE_INCH_SURVEY_PER_MINUTE</a> = 					<span class="var-type"> 'ACRE_INCH_SURVEY_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ACRE_INCH_SURVEY_PER_SECOND" title="details" class="const-name">ACRE_INCH_SURVEY_PER_SECOND</a> = 					<span class="var-type"> 'ACRE_INCH_SURVEY_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL_BEER_PER_DAY" title="details" class="const-name">BARREL_BEER_PER_DAY</a> = 					<span class="var-type"> 'BARREL_BEER_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL_BEER_PER_HOUR" title="details" class="const-name">BARREL_BEER_PER_HOUR</a> = 					<span class="var-type"> 'BARREL_BEER_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL_BEER_PER_MINUTE" title="details" class="const-name">BARREL_BEER_PER_MINUTE</a> = 					<span class="var-type"> 'BARREL_BEER_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL_BEER_PER_SECOND" title="details" class="const-name">BARREL_BEER_PER_SECOND</a> = 					<span class="var-type"> 'BARREL_BEER_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL_PER_DAY" title="details" class="const-name">BARREL_PER_DAY</a> = 					<span class="var-type"> 'BARREL_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL_PER_HOUR" title="details" class="const-name">BARREL_PER_HOUR</a> = 					<span class="var-type"> 'BARREL_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL_PER_MINUTE" title="details" class="const-name">BARREL_PER_MINUTE</a> = 					<span class="var-type"> 'BARREL_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL_PER_SECOND" title="details" class="const-name">BARREL_PER_SECOND</a> = 					<span class="var-type"> 'BARREL_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL_PETROLEUM_PER_DAY" title="details" class="const-name">BARREL_PETROLEUM_PER_DAY</a> = 					<span class="var-type"> 'BARREL_PETROLEUM_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL_PETROLEUM_PER_HOUR" title="details" class="const-name">BARREL_PETROLEUM_PER_HOUR</a> = 					<span class="var-type"> 'BARREL_PETROLEUM_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL_PETROLEUM_PER_MINUTE" title="details" class="const-name">BARREL_PETROLEUM_PER_MINUTE</a> = 					<span class="var-type"> 'BARREL_PETROLEUM_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL_PETROLEUM_PER_SECOND" title="details" class="const-name">BARREL_PETROLEUM_PER_SECOND</a> = 					<span class="var-type"> 'BARREL_PETROLEUM_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL_US_PER_DAY" title="details" class="const-name">BARREL_US_PER_DAY</a> = 					<span class="var-type"> 'BARREL_US_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL_US_PER_HOUR" title="details" class="const-name">BARREL_US_PER_HOUR</a> = 					<span class="var-type"> 'BARREL_US_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL_US_PER_MINUTE" title="details" class="const-name">BARREL_US_PER_MINUTE</a> = 					<span class="var-type"> 'BARREL_US_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL_US_PER_SECOND" title="details" class="const-name">BARREL_US_PER_SECOND</a> = 					<span class="var-type"> 'BARREL_US_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL_WINE_PER_DAY" title="details" class="const-name">BARREL_WINE_PER_DAY</a> = 					<span class="var-type"> 'BARREL_WINE_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL_WINE_PER_HOUR" title="details" class="const-name">BARREL_WINE_PER_HOUR</a> = 					<span class="var-type"> 'BARREL_WINE_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL_WINE_PER_MINUTE" title="details" class="const-name">BARREL_WINE_PER_MINUTE</a> = 					<span class="var-type"> 'BARREL_WINE_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BARREL_WINE_PER_SECOND" title="details" class="const-name">BARREL_WINE_PER_SECOND</a> = 					<span class="var-type"> 'BARREL_WINE_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BILLION_CUBIC_FOOT_PER_DAY" title="details" class="const-name">BILLION_CUBIC_FOOT_PER_DAY</a> = 					<span class="var-type"> 'BILLION_CUBIC_FOOT_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BILLION_CUBIC_FOOT_PER_HOUR" title="details" class="const-name">BILLION_CUBIC_FOOT_PER_HOUR</a> = 					<span class="var-type"> 'BILLION_CUBIC_FOOT_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BILLION_CUBIC_FOOT_PER_MINUTE" title="details" class="const-name">BILLION_CUBIC_FOOT_PER_MINUTE</a> = 					<span class="var-type"> 'BILLION_CUBIC_FOOT_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BILLION_CUBIC_FOOT_PER_SECOND" title="details" class="const-name">BILLION_CUBIC_FOOT_PER_SECOND</a> = 					<span class="var-type"> 'BILLION_CUBIC_FOOT_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CENTILITER_PER_DAY" title="details" class="const-name">CENTILITER_PER_DAY</a> = 					<span class="var-type"> 'CENTILITER_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CENTILITER_PER_HOUR" title="details" class="const-name">CENTILITER_PER_HOUR</a> = 					<span class="var-type"> 'CENTILITER_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CENTILITER_PER_MINUTE" title="details" class="const-name">CENTILITER_PER_MINUTE</a> = 					<span class="var-type"> 'CENTILITER_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CENTILITER_PER_SECOND" title="details" class="const-name">CENTILITER_PER_SECOND</a> = 					<span class="var-type"> 'CENTILITER_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBEM_PER_DAY" title="details" class="const-name">CUBEM_PER_DAY</a> = 					<span class="var-type"> 'CUBEM_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBEM_PER_HOUR" title="details" class="const-name">CUBEM_PER_HOUR</a> = 					<span class="var-type"> 'CUBEM_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBEM_PER_MINUTE" title="details" class="const-name">CUBEM_PER_MINUTE</a> = 					<span class="var-type"> 'CUBEM_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBEM_PER_SECOND" title="details" class="const-name">CUBEM_PER_SECOND</a> = 					<span class="var-type"> 'CUBEM_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_CENTIMETER_PER_DAY" title="details" class="const-name">CUBIC_CENTIMETER_PER_DAY</a> = 					<span class="var-type"> 'CUBIC_CENTIMETER_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_CENTIMETER_PER_HOUR" title="details" class="const-name">CUBIC_CENTIMETER_PER_HOUR</a> = 					<span class="var-type"> 'CUBIC_CENTIMETER_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_CENTIMETER_PER_MINUTE" title="details" class="const-name">CUBIC_CENTIMETER_PER_MINUTE</a> = 					<span class="var-type"> 'CUBIC_CENTIMETER_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_CENTIMETER_PER_SECOND" title="details" class="const-name">CUBIC_CENTIMETER_PER_SECOND</a> = 					<span class="var-type"> 'CUBIC_CENTIMETER_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_DECIMETER_PER_DAY" title="details" class="const-name">CUBIC_DECIMETER_PER_DAY</a> = 					<span class="var-type"> 'CUBIC_DECIMETER_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_DECIMETER_PER_HOUR" title="details" class="const-name">CUBIC_DECIMETER_PER_HOUR</a> = 					<span class="var-type"> 'CUBIC_DECIMETER_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_DECIMETER_PER_MINUTE" title="details" class="const-name">CUBIC_DECIMETER_PER_MINUTE</a> = 					<span class="var-type"> 'CUBIC_DECIMETER_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_DECIMETER_PER_SECOND" title="details" class="const-name">CUBIC_DECIMETER_PER_SECOND</a> = 					<span class="var-type"> 'CUBIC_DECIMETER_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_DEKAMETER_PER_DAY" title="details" class="const-name">CUBIC_DEKAMETER_PER_DAY</a> = 					<span class="var-type"> 'CUBIC_DEKAMETER_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_DEKAMETER_PER_HOUR" title="details" class="const-name">CUBIC_DEKAMETER_PER_HOUR</a> = 					<span class="var-type"> 'CUBIC_DEKAMETER_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_DEKAMETER_PER_MINUTE" title="details" class="const-name">CUBIC_DEKAMETER_PER_MINUTE</a> = 					<span class="var-type"> 'CUBIC_DEKAMETER_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_DEKAMETER_PER_SECOND" title="details" class="const-name">CUBIC_DEKAMETER_PER_SECOND</a> = 					<span class="var-type"> 'CUBIC_DEKAMETER_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_FOOT_PER_DAY" title="details" class="const-name">CUBIC_FOOT_PER_DAY</a> = 					<span class="var-type"> 'CUBIC_FOOT_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_FOOT_PER_HOUR" title="details" class="const-name">CUBIC_FOOT_PER_HOUR</a> = 					<span class="var-type"> 'CUBIC_FOOT_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_FOOT_PER_MINUTE" title="details" class="const-name">CUBIC_FOOT_PER_MINUTE</a> = 					<span class="var-type"> 'CUBIC_FOOT_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_FOOT_PER_SECOND" title="details" class="const-name">CUBIC_FOOT_PER_SECOND</a> = 					<span class="var-type"> 'CUBIC_FOOT_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_INCH_PER_DAY" title="details" class="const-name">CUBIC_INCH_PER_DAY</a> = 					<span class="var-type"> 'CUBIC_INCH_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_INCH_PER_HOUR" title="details" class="const-name">CUBIC_INCH_PER_HOUR</a> = 					<span class="var-type"> 'CUBIC_INCH_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_INCH_PER_MINUTE" title="details" class="const-name">CUBIC_INCH_PER_MINUTE</a> = 					<span class="var-type"> 'CUBIC_INCH_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_INCH_PER_SECOND" title="details" class="const-name">CUBIC_INCH_PER_SECOND</a> = 					<span class="var-type"> 'CUBIC_INCH_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_KILOMETER_PER_DAY" title="details" class="const-name">CUBIC_KILOMETER_PER_DAY</a> = 					<span class="var-type"> 'CUBIC_KILOMETER_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_KILOMETER_PER_HOUR" title="details" class="const-name">CUBIC_KILOMETER_PER_HOUR</a> = 					<span class="var-type"> 'CUBIC_KILOMETER_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_KILOMETER_PER_MINUTE" title="details" class="const-name">CUBIC_KILOMETER_PER_MINUTE</a> = 					<span class="var-type"> 'CUBIC_KILOMETER_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_KILOMETER_PER_SECOND" title="details" class="const-name">CUBIC_KILOMETER_PER_SECOND</a> = 					<span class="var-type"> 'CUBIC_KILOMETER_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_METER_PER_DAY" title="details" class="const-name">CUBIC_METER_PER_DAY</a> = 					<span class="var-type"> 'CUBIC_METER_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_METER_PER_HOUR" title="details" class="const-name">CUBIC_METER_PER_HOUR</a> = 					<span class="var-type"> 'CUBIC_METER_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_METER_PER_MINUTE" title="details" class="const-name">CUBIC_METER_PER_MINUTE</a> = 					<span class="var-type"> 'CUBIC_METER_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_METER_PER_SECOND" title="details" class="const-name">CUBIC_METER_PER_SECOND</a> = 					<span class="var-type"> 'CUBIC_METER_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_MILE_PER_DAY" title="details" class="const-name">CUBIC_MILE_PER_DAY</a> = 					<span class="var-type"> 'CUBIC_MILE_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_MILE_PER_HOUR" title="details" class="const-name">CUBIC_MILE_PER_HOUR</a> = 					<span class="var-type"> 'CUBIC_MILE_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_MILE_PER_MINUTE" title="details" class="const-name">CUBIC_MILE_PER_MINUTE</a> = 					<span class="var-type"> 'CUBIC_MILE_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_MILE_PER_SECOND" title="details" class="const-name">CUBIC_MILE_PER_SECOND</a> = 					<span class="var-type"> 'CUBIC_MILE_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_MILLIMETER_PER_DAY" title="details" class="const-name">CUBIC_MILLIMETER_PER_DAY</a> = 					<span class="var-type"> 'CUBIC_MILLIMETER_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_MILLIMETER_PER_HOUR" title="details" class="const-name">CUBIC_MILLIMETER_PER_HOUR</a> = 					<span class="var-type"> 'CUBIC_MILLIMETER_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_MILLIMETER_PER_MINUTE" title="details" class="const-name">CUBIC_MILLIMETER_PER_MINUTE</a> = 					<span class="var-type"> 'CUBIC_MILLIMETER_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_MILLIMETER_PER_SECOND" title="details" class="const-name">CUBIC_MILLIMETER_PER_SECOND</a> = 					<span class="var-type"> 'CUBIC_MILLIMETER_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_YARD_PER_DAY" title="details" class="const-name">CUBIC_YARD_PER_DAY</a> = 					<span class="var-type"> 'CUBIC_YARD_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_YARD_PER_HOUR" title="details" class="const-name">CUBIC_YARD_PER_HOUR</a> = 					<span class="var-type"> 'CUBIC_YARD_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_YARD_PER_MINUTE" title="details" class="const-name">CUBIC_YARD_PER_MINUTE</a> = 					<span class="var-type"> 'CUBIC_YARD_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUBIC_YARD_PER_SECOND" title="details" class="const-name">CUBIC_YARD_PER_SECOND</a> = 					<span class="var-type"> 'CUBIC_YARD_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CUSEC" title="details" class="const-name">CUSEC</a> = 					<span class="var-type"> 'CUSEC'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DECILITER_PER_DAY" title="details" class="const-name">DECILITER_PER_DAY</a> = 					<span class="var-type"> 'DECILITER_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DECILITER_PER_HOUR" title="details" class="const-name">DECILITER_PER_HOUR</a> = 					<span class="var-type"> 'DECILITER_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DECILITER_PER_MINUTE" title="details" class="const-name">DECILITER_PER_MINUTE</a> = 					<span class="var-type"> 'DECILITER_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DECILITER_PER_SECOND" title="details" class="const-name">DECILITER_PER_SECOND</a> = 					<span class="var-type"> 'DECILITER_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DEKALITER_PER_DAY" title="details" class="const-name">DEKALITER_PER_DAY</a> = 					<span class="var-type"> 'DEKALITER_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DEKALITER_PER_HOUR" title="details" class="const-name">DEKALITER_PER_HOUR</a> = 					<span class="var-type"> 'DEKALITER_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DEKALITER_PER_MINUTE" title="details" class="const-name">DEKALITER_PER_MINUTE</a> = 					<span class="var-type"> 'DEKALITER_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DEKALITER_PER_SECOND" title="details" class="const-name">DEKALITER_PER_SECOND</a> = 					<span class="var-type"> 'DEKALITER_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_PER_DAY" title="details" class="const-name">GALLON_PER_DAY</a> = 					<span class="var-type"> 'GALLON_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_PER_HOUR" title="details" class="const-name">GALLON_PER_HOUR</a> = 					<span class="var-type"> 'GALLON_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_PER_MINUTE" title="details" class="const-name">GALLON_PER_MINUTE</a> = 					<span class="var-type"> 'GALLON_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_PER_SECOND" title="details" class="const-name">GALLON_PER_SECOND</a> = 					<span class="var-type"> 'GALLON_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_US_PER_DAY" title="details" class="const-name">GALLON_US_PER_DAY</a> = 					<span class="var-type"> 'GALLON_US_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_US_PER_HOUR" title="details" class="const-name">GALLON_US_PER_HOUR</a> = 					<span class="var-type"> 'GALLON_US_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_US_PER_MINUTE" title="details" class="const-name">GALLON_US_PER_MINUTE</a> = 					<span class="var-type"> 'GALLON_US_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_US_PER_SECOND" title="details" class="const-name">GALLON_US_PER_SECOND</a> = 					<span class="var-type"> 'GALLON_US_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#HECTARE_METER_PER_DAY" title="details" class="const-name">HECTARE_METER_PER_DAY</a> = 					<span class="var-type"> 'HECTARE_METER_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#HECTARE_METER_PER_HOUR" title="details" class="const-name">HECTARE_METER_PER_HOUR</a> = 					<span class="var-type"> 'HECTARE_METER_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#HECTARE_METER_PER_MINUTE" title="details" class="const-name">HECTARE_METER_PER_MINUTE</a> = 					<span class="var-type"> 'HECTARE_METER_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#HECTARE_METER_PER_SECOND" title="details" class="const-name">HECTARE_METER_PER_SECOND</a> = 					<span class="var-type"> 'HECTARE_METER_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#HECTOLITER_PER_DAY" title="details" class="const-name">HECTOLITER_PER_DAY</a> = 					<span class="var-type"> 'HECTOLITER_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#HECTOLITER_PER_HOUR" title="details" class="const-name">HECTOLITER_PER_HOUR</a> = 					<span class="var-type"> 'HECTOLITER_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#HECTOLITER_PER_MINUTE" title="details" class="const-name">HECTOLITER_PER_MINUTE</a> = 					<span class="var-type"> 'HECTOLITER_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#HECTOLITER_PER_SECOND" title="details" class="const-name">HECTOLITER_PER_SECOND</a> = 					<span class="var-type"> 'HECTOLITER_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#KILOLITER_PER_DAY" title="details" class="const-name">KILOLITER_PER_DAY</a> = 					<span class="var-type"> 'KILOLITER_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#KILOLITER_PER_HOUR" title="details" class="const-name">KILOLITER_PER_HOUR</a> = 					<span class="var-type"> 'KILOLITER_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#KILOLITER_PER_MINUTE" title="details" class="const-name">KILOLITER_PER_MINUTE</a> = 					<span class="var-type"> 'KILOLITER_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#KILOLITER_PER_SECOND" title="details" class="const-name">KILOLITER_PER_SECOND</a> = 					<span class="var-type"> 'KILOLITER_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#LAMBDA_PER_DAY" title="details" class="const-name">LAMBDA_PER_DAY</a> = 					<span class="var-type"> 'LAMBDA_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#LAMBDA_PER_HOUR" title="details" class="const-name">LAMBDA_PER_HOUR</a> = 					<span class="var-type"> 'LAMBDA_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#LAMBDA_PER_MINUTE" title="details" class="const-name">LAMBDA_PER_MINUTE</a> = 					<span class="var-type"> 'LAMBDA_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#LAMBDA_PER_SECOND" title="details" class="const-name">LAMBDA_PER_SECOND</a> = 					<span class="var-type"> 'LAMBDA_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#LITER_PER_DAY" title="details" class="const-name">LITER_PER_DAY</a> = 					<span class="var-type"> 'LITER_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#LITER_PER_HOUR" title="details" class="const-name">LITER_PER_HOUR</a> = 					<span class="var-type"> 'LITER_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#LITER_PER_MINUTE" title="details" class="const-name">LITER_PER_MINUTE</a> = 					<span class="var-type"> 'LITER_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#LITER_PER_SECOND" title="details" class="const-name">LITER_PER_SECOND</a> = 					<span class="var-type"> 'LITER_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MILLILITER_PER_DAY" title="details" class="const-name">MILLILITER_PER_DAY</a> = 					<span class="var-type"> 'MILLILITER_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MILLILITER_PER_HOUR" title="details" class="const-name">MILLILITER_PER_HOUR</a> = 					<span class="var-type"> 'MILLILITER_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MILLILITER_PER_MINUTE" title="details" class="const-name">MILLILITER_PER_MINUTE</a> = 					<span class="var-type"> 'MILLILITER_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MILLILITER_PER_SECOND" title="details" class="const-name">MILLILITER_PER_SECOND</a> = 					<span class="var-type"> 'MILLILITER_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MILLION_ACRE_FOOT_PER_DAY" title="details" class="const-name">MILLION_ACRE_FOOT_PER_DAY</a> = 					<span class="var-type"> 'MILLION_ACRE_FOOT_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MILLION_ACRE_FOOT_PER_HOUR" title="details" class="const-name">MILLION_ACRE_FOOT_PER_HOUR</a> = 					<span class="var-type"> 'MILLION_ACRE_FOOT_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MILLION_ACRE_FOOT_PER_MINUTE" title="details" class="const-name">MILLION_ACRE_FOOT_PER_MINUTE</a> = 					<span class="var-type"> 'MILLION_ACRE_FOOT_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MILLION_ACRE_FOOT_PER_SECOND" title="details" class="const-name">MILLION_ACRE_FOOT_PER_SECOND</a> = 					<span class="var-type"> 'MILLION_ACRE_FOOT_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MILLION_CUBIC_FOOT_PER_DAY" title="details" class="const-name">MILLION_CUBIC_FOOT_PER_DAY</a> = 					<span class="var-type"> 'MILLION_CUBIC_FOOT_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MILLION_CUBIC_FOOT_PER_HOUR" title="details" class="const-name">MILLION_CUBIC_FOOT_PER_HOUR</a> = 					<span class="var-type"> 'MILLION_CUBIC_FOOT_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MILLION_CUBIC_FOOT_PER_MINUTE" title="details" class="const-name">MILLION_CUBIC_FOOT_PER_MINUTE</a> = 					<span class="var-type"> 'MILLION_CUBIC_FOOT_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MILLION_CUBIC_FOOT_PER_SECOND" title="details" class="const-name">MILLION_CUBIC_FOOT_PER_SECOND</a> = 					<span class="var-type"> 'MILLION_CUBIC_FOOT_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MILLION_GALLON_PER_DAY" title="details" class="const-name">MILLION_GALLON_PER_DAY</a> = 					<span class="var-type"> 'MILLION_GALLON_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MILLION_GALLON_PER_HOUR" title="details" class="const-name">MILLION_GALLON_PER_HOUR</a> = 					<span class="var-type"> 'MILLION_GALLON_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MILLION_GALLON_PER_MINUTE" title="details" class="const-name">MILLION_GALLON_PER_MINUTE</a> = 					<span class="var-type"> 'MILLION_GALLON_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MILLION_GALLON_PER_SECOND" title="details" class="const-name">MILLION_GALLON_PER_SECOND</a> = 					<span class="var-type"> 'MILLION_GALLON_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MILLION_GALLON_US_PER_DAY" title="details" class="const-name">MILLION_GALLON_US_PER_DAY</a> = 					<span class="var-type"> 'MILLION_GALLON_US_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MILLION_GALLON_US_PER_HOUR" title="details" class="const-name">MILLION_GALLON_US_PER_HOUR</a> = 					<span class="var-type"> 'MILLION_GALLON_US_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MILLION_GALLON_US_PER_MINUTE" title="details" class="const-name">MILLION_GALLON_US_PER_MINUTE</a> = 					<span class="var-type"> 'MILLION_GALLON_US_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MILLION_GALLON_US_PER_SECOND" title="details" class="const-name">MILLION_GALLON_US_PER_SECOND</a> = 					<span class="var-type"> 'MILLION_GALLON_US_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MINERS_INCH_AZ" title="details" class="const-name">MINERS_INCH_AZ</a> = 					<span class="var-type"> 'MINERS_INCH_AZ'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MINERS_INCH_CA" title="details" class="const-name">MINERS_INCH_CA</a> = 					<span class="var-type"> 'MINERS_INCH_CA'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MINERS_INCH_CO" title="details" class="const-name">MINERS_INCH_CO</a> = 					<span class="var-type"> 'MINERS_INCH_CO'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MINERS_INCH_ID" title="details" class="const-name">MINERS_INCH_ID</a> = 					<span class="var-type"> 'MINERS_INCH_ID'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MINERS_INCH_NM" title="details" class="const-name">MINERS_INCH_NM</a> = 					<span class="var-type"> 'MINERS_INCH_NM'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MINERS_INCH_OR" title="details" class="const-name">MINERS_INCH_OR</a> = 					<span class="var-type"> 'MINERS_INCH_OR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MINERS_INCH_WA" title="details" class="const-name">MINERS_INCH_WA</a> = 					<span class="var-type"> 'MINERS_INCH_WA'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#OUNCE_PER_DAY" title="details" class="const-name">OUNCE_PER_DAY</a> = 					<span class="var-type"> 'OUNCE_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#OUNCE_PER_HOUR" title="details" class="const-name">OUNCE_PER_HOUR</a> = 					<span class="var-type"> 'OUNCE_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#OUNCE_PER_MINUTE" title="details" class="const-name">OUNCE_PER_MINUTE</a> = 					<span class="var-type"> 'OUNCE_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#OUNCE_PER_SECOND" title="details" class="const-name">OUNCE_PER_SECOND</a> = 					<span class="var-type"> 'OUNCE_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#OUNCE_US_PER_DAY" title="details" class="const-name">OUNCE_US_PER_DAY</a> = 					<span class="var-type"> 'OUNCE_US_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#OUNCE_US_PER_HOUR" title="details" class="const-name">OUNCE_US_PER_HOUR</a> = 					<span class="var-type"> 'OUNCE_US_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#OUNCE_US_PER_MINUTE" title="details" class="const-name">OUNCE_US_PER_MINUTE</a> = 					<span class="var-type"> 'OUNCE_US_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#OUNCE_US_PER_SECOND" title="details" class="const-name">OUNCE_US_PER_SECOND</a> = 					<span class="var-type"> 'OUNCE_US_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PETROGRAD_STANDARD_PER_DAY" title="details" class="const-name">PETROGRAD_STANDARD_PER_DAY</a> = 					<span class="var-type"> 'PETROGRAD_STANDARD_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PETROGRAD_STANDARD_PER_HOUR" title="details" class="const-name">PETROGRAD_STANDARD_PER_HOUR</a> = 					<span class="var-type"> 'PETROGRAD_STANDARD_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PETROGRAD_STANDARD_PER_MINUTE" title="details" class="const-name">PETROGRAD_STANDARD_PER_MINUTE</a> = 					<span class="var-type"> 'PETROGRAD_STANDARD_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PETROGRAD_STANDARD_PER_SECOND" title="details" class="const-name">PETROGRAD_STANDARD_PER_SECOND</a> = 					<span class="var-type"> 'PETROGRAD_STANDARD_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#STANDARD" title="details" class="const-name">STANDARD</a> = 					<span class="var-type"> 'CUBIC_METER_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#STERE_PER_DAY" title="details" class="const-name">STERE_PER_DAY</a> = 					<span class="var-type"> 'STERE_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#STERE_PER_HOUR" title="details" class="const-name">STERE_PER_HOUR</a> = 					<span class="var-type"> 'STERE_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#STERE_PER_MINUTE" title="details" class="const-name">STERE_PER_MINUTE</a> = 					<span class="var-type"> 'STERE_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#STERE_PER_SECOND" title="details" class="const-name">STERE_PER_SECOND</a> = 					<span class="var-type"> 'STERE_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#THOUSAND_CUBIC_FOOT_PER_DAY" title="details" class="const-name">THOUSAND_CUBIC_FOOT_PER_DAY</a> = 					<span class="var-type"> 'THOUSAND_CUBIC_FOOT_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#THOUSAND_CUBIC_FOOT_PER_HOUR" title="details" class="const-name">THOUSAND_CUBIC_FOOT_PER_HOUR</a> = 					<span class="var-type"> 'THOUSAND_CUBIC_FOOT_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#THOUSAND_CUBIC_FOOT_PER_MINUTE" title="details" class="const-name">THOUSAND_CUBIC_FOOT_PER_MINUTE</a> = 					<span class="var-type"> 'THOUSAND_CUBIC_FOOT_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#THOUSAND_CUBIC_FOOT_PER_SECOND" title="details" class="const-name">THOUSAND_CUBIC_FOOT_PER_SECOND</a> = 					<span class="var-type"> 'THOUSAND_CUBIC_FOOT_PER_SECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TRILLION_CUBIC_FOOT_PER_DAY" title="details" class="const-name">TRILLION_CUBIC_FOOT_PER_DAY</a> = 					<span class="var-type"> 'TRILLION_CUBIC_FOOT_PER_DAY'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TRILLION_CUBIC_FOOT_PER_HOUR" title="details" class="const-name">TRILLION_CUBIC_FOOT_PER_HOUR</a> = 					<span class="var-type"> 'TRILLION_CUBIC_FOOT_PER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TRILLION_CUBIC_FOOT_PER_MINUTE" title="details" class="const-name">TRILLION_CUBIC_FOOT_PER_MINUTE</a> = 					<span class="var-type"> 'TRILLION_CUBIC_FOOT_PER_MINUTE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TRILLION_CUBIC_FOOT_PER_SECOND" title="details" class="const-name">TRILLION_CUBIC_FOOT_PER_SECOND</a> = 					<span class="var-type"> 'TRILLION_CUBIC_FOOT_PER_'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-methods">Methods</a>
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																								<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$_units" title="details" class="var-name">$_units</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<span class="disabled">Vars</span>
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-methods">Methods</a>
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_units" id="$_units"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_units</span>
+			 = <span class="var-default">array(<br />        'ACRE_FOOT_PER_DAY'           =&gt; array(array('' =&gt; '1233.48184', '/' =&gt; '86400'),'ac ft/day'),'ACRE_FOOT_PER_HOUR'=&gt;array(array(''=&gt;'1233.48184','/'=&gt;'3600'),'ac ft/h'),'ACRE_FOOT_PER_MINUTE'=&gt;array(array(''=&gt;'1233.48184','/'=&gt;'60'),'ac ft/m'),'ACRE_FOOT_PER_SECOND'=&gt;array('1233.48184','ac ft/s'),'ACRE_FOOT_SURVEY_PER_DAY'=&gt;array(array(''=&gt;'1233.48924','/'=&gt;'86400'),'ac ft/day'),'ACRE_FOOT_SURVEY_PER_HOUR'=&gt;array(array(''=&gt;'1233.48924','/'=&gt;'3600'),'ac ft/h'),'ACRE_FOOT_SURVEY_PER_MINUTE'=&gt;array(array(''=&gt;'1233.48924','/'=&gt;'60'),'ac ft/m'),'ACRE_FOOT_SURVEY_PER_SECOND'=&gt;array('1233.48924','ac ft/s'),'ACRE_INCH_PER_DAY'=&gt;array(array(''=&gt;'1233.48184','/'=&gt;'1036800'),'ac in/day'),'ACRE_INCH_PER_HOUR'=&gt;array(array(''=&gt;'1233.48184','/'=&gt;'43200'),'ac in/h'),'ACRE_INCH_PER_MINUTE'=&gt;array(array(''=&gt;'1233.48184','/'=&gt;'720'),'ac in/m'),'ACRE_INCH_PER_SECOND'=&gt;array(array(''=&gt;'1233.48184','/'=&gt;'12'),'ac in/s'),'ACRE_INCH_SURVEY_PER_DAY'=&gt;array(array(''=&gt;'1233.48924','/'=&gt;'1036800'),'ac in/day'),'ACRE_INCH_SURVEY_PER_HOUR'=&gt;array(array(''=&gt;'1233.48924','/'=&gt;'43200'),'ac in/h'),'ACRE_INCH_SURVEY_PER_MINUTE'=&gt;array(array(''=&gt;'1233.48924','/'=&gt;'720'),'ac in /m'),'ACRE_INCH_SURVEY_PER_SECOND'=&gt;array(array(''=&gt;'1233.48924','/'=&gt;'12'),'ac in/s'),'BARREL_PETROLEUM_PER_DAY'=&gt;array(array(''=&gt;'0.1589872956','/'=&gt;'86400'),'bbl/day'),'BARREL_PETROLEUM_PER_HOUR'=&gt;array(array(''=&gt;'0.1589872956','/'=&gt;'3600'),'bbl/h'),'BARREL_PETROLEUM_PER_MINUTE'=&gt;array(array(''=&gt;'0.1589872956','/'=&gt;'60'),'bbl/m'),'BARREL_PETROLEUM_PER_SECOND'=&gt;array('0.1589872956','bbl/s'),'BARREL_PER_DAY'=&gt;array(array(''=&gt;'0.16365924','/'=&gt;'86400'),'bbl/day'),'BARREL_PER_HOUR'=&gt;array(array(''=&gt;'0.16365924','/'=&gt;'3600'),'bbl/h'),'BARREL_PER_MINUTE'=&gt;array(array(''=&gt;'0.16365924','/'=&gt;'60'),'bbl/m'),'BARREL_PER_SECOND'=&gt;array('0.16365924','bbl/s'),'BARREL_US_PER_DAY'=&gt;array(array(''=&gt;'0.1192404717','/'=&gt;'86400'),'bbl/day'),'BARREL_US_PER_HOUR'=&gt;array(array(''=&gt;'0.1192404717','/'=&gt;'3600'),'bbl/h'),'BARREL_US_PER_MINUTE'=&gt;array(array(''=&gt;'0.1192404717','/'=&gt;'60'),'bbl/m'),'BARREL_US_PER_SECOND'=&gt;array('0.1192404717','bbl/s'),'BARREL_WINE_PER_DAY'=&gt;array(array(''=&gt;'0.1173477658','/'=&gt;'86400'),'bbl/day'),'BARREL_WINE_PER_HOUR'=&gt;array(array(''=&gt;'0.1173477658','/'=&gt;'3600'),'bbl/h'),'BARREL_WINE_PER_MINUTE'=&gt;array(array(''=&gt;'0.1173477658','/'=&gt;'60'),'bbl/m'),'BARREL_WINE_PER_SECOND'=&gt;array('0.1173477658','bbl/s'),'BARREL_BEER_PER_DAY'=&gt;array(array(''=&gt;'0.1173477658','/'=&gt;'86400'),'bbl/day'),'BARREL_BEER_PER_HOUR'=&gt;array(array(''=&gt;'0.1173477658','/'=&gt;'3600'),'bbl/h'),'BARREL_BEER_PER_MINUTE'=&gt;array(array(''=&gt;'0.1173477658','/'=&gt;'60'),'bbl/m'),'BARREL_BEER_PER_SECOND'=&gt;array('0.1173477658','bbl/s'),'BILLION_CUBIC_FOOT_PER_DAY'=&gt;array(array(''=&gt;'28316847','/'=&gt;'86400'),'bn ft³/day'),'BILLION_CUBIC_FOOT_PER_HOUR'=&gt;array(array(''=&gt;'28316847','/'=&gt;'3600'),'bn ft³/h'),'BILLION_CUBIC_FOOT_PER_MINUTE'=&gt;array(array(''=&gt;'28316847','/'=&gt;'60'),'bn ft³/m'),'BILLION_CUBIC_FOOT_PER_SECOND'=&gt;array('28316847','bn ft³/s'),'CENTILITER_PER_DAY'=&gt;array(array(''=&gt;'0.00001','/'=&gt;'86400'),'cl/day'),'CENTILITER_PER_HOUR'=&gt;array(array(''=&gt;'0.00001','/'=&gt;'3600'),'cl/h'),'CENTILITER_PER_MINUTE'=&gt;array(array(''=&gt;'0.00001','/'=&gt;'60'),'cl/m'),'CENTILITER_PER_SECOND'=&gt;array('0.00001','cl/s'),'CUBEM_PER_DAY'=&gt;array(array(''=&gt;'4168181830','/'=&gt;'86400'),'cubem/day'),'CUBEM_PER_HOUR'=&gt;array(array(''=&gt;'4168181830','/'=&gt;'3600'),'cubem/h'),'CUBEM_PER_MINUTE'=&gt;array(array(''=&gt;'4168181830','/'=&gt;'60'),'cubem/m'),'CUBEM_PER_SECOND'=&gt;array('4168181830','cubem/s'),'CUBIC_CENTIMETER_PER_DAY'=&gt;array(array(''=&gt;'0.000001','/'=&gt;'86400'),'cm³/day'),'CUBIC_CENTIMETER_PER_HOUR'=&gt;array(array(''=&gt;'0.000001','/'=&gt;'3600'),'cm³/h'),'CUBIC_CENTIMETER_PER_MINUTE'=&gt;array(array(''=&gt;'0.000001','/'=&gt;'60'),'cm³/m'),'CUBIC_CENTIMETER_PER_SECOND'=&gt;array('0.000001','cm³/s'),'CUBIC_DECIMETER_PER_DAY'=&gt;array(array(''=&gt;'0.001','/'=&gt;'86400'),'dm³/day'),'CUBIC_DECIMETER_PER_HOUR'=&gt;array(array(''=&gt;'0.001','/'=&gt;'3600'),'dm³/h'),'CUBIC_DECIMETER_PER_MINUTE'=&gt;array(array(''=&gt;'0.001','/'=&gt;'60'),'dm³/m'),'CUBIC_DECIMETER_PER_SECOND'=&gt;array('0.001','dm³/s'),'CUBIC_DEKAMETER_PER_DAY'=&gt;array(array(''=&gt;'1000','/'=&gt;'86400'),'dam³/day'),'CUBIC_DEKAMETER_PER_HOUR'=&gt;array(array(''=&gt;'1000','/'=&gt;'3600'),'dam³/h'),'CUBIC_DEKAMETER_PER_MINUTE'=&gt;array(array(''=&gt;'1000','/'=&gt;'60'),'dam³/m'),'CUBIC_DEKAMETER_PER_SECOND'=&gt;array('1000','dam³/s'),'CUBIC_FOOT_PER_DAY'=&gt;array(array(''=&gt;'0.028316847','/'=&gt;'86400'),'ft³/day'),'CUBIC_FOOT_PER_HOUR'=&gt;array(array(''=&gt;'0.028316847','/'=&gt;'3600'),'ft³/h'),'CUBIC_FOOT_PER_MINUTE'=&gt;array(array(''=&gt;'0.028316847','/'=&gt;'60'),'ft³/m'),'CUBIC_FOOT_PER_SECOND'=&gt;array('0.028316847','ft³/s'),'CUBIC_INCH_PER_DAY'=&gt;array(array(''=&gt;'0.028316847','/'=&gt;'149299200'),'in³/day'),'CUBIC_INCH_PER_HOUR'=&gt;array(array(''=&gt;'0.028316847','/'=&gt;'6220800'),'in³/h'),'CUBIC_INCH_PER_MINUTE'=&gt;array(array(''=&gt;'0.028316847','/'=&gt;'103680'),'in³/m'),'CUBIC_INCH_PER_SECOND'=&gt;array('0.028316847','in³/s'),'CUBIC_KILOMETER_PER_DAY'=&gt;array(array(''=&gt;'1000000000','/'=&gt;'86400'),'km³/day'),'CUBIC_KILOMETER_PER_HOUR'=&gt;array(array(''=&gt;'1000000000','/'=&gt;'3600'),'km³/h'),'CUBIC_KILOMETER_PER_MINUTE'=&gt;array(array(''=&gt;'1000000000','/'=&gt;'60'),'km³/m'),'CUBIC_KILOMETER_PER_SECOND'=&gt;array('1000000000','km³/s'),'CUBIC_METER_PER_DAY'=&gt;array(array(''=&gt;'1','/'=&gt;'86400'),'m³/day'),'CUBIC_METER_PER_HOUR'=&gt;array(array(''=&gt;'1','/'=&gt;'3600'),'m³/h'),'CUBIC_METER_PER_MINUTE'=&gt;array(array(''=&gt;'1','/'=&gt;'60'),'m³/m'),'CUBIC_METER_PER_SECOND'=&gt;array('1','m³/s'),'CUBIC_MILE_PER_DAY'=&gt;array(array(''=&gt;'4168181830','/'=&gt;'86400'),'mi³/day'),'CUBIC_MILE_PER_HOUR'=&gt;array(array(''=&gt;'4168181830','/'=&gt;'3600'),'mi³/h'),'CUBIC_MILE_PER_MINUTE'=&gt;array(array(''=&gt;'4168181830','/'=&gt;'60'),'mi³/m'),'CUBIC_MILE_PER_SECOND'=&gt;array('4168181830','mi³/s'),'CUBIC_MILLIMETER_PER_DAY'=&gt;array(array(''=&gt;'0.000000001','/'=&gt;'86400'),'mm³/day'),'CUBIC_MILLIMETER_PER_HOUR'=&gt;array(array(''=&gt;'0.000000001','/'=&gt;'3600'),'mm³/h'),'CUBIC_MILLIMETER_PER_MINUTE'=&gt;array(array(''=&gt;'0.000000001','/'=&gt;'60'),'mm³/m'),'CUBIC_MILLIMETER_PER_SECOND'=&gt;array('0.000000001','mm³/s'),'CUBIC_YARD_PER_DAY'=&gt;array(array(''=&gt;'0.764554869','/'=&gt;'86400'),'yd³/day'),'CUBIC_YARD_PER_HOUR'=&gt;array(array(''=&gt;'0.764554869','/'=&gt;'3600'),'yd³/h'),'CUBIC_YARD_PER_MINUTE'=&gt;array(array(''=&gt;'0.764554869','/'=&gt;'60'),'yd³/m'),'CUBIC_YARD_PER_SECOND'=&gt;array('0.764554869','yd³/s'),'CUSEC'=&gt;array('0.028316847','cusec'),'DECILITER_PER_DAY'=&gt;array(array(''=&gt;'0.0001','/'=&gt;'86400'),'dl/day'),'DECILITER_PER_HOUR'=&gt;array(array(''=&gt;'0.0001','/'=&gt;'3600'),'dl/h'),'DECILITER_PER_MINUTE'=&gt;array(array(''=&gt;'0.0001','/'=&gt;'60'),'dl/m'),'DECILITER_PER_SECOND'=&gt;array('0.0001','dl/s'),'DEKALITER_PER_DAY'=&gt;array(array(''=&gt;'0.01','/'=&gt;'86400'),'dal/day'),'DEKALITER_PER_HOUR'=&gt;array(array(''=&gt;'0.01','/'=&gt;'3600'),'dal/h'),'DEKALITER_PER_MINUTE'=&gt;array(array(''=&gt;'0.01','/'=&gt;'60'),'dal/m'),'DEKALITER_PER_SECOND'=&gt;array('0.01','dal/s'),'GALLON_PER_DAY'=&gt;array(array(''=&gt;'0.00454609','/'=&gt;'86400'),'gal/day'),'GALLON_PER_HOUR'=&gt;array(array(''=&gt;'0.00454609','/'=&gt;'3600'),'gal/h'),'GALLON_PER_MINUTE'=&gt;array(array(''=&gt;'0.00454609','/'=&gt;'60'),'gal/m'),'GALLON_PER_SECOND'=&gt;array('0.00454609','gal/s'),'GALLON_US_PER_DAY'=&gt;array(array(''=&gt;'0.0037854118','/'=&gt;'86400'),'gal/day'),'GALLON_US_PER_HOUR'=&gt;array(array(''=&gt;'0.0037854118','/'=&gt;'3600'),'gal/h'),'GALLON_US_PER_MINUTE'=&gt;array(array(''=&gt;'0.0037854118','/'=&gt;'60'),'gal/m'),'GALLON_US_PER_SECOND'=&gt;array('0.0037854118','gal/s'),'HECTARE_METER_PER_DAY'=&gt;array(array(''=&gt;'10000','/'=&gt;'86400'),'ha m/day'),'HECTARE_METER_PER_HOUR'=&gt;array(array(''=&gt;'10000','/'=&gt;'3600'),'ha m/h'),'HECTARE_METER_PER_MINUTE'=&gt;array(array(''=&gt;'10000','/'=&gt;'60'),'ha m/m'),'HECTARE_METER_PER_SECOND'=&gt;array('10000','ha m/s'),'HECTOLITER_PER_DAY'=&gt;array(array(''=&gt;'0.1','/'=&gt;'86400'),'hl/day'),'HECTOLITER_PER_HOUR'=&gt;array(array(''=&gt;'0.1','/'=&gt;'3600'),'hl/h'),'HECTOLITER_PER_MINUTE'=&gt;array(array(''=&gt;'0.1','/'=&gt;'60'),'hl/m'),'HECTOLITER_PER_SECOND'=&gt;array('0.1','hl/s'),'KILOLITER_PER_DAY'=&gt;array(array(''=&gt;'1','/'=&gt;'86400'),'kl/day'),'KILOLITER_PER_HOUR'=&gt;array(array(''=&gt;'1','/'=&gt;'3600'),'kl/h'),'KILOLITER_PER_MINUTE'=&gt;array(array(''=&gt;'1','/'=&gt;'60'),'kl/m'),'KILOLITER_PER_SECOND'=&gt;array('1','kl/s'),'LAMBDA_PER_DAY'=&gt;array(array(''=&gt;'0.000000001','/'=&gt;'86400'),'λ/day'),'LAMBDA_PER_HOUR'=&gt;array(array(''=&gt;'0.000000001','/'=&gt;'3600'),'λ/h'),'LAMBDA_PER_MINUTE'=&gt;array(array(''=&gt;'0.000000001','/'=&gt;'60'),'λ/m'),'LAMBDA_PER_SECOND'=&gt;array('0.000000001','λ/s'),'LITER_PER_DAY'=&gt;array(array(''=&gt;'0.001','/'=&gt;'86400'),'l/day'),'LITER_PER_HOUR'=&gt;array(array(''=&gt;'0.001','/'=&gt;'3600'),'l/h'),'LITER_PER_MINUTE'=&gt;array(array(''=&gt;'0.001','/'=&gt;'60'),'l/m'),'LITER_PER_SECOND'=&gt;array('0.001','l/s'),'MILLILITER_PER_DAY'=&gt;array(array(''=&gt;'0.000001','/'=&gt;'86400'),'ml/day'),'MILLILITER_PER_HOUR'=&gt;array(array(''=&gt;'0.000001','/'=&gt;'3600'),'ml/h'),'MILLILITER_PER_MINUTE'=&gt;array(array(''=&gt;'0.000001','/'=&gt;'60'),'ml/m'),'MILLILITER_PER_SECOND'=&gt;array('0.000001','ml/s'),'MILLION_ACRE_FOOT_PER_DAY'=&gt;array(array(''=&gt;'1233481840','/'=&gt;'86400'),'million ac ft/day'),'MILLION_ACRE_FOOT_PER_HOUR'=&gt;array(array(''=&gt;'1233481840','/'=&gt;'3600'),'million ac ft/h'),'MILLION_ACRE_FOOT_PER_MINUTE'=&gt;array(array(''=&gt;'1233481840','/'=&gt;'60'),'million ac ft/m'),'MILLION_ACRE_FOOT_PER_SECOND'=&gt;array('1233481840','million ac ft/s'),'MILLION_CUBIC_FOOT_PER_DAY'=&gt;array(array(''=&gt;'28316.847','/'=&gt;'86400'),'million ft³/day'),'MILLION_CUBIC_FOOT_PER_HOUR'=&gt;array(array(''=&gt;'28316.847','/'=&gt;'3600'),'million ft³/h'),'MILLION_CUBIC_FOOT_PER_MINUTE'=&gt;array(array(''=&gt;'28316.847','/'=&gt;'60'),'million ft³/m'),'MILLION_CUBIC_FOOT_PER_SECOND'=&gt;array('28316.847','million ft³/s'),'MILLION_GALLON_PER_DAY'=&gt;array(array(''=&gt;'4546.09','/'=&gt;'86400'),'million gal/day'),'MILLION_GALLON_PER_HOUR'=&gt;array(array(''=&gt;'4546.09','/'=&gt;'3600'),'million gal/h'),'MILLION_GALLON_PER_MINUTE'=&gt;array(array(''=&gt;'4546.09','/'=&gt;'60'),'million gal/m'),'MILLION_GALLON_PER_SECOND'=&gt;array('4546.09','million gal/s'),'MILLION_GALLON_US_PER_DAY'=&gt;array(array(''=&gt;'3785.4118','/'=&gt;'86400'),'million gal/day'),'MILLION_GALLON_US_PER_HOUR'=&gt;array(array(''=&gt;'3785.4118','/'=&gt;'3600'),'million gal/h'),'MILLION_GALLON_US_PER_MINUTE'=&gt;array(array(''=&gt;'3785.4118','/'=&gt;'60'),'million gal/m'),'MILLION_GALLON_US_PER_SECOND'=&gt;array('3785.4118','million gal/s'),'MINERS_INCH_AZ'=&gt;array(array(''=&gt;'0.0424752705','/'=&gt;'60'),&quot;miner's inch&quot;),'MINERS_INCH_CA'=&gt;array(array(''=&gt;'0.0424752705','/'=&gt;'60'),&quot;miner's inch&quot;),'MINERS_INCH_OR'=&gt;array(array(''=&gt;'0.0424752705','/'=&gt;'60'),&quot;miner's inch&quot;),'MINERS_INCH_CO'=&gt;array(array(''=&gt;'0.0442450734375','/'=&gt;'60'),&quot;miner's inch&quot;),'MINERS_INCH_ID'=&gt;array(array(''=&gt;'0.0340687062','/'=&gt;'60'),&quot;miner's inch&quot;),'MINERS_INCH_WA'=&gt;array(array(''=&gt;'0.0340687062','/'=&gt;'60'),&quot;miner's inch&quot;),'MINERS_INCH_NM'=&gt;array(array(''=&gt;'0.0340687062','/'=&gt;'60'),&quot;miner's inch&quot;),'OUNCE_PER_DAY'=&gt;array(array(''=&gt;'0.00454609','/'=&gt;'13824000'),'oz/day'),'OUNCE_PER_HOUR'=&gt;array(array(''=&gt;'0.00454609','/'=&gt;'576000'),'oz/h'),'OUNCE_PER_MINUTE'=&gt;array(array(''=&gt;'0.00454609','/'=&gt;'9600'),'oz/m'),'OUNCE_PER_SECOND'=&gt;array(array(''=&gt;'0.00454609','/'=&gt;'160'),'oz/s'),'OUNCE_US_PER_DAY'=&gt;array(array(''=&gt;'0.0037854118','/'=&gt;'11059200'),'oz/day'),'OUNCE_US_PER_HOUR'=&gt;array(array(''=&gt;'0.0037854118','/'=&gt;'460800'),'oz/h'),'OUNCE_US_PER_MINUTE'=&gt;array(array(''=&gt;'0.0037854118','/'=&gt;'7680'),'oz/m'),'OUNCE_US_PER_SECOND'=&gt;array(array(''=&gt;'0.0037854118','/'=&gt;'128'),'oz/s'),'PETROGRAD_STANDARD_PER_DAY'=&gt;array(array(''=&gt;'4.672279755','/'=&gt;'86400'),'petrograd standard/day'),'PETROGRAD_STANDARD_PER_HOUR'=&gt;array(array(''=&gt;'4.672279755','/'=&gt;'3600'),'petrograd standard/h'),'PETROGRAD_STANDARD_PER_MINUTE'=&gt;array(array(''=&gt;'4.672279755','/'=&gt;'60'),'petrograd standard/m'),'PETROGRAD_STANDARD_PER_SECOND'=&gt;array('4.672279755','petrograd standard/s'),'STERE_PER_DAY'=&gt;array(array(''=&gt;'1','/'=&gt;'86400'),'st/day'),'STERE_PER_HOUR'=&gt;array(array(''=&gt;'1','/'=&gt;'3600'),'st/h'),'STERE_PER_MINUTE'=&gt;array(array(''=&gt;'1','/'=&gt;'60'),'st/m'),'STERE_PER_SECOND'=&gt;array('1','st/s'),'THOUSAND_CUBIC_FOOT_PER_DAY'=&gt;array(array(''=&gt;'28.316847','/'=&gt;'86400'),'thousand ft³/day'),'THOUSAND_CUBIC_FOOT_PER_HOUR'=&gt;array(array(''=&gt;'28.316847','/'=&gt;'3600'),'thousand ft³/h'),'THOUSAND_CUBIC_FOOT_PER_MINUTE'=&gt;array(array(''=&gt;'28.316847','/'=&gt;'60'),'thousand ft³/m'),'THOUSAND_CUBIC_FOOT_PER_SECOND'=&gt;array('28.316847','thousand ft³/s'),'TRILLION_CUBIC_FOOT_PER_DAY'=&gt;array(array(''=&gt;'28316847000','/'=&gt;'86400'),'trillion ft³/day'),'TRILLION_CUBIC_FOOT_PER_HOUR'=&gt;array(array(''=&gt;'28316847000','/'=&gt;'3600'),'trillion ft³/h'),'TRILLION_CUBIC_FOOT_PER_MINUTE'=&gt;array(array(''=&gt;'28316847000','/'=&gt;'60'),'trillion ft³/m'),'TRILLION_CUBIC_FOOT_PER_'=&gt;array('28316847000','trillion ft³/s'),'STANDARD'=&gt;'CUBIC_METER_PER_SECOND')</span>			(line <span class="line-number">224</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Calculations for all flow volume units</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#var$_units">Zend_Measure_Abstract::$_units</a></dt>
+						<dd>Unit types for this measurement</dd>
+					</dl>
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html">Zend_Measure_Abstract</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#var$_locale">Zend_Measure_Abstract::$_locale</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#var$_type">Zend_Measure_Abstract::$_type</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#var$_value">Zend_Measure_Abstract::$_value</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<span class="disabled">Methods</span>
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html">Zend_Measure_Abstract</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#method__construct">Zend_Measure_Abstract::__construct()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodadd">Zend_Measure_Abstract::add()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodcompare">Zend_Measure_Abstract::compare()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodconvertTo">Zend_Measure_Abstract::convertTo()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodequals">Zend_Measure_Abstract::equals()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodgetConversionList">Zend_Measure_Abstract::getConversionList()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodgetType">Zend_Measure_Abstract::getType()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodgetValue">Zend_Measure_Abstract::getValue()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodsetType">Zend_Measure_Abstract::setType()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodsetValue">Zend_Measure_Abstract::setValue()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodsub">Zend_Measure_Abstract::sub()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodtoString">Zend_Measure_Abstract::toString()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#method__toString">Zend_Measure_Abstract::__toString()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<span class="disabled">Constants</span>
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-methods">Methods</a>
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constACRE_FOOT_PER_DAY" id="ACRE_FOOT_PER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ACRE_FOOT_PER_DAY</span>
+			 = <span class="const-default"> 'ACRE_FOOT_PER_DAY'</span>
+			(line <span class="line-number">42</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constACRE_FOOT_PER_HOUR" id="ACRE_FOOT_PER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ACRE_FOOT_PER_HOUR</span>
+			 = <span class="const-default"> 'ACRE_FOOT_PER_HOUR'</span>
+			(line <span class="line-number">43</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constACRE_FOOT_PER_MINUTE" id="ACRE_FOOT_PER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ACRE_FOOT_PER_MINUTE</span>
+			 = <span class="const-default"> 'ACRE_FOOT_PER_MINUTE'</span>
+			(line <span class="line-number">44</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constACRE_FOOT_PER_SECOND" id="ACRE_FOOT_PER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ACRE_FOOT_PER_SECOND</span>
+			 = <span class="const-default"> 'ACRE_FOOT_PER_SECOND'</span>
+			(line <span class="line-number">45</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constACRE_FOOT_SURVEY_PER_DAY" id="ACRE_FOOT_SURVEY_PER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ACRE_FOOT_SURVEY_PER_DAY</span>
+			 = <span class="const-default"> 'ACRE_FOOT_SURVEY_PER_DAY'</span>
+			(line <span class="line-number">46</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constACRE_FOOT_SURVEY_PER_HOUR" id="ACRE_FOOT_SURVEY_PER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ACRE_FOOT_SURVEY_PER_HOUR</span>
+			 = <span class="const-default"> 'ACRE_FOOT_SURVEY_PER_HOUR'</span>
+			(line <span class="line-number">47</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constACRE_FOOT_SURVEY_PER_MINUTE" id="ACRE_FOOT_SURVEY_PER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ACRE_FOOT_SURVEY_PER_MINUTE</span>
+			 = <span class="const-default"> 'ACRE_FOOT_SURVEY_PER_MINUTE'</span>
+			(line <span class="line-number">48</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constACRE_FOOT_SURVEY_PER_SECOND" id="ACRE_FOOT_SURVEY_PER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ACRE_FOOT_SURVEY_PER_SECOND</span>
+			 = <span class="const-default"> 'ACRE_FOOT_SURVEY_PER_SECOND'</span>
+			(line <span class="line-number">49</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constACRE_INCH_PER_DAY" id="ACRE_INCH_PER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ACRE_INCH_PER_DAY</span>
+			 = <span class="const-default"> 'ACRE_INCH_PER_DAY'</span>
+			(line <span class="line-number">50</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constACRE_INCH_PER_HOUR" id="ACRE_INCH_PER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ACRE_INCH_PER_HOUR</span>
+			 = <span class="const-default"> 'ACRE_INCH_PER_HOUR'</span>
+			(line <span class="line-number">51</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constACRE_INCH_PER_MINUTE" id="ACRE_INCH_PER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ACRE_INCH_PER_MINUTE</span>
+			 = <span class="const-default"> 'ACRE_INCH_PER_MINUTE'</span>
+			(line <span class="line-number">52</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constACRE_INCH_PER_SECOND" id="ACRE_INCH_PER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ACRE_INCH_PER_SECOND</span>
+			 = <span class="const-default"> 'ACRE_INCH_PER_SECOND'</span>
+			(line <span class="line-number">53</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constACRE_INCH_SURVEY_PER_DAY" id="ACRE_INCH_SURVEY_PER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ACRE_INCH_SURVEY_PER_DAY</span>
+			 = <span class="const-default"> 'ACRE_INCH_SURVEY_PER_DAY'</span>
+			(line <span class="line-number">54</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constACRE_INCH_SURVEY_PER_HOUR" id="ACRE_INCH_SURVEY_PER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ACRE_INCH_SURVEY_PER_HOUR</span>
+			 = <span class="const-default"> 'ACRE_INCH_SURVEY_PER_HOUR'</span>
+			(line <span class="line-number">55</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constACRE_INCH_SURVEY_PER_MINUTE" id="ACRE_INCH_SURVEY_PER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ACRE_INCH_SURVEY_PER_MINUTE</span>
+			 = <span class="const-default"> 'ACRE_INCH_SURVEY_PER_MINUTE'</span>
+			(line <span class="line-number">56</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constACRE_INCH_SURVEY_PER_SECOND" id="ACRE_INCH_SURVEY_PER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ACRE_INCH_SURVEY_PER_SECOND</span>
+			 = <span class="const-default"> 'ACRE_INCH_SURVEY_PER_SECOND'</span>
+			(line <span class="line-number">57</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL_BEER_PER_DAY" id="BARREL_BEER_PER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL_BEER_PER_DAY</span>
+			 = <span class="const-default"> 'BARREL_BEER_PER_DAY'</span>
+			(line <span class="line-number">74</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL_BEER_PER_HOUR" id="BARREL_BEER_PER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL_BEER_PER_HOUR</span>
+			 = <span class="const-default"> 'BARREL_BEER_PER_HOUR'</span>
+			(line <span class="line-number">75</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL_BEER_PER_MINUTE" id="BARREL_BEER_PER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL_BEER_PER_MINUTE</span>
+			 = <span class="const-default"> 'BARREL_BEER_PER_MINUTE'</span>
+			(line <span class="line-number">76</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL_BEER_PER_SECOND" id="BARREL_BEER_PER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL_BEER_PER_SECOND</span>
+			 = <span class="const-default"> 'BARREL_BEER_PER_SECOND'</span>
+			(line <span class="line-number">77</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL_PER_DAY" id="BARREL_PER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL_PER_DAY</span>
+			 = <span class="const-default"> 'BARREL_PER_DAY'</span>
+			(line <span class="line-number">62</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL_PER_HOUR" id="BARREL_PER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL_PER_HOUR</span>
+			 = <span class="const-default"> 'BARREL_PER_HOUR'</span>
+			(line <span class="line-number">63</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL_PER_MINUTE" id="BARREL_PER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL_PER_MINUTE</span>
+			 = <span class="const-default"> 'BARREL_PER_MINUTE'</span>
+			(line <span class="line-number">64</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL_PER_SECOND" id="BARREL_PER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL_PER_SECOND</span>
+			 = <span class="const-default"> 'BARREL_PER_SECOND'</span>
+			(line <span class="line-number">65</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL_PETROLEUM_PER_DAY" id="BARREL_PETROLEUM_PER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL_PETROLEUM_PER_DAY</span>
+			 = <span class="const-default"> 'BARREL_PETROLEUM_PER_DAY'</span>
+			(line <span class="line-number">58</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL_PETROLEUM_PER_HOUR" id="BARREL_PETROLEUM_PER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL_PETROLEUM_PER_HOUR</span>
+			 = <span class="const-default"> 'BARREL_PETROLEUM_PER_HOUR'</span>
+			(line <span class="line-number">59</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL_PETROLEUM_PER_MINUTE" id="BARREL_PETROLEUM_PER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL_PETROLEUM_PER_MINUTE</span>
+			 = <span class="const-default"> 'BARREL_PETROLEUM_PER_MINUTE'</span>
+			(line <span class="line-number">60</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL_PETROLEUM_PER_SECOND" id="BARREL_PETROLEUM_PER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL_PETROLEUM_PER_SECOND</span>
+			 = <span class="const-default"> 'BARREL_PETROLEUM_PER_SECOND'</span>
+			(line <span class="line-number">61</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL_US_PER_DAY" id="BARREL_US_PER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL_US_PER_DAY</span>
+			 = <span class="const-default"> 'BARREL_US_PER_DAY'</span>
+			(line <span class="line-number">66</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL_US_PER_HOUR" id="BARREL_US_PER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL_US_PER_HOUR</span>
+			 = <span class="const-default"> 'BARREL_US_PER_HOUR'</span>
+			(line <span class="line-number">67</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL_US_PER_MINUTE" id="BARREL_US_PER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL_US_PER_MINUTE</span>
+			 = <span class="const-default"> 'BARREL_US_PER_MINUTE'</span>
+			(line <span class="line-number">68</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL_US_PER_SECOND" id="BARREL_US_PER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL_US_PER_SECOND</span>
+			 = <span class="const-default"> 'BARREL_US_PER_SECOND'</span>
+			(line <span class="line-number">69</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL_WINE_PER_DAY" id="BARREL_WINE_PER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL_WINE_PER_DAY</span>
+			 = <span class="const-default"> 'BARREL_WINE_PER_DAY'</span>
+			(line <span class="line-number">70</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL_WINE_PER_HOUR" id="BARREL_WINE_PER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL_WINE_PER_HOUR</span>
+			 = <span class="const-default"> 'BARREL_WINE_PER_HOUR'</span>
+			(line <span class="line-number">71</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL_WINE_PER_MINUTE" id="BARREL_WINE_PER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL_WINE_PER_MINUTE</span>
+			 = <span class="const-default"> 'BARREL_WINE_PER_MINUTE'</span>
+			(line <span class="line-number">72</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBARREL_WINE_PER_SECOND" id="BARREL_WINE_PER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BARREL_WINE_PER_SECOND</span>
+			 = <span class="const-default"> 'BARREL_WINE_PER_SECOND'</span>
+			(line <span class="line-number">73</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBILLION_CUBIC_FOOT_PER_DAY" id="BILLION_CUBIC_FOOT_PER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BILLION_CUBIC_FOOT_PER_DAY</span>
+			 = <span class="const-default"> 'BILLION_CUBIC_FOOT_PER_DAY'</span>
+			(line <span class="line-number">78</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBILLION_CUBIC_FOOT_PER_HOUR" id="BILLION_CUBIC_FOOT_PER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BILLION_CUBIC_FOOT_PER_HOUR</span>
+			 = <span class="const-default"> 'BILLION_CUBIC_FOOT_PER_HOUR'</span>
+			(line <span class="line-number">79</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBILLION_CUBIC_FOOT_PER_MINUTE" id="BILLION_CUBIC_FOOT_PER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BILLION_CUBIC_FOOT_PER_MINUTE</span>
+			 = <span class="const-default"> 'BILLION_CUBIC_FOOT_PER_MINUTE'</span>
+			(line <span class="line-number">80</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBILLION_CUBIC_FOOT_PER_SECOND" id="BILLION_CUBIC_FOOT_PER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BILLION_CUBIC_FOOT_PER_SECOND</span>
+			 = <span class="const-default"> 'BILLION_CUBIC_FOOT_PER_SECOND'</span>
+			(line <span class="line-number">81</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCENTILITER_PER_DAY" id="CENTILITER_PER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CENTILITER_PER_DAY</span>
+			 = <span class="const-default"> 'CENTILITER_PER_DAY'</span>
+			(line <span class="line-number">82</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCENTILITER_PER_HOUR" id="CENTILITER_PER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CENTILITER_PER_HOUR</span>
+			 = <span class="const-default"> 'CENTILITER_PER_HOUR'</span>
+			(line <span class="line-number">83</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCENTILITER_PER_MINUTE" id="CENTILITER_PER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CENTILITER_PER_MINUTE</span>
+			 = <span class="const-default"> 'CENTILITER_PER_MINUTE'</span>
+			(line <span class="line-number">84</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCENTILITER_PER_SECOND" id="CENTILITER_PER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CENTILITER_PER_SECOND</span>
+			 = <span class="const-default"> 'CENTILITER_PER_SECOND'</span>
+			(line <span class="line-number">85</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBEM_PER_DAY" id="CUBEM_PER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBEM_PER_DAY</span>
+			 = <span class="const-default"> 'CUBEM_PER_DAY'</span>
+			(line <span class="line-number">86</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBEM_PER_HOUR" id="CUBEM_PER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBEM_PER_HOUR</span>
+			 = <span class="const-default"> 'CUBEM_PER_HOUR'</span>
+			(line <span class="line-number">87</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBEM_PER_MINUTE" id="CUBEM_PER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBEM_PER_MINUTE</span>
+			 = <span class="const-default"> 'CUBEM_PER_MINUTE'</span>
+			(line <span class="line-number">88</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBEM_PER_SECOND" id="CUBEM_PER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBEM_PER_SECOND</span>
+			 = <span class="const-default"> 'CUBEM_PER_SECOND'</span>
+			(line <span class="line-number">89</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_CENTIMETER_PER_DAY" id="CUBIC_CENTIMETER_PER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_CENTIMETER_PER_DAY</span>
+			 = <span class="const-default"> 'CUBIC_CENTIMETER_PER_DAY'</span>
+			(line <span class="line-number">90</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_CENTIMETER_PER_HOUR" id="CUBIC_CENTIMETER_PER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_CENTIMETER_PER_HOUR</span>
+			 = <span class="const-default"> 'CUBIC_CENTIMETER_PER_HOUR'</span>
+			(line <span class="line-number">91</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_CENTIMETER_PER_MINUTE" id="CUBIC_CENTIMETER_PER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_CENTIMETER_PER_MINUTE</span>
+			 = <span class="const-default"> 'CUBIC_CENTIMETER_PER_MINUTE'</span>
+			(line <span class="line-number">92</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_CENTIMETER_PER_SECOND" id="CUBIC_CENTIMETER_PER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_CENTIMETER_PER_SECOND</span>
+			 = <span class="const-default"> 'CUBIC_CENTIMETER_PER_SECOND'</span>
+			(line <span class="line-number">93</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_DECIMETER_PER_DAY" id="CUBIC_DECIMETER_PER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_DECIMETER_PER_DAY</span>
+			 = <span class="const-default"> 'CUBIC_DECIMETER_PER_DAY'</span>
+			(line <span class="line-number">94</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_DECIMETER_PER_HOUR" id="CUBIC_DECIMETER_PER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_DECIMETER_PER_HOUR</span>
+			 = <span class="const-default"> 'CUBIC_DECIMETER_PER_HOUR'</span>
+			(line <span class="line-number">95</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_DECIMETER_PER_MINUTE" id="CUBIC_DECIMETER_PER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_DECIMETER_PER_MINUTE</span>
+			 = <span class="const-default"> 'CUBIC_DECIMETER_PER_MINUTE'</span>
+			(line <span class="line-number">96</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_DECIMETER_PER_SECOND" id="CUBIC_DECIMETER_PER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_DECIMETER_PER_SECOND</span>
+			 = <span class="const-default"> 'CUBIC_DECIMETER_PER_SECOND'</span>
+			(line <span class="line-number">97</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_DEKAMETER_PER_DAY" id="CUBIC_DEKAMETER_PER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_DEKAMETER_PER_DAY</span>
+			 = <span class="const-default"> 'CUBIC_DEKAMETER_PER_DAY'</span>
+			(line <span class="line-number">98</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_DEKAMETER_PER_HOUR" id="CUBIC_DEKAMETER_PER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_DEKAMETER_PER_HOUR</span>
+			 = <span class="const-default"> 'CUBIC_DEKAMETER_PER_HOUR'</span>
+			(line <span class="line-number">99</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_DEKAMETER_PER_MINUTE" id="CUBIC_DEKAMETER_PER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_DEKAMETER_PER_MINUTE</span>
+			 = <span class="const-default"> 'CUBIC_DEKAMETER_PER_MINUTE'</span>
+			(line <span class="line-number">100</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_DEKAMETER_PER_SECOND" id="CUBIC_DEKAMETER_PER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_DEKAMETER_PER_SECOND</span>
+			 = <span class="const-default"> 'CUBIC_DEKAMETER_PER_SECOND'</span>
+			(line <span class="line-number">101</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_FOOT_PER_DAY" id="CUBIC_FOOT_PER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_FOOT_PER_DAY</span>
+			 = <span class="const-default"> 'CUBIC_FOOT_PER_DAY'</span>
+			(line <span class="line-number">102</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_FOOT_PER_HOUR" id="CUBIC_FOOT_PER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_FOOT_PER_HOUR</span>
+			 = <span class="const-default"> 'CUBIC_FOOT_PER_HOUR'</span>
+			(line <span class="line-number">103</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_FOOT_PER_MINUTE" id="CUBIC_FOOT_PER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_FOOT_PER_MINUTE</span>
+			 = <span class="const-default"> 'CUBIC_FOOT_PER_MINUTE'</span>
+			(line <span class="line-number">104</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_FOOT_PER_SECOND" id="CUBIC_FOOT_PER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_FOOT_PER_SECOND</span>
+			 = <span class="const-default"> 'CUBIC_FOOT_PER_SECOND'</span>
+			(line <span class="line-number">105</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_INCH_PER_DAY" id="CUBIC_INCH_PER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_INCH_PER_DAY</span>
+			 = <span class="const-default"> 'CUBIC_INCH_PER_DAY'</span>
+			(line <span class="line-number">106</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_INCH_PER_HOUR" id="CUBIC_INCH_PER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_INCH_PER_HOUR</span>
+			 = <span class="const-default"> 'CUBIC_INCH_PER_HOUR'</span>
+			(line <span class="line-number">107</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_INCH_PER_MINUTE" id="CUBIC_INCH_PER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_INCH_PER_MINUTE</span>
+			 = <span class="const-default"> 'CUBIC_INCH_PER_MINUTE'</span>
+			(line <span class="line-number">108</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_INCH_PER_SECOND" id="CUBIC_INCH_PER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_INCH_PER_SECOND</span>
+			 = <span class="const-default"> 'CUBIC_INCH_PER_SECOND'</span>
+			(line <span class="line-number">109</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_KILOMETER_PER_DAY" id="CUBIC_KILOMETER_PER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_KILOMETER_PER_DAY</span>
+			 = <span class="const-default"> 'CUBIC_KILOMETER_PER_DAY'</span>
+			(line <span class="line-number">110</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_KILOMETER_PER_HOUR" id="CUBIC_KILOMETER_PER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_KILOMETER_PER_HOUR</span>
+			 = <span class="const-default"> 'CUBIC_KILOMETER_PER_HOUR'</span>
+			(line <span class="line-number">111</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_KILOMETER_PER_MINUTE" id="CUBIC_KILOMETER_PER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_KILOMETER_PER_MINUTE</span>
+			 = <span class="const-default"> 'CUBIC_KILOMETER_PER_MINUTE'</span>
+			(line <span class="line-number">112</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_KILOMETER_PER_SECOND" id="CUBIC_KILOMETER_PER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_KILOMETER_PER_SECOND</span>
+			 = <span class="const-default"> 'CUBIC_KILOMETER_PER_SECOND'</span>
+			(line <span class="line-number">113</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_METER_PER_DAY" id="CUBIC_METER_PER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_METER_PER_DAY</span>
+			 = <span class="const-default"> 'CUBIC_METER_PER_DAY'</span>
+			(line <span class="line-number">114</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_METER_PER_HOUR" id="CUBIC_METER_PER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_METER_PER_HOUR</span>
+			 = <span class="const-default"> 'CUBIC_METER_PER_HOUR'</span>
+			(line <span class="line-number">115</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_METER_PER_MINUTE" id="CUBIC_METER_PER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_METER_PER_MINUTE</span>
+			 = <span class="const-default"> 'CUBIC_METER_PER_MINUTE'</span>
+			(line <span class="line-number">116</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_METER_PER_SECOND" id="CUBIC_METER_PER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_METER_PER_SECOND</span>
+			 = <span class="const-default"> 'CUBIC_METER_PER_SECOND'</span>
+			(line <span class="line-number">117</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_MILE_PER_DAY" id="CUBIC_MILE_PER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_MILE_PER_DAY</span>
+			 = <span class="const-default"> 'CUBIC_MILE_PER_DAY'</span>
+			(line <span class="line-number">118</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_MILE_PER_HOUR" id="CUBIC_MILE_PER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_MILE_PER_HOUR</span>
+			 = <span class="const-default"> 'CUBIC_MILE_PER_HOUR'</span>
+			(line <span class="line-number">119</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_MILE_PER_MINUTE" id="CUBIC_MILE_PER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_MILE_PER_MINUTE</span>
+			 = <span class="const-default"> 'CUBIC_MILE_PER_MINUTE'</span>
+			(line <span class="line-number">120</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_MILE_PER_SECOND" id="CUBIC_MILE_PER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_MILE_PER_SECOND</span>
+			 = <span class="const-default"> 'CUBIC_MILE_PER_SECOND'</span>
+			(line <span class="line-number">121</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_MILLIMETER_PER_DAY" id="CUBIC_MILLIMETER_PER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_MILLIMETER_PER_DAY</span>
+			 = <span class="const-default"> 'CUBIC_MILLIMETER_PER_DAY'</span>
+			(line <span class="line-number">122</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_MILLIMETER_PER_HOUR" id="CUBIC_MILLIMETER_PER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_MILLIMETER_PER_HOUR</span>
+			 = <span class="const-default"> 'CUBIC_MILLIMETER_PER_HOUR'</span>
+			(line <span class="line-number">123</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_MILLIMETER_PER_MINUTE" id="CUBIC_MILLIMETER_PER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_MILLIMETER_PER_MINUTE</span>
+			 = <span class="const-default"> 'CUBIC_MILLIMETER_PER_MINUTE'</span>
+			(line <span class="line-number">124</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_MILLIMETER_PER_SECOND" id="CUBIC_MILLIMETER_PER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_MILLIMETER_PER_SECOND</span>
+			 = <span class="const-default"> 'CUBIC_MILLIMETER_PER_SECOND'</span>
+			(line <span class="line-number">125</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_YARD_PER_DAY" id="CUBIC_YARD_PER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_YARD_PER_DAY</span>
+			 = <span class="const-default"> 'CUBIC_YARD_PER_DAY'</span>
+			(line <span class="line-number">126</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_YARD_PER_HOUR" id="CUBIC_YARD_PER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_YARD_PER_HOUR</span>
+			 = <span class="const-default"> 'CUBIC_YARD_PER_HOUR'</span>
+			(line <span class="line-number">127</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_YARD_PER_MINUTE" id="CUBIC_YARD_PER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_YARD_PER_MINUTE</span>
+			 = <span class="const-default"> 'CUBIC_YARD_PER_MINUTE'</span>
+			(line <span class="line-number">128</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUBIC_YARD_PER_SECOND" id="CUBIC_YARD_PER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUBIC_YARD_PER_SECOND</span>
+			 = <span class="const-default"> 'CUBIC_YARD_PER_SECOND'</span>
+			(line <span class="line-number">129</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCUSEC" id="CUSEC"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CUSEC</span>
+			 = <span class="const-default"> 'CUSEC'</span>
+			(line <span class="line-number">130</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constDECILITER_PER_DAY" id="DECILITER_PER_DAY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DECILITER_PER_DAY</span>
+			 = <span class="const-default"> 'DECILITER_PER_DAY'</span>
+			(line <span class="line-number">131</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constDECILITER_PER_HOUR" id="DECILITER_PER_HOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DECILITER_PER_HOUR</span>
+			 = <span class="const-default"> 'DECILITER_PER_HOUR'</span>
+			(line <span class="line-number">132</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constDECILITER_PER_MINUTE" id="DECILITER_PER_MINUTE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DECILITER_PER_MINUTE</span>
+			 = <span class="const-default"> 'DECILITER_PER_MINUTE'</span>
+			(line <span class="line-number">133</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constDECILITER_PER_SECOND" id="DECILITER_PER_SECOND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DECILITER_PER_SECOND</span>
+			 = <span class="const-default"> 'DECILITER_PER_SECOND'</span>
+			(line <span class="line-number">134</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constDEKALITER_PER_DAY" id="DEKALITER_PER_DAY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DEKALITER_PER_DAY</span>
+			 = <span class="const-default"> 'DEKALITER_PER_DAY'</span>
+			(line <span class="line-number">135</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constDEKALITER_PER_HOUR" id="DEKALITER_PER_HOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DEKALITER_PER_HOUR</span>
+			 = <span class="const-default"> 'DEKALITER_PER_HOUR'</span>
+			(line <span class="line-number">136</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constDEKALITER_PER_MINUTE" id="DEKALITER_PER_MINUTE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DEKALITER_PER_MINUTE</span>
+			 = <span class="const-default"> 'DEKALITER_PER_MINUTE'</span>
+			(line <span class="line-number">137</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constDEKALITER_PER_SECOND" id="DEKALITER_PER_SECOND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DEKALITER_PER_SECOND</span>
+			 = <span class="const-default"> 'DEKALITER_PER_SECOND'</span>
+			(line <span class="line-number">138</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_PER_DAY" id="GALLON_PER_DAY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_PER_DAY</span>
+			 = <span class="const-default"> 'GALLON_PER_DAY'</span>
+			(line <span class="line-number">139</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_PER_HOUR" id="GALLON_PER_HOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_PER_HOUR</span>
+			 = <span class="const-default"> 'GALLON_PER_HOUR'</span>
+			(line <span class="line-number">140</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_PER_MINUTE" id="GALLON_PER_MINUTE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_PER_MINUTE</span>
+			 = <span class="const-default"> 'GALLON_PER_MINUTE'</span>
+			(line <span class="line-number">141</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_PER_SECOND" id="GALLON_PER_SECOND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_PER_SECOND</span>
+			 = <span class="const-default"> 'GALLON_PER_SECOND'</span>
+			(line <span class="line-number">142</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_US_PER_DAY" id="GALLON_US_PER_DAY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_US_PER_DAY</span>
+			 = <span class="const-default"> 'GALLON_US_PER_DAY'</span>
+			(line <span class="line-number">143</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_US_PER_HOUR" id="GALLON_US_PER_HOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_US_PER_HOUR</span>
+			 = <span class="const-default"> 'GALLON_US_PER_HOUR'</span>
+			(line <span class="line-number">144</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_US_PER_MINUTE" id="GALLON_US_PER_MINUTE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_US_PER_MINUTE</span>
+			 = <span class="const-default"> 'GALLON_US_PER_MINUTE'</span>
+			(line <span class="line-number">145</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_US_PER_SECOND" id="GALLON_US_PER_SECOND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_US_PER_SECOND</span>
+			 = <span class="const-default"> 'GALLON_US_PER_SECOND'</span>
+			(line <span class="line-number">146</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constHECTARE_METER_PER_DAY" id="HECTARE_METER_PER_DAY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HECTARE_METER_PER_DAY</span>
+			 = <span class="const-default"> 'HECTARE_METER_PER_DAY'</span>
+			(line <span class="line-number">147</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constHECTARE_METER_PER_HOUR" id="HECTARE_METER_PER_HOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HECTARE_METER_PER_HOUR</span>
+			 = <span class="const-default"> 'HECTARE_METER_PER_HOUR'</span>
+			(line <span class="line-number">148</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constHECTARE_METER_PER_MINUTE" id="HECTARE_METER_PER_MINUTE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HECTARE_METER_PER_MINUTE</span>
+			 = <span class="const-default"> 'HECTARE_METER_PER_MINUTE'</span>
+			(line <span class="line-number">149</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constHECTARE_METER_PER_SECOND" id="HECTARE_METER_PER_SECOND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HECTARE_METER_PER_SECOND</span>
+			 = <span class="const-default"> 'HECTARE_METER_PER_SECOND'</span>
+			(line <span class="line-number">150</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constHECTOLITER_PER_DAY" id="HECTOLITER_PER_DAY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HECTOLITER_PER_DAY</span>
+			 = <span class="const-default"> 'HECTOLITER_PER_DAY'</span>
+			(line <span class="line-number">151</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constHECTOLITER_PER_HOUR" id="HECTOLITER_PER_HOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HECTOLITER_PER_HOUR</span>
+			 = <span class="const-default"> 'HECTOLITER_PER_HOUR'</span>
+			(line <span class="line-number">152</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constHECTOLITER_PER_MINUTE" id="HECTOLITER_PER_MINUTE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HECTOLITER_PER_MINUTE</span>
+			 = <span class="const-default"> 'HECTOLITER_PER_MINUTE'</span>
+			(line <span class="line-number">153</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constHECTOLITER_PER_SECOND" id="HECTOLITER_PER_SECOND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HECTOLITER_PER_SECOND</span>
+			 = <span class="const-default"> 'HECTOLITER_PER_SECOND'</span>
+			(line <span class="line-number">154</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constKILOLITER_PER_DAY" id="KILOLITER_PER_DAY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">KILOLITER_PER_DAY</span>
+			 = <span class="const-default"> 'KILOLITER_PER_DAY'</span>
+			(line <span class="line-number">155</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constKILOLITER_PER_HOUR" id="KILOLITER_PER_HOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">KILOLITER_PER_HOUR</span>
+			 = <span class="const-default"> 'KILOLITER_PER_HOUR'</span>
+			(line <span class="line-number">156</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constKILOLITER_PER_MINUTE" id="KILOLITER_PER_MINUTE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">KILOLITER_PER_MINUTE</span>
+			 = <span class="const-default"> 'KILOLITER_PER_MINUTE'</span>
+			(line <span class="line-number">157</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constKILOLITER_PER_SECOND" id="KILOLITER_PER_SECOND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">KILOLITER_PER_SECOND</span>
+			 = <span class="const-default"> 'KILOLITER_PER_SECOND'</span>
+			(line <span class="line-number">158</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constLAMBDA_PER_DAY" id="LAMBDA_PER_DAY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">LAMBDA_PER_DAY</span>
+			 = <span class="const-default"> 'LAMBDA_PER_DAY'</span>
+			(line <span class="line-number">159</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constLAMBDA_PER_HOUR" id="LAMBDA_PER_HOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">LAMBDA_PER_HOUR</span>
+			 = <span class="const-default"> 'LAMBDA_PER_HOUR'</span>
+			(line <span class="line-number">160</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constLAMBDA_PER_MINUTE" id="LAMBDA_PER_MINUTE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">LAMBDA_PER_MINUTE</span>
+			 = <span class="const-default"> 'LAMBDA_PER_MINUTE'</span>
+			(line <span class="line-number">161</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constLAMBDA_PER_SECOND" id="LAMBDA_PER_SECOND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">LAMBDA_PER_SECOND</span>
+			 = <span class="const-default"> 'LAMBDA_PER_SECOND'</span>
+			(line <span class="line-number">162</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constLITER_PER_DAY" id="LITER_PER_DAY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">LITER_PER_DAY</span>
+			 = <span class="const-default"> 'LITER_PER_DAY'</span>
+			(line <span class="line-number">163</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constLITER_PER_HOUR" id="LITER_PER_HOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">LITER_PER_HOUR</span>
+			 = <span class="const-default"> 'LITER_PER_HOUR'</span>
+			(line <span class="line-number">164</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constLITER_PER_MINUTE" id="LITER_PER_MINUTE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">LITER_PER_MINUTE</span>
+			 = <span class="const-default"> 'LITER_PER_MINUTE'</span>
+			(line <span class="line-number">165</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constLITER_PER_SECOND" id="LITER_PER_SECOND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">LITER_PER_SECOND</span>
+			 = <span class="const-default"> 'LITER_PER_SECOND'</span>
+			(line <span class="line-number">166</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMILLILITER_PER_DAY" id="MILLILITER_PER_DAY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MILLILITER_PER_DAY</span>
+			 = <span class="const-default"> 'MILLILITER_PER_DAY'</span>
+			(line <span class="line-number">167</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMILLILITER_PER_HOUR" id="MILLILITER_PER_HOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MILLILITER_PER_HOUR</span>
+			 = <span class="const-default"> 'MILLILITER_PER_HOUR'</span>
+			(line <span class="line-number">168</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMILLILITER_PER_MINUTE" id="MILLILITER_PER_MINUTE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MILLILITER_PER_MINUTE</span>
+			 = <span class="const-default"> 'MILLILITER_PER_MINUTE'</span>
+			(line <span class="line-number">169</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMILLILITER_PER_SECOND" id="MILLILITER_PER_SECOND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MILLILITER_PER_SECOND</span>
+			 = <span class="const-default"> 'MILLILITER_PER_SECOND'</span>
+			(line <span class="line-number">170</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMILLION_ACRE_FOOT_PER_DAY" id="MILLION_ACRE_FOOT_PER_DAY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MILLION_ACRE_FOOT_PER_DAY</span>
+			 = <span class="const-default"> 'MILLION_ACRE_FOOT_PER_DAY'</span>
+			(line <span class="line-number">171</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMILLION_ACRE_FOOT_PER_HOUR" id="MILLION_ACRE_FOOT_PER_HOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MILLION_ACRE_FOOT_PER_HOUR</span>
+			 = <span class="const-default"> 'MILLION_ACRE_FOOT_PER_HOUR'</span>
+			(line <span class="line-number">172</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMILLION_ACRE_FOOT_PER_MINUTE" id="MILLION_ACRE_FOOT_PER_MINUTE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MILLION_ACRE_FOOT_PER_MINUTE</span>
+			 = <span class="const-default"> 'MILLION_ACRE_FOOT_PER_MINUTE'</span>
+			(line <span class="line-number">173</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMILLION_ACRE_FOOT_PER_SECOND" id="MILLION_ACRE_FOOT_PER_SECOND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MILLION_ACRE_FOOT_PER_SECOND</span>
+			 = <span class="const-default"> 'MILLION_ACRE_FOOT_PER_SECOND'</span>
+			(line <span class="line-number">174</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMILLION_CUBIC_FOOT_PER_DAY" id="MILLION_CUBIC_FOOT_PER_DAY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MILLION_CUBIC_FOOT_PER_DAY</span>
+			 = <span class="const-default"> 'MILLION_CUBIC_FOOT_PER_DAY'</span>
+			(line <span class="line-number">175</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMILLION_CUBIC_FOOT_PER_HOUR" id="MILLION_CUBIC_FOOT_PER_HOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MILLION_CUBIC_FOOT_PER_HOUR</span>
+			 = <span class="const-default"> 'MILLION_CUBIC_FOOT_PER_HOUR'</span>
+			(line <span class="line-number">176</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMILLION_CUBIC_FOOT_PER_MINUTE" id="MILLION_CUBIC_FOOT_PER_MINUTE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MILLION_CUBIC_FOOT_PER_MINUTE</span>
+			 = <span class="const-default"> 'MILLION_CUBIC_FOOT_PER_MINUTE'</span>
+			(line <span class="line-number">177</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMILLION_CUBIC_FOOT_PER_SECOND" id="MILLION_CUBIC_FOOT_PER_SECOND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MILLION_CUBIC_FOOT_PER_SECOND</span>
+			 = <span class="const-default"> 'MILLION_CUBIC_FOOT_PER_SECOND'</span>
+			(line <span class="line-number">178</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMILLION_GALLON_PER_DAY" id="MILLION_GALLON_PER_DAY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MILLION_GALLON_PER_DAY</span>
+			 = <span class="const-default"> 'MILLION_GALLON_PER_DAY'</span>
+			(line <span class="line-number">179</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMILLION_GALLON_PER_HOUR" id="MILLION_GALLON_PER_HOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MILLION_GALLON_PER_HOUR</span>
+			 = <span class="const-default"> 'MILLION_GALLON_PER_HOUR'</span>
+			(line <span class="line-number">180</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMILLION_GALLON_PER_MINUTE" id="MILLION_GALLON_PER_MINUTE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MILLION_GALLON_PER_MINUTE</span>
+			 = <span class="const-default"> 'MILLION_GALLON_PER_MINUTE'</span>
+			(line <span class="line-number">181</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMILLION_GALLON_PER_SECOND" id="MILLION_GALLON_PER_SECOND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MILLION_GALLON_PER_SECOND</span>
+			 = <span class="const-default"> 'MILLION_GALLON_PER_SECOND'</span>
+			(line <span class="line-number">182</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMILLION_GALLON_US_PER_DAY" id="MILLION_GALLON_US_PER_DAY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MILLION_GALLON_US_PER_DAY</span>
+			 = <span class="const-default"> 'MILLION_GALLON_US_PER_DAY'</span>
+			(line <span class="line-number">183</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMILLION_GALLON_US_PER_HOUR" id="MILLION_GALLON_US_PER_HOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MILLION_GALLON_US_PER_HOUR</span>
+			 = <span class="const-default"> 'MILLION_GALLON_US_PER_HOUR'</span>
+			(line <span class="line-number">184</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMILLION_GALLON_US_PER_MINUTE" id="MILLION_GALLON_US_PER_MINUTE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MILLION_GALLON_US_PER_MINUTE</span>
+			 = <span class="const-default"> 'MILLION_GALLON_US_PER_MINUTE'</span>
+			(line <span class="line-number">185</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMILLION_GALLON_US_PER_SECOND" id="MILLION_GALLON_US_PER_SECOND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MILLION_GALLON_US_PER_SECOND</span>
+			 = <span class="const-default"> 'MILLION_GALLON_US_PER_SECOND'</span>
+			(line <span class="line-number">186</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMINERS_INCH_AZ" id="MINERS_INCH_AZ"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MINERS_INCH_AZ</span>
+			 = <span class="const-default"> 'MINERS_INCH_AZ'</span>
+			(line <span class="line-number">187</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMINERS_INCH_CA" id="MINERS_INCH_CA"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MINERS_INCH_CA</span>
+			 = <span class="const-default"> 'MINERS_INCH_CA'</span>
+			(line <span class="line-number">188</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMINERS_INCH_CO" id="MINERS_INCH_CO"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MINERS_INCH_CO</span>
+			 = <span class="const-default"> 'MINERS_INCH_CO'</span>
+			(line <span class="line-number">190</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMINERS_INCH_ID" id="MINERS_INCH_ID"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MINERS_INCH_ID</span>
+			 = <span class="const-default"> 'MINERS_INCH_ID'</span>
+			(line <span class="line-number">191</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMINERS_INCH_NM" id="MINERS_INCH_NM"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MINERS_INCH_NM</span>
+			 = <span class="const-default"> 'MINERS_INCH_NM'</span>
+			(line <span class="line-number">193</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMINERS_INCH_OR" id="MINERS_INCH_OR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MINERS_INCH_OR</span>
+			 = <span class="const-default"> 'MINERS_INCH_OR'</span>
+			(line <span class="line-number">189</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMINERS_INCH_WA" id="MINERS_INCH_WA"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MINERS_INCH_WA</span>
+			 = <span class="const-default"> 'MINERS_INCH_WA'</span>
+			(line <span class="line-number">192</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constOUNCE_PER_DAY" id="OUNCE_PER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">OUNCE_PER_DAY</span>
+			 = <span class="const-default"> 'OUNCE_PER_DAY'</span>
+			(line <span class="line-number">194</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constOUNCE_PER_HOUR" id="OUNCE_PER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">OUNCE_PER_HOUR</span>
+			 = <span class="const-default"> 'OUNCE_PER_HOUR'</span>
+			(line <span class="line-number">195</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constOUNCE_PER_MINUTE" id="OUNCE_PER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">OUNCE_PER_MINUTE</span>
+			 = <span class="const-default"> 'OUNCE_PER_MINUTE'</span>
+			(line <span class="line-number">196</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constOUNCE_PER_SECOND" id="OUNCE_PER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">OUNCE_PER_SECOND</span>
+			 = <span class="const-default"> 'OUNCE_PER_SECOND'</span>
+			(line <span class="line-number">197</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constOUNCE_US_PER_DAY" id="OUNCE_US_PER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">OUNCE_US_PER_DAY</span>
+			 = <span class="const-default"> 'OUNCE_US_PER_DAY'</span>
+			(line <span class="line-number">198</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constOUNCE_US_PER_HOUR" id="OUNCE_US_PER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">OUNCE_US_PER_HOUR</span>
+			 = <span class="const-default"> 'OUNCE_US_PER_HOUR'</span>
+			(line <span class="line-number">199</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constOUNCE_US_PER_MINUTE" id="OUNCE_US_PER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">OUNCE_US_PER_MINUTE</span>
+			 = <span class="const-default"> 'OUNCE_US_PER_MINUTE'</span>
+			(line <span class="line-number">200</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constOUNCE_US_PER_SECOND" id="OUNCE_US_PER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">OUNCE_US_PER_SECOND</span>
+			 = <span class="const-default"> 'OUNCE_US_PER_SECOND'</span>
+			(line <span class="line-number">201</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPETROGRAD_STANDARD_PER_DAY" id="PETROGRAD_STANDARD_PER_DAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PETROGRAD_STANDARD_PER_DAY</span>
+			 = <span class="const-default"> 'PETROGRAD_STANDARD_PER_DAY'</span>
+			(line <span class="line-number">202</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPETROGRAD_STANDARD_PER_HOUR" id="PETROGRAD_STANDARD_PER_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PETROGRAD_STANDARD_PER_HOUR</span>
+			 = <span class="const-default"> 'PETROGRAD_STANDARD_PER_HOUR'</span>
+			(line <span class="line-number">203</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPETROGRAD_STANDARD_PER_MINUTE" id="PETROGRAD_STANDARD_PER_MINUTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PETROGRAD_STANDARD_PER_MINUTE</span>
+			 = <span class="const-default"> 'PETROGRAD_STANDARD_PER_MINUTE'</span>
+			(line <span class="line-number">204</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPETROGRAD_STANDARD_PER_SECOND" id="PETROGRAD_STANDARD_PER_SECOND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PETROGRAD_STANDARD_PER_SECOND</span>
+			 = <span class="const-default"> 'PETROGRAD_STANDARD_PER_SECOND'</span>
+			(line <span class="line-number">205</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSTANDARD" id="STANDARD"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">STANDARD</span>
+			 = <span class="const-default"> 'CUBIC_METER_PER_SECOND'</span>
+			(line <span class="line-number">40</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSTERE_PER_DAY" id="STERE_PER_DAY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">STERE_PER_DAY</span>
+			 = <span class="const-default"> 'STERE_PER_DAY'</span>
+			(line <span class="line-number">206</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSTERE_PER_HOUR" id="STERE_PER_HOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">STERE_PER_HOUR</span>
+			 = <span class="const-default"> 'STERE_PER_HOUR'</span>
+			(line <span class="line-number">207</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSTERE_PER_MINUTE" id="STERE_PER_MINUTE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">STERE_PER_MINUTE</span>
+			 = <span class="const-default"> 'STERE_PER_MINUTE'</span>
+			(line <span class="line-number">208</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSTERE_PER_SECOND" id="STERE_PER_SECOND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">STERE_PER_SECOND</span>
+			 = <span class="const-default"> 'STERE_PER_SECOND'</span>
+			(line <span class="line-number">209</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTHOUSAND_CUBIC_FOOT_PER_DAY" id="THOUSAND_CUBIC_FOOT_PER_DAY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">THOUSAND_CUBIC_FOOT_PER_DAY</span>
+			 = <span class="const-default"> 'THOUSAND_CUBIC_FOOT_PER_DAY'</span>
+			(line <span class="line-number">210</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTHOUSAND_CUBIC_FOOT_PER_HOUR" id="THOUSAND_CUBIC_FOOT_PER_HOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">THOUSAND_CUBIC_FOOT_PER_HOUR</span>
+			 = <span class="const-default"> 'THOUSAND_CUBIC_FOOT_PER_HOUR'</span>
+			(line <span class="line-number">211</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTHOUSAND_CUBIC_FOOT_PER_MINUTE" id="THOUSAND_CUBIC_FOOT_PER_MINUTE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">THOUSAND_CUBIC_FOOT_PER_MINUTE</span>
+			 = <span class="const-default"> 'THOUSAND_CUBIC_FOOT_PER_MINUTE'</span>
+			(line <span class="line-number">212</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTHOUSAND_CUBIC_FOOT_PER_SECOND" id="THOUSAND_CUBIC_FOOT_PER_SECOND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">THOUSAND_CUBIC_FOOT_PER_SECOND</span>
+			 = <span class="const-default"> 'THOUSAND_CUBIC_FOOT_PER_SECOND'</span>
+			(line <span class="line-number">213</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTRILLION_CUBIC_FOOT_PER_DAY" id="TRILLION_CUBIC_FOOT_PER_DAY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TRILLION_CUBIC_FOOT_PER_DAY</span>
+			 = <span class="const-default"> 'TRILLION_CUBIC_FOOT_PER_DAY'</span>
+			(line <span class="line-number">214</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTRILLION_CUBIC_FOOT_PER_HOUR" id="TRILLION_CUBIC_FOOT_PER_HOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TRILLION_CUBIC_FOOT_PER_HOUR</span>
+			 = <span class="const-default"> 'TRILLION_CUBIC_FOOT_PER_HOUR'</span>
+			(line <span class="line-number">215</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTRILLION_CUBIC_FOOT_PER_MINUTE" id="TRILLION_CUBIC_FOOT_PER_MINUTE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TRILLION_CUBIC_FOOT_PER_MINUTE</span>
+			 = <span class="const-default"> 'TRILLION_CUBIC_FOOT_PER_MINUTE'</span>
+			(line <span class="line-number">216</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTRILLION_CUBIC_FOOT_PER_SECOND" id="TRILLION_CUBIC_FOOT_PER_SECOND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TRILLION_CUBIC_FOOT_PER_SECOND</span>
+			 = <span class="const-default"> 'TRILLION_CUBIC_FOOT_PER_'</span>
+			(line <span class="line-number">217</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:53:58 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

@@ -1,0 +1,520 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>48.3. View Scripts</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="prev" href="zend.view.controllers.html" title="48.2. Controller Scripts">
+<link rel="next" href="zend.view.helpers.html" title="48.4. View Helpers">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.view.scripts.html#zend.view.scripts.escaping" title="48.3.1. Escaping Output">
+<link rel="subsection" href="zend.view.scripts.html#zend.view.scripts.templates" title="48.3.2. Using Alternate Template Systems">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">48.3. View Scripts</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.view.controllers.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 48. Zend_View</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.view.helpers.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.view.scripts"></a>48.3. View Scripts</h2></div></div></div>
+<p>
+        Once your controller has assigned variables and called render(),
+        Zend_View then includes the requested view script and executes
+        it "inside" the scope of the Zend_View instance.  Therefore,
+        in your view scripts, references to $this actually point to the
+        Zend_View instance itself.
+    </p>
+<p>
+        Variables assigned to the view from the controller are referred
+        to as instance properties.  For example, if the controller were
+        to assign a variable 'something', you would refer to it as
+        $this-&gt;something in the view script.  (This allows you to keep
+        track of which values were assigned to the script, and which are
+        internal to the script itself.)
+    </p>
+<p>
+        By way of reminder, here is the example view script from the
+        Zend_View introduction.
+    </p>
+<pre class="programlisting">&lt;?php if ($this-&gt;books): ?&gt;
+
+    &lt;!-- A table of some books. --&gt;
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Author&lt;/th&gt;
+            &lt;th&gt;Title&lt;/th&gt;
+        &lt;/tr&gt;
+
+        &lt;?php foreach ($this-&gt;books as $key =&gt; $val): ?&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;?php echo $this-&gt;escape($val['author']) ?&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;?php echo $this-&gt;escape($val['title']) ?&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;?php endforeach; ?&gt;
+
+    &lt;/table&gt;
+
+&lt;?php else: ?&gt;
+
+    &lt;p&gt;There are no books to display.&lt;/p&gt;
+
+&lt;?php endif;
+    </pre>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.view.scripts.escaping"></a>48.3.1. Escaping Output</h3></div></div></div>
+<p>
+            One of the most important tasks to perform in a view script
+            is to make sure that output is escaped properly; among other
+            things, this helps to avoid cross-site scripting attacks.
+            Unless you are using a function, method, or helper that does
+            escaping on its own, you should always escape variables when
+            you output them.
+        </p>
+<p>
+            Zend_View comes with a method called escape() that does such
+            escaping for you.
+        </p>
+<pre class="programlisting">&lt;?php
+// bad view-script practice:
+echo $this-&gt;variable;
+
+// good view-script practice:
+echo $this-&gt;escape($this-&gt;variable);
+        </pre>
+<p>
+            By default, the escape() method uses the PHP htmlspecialchars()
+            function for escaping.  However, depending on your environment,
+            you may wish for escaping to occur in a different way.  Use the
+            setEscape() method at the controller level to tell Zend_View
+            what escaping callback to use.
+        </p>
+<pre class="programlisting">&lt;?php
+// create a Zend_View instance
+$view = new Zend_View();
+
+// tell it to use htmlentities as the escaping callback
+$view-&gt;setEscape('htmlentities');
+
+// or tell it to use a static class method as the callback
+$view-&gt;setEscape(array('SomeClass', 'methodName'));
+
+// or even an instance method
+$obj = new SomeClass();
+$view-&gt;setEscape(array($obj, 'methodName'));
+
+// and then render your view
+echo $view-&gt;render(...);
+        </pre>
+<p>
+            The callback function or method should take the value to be
+            escaped as its first parameter, and all other parameters should
+            be optional.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.view.scripts.templates"></a>48.3.2. Using Alternate Template Systems</h3></div></div></div>
+<p>
+            Although PHP is itself a powerful template system, many developers
+            feel it is too powerful or complex for their template designers and
+            will want to use an alternate template engine. Zend_View provides
+            two mechanisms for doing so, the first through view scripts, the
+            second by implementing Zend_View_Interface.
+        </p>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.view.scripts.templates.scripts"></a>48.3.2.1. Template Systems Using View Scripts</h4></div></div></div>
+<p>
+                A view script may be used to instantiate and manipulate a
+                separate template object, such as a PHPLIB-style template.  The
+                view script for that kind of activity might look something like
+                this:
+            </p>
+<pre class="programlisting">&lt;?php
+include_once 'template.inc';
+$tpl = new Template();
+
+if ($this-&gt;books) {
+    $tpl-&gt;setFile(array(
+        "booklist" =&gt; "booklist.tpl",
+        "eachbook" =&gt; "eachbook.tpl",
+    ));
+
+    foreach ($this-&gt;books as $key =&gt; $val) {
+        $tpl-&gt;set_var('author', $this-&gt;escape($val['author']);
+        $tpl-&gt;set_var('title', $this-&gt;escape($val['title']);
+        $tpl-&gt;parse("books", "eachbook", true);
+    }
+
+    $tpl-&gt;pparse("output", "booklist");
+} else {
+    $tpl-&gt;setFile("nobooks", "nobooks.tpl")
+    $tpl-&gt;pparse("output", "nobooks");
+}´
+            </pre>
+<p>
+                These would be the related template files:
+            </p>
+<pre class="programlisting">
+&lt;!-- booklist.tpl --&gt;
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Author&lt;/th&gt;
+        &lt;th&gt;Title&lt;/th&gt;
+    &lt;/tr&gt;
+    {books}
+&lt;/table&gt;
+
+&lt;!-- eachbook.tpl --&gt;
+    &lt;tr&gt;
+        &lt;td&gt;{author}&lt;/td&gt;
+        &lt;td&gt;{title}&lt;/td&gt;
+    &lt;/tr&gt;
+
+&lt;!-- nobooks.tpl --&gt;
+&lt;p&gt;There are no books to display.&lt;/p&gt;
+            </pre>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.view.scripts.templates.interface"></a>48.3.2.2. Template Systems Using Zend_View_Interface</h4></div></div></div>
+<p>
+                Some may find it easier to simply provide a Zend_View-compatible
+                template engine. <code class="code">Zend_View_Interface</code> defines the
+                minimum interface needed for compatability:
+            </p>
+<pre class="programlisting">
+/**
+ * Return the actual template engine object
+ */
+public function getEngine();
+
+/**
+ * Set the path to view scripts/templates
+ */
+public function setScriptPath($path);
+
+/**
+ * Set a base path to all view resources
+ */
+public function setBasePath($path, $prefix = 'Zend_View');
+
+/**
+ * Add an additional base path to view resources
+ */
+public function addBasePath($path, $prefix = 'Zend_View');
+
+/**
+ * Retrieve the current script paths
+ */
+public function getScriptPaths();
+
+/**
+ * Overloading methods for assigning template variables as object properties
+ */
+public function __set($key, $value);
+public function __get($key);
+public function __isset($key);
+public function __unset($key);
+
+/**
+ * Manual assignment of template variables, or ability to assign multiple
+ * variables en masse.
+ */
+public function assign($spec, $value = null);
+
+/**
+ * Unset all assigned template variables
+ */
+public function clearVars();
+
+/**
+ * Render the template named $name
+ */
+public function render($name);
+            </pre>
+<p>
+                Using this interface, it becomes relatively easy to wrap a
+                third-party template engine as a Zend_View-compatible class. As
+                an example, the following is one potential wrapper for Smarty:
+            </p>
+<pre class="programlisting">
+require_once 'Zend/View/Interface.php';
+require_once 'Smarty.class.php';
+
+class Zend_View_Smarty implements Zend_View_Interface
+{
+    /**
+     * Smarty object
+     * @var Smarty
+     */
+    protected $_smarty;
+
+    /**
+     * Constructor
+     *
+     * @param string $tmplPath
+     * @param array $extraParams
+     * @return void
+     */
+    public function __construct($tmplPath = null, $extraParams = array())
+    {
+        $this-&gt;_smarty = new Smarty;
+
+        if (null !== $tmplPath) {
+            $this-&gt;setScriptPath($tmplPath);
+        }
+
+        foreach ($extraParams as $key =&gt; $value) {
+            $this-&gt;_smarty-&gt;$key = $value;
+        }
+    }
+
+    /**
+     * Return the template engine object
+     *
+     * @return Smarty
+     */
+    public function getEngine()
+    {
+        return $this-&gt;_smarty;
+    }
+
+    /**
+     * Set the path to the templates
+     *
+     * @param string $path The directory to set as the path.
+     * @return void
+     */
+    public function setScriptPath($path)
+    {
+        if (is_readable($path)) {
+            $this-&gt;_smarty-&gt;template_dir = $path;
+            return;
+        }
+
+        throw new Exception('Invalid path provided');
+    }
+
+    /**
+     * Retrieve the current template directory
+     *
+     * @return string
+     */
+    public function getScriptPaths()
+    {
+        return array($this-&gt;_smarty-&gt;template_dir);
+    }
+
+    /**
+     * Alias for setScriptPath
+     *
+     * @param string $path
+     * @param string $prefix Unused
+     * @return void
+     */
+    public function setBasePath($path, $prefix = 'Zend_View')
+    {
+        return $this-&gt;setScriptPath($path);
+    }
+
+    /**
+     * Alias for setScriptPath
+     *
+     * @param string $path
+     * @param string $prefix Unused
+     * @return void
+     */
+    public function addBasePath($path, $prefix = 'Zend_View')
+    {
+        return $this-&gt;setScriptPath($path);
+    }
+
+    /**
+     * Assign a variable to the template
+     *
+     * @param string $key The variable name.
+     * @param mixed $val The variable value.
+     * @return void
+     */
+    public function __set($key, $val)
+    {
+        $this-&gt;_smarty-&gt;assign($key, $val);
+    }
+
+    /**
+     * Retrieve an assigned variable
+     *
+     * @param string $key The variable name.
+     * @return mixed The variable value.
+     */
+    public function __get($key)
+    {
+        return $this-&gt;_smarty-&gt;get_template_vars($key);
+    }
+
+    /**
+     * Allows testing with empty() and isset() to work
+     *
+     * @param string $key
+     * @return boolean
+     */
+    public function __isset($key)
+    {
+        return (null !== $this-&gt;_smarty-&gt;get_template_vars($key));
+    }
+
+    /**
+     * Allows unset() on object properties to work
+     *
+     * @param string $key
+     * @return void
+     */
+    public function __unset($key)
+    {
+        $this-&gt;_smarty-&gt;clear_assign($key);
+    }
+
+    /**
+     * Assign variables to the template
+     *
+     * Allows setting a specific key to the specified value, OR passing an array
+     * of key =&gt; value pairs to set en masse.
+     *
+     * @see __set()
+     * @param string|array $spec The assignment strategy to use (key or array of key
+     * =&gt; value pairs)
+     * @param mixed $value (Optional) If assigning a named variable, use this
+     * as the value.
+     * @return void
+     */
+    public function assign($spec, $value = null)
+    {
+        if (is_array($spec)) {
+            $this-&gt;_smarty-&gt;assign($spec);
+            return;
+        }
+
+        $this-&gt;_smarty-&gt;assign($spec, $value);
+    }
+
+    /**
+     * Clear all assigned variables
+     *
+     * Clears all variables assigned to Zend_View either via {@link assign()} or
+     * property overloading ({@link __get()}/{@link __set()}).
+     *
+     * @return void
+     */
+    public function clearVars()
+    {
+        $this-&gt;_smarty-&gt;clear_all_assign();
+    }
+
+    /**
+     * Processes a template and returns the output.
+     *
+     * @param string $name The template to process.
+     * @return string The output.
+     */
+    public function render($name)
+    {
+        return $this-&gt;_smarty-&gt;fetch($name);
+    }
+}
+            </pre>
+<p>
+                In this example, you would instantiate the
+                <code class="code">Zend_View_Smarty</code> class instead of
+                <code class="code">Zend_View</code>, and then use it in roughly the same
+                fashion as <code class="code">Zend_View</code>:
+            </p>
+<pre class="programlisting">
+$view = new Zend_View_Smarty();
+$view-&gt;setScriptPath('/path/to/templates');
+$view-&gt;book = 'Zend PHP 5 Certification Study Guide';
+$view-&gt;author = 'Davey Shafik and Ben Ramsey'
+$rendered = $view-&gt;render('bookinfo.tpl');
+            </pre>
+</div>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.view.controllers.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.view.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.view.helpers.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">48.2. Controller Scripts </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 48.4. View Helpers</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

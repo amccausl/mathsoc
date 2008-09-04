@@ -1,0 +1,273 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>7.2. Zend_Controller Basics</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="prev" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="next" href="zend.controller.front.html" title="7.3. The Front Controller">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">7.2. Zend_Controller Basics</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.controller.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 7. Zend_Controller</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.controller.front.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.controller.basics"></a>7.2. Zend_Controller Basics</h2></div></div></div>
+<p>
+        The <code class="code">Zend_Controller</code> system is designed to be
+        lightweight, modular, and extensible.  It is a minimalist design to
+        permit flexibility and some freedom to users while providing enough
+        structure so that systems built around <code class="code">Zend_Controller</code>
+        share some common conventions and similar code layout.
+    </p>
+<p>
+        The following diagram depicts the workflow, and the narrative following
+        describes in detail the interactions:
+    </p>
+<p>
+        <img src="figures/zend.controller.basics.png" align="middle">
+    </p>
+<p>
+        The <code class="code">Zend_Controller</code> workflow is implemented by several
+        components.  While it is not necessary to completely understand the
+        underpinnings of all of these components to use the system, having a
+        working knowledge of the process is helpful.
+    </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                    <code class="code">Zend_Controller_Front</code> orchestrates the entire
+                    workflow of the <code class="code">Zend_Controller</code> system.  It is
+                    an interpretation of the FrontController pattern.
+                    <code class="code">Zend_Controller_Front</code> processes all requests
+                    received by the server and is ultimately responsible for
+                    delegating requests to ActionControllers
+                    (<code class="code">Zend_Controller_Action</code>).
+                </p></li>
+<li>
+<p>
+                    <code class="code">Zend_Controller_Request_Abstract</code> (often
+                    referred to as the <code class="code">Request Object</code>) represents
+                    the request environment and provides methods for setting and
+                    retrieving the controller and action names and any request
+                    parameters. Additionally it keeps track of whether or not
+                    the action it contains has been dispatched by
+                    <code class="code">Zend_Controller_Dispatcher</code>.  Extensions to the
+                    abstract request object can be used to encapsulate the
+                    entire request environment, allowing routers to pull
+                    information from the request environment in order to set the
+                    controller and action names.
+                </p>
+<p>
+                    By default, <code class="code">Zend_Controller_Request_Http</code> is
+                    used, which provides access to the entire HTTP request
+                    environment.
+                </p>
+</li>
+<li>
+<p>
+                    <code class="code">Zend_Controller_Router_Interface</code> is used to
+                    define routers.  Routing is the process of examining the
+                    request environment to determine which controller, and
+                    action of that controller, should receive the request.  This
+                    controller, action, and optional parameters are then set in
+                    the request object to be processed by
+                    <code class="code">Zend_Controller_Dispatcher_Standard</code>.  Routing
+                    occurs only once: when the request is initially received and
+                    before the first controller is dispatched.
+                </p>
+<p>
+                    The default router,
+                    <code class="code">Zend_Controller_Router_Rewrite</code>, takes a URI
+                    endpoint as specified in
+                    <code class="code">Zend_Controller_Request_Http</code> and decomposes it
+                    into a controller, action, and parameters based on the path
+                    information in the url. As an example, the URL
+                    <code class="code">http://localhost/foo/bar/key/value</code> would be
+                    decoded to use the <code class="code">foo</code> controller,
+                    <code class="code">bar</code> action, and specify a parameter
+                    <code class="code">key</code> with a value of <code class="code">value</code>.
+                </p>
+<p>
+                    <code class="code">Zend_Controller_Router_Rewrite</code> can also be used
+                    to match arbitrary paths; see <a href="zend.controller.router.html" title="7.5. The Standard Router: Zend_Controller_Router_Rewrite">the router
+                        documentation</a> for more information.
+                </p>
+</li>
+<li>
+<p>
+                    <code class="code">Zend_Controller_Dispatcher_Interface</code> is used to
+                    define dispatchers.  Dispatching is the process of pulling
+                    the controller and action from the request object and
+                    mapping them to a controller file/class and action method in
+                    the controller class. If the controller or action do not
+                    exist, it handles determining default controllers and
+                    actions to dispatch.
+                </p>
+<p>
+                    The actual dispatching process consists of instantiating the
+                    controller class and calling the action method in that
+                    class. Unlike routing, which occurs only once, dispatching
+                    occurs in a loop. If the request object's dispatched status
+                    is reset at any point, the loop will be repeated, calling
+                    whatever action is currently set in the request object. The
+                    first time the loop finishes with the request object's
+                    dispatched status set (boolean true), it will finish
+                    processing.
+                </p>
+<p>
+                    The default dispatcher is
+                    <code class="code">Zend_Controller_Dispatcher_Standard</code>. It defines
+                    controllers as MixedCasedClasses ending in the word
+                    Controller, and action methods as camelCasedMethods ending
+                    in the word Action:
+                    <code class="code">FooController::barAction()</code>. In this case, the
+                    controller would be referred to as <code class="code">foo</code> and
+                    the action as <code class="code">bar</code>.
+                </p>
+<div class="note"><table border="0" summary="Note: CaseNamingConventions">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">CaseNamingConventions</th>
+</tr>
+<tr><td align="left" valign="top">
+<p>
+                        Since humans are notoriously inconsistent at
+                        maintaining case sensitivity when typing links, Zend
+                        Framework actually normalizes path information to
+                        lowercase. This, of course, will affect how you name
+                        your controller and actions... or refer to them in
+                        links.
+                    </p>
+<p>
+                        If you wish to have your controller class or action
+                        method name have multiple MixedCasedWords or
+                        camelCasedWords, you will need to separate those words
+                        on the url with either a '-' or '.' (though you can
+                        configure the character used).
+                    </p>
+<p>
+                        As an example, if you were going to the action in
+                        <code class="code">FooBarController::bazBatAction()</code>, you'd
+                        refer to it on the url as <code class="code">/foo-bar/baz-bat</code>
+                        or <code class="code">/foo.bar/baz.bat</code>.
+                    </p>
+</td></tr>
+</table></div>
+</li>
+<li><p>
+                    <code class="code">Zend_Controller_Action</code> is the base action
+                    controller component.  Each controller is a single class
+                    that extends the <code class="code">Zend_Controller_Action class</code>
+                    and should contain one or more action methods.
+                </p></li>
+<li>
+<p>
+                    <code class="code">Zend_Controller_Response_Abstract</code> defines a
+                    base response class used to collect and return responses
+                    from the action controllers. It collects both headers and
+                    body content.
+                </p>
+<p>
+                    The default response class is
+                    <code class="code">Zend_Controller_Response_Http</code>, which is
+                    suitable for use in an HTTP environment.
+                </p>
+</li>
+</ul></div>
+<p>
+        The workflow of <code class="code">Zend_Controller</code> is relatively simple.  A
+        request is received by <code class="code">Zend_Controller_Front</code>, which in turn
+        calls <code class="code">Zend_Controller_Router_Rewrite</code> to determine which
+        controller (and action in that controller) to dispatch.
+        <code class="code">Zend_Controller_Router_Rewrite</code> decomposes the URI in order
+        to set the controller and action names in the request.
+        <code class="code">Zend_Controller_Front</code> then enters a dispatch loop.  It
+        calls <code class="code">Zend_Controller_Dispatcher_Standard</code>, passing it the
+        request, to dispatch to the controller and action specified in the
+        request (or use defaults).  After the controller has finished, control
+        returns to <code class="code">Zend_Controller_Front</code>.  If the controller has
+        indicated that another controller should be dispatched by resetting the
+        dispatched status of the request, the loop continues and another
+        dispatch is performed.  Otherwise, the process ends.
+    </p>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.controller.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.controller.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.controller.front.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">Chapter 7. Zend_Controller </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 7.3. The Front Controller</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

@@ -1,0 +1,1594 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Service_SlideShare</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_Service_SlideShare</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The Zend_Service_SlideShare component is used to interface with the  slideshare.net web server to retrieve slide shows hosted on the web site for  display or other processing.</p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">throws:</span> Zend_Service_SlideShare_Exception</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Service---SlideShare.php.html">/Service/SlideShare.php</a> (line <span class="field">55</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#POWERPOINT_MIME_TYPE" title="details" class="const-name">POWERPOINT_MIME_TYPE</a> = 					<span class="var-type"> &quot;application/vnd.ms-powerpoint&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SERVICE_ERROR_ACCOUNT_BLOCKED" title="details" class="const-name">SERVICE_ERROR_ACCOUNT_BLOCKED</a> = 					<span class="var-type"> 100</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SERVICE_ERROR_BAD_APIKEY" title="details" class="const-name">SERVICE_ERROR_BAD_APIKEY</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SERVICE_ERROR_BAD_AUTH" title="details" class="const-name">SERVICE_ERROR_BAD_AUTH</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SERVICE_ERROR_DAILY_LIMIT" title="details" class="const-name">SERVICE_ERROR_DAILY_LIMIT</a> = 					<span class="var-type"> 99</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SERVICE_ERROR_EMPTY_TITLE" title="details" class="const-name">SERVICE_ERROR_EMPTY_TITLE</a> = 					<span class="var-type"> 5</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SERVICE_ERROR_FILE_TOO_BIG" title="details" class="const-name">SERVICE_ERROR_FILE_TOO_BIG</a> = 					<span class="var-type"> 8</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SERVICE_ERROR_GROUP_NOT_FOUND" title="details" class="const-name">SERVICE_ERROR_GROUP_NOT_FOUND</a> = 					<span class="var-type"> 11</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SERVICE_ERROR_INVALID_EXT" title="details" class="const-name">SERVICE_ERROR_INVALID_EXT</a> = 					<span class="var-type"> 7</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SERVICE_ERROR_MISSING_FILE" title="details" class="const-name">SERVICE_ERROR_MISSING_FILE</a> = 					<span class="var-type"> 4</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SERVICE_ERROR_MISSING_TAG" title="details" class="const-name">SERVICE_ERROR_MISSING_TAG</a> = 					<span class="var-type"> 12</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SERVICE_ERROR_MISSING_TITLE" title="details" class="const-name">SERVICE_ERROR_MISSING_TITLE</a> = 					<span class="var-type"> 3</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SERVICE_ERROR_NOT_SOURCEOBJ" title="details" class="const-name">SERVICE_ERROR_NOT_SOURCEOBJ</a> = 					<span class="var-type"> 6</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SERVICE_ERROR_SHOW_NOT_FOUND" title="details" class="const-name">SERVICE_ERROR_SHOW_NOT_FOUND</a> = 					<span class="var-type"> 9</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SERVICE_ERROR_USER_NOT_FOUND" title="details" class="const-name">SERVICE_ERROR_USER_NOT_FOUND</a> = 					<span class="var-type"> 10</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SERVICE_GET_SHOW_BY_GROUP_URI" title="details" class="const-name">SERVICE_GET_SHOW_BY_GROUP_URI</a> = 					<span class="var-type"> 'http://www.slideshare.net/api/1/get_slideshows_from_group'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SERVICE_GET_SHOW_BY_TAG_URI" title="details" class="const-name">SERVICE_GET_SHOW_BY_TAG_URI</a> = 					<span class="var-type"> 'http://www.slideshare.net/api/1/get_slideshow_by_tag'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SERVICE_GET_SHOW_BY_USER_URI" title="details" class="const-name">SERVICE_GET_SHOW_BY_USER_URI</a> = 					<span class="var-type"> 'http://www.slideshare.net/api/1/get_slideshow_by_user'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SERVICE_GET_SHOW_URI" title="details" class="const-name">SERVICE_GET_SHOW_URI</a> = 					<span class="var-type"> 'http://www.slideshare.net/api/1/get_slideshow'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SERVICE_UPLOAD_URI" title="details" class="const-name">SERVICE_UPLOAD_URI</a> = 					<span class="var-type"> 'http://www.slideshare.net/api/1/upload_slideshow'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_apiKey" title="details" class="var-name">$_apiKey</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../../Zend_Cache/Zend_Cache_Core.html">Zend_Cache_Core</a></span>
+					<a href="#$_cacheobject" title="details" class="var-name">$_cacheobject</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../../Zend_Http/Client/Zend_Http_Client.html">Zend_Http_Client</a></span>
+					<a href="#$_httpclient" title="details" class="var-name">$_httpclient</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_password" title="details" class="var-name">$_password</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_sharedSecret" title="details" class="var-name">$_sharedSecret</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_username" title="details" class="var-name">$_username</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																															
+				<div class="method-definition">
+					<img src="../../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">Zend_Service_SlideShare</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$apikey</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$sharedSecret</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$username</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$password</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getApiKey" title="details" class="method-name">getApiKey</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Cache/Zend_Cache_Core.html">Zend_Cache_Core</a></span>
+										<a href="#getCacheObject" title="details" class="method-name">getCacheObject</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Http/Client/Zend_Http_Client.html">Zend_Http_Client</a></span>
+										<a href="#getHttpClient" title="details" class="method-name">getHttpClient</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getPassword" title="details" class="method-name">getPassword</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getSharedSecret" title="details" class="method-name">getSharedSecret</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Service/SlideShare/Zend_Service_SlideShare_SlideShow.html">Zend_Service_SlideShare_SlideShow</a></span>
+										<a href="#getSlideShow" title="details" class="method-name">getSlideShow</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$ss_id</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#getSlideShowsByGroup" title="details" class="method-name">getSlideShowsByGroup</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$group</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$offset</span> = <span class="var-default">null</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#getSlideShowsByTag" title="details" class="method-name">getSlideShowsByTag</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$tag</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$offset</span> = <span class="var-default">null</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#getSlideShowsByUsername" title="details" class="method-name">getSlideShowsByUsername</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$username</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$offset</span> = <span class="var-default">null</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getUserName" title="details" class="method-name">getUserName</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Service/SlideShare/Zend_Service_SlideShare.html">Zend_Service_SlideShare</a></span>
+										<a href="#setApiKey" title="details" class="method-name">setApiKey</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Service/SlideShare/Zend_Service_SlideShare.html">Zend_Service_SlideShare</a></span>
+										<a href="#setCacheObject" title="details" class="method-name">setCacheObject</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$cacheobject</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Service/SlideShare/Zend_Service_SlideShare.html">Zend_Service_SlideShare</a></span>
+										<a href="#setHttpClient" title="details" class="method-name">setHttpClient</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$client</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Service/SlideShare/Zend_Service_SlideShare.html">Zend_Service_SlideShare</a></span>
+										<a href="#setPassword" title="details" class="method-name">setPassword</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$pw</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Service/SlideShare/Zend_Service_SlideShare.html">Zend_Service_SlideShare</a></span>
+										<a href="#setSharedSecret" title="details" class="method-name">setSharedSecret</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$secret</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Service/SlideShare/Zend_Service_SlideShare.html">Zend_Service_SlideShare</a></span>
+										<a href="#setUserName" title="details" class="method-name">setUserName</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$un</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Service/SlideShare/Zend_Service_SlideShare_SlideShow.html">Zend_Service_SlideShare_SlideShow</a></span>
+										<a href="#uploadSlideShow" title="details" class="method-name">uploadSlideShow</a>
+											(<span class="var-type"><a href="../../Zend_Service/SlideShare/Zend_Service_SlideShare_SlideShow.html">Zend_Service_SlideShare_SlideShow</a></span>&nbsp;<span class="var-name">$ss</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$make_src_public</span> = <span class="var-default">true</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#_getSlideShowsByType" title="details" class="method-name">_getSlideShowsByType</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$offset</span> = <span class="var-default">null</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Service/SlideShare/Zend_Service_SlideShare_SlideShow.html">Zend_Service_SlideShare_SlideShow</a></span>
+										<a href="#_slideShowNodeToObject" title="details" class="method-name">_slideShowNodeToObject</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$node</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_apiKey" id="$_apiKey"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_apiKey</span>
+						(line <span class="line-number">96</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The API key to use in requests</p>
+	<ul class="tags">
+				<li><span class="field">var:</span> The API key</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_cacheobject" id="$_cacheobject"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../../Zend_Cache/Zend_Cache_Core.html">Zend_Cache_Core</a></span>
+			<span class="var-name">$_cacheobject</span>
+						(line <span class="line-number">131</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The Cache object to use to perform caching</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_httpclient" id="$_httpclient"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../../Zend_Http/Client/Zend_Http_Client.html">Zend_Http_Client</a></span>
+			<span class="var-name">$_httpclient</span>
+						(line <span class="line-number">124</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The HTTP Client object to use to perform requests</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_password" id="$_password"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_password</span>
+						(line <span class="line-number">117</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The password to use in requests</p>
+	<ul class="tags">
+				<li><span class="field">var:</span> the password</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_sharedSecret" id="$_sharedSecret"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_sharedSecret</span>
+						(line <span class="line-number">103</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The shared secret to use in requests</p>
+	<ul class="tags">
+				<li><span class="field">var:</span> the Shared secret</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_username" id="$_username"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_username</span>
+						(line <span class="line-number">110</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The username to use in requests</p>
+	<ul class="tags">
+				<li><span class="field">var:</span> the username</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">296</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The Constructor</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Zend_Service_SlideShare</span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$apikey</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$sharedSecret</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$username</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$password</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$apikey</span><span class="var-description">: The API key</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sharedSecret</span><span class="var-description">: The shared secret</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$username</span><span class="var-description">: The username</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$password</span><span class="var-description">: The password</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetApiKey" id="getApiKey"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getApiKey</span> (line <span class="line-number">249</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the API key to be used in making API calls</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the API Key</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getApiKey
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetCacheObject" id="getCacheObject"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getCacheObject</span> (line <span class="line-number">186</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the Zend_Cache object which will be used to cache API queries. If no cache object  was previously set the the default will be used (Filesystem caching in /tmp with a life  time of 43200 seconds)</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The object used in caching</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Cache/Zend_Cache_Core.html">Zend_Cache_Core</a></span>
+		<span class="method-name">
+			getCacheObject
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetHttpClient" id="getHttpClient"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getHttpClient</span> (line <span class="line-number">152</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the instance of the Zend_Http_Client which will be used. Creates an instance  of Zend_Http_Client if no previous client was set.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The HTTP client which will be used</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Http/Client/Zend_Http_Client.html">Zend_Http_Client</a></span>
+		<span class="method-name">
+			getHttpClient
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetPassword" id="getPassword"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getPassword</span> (line <span class="line-number">227</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the password to use in API calls</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the password to use in API calls</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getPassword
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetSharedSecret" id="getSharedSecret"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getSharedSecret</span> (line <span class="line-number">271</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the shared secret used in making API calls</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the Shared secret</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getSharedSecret
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetSlideShow" id="getSlideShow"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getSlideShow</span> (line <span class="line-number">385</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieves a slide show's information based on slide show ID</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the Slideshow object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Service/SlideShare/Zend_Service_SlideShare_SlideShow.html">Zend_Service_SlideShare_SlideShow</a></span>
+		<span class="method-name">
+			getSlideShow
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$ss_id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$ss_id</span><span class="var-description">: The slide show ID</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetSlideShowsByGroup" id="getSlideShowsByGroup"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getSlideShowsByGroup</span> (line <span class="line-number">474</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieves an array of slide shows based on group name</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> An array of Zend_Service_SlideShare_SlideShow objects</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getSlideShowsByGroup
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$group</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$offset</span> = <span class="var-default">null</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$group</span><span class="var-description">: The group name to retrieve slide shows for</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$offset</span><span class="var-description">: The offset of the list to start retrieving from</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$limit</span><span class="var-description">: The maximum number of slide shows to retrieve</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetSlideShowsByTag" id="getSlideShowsByTag"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getSlideShowsByTag</span> (line <span class="line-number">451</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieves an array of slide shows based on tag</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> An array of Zend_Service_SlideShare_SlideShow objects</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getSlideShowsByTag
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$tag</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$offset</span> = <span class="var-default">null</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tag</span><span class="var-description">: The tag to retrieve slide shows with</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$offset</span><span class="var-description">: The offset of the list to start retrieving from</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$limit</span><span class="var-description">: The maximum number of slide shows to retrieve</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetSlideShowsByUsername" id="getSlideShowsByUsername"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getSlideShowsByUsername</span> (line <span class="line-number">438</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieves an array of slide shows for a given username</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> An array of Zend_Service_SlideShare_SlideShow objects</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getSlideShowsByUsername
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$username</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$offset</span> = <span class="var-default">null</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$username</span><span class="var-description">: The username to retrieve slide shows from</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$offset</span><span class="var-description">: The offset of the list to start retrieving from</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$limit</span><span class="var-description">: The maximum number of slide shows to retrieve</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetUserName" id="getUserName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getUserName</span> (line <span class="line-number">205</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the user name used for API calls</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The username</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getUserName
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodsetApiKey" id="setApiKey"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setApiKey</span> (line <span class="line-number">260</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the API key to be used in making API calls</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Service/SlideShare/Zend_Service_SlideShare.html">Zend_Service_SlideShare</a></span>
+		<span class="method-name">
+			setApiKey
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$key</span><span class="var-description">: The API key to use</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetCacheObject" id="setCacheObject"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setCacheObject</span> (line <span class="line-number">173</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the Zend_Cache object to use to cache the results of API queries</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Service/SlideShare/Zend_Service_SlideShare.html">Zend_Service_SlideShare</a></span>
+		<span class="method-name">
+			setCacheObject
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$cacheobject</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_Cache/Zend_Cache_Core.html">Zend_Cache_Core</a></span>
+				<span class="var-name">$cacheobject</span><span class="var-description">: The Zend_Cache object used</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetHttpClient" id="setHttpClient"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setHttpClient</span> (line <span class="line-number">140</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the Zend_Http_Client object to use in requests. If not provided a default will  be used.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Service/SlideShare/Zend_Service_SlideShare.html">Zend_Service_SlideShare</a></span>
+		<span class="method-name">
+			setHttpClient
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$client</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_Http/Client/Zend_Http_Client.html">Zend_Http_Client</a></span>
+				<span class="var-name">$client</span><span class="var-description">: The HTTP client instance to use</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetPassword" id="setPassword"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setPassword</span> (line <span class="line-number">238</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the password to use in API calls</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Service/SlideShare/Zend_Service_SlideShare.html">Zend_Service_SlideShare</a></span>
+		<span class="method-name">
+			setPassword
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$pw</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$pw</span><span class="var-description">: The password to use</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetSharedSecret" id="setSharedSecret"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setSharedSecret</span> (line <span class="line-number">282</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the shared secret used in making API calls</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Service/SlideShare/Zend_Service_SlideShare.html">Zend_Service_SlideShare</a></span>
+		<span class="method-name">
+			setSharedSecret
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$secret</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$secret</span><span class="var-description">: the shared secret</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetUserName" id="setUserName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setUserName</span> (line <span class="line-number">216</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the user name to use for API calls</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Service/SlideShare/Zend_Service_SlideShare.html">Zend_Service_SlideShare</a></span>
+		<span class="method-name">
+			setUserName
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$un</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$un</span><span class="var-description">: The username to use</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoduploadSlideShow" id="uploadSlideShow"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">uploadSlideShow</span> (line <span class="line-number">313</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Uploads the specified Slide show the the server</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The passed Slide show object, with the new assigned ID provided</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Service/SlideShare/Zend_Service_SlideShare_SlideShow.html">Zend_Service_SlideShare_SlideShow</a></span>
+		<span class="method-name">
+			uploadSlideShow
+		</span>
+					(<span class="var-type"><a href="../../Zend_Service/SlideShare/Zend_Service_SlideShare_SlideShow.html">Zend_Service_SlideShare_SlideShow</a></span>&nbsp;<span class="var-name">$ss</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$make_src_public</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_Service/SlideShare/Zend_Service_SlideShare_SlideShow.html">Zend_Service_SlideShare_SlideShow</a></span>
+				<span class="var-name">$ss</span><span class="var-description">: The slide show object representing the slide show to upload</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$make_src_public</span><span class="var-description">: Determines if the the slide show's source file is public or not upon upload</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_getSlideShowsByType" id="_getSlideShowsByType"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_getSlideShowsByType</span> (line <span class="line-number">489</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieves Zend_Service_SlideShare_SlideShow object arrays based on the type of  list desired</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> An array of Zend_Service_SlideShare_SlideShow objects</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			_getSlideShowsByType
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$offset</span> = <span class="var-default">null</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$key</span><span class="var-description">: The type of slide show object to retrieve</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span><span class="var-description">: The specific search query for the slide show type to look up</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$offset</span><span class="var-description">: The offset of the list to start retrieving from</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$limit</span><span class="var-description">: The maximum number of slide shows to retrieve</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_slideShowNodeToObject" id="_slideShowNodeToObject"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_slideShowNodeToObject</span> (line <span class="line-number">576</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Converts a SimpleXMLElement object representing a response from the service  into a Zend_Service_SlideShare_SlideShow object</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The resulting object</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Service/SlideShare/Zend_Service_SlideShare_SlideShow.html">Zend_Service_SlideShare_SlideShow</a></span>
+		<span class="method-name">
+			_slideShowNodeToObject
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$node</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">SimpleXMLElement</span>
+				<span class="var-name">$node</span><span class="var-description">: The input XML from the slideshare.net service</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constPOWERPOINT_MIME_TYPE" id="POWERPOINT_MIME_TYPE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">POWERPOINT_MIME_TYPE</span>
+			 = <span class="const-default"> &quot;application/vnd.ms-powerpoint&quot;</span>
+			(line <span class="line-number">89</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The MIME type of Slideshow files</p>
+	
+	
+</div>
+<a name="constSERVICE_ERROR_ACCOUNT_BLOCKED" id="SERVICE_ERROR_ACCOUNT_BLOCKED"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SERVICE_ERROR_ACCOUNT_BLOCKED</span>
+			 = <span class="const-default"> 100</span>
+			(line <span class="line-number">74</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSERVICE_ERROR_BAD_APIKEY" id="SERVICE_ERROR_BAD_APIKEY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SERVICE_ERROR_BAD_APIKEY</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">61</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Web service result code mapping</p>
+	
+	
+</div>
+<a name="constSERVICE_ERROR_BAD_AUTH" id="SERVICE_ERROR_BAD_AUTH"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SERVICE_ERROR_BAD_AUTH</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">62</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSERVICE_ERROR_DAILY_LIMIT" id="SERVICE_ERROR_DAILY_LIMIT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SERVICE_ERROR_DAILY_LIMIT</span>
+			 = <span class="const-default"> 99</span>
+			(line <span class="line-number">73</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSERVICE_ERROR_EMPTY_TITLE" id="SERVICE_ERROR_EMPTY_TITLE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SERVICE_ERROR_EMPTY_TITLE</span>
+			 = <span class="const-default"> 5</span>
+			(line <span class="line-number">65</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSERVICE_ERROR_FILE_TOO_BIG" id="SERVICE_ERROR_FILE_TOO_BIG"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SERVICE_ERROR_FILE_TOO_BIG</span>
+			 = <span class="const-default"> 8</span>
+			(line <span class="line-number">68</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSERVICE_ERROR_GROUP_NOT_FOUND" id="SERVICE_ERROR_GROUP_NOT_FOUND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SERVICE_ERROR_GROUP_NOT_FOUND</span>
+			 = <span class="const-default"> 11</span>
+			(line <span class="line-number">71</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSERVICE_ERROR_INVALID_EXT" id="SERVICE_ERROR_INVALID_EXT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SERVICE_ERROR_INVALID_EXT</span>
+			 = <span class="const-default"> 7</span>
+			(line <span class="line-number">67</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSERVICE_ERROR_MISSING_FILE" id="SERVICE_ERROR_MISSING_FILE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SERVICE_ERROR_MISSING_FILE</span>
+			 = <span class="const-default"> 4</span>
+			(line <span class="line-number">64</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSERVICE_ERROR_MISSING_TAG" id="SERVICE_ERROR_MISSING_TAG"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SERVICE_ERROR_MISSING_TAG</span>
+			 = <span class="const-default"> 12</span>
+			(line <span class="line-number">72</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSERVICE_ERROR_MISSING_TITLE" id="SERVICE_ERROR_MISSING_TITLE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SERVICE_ERROR_MISSING_TITLE</span>
+			 = <span class="const-default"> 3</span>
+			(line <span class="line-number">63</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSERVICE_ERROR_NOT_SOURCEOBJ" id="SERVICE_ERROR_NOT_SOURCEOBJ"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SERVICE_ERROR_NOT_SOURCEOBJ</span>
+			 = <span class="const-default"> 6</span>
+			(line <span class="line-number">66</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSERVICE_ERROR_SHOW_NOT_FOUND" id="SERVICE_ERROR_SHOW_NOT_FOUND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SERVICE_ERROR_SHOW_NOT_FOUND</span>
+			 = <span class="const-default"> 9</span>
+			(line <span class="line-number">69</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSERVICE_ERROR_USER_NOT_FOUND" id="SERVICE_ERROR_USER_NOT_FOUND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SERVICE_ERROR_USER_NOT_FOUND</span>
+			 = <span class="const-default"> 10</span>
+			(line <span class="line-number">70</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSERVICE_GET_SHOW_BY_GROUP_URI" id="SERVICE_GET_SHOW_BY_GROUP_URI"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SERVICE_GET_SHOW_BY_GROUP_URI</span>
+			 = <span class="const-default"> 'http://www.slideshare.net/api/1/get_slideshows_from_group'</span>
+			(line <span class="line-number">83</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSERVICE_GET_SHOW_BY_TAG_URI" id="SERVICE_GET_SHOW_BY_TAG_URI"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SERVICE_GET_SHOW_BY_TAG_URI</span>
+			 = <span class="const-default"> 'http://www.slideshare.net/api/1/get_slideshow_by_tag'</span>
+			(line <span class="line-number">82</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSERVICE_GET_SHOW_BY_USER_URI" id="SERVICE_GET_SHOW_BY_USER_URI"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SERVICE_GET_SHOW_BY_USER_URI</span>
+			 = <span class="const-default"> 'http://www.slideshare.net/api/1/get_slideshow_by_user'</span>
+			(line <span class="line-number">81</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSERVICE_GET_SHOW_URI" id="SERVICE_GET_SHOW_URI"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SERVICE_GET_SHOW_URI</span>
+			 = <span class="const-default"> 'http://www.slideshare.net/api/1/get_slideshow'</span>
+			(line <span class="line-number">80</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSERVICE_UPLOAD_URI" id="SERVICE_UPLOAD_URI"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SERVICE_UPLOAD_URI</span>
+			 = <span class="const-default"> 'http://www.slideshare.net/api/1/upload_slideshow'</span>
+			(line <span class="line-number">79</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Slide share Web service communication URIs</p>
+	
+	
+</div>
+						
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:48:47 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

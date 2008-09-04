@@ -1,0 +1,223 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>5.4. Zend_Config_Xml</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="prev" href="zend.config.adapters.ini.html" title="5.3. Zend_Config_Ini">
+<link rel="next" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">5.4. Zend_Config_Xml</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.config.adapters.ini.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 5. Zend_Config</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.console.getopt.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.config.adapters.xml"></a>5.4. Zend_Config_Xml</h2></div></div></div>
+<p>
+        <code class="code">Zend_Config_Xml</code> enables developers to store configuration data in a simple XML format and read them
+        via nested object property syntax. The root element of the XML file is irrelevant and may be named arbitrarily.
+        The first level of XML elements correspond with configuration data sections. The XML format supports
+        hierarchical organization through nesting of XML elements below the section-level elements. The content of a
+        leaf-level XML element corresponds to the value of a configuration datum. Section inheritance is supported by a
+        special XML attribute named <code class="code">extends</code>, and the value of this attribute corresponds with the section
+        from which data are to be inherited by the extending section.
+    </p>
+<div class="note"><table border="0" summary="Note: Return type">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Return type</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+            Configuration data read into <code class="code">Zend_Config_Xml</code> are always returned as strings.
+            Conversion of data from strings to other types is left to developers to suit their particular needs.
+        </p></td></tr>
+</table></div>
+<div class="example">
+<a name="zend.config.adapters.xml.example.using"></a><p class="title"><b>Example 5.4. Using Zend_Config_Xml</b></p>
+<div class="example-contents">
+<p>
+            This example illustrates a basic use of <code class="code">Zend_Config_Xml</code> for loading configuration data from an
+            XML file. In this example there are configuration data for both a production system and for a staging
+            system. Because the staging system configuration data are very similar to those for production, the staging
+            section inherits from the production section. In this case, the decision is arbitrary and could have been
+            written conversely, with the production section inheriting from the staging section, though this may not be
+            the case for more complex situations. Suppose, then, that the following configuration data are contained in
+            <code class="code">/path/to/config.xml</code>:
+        </p>
+<pre class="programlisting">&lt;?xml version="1.0"?&gt;
+&lt;configdata&gt;
+    &lt;production&gt;
+        &lt;webhost&gt;www.example.com&lt;/webhost&gt;
+        &lt;database&gt;
+            &lt;adapter&gt;pdo_mysql&lt;/adapter&gt;
+            &lt;params&gt;
+                &lt;host&gt;db.example.com&lt;/host&gt;
+                &lt;username&gt;dbuser&lt;/username&gt;
+                &lt;password&gt;secret&lt;/password&gt;
+                &lt;dbname&gt;dbname&lt;/dbname&gt;
+            &lt;/params&gt;
+        &lt;/database&gt;
+    &lt;/production&gt;
+    &lt;staging extends="production"&gt;
+        &lt;database&gt;
+            &lt;params&gt;
+                &lt;host&gt;dev.example.com&lt;/host&gt;
+                &lt;username&gt;devuser&lt;/username&gt;
+                &lt;password&gt;devsecret&lt;/password&gt;
+            &lt;/params&gt;
+        &lt;/database&gt;
+    &lt;/staging&gt;
+&lt;/configdata&gt;
+        </pre>
+<p>
+            Next, assume that the application developer needs the staging configuration data from the XML file. It is a
+            simple matter to load these data by specifying the XML file and the staging section:
+        </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Config/Xml.php';
+
+$config = new Zend_Config_Xml('/path/to/config.xml', 'staging');
+
+echo $config-&gt;database-&gt;params-&gt;host;   // prints "dev.example.com"
+echo $config-&gt;database-&gt;params-&gt;dbname; // prints "dbname"
+        </pre>
+</div>
+</div>
+<br class="example-break"><div class="example">
+<a name="zend.config.adapters.xml.example.attributes"></a><p class="title"><b>Example 5.5. Using tag attributes in Zend_Config_Xml</b></p>
+<div class="example-contents">
+<p>
+            Zend_Config_Xml also supports two additional ways of defining nodes in the configuration. Both make use
+            of attributes. Since the <code class="code">extends</code> and the <code class="code">value</code> attributes are reserved keywords
+            (the latter one by the the second way of using attributes), they may not be used. The first way of 
+            making usage of attributes is to add attributes in a parent nodes, which then will be translated into
+            children of that node:
+        </p>
+<pre class="programlisting">&lt;?xml version="1.0"?&gt;
+&lt;configdata&gt;
+    &lt;production webhost="www.example.com"&gt;
+        &lt;database adapter="pdo_mysql"&gt;
+            &lt;params host="db.example.com" username="dbuser" password="secret" dbname="dbname"/&gt;
+        &lt;/database&gt;
+    &lt;/production&gt;
+    &lt;staging extends="production"&gt;
+        &lt;database&gt;
+            &lt;params host="dev.example.com" username="devuser" password="devsecret"/&gt;
+        &lt;/database&gt;
+    &lt;/staging&gt;
+&lt;/configdata&gt;
+        </pre>
+<p>
+            The other way does not really shorten the config, but keeps it easier to maintain since you don't have to write
+            the tag-name twice. You simply create an empty tag, which contains it's value withing the <code class="code">value</code>
+            attribute:
+        </p>
+<pre class="programlisting">&lt;?xml version="1.0"?&gt;
+&lt;configdata&gt;
+    &lt;production&gt;
+        &lt;webhost&gt;www.example.com&lt;/webhost&gt;
+        &lt;database&gt;
+            &lt;adapter value="pdo_mysql"/&gt;
+            &lt;params&gt;
+                &lt;host value="db.example.com"/&gt;
+                &lt;username value="dbuser"/&gt;
+                &lt;password value="secret"/&gt;
+                &lt;dbname value="dbname"/&gt;
+            &lt;/params&gt;
+        &lt;/database&gt;
+    &lt;/production&gt;
+    &lt;staging extends="production"&gt;
+        &lt;database&gt;
+            &lt;params&gt;
+                &lt;host value="dev.example.com"/&gt;
+                &lt;username value="devuser"/&gt;
+                &lt;password value="devsecret"/&gt;
+            &lt;/params&gt;
+        &lt;/database&gt;
+    &lt;/staging&gt;
+&lt;/configdata&gt;
+        </pre>
+</div>
+</div>
+<br class="example-break">
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.config.adapters.ini.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.config.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.console.getopt.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">5.3. Zend_Config_Ini </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> Chapter 6. Zend_Console_Getopt</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

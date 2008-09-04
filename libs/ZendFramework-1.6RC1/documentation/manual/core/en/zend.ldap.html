@@ -1,0 +1,520 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Chapter 23. Zend_Ldap</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="index.html" title="Programmer's Reference Guide">
+<link rel="prev" href="zend.layout.advanced.html" title="22.4. Zend_Layout Advanced Usage">
+<link rel="next" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="section" href="zend.ldap.html#zend.ldap.using" title="23.1. Introduction">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">Chapter 23. Zend_Ldap</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.layout.advanced.html">Prev</a> </td>
+<th width="60%" align="center"> </th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.loader.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="chapter" lang="en">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="zend.ldap"></a>Chapter 23. Zend_Ldap</h2></div></div></div>
+<div class="toc">
+<p><b>Table of Contents</b></p>
+<dl>
+<dt><span class="sect1"><a href="zend.ldap.html#zend.ldap.using">23.1. Introduction</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.ldap.html#zend.ldap.using.theory-of-operation">23.1.1. Theory of Operation</a></span></dt>
+<dd><dl>
+<dt><span class="sect3"><a href="zend.ldap.html#zend.ldap.using.theory-of-operation.username-canonicalization-automatic">23.1.1.1. Automatic Username Canonicalization When Binding</a></span></dt>
+<dt><span class="sect3"><a href="zend.ldap.html#zend.ldap.using.theory-of-operation.options">23.1.1.2. Zend_Ldap Options</a></span></dt>
+<dt><span class="sect3"><a href="zend.ldap.html#zend.ldap.using.theory-of-operation.account-name-canonicalization">23.1.1.3. Account Name Canonicalization</a></span></dt>
+<dt><span class="sect3"><a href="zend.ldap.html#zend.ldap.using.theory-of-operation.multi-domain-failover">23.1.1.4. Multi-domain Authentication and Failover</a></span></dt>
+</dl></dd>
+</dl></dd>
+</dl>
+</div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.ldap.using"></a>23.1. Introduction</h2></div></div></div>
+<div class="note"><table border="0" summary="Note: Minimal Functionality">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Minimal Functionality</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+            Currently this class is designed only to satisfy the limited functionality necessary for the
+            <a href="zend.auth.adapter.ldap.html" title="3.5. LDAP Authentication"><code class="code">Zend_Auth_Adapter_Ldap</code></a> authentication adapter.
+            Operations such as searching, creating, modifying or renaming entries in the directory are currently not
+            supported and will be defined at a later time.
+        </p></td></tr>
+</table></div>
+<p>
+        <code class="code">Zend_Ldap</code> is a class for performing LDAP operations including but not limited to binding,
+        searching and modifying entries in an LDAP directory.
+    </p>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.ldap.using.theory-of-operation"></a>23.1.1. Theory of Operation</h3></div></div></div>
+<p>
+            This component currently consists of two classes, <code class="code">Zend_Ldap</code> and
+            <code class="code">Zend_Ldap_Exception</code>. The <code class="code">Zend_Ldap</code> class conceptually represents a binding to a
+            single LDAP server. The parameters for binding may be provided explicitly or in the form of an options
+            array.
+        </p>
+<p>
+            Using the <code class="code">Zend_Ldap</code> class depends on the type of LDAP server and is best summarized with some
+            simple examples.
+        </p>
+<p>
+            If you are using OpenLDAP, a simple example looks like the following (note that the
+            <code class="code">bindRequiresDn</code> option is important if you are <span class="emphasis"><em>not</em></span> using AD):
+
+            </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Ldap.php';
+
+$options = array(
+    'host' =&gt; 's0.foo.net',
+    'username' =&gt; 'CN=user1,DC=foo,DC=net',
+    'password' =&gt; 'pass1',
+    'bindRequiresDn' =&gt; true,
+    'accountDomainName' =&gt; 'foo.net',
+    'baseDn' =&gt; 'OU=Sales,DC=foo,DC=net',
+);
+$ldap = new Zend_Ldap($options);
+$acctname = $ldap-&gt;getCanonicalAccountName('abaker', Zend_Ldap::ACCTNAME_FORM_DN);
+echo "$acctname\n";</pre>
+<p>
+
+        </p>
+<p>
+            If you are using Microsoft AD a simple example is:
+
+            </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Ldap.php';
+
+$options = array(
+    'host' =&gt; 'dc1.w.net',
+    'useStartTls' =&gt; true,
+    'username' =&gt; 'user1@w.net',
+    'password' =&gt; 'pass1',
+    'accountDomainName' =&gt; 'w.net',
+    'accountDomainNameShort' =&gt; 'W',
+    'baseDn' =&gt; 'CN=Users,DC=w,DC=net',
+);
+$ldap = new Zend_Ldap($options);
+$acctname = $ldap-&gt;getCanonicalAccountName('bcarter', Zend_Ldap::ACCTNAME_FORM_DN);
+echo "$acctname\n";</pre>
+<p>
+
+            Note that we use the <code class="code">getCanonicalAccountName()</code> method to retrieve the account DN here only
+            because that is what exercises the most of what little code is currently present in this class.
+        </p>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.ldap.using.theory-of-operation.username-canonicalization-automatic"></a>23.1.1.1. Automatic Username Canonicalization When Binding</h4></div></div></div>
+<p>
+                If <code class="code">bind()</code> is called with a non-DN username but <code class="code">bindRequiresDN</code> is
+                <code class="code">true</code> and no username in DN form was supplied as an option, the bind will fail. However, if
+                a username in DN form is supplied in the options array, <code class="code">Zend_Ldap</code> will first bind with
+                that username, retrieve the account DN for the username supplied to <code class="code">bind()</code> and then re-
+                bind with that DN.
+            </p>
+<p>
+                This behavior is critical to <code class="code">Zend_Auth_Adapter_Ldap</code>, which passes the username supplied by
+                the user directly to <code class="code">bind()</code>.
+            </p>
+<p>
+                The following example illustrates how the non-DN username '<code class="code">abaker</code>' can be used with
+                <code class="code">bind()</code>:
+
+                </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Ldap.php';
+
+$options = array(
+        'host' =&gt; 's0.foo.net',
+        'username' =&gt; 'CN=user1,DC=foo,DC=net',
+        'password' =&gt; 'pass1',
+        'bindRequiresDn' =&gt; true,
+        'accountDomainName' =&gt; 'foo.net',
+        'baseDn' =&gt; 'OU=Sales,DC=foo,DC=net',
+);
+$ldap = new Zend_Ldap($options);
+$ldap-&gt;bind('abaker', 'moonbike55');
+$acctname = $ldap-&gt;getCanonicalAccountName('abaker', Zend_Ldap::ACCTNAME_FORM_DN);
+echo "$acctname\n";</pre>
+<p>
+
+                The <code class="code">bind()</code> call in this example sees that the username '<code class="code">abaker</code>' is not in DN
+                form, finds <code class="code">bindRequiresDn</code> is <code class="code">true</code>, uses
+                '<code class="code">CN=user1,DC=foo,DC=net</code>' and '<code class="code">pass1</code>' to bind, retrieves the DN for
+                '<code class="code">abaker</code>', unbinds and then rebinds with the newly discovered
+                '<code class="code">CN=Alice Baker,OU=Sales,DC=foo,DC=net</code>'.
+            </p>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.ldap.using.theory-of-operation.options"></a>23.1.1.2. Zend_Ldap Options</h4></div></div></div>
+<p>
+                The <code class="code">Zend_Ldap</code> component accepts an array of options either supplied to the constructor or
+                through the <code class="code">setOptions()</code> method. The permitted options are as follows:
+
+                </p>
+<div class="table">
+<a name="zend.ldap.using.theory-of-operation.options.table"></a><p class="title"><b>Table 23.1. Zend_Ldap Options</b></p>
+<div class="table-contents"><table summary="Zend_Ldap Options" border="1">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>Name</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>host</td>
+<td>
+                            The default hostname of LDAP server if not supplied to <code class="code">connect()</code> (also may be
+                            used when trying to canonicalize usernames in <code class="code">bind()</code>).
+                        </td>
+</tr>
+<tr>
+<td>port</td>
+<td>
+                            Default port of LDAP server if not supplied to <code class="code">connect()</code>.
+                        </td>
+</tr>
+<tr>
+<td>useStartTls</td>
+<td>
+                            Whether or not the LDAP client should use TLS (aka SSLv2) encrypted transport. A value of
+                            <code class="code">true</code> is strongly favored in production environments to prevent passwords from
+                            be transmitted in clear text. The default value is <code class="code">false</code>, as servers
+                            frequently require that a certificate be installed separately after installation.
+                            The <code class="code">useSsl</code> and <code class="code">useStartTls</code> options are mutually exclusive.
+                            The <code class="code">useStartTls</code> option should be favored over <code class="code">useSsl</code> but
+                            not all servers support this newer mechanism.
+                        </td>
+</tr>
+<tr>
+<td>useSsl</td>
+<td>
+                            Whether or not the LDAP client should use SSL encrypted transport. The <code class="code">useSsl</code>
+                            and <code class="code">useStartTls</code> options are mutually exclusive.
+                        </td>
+</tr>
+<tr>
+<td>username</td>
+<td>
+                            The default credentials username. Some servers require that this be in DN form.
+                        </td>
+</tr>
+<tr>
+<td>password</td>
+<td>
+                            The default credentials password (used only with username above).
+                        </td>
+</tr>
+<tr>
+<td>bindRequiresDn</td>
+<td>
+                            If <code class="code">true</code>, this instructs <code class="code">Zend_Ldap</code> to retrieve the DN for the
+                            account used to bind if the username is not already in DN form. The default value is
+                            <code class="code">false</code>.
+                        </td>
+</tr>
+<tr>
+<td>baseDn</td>
+<td>
+                            The default base DN used for searching (e.g., for accounts). This option is required for
+                            most account related operations and should indicate the DN under which accounts are
+                            located.
+                        </td>
+</tr>
+<tr>
+<td>accountCanonicalForm</td>
+<td>
+                            A small integer indicating the form to which account names should be canonicalized. See the
+                            <span class="emphasis"><em>Account Name Canonicalization</em></span> section below.
+                        </td>
+</tr>
+<tr>
+<td>accountDomainName</td>
+<td>
+                            The FQDN domain for which the target LDAP server is an authority (e.g., example.com).
+                        </td>
+</tr>
+<tr>
+<td>accountDomainNameShort</td>
+<td>
+                            The 'short' domain for which the target LDAP server is an authority. This is usually used
+                            to specify the NetBIOS domain name for Windows networks but may also be used by non-AD
+                            servers.
+                        </td>
+</tr>
+<tr>
+<td>accountFilterFormat</td>
+<td>
+                            The LDAP search filter used to search for accounts. This string is a
+                            <a href="http://php.net/printf" target="_top"><code class="code">printf()</code></a> style expression that must
+                            contain one '<code class="code">%s</code>' to accomodate the username. The default value is
+                            '<code class="code">(&amp;(objectClass=user)(sAMAccountName=%s))</code>' unless
+                            <code class="code">bindRequiresDn</code> is set to <code class="code">true</code>, in which case the default is
+                            '<code class="code">(&amp;(objectClass=posixAccount)(uid=%s))</code>'. Users of custom schemas may need
+                            to change this option.
+                        </td>
+</tr>
+<tr>
+<td>allowEmptyPassword</td>
+<td>
+                            Some LDAP servers can be configured to accept an empty string
+                            password as an anonymous bind. This behavior is almost always
+                            undesirable. For this reason, empty passwords are explicitly
+                            disallowed. Set this value to <code class="code">true</code> to allow an
+                            empty string password to be submitted during the bind.
+                        </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br class="table-break">
+
+            </p>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.ldap.using.theory-of-operation.account-name-canonicalization"></a>23.1.1.3. Account Name Canonicalization</h4></div></div></div>
+<p>
+                The <code class="code">accountDomainName</code> and <code class="code">accountDomainNameShort</code> options are used for two
+                purposes: (1) they facilitate multi-domain authentication and failover capability, and (2) they are
+                also used to canonicalize usernames. Specifically, names are canonicalized to the form specified by the
+                <code class="code">accountCanonicalForm</code> option. This option may one of the following values:
+
+                </p>
+<div class="table">
+<a name="zend.ldap.using.theory-of-operation.account-name-canonicalization.table"></a><p class="title"><b>Table 23.2. <code class="code">accountCanonicalForm</code></b></p>
+<div class="table-contents"><table summary="accountCanonicalForm" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>Name</th>
+<th>Value</th>
+<th>Example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><code class="code">ACCTNAME_FORM_DN</code></td>
+<td>1</td>
+<td>CN=Alice Baker,CN=Users,DC=example,DC=com</td>
+</tr>
+<tr>
+<td><code class="code">ACCTNAME_FORM_USERNAME</code></td>
+<td>2</td>
+<td>abaker</td>
+</tr>
+<tr>
+<td><code class="code">ACCTNAME_FORM_BACKSLASH</code></td>
+<td>3</td>
+<td>EXAMPLE\abaker</td>
+</tr>
+<tr>
+<td><code class="code">ACCTNAME_FORM_PRINCIPAL</code></td>
+<td>4</td>
+<td>abaker@example.com</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br class="table-break">
+
+            </p>
+<p>
+                The default canonicalization depends on what account domain name options were supplied. If
+                <code class="code">accountDomainNameShort</code> was supplied, the default <code class="code">accountCanonicalForm</code> value
+                is <code class="code">ACCTNAME_FORM_BACKSLASH</code>. Otherwise, if <code class="code">accountDomainName</code> was supplied, the
+                default is <code class="code">ACCTNAME_FORM_PRINCIPAL</code>.
+            </p>
+<p>
+                Account name canonicalization ensures that the string used to identify an account is consistent
+                regardless of what was supplied to <code class="code">bind()</code>. For example, if the user supplies an account
+                name of <span class="emphasis"><em>abaker@example.com</em></span> or just <span class="emphasis"><em>abaker</em></span> and the
+                <code class="code">accountCanonicalForm</code> is set to 3, the resulting canonicalized name would be
+                <span class="emphasis"><em>EXAMPLE\abaker</em></span>.
+            </p>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.ldap.using.theory-of-operation.multi-domain-failover"></a>23.1.1.4. Multi-domain Authentication and Failover</h4></div></div></div>
+<p>
+                The <code class="code">Zend_Ldap</code> component by itself makes no attempt to authenticate with multiple servers.
+                However, <code class="code">Zend_Ldap</code> is specifically designed to handle this scenario gracefully. The
+                required technique is to simply iterate over an array of arrays of server options and attempt to bind
+                with each server. As described above <code class="code">bind()</code> will automatically canonicalize each name, so
+                it does not matter if the user passes <code class="code">abaker@foo.net</code> or <code class="code">W\bcarter</code> or
+                <code class="code">cdavis</code> - the <code class="code">bind()</code> method will only succeed if the credentials were
+                successfully used in the bind.
+            </p>
+<p>
+                Consider the following example that illustrates the technique required to implement multi-domain
+                authentication and failover:
+
+                </p>
+<pre class="programlisting">&lt;?php
+$acctname = 'W\\user2';
+$password = 'pass2';
+
+$multiOptions = array(
+    'server1' =&gt; array(
+        'host' =&gt; 's0.foo.net',
+        'username' =&gt; 'CN=user1,DC=foo,DC=net',
+        'password' =&gt; 'pass1',
+        'bindRequiresDn' =&gt; true,
+        'accountDomainName' =&gt; 'foo.net',
+        'accountDomainNameShort' =&gt; 'FOO',
+        'accountCanonicalForm' =&gt; 4, // ACCT_FORM_PRINCIPAL
+        'baseDn' =&gt; 'OU=Sales,DC=foo,DC=net',
+    ),
+    'server2' =&gt; array(
+        'host' =&gt; 'dc1.w.net',
+        'useSsl' =&gt; true,
+        'username' =&gt; 'user1@w.net',
+        'password' =&gt; 'pass1',
+        'accountDomainName' =&gt; 'w.net',
+        'accountDomainNameShort' =&gt; 'W',
+        'accountCanonicalForm' =&gt; 4, // ACCT_FORM_PRINCIPAL
+        'baseDn' =&gt; 'CN=Users,DC=w,DC=net',
+    ),
+);
+
+$ldap = new Zend_Ldap();
+
+foreach ($multiOptions as $name =&gt; $options) {
+
+    echo "Trying to bind using server options for '$name'\n";
+
+    $ldap-&gt;setOptions($options);
+    try {
+        $ldap-&gt;bind($acctname, $password);
+        $acctname = $ldap-&gt;getCanonicalAccountName($acctname);
+        echo "SUCCESS: authenticated $acctname\n";
+        return;
+    } catch (Zend_Ldap_Exception $zle) {
+        echo '  ' . $zle-&gt;getMessage() . "\n";
+        if ($zle-&gt;getCode() === Zend_Ldap_Exception::LDAP_X_DOMAIN_MISMATCH) {
+            continue;
+        }
+    }
+}</pre>
+<p>
+
+                If the bind fails for any reason, the next set of server options is tried.
+            </p>
+<p>
+                The <code class="code">getCanonicalAccountName</code> call gets the canonical account name that the application
+                would presumably use to associate data with such as preferences. The
+                <code class="code">accountCanonicalForm = 4</code> in all server options ensures that the canonical form is
+                consistent regardless of which server was ultimately used.
+            </p>
+<p>
+                The special <code class="code">LDAP_X_DOMAIN_MISMATCH</code> exception occurs when an account name with a domain
+                component was supplied (e.g., <code class="code">abaker@foo.net</code> or <code class="code">FOO\abaker</code> and not just
+                <code class="code">abaker</code>) but the domain component did not match either domain in the currently selected
+                server options. This exception indicates that the server is not an authority for the account. In this
+                case, the bind will not be performed, thereby eliminating unnecessary communication with the server.
+                Note that the <code class="code">continue</code> instruction has no effect in this example, but in practice for
+                error handling and debugging purposes, you will probably want to check for
+                <code class="code">LDAP_X_DOMAIN_MISMATCH</code> as well as <code class="code">LDAP_NO_SUCH_OBJECT</code> and
+                <code class="code">LDAP_INVALID_CREDENTIALS</code>.
+            </p>
+<p>
+                The above code is very similar to code used within
+                <a href="zend.auth.adapter.ldap.html" title="3.5. LDAP Authentication"><code class="code">Zend_Auth_Adapter_Ldap</code></a>. In fact, we
+                recommend that you simply use that authentication adapter for multi-domain + failover LDAP based
+                authentication (or copy the code).
+            </p>
+</div>
+</div>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.layout.advanced.html">Prev</a> </td>
+<td width="20%" align="center"> </td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.loader.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">22.4. Zend_Layout Advanced Usage </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> Chapter 24. Zend_Loader</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

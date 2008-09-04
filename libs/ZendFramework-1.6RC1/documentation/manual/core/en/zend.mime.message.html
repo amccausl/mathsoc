@@ -1,0 +1,166 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>30.2. Zend_Mime_Message</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="prev" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="next" href="zend.mime.part.html" title="30.3. Zend_Mime_Part">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.mime.message.html#zend.mime.message.introduction" title="30.2.1. Introduction">
+<link rel="subsection" href="zend.mime.message.html#zend.mime.message.instantiation" title="30.2.2. Instantiation">
+<link rel="subsection" href="zend.mime.message.html#zend.mime.message.addparts" title="30.2.3. Adding MIME Parts">
+<link rel="subsection" href="zend.mime.message.html#zend.mime.message.bondary" title="30.2.4. Boundary handling">
+<link rel="subsection" href="zend.mime.message.html#zend.mime.message.parse" title="30.2.5. parsing a string to create a Zend_Mime_Message object (experimental)">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">30.2. Zend_Mime_Message</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.mime.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 30. Zend_Mime</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.mime.part.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.mime.message"></a>30.2. Zend_Mime_Message</h2></div></div></div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.mime.message.introduction"></a>30.2.1. Introduction</h3></div></div></div>
+<p><code class="code">Zend_Mime_Message</code> represents a MIME compliant message
+      that can contain one or more seperate Parts (Represented as <a href="zend.mime.part.html" title="30.3. Zend_Mime_Part"><code class="code">Zend_Mime_Part</code></a> objects). With
+      <code class="code">Zend_Mime_Message</code>, MIME compliant multipart messages can be generated from
+      <code class="code">Zend_Mime_Part</code> objects. Encoding and Boundary handling are handled transparently
+      by the class. <code class="code">Zend_Mime_Message</code> objects can also be reconstructed from given
+      strings (experimental). Used by <a href="zend.mail.html" title="Chapter 27. Zend_Mail"><code class="code">Zend_Mail</code></a>.
+      </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.mime.message.instantiation"></a>30.2.2. Instantiation</h3></div></div></div>
+<p>
+            There is no explicit constructor for <code class="code">Zend_Mime_Message</code>.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.mime.message.addparts"></a>30.2.3. Adding MIME Parts</h3></div></div></div>
+<p><a href="zend.mime.part.html" title="30.3. Zend_Mime_Part"><code class="code">Zend_Mime_Part</code></a>
+        Objects can be added to a given <code class="code">Zend_Mime_Message</code> object by calling
+        <code class="code">-&gt;addPart($part)</code></p>
+<p>An array with all <a href="zend.mime.part.html" title="30.3. Zend_Mime_Part"><code class="code">Zend_Mime_Part</code></a>
+    objects in the <code class="code">Zend_Mime_Message</code> is returned
+        from the method <code class="code">-&gt;getParts()</code>.  The Zend_Mime_Part objects
+        can then be changed since they are stored in the array as references. If
+        parts are added to the array or the sequence is changed, the array needs
+        to be given back to the <a href="zend.mime.part.html" title="30.3. Zend_Mime_Part"><code class="code">Zend_Mime_Part</code></a>
+        object by calling <code class="code">-&gt;setParts($partsArray)</code>.</p>
+<p>The function <code class="code">-&gt;isMultiPart()</code> will return true if
+        more than one part is registered with the <code class="code">Zend_Mime_Message</code> object and thus
+        the object would generate a Multipart-Mime-Message when generating the
+        actual output.</p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.mime.message.bondary"></a>30.2.4. Boundary handling</h3></div></div></div>
+<p><code class="code">Zend_Mime_Message</code> usually creates and uses its own
+        <code class="code">Zend_Mime</code> Object to generate a boundary. If you need to
+        define the boundary or want to change the behaviour of the <code class="code">Zend_Mime</code> object
+        used by <code class="code">Zend_Mime_Message</code>, you can instantiate the <code class="code">Zend_Mime</code>
+        object yourself and then register it to <code class="code">Zend_Mime_Message</code>.
+        Usually you will not need to do this. <code class="code">-&gt;setMime(Zend_Mime
+        $mime)</code> sets a special instance of <code class="code">Zend_Mime</code> to be used
+        by this <code class="code">Zend_Mime_Message</code></p>
+<p><code class="code">-&gt;getMime()</code> returns the instance of
+        <code class="code">Zend_Mime</code> that will be used to render the message when
+        <code class="code">generateMessage()</code> is called.</p>
+<p><code class="code">-&gt;generateMessage()</code> renders the <code class="code">Zend_Mime_Message</code>
+        content to a string.</p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.mime.message.parse"></a>30.2.5. parsing a string to create a Zend_Mime_Message object
+        (experimental)</h3></div></div></div>
+<p>A given MIME compliant message in string form can be used to
+        reconstruct a <code class="code">Zend_Mime_Message</code> Object from it.
+        <code class="code">Zend_Mime_Message</code> has a static factory Method to parse this
+        String and return a <code class="code">Zend_Mime_Message</code> Object.</p>
+<p><code class="code">Zend_Mime_Message::createFromMessage($str, $boundary)</code>
+        decodes the given string and returns a <code class="code">Zend_Mime_Message</code>
+        Object that can then be examined using <code class="code">-&gt;getParts()</code></p>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.mime.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.mime.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.mime.part.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">Chapter 30. Zend_Mime </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 30.3. Zend_Mime_Part</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

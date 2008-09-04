@@ -1,0 +1,258 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>9.5. Creation of dates</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="prev" href="zend.date.overview.html" title="9.4. Zend_Date API Overview">
+<link rel="next" href="zend.date.constants.html" title="9.6. Constants for General Date Functions">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.date.creation.html#zend.date.creation.actual" title="9.5.1. Create the actual date">
+<link rel="subsection" href="zend.date.creation.html#zend.date.creation.database" title="9.5.2. Create a date from database">
+<link rel="subsection" href="zend.date.creation.html#zend.date.creation.array" title="9.5.3. Create dates from an array">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">9.5. Creation of dates</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.date.overview.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 9. Zend_Date</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.date.constants.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.date.creation"></a>9.5. Creation of dates</h2></div></div></div>
+<p>
+        <code class="code">Zend_Date</code> provides several different ways to create a new instance of itself. As there are
+        different needs the most convinient ways will be shown in this chapter.
+    </p>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.date.creation.actual"></a>9.5.1. Create the actual date</h3></div></div></div>
+<p>
+            The simplest way of creating a date object is to create the actual date. You can either create a new
+            instance with <span class="strong"><strong>new Zend_Date()</strong></span> or use the convinient static method
+            <span class="strong"><strong>Zend_Date::now()</strong></span> which both will return the actual date as new
+            instance of <code class="code">Zend_Date</code>. The actual date always include the actual date and time for the
+            actual set timezone.
+        </p>
+<div class="example">
+<a name="zend.date.creation.actual.example-1"></a><p class="title"><b>Example 9.10. Date creation by instance</b></p>
+<div class="example-contents">
+<p>
+                Date creation by creating a new instance means that you do not need to give an parameter. Of course
+                there are several parameters which will be described later but normally this is the simplest and
+                most used way to get the actual date as <code class="code">Zend_Date</code> instance.
+            </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Date.php';
+
+$date = new Zend_Date();
+            </pre>
+</div>
+</div>
+<br class="example-break"><div class="example">
+<a name="zend.date.creation.actual.example-2"></a><p class="title"><b>Example 9.11. Static date creation</b></p>
+<div class="example-contents">
+<p>
+                Sometimes it is easier to use a static method for date creation. Therefor you can use the
+                <span class="strong"><strong><code class="code">now()</code></strong></span> method. It returns a new instance of
+                <code class="code">Zend_Date</code> the same way as if you would use <code class="code">new Zend_Date()</code>. But it will
+                always return the actual date and can not be changed by giving optional parameters.
+            </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Date.php';
+
+$date = Zend_Date::now();
+            </pre>
+</div>
+</div>
+<br class="example-break">
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.date.creation.database"></a>9.5.2. Create a date from database</h3></div></div></div>
+<p>
+            Databases are often used to store date values. But the problem is, that every database outputs it's
+            date values in a different way. <code class="code">MsSQL</code> databases use a quite different standard date
+            output than <code class="code">MySQL</code> databases. But for simplification <code class="code">Zend_Date</code> makes it very
+            easy to create a date from database date values.
+        </p>
+<p>
+            Of course each database can be said to convert the output of a defined column to a special value.
+            For example you could convert a <code class="code">datetime</code> value to output a minute value. But this is
+            time expensive and often you are in need of handling dates in an other way than expected when creating
+            the database query.
+        </p>
+<p>
+            So we have one quick and one convinient way of creating dates from database values.
+        </p>
+<div class="example">
+<a name="zend.date.creation.database.example-1"></a><p class="title"><b>Example 9.12. Quick creation of dates from database date values</b></p>
+<div class="example-contents">
+<p>
+                All databases are known to handle queries as fast as possible. They are built to act and respond
+                quick. The quickest way for handling dates is to get unix timestamps from the database. All
+                databases store date values internal as timestamp (not unix timestamp). This means that the time
+                for creating a timestamp through a query is much smaller than converting it to a specified format.
+            </p>
+<pre class="programlisting">&lt;?php
+// SELECT UNIX_TIMESTAMP(my_datetime_column) FROM my_table
+require_once 'Zend/Date.php';
+
+$date = new Zend_Date($unixtimestamp, Zend_Date::TIMESTAMP);
+            </pre>
+</div>
+</div>
+<br class="example-break"><div class="example">
+<a name="zend.date.creation.database.example-2"></a><p class="title"><b>Example 9.13. Convenient creation of dates from database date values</b></p>
+<div class="example-contents">
+<p>
+                The standard output of all databases is quite different even if it looks the same on the first
+                eyecatch. But all are part of the <code class="code">ISO</code> Standard and explained through it. So the
+                easiest way of date creation is the usage of <code class="code">Zend_Date::ISO_8601</code>. Databases which are
+                known to be recognised by <code class="code">Zend_Date::ISO_8601</code> are <code class="code">MySQL</code>,
+                <code class="code">MsSQL</code> for example. But all databases are also able to return a <code class="code">ISO 8601</code>
+                representation of a date column. <code class="code">ISO 8601</code> has the big advantage that it is human
+                readable. The disadvantage is that <code class="code">ISO 8601</code> needs more time for computation than a
+                simple unix timestamp. But it should also be mentioned that unix timestamps are only supported
+                for dates after 1 January 1970.
+            </p>
+<pre class="programlisting">&lt;?php
+// SELECT datecolumn FROM my_table
+require_once 'Zend/Date.php';
+
+$date = new Zend_Date($datecolumn, Zend_Date::ISO_8601);
+            </pre>
+</div>
+</div>
+<br class="example-break">
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.date.creation.array"></a>9.5.3. Create dates from an array</h3></div></div></div>
+<p>
+            Dates can also be created by the usage of an array. This is a simple and easy way. The used array
+            keys are:
+        </p>
+<p>
+            </p>
+<div class="itemizedlist"><ul type="opencircle">
+<li style="list-style-type: circle"><p>
+                        <span class="strong"><strong>day</strong></span>: day of the date as number
+                    </p></li>
+<li style="list-style-type: circle"><p>
+                        <span class="strong"><strong>month</strong></span>: month of the date as number
+                    </p></li>
+<li style="list-style-type: circle"><p>
+                        <span class="strong"><strong>year</strong></span>: full year of the date
+                    </p></li>
+<li style="list-style-type: circle"><p>
+                        <span class="strong"><strong>hour</strong></span>: hour of the date
+                    </p></li>
+<li style="list-style-type: circle"><p>
+                        <span class="strong"><strong>minute</strong></span>: minute of the date
+                    </p></li>
+<li style="list-style-type: circle"><p>
+                        <span class="strong"><strong>second</strong></span>: second of the date
+                    </p></li>
+</ul></div>
+<p>
+        </p>
+<div class="example">
+<a name="zend.date.creation.array.example"></a><p class="title"><b>Example 9.14. Date creation by array</b></p>
+<div class="example-contents">
+<p>
+                Normally you will give a complete date array for creation of a new date instance. But when you
+                do not give all values, the not given array values are zeroed. This means that if f.e. no hour is
+                given the hour <span class="strong"><strong>0</strong></span> is used.
+            </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Date.php';
+$datearray = array('year' =&gt; 2006, 'month' =&gt; 4, 'day' =&gt; 18, 'hour' =&gt; 12, 'minute' =&gt; 3, 'second' =&gt; 10);
+$date = new Zend_Date($datearray);
+            </pre>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Date.php';
+$datearray = array('year' =&gt; 2006, 'month' =&gt; 4, 'day' =&gt; 18);
+$date = new Zend_Date($datearray);
+            </pre>
+</div>
+</div>
+<br class="example-break">
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.date.overview.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.date.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.date.constants.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">9.4. Zend_Date API Overview </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 9.6. Constants for General Date Functions</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

@@ -1,0 +1,1089 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Db_Profiler</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_Db_Profiler</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Db---Profiler.php.html">/Db/Profiler.php</a> (line <span class="field">31</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CONNECT" title="details" class="const-name">CONNECT</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DELETE" title="details" class="const-name">DELETE</a> = 					<span class="var-type"> 16</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#INSERT" title="details" class="const-name">INSERT</a> = 					<span class="var-type"> 4</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#QUERY" title="details" class="const-name">QUERY</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SELECT" title="details" class="const-name">SELECT</a> = 					<span class="var-type"> 32</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TRANSACTION" title="details" class="const-name">TRANSACTION</a> = 					<span class="var-type"> 64</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#UPDATE" title="details" class="const-name">UPDATE</a> = 					<span class="var-type"> 8</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">boolean</span>
+					<a href="#$_enabled" title="details" class="var-name">$_enabled</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">integer</span>
+					<a href="#$_filterElapsedSecs" title="details" class="var-name">$_filterElapsedSecs</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">integer</span>
+					<a href="#$_filterTypes" title="details" class="var-name">$_filterTypes</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$_queryProfiles" title="details" class="var-name">$_queryProfiles</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Db/Profiler/Zend_Db_Profiler.html">Zend_Db_Profiler</a></span>
+										<a href="#clear" title="details" class="method-name">clear</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$enabled</span> = <span class="var-default">false</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#getEnabled" title="details" class="method-name">getEnabled</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer|null</span>
+										<a href="#getFilterElapsedSecs" title="details" class="method-name">getFilterElapsedSecs</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer|null</span>
+										<a href="#getFilterQueryType" title="details" class="method-name">getFilterQueryType</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Db/Profiler/Zend_Db_Profiler_Query.html">Zend_Db_Profiler_Query</a>|false</span>
+										<a href="#getLastQueryProfile" title="details" class="method-name">getLastQueryProfile</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Db/Profiler/Zend_Db_Profiler_Query.html">Zend_Db_Profiler_Query</a></span>
+										<a href="#getQueryProfile" title="details" class="method-name">getQueryProfile</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$queryId</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array|false</span>
+										<a href="#getQueryProfiles" title="details" class="method-name">getQueryProfiles</a>
+											([<span class="var-type">integer</span>&nbsp;<span class="var-name">$queryType</span> = <span class="var-default">null</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$showUnfinished</span> = <span class="var-default">false</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">float</span>
+										<a href="#getTotalElapsedSecs" title="details" class="method-name">getTotalElapsedSecs</a>
+											([<span class="var-type">integer</span>&nbsp;<span class="var-name">$queryType</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer</span>
+										<a href="#getTotalNumQueries" title="details" class="method-name">getTotalNumQueries</a>
+											([<span class="var-type">integer</span>&nbsp;<span class="var-name">$queryType</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer</span>
+										<a href="#queryClone" title="details" class="method-name">queryClone</a>
+											(<span class="var-type"><a href="../../Zend_Db/Profiler/Zend_Db_Profiler_Query.html">Zend_Db_Profiler_Query</a></span>&nbsp;<span class="var-name">$query</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$queryId</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#queryEnd" title="details" class="method-name">queryEnd</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$queryId</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer|null</span>
+										<a href="#queryStart" title="details" class="method-name">queryStart</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$queryText</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$queryType</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Db/Profiler/Zend_Db_Profiler.html">Zend_Db_Profiler</a></span>
+										<a href="#setEnabled" title="details" class="method-name">setEnabled</a>
+											(<span class="var-type">boolean</span>&nbsp;<span class="var-name">$enable</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Db/Profiler/Zend_Db_Profiler.html">Zend_Db_Profiler</a></span>
+										<a href="#setFilterElapsedSecs" title="details" class="method-name">setFilterElapsedSecs</a>
+											([<span class="var-type">integer</span>&nbsp;<span class="var-name">$minimumSeconds</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Db/Profiler/Zend_Db_Profiler.html">Zend_Db_Profiler</a></span>
+										<a href="#setFilterQueryType" title="details" class="method-name">setFilterQueryType</a>
+											([<span class="var-type">integer</span>&nbsp;<span class="var-name">$queryTypes</span> = <span class="var-default">null</span>])
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_enabled" id="$_enabled"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$_enabled</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number">85</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Stores enabled state of the profiler.  If set to False, calls to  queryStart() will simply be ignored.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_filterElapsedSecs" id="$_filterElapsedSecs"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$_filterElapsedSecs</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">95</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Stores the number of seconds to filter.  NULL if filtering by time is  disabled.  If an integer is stored here, profiles whose elapsed time  is less than this value in seconds will be unset from  the self::$_queryProfiles array.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_filterTypes" id="$_filterTypes"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$_filterTypes</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">106</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Logical OR of any of the filter constants.  NULL if filtering by query</p>
+<p class="description"><p>type is disable.  If an integer is stored here, it is the logical OR of  any of the query type constants.  When the query ends, if it is not  one of the types specified, it will be unset from the  self::$_queryProfiles array.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_queryProfiles" id="$_queryProfiles"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_queryProfiles</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number">77</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Array of Zend_Db_Profiler_Query objects.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodclear" id="clear"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">clear</span> (line <span class="line-number">211</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Clears the history of any past query profiles.  This is relentless  and will even clear queries that were started and may not have  been marked as ended.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Db/Profiler/Zend_Db_Profiler.html">Zend_Db_Profiler</a></span>
+		<span class="method-name">
+			clear
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">115</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Class constructor.  The profiler is disabled by default unless it is  specifically enabled by passing in $enabled here or calling setEnabled().</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$enabled</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$enabled</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetEnabled" id="getEnabled"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getEnabled</span> (line <span class="line-number">140</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the current state of enable.  If True is returned,  the profiler is enabled.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			getEnabled
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetFilterElapsedSecs" id="getFilterElapsedSecs"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getFilterElapsedSecs</span> (line <span class="line-number">171</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the minimum number of seconds for saving query profiles, or null if  query profiles are saved regardless of elapsed time.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer|null</span>
+		<span class="method-name">
+			getFilterElapsedSecs
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetFilterQueryType" id="getFilterQueryType"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getFilterQueryType</span> (line <span class="line-number">199</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the types of query profiles saved, or null if queries are saved regardless  of their types.</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../../Zend_Db/Profiler/Zend_Db_Profiler.html#methodsetFilterQueryType">Zend_Db_Profiler::setFilterQueryType()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer|null</span>
+		<span class="method-name">
+			getFilterQueryType
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetLastQueryProfile" id="getLastQueryProfile"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getLastQueryProfile</span> (line <span class="line-number">448</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the Zend_Db_Profiler_Query object for the last query that was run, regardless if it has  ended or not.  If the query has not ended, its end time will be null.  If no queries have  been profiled, false is returned.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Db/Profiler/Zend_Db_Profiler_Query.html">Zend_Db_Profiler_Query</a>|false</span>
+		<span class="method-name">
+			getLastQueryProfile
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetQueryProfile" id="getQueryProfile"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getQueryProfile</span> (line <span class="line-number">345</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get a profile for a query.  Pass it the same handle that was returned  by queryStart() and it will return a Zend_Db_Profiler_Query object.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Db_Profiler_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Db/Profiler/Zend_Db_Profiler_Query.html">Zend_Db_Profiler_Query</a></span>
+		<span class="method-name">
+			getQueryProfile
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$queryId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$queryId</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetQueryProfiles" id="getQueryProfiles"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getQueryProfiles</span> (line <span class="line-number">370</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get an array of query profiles (Zend_Db_Profiler_Query objects).  If $queryType</p>
+<p class="description"><p>is set to one of the Zend_Db_Profiler::* constants then only queries of that  type will be returned.  Normally, queries that have not yet ended will  not be returned unless $showUnfinished is set to True.  If no  queries were found, False is returned. The returned array is indexed by the query  profile handles.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array|false</span>
+		<span class="method-name">
+			getQueryProfiles
+		</span>
+					([<span class="var-type">integer</span>&nbsp;<span class="var-name">$queryType</span> = <span class="var-default">null</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$showUnfinished</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$queryType</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$showUnfinished</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetTotalElapsedSecs" id="getTotalElapsedSecs"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getTotalElapsedSecs</span> (line <span class="line-number">401</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the total elapsed time (in seconds) of all of the profiled queries.</p>
+<p class="description"><p>Only queries that have ended will be counted.  If $queryType is set to  one or more of the Zend_Db_Profiler::* constants, the elapsed time will be calculated  only for queries of the given type(s).</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">float</span>
+		<span class="method-name">
+			getTotalElapsedSecs
+		</span>
+					([<span class="var-type">integer</span>&nbsp;<span class="var-name">$queryType</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$queryType</span><span class="var-description">: OPTIONAL</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetTotalNumQueries" id="getTotalNumQueries"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getTotalNumQueries</span> (line <span class="line-number">425</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the total number of queries that have been profiled.  Only queries that have ended will  be counted.  If $queryType is set to one of the Zend_Db_Profiler::* constants, only queries of  that type will be counted.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getTotalNumQueries
+		</span>
+					([<span class="var-type">integer</span>&nbsp;<span class="var-name">$queryType</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$queryType</span><span class="var-description">: OPTIONAL</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodqueryClone" id="queryClone"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">queryClone</span> (line <span class="line-number">222</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">return:</span> or null</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			queryClone
+		</span>
+					(<span class="var-type"><a href="../../Zend_Db/Profiler/Zend_Db_Profiler_Query.html">Zend_Db_Profiler_Query</a></span>&nbsp;<span class="var-name">$query</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$queryId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$queryId</span>			</li>
+					<li>
+				<span class="var-type"><a href="../../Zend_Db/Profiler/Zend_Db_Profiler_Query.html">Zend_Db_Profiler_Query</a></span>
+				<span class="var-name">$query</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodqueryEnd" id="queryEnd"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">queryEnd</span> (line <span class="line-number">288</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Ends a query.  Pass it the handle that was returned by queryStart().</p>
+<p class="description"><p>This will mark the query as ended and save the time.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Db_Profiler_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			queryEnd
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$queryId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$queryId</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodqueryStart" id="queryStart"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">queryStart</span> (line <span class="line-number">242</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Starts a query.  Creates a new query profile object (Zend_Db_Profiler_Query)</p>
+<p class="description"><p>and returns the &quot;query profiler handle&quot;.  Run the query, then call  queryEnd() and pass it this handle to make the query as ended and  record the time.  If the profiler is not enabled, this takes no  action and immediately returns null.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer|null</span>
+		<span class="method-name">
+			queryStart
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$queryText</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$queryType</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$queryText</span><span class="var-description">: SQL statement</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$queryType</span><span class="var-description">: OPTIONAL Type of query, one of the Zend_Db_Profiler::* constants</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetEnabled" id="setEnabled"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setEnabled</span> (line <span class="line-number">127</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Enable or disable the profiler.  If $enable is false, the profiler  is disabled and will not log any queries sent to it.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Db/Profiler/Zend_Db_Profiler.html">Zend_Db_Profiler</a></span>
+		<span class="method-name">
+			setEnabled
+		</span>
+					(<span class="var-type">boolean</span>&nbsp;<span class="var-name">$enable</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$enable</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetFilterElapsedSecs" id="setFilterElapsedSecs"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setFilterElapsedSecs</span> (line <span class="line-number">154</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets a minimum number of seconds for saving query profiles.  If this  is set, only those queries whose elapsed time is equal or greater than  $minimumSeconds will be saved.  To save all queries regardless of  elapsed time, set $minimumSeconds to null.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Db/Profiler/Zend_Db_Profiler.html">Zend_Db_Profiler</a></span>
+		<span class="method-name">
+			setFilterElapsedSecs
+		</span>
+					([<span class="var-type">integer</span>&nbsp;<span class="var-name">$minimumSeconds</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$minimumSeconds</span><span class="var-description">: OPTIONAL</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetFilterQueryType" id="setFilterQueryType"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setFilterQueryType</span> (line <span class="line-number">185</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the types of query profiles to save.  Set $queryType to one of  the Zend_Db_Profiler::* constants to only save profiles for that type of  query.  To save more than one type, logical OR them together.  To  save all queries regardless of type, set $queryType to null.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Db/Profiler/Zend_Db_Profiler.html">Zend_Db_Profiler</a></span>
+		<span class="method-name">
+			setFilterQueryType
+		</span>
+					([<span class="var-type">integer</span>&nbsp;<span class="var-name">$queryTypes</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$queryTypes</span><span class="var-description">: OPTIONAL</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constCONNECT" id="CONNECT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CONNECT</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">37</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">A connection operation or selecting a database.</p>
+	
+	
+</div>
+<a name="constDELETE" id="DELETE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DELETE</span>
+			 = <span class="const-default"> 16</span>
+			(line <span class="line-number">59</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">An operation related to deleting data in the database,  such as SQL's DELETE.</p>
+	
+	
+</div>
+<a name="constINSERT" id="INSERT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">INSERT</span>
+			 = <span class="const-default"> 4</span>
+			(line <span class="line-number">47</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adding new data to the database, such as SQL's INSERT.</p>
+	
+	
+</div>
+<a name="constQUERY" id="QUERY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">QUERY</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">42</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Any general database query that does not fit into the other constants.</p>
+	
+	
+</div>
+<a name="constSELECT" id="SELECT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SELECT</span>
+			 = <span class="const-default"> 32</span>
+			(line <span class="line-number">64</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieving information from the database, such as SQL's SELECT.</p>
+	
+	
+</div>
+<a name="constTRANSACTION" id="TRANSACTION"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TRANSACTION</span>
+			 = <span class="const-default"> 64</span>
+			(line <span class="line-number">69</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Transactional operation, such as start transaction, commit, or rollback.</p>
+	
+	
+</div>
+<a name="constUPDATE" id="UPDATE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">UPDATE</span>
+			 = <span class="const-default"> 8</span>
+			(line <span class="line-number">53</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Updating existing information in the database, such as SQL's UPDATE.</p>
+	
+	
+</div>
+						
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:45:38 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_OpenId_Provider</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_OpenId_Provider</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">OpenID provider (server) implementation</p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_OpenId---Provider.php.html">/OpenId/Provider.php</a> (line <span class="field">43</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																															
+				<div class="method-definition">
+					<img src="../../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">Zend_OpenId_Provider</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$loginUrl</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$trustUrl</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../../Zend_OpenId/Zend_OpenId_Provider/Zend_OpenId_Provider_User.html">Zend_OpenId_Provider_User</a></span>&nbsp;<span class="var-name">$user</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../../Zend_OpenId/Zend_OpenId_Provider/Zend_OpenId_Provider_Storage.html">Zend_OpenId_Provider_Storage</a></span>&nbsp;<span class="var-name">$storage</span> = <span class="var-default">null</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$sessionTtl</span> = <span class="var-default">3600</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#allowSite" title="details" class="method-name">allowSite</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$root</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$extensions</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#delSite" title="details" class="method-name">delSite</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$root</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#denySite" title="details" class="method-name">denySite</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$root</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#getLoggedInUser" title="details" class="method-name">getLoggedInUser</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#getSiteRoot" title="details" class="method-name">getSiteRoot</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#getTrustedSites" title="details" class="method-name">getTrustedSites</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#handle" title="details" class="method-name">handle</a>
+											([<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$extensions</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$response</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#hasUser" title="details" class="method-name">hasUser</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#login" title="details" class="method-name">login</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#logout" title="details" class="method-name">logout</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#register" title="details" class="method-name">register</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#respondToConsumer" title="details" class="method-name">respondToConsumer</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$extensions</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$response</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#_associate" title="details" class="method-name">_associate</a>
+											(<span class="var-type">float</span>&nbsp;<span class="var-name">$version</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$params</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#_checkAuthentication" title="details" class="method-name">_checkAuthentication</a>
+											(<span class="var-type">float</span>&nbsp;<span class="var-name">$version</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$params</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#_checkId" title="details" class="method-name">_checkId</a>
+											(<span class="var-type">float</span>&nbsp;<span class="var-name">$version</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$params</span>, <span class="var-type">bool</span>&nbsp;<span class="var-name">$immediate</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$extensions</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$response</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#_genSecret" title="details" class="method-name">_genSecret</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$func</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#_respond" title="details" class="method-name">_respond</a>
+											(<span class="var-type">float</span>&nbsp;<span class="var-name">$version</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$ret</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$params</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$extensions</span> = <span class="var-default">null</span>])
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">100</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructs a Zend_OpenId_Provider object with given parameters.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Zend_OpenId_Provider</span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$loginUrl</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$trustUrl</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../../Zend_OpenId/Zend_OpenId_Provider/Zend_OpenId_Provider_User.html">Zend_OpenId_Provider_User</a></span>&nbsp;<span class="var-name">$user</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../../Zend_OpenId/Zend_OpenId_Provider/Zend_OpenId_Provider_Storage.html">Zend_OpenId_Provider_Storage</a></span>&nbsp;<span class="var-name">$storage</span> = <span class="var-default">null</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$sessionTtl</span> = <span class="var-default">3600</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$loginUrl</span><span class="var-description">: is an URL that provides login screen for   end-user (by default it is the same URL with additional GET variable   openid.action=login)</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$trustUrl</span><span class="var-description">: is an URL that shows a question if end-user   trust to given consumer (by default it is the same URL with additional   GET variable openid.action=trust)</span>			</li>
+					<li>
+				<span class="var-type"><a href="../../Zend_OpenId/Zend_OpenId_Provider/Zend_OpenId_Provider_User.html">Zend_OpenId_Provider_User</a></span>
+				<span class="var-name">$user</span><span class="var-description">: is an object for communication   with User-Agent and store information about logged-in user (it is a   Zend_OpenId_Provider_User_Session object by default)</span>			</li>
+					<li>
+				<span class="var-type"><a href="../../Zend_OpenId/Zend_OpenId_Provider/Zend_OpenId_Provider_Storage.html">Zend_OpenId_Provider_Storage</a></span>
+				<span class="var-name">$storage</span><span class="var-description">: is an object for keeping   persistent database (it is a Zend_OpenId_Provider_Storage_File object   by default)</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$sessionTtl</span><span class="var-description">: is a default time to live for association    session in seconds (1 hour by default). Consumer must reestablish    association after that time.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodallowSite" id="allowSite"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">allowSite</span> (line <span class="line-number">240</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Allows consumer with given root URL to authenticate current logged  in user. Returns true on success and false on error.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			allowSite
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$root</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$extensions</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$root</span><span class="var-description">: root URL</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$extensions</span><span class="var-description">: extension object or array of extensions objects</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddelSite" id="delSite"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">delSite</span> (line <span class="line-number">282</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Delete consumer with given root URL from known sites of current logged  in user. Next time this consumer will try to authenticate the user,  Provider will ask user's confirmation.</p>
+<p class="description"><p>Returns true on success and false on error.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			delSite
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$root</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$root</span><span class="var-description">: root URL</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddenySite" id="denySite"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">denySite</span> (line <span class="line-number">263</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Prohibit consumer with given root URL to authenticate current logged  in user. Returns true on success and false on error.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			denySite
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$root</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$root</span><span class="var-description">: root URL</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetLoggedInUser" id="getLoggedInUser"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getLoggedInUser</span> (line <span class="line-number">199</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns identity URL of current logged in user or false</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getLoggedInUser
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetSiteRoot" id="getSiteRoot"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getSiteRoot</span> (line <span class="line-number">210</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve consumer's root URL from request query.</p>
+<p class="description"><p>Returns URL or false in case of failure</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getSiteRoot
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: query arguments</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetTrustedSites" id="getTrustedSites"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getTrustedSites</span> (line <span class="line-number">298</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns list of known consumers for current logged in user or false  if he is not logged in.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getTrustedSites
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodhandle" id="handle"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">handle</span> (line <span class="line-number">318</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Handles HTTP request from consumer</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			handle
+		</span>
+					([<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$extensions</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$response</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: GET or POST variables. If this parameter is omited   or set to null, then $_GET or $_POST superglobal variable is used   according to REQUEST_METHOD.</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$extensions</span><span class="var-description">: extension object or array of extensions objects</span>			</li>
+					<li>
+				<span class="var-type"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html">Zend_Controller_Response_Abstract</a></span>
+				<span class="var-name">$response</span><span class="var-description">: an optional response   object to perform HTTP or HTML form redirection</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodhasUser" id="hasUser"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">hasUser</span> (line <span class="line-number">156</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns true if user with given $id exists and false otherwise</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			hasUser
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: user identity URL</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodlogin" id="login"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">login</span> (line <span class="line-number">171</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Performs login of user with given $id and $password  Returns true in case of success and false otherwise</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			login
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: user identity URL</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$password</span><span class="var-description">: user password</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodlogout" id="logout"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">logout</span> (line <span class="line-number">188</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Performs logout. Clears information about logged in user.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			logout
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodregister" id="register"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">register</span> (line <span class="line-number">142</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Registers a new user with given $id and $password  Returns true in case of success and false if user with given $id already  exists</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			register
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: user identity URL</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$password</span><span class="var-description">: encoded user password</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrespondToConsumer" id="respondToConsumer"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">respondToConsumer</span> (line <span class="line-number">627</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Perepares information to send back to consumer's authentication request,  signs it using shared secret and send back through HTTP redirection</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			respondToConsumer
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$extensions</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$response</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: GET or POST request variables</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$extensions</span><span class="var-description">: extension object or array of extensions objects</span>			</li>
+					<li>
+				<span class="var-type"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html">Zend_Controller_Response_Abstract</a></span>
+				<span class="var-name">$response</span><span class="var-description">: an optional response   object to perform HTTP or HTML form redirection</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_associate" id="_associate"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_associate</span> (line <span class="line-number">397</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Processes association request from OpenID consumerm generates secret  shared key and send it back using Diffie-Hellman encruption.</p>
+<p class="description"><p>Returns array of variables to push back to consumer.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			_associate
+		</span>
+					(<span class="var-type">float</span>&nbsp;<span class="var-name">$version</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$params</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$version</span><span class="var-description">: OpenID version</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: GET or POST request variables</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_checkAuthentication" id="_checkAuthentication"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_checkAuthentication</span> (line <span class="line-number">724</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Performs authentication validation for dumb consumers  Returns array of variables to push back to consumer.</p>
+<p class="description"><p>It MUST contain 'is_valid' variable with value 'true' or 'false'.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			_checkAuthentication
+		</span>
+					(<span class="var-type">float</span>&nbsp;<span class="var-name">$version</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$params</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$version</span><span class="var-description">: OpenID version</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: GET or POST request variables</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_checkId" id="_checkId"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_checkId</span> (line <span class="line-number">496</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Performs authentication (or authentication check).</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			_checkId
+		</span>
+					(<span class="var-type">float</span>&nbsp;<span class="var-name">$version</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$params</span>, <span class="var-type">bool</span>&nbsp;<span class="var-name">$immediate</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$extensions</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$response</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$version</span><span class="var-description">: OpenID version</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: GET or POST request variables</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$immediate</span><span class="var-description">: enables or disables interaction with user</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$extensions</span><span class="var-description">: extension object or array of extensions objects</span>			</li>
+					<li>
+				<span class="var-type"><a href="../../Zend_Controller/Response/Zend_Controller_Response_Abstract.html">Zend_Controller_Response_Abstract</a></span>
+				<span class="var-name">$response</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_genSecret" id="_genSecret"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_genSecret</span> (line <span class="line-number">376</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generates a secret key for given hash function, returns RAW key or false  if function is not supported</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			_genSecret
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$func</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$func</span><span class="var-description">: hash function (sha1 or sha256)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_respond" id="_respond"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_respond</span> (line <span class="line-number">656</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Perepares information to send back to consumer's authentication request  and signs it using shared secret.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			_respond
+		</span>
+					(<span class="var-type">float</span>&nbsp;<span class="var-name">$version</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$ret</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$params</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$extensions</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$version</span><span class="var-description">: OpenID protcol version</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$ret</span><span class="var-description">: arguments to be send back to consumer</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: GET or POST request variables</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$extensions</span><span class="var-description">: extension object or array of extensions objects</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:45:41 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

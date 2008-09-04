@@ -1,0 +1,349 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>19.5. Zend_Http_Response</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="prev" href="zend.http.cookies.html" title="19.4. Zend_Http_Cookie and Zend_Http_CookieJar">
+<link rel="next" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.http.response.html#zend.http.response.introduction" title="19.5.1. Introduction">
+<link rel="subsection" href="zend.http.response.html#zend.http.response.testers" title="19.5.2. Boolean Tester Methods">
+<link rel="subsection" href="zend.http.response.html#zend.http.response.acessors" title="19.5.3. Accessor Methods">
+<link rel="subsection" href="zend.http.response.html#zend.http.response.static_parsers" title="19.5.4. Static HTTP Response Parsers">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">19.5. Zend_Http_Response</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.http.cookies.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 19. Zend_Http</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.infocard.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.http.response"></a>19.5. Zend_Http_Response</h2></div></div></div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.http.response.introduction"></a>19.5.1. Introduction</h3></div></div></div>
+<p>
+            Zend_Http_Response provides easy access to an HTTP responses
+            message, as well as a set of static methods for parsing HTTP
+            response messages. Usually, Zend_Http_Response is used as an object
+            returned by a Zend_Http_Client request.
+        </p>
+<p>
+            In most cases, a Zend_Http_Response object will be instantiated
+            using the factory() method, which reads a string containing an HTTP
+            response message, and returns a new Zend_Http_Response object:
+            </p>
+<div class="example">
+<a name="zend.http.response.introduction.example-1"></a><p class="title"><b>Example 19.24. Instantiating a Zend_Http_Response object using the factory method</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$str = '';
+$sock = fsockopen('www.example.com', 80);
+$req =     "GET / HTTP/1.1\r\n" .
+        "Host: www.example.com\r\n" .
+        "Connectoin: close\r\n" .
+        "\r\n";
+
+fwrite($sock, $req);
+while ($buff = fread($sock, 1024))
+    $str .= $sock;
+
+$response = Zend_Http_Response::factory($str);
+                </pre></div>
+</div>
+<p><br class="example-break">
+        </p>
+<p>
+            You can also use the contractor method to create a new response
+            object, by specifying all the parameters of the response:
+        </p>
+<p>
+            <code class="code">
+                public function __construct($code, $headers, $body = null, $version = '1.1', $message = null)
+            </code>
+        </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                    <code class="code">$code</code>: The HTTP response code (eg. 200, 404, etc.)
+                </p></li>
+<li><p>
+                    <code class="code">$headers</code>: An associative array of HTTP response headers (eg. 'Host' =&gt; 'example.com')
+                </p></li>
+<li><p>
+                    <code class="code">$body</code>: The response body as a string
+                </p></li>
+<li><p>
+                    <code class="code">$version</code>: The HTTP response version (usually 1.0 or 1.1)
+                </p></li>
+<li><p>
+                    <code class="code">$message</code>: The HTTP response message (eg 'OK', 'Internal Server Error').
+                    If not specified, the message will be set according to the response code
+                </p></li>
+</ul></div>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.http.response.testers"></a>19.5.2. Boolean Tester Methods</h3></div></div></div>
+<p>
+            Once a Zend_Http_Response object is instantiated, it provides several
+            methods that can be used to test the type of the response. These all
+            return Boolean true or false:
+            </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                        <code class="code">Boolean isSuccessful()</code>: Whether the request was successful or not. Returns
+                        TRUE for HTTP 1xx and 2xx response codes
+                    </p></li>
+<li><p>
+                        <code class="code">Boolean isError()</code>: Whether the response code implies an error or not. Returns
+                        TRUE for HTTP 4xx (client errors) and 5xx (server errors) response codes
+                    </p></li>
+<li><p>
+                        <code class="code">Boolean isRedirect()</code>: Whether the response is a redirection response or not. Returns
+                        TRUE for HTTP 3xx response codes
+                    </p></li>
+</ul></div>
+<p>
+            </p>
+<div class="example">
+<a name="zend.http.response.testers.example-1"></a><p class="title"><b>Example 19.25. Using the isError() method to validate a response</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+if ($response-&gt;isError()) {
+  echo "Error transmitting data.\n"
+  echo "Server reply was: " . $response-&gt;getStatus() . " " . $response-&gt;getMessage() . "\n";
+}
+// .. process the response here...
+                </pre></div>
+</div>
+<p><br class="example-break">
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.http.response.acessors"></a>19.5.3. Accessor Methods</h3></div></div></div>
+<p>
+            The main goal of the response object is to provide easy access to
+            various response parameters.
+            </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                        <code class="code">int getStatus()</code>: Get the HTTP response status code (eg. 200, 504, etc.)
+                    </p></li>
+<li><p>
+                        <code class="code">string getMessage()</code>: Get the HTTP response status message (eg. "Not Found",
+                        "Authorization Required")
+                    </p></li>
+<li><p>
+                        <code class="code">string getBody()</code>: Get the fully decoded HTTP response body
+                    </p></li>
+<li><p>
+                        <code class="code">string getRawBody()</code>: Get the raw, possibly encoded HTTP response body. If
+                        the body was decoded using GZIP encoding for example, it will not be decoded.
+                    </p></li>
+<li><p>
+                        <code class="code">array getHeaders()</code>: Get the HTTP response headers as an associative array
+                        (eg. 'Content-type' =&gt; 'text/html')
+                    </p></li>
+<li><p>
+                        <code class="code">string|array getHeader($header)</code>: Get a specific HTTP response header, specified
+                        by $header
+                    </p></li>
+<li><p>
+                        <code class="code">string getHeadersAsString($status_line = true, $br = "\n")</code>: Get the entire
+                        set of headers as a string. If $status_line is true (default), the first status
+                        line (eg. "HTTP/1.1 200 OK") will also be returned. Lines are broken with the
+                        $br parameter (Can be, for example, "&lt;br /&gt;")
+                    </p></li>
+<li><p>
+                        <code class="code">string asString($br = "\n")</code>: Get the entire response message as a string.
+                        Lines are broken with the $br parameter (Can be, for example, "&lt;br /&gt;")
+                    </p></li>
+</ul></div>
+<p>
+            </p>
+<div class="example">
+<a name="zend.http.response.acessors.example-1"></a><p class="title"><b>Example 19.26. Using Zend_Http_Response Accessor Methods</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+if ($response-&gt;getStatus() == 200) {
+  echo "The request returned the following information:&lt;br /&gt;";
+  echo $response-&gt;getBody();
+} else {
+  echo "An error occurred while fetching data:&lt;br /&gt;";
+  echo $response-&gt;getStatus() . ": " . $response-&gt;getMessage();
+}
+                </pre></div>
+</div>
+<p><br class="example-break">
+            </p>
+<div class="note"><table border="0" summary="Note: Always check return value">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Always check return value</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+                    Since a response can contain several instances of the same header,
+                    the getHeader() method and getHeaders() method may return either a
+                    single string, or an array of strings for each header. You should
+                    always check whether the returned value is a string or array.
+                </p></td></tr>
+</table></div>
+<p>
+            </p>
+<div class="example">
+<a name="zend.http.response.acessors.example-2"></a><p class="title"><b>Example 19.27. Accessing Response Headers</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$ctype = $response-&gt;getHeader('Content-type');
+if (is_array($ctype)) $ctype = $ctype[0];
+
+$body = $response-&gt;getBody();
+if ($ctype == 'text/html' || $ctype == 'text/xml') {
+  $body = htmlentities($body);
+}
+
+echo $body;
+                </pre></div>
+</div>
+<p><br class="example-break">
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.http.response.static_parsers"></a>19.5.4. Static HTTP Response Parsers</h3></div></div></div>
+<p>
+            The Zend_Http_Response class also includes several internally-used
+            methods for processing and parsing HTTP response messages. These
+            methods are all exposed as static methods, which means they can be
+            used externally, even if you do not need to instantiate a response
+            object, and just want to extract a specific part of the response.
+            </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                        <code class="code">int Zend_Http_Response::extractCode($response_str)</code>: Extract
+                        and return the HTTP response code (eg. 200 or 404) from $response_str
+                    </p></li>
+<li><p>
+                        <code class="code">string Zend_Http_Response::extractMessage($response_str)</code>: Extract
+                        and return the HTTP response message (eg. "OK" or "File Not Found") from $response_str
+                    </p></li>
+<li><p>
+                        <code class="code">string Zend_Http_Response::extractVersion($response_str)</code>: : Extract
+                        and return the HTTP version (eg. 1.1 or 1.0) from $response_str
+                    </p></li>
+<li><p>
+                        <code class="code">array Zend_Http_Response::extractHeaders($response_str)</code>: Extract
+                        and return the HTTP response headers from $response_str as an array
+                    </p></li>
+<li><p>
+                        <code class="code">string Zend_Http_Response::extractBody($response_str)</code>: Extract
+                        and return the HTTP response body from $response_str
+                    </p></li>
+<li><p>
+                        <code class="code">string Zend_Http_Response::responseCodeAsText($code = null, $http11 = true)</code>:
+                        Get the standard HTTP response message for a response code $code. For example,
+                        will return "Internal Server Error" if $code is 500. If $http11 is true (default),
+                        will return HTTP/1.1 standard messages - otherwise HTTP/1.0 messages will be returned.
+                        If $code is not specified, this method will return all known HTTP response codes as an
+                        associative (code =&gt; message) array.
+                    </p></li>
+</ul></div>
+<p>
+        </p>
+<p>
+            Apart from parser methods, the class also includes a set of decoders for common HTTP
+            response transfer encodings:
+            </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                        <code class="code">string Zend_Http_Response::decodeChunkedBody($body)</code>: Decode
+                        a complete "Content-Transfer-Encoding: Chunked" body
+                    </p></li>
+<li><p>
+                        <code class="code">string Zend_Http_Response::decodeGzip($body)</code>: Decode
+                        a "Content-Encoding: gzip" body
+                    </p></li>
+<li><p>
+                        <code class="code">string Zend_Http_Response::decodeDeflate($body)</code>: Decode
+                        a "Content-Encoding: deflate" body
+                    </p></li>
+</ul></div>
+<p>
+        </p>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.http.cookies.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.http.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.infocard.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">19.4. Zend_Http_Cookie and Zend_Http_CookieJar </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> Chapter 20. Zend_InfoCard</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

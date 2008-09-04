@@ -1,0 +1,257 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Chapter 44. Zend_Translate</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="index.html" title="Programmer's Reference Guide">
+<link rel="prev" href="zend.timesync.working.html" title="43.2. Working with Zend_TimeSync">
+<link rel="next" href="zend.translate.adapter.html" title="44.2. Adapters for Zend_Translate">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="section" href="zend.translate.html#zend.translate.introduction" title="44.1. Introduction">
+<link rel="section" href="zend.translate.adapter.html" title="44.2. Adapters for Zend_Translate">
+<link rel="section" href="zend.translate.using.html" title="44.3. Using Translation Adapters">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">Chapter 44. Zend_Translate</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.timesync.working.html">Prev</a> </td>
+<th width="60%" align="center"> </th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.translate.adapter.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="chapter" lang="en">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="zend.translate"></a>Chapter 44. Zend_Translate</h2></div></div></div>
+<div class="toc">
+<p><b>Table of Contents</b></p>
+<dl>
+<dt><span class="sect1"><a href="zend.translate.html#zend.translate.introduction">44.1. Introduction</a></span></dt>
+<dd><dl><dt><span class="sect2"><a href="zend.translate.html#zend.translate.introduction.adapters">44.1.1. Starting multi-lingual</a></span></dt></dl></dd>
+<dt><span class="sect1"><a href="zend.translate.adapter.html">44.2. Adapters for Zend_Translate</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.translate.adapter.html#zend.translate.adapter.decision">44.2.1. How to decide which translation adapter to use</a></span></dt>
+<dd><dl>
+<dt><span class="sect3"><a href="zend.translate.adapter.html#zend.translate.adapter.array">44.2.1.1. Zend_Translate_Adapter_Array</a></span></dt>
+<dt><span class="sect3"><a href="zend.translate.adapter.html#zend.translate.adapter.csv">44.2.1.2. Zend_Translate_Adapter_Csv</a></span></dt>
+<dt><span class="sect3"><a href="zend.translate.adapter.html#zend.translate.adapter.gettext">44.2.1.3. Zend_Translate_Adapter_Gettext</a></span></dt>
+<dt><span class="sect3"><a href="zend.translate.adapter.html#zend.translate.adapter.ini">44.2.1.4. Zend_Translate_Adapter_Ini</a></span></dt>
+<dt><span class="sect3"><a href="zend.translate.adapter.html#zend.translate.adapter.tbx">44.2.1.5. Zend_Translate_Adapter_Tbx</a></span></dt>
+<dt><span class="sect3"><a href="zend.translate.adapter.html#zend.translate.adapter.tmx">44.2.1.6. Zend_Translate_Adapter_Tmx</a></span></dt>
+<dt><span class="sect3"><a href="zend.translate.adapter.html#zend.translate.adapter.qt">44.2.1.7. Zend_Translate_Adapter_Qt</a></span></dt>
+<dt><span class="sect3"><a href="zend.translate.adapter.html#zend.translate.adapter.xliff">44.2.1.8. Zend_Translate_Adapter_Xliff</a></span></dt>
+<dt><span class="sect3"><a href="zend.translate.adapter.html#zend.translate.adapter.xmltm">44.2.1.9. Zend_Translate_Adapter_XmlTm</a></span></dt>
+</dl></dd>
+<dt><span class="sect2"><a href="zend.translate.adapter.html#zend.translate.adapter.selfwritten">44.2.2. Integrate self written Adapters</a></span></dt>
+<dt><span class="sect2"><a href="zend.translate.adapter.html#zend.translate.adapter.caching">44.2.3. Speedup all Adapters</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.translate.using.html">44.3. Using Translation Adapters</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.translate.using.html#zend.translate.using.structure">44.3.1. Translation Source Structures</a></span></dt>
+<dt><span class="sect2"><a href="zend.translate.using.html#zend.translate.using.source.array">44.3.2. Creating array source files</a></span></dt>
+<dt><span class="sect2"><a href="zend.translate.using.html#zend.translate.using.source.gettext">44.3.3. Creating Gettext Source Files</a></span></dt>
+<dt><span class="sect2"><a href="zend.translate.using.html#zend.translate.using.source.tmx">44.3.4. Creating TMX Source Files</a></span></dt>
+<dt><span class="sect2"><a href="zend.translate.using.html#zend.translate.using.source.csv">44.3.5. Creating CSV Source Files</a></span></dt>
+<dt><span class="sect2"><a href="zend.translate.using.html#zend.translate.using.source.ini">44.3.6. Creating INI Source Files</a></span></dt>
+<dt><span class="sect2"><a href="zend.translate.using.html#zend.translate.using.options">44.3.7. Options for adapters</a></span></dt>
+<dt><span class="sect2"><a href="zend.translate.using.html#zend.translate.using.languages">44.3.8. Handling languages</a></span></dt>
+<dd><dl><dt><span class="sect3"><a href="zend.translate.using.html#zend.translate.using.languages.automatic">44.3.8.1. Automatically handling of languages</a></span></dt></dl></dd>
+<dt><span class="sect2"><a href="zend.translate.using.html#zend.translate.using.detection">44.3.9. Automatic source detection</a></span></dt>
+<dd><dl>
+<dt><span class="sect3"><a href="zend.translate.using.html#zend.translate.using.detection.directory">44.3.9.1. Language through naming directories</a></span></dt>
+<dt><span class="sect3"><a href="zend.translate.using.html#zend.translate.using.detection.filename">44.3.9.2. Language through filenames</a></span></dt>
+<dd><dl>
+<dt><span class="sect4"><a href="zend.translate.using.html#zend.translate.using.detection.filename.complete">44.3.9.2.1. Complete Filename</a></span></dt>
+<dt><span class="sect4"><a href="zend.translate.using.html#zend.translate.using.detection.filename.extension">44.3.9.2.2. Extension of the file</a></span></dt>
+<dt><span class="sect4"><a href="zend.translate.using.html#zend.translate.using.detection.filename.token">44.3.9.2.3. Filename tokens</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="sect2"><a href="zend.translate.using.html#zend.translate.using.istranslated">44.3.10. Checking for translations</a></span></dt>
+<dt><span class="sect2"><a href="zend.translate.using.html#zend.translate.using.sourcedata">44.3.11. Access to the source data</a></span></dt>
+</dl></dd>
+</dl>
+</div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.translate.introduction"></a>44.1. Introduction</h2></div></div></div>
+<p>
+        Zend_Translate is the Zend Framework's solution for multilingual
+        applications.
+    </p>
+<p>
+        In multilingual applications, the content must be translated into
+        several languages and display content depending on the user's language.
+        PHP offers already several ways to handle such problems, however
+        the PHP solution has some problems:
+    </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                <span class="strong"><strong>Inconsistent API:</strong></span>
+                There is no single API for the different source formats.
+                The usage of gettext for example is very complicated.
+            </p></li>
+<li><p>
+                <span class="strong"><strong>PHP supports only gettext and native array:</strong></span>
+                PHP itself offers only support for array or gettext.
+                All other source formats have to be coded manually,
+                because there is no native support.
+            </p></li>
+<li><p>
+                <span class="strong"><strong>No detection of the default language:</strong></span>
+                The default language of the user cannot be detected without
+                deeper knowledge of the backgrounds for
+                the different web browsers.
+            </p></li>
+<li><p>
+                <span class="strong"><strong>Gettext is not thread-safe:</strong></span>
+                PHP's gettext library is not thread safe, and it
+                should not be used in a multithreaded environment.
+                This is due to problems with gettext itself, not PHP,
+                but it is an existing problem.
+            </p></li>
+</ul></div>
+<p>
+        Zend_Translate does not have the above problems. This is why we
+        recommend using Zend_Translate instead of PHP's native functions.
+        The benefits of Zend_Translate are:
+    </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                <span class="strong"><strong>Supports multiple source formats:</strong></span>
+                Zend_Translate supports several source formats, including
+                those supported by PHP, and other formats including TMX
+                and CSV files.
+            </p></li>
+<li><p>
+                <span class="strong"><strong>Thread-safe gettext:</strong></span>
+                The gettext reader of Zend_Translate is thread-safe.
+                There are no problems using it in multi-threaded environments.
+            </p></li>
+<li><p>
+                <span class="strong"><strong>Easy and generic API:</strong></span>
+                The API of Zend_Translate is very simple and requires only a
+                handful of functions.
+                So it's easy to learn and easy to maintain.
+                All source formats are handled the same way, so if the format
+                of your source files change from Gettext to TMX,
+                you only need to change one line of code to specify the
+                storage adapter.
+            </p></li>
+<li><p>
+                <span class="strong"><strong>Detection of the user's standard language:</strong></span>
+                The preferred language of the user accessing the site can be
+                detected and used by Zend_Translate.
+            </p></li>
+<li><p>
+                <span class="strong"><strong>Automatic source detection:</strong></span>
+                Zend_Translate is capable of detecting and integrating multiple source files
+                and additionally detect the locale to be used depending on directory or filenames.
+            </p></li>
+</ul></div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.translate.introduction.adapters"></a>44.1.1. Starting multi-lingual</h3></div></div></div>
+<p>
+            So let's get started with multi-lingual business.
+            What we want to do is translate our string
+            output so the view produces the translated output.
+            Otherwise we would have to write one view
+            for each language, and no one would like to do this.
+            Generally, multi-lingual sites are very simple in their design.
+            There are only four steps you would have to do:
+        </p>
+<div class="orderedlist"><ol type="1">
+<li><p>
+                    Decide which adapter you want to use;
+                </p></li>
+<li><p>
+                    Create your view and integrate Zend_Translate in your code;
+                </p></li>
+<li><p>
+                    Create the source file from your code;
+                </p></li>
+<li><p>
+                    Translate your source file to the desired language.
+                </p></li>
+</ol></div>
+<p>
+            The following sections guide you through all four steps.
+            Read through the next few pages to create your own
+            multi-lingual web application.
+        </p>
+</div>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.timesync.working.html">Prev</a> </td>
+<td width="20%" align="center"> </td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.translate.adapter.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">43.2. Working with Zend_TimeSync </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 44.2. Adapters for Zend_Translate</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

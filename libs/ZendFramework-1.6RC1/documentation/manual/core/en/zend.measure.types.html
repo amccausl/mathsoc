@@ -1,0 +1,432 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>28.5. Types of measurements</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="prev" href="zend.measure.edit.html" title="28.4. Manipulating Measurements">
+<link rel="next" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.measure.types.html#zend.measure.types.binary" title="28.5.1. Hints for Zend_Measure_Binary">
+<link rel="subsection" href="zend.measure.types.html#zend.measure.types.decimal" title="28.5.2. Hints for Zend_Measure_Number">
+<link rel="subsection" href="zend.measure.types.html#zend.measure.types.roman" title="28.5.3. Roman numbers">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">28.5. Types of measurements</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.measure.edit.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 28. Zend_Measure</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.memory.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.measure.types"></a>28.5. Types of measurements</h2></div></div></div>
+<p>
+        All supported measurement types are listed below, each with an example of the standard usage for such
+        measurements.
+    </p>
+<div class="table">
+<a name="zend.measure.types.table-1"></a><p class="title"><b>Table 28.1. List of measurement types</b></p>
+<div class="table-contents"><table summary="List of measurement types" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>Typ</th>
+<th>Class</th>
+<th>Standardunit</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Acceleration</td>
+<td>Zend_Measure_Acceleration</td>
+<td>Meter per square second | <code class="code">m/s²</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Acceleration</code> covers the
+                            physical factor of acceleration.
+                        </td>
+</tr>
+<tr>
+<td>Angle</td>
+<td>Zend_Measure_Angle</td>
+<td>Radiant | <code class="code">rad</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Angle</code> covers angular dimensions.</td>
+</tr>
+<tr>
+<td>Area</td>
+<td>Zend_Measure_Area</td>
+<td>Square meter | <code class="code">m²</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Area</code> covers square measures.</td>
+</tr>
+<tr>
+<td>Binary</td>
+<td>Zend_Measure_Binary</td>
+<td>Byte | <code class="code">b</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Binary</code> covers binary convertions.</td>
+</tr>
+<tr>
+<td>Capacitance</td>
+<td>Zend_Measure_Capacitance</td>
+<td>Farad | <code class="code">F</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Capacitance</code> covers physical factor of capacitance.
+                        </td>
+</tr>
+<tr>
+<td>Cooking volumes</td>
+<td>Zend_Measure_Cooking_Volume</td>
+<td>Cubic meter | <code class="code">m³</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Cooking_Volume</code> covers volumes
+                            which are used for cooking or written in cookbooks.
+                        </td>
+</tr>
+<tr>
+<td>Cooking weights</td>
+<td>Zend_Measure_Cooking_Weight</td>
+<td>Gram | <code class="code">g</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Cooking_Weight</code> covers the weights
+                            which are used for cooking or written in cookbooks.
+                        </td>
+</tr>
+<tr>
+<td>Current</td>
+<td>Zend_Measure_Current</td>
+<td>Ampere | <code class="code">A</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Current</code> covers the physical factor of current.
+                        </td>
+</tr>
+<tr>
+<td>Density</td>
+<td>Zend_Measure_Density</td>
+<td>Kilogram per cubic meter | <code class="code">kg/m³</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Density</code> covers the physical factor of density.
+                        </td>
+</tr>
+<tr>
+<td>Energy</td>
+<td>Zend_Measure_Energy</td>
+<td>Joule | <code class="code">J</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Energy</code> covers the physical factor of energy.
+                        </td>
+</tr>
+<tr>
+<td>Force</td>
+<td>Zend_Measure_Force</td>
+<td>Newton | <code class="code">N</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Force</code> covers the physical factor of force.
+                        </td>
+</tr>
+<tr>
+<td>Flow (mass)</td>
+<td>Zend_Measure_Flow_Mass</td>
+<td>Kilogram per second | <code class="code">kg/s</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Flow_Mass</code> covers the physical factor of flow rate.
+                            The weight of the flowing mass is used as reference point within this class.
+                        </td>
+</tr>
+<tr>
+<td>Flow (mole)</td>
+<td>Zend_Measure_Flow_Mole</td>
+<td>Mole per second | <code class="code">mol/s</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Flow_Mole</code> covers the physical factor of flow rate.
+                            The density of the flowing mass is used as reference point within this class.
+                        </td>
+</tr>
+<tr>
+<td>Flow (volume)</td>
+<td>Zend_Measure_Flow_Volume</td>
+<td>Cubic meter per second | <code class="code">m³/s</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Flow_Volume</code> covers the physical factor of flow rate.
+                            The volume of the flowing mass is used as reference point within this class.
+                        </td>
+</tr>
+<tr>
+<td>Frequency</td>
+<td>Zend_Measure_Frequency</td>
+<td>Hertz | <code class="code">Hz</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Frequency</code> covers the physical factor of frequency.
+                        </td>
+</tr>
+<tr>
+<td>Illumination</td>
+<td>Zend_Measure_Illumination</td>
+<td>Lux | <code class="code">lx</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Illumination</code> covers the physical factor of light density.
+                        </td>
+</tr>
+<tr>
+<td>Length</td>
+<td>Zend_Measure_Length</td>
+<td>Meter | <code class="code">m</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Length</code> covers the physical factor of length.
+                        </td>
+</tr>
+<tr>
+<td>Lightness</td>
+<td>Zend_Measure_Lightness</td>
+<td>Candela per square meter | <code class="code">cd/m²</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Ligntness</code> covers the physical factor of light energy.
+                        </td>
+</tr>
+<tr>
+<td>Number</td>
+<td>Zend_Measure_Number</td>
+<td>Decimal | <code class="code">(10)</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Number</code> converts between number formats.
+                        </td>
+</tr>
+<tr>
+<td>Power</td>
+<td>Zend_Measure_Power</td>
+<td>Watt | <code class="code">W</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Power</code> covers the physical factor of power.
+                        </td>
+</tr>
+<tr>
+<td>Pressure</td>
+<td>Zend_Measure_Pressure</td>
+<td>Newton per square meter | <code class="code">N/m²</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Pressure</code> covers the physical factor of pressure.
+                        </td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>Zend_Measure_Speed</td>
+<td>Meter per second | <code class="code">m/s</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Speed</code> covers the physical factor of speed.
+                        </td>
+</tr>
+<tr>
+<td>Temperature</td>
+<td>Zend_Measure_Temperature</td>
+<td>Kelvin | <code class="code">K</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Temperature</code> covers the physical factor of temperature.
+                        </td>
+</tr>
+<tr>
+<td>Time</td>
+<td>Zend_Measure_Time</td>
+<td>Second | <code class="code">s</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Time</code> covers the physical factor of time.
+                        </td>
+</tr>
+<tr>
+<td>Torque</td>
+<td>Zend_Measure_Torque</td>
+<td>Newton meter | <code class="code">Nm</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Torque</code> covers the physical factor of torque.
+                        </td>
+</tr>
+<tr>
+<td>Viscosity (dynamic)</td>
+<td>Zend_Measure_Viscosity_Dynamic</td>
+<td>Kilogram per meter second | <code class="code">kg/ms</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Viscosity_Dynamic</code> covers the physical factor of viscosity.
+                            The weight of the fluid is used as reference point within this class.
+                        </td>
+</tr>
+<tr>
+<td>Viscosity (kinematic)</td>
+<td>Zend_Measure_Viscosity_Kinematic</td>
+<td>Square meter per second | <code class="code">m²/s</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Viscosity_Kinematic</code> covers the physical factor of viscosity.
+                            The distance of the flown fluid is used as reference point within this class.
+                        </td>
+</tr>
+<tr>
+<td>Volume</td>
+<td>Zend_Measure_Volume</td>
+<td>Cubic meter | <code class="code">m³</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Volume</code> covers the physical factor of volume (content).
+                        </td>
+</tr>
+<tr>
+<td>Weight</td>
+<td>Zend_Measure_Weight</td>
+<td>Kilogram | <code class="code">kg</code>
+                    </td>
+<td>
+<code class="code">Zend_Measure_Weight</code> covers the physical factor of weight.
+                        </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<br class="table-break"><div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.measure.types.binary"></a>28.5.1. Hints for Zend_Measure_Binary</h3></div></div></div>
+<p>
+            Some popular binary conventions, include terms like kilo-, mega-, giga, etc. in normal language use imply
+            base 10, such as 1000 or 10³. However, in the binary format for computers these terms have to be seen for a
+            convertion factor of 1024 instead of 1000. To preclude confusions a few years ago the notation BI was
+            introduced. Instead of kilobyte, kibibyte for kilo-binary-byte should be used.
+        </p>
+<p>
+            In the class BINARY both notations can be found, such as <code class="code">KILOBYTE = 1024 - binary conputer conversion
+            KIBIBYTE = 1024 - new notation KILO_BINARY_BYTE = 1024 - new</code>, or the notation, long format
+            <code class="code">KILOBYTE_SI = 1000 - SI notation for kilo (1000)</code>. DVDs for example are marked with the
+            SI-notation, but almost all harddisks are marked in computer binary notation.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.measure.types.decimal"></a>28.5.2. Hints for Zend_Measure_Number</h3></div></div></div>
+<p>
+            The best known number format is the decimal system. Additionaly this class supports the octal system, the
+            hexadecimal system, the binary system, the roman number system and some other less popular systems. Note
+            that only the decimal part of numbers is handled. Any fractional part will be stripped.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.measure.types.roman"></a>28.5.3. Roman numbers</h3></div></div></div>
+<p>
+            For the roman numbersystem digits greater 4000 are supported. In reality these digits are shown with a
+            crossbeam on top of the digit. As the crossbeam can not be shown within the computer, an underline has to be
+            used instead of it.
+        </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Measure/Number.php';
+
+$great = '_X';
+$locale = new Zend_Locale('en');
+$unit = new Zend_Measure_Number($great,Zend_Measure_Number::ROMAN, $locale);
+
+// convert to the decimal system
+echo $unit-&gt;convertTo(Zend_Measure_Number::DECIMAL);
+        </pre>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.measure.edit.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.measure.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.memory.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">28.4. Manipulating Measurements </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> Chapter 29. Zend_Memory</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

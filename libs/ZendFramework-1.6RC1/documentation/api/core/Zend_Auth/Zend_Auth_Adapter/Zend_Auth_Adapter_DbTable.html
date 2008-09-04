@@ -1,0 +1,1013 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Auth_Adapter_DbTable</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_Auth_Adapter_DbTable</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+                <p class="implements">
+            Implements interfaces:
+            <ul>
+                <li><a href="../../Zend_Auth/Zend_Auth_Adapter/Zend_Auth_Adapter_Interface.html">Zend_Auth_Adapter_Interface</a></li>            </ul>
+        </p>
+        		<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Auth---Adapter---DbTable.php.html">/Auth/Adapter/DbTable.php</a> (line <span class="field">47</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																																																								<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$_authenticateResultInfo" title="details" class="var-name">$_authenticateResultInfo</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_credential" title="details" class="var-name">$_credential</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_credentialColumn" title="details" class="var-name">$_credentialColumn</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_credentialTreatment" title="details" class="var-name">$_credentialTreatment</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_identity" title="details" class="var-name">$_identity</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_identityColumn" title="details" class="var-name">$_identityColumn</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$_resultRow" title="details" class="var-name">$_resultRow</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_tableName" title="details" class="var-name">$_tableName</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../../Zend_Db/Adapter/Zend_Db_Adapter_Abstract.html">Zend_Db_Adapter_Abstract</a></span>
+					<a href="#$_zendDb" title="details" class="var-name">$_zendDb</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																							
+				<div class="method-definition">
+					<img src="../../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$zendDb</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$tableName</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$identityColumn</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$credentialColumn</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$credentialTreatment</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Auth/Zend_Auth_Result.html">Zend_Auth_Result</a></span>
+										<a href="#authenticate" title="details" class="method-name">authenticate</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">stdClass|boolean</span>
+										<a href="#getResultRowObject" title="details" class="method-name">getResultRowObject</a>
+											([<span class="var-type">string|array</span>&nbsp;<span class="var-name">$returnColumns</span> = <span class="var-default">null</span>], [<span class="var-type">string|array</span>&nbsp;<span class="var-name">$omitColumns</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Auth/Zend_Auth_Adapter/Zend_Auth_Adapter_DbTable.html">Zend_Auth_Adapter_DbTable</a></span>
+										<a href="#setCredential" title="details" class="method-name">setCredential</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$credential</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Auth/Zend_Auth_Adapter/Zend_Auth_Adapter_DbTable.html">Zend_Auth_Adapter_DbTable</a></span>
+										<a href="#setCredentialColumn" title="details" class="method-name">setCredentialColumn</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$credentialColumn</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Auth/Zend_Auth_Adapter/Zend_Auth_Adapter_DbTable.html">Zend_Auth_Adapter_DbTable</a></span>
+										<a href="#setCredentialTreatment" title="details" class="method-name">setCredentialTreatment</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$treatment</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Auth/Zend_Auth_Adapter/Zend_Auth_Adapter_DbTable.html">Zend_Auth_Adapter_DbTable</a></span>
+										<a href="#setIdentity" title="details" class="method-name">setIdentity</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Auth/Zend_Auth_Adapter/Zend_Auth_Adapter_DbTable.html">Zend_Auth_Adapter_DbTable</a></span>
+										<a href="#setIdentityColumn" title="details" class="method-name">setIdentityColumn</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$identityColumn</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Auth/Zend_Auth_Adapter/Zend_Auth_Adapter_DbTable.html">Zend_Auth_Adapter_DbTable</a></span>
+										<a href="#setTableName" title="details" class="method-name">setTableName</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$tableName</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Auth/Zend_Auth_Result.html">Zend_Auth_Result</a></span>
+										<a href="#_authenticateCreateAuthResult" title="details" class="method-name">_authenticateCreateAuthResult</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Db/Select/Zend_Db_Select.html">Zend_Db_Select</a></span>
+										<a href="#_authenticateCreateSelect" title="details" class="method-name">_authenticateCreateSelect</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#_authenticateQuerySelect" title="details" class="method-name">_authenticateQuerySelect</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$dbSelect</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">true</span>
+										<a href="#_authenticateSetup" title="details" class="method-name">_authenticateSetup</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Auth/Zend_Auth_Result.html">Zend_Auth_Result</a></span>
+										<a href="#_authenticateValidateResult" title="details" class="method-name">_authenticateValidateResult</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$resultIdentity</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">true|<a href="../../Zend_Auth/Zend_Auth_Result.html">Zend_Auth_Result</a></span>
+										<a href="#_authenticateValidateResultSet" title="details" class="method-name">_authenticateValidateResultSet</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$resultIdentities</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_authenticateResultInfo" id="$_authenticateResultInfo"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_authenticateResultInfo</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">103</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">$_authenticateResultInfo</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_credential" id="$_credential"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_credential</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">89</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">$_credential - Credential values</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_credentialColumn" id="$_credentialColumn"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_credentialColumn</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">75</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">$_credentialColumns - columns to be used as the credentials</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_credentialTreatment" id="$_credentialTreatment"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_credentialTreatment</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">96</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">$_credentialTreatment - Treatment applied to the credential, such as MD5() or PASSWORD()</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_identity" id="$_identity"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_identity</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">82</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">$_identity - Identity value</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_identityColumn" id="$_identityColumn"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_identityColumn</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">68</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">$_identityColumn - the column to use as the identity</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_resultRow" id="$_resultRow"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_resultRow</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">110</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">$_resultRow - Results of database authentication query</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_tableName" id="$_tableName"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_tableName</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">61</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">$_tableName - the table name to check</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_zendDb" id="$_zendDb"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../../Zend_Db/Adapter/Zend_Db_Adapter_Abstract.html">Zend_Db_Adapter_Abstract</a></span>
+			<span class="var-name">$_zendDb</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">54</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Database Connection</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">122</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">__construct() - Sets configuration options</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$zendDb</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$tableName</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$identityColumn</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$credentialColumn</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$credentialTreatment</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_Db/Adapter/Zend_Db_Adapter_Abstract.html">Zend_Db_Adapter_Abstract</a></span>
+				<span class="var-name">$zendDb</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tableName</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$identityColumn</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$credentialColumn</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$credentialTreatment</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodauthenticate" id="authenticate"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">authenticate</span> (line <span class="line-number">282</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">authenticate() - defined by Zend_Auth_Adapter_Interface.  This method is called to  attempt an authenication.  Previous to this call, this adapter would have already  been configured with all nessissary information to successfully connect to a database  table and attempt to find a record matching the provided identity.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Auth_Adapter_Exception if answering the authentication query is impossible</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Auth/Zend_Auth_Result.html">Zend_Auth_Result</a></span>
+		<span class="method-name">
+			authenticate
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Zend_Auth/Zend_Auth_Adapter/Zend_Auth_Adapter_Interface.html#methodauthenticate">Zend_Auth_Adapter_Interface::authenticate()</a></dt>
+						<dd>Performs an authentication attempt</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetResultRowObject" id="getResultRowObject"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getResultRowObject</span> (line <span class="line-number">235</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getResultRowObject() - Returns the result row as a stdClass object</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">stdClass|boolean</span>
+		<span class="method-name">
+			getResultRowObject
+		</span>
+					([<span class="var-type">string|array</span>&nbsp;<span class="var-name">$returnColumns</span> = <span class="var-default">null</span>], [<span class="var-type">string|array</span>&nbsp;<span class="var-name">$omitColumns</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|array</span>
+				<span class="var-name">$returnColumns</span>			</li>
+					<li>
+				<span class="var-type">string|array</span>
+				<span class="var-name">$omitColumns</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetCredential" id="setCredential"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setCredential</span> (line <span class="line-number">222</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">setCredential() - set the credential value to be used, optionally can specify a treatment  to be used, should be supplied in parameterized form, such as 'MD5(?)' or 'PASSWORD(?)'</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Auth/Zend_Auth_Adapter/Zend_Auth_Adapter_DbTable.html">Zend_Auth_Adapter_DbTable</a></span>
+		<span class="method-name">
+			setCredential
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$credential</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$credential</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetCredentialColumn" id="setCredentialColumn"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setCredentialColumn</span> (line <span class="line-number">174</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">setCredentialColumn() - set the column name to be used as the credential column</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Auth/Zend_Auth_Adapter/Zend_Auth_Adapter_DbTable.html">Zend_Auth_Adapter_DbTable</a></span>
+		<span class="method-name">
+			setCredentialColumn
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$credentialColumn</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$credentialColumn</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetCredentialTreatment" id="setCredentialTreatment"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setCredentialTreatment</span> (line <span class="line-number">197</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">setCredentialTreatment() - allows the developer to pass a parameterized string that is  used to transform or treat the input credential data</p>
+<p class="description"><p>In many cases, passwords and other sensitive data are encrypted, hashed, encoded,  obscured, or otherwise treated through some function or algorithm. By specifying a  parameterized treatment string with this method, a developer may apply arbitrary SQL  upon input credential data.</p><p>Examples:</p><p>'PASSWORD(?)'   'MD5(?)'</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Auth/Zend_Auth_Adapter/Zend_Auth_Adapter_DbTable.html">Zend_Auth_Adapter_DbTable</a></span>
+		<span class="method-name">
+			setCredentialTreatment
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$treatment</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$treatment</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetIdentity" id="setIdentity"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setIdentity</span> (line <span class="line-number">209</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">setIdentity() - set the value to be used as the identity</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Auth/Zend_Auth_Adapter/Zend_Auth_Adapter_DbTable.html">Zend_Auth_Adapter_DbTable</a></span>
+		<span class="method-name">
+			setIdentity
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetIdentityColumn" id="setIdentityColumn"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setIdentityColumn</span> (line <span class="line-number">162</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">setIdentityColumn() - set the column name to be used as the identity column</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Auth/Zend_Auth_Adapter/Zend_Auth_Adapter_DbTable.html">Zend_Auth_Adapter_DbTable</a></span>
+		<span class="method-name">
+			setIdentityColumn
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$identityColumn</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$identityColumn</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetTableName" id="setTableName"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setTableName</span> (line <span class="line-number">150</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">setTableName() - set the table name to be used in the select query</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Auth/Zend_Auth_Adapter/Zend_Auth_Adapter_DbTable.html">Zend_Auth_Adapter_DbTable</a></span>
+		<span class="method-name">
+			setTableName
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$tableName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tableName</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_authenticateCreateAuthResult" id="_authenticateCreateAuthResult"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_authenticateCreateAuthResult</span> (line <span class="line-number">452</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">_authenticateCreateAuthResult() - This method creates a Zend_Auth_Result object  from the information that has been collected during the authenticate() attempt.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Auth/Zend_Auth_Result.html">Zend_Auth_Result</a></span>
+		<span class="method-name">
+			_authenticateCreateAuthResult
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method_authenticateCreateSelect" id="_authenticateCreateSelect"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_authenticateCreateSelect</span> (line <span class="line-number">342</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">_authenticateCreateSelect() - This method creates a Zend_Db_Select object that  is completely configured to be queried against the database.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Db/Select/Zend_Db_Select.html">Zend_Db_Select</a></span>
+		<span class="method-name">
+			_authenticateCreateSelect
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method_authenticateQuerySelect" id="_authenticateQuerySelect"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_authenticateQuerySelect</span> (line <span class="line-number">375</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">_authenticateQuerySelect() - This method accepts a Zend_Db_Select object and  performs a query against the database with that object.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Auth_Adapter_Exception - when a invalid select object is encoutered</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			_authenticateQuerySelect
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$dbSelect</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_Db/Select/Zend_Db_Select.html">Zend_Db_Select</a></span>
+				<span class="var-name">$dbSelect</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_authenticateSetup" id="_authenticateSetup"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_authenticateSetup</span> (line <span class="line-number">303</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">_authenticateSetup() - This method abstracts the steps involved with making sure  that this adapter was indeed setup properly with all required peices of information.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Auth_Adapter_Exception - in the event that setup was not done properly</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">true</span>
+		<span class="method-name">
+			_authenticateSetup
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method_authenticateValidateResult" id="_authenticateValidateResult"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_authenticateValidateResult</span> (line <span class="line-number">430</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">_authenticateValidateResult() - This method attempts to validate that the record in the  result set is indeed a record that matched the identity provided to this adapter.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Auth/Zend_Auth_Result.html">Zend_Auth_Result</a></span>
+		<span class="method-name">
+			_authenticateValidateResult
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$resultIdentity</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$resultIdentity</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_authenticateValidateResultSet" id="_authenticateValidateResultSet"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_authenticateValidateResultSet</span> (line <span class="line-number">406</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">_authenticateValidateResultSet() - This method attempts to make certian that only one  record was returned in the result set</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">true|<a href="../../Zend_Auth/Zend_Auth_Result.html">Zend_Auth_Result</a></span>
+		<span class="method-name">
+			_authenticateValidateResultSet
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$resultIdentities</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$resultIdentities</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:15:52 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

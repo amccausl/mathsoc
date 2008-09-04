@@ -1,0 +1,278 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>22.3. Zend_Layout Configuration Options</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="prev" href="zend.layout.quickstart.html" title="22.2. Zend_Layout Quick Start">
+<link rel="next" href="zend.layout.advanced.html" title="22.4. Zend_Layout Advanced Usage">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.layout.options.html#zend.layout.options.examples" title="22.3.1. Examples">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">22.3. Zend_Layout Configuration Options</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.layout.quickstart.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 22. Zend_Layout</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.layout.advanced.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.layout.options"></a>22.3. Zend_Layout Configuration Options</h2></div></div></div>
+<p>
+        <code class="code">Zend_Layout</code> has a variety of configuration options. These
+        may be set by calling the appropriate accessors, passing an array or
+        <code class="code">Zend_Config</code> object to the constructor or
+        <code class="code">startMvc()</code>, passing an array of options to
+        <code class="code">setOptions()</code>, or passing a <code class="code">Zend_Config</code> object
+        to <code class="code">setConfig()</code>.
+    </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                <span class="emphasis"><em>layout</em></span>: the layout to use. Uses the
+                current inflector to resolve the name provided to the
+                appropriate layout view script. By default, this value is
+                'layout' and resolves to 'layout.phtml'. Accessors
+                are <code class="code">setLayout()</code> and <code class="code">getLayout()</code>.
+        </p></li>
+<li><p>
+                <span class="emphasis"><em>layoutPath</em></span>: the base path to layout view
+                scripts. Accessors are <code class="code">setLayoutPath()</code> and
+                <code class="code">getLayoutPath()</code>.
+        </p></li>
+<li><p>
+                <span class="emphasis"><em>contentKey</em></span>: the layout variable used for
+                default content (when used with the MVC). Default value is
+                'content'. Accessors are <code class="code">setContentKey()</code> and
+                <code class="code">getContentKey()</code>.
+        </p></li>
+<li><p>
+                <span class="emphasis"><em>mvcSuccessfulActionOnly</em></span>: when using the
+                MVC, if an action throws an exception and this flag is true, the
+                layout will not be rendered (this is to prevent double-rendering
+                of the layout when the <a href="zend.controller.plugins.html#zend.controller.plugins.standard.errorhandler" title="7.10.5.2. Zend_Controller_Plugin_ErrorHandler">ErrorHandler
+                plugin</a> is in use). By default, the flat is true.
+                Accessors are <code class="code">setMvcSuccessfulActionOnly()</code> and
+                <code class="code">getMvcSuccessfulActionOnly()</code>.
+        </p></li>
+<li><p>
+                <span class="emphasis"><em>view</em></span>: the view object to use when
+                rendering. When used with the MVC, <code class="code">Zend_Layout</code> will
+                attempt to use the view object registered with <a href="zend.controller.actionhelpers.html#zend.controller.actionhelpers.viewrenderer" title="7.8.4.7. ViewRenderer">the
+                    ViewRenderer</a> if no view object has been passed to it
+                explicitly. Accessors are <code class="code">setView()</code> and
+                <code class="code">getView()</code>.
+        </p></li>
+<li><p>
+                <span class="emphasis"><em>helperClass</em></span>: the action helper class to use
+                when using <code class="code">Zend_Layout</code> with the MVC components. By
+                default, this is
+                <code class="code">Zend_Layout_Controller_Action_Helper_Layout</code>.
+                Accessors are <code class="code">setHelperClass()</code> and
+                <code class="code">getHelperClass()</code>.
+        </p></li>
+<li><p>
+                <span class="emphasis"><em>pluginClass</em></span>: the front controller plugin
+                class to use when using <code class="code">Zend_Layout</code> with the MVC
+                components. By default, this is
+                <code class="code">Zend_Layout_Controller_Plugin_Layout</code>.  Accessors
+                are <code class="code">setPluginClass()</code> and
+                <code class="code">getPluginClass()</code>.
+        </p></li>
+<li><p>
+                <span class="emphasis"><em>inflector</em></span>: the inflector to use when
+                resolving layout names to layout view script paths; see <a href="zend.layout.advanced.html#zend.layout.advanced.inflector" title="22.4.4. Custom Layout Script Path Resolution: Using the Inflector">the
+                    <code class="code">Zend_Layout</code> inflector documentation for more
+                    details</a>. Accessors are <code class="code">setInflector()</code>
+                and <code class="code">getInflector()</code>.
+        </p></li>
+</ul></div>
+<div class="note"><table border="0" summary="Note: helperClass and pluginClass must be passed to startMvc()">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">helperClass and pluginClass must be passed to startMvc()</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+            In order for the <code class="code">helperClass</code> and
+            <code class="code">pluginClass</code> settings to have effect, they must be
+            passed in as options to <code class="code">startMvc()</code>; if set later, they
+            have no affect.
+        </p></td></tr>
+</table></div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.layout.options.examples"></a>22.3.1. Examples</h3></div></div></div>
+<p>
+            The following examples assume the following <code class="code">$options</code>
+            array and <code class="code">$config</code> object:
+        </p>
+<pre class="programlisting">&lt;?php
+$options = array(
+    'layout'     =&gt; 'foo',
+    'layoutPath' =&gt; '/path/to/layouts',
+    'contentKey' =&gt; 'CONTENT',           // ignored when MVC not used
+);
+?&gt;</pre>
+<pre class="programlisting">&lt;?php
+/**
+[layout]
+layout = "foo"
+layoutPath = "/path/to/layouts"
+contentKey = "CONTENT"
+*/
+$config = new Zend_Config_Ini('/path/to/layout.ini', 'layout');
+?&gt;</pre>
+<div class="example">
+<a name="zend.layout.options.examples.constructor"></a><p class="title"><b>Example 22.1. Passing options to the constructor or startMvc()</b></p>
+<div class="example-contents">
+<p>
+                Both the constructor and the <code class="code">startMvc()</code> static
+                method can accept either an array of options or a
+                <code class="code">Zend_Config</code> object with options in order to
+                configure the <code class="code">Zend_Layout</code> instance.
+            </p>
+<p>
+                First, let's look at passing an array:
+            </p>
+<pre class="programlisting">&lt;?php
+// Using constructor:
+$layout = new Zend_Layout($options);
+
+// Using startMvc():
+$layout = Zend_Layout::startMvc($options);
+?&gt;</pre>
+<p>
+                And now using a config object:
+            </p>
+<pre class="programlisting">&lt;?php 
+$config = new Zend_Config_Ini('/path/to/layout.ini', 'layout');
+
+// Using constructor:
+$layout = new Zend_Layout($config);
+
+// Using startMvc():
+$layout = Zend_Layout::startMvc($config);
+?&gt;</pre>
+<p>
+                Basically, this is the easiest way to customize your
+                <code class="code">Zend_Layout</code> instance.
+            </p>
+</div>
+</div>
+<br class="example-break"><div class="example">
+<a name="zend.layout.options.examples.setoptionsconfig"></a><p class="title"><b>Example 22.2. Using setOption() and setConfig()</b></p>
+<div class="example-contents">
+<p>
+                Sometimes you need to configure the <code class="code">Zend_Layout</code>
+                object after it has already been instantiated;
+                <code class="code">setOptions()</code> and <code class="code">setConfig()</code> give you
+                a quick and easy way to do so:
+            </p>
+<pre class="programlisting">&lt;?php
+// Using an array of options:
+$layout-&gt;setOptions($options);
+
+// Using a Zend_Config object:
+$layout-&gt;setConfig($options);
+?&gt;</pre>
+<p>
+                Note, however, that certain options, such as
+                <code class="code">pluginClass</code> and <code class="code">helperClass</code>, will have
+                no affect when passed using this method; they need to be passed
+                to the constructor or <code class="code">startMvc()</code> method.
+            </p>
+</div>
+</div>
+<br class="example-break"><div class="example">
+<a name="zend.layout.options.examples.accessors"></a><p class="title"><b>Example 22.3. Using Accessors</b></p>
+<div class="example-contents">
+<p>
+                Finally, you can also configure your <code class="code">Zend_Layout</code>
+                instance via accessors. All accessors implement a fluent
+                interface, meaning their calls may be chained:
+            </p>
+<pre class="programlisting">&lt;?php
+$layout-&gt;setLayout('foo')
+       -&gt;setLayoutPath('/path/to/layouts')
+       -&gt;setContentKey('CONTENT');
+?&gt;</pre>
+</div>
+</div>
+<br class="example-break">
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.layout.quickstart.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.layout.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.layout.advanced.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">22.2. Zend_Layout Quick Start </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 22.4. Zend_Layout Advanced Usage</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

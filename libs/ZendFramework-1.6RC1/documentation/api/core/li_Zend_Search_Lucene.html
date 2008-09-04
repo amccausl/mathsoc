@@ -1,0 +1,833 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title></title>
+			<link rel="stylesheet" href="media/stylesheet.css" />
+						<script src="media/lib/classTree.js"></script>
+									<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+									<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "media/images/plus.png";
+				imgMinus.src = "media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+						<h3 class="package-title">Zend_Search_Lucene</h3>
+<div class="tree">
+<script language="Javascript">
+if (document.getElementById) {
+			var tree = new WebFXTree('<span class="package">Zend_Search_Lucene</span>');
+		tree.setBehavior('classic');
+		tree.openIcon = 'media/images/package.png';
+		tree.icon = 'media/images/package.png';
+	
+					var todos = new WebFXTreeItem('To-do List', 'todolist.html');
+			todos.openIcon = 'media/images/Index.png';
+			todos.icon = 'media/images/Index.png';
+			tree.add(todos);
+		
+		var class_trees = new WebFXTreeItem('Class trees', 'classtrees_Zend_Search_Lucene.html');
+		class_trees.openIcon = 'media/images/Index.png';
+		class_trees.icon = 'media/images/Index.png';
+		tree.add(class_trees);
+
+		var elements = new WebFXTreeItem('Index of elements', 'elementindex_Zend_Search_Lucene.html');
+		elements.openIcon = 'media/images/Index.png';
+		elements.icon = 'media/images/Index.png';
+		tree.add(elements);
+
+		var parent_node;
+
+		
+					var tree_classe = new WebFXTreeItem('Interface(s)', '');
+			tree_classe.openIcon = 'media/images/class_folder.png';
+			tree_classe.icon = 'media/images/class_folder.png';
+			
+						    						    						    						    						    				var classe = new WebFXTreeItem('Zend_Search_Lucene_Interface', 'Zend_Search_Lucene/Zend_Search_Lucene_Interface.html');
+				classe.openIcon = 'media/images/Interface.png';
+				classe.icon = 'media/images/Interface.png';
+				tree_classe.add(classe);
+										    						    						    				
+			tree.add(tree_classe);
+		
+					var tree_classe = new WebFXTreeItem('Class(es)', '');
+			tree_classe.openIcon = 'media/images/class_folder.png';
+			tree_classe.icon = 'media/images/class_folder.png';
+			
+						    				var classe = new WebFXTreeItem('Zend_Search_Lucene', 'Zend_Search_Lucene/Zend_Search_Lucene.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				tree_classe.add(classe);
+										    				var classe = new WebFXTreeItem('Zend_Search_Lucene_Exception', 'Zend_Search_Lucene/Zend_Search_Lucene_Exception.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				tree_classe.add(classe);
+										    				var classe = new WebFXTreeItem('Zend_Search_Lucene_FSM', 'Zend_Search_Lucene/Zend_Search_Lucene_FSM.html');
+				classe.openIcon = 'media/images/AbstractClass.png';
+				classe.icon = 'media/images/AbstractClass.png';
+				tree_classe.add(classe);
+										    				var classe = new WebFXTreeItem('Zend_Search_Lucene_FSMAction', 'Zend_Search_Lucene/Zend_Search_Lucene_FSMAction.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				tree_classe.add(classe);
+										    						    				var classe = new WebFXTreeItem('Zend_Search_Lucene_LockManager', 'Zend_Search_Lucene/Zend_Search_Lucene_LockManager.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				tree_classe.add(classe);
+										    				var classe = new WebFXTreeItem('Zend_Search_Lucene_PriorityQueue', 'Zend_Search_Lucene/Zend_Search_Lucene_PriorityQueue.html');
+				classe.openIcon = 'media/images/AbstractClass.png';
+				classe.icon = 'media/images/AbstractClass.png';
+				tree_classe.add(classe);
+										    				var classe = new WebFXTreeItem('Zend_Search_Lucene_Proxy', 'Zend_Search_Lucene/Zend_Search_Lucene_Proxy.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				tree_classe.add(classe);
+								
+			tree.add(tree_classe);
+		
+			
+					var tree_file = new WebFXTreeItem('File(s)', '');
+			tree_file.openIcon = 'media/images/folder.png';
+			tree_file.icon = 'media/images/folder.png';
+	
+							var file = new WebFXTreeItem('Exception.php', 'Zend_Search_Lucene/_Search---Lucene---Exception.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				tree_file.add(file);
+							var file = new WebFXTreeItem('FSM.php', 'Zend_Search_Lucene/_Search---Lucene---FSM.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				tree_file.add(file);
+							var file = new WebFXTreeItem('FSMAction.php', 'Zend_Search_Lucene/_Search---Lucene---FSMAction.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				tree_file.add(file);
+							var file = new WebFXTreeItem('Interface.php', 'Zend_Search_Lucene/_Search---Lucene---Interface.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				tree_file.add(file);
+							var file = new WebFXTreeItem('LockManager.php', 'Zend_Search_Lucene/_Search---Lucene---LockManager.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				tree_file.add(file);
+							var file = new WebFXTreeItem('Lucene.php', 'Zend_Search_Lucene/_Search---Lucene.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				tree_file.add(file);
+							var file = new WebFXTreeItem('PriorityQueue.php', 'Zend_Search_Lucene/_Search---Lucene---PriorityQueue.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				tree_file.add(file);
+							var file = new WebFXTreeItem('Proxy.php', 'Zend_Search_Lucene/_Search---Lucene---Proxy.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				tree_file.add(file);
+				
+			tree.add(tree_file);
+		
+							var subpackagetree = new WebFXTreeItem('<span class="sub-package">Analysis</span>', '');
+		
+		subpackagetree.openIcon = 'media/images/package.png';
+		subpackagetree.icon = 'media/images/package.png';
+
+			
+					var subpackagetree_classe = new WebFXTreeItem('Class(es)', '');
+			subpackagetree_classe.openIcon = 'media/images/class_folder.png';
+			subpackagetree_classe.icon = 'media/images/class_folder.png';
+			
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Analysis_Analyzer', 'Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer.html');
+				classe.openIcon = 'media/images/AbstractClass.png';
+				classe.icon = 'media/images/AbstractClass.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Analysis_Analyzer_Common', 'Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer_Common.html');
+				classe.openIcon = 'media/images/AbstractClass.png';
+				classe.icon = 'media/images/AbstractClass.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Analysis_Analyzer_Common_Text', 'Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer_Common_Text.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Analysis_Analyzer_Common_TextNum', 'Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer_Common_TextNum.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Analysis_Analyzer_Common_TextNum_CaseInsensitive', 'Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer_Common_TextNum_CaseInsensitive.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Analysis_Analyzer_Common_Text_CaseInsensitive', 'Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer_Common_Text_CaseInsensitive.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Analysis_Analyzer_Common_Utf8', 'Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer_Common_Utf8.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Analysis_Analyzer_Common_Utf8Num', 'Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer_Common_Utf8Num.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Analysis_Analyzer_Common_Utf8Num_CaseInsensitive', 'Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer_Common_Utf8Num_CaseInsensitive.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Analysis_Analyzer_Common_Utf8_CaseInsensitive', 'Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Analyzer_Common_Utf8_CaseInsensitive.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Analysis_Token', 'Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_Token.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Analysis_TokenFilter', 'Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_TokenFilter.html');
+				classe.openIcon = 'media/images/AbstractClass.png';
+				classe.icon = 'media/images/AbstractClass.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Analysis_TokenFilter_LowerCase', 'Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_TokenFilter_LowerCase.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Analysis_TokenFilter_LowerCaseUtf8', 'Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_TokenFilter_LowerCaseUtf8.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Analysis_TokenFilter_ShortWords', 'Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_TokenFilter_ShortWords.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Analysis_TokenFilter_StopWords', 'Zend_Search_Lucene/Analysis/Zend_Search_Lucene_Analysis_TokenFilter_StopWords.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+						
+			subpackagetree.add(subpackagetree_classe);
+		
+				
+					var subpackagetree_file = new WebFXTreeItem('File(s)', '');
+			subpackagetree_file.openIcon = 'media/images/folder.png';
+			subpackagetree_file.icon = 'media/images/folder.png';
+			
+							var file = new WebFXTreeItem('Analyzer.php', 'Zend_Search_Lucene/Analysis/_Search---Lucene---Analysis---Analyzer.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('CaseInsensitive.php', 'Zend_Search_Lucene/Analysis/_Search---Lucene---Analysis---Analyzer---Common---Utf8---CaseInsensitive.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('CaseInsensitive.php', 'Zend_Search_Lucene/Analysis/_Search---Lucene---Analysis---Analyzer---Common---Utf8Num---CaseInsensitive.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('CaseInsensitive.php', 'Zend_Search_Lucene/Analysis/_Search---Lucene---Analysis---Analyzer---Common---TextNum---CaseInsensitive.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('CaseInsensitive.php', 'Zend_Search_Lucene/Analysis/_Search---Lucene---Analysis---Analyzer---Common---Text---CaseInsensitive.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Common.php', 'Zend_Search_Lucene/Analysis/_Search---Lucene---Analysis---Analyzer---Common.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('LowerCase.php', 'Zend_Search_Lucene/Analysis/_Search---Lucene---Analysis---TokenFilter---LowerCase.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('LowerCaseUtf8.php', 'Zend_Search_Lucene/Analysis/_Search---Lucene---Analysis---TokenFilter---LowerCaseUtf8.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('ShortWords.php', 'Zend_Search_Lucene/Analysis/_Search---Lucene---Analysis---TokenFilter---ShortWords.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('StopWords.php', 'Zend_Search_Lucene/Analysis/_Search---Lucene---Analysis---TokenFilter---StopWords.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Text.php', 'Zend_Search_Lucene/Analysis/_Search---Lucene---Analysis---Analyzer---Common---Text.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('TextNum.php', 'Zend_Search_Lucene/Analysis/_Search---Lucene---Analysis---Analyzer---Common---TextNum.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Token.php', 'Zend_Search_Lucene/Analysis/_Search---Lucene---Analysis---Token.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('TokenFilter.php', 'Zend_Search_Lucene/Analysis/_Search---Lucene---Analysis---TokenFilter.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Utf8.php', 'Zend_Search_Lucene/Analysis/_Search---Lucene---Analysis---Analyzer---Common---Utf8.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Utf8Num.php', 'Zend_Search_Lucene/Analysis/_Search---Lucene---Analysis---Analyzer---Common---Utf8Num.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+					
+			subpackagetree.add(subpackagetree_file);
+			
+	  tree.add(subpackagetree);
+							var subpackagetree = new WebFXTreeItem('<span class="sub-package">Document</span>', '');
+		
+		subpackagetree.openIcon = 'media/images/package.png';
+		subpackagetree.icon = 'media/images/package.png';
+
+			
+					var subpackagetree_classe = new WebFXTreeItem('Class(es)', '');
+			subpackagetree_classe.openIcon = 'media/images/class_folder.png';
+			subpackagetree_classe.icon = 'media/images/class_folder.png';
+			
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Document', 'Zend_Search_Lucene/Document/Zend_Search_Lucene_Document.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Document_Html', 'Zend_Search_Lucene/Document/Zend_Search_Lucene_Document_Html.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Field', 'Zend_Search_Lucene/Document/Zend_Search_Lucene_Field.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+						
+			subpackagetree.add(subpackagetree_classe);
+		
+				
+					var subpackagetree_file = new WebFXTreeItem('File(s)', '');
+			subpackagetree_file.openIcon = 'media/images/folder.png';
+			subpackagetree_file.icon = 'media/images/folder.png';
+			
+							var file = new WebFXTreeItem('Document.php', 'Zend_Search_Lucene/Document/_Search---Lucene---Document.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Field.php', 'Zend_Search_Lucene/Document/_Search---Lucene---Field.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Html.php', 'Zend_Search_Lucene/Document/_Search---Lucene---Document---Html.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+					
+			subpackagetree.add(subpackagetree_file);
+			
+	  tree.add(subpackagetree);
+							var subpackagetree = new WebFXTreeItem('<span class="sub-package">Index</span>', '');
+		
+		subpackagetree.openIcon = 'media/images/package.png';
+		subpackagetree.icon = 'media/images/package.png';
+
+			
+					var subpackagetree_classe = new WebFXTreeItem('Class(es)', '');
+			subpackagetree_classe.openIcon = 'media/images/class_folder.png';
+			subpackagetree_classe.icon = 'media/images/class_folder.png';
+			
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Index_DictionaryLoader', 'Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_DictionaryLoader.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Index_FieldInfo', 'Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_FieldInfo.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Index_SegmentInfo', 'Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_SegmentInfo.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Index_SegmentInfoPriorityQueue', 'Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_SegmentInfoPriorityQueue.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Index_SegmentMerger', 'Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_SegmentMerger.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Index_SegmentWriter', 'Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_SegmentWriter.html');
+				classe.openIcon = 'media/images/AbstractClass.png';
+				classe.icon = 'media/images/AbstractClass.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Index_SegmentWriter_DocumentWriter', 'Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_SegmentWriter_DocumentWriter.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Index_SegmentWriter_StreamWriter', 'Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_SegmentWriter_StreamWriter.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Index_Term', 'Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Term.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Index_TermInfo', 'Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_TermInfo.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Index_Writer', 'Zend_Search_Lucene/Index/Zend_Search_Lucene_Index_Writer.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+						
+			subpackagetree.add(subpackagetree_classe);
+		
+				
+					var subpackagetree_file = new WebFXTreeItem('File(s)', '');
+			subpackagetree_file.openIcon = 'media/images/folder.png';
+			subpackagetree_file.icon = 'media/images/folder.png';
+			
+							var file = new WebFXTreeItem('DictionaryLoader.php', 'Zend_Search_Lucene/Index/_Search---Lucene---Index---DictionaryLoader.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('DocumentWriter.php', 'Zend_Search_Lucene/Index/_Search---Lucene---Index---SegmentWriter---DocumentWriter.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('FieldInfo.php', 'Zend_Search_Lucene/Index/_Search---Lucene---Index---FieldInfo.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('SegmentInfo.php', 'Zend_Search_Lucene/Index/_Search---Lucene---Index---SegmentInfo.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('SegmentInfoPriorityQueue.php', 'Zend_Search_Lucene/Index/_Search---Lucene---Index---SegmentInfoPriorityQueue.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('SegmentMerger.php', 'Zend_Search_Lucene/Index/_Search---Lucene---Index---SegmentMerger.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('SegmentWriter.php', 'Zend_Search_Lucene/Index/_Search---Lucene---Index---SegmentWriter.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('StreamWriter.php', 'Zend_Search_Lucene/Index/_Search---Lucene---Index---SegmentWriter---StreamWriter.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Term.php', 'Zend_Search_Lucene/Index/_Search---Lucene---Index---Term.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('TermInfo.php', 'Zend_Search_Lucene/Index/_Search---Lucene---Index---TermInfo.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Writer.php', 'Zend_Search_Lucene/Index/_Search---Lucene---Index---Writer.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+					
+			subpackagetree.add(subpackagetree_file);
+			
+	  tree.add(subpackagetree);
+							var subpackagetree = new WebFXTreeItem('<span class="sub-package">Search</span>', '');
+		
+		subpackagetree.openIcon = 'media/images/package.png';
+		subpackagetree.icon = 'media/images/package.png';
+
+			
+					var subpackagetree_classe = new WebFXTreeItem('Class(es)', '');
+			subpackagetree_classe.openIcon = 'media/images/class_folder.png';
+			subpackagetree_classe.icon = 'media/images/class_folder.png';
+			
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_BooleanExpressionRecognizer', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_BooleanExpressionRecognizer.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_Query', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query.html');
+				classe.openIcon = 'media/images/AbstractClass.png';
+				classe.icon = 'media/images/AbstractClass.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_QueryEntry', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_QueryEntry.html');
+				classe.openIcon = 'media/images/AbstractClass.png';
+				classe.icon = 'media/images/AbstractClass.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_QueryEntry_Phrase', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_QueryEntry_Phrase.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_QueryEntry_Subquery', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_QueryEntry_Subquery.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_QueryEntry_Term', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_QueryEntry_Term.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_QueryHit', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_QueryHit.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_QueryLexer', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_QueryLexer.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_QueryParser', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_QueryParser.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_QueryParserContext', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_QueryParserContext.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_QueryParserException', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_QueryParserException.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_QueryToken', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_QueryToken.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_Query_Boolean', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query_Boolean.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_Query_Empty', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query_Empty.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_Query_Fuzzy', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query_Fuzzy.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_Query_Insignificant', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query_Insignificant.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_Query_MultiTerm', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query_MultiTerm.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_Query_Phrase', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query_Phrase.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_Query_Range', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query_Range.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_Query_Term', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query_Term.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_Query_Wildcard', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Query_Wildcard.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_Similarity', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Similarity.html');
+				classe.openIcon = 'media/images/AbstractClass.png';
+				classe.icon = 'media/images/AbstractClass.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_Similarity_Default', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Similarity_Default.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_Weight', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Weight.html');
+				classe.openIcon = 'media/images/AbstractClass.png';
+				classe.icon = 'media/images/AbstractClass.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_Weight_Boolean', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Weight_Boolean.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_Weight_Empty', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Weight_Empty.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_Weight_MultiTerm', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Weight_MultiTerm.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_Weight_Phrase', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Weight_Phrase.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Search_Weight_Term', 'Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_Weight_Term.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+						
+			subpackagetree.add(subpackagetree_classe);
+		
+				
+					var subpackagetree_file = new WebFXTreeItem('File(s)', '');
+			subpackagetree_file.openIcon = 'media/images/folder.png';
+			subpackagetree_file.icon = 'media/images/folder.png';
+			
+							var file = new WebFXTreeItem('Boolean.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---Query---Boolean.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Boolean.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---Weight---Boolean.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('BooleanExpressionRecognizer.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---BooleanExpressionRecognizer.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Default.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---Similarity---Default.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Empty.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---Query---Empty.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Empty.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---Weight---Empty.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Fuzzy.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---Query---Fuzzy.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Insignificant.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---Query---Insignificant.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('MultiTerm.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---Weight---MultiTerm.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('MultiTerm.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---Query---MultiTerm.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Phrase.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---Query---Phrase.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Phrase.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---QueryEntry---Phrase.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Phrase.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---Weight---Phrase.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Query.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---Query.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('QueryEntry.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---QueryEntry.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('QueryHit.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---QueryHit.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('QueryLexer.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---QueryLexer.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('QueryParser.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---QueryParser.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('QueryParserContext.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---QueryParserContext.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('QueryParserException.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---QueryParserException.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('QueryToken.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---QueryToken.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Range.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---Query---Range.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Similarity.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---Similarity.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Subquery.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---QueryEntry---Subquery.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Term.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---Weight---Term.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Term.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---Query---Term.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Term.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---QueryEntry---Term.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Weight.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---Weight.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Wildcard.php', 'Zend_Search_Lucene/Search/_Search---Lucene---Search---Query---Wildcard.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+					
+			subpackagetree.add(subpackagetree_file);
+			
+	  tree.add(subpackagetree);
+							var subpackagetree = new WebFXTreeItem('<span class="sub-package">Storage</span>', '');
+		
+		subpackagetree.openIcon = 'media/images/package.png';
+		subpackagetree.icon = 'media/images/package.png';
+
+			
+					var subpackagetree_classe = new WebFXTreeItem('Class(es)', '');
+			subpackagetree_classe.openIcon = 'media/images/class_folder.png';
+			subpackagetree_classe.icon = 'media/images/class_folder.png';
+			
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Storage_Directory', 'Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_Directory.html');
+				classe.openIcon = 'media/images/AbstractClass.png';
+				classe.icon = 'media/images/AbstractClass.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Storage_Directory_Filesystem', 'Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_Directory_Filesystem.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Storage_File', 'Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File.html');
+				classe.openIcon = 'media/images/AbstractClass.png';
+				classe.icon = 'media/images/AbstractClass.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Storage_File_Filesystem', 'Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Filesystem.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+							var classe = new WebFXTreeItem('Zend_Search_Lucene_Storage_File_Memory', 'Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Memory.html');
+				classe.openIcon = 'media/images/Class.png';
+				classe.icon = 'media/images/Class.png';
+				subpackagetree_classe.add(classe);
+						
+			subpackagetree.add(subpackagetree_classe);
+		
+				
+					var subpackagetree_file = new WebFXTreeItem('File(s)', '');
+			subpackagetree_file.openIcon = 'media/images/folder.png';
+			subpackagetree_file.icon = 'media/images/folder.png';
+			
+							var file = new WebFXTreeItem('Directory.php', 'Zend_Search_Lucene/Storage/_Search---Lucene---Storage---Directory.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('File.php', 'Zend_Search_Lucene/Storage/_Search---Lucene---Storage---File.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Filesystem.php', 'Zend_Search_Lucene/Storage/_Search---Lucene---Storage---File---Filesystem.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Filesystem.php', 'Zend_Search_Lucene/Storage/_Search---Lucene---Storage---Directory---Filesystem.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+							var file = new WebFXTreeItem('Memory.php', 'Zend_Search_Lucene/Storage/_Search---Lucene---Storage---File---Memory.php.html');
+				file.openIcon = 'media/images/Page.png';
+				file.icon = 'media/images/Page.png';
+				subpackagetree_file.add(file);
+					
+			subpackagetree.add(subpackagetree_file);
+			
+	  tree.add(subpackagetree);
+	
+document.write(tree);
+}
+</script>
+</div>
+<p class="notes">
+	Generated by 
+	<a href="http://www.phpdoc.org" target="_blank">phpDocumentor <span class="field">1.4.2</span></a>
+</p>
+</body>
+</html>

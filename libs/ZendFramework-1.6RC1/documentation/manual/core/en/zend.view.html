@@ -1,0 +1,353 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Chapter 48. Zend_View</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="index.html" title="Programmer's Reference Guide">
+<link rel="prev" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="next" href="zend.view.controllers.html" title="48.2. Controller Scripts">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="section" href="zend.view.html#zend.view.introduction" title="48.1. Introduction">
+<link rel="section" href="zend.view.controllers.html" title="48.2. Controller Scripts">
+<link rel="section" href="zend.view.scripts.html" title="48.3. View Scripts">
+<link rel="section" href="zend.view.helpers.html" title="48.4. View Helpers">
+<link rel="section" href="zend.view.abstract.html" title="48.5. Zend_View_Abstract">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">Chapter 48. Zend_View</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.version.html">Prev</a> </td>
+<th width="60%" align="center"> </th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.view.controllers.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="chapter" lang="en">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="zend.view"></a>Chapter 48. Zend_View</h2></div></div></div>
+<div class="toc">
+<p><b>Table of Contents</b></p>
+<dl>
+<dt><span class="sect1"><a href="zend.view.html#zend.view.introduction">48.1. Introduction</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.view.html#zend.view.introduction.controller">48.1.1. Controller Script</a></span></dt>
+<dt><span class="sect2"><a href="zend.view.html#zend.view.introduction.view">48.1.2. View Script</a></span></dt>
+<dt><span class="sect2"><a href="zend.view.html#zend.view.introduction.options">48.1.3. Options</a></span></dt>
+<dt><span class="sect2"><a href="zend.view.html#zend.view.introduction.accessors">48.1.4. Utility Accessors</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.view.controllers.html">48.2. Controller Scripts</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.view.controllers.html#zend.view.controllers.assign">48.2.1. Assigning Variables</a></span></dt>
+<dt><span class="sect2"><a href="zend.view.controllers.html#zend.view.controllers.render">48.2.2. Rendering a View Script</a></span></dt>
+<dt><span class="sect2"><a href="zend.view.controllers.html#zend.view.controllers.script-paths">48.2.3. View Script Paths</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.view.scripts.html">48.3. View Scripts</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.view.scripts.html#zend.view.scripts.escaping">48.3.1. Escaping Output</a></span></dt>
+<dt><span class="sect2"><a href="zend.view.scripts.html#zend.view.scripts.templates">48.3.2. Using Alternate Template Systems</a></span></dt>
+<dd><dl>
+<dt><span class="sect3"><a href="zend.view.scripts.html#zend.view.scripts.templates.scripts">48.3.2.1. Template Systems Using View Scripts</a></span></dt>
+<dt><span class="sect3"><a href="zend.view.scripts.html#zend.view.scripts.templates.interface">48.3.2.2. Template Systems Using Zend_View_Interface</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.view.helpers.html">48.4. View Helpers</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.view.helpers.html#zend.view.helpers.initial">48.4.1. Initial Helpers</a></span></dt>
+<dd><dl>
+<dt><span class="sect3"><a href="zend.view.helpers.html#zend.view.helpers.initial.action">48.4.1.1. Action View Helper</a></span></dt>
+<dt><span class="sect3"><a href="zend.view.helpers.html#zend.view.helpers.initial.partial">48.4.1.2. Partial Helper</a></span></dt>
+<dt><span class="sect3"><a href="zend.view.helpers.html#zend.view.helpers.initial.placeholder">48.4.1.3. Placeholder Helper</a></span></dt>
+<dd><dl><dt><span class="sect4"><a href="zend.view.helpers.html#zend.view.helpers.initial.placeholder.implementations">48.4.1.3.1. Concrete Placeholder Implementations</a></span></dt></dl></dd>
+<dt><span class="sect3"><a href="zend.view.helpers.html#zend.view.helpers.initial.doctype">48.4.1.4. Doctype Helper</a></span></dt>
+<dt><span class="sect3"><a href="zend.view.helpers.html#zend.view.helpers.initial.headlink">48.4.1.5. HeadLink Helper</a></span></dt>
+<dt><span class="sect3"><a href="zend.view.helpers.html#zend.view.helpers.initial.headmeta">48.4.1.6. HeadMeta Helper</a></span></dt>
+<dt><span class="sect3"><a href="zend.view.helpers.html#zend.view.helpers.initial.headscript">48.4.1.7. HeadScript Helper</a></span></dt>
+<dt><span class="sect3"><a href="zend.view.helpers.html#zend.view.helpers.initial.headstyle">48.4.1.8. HeadStyle Helper</a></span></dt>
+<dt><span class="sect3"><a href="zend.view.helpers.html#zend.view.helpers.initial.headtitle">48.4.1.9. HeadTitle Helper</a></span></dt>
+<dt><span class="sect3"><a href="zend.view.helpers.html#zend.view.helpers.initial.object">48.4.1.10. HTML Object Helpers</a></span></dt>
+<dt><span class="sect3"><a href="zend.view.helpers.html#zend.view.helpers.initial.inlinescript">48.4.1.11. InlineScript Helper</a></span></dt>
+<dt><span class="sect3"><a href="zend.view.helpers.html#zend.view.helpers.initial.json">48.4.1.12. JSON Helper</a></span></dt>
+<dt><span class="sect3"><a href="zend.view.helpers.html#zend.view.helpers.initial.translate">48.4.1.13. Translate Helper</a></span></dt>
+</dl></dd>
+<dt><span class="sect2"><a href="zend.view.helpers.html#zend.view.helpers.paths">48.4.2. Helper Paths</a></span></dt>
+<dt><span class="sect2"><a href="zend.view.helpers.html#zend.view.helpers.custom">48.4.3. Writing Custom Helpers</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.view.abstract.html">48.5. Zend_View_Abstract</a></span></dt>
+</dl>
+</div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.view.introduction"></a>48.1. Introduction</h2></div></div></div>
+<p>
+        <code class="code">Zend_View</code> is a class for working with the "view" portion of
+        the model-view-controller pattern.  That is, it exists to
+        help keep the view script separate from the model and
+        controller scripts.  It provides a system of helpers, output
+        filters, and variable escaping.
+    </p>
+<p>
+        <code class="code">Zend_View</code> is template system agnostic; you may use PHP as
+        your template language, or create instances of other
+        template systems and manipulate them within your view
+        script.
+    </p>
+<p>
+        Essentially, using <code class="code">Zend_View</code> happens in two major steps:
+
+        1.  Your controller script creates an instance of
+        Zend_View and assigns variables to that instance.
+
+        2. The controller tells the <code class="code">Zend_View</code> to render a particular
+        view, thereby handing control over the view script, which
+        generates the view output.
+    </p>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.view.introduction.controller"></a>48.1.1. Controller Script</h3></div></div></div>
+<p>
+            As a simple example, let us say your controller has a list
+            of book data that it wants to have rendered by a view.  The
+            controller script might look something like this:
+        </p>
+<pre class="programlisting">&lt;?php
+// use a model to get the data for book authors and titles.
+$data = array(
+    array(
+        'author' =&gt; 'Hernando de Soto',
+        'title' =&gt; 'The Mystery of Capitalism'
+    ),
+    array(
+        'author' =&gt; 'Henry Hazlitt',
+        'title' =&gt; 'Economics in One Lesson'
+    ),
+    array(
+        'author' =&gt; 'Milton Friedman',
+        'title' =&gt; 'Free to Choose'
+    )
+);
+
+// now assign the book data to a Zend_View instance
+Zend_Loader::loadClass('Zend_View');
+$view = new Zend_View();
+$view-&gt;books = $data;
+
+// and render a view script called "booklist.php"
+echo $view-&gt;render('booklist.php');
+        </pre>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.view.introduction.view"></a>48.1.2. View Script</h3></div></div></div>
+<p>
+            Now we need the associated view script, "booklist.php".
+            This is a PHP script like any other, with one exception:  it
+            executes inside the scope of the <code class="code">Zend_View</code> instance, which
+            means that references to $this point to the Zend_View
+            instance properties and methods.  (Variables assigned to the
+            instance by the controller are public properties of the
+            Zend_View instance.)  Thus, a very basic view script could
+            look like this:
+        </p>
+<pre class="programlisting">&lt;?php if ($this-&gt;books): ?&gt;
+
+    &lt;!-- A table of some books. --&gt;
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Author&lt;/th&gt;
+            &lt;th&gt;Title&lt;/th&gt;
+        &lt;/tr&gt;
+
+        &lt;?php foreach ($this-&gt;books as $key =&gt; $val): ?&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;?php echo $this-&gt;escape($val['author']) ?&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;?php echo $this-&gt;escape($val['title']) ?&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;?php endforeach; ?&gt;
+
+    &lt;/table&gt;
+
+&lt;?php else: ?&gt;
+
+    &lt;p&gt;There are no books to display.&lt;/p&gt;
+
+&lt;?php endif;?&gt;
+        </pre>
+<p>
+            Note how we use the "escape()" method to apply output
+            escaping to variables.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.view.introduction.options"></a>48.1.3. Options</h3></div></div></div>
+<p>
+            <code class="code">Zend_View</code> has several options that may be set to
+            configure the behaviour of your view scripts.
+        </p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<p>
+                    <code class="code">basePath</code>: indicate a base path from which to set
+                    the script, helper, and filter path. It assumes a directory
+                    structure of:
+                </p>
+<pre class="programlisting">
+base/path/
+    helpers/
+    filters/
+    scripts/
+                </pre>
+<p>
+                    This may be set via <code class="code">setBasePath()</code>,
+                    <code class="code">addBasePath()</code>, or the <code class="code">basePath</code>
+                    option to the constructor.
+                </p>
+</li>
+<li><p>
+                <code class="code">encoding</code>: indicate the character encoding to use
+                with <code class="code">htmlentities()</code>,
+                <code class="code">htmlspecialchars()</code>, and other operations. Defaults
+                to ISO-8859-1 (latin1). May be set via
+                <code class="code">setEncoding()</code> or the <code class="code">encoding</code> option
+                to the constructor.
+            </p></li>
+<li><p>
+                <code class="code">escape</code>: indicate a callback to be used by
+                <code class="code">escape()</code>. May be set via <code class="code">setEscape()</code>
+                or the <code class="code">escape</code> option to the constructor.
+            </p></li>
+<li><p>
+                <code class="code">filter</code>: indicate a filter to use after rendering
+                a view script. May be set via <code class="code">setFilter()</code>,
+                <code class="code">addFilter()</code>, or the <code class="code">filter</code> option to
+                the constructor.
+            </p></li>
+<li><p>
+                <code class="code">strictVars:</code> force <code class="code">Zend_View</code> to emit
+                notices and warnings when uninitialized view variables are
+                accessed. This may be set by calling
+                <code class="code">strictVars(true)</code> or passing the
+                <code class="code">strictVars</code> option to the constructor.
+            </p></li>
+</ul></div>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.view.introduction.accessors"></a>48.1.4. Utility Accessors</h3></div></div></div>
+<p>
+            Typically, you'll only ever need to call on <code class="code">assign()</code>,
+            <code class="code">render()</code>, or one of the methods for setting/adding
+            filter, helper, and script paths. However, if you wish to extend
+            <code class="code">Zend_View</code> yourself, or need access to some of its
+            internals, a number of accessors exist:
+        </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                    <code class="code">getVars()</code> will return all assigned variables.
+                </p></li>
+<li><p>
+                    <code class="code">clearVars()</code> will clear all assigned variables;
+                    useful when you wish to re-use a view object, but want to
+                    control what variables are available.
+                </p></li>
+<li><p>
+                    <code class="code">getScriptPath($script)</code> will retrieve the
+                    resolved path to a given view script.
+                </p></li>
+<li><p>
+                    <code class="code">getScriptPaths()</code> will retrieve all registered
+                    script paths.
+                </p></li>
+<li><p>
+                    <code class="code">getHelperPath($helper)</code> will retrieve the
+                    resolved path to the named helper class.
+                </p></li>
+<li><p>
+                    <code class="code">getHelperPaths()</code> will retrieve all registered
+                    helper paths.
+                </p></li>
+<li><p>
+                    <code class="code">getFilterPath($filter)</code> will retrieve the
+                    resolved path to the named filter class.
+                </p></li>
+<li><p>
+                    <code class="code">getFilterPaths()</code> will retrieve all registered
+                    filter paths.
+                </p></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.version.html">Prev</a> </td>
+<td width="20%" align="center"> </td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.view.controllers.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">Chapter 47. Zend_Version </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 48.2. Controller Scripts</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

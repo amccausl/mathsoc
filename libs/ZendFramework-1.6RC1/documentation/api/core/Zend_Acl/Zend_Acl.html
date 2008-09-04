@@ -1,0 +1,1486 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Acl</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_Acl</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Acl.php.html">/Acl.php</a> (line <span class="field">47</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#OP_ADD" title="details" class="const-name">OP_ADD</a> = 					<span class="var-type"> 'OP_ADD'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#OP_REMOVE" title="details" class="const-name">OP_REMOVE</a> = 					<span class="var-type"> 'OP_REMOVE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TYPE_ALLOW" title="details" class="const-name">TYPE_ALLOW</a> = 					<span class="var-type"> 'TYPE_ALLOW'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TYPE_DENY" title="details" class="const-name">TYPE_DENY</a> = 					<span class="var-type"> 'TYPE_DENY'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																								<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$_resources" title="details" class="var-name">$_resources</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Registry.html">Zend_Acl_Role_Registry</a></span>
+					<a href="#$_roleRegistry" title="details" class="var-name">$_roleRegistry</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$_rules" title="details" class="var-name">$_rules</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																																							
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Acl/Zend_Acl.html">Zend_Acl</a></span>
+										<a href="#add" title="details" class="method-name">add</a>
+											(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a></span>&nbsp;<span class="var-name">$resource</span>, [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string</span>&nbsp;<span class="var-name">$parent</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Acl/Zend_Acl.html">Zend_Acl</a></span>
+										<a href="#addRole" title="details" class="method-name">addRole</a>
+											(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a></span>&nbsp;<span class="var-name">$role</span>, [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string|array</span>&nbsp;<span class="var-name">$parents</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Acl/Zend_Acl.html">Zend_Acl</a></span>
+										<a href="#allow" title="details" class="method-name">allow</a>
+											([<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string|array</span>&nbsp;<span class="var-name">$roles</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string|array</span>&nbsp;<span class="var-name">$resources</span> = <span class="var-default">null</span>], [<span class="var-type">string|array</span>&nbsp;<span class="var-name">$privileges</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Assert_Interface.html">Zend_Acl_Assert_Interface</a></span>&nbsp;<span class="var-name">$assert</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Acl/Zend_Acl.html">Zend_Acl</a></span>
+										<a href="#deny" title="details" class="method-name">deny</a>
+											([<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string|array</span>&nbsp;<span class="var-name">$roles</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string|array</span>&nbsp;<span class="var-name">$resources</span> = <span class="var-default">null</span>], [<span class="var-type">string|array</span>&nbsp;<span class="var-name">$privileges</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Assert_Interface.html">Zend_Acl_Assert_Interface</a></span>&nbsp;<span class="var-name">$assert</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a></span>
+										<a href="#get" title="details" class="method-name">get</a>
+											(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string</span>&nbsp;<span class="var-name">$resource</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a></span>
+										<a href="#getRole" title="details" class="method-name">getRole</a>
+											(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string</span>&nbsp;<span class="var-name">$role</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#has" title="details" class="method-name">has</a>
+											(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string</span>&nbsp;<span class="var-name">$resource</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#hasRole" title="details" class="method-name">hasRole</a>
+											(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string</span>&nbsp;<span class="var-name">$role</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#inherits" title="details" class="method-name">inherits</a>
+											(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string</span>&nbsp;<span class="var-name">$resource</span>, <span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string</span>&nbsp;<span class="var-name">$inherit</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$onlyParent</span> = <span class="var-default">false</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#inheritsRole" title="details" class="method-name">inheritsRole</a>
+											(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string</span>&nbsp;<span class="var-name">$role</span>, <span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string</span>&nbsp;<span class="var-name">$inherit</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$onlyParents</span> = <span class="var-default">false</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#isAllowed" title="details" class="method-name">isAllowed</a>
+											([<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string</span>&nbsp;<span class="var-name">$role</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string</span>&nbsp;<span class="var-name">$resource</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$privilege</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Acl/Zend_Acl.html">Zend_Acl</a></span>
+										<a href="#remove" title="details" class="method-name">remove</a>
+											(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string</span>&nbsp;<span class="var-name">$resource</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Acl/Zend_Acl.html">Zend_Acl</a></span>
+										<a href="#removeAll" title="details" class="method-name">removeAll</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Acl/Zend_Acl.html">Zend_Acl</a></span>
+										<a href="#removeAllow" title="details" class="method-name">removeAllow</a>
+											([<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string|array</span>&nbsp;<span class="var-name">$roles</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string|array</span>&nbsp;<span class="var-name">$resources</span> = <span class="var-default">null</span>], [<span class="var-type">string|array</span>&nbsp;<span class="var-name">$privileges</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Acl/Zend_Acl.html">Zend_Acl</a></span>
+										<a href="#removeDeny" title="details" class="method-name">removeDeny</a>
+											([<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string|array</span>&nbsp;<span class="var-name">$roles</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string|array</span>&nbsp;<span class="var-name">$resources</span> = <span class="var-default">null</span>], [<span class="var-type">string|array</span>&nbsp;<span class="var-name">$privileges</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Acl/Zend_Acl.html">Zend_Acl</a></span>
+										<a href="#removeRole" title="details" class="method-name">removeRole</a>
+											(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string</span>&nbsp;<span class="var-name">$role</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Acl/Zend_Acl.html">Zend_Acl</a></span>
+										<a href="#removeRoleAll" title="details" class="method-name">removeRoleAll</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Acl/Zend_Acl.html">Zend_Acl</a></span>
+										<a href="#setRule" title="details" class="method-name">setRule</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$operation</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$type</span>, [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string|array</span>&nbsp;<span class="var-name">$roles</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string|array</span>&nbsp;<span class="var-name">$resources</span> = <span class="var-default">null</span>], [<span class="var-type">string|array</span>&nbsp;<span class="var-name">$privileges</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Assert_Interface.html">Zend_Acl_Assert_Interface</a></span>&nbsp;<span class="var-name">$assert</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_Acl/Zend_Acl_Role_Registry.html">Zend_Acl_Role_Registry</a></span>
+										<a href="#_getRoleRegistry" title="details" class="method-name">_getRoleRegistry</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">array|null</span>
+										<a href="#_getRules" title="details" class="method-name">&amp;_getRules</a>
+											([<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a></span>&nbsp;<span class="var-name">$resource</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a></span>&nbsp;<span class="var-name">$role</span> = <span class="var-default">null</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$create</span> = <span class="var-default">false</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string|null</span>
+										<a href="#_getRuleType" title="details" class="method-name">_getRuleType</a>
+											([<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a></span>&nbsp;<span class="var-name">$resource</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a></span>&nbsp;<span class="var-name">$role</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$privilege</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean|null</span>
+										<a href="#_roleDFSAllPrivileges" title="details" class="method-name">_roleDFSAllPrivileges</a>
+											(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a></span>&nbsp;<span class="var-name">$role</span>, [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a></span>&nbsp;<span class="var-name">$resource</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean|null</span>
+										<a href="#_roleDFSOnePrivilege" title="details" class="method-name">_roleDFSOnePrivilege</a>
+											(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a></span>&nbsp;<span class="var-name">$role</span>, [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a></span>&nbsp;<span class="var-name">$resource</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$privilege</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean|null</span>
+										<a href="#_roleDFSVisitAllPrivileges" title="details" class="method-name">_roleDFSVisitAllPrivileges</a>
+											(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a></span>&nbsp;<span class="var-name">$role</span>, [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a></span>&nbsp;<span class="var-name">$resource</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">&$dfs</span> = <span class="var-default">null</span>], <span class="var-type">array</span>&nbsp;<span class="var-name">$dfs</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean|null</span>
+										<a href="#_roleDFSVisitOnePrivilege" title="details" class="method-name">_roleDFSVisitOnePrivilege</a>
+											(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a></span>&nbsp;<span class="var-name">$role</span>, [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a></span>&nbsp;<span class="var-name">$resource</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$privilege</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">&$dfs</span> = <span class="var-default">null</span>], <span class="var-type">array</span>&nbsp;<span class="var-name">$dfs</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_resources" id="$_resources"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_resources</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number">81</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Resource tree</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_roleRegistry" id="$_roleRegistry"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Registry.html">Zend_Acl_Role_Registry</a></span>
+			<span class="var-name">$_roleRegistry</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">74</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Role registry</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_rules" id="$_rules"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_rules</span>
+			 = <span class="var-default">array(<br />        'allResources' =&gt; array(<br />            'allRoles' =&gt; array(<br />                'allPrivileges' =&gt; array(<br />                    'type'   =&gt; self::TYPE_DENY,<br />                    'assert' =&gt; null<br />                    ),'byPrivilegeId'=&gt;array()),'byRoleId'=&gt;array()),'byResourceId'=&gt;array())</span>			(line <span class="line-number">88</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">ACL rules; whitelist (deny everything to all) by default</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodadd" id="add"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">add</span> (line <span class="line-number">244</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a Resource having an identifier unique to the ACL</p>
+<p class="description"><p>The $parent parameter may be a reference to, or the string identifier for,  the existing Resource from which the newly added Resource will inherit.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">throws:</span> Zend_Acl_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Acl/Zend_Acl.html">Zend_Acl</a></span>
+		<span class="method-name">
+			add
+		</span>
+					(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a></span>&nbsp;<span class="var-name">$resource</span>, [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string</span>&nbsp;<span class="var-name">$parent</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a></span>
+				<span class="var-name">$resource</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string</span>
+				<span class="var-name">$parent</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddRole" id="addRole"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">addRole</span> (line <span class="line-number">121</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a Role having an identifier unique to the registry</p>
+<p class="description"><p>The $parents parameter may be a reference to, or the string identifier for,  a Role existing in the registry, or $parents may be passed as an array of  these - mixing string identifiers and objects is ok - to indicate the Roles  from which the newly added Role will directly inherit.</p><p>In order to resolve potential ambiguities with conflicting rules inherited  from different parents, the most recently added parent takes precedence over  parents that were previously added. In other words, the first parent added  will have the least priority, and the last parent added will have the  highest priority.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">uses:</span> <a href="../Zend_Acl/Zend_Acl_Role_Registry.html#methodadd">Zend_Acl_Role_Registry::add()</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Acl/Zend_Acl.html">Zend_Acl</a></span>
+		<span class="method-name">
+			addRole
+		</span>
+					(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a></span>&nbsp;<span class="var-name">$role</span>, [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string|array</span>&nbsp;<span class="var-name">$parents</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a></span>
+				<span class="var-name">$role</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string|array</span>
+				<span class="var-name">$parents</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodallow" id="allow"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">allow</span> (line <span class="line-number">436</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds an &quot;allow&quot; rule to the ACL</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">uses:</span> <a href="../Zend_Acl/Zend_Acl.html#methodsetRule">Zend_Acl::setRule()</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Acl/Zend_Acl.html">Zend_Acl</a></span>
+		<span class="method-name">
+			allow
+		</span>
+					([<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string|array</span>&nbsp;<span class="var-name">$roles</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string|array</span>&nbsp;<span class="var-name">$resources</span> = <span class="var-default">null</span>], [<span class="var-type">string|array</span>&nbsp;<span class="var-name">$privileges</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Assert_Interface.html">Zend_Acl_Assert_Interface</a></span>&nbsp;<span class="var-name">$assert</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string|array</span>
+				<span class="var-name">$roles</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string|array</span>
+				<span class="var-name">$resources</span>			</li>
+					<li>
+				<span class="var-type">string|array</span>
+				<span class="var-name">$privileges</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Assert_Interface.html">Zend_Acl_Assert_Interface</a></span>
+				<span class="var-name">$assert</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddeny" id="deny"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">deny</span> (line <span class="line-number">451</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a &quot;deny&quot; rule to the ACL</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">uses:</span> <a href="../Zend_Acl/Zend_Acl.html#methodsetRule">Zend_Acl::setRule()</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Acl/Zend_Acl.html">Zend_Acl</a></span>
+		<span class="method-name">
+			deny
+		</span>
+					([<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string|array</span>&nbsp;<span class="var-name">$roles</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string|array</span>&nbsp;<span class="var-name">$resources</span> = <span class="var-default">null</span>], [<span class="var-type">string|array</span>&nbsp;<span class="var-name">$privileges</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Assert_Interface.html">Zend_Acl_Assert_Interface</a></span>&nbsp;<span class="var-name">$assert</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string|array</span>
+				<span class="var-name">$roles</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string|array</span>
+				<span class="var-name">$resources</span>			</li>
+					<li>
+				<span class="var-type">string|array</span>
+				<span class="var-name">$privileges</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Assert_Interface.html">Zend_Acl_Assert_Interface</a></span>
+				<span class="var-name">$assert</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodget" id="get"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get</span> (line <span class="line-number">287</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the identified Resource</p>
+<p class="description"><p>The $resource parameter can either be a Resource or a Resource identifier.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Acl_Exception</li>
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">usedby:</span> <a href="../Zend_Acl/Zend_Acl.html#methodisAllowed">Zend_Acl::isAllowed()</a></li>
+				<li><span class="field">usedby:</span> <a href="../Zend_Acl/Zend_Acl.html#methodsetRule">Zend_Acl::setRule()</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a></span>
+		<span class="method-name">
+			get
+		</span>
+					(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string</span>&nbsp;<span class="var-name">$resource</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string</span>
+				<span class="var-name">$resource</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetRole" id="getRole"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getRole</span> (line <span class="line-number">137</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the identified Role</p>
+<p class="description"><p>The $role parameter can either be a Role or Role identifier.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">uses:</span> <a href="../Zend_Acl/Zend_Acl_Role_Registry.html#methodget">Zend_Acl_Role_Registry::get()</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a></span>
+		<span class="method-name">
+			getRole
+		</span>
+					(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string</span>&nbsp;<span class="var-name">$role</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string</span>
+				<span class="var-name">$role</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodhas" id="has"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">has</span> (line <span class="line-number">311</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns true if and only if the Resource exists in the ACL</p>
+<p class="description"><p>The $resource parameter can either be a Resource or a Resource identifier.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			has
+		</span>
+					(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string</span>&nbsp;<span class="var-name">$resource</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string</span>
+				<span class="var-name">$resource</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodhasRole" id="hasRole"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">hasRole</span> (line <span class="line-number">151</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns true if and only if the Role exists in the registry</p>
+<p class="description"><p>The $role parameter can either be a Role or a Role identifier.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">uses:</span> <a href="../Zend_Acl/Zend_Acl_Role_Registry.html#methodhas">Zend_Acl_Role_Registry::has()</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			hasRole
+		</span>
+					(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string</span>&nbsp;<span class="var-name">$role</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string</span>
+				<span class="var-name">$role</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodinherits" id="inherits"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">inherits</span> (line <span class="line-number">337</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns true if and only if $resource inherits from $inherit</p>
+<p class="description"><p>Both parameters may be either a Resource or a Resource identifier. If  $onlyParent is true, then $resource must inherit directly from  $inherit in order to return true. By default, this method looks  through the entire inheritance tree to determine whether $resource  inherits from $inherit through its ancestor Resources.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Acl_Resource_Registry_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			inherits
+		</span>
+					(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string</span>&nbsp;<span class="var-name">$resource</span>, <span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string</span>&nbsp;<span class="var-name">$inherit</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$onlyParent</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string</span>
+				<span class="var-name">$resource</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string</span>
+				<span class="var-name">$inherit</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$onlyParent</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodinheritsRole" id="inheritsRole"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">inheritsRole</span> (line <span class="line-number">171</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns true if and only if $role inherits from $inherit</p>
+<p class="description"><p>Both parameters may be either a Role or a Role identifier. If  $onlyParents is true, then $role must inherit directly from  $inherit in order to return true. By default, this method looks  through the entire inheritance DAG to determine whether $role  inherits from $inherit through its ancestor Roles.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">uses:</span> <a href="../Zend_Acl/Zend_Acl_Role_Registry.html#methodinherits">Zend_Acl_Role_Registry::inherits()</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			inheritsRole
+		</span>
+					(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string</span>&nbsp;<span class="var-name">$role</span>, <span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string</span>&nbsp;<span class="var-name">$inherit</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$onlyParents</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string</span>
+				<span class="var-name">$role</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string</span>
+				<span class="var-name">$inherit</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$onlyParents</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodisAllowed" id="isAllowed"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">isAllowed</span> (line <span class="line-number">684</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns true if and only if the Role has access to the Resource</p>
+<p class="description"><p>The $role and $resource parameters may be references to, or the string identifiers for,  an existing Resource and Role combination.</p><p>If either $role or $resource is null, then the query applies to all Roles or all Resources,  respectively. Both may be null to query whether the ACL has a &quot;blacklist&quot; rule  (allow everything to all). By default, Zend_Acl creates a &quot;whitelist&quot; rule (deny  everything to all), and this method would return false unless this default has  been overridden (i.e., by executing $acl-&gt;allow()).</p><p>If a $privilege is not provided, then this method returns false if and only if the  Role is denied access to at least one privilege upon the Resource. In other words, this  method returns true if and only if the Role is allowed all privileges on the Resource.</p><p>This method checks Role inheritance using a depth-first traversal of the Role registry.  The highest priority parent (i.e., the parent most recently added) is checked first,  and its respective parents are checked similarly before the lower-priority parents of  the Role are checked.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">uses:</span> <a href="../Zend_Acl/Zend_Acl_Role_Registry.html#methodget">Zend_Acl_Role_Registry::get()</a></li>
+				<li><span class="field">uses:</span> <a href="../Zend_Acl/Zend_Acl.html#methodget">Zend_Acl::get()</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			isAllowed
+		</span>
+					([<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string</span>&nbsp;<span class="var-name">$role</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string</span>&nbsp;<span class="var-name">$resource</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$privilege</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string</span>
+				<span class="var-name">$role</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string</span>
+				<span class="var-name">$resource</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$privilege</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodremove" id="remove"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">remove</span> (line <span class="line-number">376</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Removes a Resource and all of its children</p>
+<p class="description"><p>The $resource parameter can either be a Resource or a Resource identifier.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">throws:</span> Zend_Acl_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Acl/Zend_Acl.html">Zend_Acl</a></span>
+		<span class="method-name">
+			remove
+		</span>
+					(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string</span>&nbsp;<span class="var-name">$resource</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string</span>
+				<span class="var-name">$resource</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodremoveAll" id="removeAll"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">removeAll</span> (line <span class="line-number">411</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Removes all Resources</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Acl/Zend_Acl.html">Zend_Acl</a></span>
+		<span class="method-name">
+			removeAll
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodremoveAllow" id="removeAllow"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">removeAllow</span> (line <span class="line-number">465</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Removes &quot;allow&quot; permissions from the ACL</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">uses:</span> <a href="../Zend_Acl/Zend_Acl.html#methodsetRule">Zend_Acl::setRule()</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Acl/Zend_Acl.html">Zend_Acl</a></span>
+		<span class="method-name">
+			removeAllow
+		</span>
+					([<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string|array</span>&nbsp;<span class="var-name">$roles</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string|array</span>&nbsp;<span class="var-name">$resources</span> = <span class="var-default">null</span>], [<span class="var-type">string|array</span>&nbsp;<span class="var-name">$privileges</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string|array</span>
+				<span class="var-name">$roles</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string|array</span>
+				<span class="var-name">$resources</span>			</li>
+					<li>
+				<span class="var-type">string|array</span>
+				<span class="var-name">$privileges</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodremoveDeny" id="removeDeny"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">removeDeny</span> (line <span class="line-number">479</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Removes &quot;deny&quot; restrictions from the ACL</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">uses:</span> <a href="../Zend_Acl/Zend_Acl.html#methodsetRule">Zend_Acl::setRule()</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Acl/Zend_Acl.html">Zend_Acl</a></span>
+		<span class="method-name">
+			removeDeny
+		</span>
+					([<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string|array</span>&nbsp;<span class="var-name">$roles</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string|array</span>&nbsp;<span class="var-name">$resources</span> = <span class="var-default">null</span>], [<span class="var-type">string|array</span>&nbsp;<span class="var-name">$privileges</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string|array</span>
+				<span class="var-name">$roles</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string|array</span>
+				<span class="var-name">$resources</span>			</li>
+					<li>
+				<span class="var-type">string|array</span>
+				<span class="var-name">$privileges</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodremoveRole" id="removeRole"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">removeRole</span> (line <span class="line-number">185</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Removes the Role from the registry</p>
+<p class="description"><p>The $role parameter can either be a Role or a Role identifier.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">uses:</span> <a href="../Zend_Acl/Zend_Acl_Role_Registry.html#methodremove">Zend_Acl_Role_Registry::remove()</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Acl/Zend_Acl.html">Zend_Acl</a></span>
+		<span class="method-name">
+			removeRole
+		</span>
+					(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string</span>&nbsp;<span class="var-name">$role</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string</span>
+				<span class="var-name">$role</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodremoveRoleAll" id="removeRoleAll"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">removeRoleAll</span> (line <span class="line-number">217</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Removes all Roles from the registry</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">uses:</span> <a href="../Zend_Acl/Zend_Acl_Role_Registry.html#methodremoveAll">Zend_Acl_Role_Registry::removeAll()</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Acl/Zend_Acl.html">Zend_Acl</a></span>
+		<span class="method-name">
+			removeRoleAll
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodsetRule" id="setRule"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setRule</span> (line <span class="line-number">536</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Performs operations on ACL rules</p>
+<p class="description"><p>The $operation parameter may be either OP_ADD or OP_REMOVE, depending on whether the  user wants to add or remove a rule, respectively:</p><p>OP_ADD specifics:</p><p>A rule is added that would allow one or more Roles access to [certain $privileges       upon] the specified Resource(s).</p><p>OP_REMOVE specifics:</p><p>The rule is removed only in the context of the given Roles, Resources, and privileges.       Existing rules to which the remove operation does not apply would remain in the       ACL.</p><p>The $type parameter may be either TYPE_ALLOW or TYPE_DENY, depending on whether the  rule is intended to allow or deny permission, respectively.</p><p>The $roles and $resources parameters may be references to, or the string identifiers for,  existing Resources/Roles, or they may be passed as arrays of these - mixing string identifiers  and objects is ok - to indicate the Resources and Roles to which the rule applies. If either  $roles or $resources is null, then the rule applies to all Roles or all Resources, respectively.  Both may be null in order to work with the default rule of the ACL.</p><p>The $privileges parameter may be used to further specify that the rule applies only  to certain privileges upon the Resource(s) in question. This may be specified to be a single  privilege with a string, and multiple privileges may be specified as an array of strings.</p><p>If $assert is provided, then its assert() method must return true in order for  the rule to apply. If $assert is provided with $roles, $resources, and $privileges all  equal to null, then a rule having a type of:</p><p>TYPE_ALLOW will imply a type of TYPE_DENY, and</p><p>TYPE_DENY will imply a type of TYPE_ALLOW</p><p>when the rule's assertion fails. This is because the ACL needs to provide expected  behavior when an assertion upon the default ACL rule fails.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">throws:</span> Zend_Acl_Exception</li>
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">usedby:</span> <a href="../Zend_Acl/Zend_Acl.html#methodremoveAllow">Zend_Acl::removeAllow()</a></li>
+				<li><span class="field">usedby:</span> <a href="../Zend_Acl/Zend_Acl.html#methodremoveDeny">Zend_Acl::removeDeny()</a></li>
+				<li><span class="field">usedby:</span> <a href="../Zend_Acl/Zend_Acl.html#methoddeny">Zend_Acl::deny()</a></li>
+				<li><span class="field">usedby:</span> <a href="../Zend_Acl/Zend_Acl.html#methodallow">Zend_Acl::allow()</a></li>
+				<li><span class="field">uses:</span> <a href="../Zend_Acl/Zend_Acl.html#methodget">Zend_Acl::get()</a></li>
+				<li><span class="field">uses:</span> <a href="../Zend_Acl/Zend_Acl_Role_Registry.html#methodget">Zend_Acl_Role_Registry::get()</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Acl/Zend_Acl.html">Zend_Acl</a></span>
+		<span class="method-name">
+			setRule
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$operation</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$type</span>, [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string|array</span>&nbsp;<span class="var-name">$roles</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string|array</span>&nbsp;<span class="var-name">$resources</span> = <span class="var-default">null</span>], [<span class="var-type">string|array</span>&nbsp;<span class="var-name">$privileges</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Assert_Interface.html">Zend_Acl_Assert_Interface</a></span>&nbsp;<span class="var-name">$assert</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$operation</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$type</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a>|string|array</span>
+				<span class="var-name">$roles</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a>|string|array</span>
+				<span class="var-name">$resources</span>			</li>
+					<li>
+				<span class="var-type">string|array</span>
+				<span class="var-name">$privileges</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Assert_Interface.html">Zend_Acl_Assert_Interface</a></span>
+				<span class="var-name">$assert</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_getRoleRegistry" id="_getRoleRegistry"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">_getRoleRegistry</span> (line <span class="line-number">748</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the Role registry for this ACL</p>
+<p class="description"><p>If no Role registry has been created yet, a new default Role registry  is created and returned.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Acl/Zend_Acl_Role_Registry.html">Zend_Acl_Role_Registry</a></span>
+		<span class="method-name">
+			_getRoleRegistry
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method_getRules" id="_getRules"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">_getRules</span> (line <span class="line-number">992</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the rules associated with a Resource and a Role, or null if no such rules exist</p>
+<p class="description"><p>If either $resource or $role is null, this means that the rules returned are for all Resources or all Roles,  respectively. Both can be null to return the default rule set for all Resources and all Roles.</p><p>If the $create parameter is true, then a rule set is first created and then returned to the caller.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array|null</span>
+		<span class="method-name">
+			&amp;_getRules
+		</span>
+					([<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a></span>&nbsp;<span class="var-name">$resource</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a></span>&nbsp;<span class="var-name">$role</span> = <span class="var-default">null</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$create</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a></span>
+				<span class="var-name">$resource</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a></span>
+				<span class="var-name">$role</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$create</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_getRuleType" id="_getRuleType"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">_getRuleType</span> (line <span class="line-number">946</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the rule type associated with the specified Resource, Role, and privilege  combination.</p>
+<p class="description"><p>If a rule does not exist or its attached assertion fails, which means that  the rule is not applicable, then this method returns null. Otherwise, the  rule type applies and is returned as either TYPE_ALLOW or TYPE_DENY.</p><p>If $resource or $role is null, then this means that the rule must apply to  all Resources or Roles, respectively.</p><p>If $privilege is null, then the rule must apply to all privileges.</p><p>If all three parameters are null, then the default ACL rule type is returned,  based on whether its assertion method passes.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string|null</span>
+		<span class="method-name">
+			_getRuleType
+		</span>
+					([<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a></span>&nbsp;<span class="var-name">$resource</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a></span>&nbsp;<span class="var-name">$role</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$privilege</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a></span>
+				<span class="var-name">$resource</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a></span>
+				<span class="var-name">$role</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$privilege</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_roleDFSAllPrivileges" id="_roleDFSAllPrivileges"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">_roleDFSAllPrivileges</span> (line <span class="line-number">767</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Performs a depth-first search of the Role DAG, starting at $role, in order to find a rule  allowing/denying $role access to all privileges upon $resource</p>
+<p class="description"><p>This method returns true if a rule is found and allows access. If a rule exists and denies access,  then this method returns false. If no applicable rule is found, then this method returns null.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean|null</span>
+		<span class="method-name">
+			_roleDFSAllPrivileges
+		</span>
+					(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a></span>&nbsp;<span class="var-name">$role</span>, [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a></span>&nbsp;<span class="var-name">$resource</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a></span>
+				<span class="var-name">$role</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a></span>
+				<span class="var-name">$resource</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_roleDFSOnePrivilege" id="_roleDFSOnePrivilege"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">_roleDFSOnePrivilege</span> (line <span class="line-number">846</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Performs a depth-first search of the Role DAG, starting at $role, in order to find a rule  allowing/denying $role access to a $privilege upon $resource</p>
+<p class="description"><p>This method returns true if a rule is found and allows access. If a rule exists and denies access,  then this method returns false. If no applicable rule is found, then this method returns null.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Acl_Exception</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean|null</span>
+		<span class="method-name">
+			_roleDFSOnePrivilege
+		</span>
+					(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a></span>&nbsp;<span class="var-name">$role</span>, [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a></span>&nbsp;<span class="var-name">$resource</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$privilege</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a></span>
+				<span class="var-name">$role</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a></span>
+				<span class="var-name">$resource</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$privilege</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_roleDFSVisitAllPrivileges" id="_roleDFSVisitAllPrivileges"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">_roleDFSVisitAllPrivileges</span> (line <span class="line-number">803</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Visits an $role in order to look for a rule allowing/denying $role access to all privileges upon $resource</p>
+<p class="description"><p>This method returns true if a rule is found and allows access. If a rule exists and denies access,  then this method returns false. If no applicable rule is found, then this method returns null.</p><p>This method is used by the internal depth-first search algorithm and may modify the DFS data structure.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Acl_Exception</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean|null</span>
+		<span class="method-name">
+			_roleDFSVisitAllPrivileges
+		</span>
+					(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a></span>&nbsp;<span class="var-name">$role</span>, [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a></span>&nbsp;<span class="var-name">$resource</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">&$dfs</span> = <span class="var-default">null</span>], <span class="var-type">array</span>&nbsp;<span class="var-name">$dfs</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a></span>
+				<span class="var-name">$role</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a></span>
+				<span class="var-name">$resource</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$dfs</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$dfs</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_roleDFSVisitOnePrivilege" id="_roleDFSVisitOnePrivilege"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">_roleDFSVisitOnePrivilege</span> (line <span class="line-number">892</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Visits an $role in order to look for a rule allowing/denying $role access to a $privilege upon $resource</p>
+<p class="description"><p>This method returns true if a rule is found and allows access. If a rule exists and denies access,  then this method returns false. If no applicable rule is found, then this method returns null.</p><p>This method is used by the internal depth-first search algorithm and may modify the DFS data structure.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Acl_Exception</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean|null</span>
+		<span class="method-name">
+			_roleDFSVisitOnePrivilege
+		</span>
+					(<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a></span>&nbsp;<span class="var-name">$role</span>, [<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a></span>&nbsp;<span class="var-name">$resource</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$privilege</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">&$dfs</span> = <span class="var-default">null</span>], <span class="var-type">array</span>&nbsp;<span class="var-name">$dfs</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Role_Interface.html">Zend_Acl_Role_Interface</a></span>
+				<span class="var-name">$role</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Acl/Zend_Acl_Resource_Interface.html">Zend_Acl_Resource_Interface</a></span>
+				<span class="var-name">$resource</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$privilege</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$dfs</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$dfs</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constOP_ADD" id="OP_ADD"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">OP_ADD</span>
+			 = <span class="const-default"> 'OP_ADD'</span>
+			(line <span class="line-number">62</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Rule operation: add</p>
+	
+	
+</div>
+<a name="constOP_REMOVE" id="OP_REMOVE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">OP_REMOVE</span>
+			 = <span class="const-default"> 'OP_REMOVE'</span>
+			(line <span class="line-number">67</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Rule operation: remove</p>
+	
+	
+</div>
+<a name="constTYPE_ALLOW" id="TYPE_ALLOW"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TYPE_ALLOW</span>
+			 = <span class="const-default"> 'TYPE_ALLOW'</span>
+			(line <span class="line-number">52</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Rule type: allow</p>
+	
+	
+</div>
+<a name="constTYPE_DENY" id="TYPE_DENY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TYPE_DENY</span>
+			 = <span class="const-default"> 'TYPE_DENY'</span>
+			(line <span class="line-number">57</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Rule type: deny</p>
+	
+	
+</div>
+						
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:02:05 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

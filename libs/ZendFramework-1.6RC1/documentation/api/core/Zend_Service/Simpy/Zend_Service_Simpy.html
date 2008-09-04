@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Service_Simpy</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_Service_Simpy</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Service---Simpy.php.html">/Service/Simpy.php</a> (line <span class="field">32</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_baseUri" title="details" class="var-name">$_baseUri</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">Zend_Service_Rest</span>
+					<a href="#$_rest" title="details" class="var-name">$_rest</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																							
+				<div class="method-definition">
+					<img src="../../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$username</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy.html">Zend_Service_Simpy</a></span>
+										<a href="#deleteLink" title="details" class="method-name">deleteLink</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$href</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy.html">Zend_Service_Simpy</a></span>
+										<a href="#deleteNote" title="details" class="method-name">deleteNote</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$noteId</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy_LinkSet.html">Zend_Service_Simpy_LinkSet</a></span>
+										<a href="#getLinks" title="details" class="method-name">getLinks</a>
+											([<span class="var-type"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy_LinkQuery.html">Zend_Service_Simpy_LinkQuery</a></span>&nbsp;<span class="var-name">$q</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy_NoteSet.html">Zend_Service_Simpy_NoteSet</a></span>
+										<a href="#getNotes" title="details" class="method-name">getNotes</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$q</span> = <span class="var-default">null</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy_TagSet.html">Zend_Service_Simpy_TagSet</a></span>
+										<a href="#getTags" title="details" class="method-name">getTags</a>
+											([<span class="var-type">int</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy_Watchlist.html">Zend_Service_Simpy_Watchlist</a></span>
+										<a href="#getWatchlist" title="details" class="method-name">getWatchlist</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$watchlistId</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy_WatchlistSet.html">Zend_Service_Simpy_WatchlistSet</a></span>
+										<a href="#getWatchlists" title="details" class="method-name">getWatchlists</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy.html">Zend_Service_Simpy</a></span>
+										<a href="#mergeTags" title="details" class="method-name">mergeTags</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$fromTag1</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$fromTag2</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$toTag</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy.html">Zend_Service_Simpy</a></span>
+										<a href="#removeTag" title="details" class="method-name">removeTag</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$tag</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy.html">Zend_Service_Simpy</a></span>
+										<a href="#renameTag" title="details" class="method-name">renameTag</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$fromTag</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$toTag</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy.html">Zend_Service_Simpy</a></span>
+										<a href="#saveLink" title="details" class="method-name">saveLink</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$title</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$href</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$accessType</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$tags</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$urlNickname</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$note</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy.html">Zend_Service_Simpy</a></span>
+										<a href="#saveNote" title="details" class="method-name">saveNote</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$title</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$tags</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$description</span> = <span class="var-default">null</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$noteId</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy.html">Zend_Service_Simpy</a></span>
+										<a href="#splitTag" title="details" class="method-name">splitTag</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$tag</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$toTag1</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$toTag2</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">DOMDocument</span>
+										<a href="#_makeRequest" title="details" class="method-name">_makeRequest</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$op</span>, [<span class="var-type">string|array</span>&nbsp;<span class="var-name">$query</span> = <span class="var-default">null</span>])
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_baseUri" id="$_baseUri"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_baseUri</span>
+			 = <span class="var-default"> 'http://simpy.com'</span>			(line <span class="line-number">39</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Base URI to which API methods and parameters will be appended</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_rest" id="$_rest"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">Zend_Service_Rest</span>
+			<span class="var-name">$_rest</span>
+						(line <span class="line-number">46</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Zend_Service_Rest object</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">55</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructs a new Simpy (free) REST API Client</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$username</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$username</span><span class="var-description">: Username for the Simpy user account</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$password</span><span class="var-description">: Password for the Simpy user account</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddeleteLink" id="deleteLink"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">deleteLink</span> (line <span class="line-number">293</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Deletes a given link.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">see:</span> <a href="http://www.simpy.com/doc/api/rest/DeleteLink">http://www.simpy.com/doc/api/rest/DeleteLink</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy.html">Zend_Service_Simpy</a></span>
+		<span class="method-name">
+			deleteLink
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$href</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$href</span><span class="var-description">: URL of the bookmark to delete</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddeleteNote" id="deleteNote"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">deleteNote</span> (line <span class="line-number">410</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Deletes a given note.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">see:</span> <a href="http://www.simpy.com/doc/api/rest/DeleteNote">http://www.simpy.com/doc/api/rest/DeleteNote</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy.html">Zend_Service_Simpy</a></span>
+		<span class="method-name">
+			deleteNote
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$noteId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$noteId</span><span class="var-description">: ID of the note to delete</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetLinks" id="getLinks"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getLinks</span> (line <span class="line-number">227</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Performs a query on existing links and returns the results or returns all  links if no particular query is specified (which should be used sparingly  to prevent overloading Simpy servers)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy_LinkSet.html">Zend_Service_Simpy_LinkSet</a></span>
+		<span class="method-name">
+			getLinks
+		</span>
+					([<span class="var-type"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy_LinkQuery.html">Zend_Service_Simpy_LinkQuery</a></span>&nbsp;<span class="var-name">$q</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy_LinkQuery.html">Zend_Service_Simpy_LinkQuery</a></span>
+				<span class="var-name">$q</span><span class="var-description">: Query object to use (optional)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetNotes" id="getNotes"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getNotes</span> (line <span class="line-number">356</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns all notes in reverse chronological order by add date or by  rank.</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> searchFieldsLinks</li>
+				<li><span class="field">see:</span> searchSyntax</li>
+				<li><span class="field">see:</span> <a href="http://www.simpy.com/doc/api/rest/GetNotes">http://www.simpy.com/doc/api/rest/GetNotes</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy_NoteSet.html">Zend_Service_Simpy_NoteSet</a></span>
+		<span class="method-name">
+			getNotes
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$q</span> = <span class="var-default">null</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$q</span><span class="var-description">: Query string formatted using Simpy search syntax                        and search fields (optional)</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$limit</span><span class="var-description">: Limits the number notes returned (optional)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetTags" id="getTags"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getTags</span> (line <span class="line-number">122</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a list of all tags and their counts, ordered by count in  decreasing order</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="http://www.simpy.com/doc/api/rest/GetTags">http://www.simpy.com/doc/api/rest/GetTags</a></li>
+				<li><span class="field">throws:</span> Zend_Service_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy_TagSet.html">Zend_Service_Simpy_TagSet</a></span>
+		<span class="method-name">
+			getTags
+		</span>
+					([<span class="var-type">int</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$limit</span><span class="var-description">: Limits the number of tags returned (optional)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetWatchlist" id="getWatchlist"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getWatchlist</span> (line <span class="line-number">329</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the meta-data for a given watchlist.</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="http://www.simpy.com/doc/api/rest/GetWatchlist">http://www.simpy.com/doc/api/rest/GetWatchlist</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy_Watchlist.html">Zend_Service_Simpy_Watchlist</a></span>
+		<span class="method-name">
+			getWatchlist
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$watchlistId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$watchlistId</span><span class="var-description">: ID of the watchlist to retrieve</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetWatchlists" id="getWatchlists"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getWatchlists</span> (line <span class="line-number">311</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return a list of watchlists and their meta-data, including the number  of new links added to each watchlist since last login.</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="http://www.simpy.com/doc/api/rest/GetWatchlists">http://www.simpy.com/doc/api/rest/GetWatchlists</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy_WatchlistSet.html">Zend_Service_Simpy_WatchlistSet</a></span>
+		<span class="method-name">
+			getWatchlists
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodmergeTags" id="mergeTags"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">mergeTags</span> (line <span class="line-number">184</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Merges two tags into a new tag.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">see:</span> <a href="http://www.simpy.com/doc/api/rest/MergeTags">http://www.simpy.com/doc/api/rest/MergeTags</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy.html">Zend_Service_Simpy</a></span>
+		<span class="method-name">
+			mergeTags
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$fromTag1</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$fromTag2</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$toTag</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$fromTag1</span><span class="var-description">: First tag to merge.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$fromTag2</span><span class="var-description">: Second tag to merge.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$toTag</span><span class="var-description">: Tag to merge the two tags into.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodremoveTag" id="removeTag"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">removeTag</span> (line <span class="line-number">144</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Removes a tag.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">see:</span> <a href="http://www.simpy.com/doc/api/rest/RemoveTag">http://www.simpy.com/doc/api/rest/RemoveTag</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy.html">Zend_Service_Simpy</a></span>
+		<span class="method-name">
+			removeTag
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$tag</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tag</span><span class="var-description">: Tag to be removed</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrenameTag" id="renameTag"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">renameTag</span> (line <span class="line-number">163</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Renames a tag.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">see:</span> <a href="http://www.simpy.com/doc/api/rest/RenameTag">http://www.simpy.com/doc/api/rest/RenameTag</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy.html">Zend_Service_Simpy</a></span>
+		<span class="method-name">
+			renameTag
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$fromTag</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$toTag</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$fromTag</span><span class="var-description">: Tag to be renamed</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$toTag</span><span class="var-description">: New tag name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsaveLink" id="saveLink"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">saveLink</span> (line <span class="line-number">266</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Saves a given link.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">see:</span> <a href="http://www.simpy.com/doc/api/rest/SaveLink">http://www.simpy.com/doc/api/rest/SaveLink</a></li>
+				<li><span class="field">link:</span> Zend_Service_Simpy::ACCESSTYPE_PRIVATE</li>
+				<li><span class="field">link:</span> Zend_Service_Simpy::ACCESSTYPE_PUBLIC</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy.html">Zend_Service_Simpy</a></span>
+		<span class="method-name">
+			saveLink
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$title</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$href</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$accessType</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$tags</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$urlNickname</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$note</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$title</span><span class="var-description">: Title of the page to save</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$href</span><span class="var-description">: URL of the page to save</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$accessType</span><span class="var-description">: ACCESSTYPE_PUBLIC or ACCESSTYPE_PRIVATE</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$tags</span><span class="var-description">: String containing a comma-separated list of                              tags or array of strings containing tags                              (optional)</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$urlNickname</span><span class="var-description">: Alternative custom title (optional)</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$note</span><span class="var-description">: Free text note (optional)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsaveNote" id="saveNote"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">saveNote</span> (line <span class="line-number">385</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Saves a note.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">see:</span> <a href="http://www.simpy.com/doc/api/rest/SaveNote">http://www.simpy.com/doc/api/rest/SaveNote</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy.html">Zend_Service_Simpy</a></span>
+		<span class="method-name">
+			saveNote
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$title</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$tags</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$description</span> = <span class="var-default">null</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$noteId</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$title</span><span class="var-description">: Title of the note</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$tags</span><span class="var-description">: String containing a comma-separated list of                              tags or array of strings containing tags                              (optional)</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$description</span><span class="var-description">: Free-text note (optional)</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$noteId</span><span class="var-description">: Unique identifier for an existing note to                              update (optional)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsplitTag" id="splitTag"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">splitTag</span> (line <span class="line-number">206</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Splits a single tag into two separate tags.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">see:</span> <a href="http://www.simpy.com/doc/api/rest/SplitTag">http://www.simpy.com/doc/api/rest/SplitTag</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Service/Simpy/Zend_Service_Simpy.html">Zend_Service_Simpy</a></span>
+		<span class="method-name">
+			splitTag
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$tag</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$toTag1</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$toTag2</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tag</span><span class="var-description">: Tag to split</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$toTag1</span><span class="var-description">: First tag to split into</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$toTag2</span><span class="var-description">: Second tag to split into</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_makeRequest" id="_makeRequest"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_makeRequest</span> (line <span class="line-number">75</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sends a request to the REST API service and does initial processing  on the response.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Parsed XML response</li>
+				<li><span class="field">throws:</span> Zend_Service_Exception</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">DOMDocument</span>
+		<span class="method-name">
+			_makeRequest
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$op</span>, [<span class="var-type">string|array</span>&nbsp;<span class="var-name">$query</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$op</span><span class="var-description">: Name of the operation for the request</span>			</li>
+					<li>
+				<span class="var-type">string|array</span>
+				<span class="var-name">$query</span><span class="var-description">: Query data for the request (optional)</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:48:33 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

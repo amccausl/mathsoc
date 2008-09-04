@@ -1,0 +1,1107 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Search_Lucene_Storage_File</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/AbstractClass_logo.png"
+														alt="Abstract Class"
+														title="Abstract Class"
+														style="vertical-align: middle"> Zend_Search_Lucene_Storage_File</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|													<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Search---Lucene---Storage---File.php.html">/Search/Lucene/Storage/File.php</a> (line <span class="field">35</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Filesystem.html">Zend_Search_Lucene_Storage_File_Filesystem</a>
+					</td>
+					<td>
+											
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Memory.html">Zend_Search_Lucene_Storage_File_Memory</a>
+					</td>
+					<td>
+											
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																															
+				<div class="method-definition">
+					<img src="../../media/images/AbstractMethod.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#flush" title="details" class="method-name">flush</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/AbstractMethod.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#lock" title="details" class="method-name">lock</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$lockType</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$nonBlockinLock</span> = <span class="var-default">false</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#readBinary" title="details" class="method-name">readBinary</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer</span>
+										<a href="#readByte" title="details" class="method-name">readByte</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#readBytes" title="details" class="method-name">readBytes</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$num</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer</span>
+										<a href="#readInt" title="details" class="method-name">readInt</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer</span>
+										<a href="#readLong" title="details" class="method-name">readLong</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#readString" title="details" class="method-name">readString</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer</span>
+										<a href="#readVInt" title="details" class="method-name">readVInt</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/AbstractMethod.png" alt=" "/>
+											<span class="method-result">integer</span>
+										<a href="#seek" title="details" class="method-name">seek</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$offset</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$whence</span> = <span class="var-default">SEEK_SET</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/AbstractMethod.png" alt=" "/>
+											<span class="method-result">integer</span>
+										<a href="#tell" title="details" class="method-name">tell</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/AbstractMethod.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#unlock" title="details" class="method-name">unlock</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#writeByte" title="details" class="method-name">writeByte</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$byte</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#writeBytes" title="details" class="method-name">writeBytes</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$num</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#writeInt" title="details" class="method-name">writeInt</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#writeLong" title="details" class="method-name">writeLong</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#writeString" title="details" class="method-name">writeString</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#writeVInt" title="details" class="method-name">writeVInt</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/AbstractMethod.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#_fread" title="details" class="method-name">_fread</a>
+											([<span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span> = <span class="var-default">1</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/AbstractMethod.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#_fwrite" title="details" class="method-name">_fwrite</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span> = <span class="var-default">null</span>])
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodflush" id="flush"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/AbstractMethod.png" />
+		<span class="method-title">flush</span> (line <span class="line-number">79</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Flush output.</p>
+<p class="description"><p>Returns true on success or false on failure.</p></p>
+	<ul class="tags">
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			flush
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Filesystem.html#methodflush">Zend_Search_Lucene_Storage_File_Filesystem::flush()</a>
+								: Flush output.
+							</li>
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Memory.html#methodflush">Zend_Search_Lucene_Storage_File_Memory::flush()</a>
+								: Flush output.
+							</li>
+				</ul>
+	</div>
+<a name="methodlock" id="lock"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/AbstractMethod.png" />
+		<span class="method-title">lock</span> (line <span class="line-number">98</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Lock file</p>
+<p class="description"><p>Lock type may be a LOCK_SH (shared lock) or a LOCK_EX (exclusive lock)</p></p>
+	<ul class="tags">
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			lock
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$lockType</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$nonBlockinLock</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$lockType</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$nonBlockinLock</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Filesystem.html#methodlock">Zend_Search_Lucene_Storage_File_Filesystem::lock()</a>
+								: Lock file
+							</li>
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Memory.html#methodlock">Zend_Search_Lucene_Storage_File_Memory::lock()</a>
+								: Lock file
+							</li>
+				</ul>
+	</div>
+<a name="methodreadBinary" id="readBinary"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">readBinary</span> (line <span class="line-number">423</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Reads binary data from the current position in the file  and advances the file pointer.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			readBinary
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Memory.html#methodreadBinary">Zend_Search_Lucene_Storage_File_Memory::readBinary()</a>
+								: Reads binary data from the current position in the file  and advances the file pointer.
+							</li>
+				</ul>
+	</div>
+<a name="methodreadByte" id="readByte"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">readByte</span> (line <span class="line-number">111</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Reads a byte from the current position in the file  and advances the file pointer.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			readByte
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Memory.html#methodreadByte">Zend_Search_Lucene_Storage_File_Memory::readByte()</a>
+								: Reads a byte from the current position in the file  and advances the file pointer.
+							</li>
+				</ul>
+	</div>
+<a name="methodreadBytes" id="readBytes"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">readBytes</span> (line <span class="line-number">133</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Read num bytes from the current position in the file  and advances the file pointer.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			readBytes
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$num</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$num</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Memory.html#methodreadBytes">Zend_Search_Lucene_Storage_File_Memory::readBytes()</a>
+								: Read num bytes from the current position in the file  and advances the file pointer.
+							</li>
+				</ul>
+	</div>
+<a name="methodreadInt" id="readInt"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">readInt</span> (line <span class="line-number">157</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Reads an integer from the current position in the file  and advances the file pointer.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			readInt
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Memory.html#methodreadInt">Zend_Search_Lucene_Storage_File_Memory::readInt()</a>
+								: Reads an integer from the current position in the file  and advances the file pointer.
+							</li>
+				</ul>
+	</div>
+<a name="methodreadLong" id="readLong"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">readLong</span> (line <span class="line-number">190</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a long integer from the current position in the file  and advances the file pointer.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Search_Lucene_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			readLong
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Memory.html#methodreadLong">Zend_Search_Lucene_Storage_File_Memory::readLong()</a>
+								: Returns a long integer from the current position in the file  and advances the file pointer.
+							</li>
+				</ul>
+	</div>
+<a name="methodreadString" id="readString"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">readString</span> (line <span class="line-number">300</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Reads a string from the current position in the file  and advances the file pointer.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			readString
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Memory.html#methodreadString">Zend_Search_Lucene_Storage_File_Memory::readString()</a>
+								: Reads a string from the current position in the file  and advances the file pointer.
+							</li>
+				</ul>
+	</div>
+<a name="methodreadVInt" id="readVInt"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">readVInt</span> (line <span class="line-number">266</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a variable-length integer from the current  position in the file and advances the file pointer.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			readVInt
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Memory.html#methodreadVInt">Zend_Search_Lucene_Storage_File_Memory::readVInt()</a>
+								: Returns a variable-length integer from the current  position in the file and advances the file pointer.
+							</li>
+				</ul>
+	</div>
+<a name="methodseek" id="seek"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/AbstractMethod.png" />
+		<span class="method-title">seek</span> (line <span class="line-number">63</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the file position indicator and advances the file pointer.</p>
+<p class="description"><p>The new position, measured in bytes from the beginning of the file,  is obtained by adding offset to the position specified by whence,  whose values are defined as follows:  SEEK_SET - Set position equal to offset bytes.  SEEK_CUR - Set position to current location plus offset.  SEEK_END - Set position to end-of-file plus offset. (To move to  a position before the end-of-file, you need to pass a negative value  in offset.)  Upon success, returns 0; otherwise, returns -1</p></p>
+	<ul class="tags">
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			seek
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$offset</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$whence</span> = <span class="var-default">SEEK_SET</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$offset</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$whence</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Filesystem.html#methodseek">Zend_Search_Lucene_Storage_File_Filesystem::seek()</a>
+								: Sets the file position indicator and advances the file pointer.
+							</li>
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Memory.html#methodseek">Zend_Search_Lucene_Storage_File_Memory::seek()</a>
+								: Sets the file position indicator and advances the file pointer.
+							</li>
+				</ul>
+	</div>
+<a name="methodtell" id="tell"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/AbstractMethod.png" />
+		<span class="method-title">tell</span> (line <span class="line-number">70</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get file position.</p>
+	<ul class="tags">
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			tell
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Filesystem.html#methodtell">Zend_Search_Lucene_Storage_File_Filesystem::tell()</a>
+								: Get file position.
+							</li>
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Memory.html#methodtell">Zend_Search_Lucene_Storage_File_Memory::tell()</a>
+								: Get file position.
+							</li>
+				</ul>
+	</div>
+<a name="methodunlock" id="unlock"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/AbstractMethod.png" />
+		<span class="method-title">unlock</span> (line <span class="line-number">103</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Unlock file</p>
+	<ul class="tags">
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			unlock
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Filesystem.html#methodunlock">Zend_Search_Lucene_Storage_File_Filesystem::unlock()</a>
+								: Unlock file
+							</li>
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Memory.html#methodunlock">Zend_Search_Lucene_Storage_File_Memory::unlock()</a>
+								: Unlock file
+							</li>
+				</ul>
+	</div>
+<a name="methodwriteByte" id="writeByte"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">writeByte</span> (line <span class="line-number">121</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Writes a byte to the end of the file.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			writeByte
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$byte</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$byte</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Memory.html#methodwriteByte">Zend_Search_Lucene_Storage_File_Memory::writeByte()</a>
+								: Writes a byte to the end of the file.
+							</li>
+				</ul>
+	</div>
+<a name="methodwriteBytes" id="writeBytes"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">writeBytes</span> (line <span class="line-number">145</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Writes num bytes of data (all, if $num===null) to the end  of the string.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			writeBytes
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$num</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$data</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$num</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Memory.html#methodwriteBytes">Zend_Search_Lucene_Storage_File_Memory::writeBytes()</a>
+								: Writes num bytes of data (all, if $num===null) to the end  of the string.
+							</li>
+				</ul>
+	</div>
+<a name="methodwriteInt" id="writeInt"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">writeInt</span> (line <span class="line-number">173</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Writes an integer to the end of file.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			writeInt
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Memory.html#methodwriteInt">Zend_Search_Lucene_Storage_File_Memory::writeInt()</a>
+								: Writes an integer to the end of file.
+							</li>
+				</ul>
+	</div>
+<a name="methodwriteLong" id="writeLong"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">writeLong</span> (line <span class="line-number">229</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Writes long integer to the end of file</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Search_Lucene_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			writeLong
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Memory.html#methodwriteLong">Zend_Search_Lucene_Storage_File_Memory::writeLong()</a>
+								: Writes long integer to the end of file
+							</li>
+				</ul>
+	</div>
+<a name="methodwriteString" id="writeString"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">writeString</span> (line <span class="line-number">357</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Writes a string to the end of file.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Search_Lucene_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			writeString
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$str</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Memory.html#methodwriteString">Zend_Search_Lucene_Storage_File_Memory::writeString()</a>
+								: Writes a string to the end of file.
+							</li>
+				</ul>
+	</div>
+<a name="methodwriteVInt" id="writeVInt"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">writeVInt</span> (line <span class="line-number">283</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Writes a variable-length integer to the end of file.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			writeVInt
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Memory.html#methodwriteVInt">Zend_Search_Lucene_Storage_File_Memory::writeVInt()</a>
+								: Writes a variable-length integer to the end of file.
+							</li>
+				</ul>
+	</div>
+<a name="method_fread" id="_fread"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/AbstractMethod.png" />
+		<span class="method-title">_fread</span> (line <span class="line-number">44</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Reads $length number of bytes at the current position in the  file and advances the file pointer.</p>
+	<ul class="tags">
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			_fread
+		</span>
+					([<span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span> = <span class="var-default">1</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$length</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Filesystem.html#method_fread">Zend_Search_Lucene_Storage_File_Filesystem::_fread()</a>
+								: Read a $length bytes from the file and advance the file pointer.
+							</li>
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Memory.html#method_fread">Zend_Search_Lucene_Storage_File_Memory::_fread()</a>
+								: Reads $length number of bytes at the current position in the  file and advances the file pointer.
+							</li>
+				</ul>
+	</div>
+<a name="method_fwrite" id="_fwrite"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/AbstractMethod.png" />
+		<span class="method-title">_fwrite</span> (line <span class="line-number">88</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Writes $length number of bytes (all, if $length===null) to the end  of the file.</p>
+	<ul class="tags">
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_fwrite
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$data</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$length</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Filesystem.html#method_fwrite">Zend_Search_Lucene_Storage_File_Filesystem::_fwrite()</a>
+								: Writes $length number of bytes (all, if $length===null) to the end  of the file.
+							</li>
+					<li>
+				<a href="../../Zend_Search_Lucene/Storage/Zend_Search_Lucene_Storage_File_Memory.html#method_fwrite">Zend_Search_Lucene_Storage_File_Memory::_fwrite()</a>
+								: Writes $length number of bytes (all, if $length===null) to the end  of the file.
+							</li>
+				</ul>
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:24:32 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

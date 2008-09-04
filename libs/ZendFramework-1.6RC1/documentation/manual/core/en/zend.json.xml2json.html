@@ -1,0 +1,195 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>21.4. XML to JSON conversion</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="prev" href="zend.json.objects.html" title="21.3. JSON Objects">
+<link rel="next" href="zend.json.server.html" title="21.5. Zend_Json_Server - JSON-RPC server">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">21.4. XML to JSON conversion</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.json.objects.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 21. Zend_Json</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.json.server.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.json.xml2json"></a>21.4. XML to JSON conversion</h2></div></div></div>
+<p>
+        <code class="code">Zend_Json</code> provides a convenience method for transforming
+        XML formatted data into JSON format. This feature was inspired from an
+        <a href="http://www.ibm.com/developerworks/xml/library/x-xml2jsonphp/" target="_top">
+        IBM developerWorks article</a>.
+    </p>
+<p>
+        <code class="code">Zend_Json</code> includes a static function called <code class="code">Zend_Json::fromXml()</code>.
+        This function will generate JSON from a given XML input. This function takes any aribitrary
+        XML string as an input parameter. It also takes an optional boolean input parameter to instruct the
+        conversion logic to ignore or not ignore the XML attributes during the conversion process. If this
+        optional input parameter is not given, then the default behavior is to ignore the XML attributes.
+        This function call is made as shown below:
+    </p>
+<pre class="programlisting">
+        // fromXml function simply takes a String containing XML contents as input.
+        $jsonContents = Zend_Json::fromXml($xmlStringContents, true);?&gt;
+    </pre>
+<p>
+        <code class="code">Zend_Json::fromXml()</code> function does the conversion of the XML formatted string input
+        parameter and returns the equivalent JSON formatted string output. In case of any XML input format
+        error or conversion logic error, this function will throw an exception. The conversion logic also
+        uses recursive techniques to traverse the XML tree. It supports recursion upto 25 levels deep.
+        Beyond that depth, it will throw a <code class="code">Zend_Json_Exception</code>. There are several XML files with varying
+        degree of complexity provided in the tests directory of the Zend Framework. They can be used to
+        test the functionality of the xml2json feature.
+    </p>
+<p>
+        The following is a simple example that shows both the XML input string passed to
+        and the JSON output string returned as a result from the
+        <code class="code">Zend_Json::fromXml()</code> function. This example used the optional function parameter as
+        not to ignore the XML attributes during the conversion. Hence, you can notice that the
+        resulting JSON string includes a representation of the XML attributes present in the XML input string.
+    </p>
+<p>
+        XML input string passed to <code class="code">Zend_Json::fromXml()</code> function:
+    </p>
+<pre class="programlisting">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;books&gt;
+    &lt;book id="1"&gt;
+        &lt;title&gt;Code Generation in Action&lt;/title&gt;
+        &lt;author&gt;&lt;first&gt;Jack&lt;/first&gt;&lt;last&gt;Herrington&lt;/last&gt;&lt;/author&gt;
+        &lt;publisher&gt;Manning&lt;/publisher&gt;
+    &lt;/book&gt;
+
+    &lt;book id="2"&gt;
+        &lt;title&gt;PHP Hacks&lt;/title&gt;
+        &lt;author&gt;&lt;first&gt;Jack&lt;/first&gt;&lt;last&gt;Herrington&lt;/last&gt;&lt;/author&gt;
+        &lt;publisher&gt;O'Reilly&lt;/publisher&gt;
+    &lt;/book&gt;
+
+    &lt;book id="3"&gt;
+        &lt;title&gt;Podcasting Hacks&lt;/title&gt;
+        &lt;author&gt;&lt;first&gt;Jack&lt;/first&gt;&lt;last&gt;Herrington&lt;/last&gt;&lt;/author&gt;
+        &lt;publisher&gt;O'Reilly&lt;/publisher&gt;
+    &lt;/book&gt;
+&lt;/books&gt; ?&gt;
+    </pre>
+<p>
+        JSON output string returned from <code class="code">Zend_Json::fromXml()</code> function:
+    </p>
+<pre class="programlisting">
+{
+   "books" : {
+      "book" : [ {
+         "@attributes" : {
+            "id" : "1"
+         },
+         "title" : "Code Generation in Action",
+         "author" : {
+            "first" : "Jack", "last" : "Herrington"
+         },
+         "publisher" : "Manning"
+      }, {
+         "@attributes" : {
+            "id" : "2"
+         },
+         "title" : "PHP Hacks", "author" : {
+            "first" : "Jack", "last" : "Herrington"
+         },
+         "publisher" : "O'Reilly"
+      }, {
+         "@attributes" : {
+            "id" : "3"
+         },
+         "title" : "Podcasting Hacks", "author" : {
+            "first" : "Jack", "last" : "Herrington"
+         },
+         "publisher" : "O'Reilly"
+      }
+   ]}
+}  ?&gt;
+    </pre>
+<p>
+        More details about this xml2json feature can be found in the original proposal itself.
+        Take a look at the
+        <a href="http://tinyurl.com/2tfa8z" target="_top">Zend_xml2json proposal</a>.
+    </p>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.json.objects.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.json.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.json.server.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">21.3. JSON Objects </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 21.5. Zend_Json_Server - JSON-RPC server</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

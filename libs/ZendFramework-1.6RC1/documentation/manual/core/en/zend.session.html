@@ -1,0 +1,192 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Chapter 39. Zend_Session</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="index.html" title="Programmer's Reference Guide">
+<link rel="prev" href="zend.service.yahoo.html" title="38.14. Zend_Service_Yahoo">
+<link rel="next" href="zend.session.basic_usage.html" title="39.2. Basic Usage">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="section" href="zend.session.html#zend.session.introduction" title="39.1. Introduction">
+<link rel="section" href="zend.session.basic_usage.html" title="39.2. Basic Usage">
+<link rel="section" href="zend.session.advanced_usage.html" title="39.3. Advanced Usage">
+<link rel="section" href="zend.session.global_session_management.html" title="39.4. Global Session Management">
+<link rel="section" href="zend.session.savehandler.dbtable.html" title="39.5. Zend_Session_SaveHandler_DbTable">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">Chapter 39. Zend_Session</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.service.yahoo.html">Prev</a> </td>
+<th width="60%" align="center"> </th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.session.basic_usage.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="chapter" lang="en">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="zend.session"></a>Chapter 39. Zend_Session</h2></div></div></div>
+<div class="toc">
+<p><b>Table of Contents</b></p>
+<dl>
+<dt><span class="sect1"><a href="zend.session.html#zend.session.introduction">39.1. Introduction</a></span></dt>
+<dt><span class="sect1"><a href="zend.session.basic_usage.html">39.2. Basic Usage</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.session.basic_usage.html#zend.session.basic_usage.basic_examples">39.2.1. Tutorial Examples</a></span></dt>
+<dt><span class="sect2"><a href="zend.session.basic_usage.html#zend.session.basic_usage.iteration">39.2.2. Iterating Over Session Namespaces</a></span></dt>
+<dt><span class="sect2"><a href="zend.session.basic_usage.html#zend.session.basic_usage.accessors">39.2.3. Accessors for Session Namespaces</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.session.advanced_usage.html">39.3. Advanced Usage</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.session.advanced_usage.html#zend.session.advanced_usage.starting_a_session">39.3.1. Starting a Session</a></span></dt>
+<dt><span class="sect2"><a href="zend.session.advanced_usage.html#zend.session.advanced_usage.locking">39.3.2. Locking Session Namespaces</a></span></dt>
+<dt><span class="sect2"><a href="zend.session.advanced_usage.html#zend.session.advanced_usage.expiration">39.3.3. Namespace Expiration</a></span></dt>
+<dt><span class="sect2"><a href="zend.session.advanced_usage.html#zend.session.advanced_usage.controllers">39.3.4. Session Encapsulation and Controllers</a></span></dt>
+<dt><span class="sect2"><a href="zend.session.advanced_usage.html#zend.session.advanced_usage.single_instance">39.3.5. Preventing Multiple Instances per Namespace</a></span></dt>
+<dt><span class="sect2"><a href="zend.session.advanced_usage.html#zend.session.advanced_usage.arrays">39.3.6. Working with Arrays</a></span></dt>
+<dt><span class="sect2"><a href="zend.session.advanced_usage.html#zend.session.advanced_usage.objects">39.3.7. Using Sessions with Objects</a></span></dt>
+<dt><span class="sect2"><a href="zend.session.advanced_usage.html#zend.session.advanced_usage.testing">39.3.8. Using Sessions with Unit Tests</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.session.global_session_management.html">39.4. Global Session Management</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.session.global_session_management.html#zend.session.global_session_management.configuration_options">39.4.1. Configuration Options</a></span></dt>
+<dt><span class="sect2"><a href="zend.session.global_session_management.html#zend.session.global_session_management.headers_sent">39.4.2. Error: Headers Already Sent</a></span></dt>
+<dt><span class="sect2"><a href="zend.session.global_session_management.html#zend.session.global_session_management.session_identifiers">39.4.3. Session Identifiers</a></span></dt>
+<dd><dl><dt><span class="sect3"><a href="zend.session.global_session_management.html#zend.session.global_session_management.session_identifiers.hijacking_and_fixation">39.4.3.1. Session Hijacking and Fixation</a></span></dt></dl></dd>
+<dt><span class="sect2"><a href="zend.session.global_session_management.html#zend.session.global_session_management.rememberme">39.4.4. <code class="code">rememberMe(integer $seconds)</code></a></span></dt>
+<dt><span class="sect2"><a href="zend.session.global_session_management.html#zend.session.global_session_management.forgetme">39.4.5. <code class="code">forgetMe()</code></a></span></dt>
+<dt><span class="sect2"><a href="zend.session.global_session_management.html#zend.session.global_session_management.sessionexists">39.4.6. <code class="code">sessionExists()</code></a></span></dt>
+<dt><span class="sect2"><a href="zend.session.global_session_management.html#zend.session.global_session_management.destroy">39.4.7. <code class="code">destroy(bool $remove_cookie = true, bool $readonly = true)</code></a></span></dt>
+<dt><span class="sect2"><a href="zend.session.global_session_management.html#zend.session.global_session_management.stop">39.4.8. <code class="code">stop()</code></a></span></dt>
+<dt><span class="sect2"><a href="zend.session.global_session_management.html#zend.session.global_session_management.writeclose">39.4.9. <code class="code">writeClose($readonly = true)</code></a></span></dt>
+<dt><span class="sect2"><a href="zend.session.global_session_management.html#zend.session.global_session_management.expiresessioncookie">39.4.10. <code class="code">expireSessionCookie()</code></a></span></dt>
+<dt><span class="sect2"><a href="zend.session.global_session_management.html#zend.session.global_session_management.savehandler">39.4.11. <code class="code">setSaveHandler(Zend_Session_SaveHandler_Interface $interface)</code></a></span></dt>
+<dt><span class="sect2"><a href="zend.session.global_session_management.html#zend.session.global_session_management.namespaceisset">39.4.12. <code class="code">namespaceIsset($namespace)</code></a></span></dt>
+<dt><span class="sect2"><a href="zend.session.global_session_management.html#zend.session.global_session_management.namespaceunset">39.4.13. <code class="code">namespaceUnset($namespace)</code></a></span></dt>
+<dt><span class="sect2"><a href="zend.session.global_session_management.html#zend.session.global_session_management.namespaceget">39.4.14. <code class="code">namespaceGet($namespace)</code></a></span></dt>
+<dt><span class="sect2"><a href="zend.session.global_session_management.html#zend.session.global_session_management.getiterator">39.4.15. <code class="code">getIterator()</code></a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.session.savehandler.dbtable.html">39.5. Zend_Session_SaveHandler_DbTable</a></span></dt>
+</dl>
+</div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.session.introduction"></a>39.1. Introduction</h2></div></div></div>
+<p>
+        The Zend Framework Auth team greatly appreciates your feedback and contributions on our email list:
+        <a href="mailto:fw-auth@lists.zend.com" target="_top">fw-auth@lists.zend.com</a>
+    </p>
+<p>
+        With web applications written using PHP, a <span class="bold"><strong>session</strong></span> represents a logical,
+        one-to-one connection between server-side, persistent state data and a particular user agent client (e.g., web
+        browser). <code class="code">Zend_Session</code> helps manage and preserve session data, a logical complement of cookie
+        data, across multiple page requests by the same client. Unlike cookie data, session data are not stored on the
+        client side and are only shared with the client when server-side source code voluntarily makes the data
+        available in response to a client request. For the purposes of this component and documentation, the term
+        "session data" refers to the server-side data stored in
+        <a href="http://www.php.net/manual/en/reserved.variables.php#reserved.variables.session" target="_top"><code class="code">$_SESSION</code></a>,
+        managed by <code class="code">Zend_Session</code>, and individually manipulated by <code class="code">Zend_Session_Namespace</code>
+        accessor objects. <span class="bold"><strong>Session namespaces</strong></span> provide access to session data using
+        classic <a href="http://en.wikipedia.org/wiki/Namespace_%28computer_science%29" target="_top">namespaces</a>
+        implemented logically as named groups of associative arrays, keyed by strings (similar to normal PHP arrays).
+    </p>
+<p>
+        <code class="code">Zend_Session_Namespace</code> instances are accessor objects for namespaced slices of
+        <code class="code">$_SESSION</code>. The <code class="code">Zend_Session</code> component wraps the existing PHP ext/session with an
+        administration and management interface, as well as providing an API for <code class="code">Zend_Session_Namespace</code> to
+        persist session namespaces. <code class="code">Zend_Session_Namespace</code> provides a standardized, object-oriented
+        interface for working with namespaces persisted inside PHP's standard session mechanism. Support exists for
+        both anonymous and authenticated (e.g., "login") session namespaces. <code class="code">Zend_Auth</code>, the authentication
+        component of the Zend Framework, uses <code class="code">Zend_Session_Namespace</code> to store some information associated
+        with authenticated users. Since <code class="code">Zend_Session</code> uses the normal PHP ext/session functions internally,
+        all the familiar configuration options and settings apply (see
+        <a href="http://www.php.net/session" target="_top">http://www.php.net/session</a>), with such bonuses as the
+        convenience of an object-oriented interface and default behavior that provides both best practices and smooth
+        integration with the Zend Framework. Thus, a standard PHP session identifier, whether conveyed by cookie or
+        within URLs, maintains the association between a client and session state data.
+    </p>
+<p>
+        The default
+        <a href="http://www.php.net/manual/en/function.session-set-save-handler.php" target="_top">ext/session save
+        handler</a> does not maintain this association for server clusters under certain conditions because session
+        data are stored to the filesystem of the server that responded to the request. If a request may be processed by
+        a different server than the one where the session data are located, then the responding server has no access to
+        the session data (if they are not available from a networked filesystem). A list of additional, appropriate
+        save handlers will be provided, when available. Community members are encouraged to suggest and submit save
+        handlers to the <a href="mailto:fw-auth@lists.zend.com" target="_top">fw-auth@lists.zend.com</a> list. A Zend_Db
+        compatible save handler has been posted to the list.
+    </p>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.service.yahoo.html">Prev</a> </td>
+<td width="20%" align="center"> </td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.session.basic_usage.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">38.14. Zend_Service_Yahoo </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 39.2. Basic Usage</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

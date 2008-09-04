@@ -1,0 +1,529 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>16.6. Zend_Filter_Inflector</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="prev" href="zend.filter.input.html" title="16.5. Zend_Filter_Input">
+<link rel="next" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.filter.inflector.html#zend.filter.inflector.operation" title="16.6.1. Operation">
+<link rel="subsection" href="zend.filter.inflector.html#zend.filter.inflector.paths" title="16.6.2. Setting Paths To Alternate Filters">
+<link rel="subsection" href="zend.filter.inflector.html#zend.filter.inflector.targets" title="16.6.3. Setting the Inflector Target">
+<link rel="subsection" href="zend.filter.inflector.html#zend.filter.inflector.rules" title="16.6.4. Inflection Rules">
+<link rel="subsection" href="zend.filter.inflector.html#zend.filter.inflector.utility" title="16.6.5. Utility Methods">
+<link rel="subsection" href="zend.filter.inflector.html#zend.filter.inflector.config" title="16.6.6. Using Zend_Config with Zend_Filter_Inflector">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">16.6. Zend_Filter_Inflector</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.filter.input.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 16. Zend_Filter</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.form.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.filter.inflector"></a>16.6. Zend_Filter_Inflector</h2></div></div></div>
+<p>
+        <code class="code">Zend_Filter_Inflector</code> is a general purpose tool for
+        rules-based inflection of strings to a given target.
+    </p>
+<p>
+        As an example, you may find you need to transform MixedCase or camelCasedWords into a
+        path; for readability, OS policies, or other reasons, you also need to
+        lower case this, and you want to separate the words using a dash ('-').
+        An inflector can do this for you.
+    </p>
+<p>
+        <code class="code">Zend_Filter_Inflector</code> implements
+        <code class="code">Zend_Filter_Interface</code>; you perform inflection by calling
+        <code class="code">filter()</code> on the object instance.
+    </p>
+<div class="example">
+<a name="zend.filter.inflector.camel_case_example"></a><p class="title"><b>Example 16.1. Transforming MixedCase and camelCaseText to another format</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$inflector = new Zend_Filter_Inflector('pages/:page.:suffix');
+$inflector-&gt;setRules(array(
+    ':page'  =&gt; array('Word_CamelCaseToDash', 'StringToLower'),
+    'suffix' =&gt; 'html'
+));
+
+$string   = 'camelCasedWords';
+$filtered = $inflector-&gt;filter(array('page' =&gt; $string)); // pages/camel-cased-words.html
+
+$string   = 'this_is_not_camel_cased';
+$filtered = $inflector-&gt;filter(array('page' =&gt; $string)); // pages/this_is_not_camel_cased.html
+?&gt;</pre></div>
+</div>
+<br class="example-break"><div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.filter.inflector.operation"></a>16.6.1. Operation</h3></div></div></div>
+<p>
+            An inflector requires a <span class="emphasis"><em>target</em></span> and one or more
+            <span class="emphasis"><em>rules</em></span>. A target is basically a string that
+            defines placeholders for variables you wish to substitute. These are
+            specified by prefixing with a ':': <code class="code">:script</code>.
+        </p>
+<p>
+            When calling <code class="code">filter()</code>, you then pass in an array of
+            key/value pairs corresponding to the variables in the target.
+        </p>
+<p>
+            Each variable in the target can have zero or more rules associated
+            with them. Rules may be either <span class="emphasis"><em>static</em></span> or refer to a
+            <code class="code">Zend_Filter</code> class. Static rules will replace with the
+            text provided. Otherwise, a class matching the rule provided will be
+            used to inflect the text. Classes are typically specified using a
+            short name indicating the filter name stripped of any common prefix.
+        </p>
+<p>
+            As an example, you can use any <code class="code">Zend_Filter</code> concrete
+            implementations; however, instead of referring to them as
+            'Zend_Filter_Alpha' or 'Zend_Filter_StringToLower', you'd specify
+            only 'Alpha' or 'StringToLower'.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.filter.inflector.paths"></a>16.6.2. Setting Paths To Alternate Filters</h3></div></div></div>
+<p>
+            <code class="code">Zend_Filter_Inflector</code> uses
+            <code class="code">Zend_Loader_PluginLoader</code> to manage loading filters to
+            use with inflection. By default, any filter prefixed with
+            <code class="code">Zend_Filter</code> will be available. To access filters with
+            that prefix but which occur deeper in the hierarchy, such as the
+            various Word filters, simply strip off the Zend_Filter prefix:
+        </p>
+<pre class="programlisting">&lt;?php
+// use Zend_Filter_Word_CamelCaseToDash as a rule
+$inflector-&gt;addRules(array('script' =&gt; 'Word_CamelCaseToDash'));
+?&gt;</pre>
+<p>
+            To set alternate paths, <code class="code">Zend_Filter_Inflector</code> has a
+            utility method that proxies to the plugin loader,
+            <code class="code">addFilterPrefixPath()</code>:
+        </p>
+<pre class="programlisting">&lt;?php
+$inflector-&gt;addFilterPrefixPath('My_Filter', 'My/Filter/');
+?&gt;</pre>
+<p>
+            Alternatively, you can retrieve the plugin loader from the
+            inflector, and interact with it directly:
+        </p>
+<pre class="programlisting">&lt;?php
+$loader = $inflector-&gt;getPluginLoader();
+$loader-&gt;addPrefixPath('My_Filter', 'My/Filter/');
+?&gt;</pre>
+<p>
+            For more options on modifying the paths to filters, please see <a href="zend.loader.pluginloader.html" title="24.2. Loading Plugins">the PluginLoader
+                documentation</a>.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.filter.inflector.targets"></a>16.6.3. Setting the Inflector Target</h3></div></div></div>
+<p>
+            The inflector target is a string with some placeholders for
+            variables. Placeholders take the form of an identifier, a colon
+            (':') by default, followed by a variable name: ':script', ':path',
+            etc. The <code class="code">filter()</code> method looks for the identifier
+            followed by the variable name being replaced.
+        </p>
+<p>
+            You can change the identifier using the
+            <code class="code">setTargetReplacementIdentifier()</code> method, or passing it
+            as the third argument to the constructor:
+        </p>
+<pre class="programlisting">&lt;?php
+// Via constructor:
+$inflector = new Zend_Filter_Inflector('#foo/#bar.#sfx', null, '#');
+
+// Via accessor:
+$inflector-&gt;setTargetReplacementIdentifier('#');
+?&gt;</pre>
+<p>
+            Typically, you will set the target via the constructor. However, you
+            may want to re-set the target later (for instance, to modify the
+            default inflector in core components, such as the
+            <code class="code">ViewRenderer</code> or <code class="code">Zend_Layout</code>).
+            <code class="code">setTarget()</code> can be used for this purpose:
+        </p>
+<pre class="programlisting">&lt;?php
+$inflector = $layout-&gt;getInflector();
+$inflector-&gt;setTarget('layouts/:script.phtml');
+?&gt;</pre>
+<p>
+            Additionally, you may wish to have a class member for your class
+            that you can use to keep the inflector target updated -- without
+            needing to directly update the target each time (thus saving on
+            method calls). <code class="code">setTargetReference()</code> allows you to do
+            this:
+        </p>
+<pre class="programlisting">&lt;?php
+class Foo
+{
+    /**
+     * @var string Inflector target
+     */
+    protected $_target = 'foo/:bar/:baz.:suffix';
+
+    /**
+     * Constructor
+     * @return void
+     */
+    public function __construct()
+    {
+        $this-&gt;_inflector = new Zend_Filter_Inflector();
+        $this-&gt;_inflector-&gt;setTargetReference($this-&gt;_target);
+    }
+
+    /**
+     * Set target; updates target in inflector
+     * 
+     * @param  string $target 
+     * @return Foo
+     */
+    public function setTarget($target)
+    {
+        $this-&gt;_target = $target;
+        return $this;
+    }
+}
+?&gt;</pre>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.filter.inflector.rules"></a>16.6.4. Inflection Rules</h3></div></div></div>
+<p>
+            As mentioned in the introduction, there are two types of rules:
+            static and filter-based.
+        </p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+	            It is important to note that regardless of the method in which you add 
+	            rules to the inflector, either one-by-one, or all-at-once; the order is very
+	            important.  More specific names, or names that might contain other rule names,
+	            must be added before least specific names.  For example, assuming the two rule
+	            names 'moduleDir' and 'module', the 'moduleDir' rule should appear before module
+	            since 'module' is contained within 'moduleDir'.  If 'module' were added before
+	            'moduleDir', 'module' will match part of 'moduleDir' and process it leaving 'Dir'
+	            inside of the target uninflected.
+            </p></td></tr>
+</table></div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.filter.inflector.rules.static"></a>16.6.4.1. Static Rules</h4></div></div></div>
+<p>
+                Static rules do simple string substitution; use them when you
+                have a segment in the target that will typically be static, but
+                which you want to allow the developer to modify. Use the
+                <code class="code">setStaticRule()</code> method to set or modify the rule:
+            </p>
+<pre class="programlisting">&lt;?php
+$inflector = new Zend_Filter_Inflector(':script.:suffix');
+$inflector-&gt;setStaticRule('suffix', 'phtml');
+
+// change it later:
+$inflector-&gt;setStaticRule('suffix', 'php');
+?&gt;</pre>
+<p>
+                Much like the target itself, you can also bind a static rule to
+                a reference, allowing you to update a single variable instead of
+                require a method call; this is often useful when your class uses
+                an inflector internally, and you don't want your users to need
+                to fetch the inflector in order to update it. The
+                <code class="code">setStaticRuleReference()</code> method is used to
+                accomplish this:
+            </p>
+<pre class="programlisting">&lt;?php
+class Foo
+{
+    /**
+     * @var string Suffix
+     */
+    protected $_suffix = 'phtml';
+
+    /**
+     * Constructor
+     * @return void
+     */
+    public function __construct()
+    {
+        $this-&gt;_inflector = new Zend_Filter_Inflector(':script.:suffix');
+        $this-&gt;_inflector-&gt;setStaticRuleReference('suffix', $this-&gt;_suffix);
+    }
+
+    /**
+     * Set suffix; updates suffix static rule in inflector
+     * 
+     * @param  string $suffix 
+     * @return Foo
+     */
+    public function setSuffix($suffix)
+    {
+        $this-&gt;_suffix = $suffix;
+        return $this;
+    }
+}
+?&gt;</pre>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.filter.inflector.rules.filters"></a>16.6.4.2. Filter Inflector Rules</h4></div></div></div>
+<p>
+                <code class="code">Zend_Filter</code> filters may be used as inflector rules
+                as well. Just like static rules, these are bound to a target
+                variable; unlike static rules, you may define multiple filters
+                to use when inflecting. These filters are processed in order, so
+                be careful to register them in an order that makes sense for the
+                data you receive.
+            </p>
+<p>
+                Rules may be added using <code class="code">setFilterRule()</code> (which
+                overwrites any previous rules for that variable) or
+                <code class="code">addFilterRule()</code> (which appends the new rule to any
+                existing rule for that variable). Filters are specified in one
+                of the following ways:
+            </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                        <span class="emphasis"><em>String</em></span>. The string may be a filter
+                        class name, or a class name segment minus any prefix set
+                        in the inflector's plugin loader (by default, minus the
+                        'Zend_Filter' prefix).
+                </p></li>
+<li><p>
+                        <span class="emphasis"><em>Filter object</em></span>. Any object instance
+                        implementing <code class="code">Zend_Filter_Interface</code> may be
+                        passed as a filter.
+                </p></li>
+<li><p>
+                        <span class="emphasis"><em>Array</em></span>. An array of one or more
+                        strings or filter objects as defined above.
+                </p></li>
+</ul></div>
+<pre class="programlisting">&lt;?php
+$inflector = new Zend_Filter_Inflector(':script.:suffix');
+
+// Set rule to use Zend_Filter_Word_CamelCaseToDash filter
+$inflector-&gt;setFilterRule('script', 'Word_CamelCaseToDash');
+
+// Add rule to lowercase string
+$inflector-&gt;addFilterRule('script', new Zend_Filter_StringToLower());
+
+// Set rules en-masse
+$inflector-&gt;setFilterRule('script', array(
+    'Word_CamelCaseToDash',
+    new Zend_Filter_StringToLower()
+));
+?&gt;</pre>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.filter.inflector.rules.multiple"></a>16.6.4.3. Setting Many Rules At Once</h4></div></div></div>
+<p>
+                Typically, it's easier to set many rules at once than to
+                configure a single variable and its inflection rules at a time.
+                <code class="code">Zend_Filter_Inflector</code>'s <code class="code">addRules()</code> and
+                <code class="code">setRules()</code> method allow this.
+            </p>
+<p>
+                Each method takes an array of variable/rule pairs, where the
+                rule may be whatever the type of rule accepts (string, filter
+                object, or array). Variable names accept a special notation to
+                allow setting static rules and filter rules, according to the
+                following notation:
+            </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                        <span class="emphasis"><em>':' prefix</em></span>: filter rules.
+                </p></li>
+<li><p>
+                        <span class="emphasis"><em>No prefix</em></span>: static rule.
+                </p></li>
+</ul></div>
+<div class="example">
+<a name="zend.filter.inflector.rules.multiple.example"></a><p class="title"><b>Example 16.2. Setting Multiple Rules at Once</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+// Could also use setRules() with this notation:
+$inflector-&gt;addRules(array(
+    // filter rules:
+    ':controller' =&gt; array('CamelCaseToUnderscore','StringToLower'),
+    ':action'     =&gt; array('CamelCaseToUnderscore','StringToLower'),
+
+    // Static rule:
+    'suffix'      =&gt; 'phtml'
+));
+?&gt;</pre></div>
+</div>
+<br class="example-break">
+</div>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.filter.inflector.utility"></a>16.6.5. Utility Methods</h3></div></div></div>
+<p>
+            <code class="code">Zend_Filter_Inflector</code> has a number of utility methods
+            for retrieving and setting the plugin loader, manipulating and
+            retrieving rules, and controlling if and when exceptions are thrown.
+        </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                    <code class="code">setPluginLoader()</code> can be used when you have
+                    configured your own plugin loader and wish to use it with
+                    <code class="code">Zend_Filter_Inflector</code>;
+                    <code class="code">getPluginLoader()</code> retrieves the currently set
+                    one.
+            </p></li>
+<li><p>
+                    <code class="code">setThrowTargetExceptionsOn()</code> can be used to
+                    control whether or not <code class="code">filter()</code> throws an
+                    exception when a given replacement identifier passed to it
+                    is not found in the target. By default, no exceptions are
+                    thrown. <code class="code">isThrowTargetExceptionsOn()</code> will tell
+                    you what the current value is.
+            </p></li>
+<li><p>
+                    <code class="code">getRules($spec = null)</code> can be used to retrieve all
+                    registered rules for all variables, or just the rules for a
+                    single variable.
+            </p></li>
+<li><p>
+                    <code class="code">getRule($spec, $index)</code> fetches a single rule
+                    for a given variable; this can be useful for fetching a
+                    specific filter rule for a variable that has a filter chain.
+                    <code class="code">$index</code> must be passed.
+            </p></li>
+<li><p>
+                    <code class="code">clearRules()</code> will clear all currently
+                    registered rules.
+            </p></li>
+</ul></div>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.filter.inflector.config"></a>16.6.6. Using Zend_Config with Zend_Filter_Inflector</h3></div></div></div>
+<p>
+            You can use <code class="code">Zend_Config</code> to set rules, filter prefix
+            paths, and other object state in your inflectors, either by passing
+            a <code class="code">Zend_Config</code> object to the constructor or <code class="code">setConfig()</code>.
+            The following settings may be specified:
+        </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                    <code class="code">target</code> specifies the inflection target.
+            </p></li>
+<li><p>
+                    <code class="code">filterPrefixPath</code> specifies one or more filter
+                    prefix/path pairs for use with the inflector.
+            </p></li>
+<li><p>
+                    <code class="code">throwTargetExceptionsOn</code> should be a boolean
+                    indicating whether or not to throw exceptions when a
+                    replacement identifier is still present after inflection.
+            </p></li>
+<li><p>
+                    <code class="code">targetReplacementIdentifier</code> specifies the
+                    character to use when identifiying replacement variables in
+                    the target string.
+            </p></li>
+<li><p>
+                    <code class="code">rules</code> specifies an array of inflection rules;
+                    it should consist of keys that specify either values or
+                    arrays of values, consistent with <code class="code">addRules()</code>.
+            </p></li>
+</ul></div>
+<div class="example">
+<a name="zend.filter.inflector.config.example"></a><p class="title"><b>Example 16.3. Using Zend_Config with Zend_Filter_Inflector</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+// With the constructor:
+$config    = new Zend_Config($options);
+$inflector = new Zend_Filter_Inflector($config);
+
+// Or with setConfig():
+$inflector = new Zend_Filter_Inflector();
+$inflector-&gt;setConfig($config);
+?&gt;</pre></div>
+</div>
+<br class="example-break">
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.filter.input.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.filter.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.form.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">16.5. Zend_Filter_Input </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> Chapter 17. Zend_Form</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

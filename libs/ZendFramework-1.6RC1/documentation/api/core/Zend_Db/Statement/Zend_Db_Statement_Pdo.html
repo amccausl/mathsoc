@@ -1,0 +1,1167 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Db_Statement_Pdo</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_Db_Statement_Pdo</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Proxy class to wrap a PDOStatement object.</p>
+<p class="description"><p>Matches the interface of PDOStatement.  All methods simply proxy to the  matching method in PDOStatement.  PDOExceptions thrown by PDOStatement  are re-thrown as Zend_Db_Statement_Exception.</p></p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Db---Statement---Pdo.php.html">/Db/Statement/Pdo.php</a> (line <span class="field">40</span>)
+		</p>
+		
+				
+		<pre><a href="../../Zend_Db/Statement/Zend_Db_Statement.html">Zend_Db_Statement</a>
+   |
+   --Zend_Db_Statement_Pdo</pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo_Ibm.html">Zend_Db_Statement_Pdo_Ibm</a>
+					</td>
+					<td>
+											Proxy class to wrap a PDOStatement object for IBM Databases.
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">int</span>
+					<a href="#$_fetchMode" title="details" class="var-name">$_fetchMode</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">PDOStatement</span>
+					<a href="#$_stmt" title="details" class="var-name">$_stmt</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																							
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#bindColumn" title="details" class="method-name">bindColumn</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$param</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">null</span>], <span class="var-type">mixed</span>&nbsp;<span class="var-name">$param</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#bindValue" title="details" class="method-name">bindValue</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$parameter</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#closeCursor" title="details" class="method-name">closeCursor</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">int</span>
+										<a href="#columnCount" title="details" class="method-name">columnCount</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#errorCode" title="details" class="method-name">errorCode</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#errorInfo" title="details" class="method-name">errorInfo</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#fetch" title="details" class="method-name">fetch</a>
+											([<span class="var-type">int</span>&nbsp;<span class="var-name">$style</span> = <span class="var-default">null</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$cursor</span> = <span class="var-default">null</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$offset</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#fetchAll" title="details" class="method-name">fetchAll</a>
+											([<span class="var-type">int</span>&nbsp;<span class="var-name">$style</span> = <span class="var-default">null</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$col</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#fetchColumn" title="details" class="method-name">fetchColumn</a>
+											([<span class="var-type">int</span>&nbsp;<span class="var-name">$col</span> = <span class="var-default">0</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#fetchObject" title="details" class="method-name">fetchObject</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span> = <span class="var-default">'stdClass'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$config</span> = <span class="var-default">array()</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#getAttribute" title="details" class="method-name">getAttribute</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$key</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#getColumnMeta" title="details" class="method-name">getColumnMeta</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$column</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#nextRowset" title="details" class="method-name">nextRowset</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">int</span>
+										<a href="#rowCount" title="details" class="method-name">rowCount</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#setAttribute" title="details" class="method-name">setAttribute</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$val</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#setFetchMode" title="details" class="method-name">setFetchMode</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$mode</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#_bindParam" title="details" class="method-name">_bindParam</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$parameter</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$variable</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$length</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">null</span>], <span class="var-type">mixed</span>&nbsp;<span class="var-name">$variable</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#_execute" title="details" class="method-name">_execute</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#_prepare" title="details" class="method-name">_prepare</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_fetchMode" id="$_fetchMode"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">int</span>
+			<span class="var-name">$_fetchMode</span>
+			 = <span class="var-default"> PDO::FETCH_ASSOC</span>			(line <span class="line-number">53</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#var$_fetchMode">Zend_Db_Statement::$_fetchMode</a></dt>
+						<dd>The current fetch mode.</dd>
+					</dl>
+		
+		
+
+</div>
+<a name="var$_stmt" id="$_stmt"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">PDOStatement</span>
+			<span class="var-name">$_stmt</span>
+						(line <span class="line-number">48</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The mysqli_stmt object.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html">Zend_Db_Statement</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#var$_adapter">Zend_Db_Statement::$_adapter</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#var$_attribute">Zend_Db_Statement::$_attribute</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#var$_bindColumn">Zend_Db_Statement::$_bindColumn</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#var$_bindParam">Zend_Db_Statement::$_bindParam</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#var$_queryId">Zend_Db_Statement::$_queryId</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#var$_sqlParam">Zend_Db_Statement::$_sqlParam</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#var$_sqlSplit">Zend_Db_Statement::$_sqlSplit</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodbindColumn" id="bindColumn"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">bindColumn</span> (line <span class="line-number">82</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Bind a column of the statement result set to a PHP variable.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Db_Statement_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			bindColumn
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$param</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">null</span>], <span class="var-type">mixed</span>&nbsp;<span class="var-name">$param</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span><span class="var-description">: Name the column in the result set, either by                        position or by name.</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$param</span><span class="var-description">: Reference to the PHP variable containing the value.</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$type</span><span class="var-description">: OPTIONAL</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$param</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodbindColumn">Zend_Db_Statement::bindColumn()</a></dt>
+						<dd>Bind a column of the statement result set to a PHP variable.</dd>
+					</dl>
+			
+	</div>
+<a name="methodbindValue" id="bindValue"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">bindValue</span> (line <span class="line-number">137</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Binds a value to a parameter.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Db_Statement_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			bindValue
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$parameter</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$parameter</span><span class="var-description">: Name the parameter, either integer or string.</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$value</span><span class="var-description">: Scalar value to bind to the parameter.</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$type</span><span class="var-description">: OPTIONAL Datatype of the parameter.</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodbindValue">Zend_Db_Statement::bindValue()</a></dt>
+						<dd>Binds a value to a parameter.</dd>
+					</dl>
+			
+	</div>
+<a name="methodcloseCursor" id="closeCursor"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">closeCursor</span> (line <span class="line-number">160</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Closes the cursor, allowing the statement to be executed again.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Db_Statement_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			closeCursor
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodcolumnCount" id="columnCount"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">columnCount</span> (line <span class="line-number">177</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the number of columns in the result set.</p>
+<p class="description"><p>Returns null if the statement has no result set metadata.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The number of columns.</li>
+				<li><span class="field">throws:</span> Zend_Db_Statement_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			columnCount
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoderrorCode" id="errorCode"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">errorCode</span> (line <span class="line-number">194</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieves the error code, if any, associated with the last operation on  the statement handle.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> error code.</li>
+				<li><span class="field">throws:</span> Zend_Db_Statement_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			errorCode
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoderrorInfo" id="errorInfo"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">errorInfo</span> (line <span class="line-number">211</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieves an array of error information, if any, associated with the  last operation on the statement handle.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Db_Statement_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			errorInfo
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodfetch" id="fetch"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">fetch</span> (line <span class="line-number">251</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetches a row from the result set.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Array, object, or scalar depending on fetch mode.</li>
+				<li><span class="field">throws:</span> Zend_Db_Statement_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			fetch
+		</span>
+					([<span class="var-type">int</span>&nbsp;<span class="var-name">$style</span> = <span class="var-default">null</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$cursor</span> = <span class="var-default">null</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$offset</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$style</span><span class="var-description">: OPTIONAL Fetch mode for this fetch operation.</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$cursor</span><span class="var-description">: OPTIONAL Absolute, relative, or other.</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$offset</span><span class="var-description">: OPTIONAL Number for absolute or relative cursors.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfetchAll" id="fetchAll"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">fetchAll</span> (line <span class="line-number">272</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns an array containing all of the result set rows.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Collection of rows, each in a format by the fetch mode.</li>
+				<li><span class="field">throws:</span> Zend_Db_Statement_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			fetchAll
+		</span>
+					([<span class="var-type">int</span>&nbsp;<span class="var-name">$style</span> = <span class="var-default">null</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$col</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$style</span><span class="var-description">: OPTIONAL Fetch mode.</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$col</span><span class="var-description">: OPTIONAL Column number, if fetch mode is by column.</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodfetchAll">Zend_Db_Statement::fetchAll()</a></dt>
+						<dd>Returns an array containing all of the result set rows.</dd>
+					</dl>
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo_Ibm.html#methodfetchAll">Zend_Db_Statement_Pdo_Ibm::fetchAll()</a>
+								: Returns an array containing all of the result set rows.
+							</li>
+				</ul>
+	</div>
+<a name="methodfetchColumn" id="fetchColumn"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">fetchColumn</span> (line <span class="line-number">299</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a single column from the next row of a result set.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Db_Statement_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			fetchColumn
+		</span>
+					([<span class="var-type">int</span>&nbsp;<span class="var-name">$col</span> = <span class="var-default">0</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$col</span><span class="var-description">: OPTIONAL Position of the column to fetch.</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodfetchColumn">Zend_Db_Statement::fetchColumn()</a></dt>
+						<dd>Returns a single column from the next row of a result set.</dd>
+					</dl>
+			
+	</div>
+<a name="methodfetchObject" id="fetchObject"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">fetchObject</span> (line <span class="line-number">317</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetches the next row and returns it as an object.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> One object instance of the specified class.</li>
+				<li><span class="field">throws:</span> Zend_Db_Statement_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			fetchObject
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span> = <span class="var-default">'stdClass'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$config</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: OPTIONAL Name of the class to create.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$config</span><span class="var-description">: OPTIONAL Constructor arguments for the class.</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodfetchObject">Zend_Db_Statement::fetchObject()</a></dt>
+						<dd>Fetches the next row and returns it as an object.</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetAttribute" id="getAttribute"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getAttribute</span> (line <span class="line-number">334</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve a statement attribute.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Attribute value.</li>
+				<li><span class="field">throws:</span> Zend_Db_Statement_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getAttribute
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$key</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$key</span><span class="var-description">: Attribute name.</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodgetAttribute">Zend_Db_Statement::getAttribute()</a></dt>
+						<dd>Retrieve a statement attribute.</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetColumnMeta" id="getColumnMeta"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getColumnMeta</span> (line <span class="line-number">351</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns metadata for a column in a result set.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Db_Statement_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getColumnMeta
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$column</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$column</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodnextRowset" id="nextRowset"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">nextRowset</span> (line <span class="line-number">369</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieves the next rowset (result set) for a SQL statement that has  multiple result sets.  An example is a stored procedure that returns  the results of multiple queries.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Db_Statement_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			nextRowset
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodrowCount" id="rowCount"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">rowCount</span> (line <span class="line-number">387</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the number of rows affected by the execution of the  last INSERT, DELETE, or UPDATE statement executed by this  statement object.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The number of rows affected.</li>
+				<li><span class="field">throws:</span> Zend_Db_Statement_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			rowCount
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodsetAttribute" id="setAttribute"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setAttribute</span> (line <span class="line-number">405</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set a statement attribute.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Db_Statement_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			setAttribute
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$val</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$key</span><span class="var-description">: Attribute name.</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$val</span><span class="var-description">: Attribute value.</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodsetAttribute">Zend_Db_Statement::setAttribute()</a></dt>
+						<dd>Set a statement attribute.</dd>
+					</dl>
+			
+	</div>
+<a name="methodsetFetchMode" id="setFetchMode"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setFetchMode</span> (line <span class="line-number">422</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the default fetch mode for this statement.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Db_Statement_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			setFetchMode
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$mode</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$mode</span><span class="var-description">: The fetch mode.</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodsetFetchMode">Zend_Db_Statement::setFetchMode()</a></dt>
+						<dd>Set the default fetch mode for this statement.</dd>
+					</dl>
+			
+	</div>
+<a name="method_bindParam" id="_bindParam"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_bindParam</span> (line <span class="line-number">107</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Binds a parameter to the specified variable name.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Db_Statement_Exception</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			_bindParam
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$parameter</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$variable</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$length</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">null</span>], <span class="var-type">mixed</span>&nbsp;<span class="var-name">$variable</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$parameter</span><span class="var-description">: Name the parameter, either integer or string.</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$variable</span><span class="var-description">: Reference to PHP variable containing the value.</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$type</span><span class="var-description">: OPTIONAL Datatype of SQL parameter.</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$length</span><span class="var-description">: OPTIONAL Length of SQL parameter.</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$options</span><span class="var-description">: OPTIONAL Other options.</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$variable</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Db/Statement/Zend_Db_Statement_Pdo_Ibm.html#method_bindParam">Zend_Db_Statement_Pdo_Ibm::_bindParam()</a>
+								: Binds a parameter to the specified variable name.
+							</li>
+				</ul>
+	</div>
+<a name="method_execute" id="_execute"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_execute</span> (line <span class="line-number">228</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes a prepared statement.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Db_Statement_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			_execute
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: OPTIONAL Values to bind to parameter placeholders.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_prepare" id="_prepare"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_prepare</span> (line <span class="line-number">62</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Prepare a string SQL statement and create a statement object.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Db_Statement_Exception</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_prepare
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html">Zend_Db_Statement</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#method__construct">Zend_Db_Statement::__construct()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodbindColumn">Zend_Db_Statement::bindColumn()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodbindParam">Zend_Db_Statement::bindParam()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodbindValue">Zend_Db_Statement::bindValue()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodexecute">Zend_Db_Statement::execute()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodfetchAll">Zend_Db_Statement::fetchAll()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodfetchColumn">Zend_Db_Statement::fetchColumn()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodfetchObject">Zend_Db_Statement::fetchObject()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodgetAttribute">Zend_Db_Statement::getAttribute()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodsetAttribute">Zend_Db_Statement::setAttribute()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#methodsetFetchMode">Zend_Db_Statement::setFetchMode()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#method_fetchBound">Zend_Db_Statement::_fetchBound()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#method_parseParameters">Zend_Db_Statement::_parseParameters()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Statement/Zend_Db_Statement.html#method_stripQuoted">Zend_Db_Statement::_stripQuoted()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:44:30 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

@@ -1,0 +1,1127 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_XmlRpc_Server</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_XmlRpc_Server</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">An XML-RPC server implementation</p>
+<p class="description"><p>Example:  <div class="src-code"><ol><li><div class="src-line">&nbsp;<span class="src-inc">require_once&nbsp;</span><span class="src-str">'Zend/XmlRpc/Server.php'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-inc">require_once&nbsp;</span><span class="src-str">'Zend/XmlRpc/Server/Cache.php'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-inc">require_once&nbsp;</span><span class="src-str">'Zend/XmlRpc/Server/Fault.php'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-inc">require_once&nbsp;</span><span class="src-str">'My/Exception.php'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-inc">require_once&nbsp;</span><span class="src-str">'My/Fault/Observer.php'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;<span class="src-comm">//&nbsp;Instantiate&nbsp;server</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$server&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../../Zend_XmlRpc/Server/Zend_XmlRpc_Server.html">Zend_XmlRpc_Server</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;<span class="src-comm">//&nbsp;Allow&nbsp;some&nbsp;exceptions&nbsp;to&nbsp;report&nbsp;as&nbsp;fault&nbsp;responses:</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-id"><a href="../../Zend_XmlRpc/Server/Zend_XmlRpc_Server_Fault.html">Zend_XmlRpc_Server_Fault</a></span><span class="src-sym">::</span><a href="../../Zend_XmlRpc/Server/Zend_XmlRpc_Server_Fault.html#methodattachFaultException">attachFaultException</a><span class="src-sym">(</span><span class="src-str">'My_Exception'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-id"><a href="../../Zend_XmlRpc/Server/Zend_XmlRpc_Server_Fault.html">Zend_XmlRpc_Server_Fault</a></span><span class="src-sym">::</span><a href="../../Zend_XmlRpc/Server/Zend_XmlRpc_Server_Fault.html#methodattachObserver">attachObserver</a><span class="src-sym">(</span><span class="src-str">'My_Fault_Observer'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;<span class="src-comm">//&nbsp;Get&nbsp;or&nbsp;build&nbsp;dispatch&nbsp;table:</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-id"><a href="../../Zend_XmlRpc/Server/Zend_XmlRpc_Server_Cache.html">Zend_XmlRpc_Server_Cache</a></span><span class="src-sym">::</span><a href="../../Zend_XmlRpc/Server/Zend_XmlRpc_Server_Cache.html#methodget">get</a><span class="src-sym">(</span><span class="src-var">$filename</span><span class="src-sym">,&nbsp;</span><span class="src-var">$server</span><span class="src-sym">))&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-inc">require_once&nbsp;</span><span class="src-str">'Some/Service/Class.php'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-inc">require_once&nbsp;</span><span class="src-str">'Another/Service/Class.php'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Attach&nbsp;Some_Service_Class&nbsp;in&nbsp;'some'&nbsp;namespace</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$server</span><span class="src-sym">-&gt;</span><a href="../../Zend_XmlRpc/Server/Zend_XmlRpc_Server.html#methodsetClass">setClass</a><span class="src-sym">(</span><span class="src-str">'Some_Service_Class'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'some'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Attach&nbsp;Another_Service_Class&nbsp;in&nbsp;'another'&nbsp;namespace</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$server</span><span class="src-sym">-&gt;</span><a href="../../Zend_XmlRpc/Server/Zend_XmlRpc_Server.html#methodsetClass">setClass</a><span class="src-sym">(</span><span class="src-str">'Another_Service_Class'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'another'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;Create&nbsp;dispatch&nbsp;table&nbsp;cache&nbsp;file</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-id"><a href="../../Zend_XmlRpc/Server/Zend_XmlRpc_Server_Cache.html">Zend_XmlRpc_Server_Cache</a></span><span class="src-sym">::</span><a href="../../Zend_XmlRpc/Server/Zend_XmlRpc_Server_Cache.html#methodsave">save</a><span class="src-sym">(</span><span class="src-var">$filename</span><span class="src-sym">,&nbsp;</span><span class="src-var">$server</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$response&nbsp;</span>=&nbsp;<span class="src-var">$server</span><span class="src-sym">-&gt;</span><a href="../../Zend_XmlRpc/Server/Zend_XmlRpc_Server.html#methodhandle">handle</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;echo&nbsp;<span class="src-var">$response</span><span class="src-sym">;</span></div></li>
+</ol></div></p></p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_XmlRpc---Server.php.html">/XmlRpc/Server.php</a> (line <span class="field">117</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_encoding" title="details" class="var-name">$_encoding</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$_methods" title="details" class="var-name">$_methods</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">null|<a href="../../Zend_XmlRpc/Zend_XmlRpc_Request.html">Zend_XmlRpc_Request</a></span>
+					<a href="#$_request" title="details" class="var-name">$_request</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_responseClass" title="details" class="var-name">$_responseClass</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$_table" title="details" class="var-name">$_table</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$_typeMap" title="details" class="var-name">$_typeMap</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																															
+				<div class="method-definition">
+					<img src="../../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#addFunction" title="details" class="method-name">addFunction</a>
+											(<span class="var-type">string|array</span>&nbsp;<span class="var-name">$function</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$namespace</span> = <span class="var-default">''</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_XmlRpc/Server/Zend_XmlRpc_Server_Fault.html">Zend_XmlRpc_Server_Fault</a></span>
+										<a href="#fault" title="details" class="method-name">fault</a>
+											(<span class="var-type">string|Exception</span>&nbsp;<span class="var-name">$fault</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$code</span> = <span class="var-default">404</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getEncoding" title="details" class="method-name">getEncoding</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#getFunctions" title="details" class="method-name">getFunctions</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">null|<a href="../../Zend_XmlRpc/Zend_XmlRpc_Request.html">Zend_XmlRpc_Request</a></span>
+										<a href="#getRequest" title="details" class="method-name">getRequest</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_XmlRpc/Zend_XmlRpc_Response.html">Zend_XmlRpc_Response</a>|<a href="../../Zend_XmlRpc/Server/Zend_XmlRpc_Fault.html">Zend_XmlRpc_Fault</a></span>
+										<a href="#handle" title="details" class="method-name">handle</a>
+											([<span class="var-type"><a href="../../Zend_XmlRpc/Zend_XmlRpc_Request.html">Zend_XmlRpc_Request</a></span>&nbsp;<span class="var-name">$request</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#listMethods" title="details" class="method-name">listMethods</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#loadFunctions" title="details" class="method-name">loadFunctions</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$array</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#methodHelp" title="details" class="method-name">methodHelp</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#methodSignature" title="details" class="method-name">methodSignature</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#multicall" title="details" class="method-name">multicall</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$methods</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setClass" title="details" class="method-name">setClass</a>
+											(<span class="var-type">string|object </span>&nbsp;<span class="var-name">$class</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$namespace</span> = <span class="var-default">''</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$argv</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_XmlRpc/Server/Zend_XmlRpc_Server.html">Zend_XmlRpc_Server</a></span>
+										<a href="#setEncoding" title="details" class="method-name">setEncoding</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$encoding</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setPersistence" title="details" class="method-name">setPersistence</a>
+											([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_XmlRpc/Server/Zend_XmlRpc_Server.html">Zend_XmlRpc_Server</a></span>
+										<a href="#setRequest" title="details" class="method-name">setRequest</a>
+											(<span class="var-type">string|<a href="../../Zend_XmlRpc/Zend_XmlRpc_Request.html">Zend_XmlRpc_Request</a></span>&nbsp;<span class="var-name">$request</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#setResponseClass" title="details" class="method-name">setResponseClass</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#_buildDispatchTable" title="details" class="method-name">_buildDispatchTable</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#_fixTypes" title="details" class="method-name">_fixTypes</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$method</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_XmlRpc/Zend_XmlRpc_Response.html">Zend_XmlRpc_Response</a></span>
+										<a href="#_handle" title="details" class="method-name">_handle</a>
+											(<span class="var-type"><a href="../../Zend_XmlRpc/Zend_XmlRpc_Request.html">Zend_XmlRpc_Request</a></span>&nbsp;<span class="var-name">$request</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_encoding" id="$_encoding"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_encoding</span>
+			 = <span class="var-default"> 'UTF-8'</span>			(line <span class="line-number">123</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Character encoding</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_methods" id="$_methods"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_methods</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number">129</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Array of dispatchables</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_request" id="$_request"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">null|<a href="../../Zend_XmlRpc/Zend_XmlRpc_Request.html">Zend_XmlRpc_Request</a></span>
+			<span class="var-name">$_request</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">135</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Request processed</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_responseClass" id="$_responseClass"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_responseClass</span>
+			 = <span class="var-default"> 'Zend_XmlRpc_Response_Http'</span>			(line <span class="line-number">141</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Class to use for responses; defaults to <a href="../../Zend_XmlRpc/Zend_XmlRpc_Response_Http.html">Zend_XmlRpc_Response_Http</a></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_table" id="$_table"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_table</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number">147</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Dispatch table of name =&gt; method pairs</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_typeMap" id="$_typeMap"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_typeMap</span>
+			 = <span class="var-default">array(<br />        'i4'               =&gt; 'i4',<br />        'int'              =&gt; 'int',<br />        'integer'          =&gt; 'int',<br />        'double'           =&gt; 'double',<br />        'float'            =&gt; 'double',<br />        'real'             =&gt; 'double',<br />        'boolean'          =&gt; 'boolean',<br />        'bool'             =&gt; 'boolean',<br />        'true'             =&gt; 'boolean',<br />        'false'            =&gt; 'boolean',<br />        'string'           =&gt; 'string',<br />        'str'              =&gt; 'string',<br />        'base64'           =&gt; 'base64',<br />        'dateTime.iso8601' =&gt; 'dateTime.iso8601',<br />        'date'             =&gt; 'dateTime.iso8601',<br />        'time'             =&gt; 'dateTime.iso8601',<br />        'time'             =&gt; 'dateTime.iso8601',<br />        'array'            =&gt; 'array',<br />        'struct'           =&gt; 'struct',<br />        'null'             =&gt; 'nil',<br />        'nil'              =&gt; 'nil',<br />        'void'             =&gt; 'void',<br />        'mixed'            =&gt; 'struct'<br />    )</span>			(line <span class="line-number">153</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">PHP types =&gt; XML-RPC types</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">186</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructor</p>
+<p class="description"><p>Creates system.* methods.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__construct
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodaddFunction" id="addFunction"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">addFunction</span> (line <span class="line-number">310</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Attach a callback as an XMLRPC method</p>
+<p class="description"><p>Attaches a callback as an XMLRPC method, prefixing the XMLRPC method name  with $namespace, if provided. Reflection is done on the callback's  docblock to create the methodHelp for the XMLRPC method.</p><p>Additional arguments to pass to the function at dispatch may be passed;  any arguments following the namespace will be aggregated and passed at  dispatch time.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_XmlRpc_Server_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addFunction
+		</span>
+					(<span class="var-type">string|array</span>&nbsp;<span class="var-name">$function</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$namespace</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|array</span>
+				<span class="var-name">$function</span><span class="var-description">: Valid callback</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$namespace</span><span class="var-description">: Optional namespace prefix</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfault" id="fault"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">fault</span> (line <span class="line-number">453</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Raise an xmlrpc server fault</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_XmlRpc/Server/Zend_XmlRpc_Server_Fault.html">Zend_XmlRpc_Server_Fault</a></span>
+		<span class="method-name">
+			fault
+		</span>
+					(<span class="var-type">string|Exception</span>&nbsp;<span class="var-name">$fault</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$code</span> = <span class="var-default">404</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|Exception</span>
+				<span class="var-name">$fault</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$code</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetEncoding" id="getEncoding"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getEncoding</span> (line <span class="line-number">289</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve current encoding</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getEncoding
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetFunctions" id="getFunctions"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getFunctions</span> (line <span class="line-number">610</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a list of registered methods</p>
+<p class="description"><p>Returns an array of dispatchables (Zend_Server_Reflection_Function,  _Method, and _Class items).</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getFunctions
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetRequest" id="getRequest"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getRequest</span> (line <span class="line-number">441</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return currently registered request object</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">null|<a href="../../Zend_XmlRpc/Zend_XmlRpc_Request.html">Zend_XmlRpc_Request</a></span>
+		<span class="method-name">
+			getRequest
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodhandle" id="handle"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">handle</span> (line <span class="line-number">556</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Handle an xmlrpc call</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_XmlRpc/Zend_XmlRpc_Response.html">Zend_XmlRpc_Response</a>|<a href="../../Zend_XmlRpc/Server/Zend_XmlRpc_Fault.html">Zend_XmlRpc_Fault</a></span>
+		<span class="method-name">
+			handle
+		</span>
+					([<span class="var-type"><a href="../../Zend_XmlRpc/Zend_XmlRpc_Request.html">Zend_XmlRpc_Request</a></span>&nbsp;<span class="var-name">$request</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_XmlRpc/Zend_XmlRpc_Request.html">Zend_XmlRpc_Request</a></span>
+				<span class="var-name">$request</span><span class="var-description">: Optional</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodlistMethods" id="listMethods"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">listMethods</span> (line <span class="line-number">633</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">List all available XMLRPC methods</p>
+<p class="description"><p>Returns an array of methods.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			listMethods
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodloadFunctions" id="loadFunctions"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">loadFunctions</span> (line <span class="line-number">343</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Load methods as returned from getFunctions</p>
+<p class="description"><p>Typically, you will not use this method; it will be called using the  results pulled from <a href="../../Zend_XmlRpc/Server/Zend_XmlRpc_Server_Cache.html#methodget">Zend_XmlRpc_Server_Cache::get()</a>.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_XmlRpc_Server_Exception on invalid input</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			loadFunctions
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$array</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$array</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodmethodHelp" id="methodHelp"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">methodHelp</span> (line <span class="line-number">644</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Display help message for an XMLRPC method</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			methodHelp
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$method</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodmethodSignature" id="methodSignature"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">methodSignature</span> (line <span class="line-number">659</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return a method signature</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			methodSignature
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$method</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodmulticall" id="multicall"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">multicall</span> (line <span class="line-number">695</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Multicall - boxcar feature of XML-RPC for calling multiple methods  in a single request.</p>
+<p class="description"><p>Expects a an array of structs representing method calls, each element  having the keys: <ul><li>methodName</li><li>params</li></ul>  Returns an array of responses, one for each method called, with the value  returned by the method. If an error occurs for a given method, returns a  struct with a fault response.</p></p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="http://www.xmlrpc.com/discuss/msgReader$1208">http://www.xmlrpc.com/discuss/msgReader$1208</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			multicall
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$methods</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$methods</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetClass" id="setClass"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setClass</span> (line <span class="line-number">395</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Attach class methods as XMLRPC method handlers</p>
+<p class="description"><p>$class may be either a class name or an object. Reflection is done on the  class or object to determine the available public methods, and each is  attached to the server as an available method; if a $namespace has been  provided, that namespace is used to prefix the XMLRPC method names.</p><p>Any additional arguments beyond $namespace will be passed to a method at  invocation.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_XmlRpc_Server_Exception on invalid input</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setClass
+		</span>
+					(<span class="var-type">string|object </span>&nbsp;<span class="var-name">$class</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$namespace</span> = <span class="var-default">''</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$argv</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|object </span>
+				<span class="var-name">$class</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$namespace</span><span class="var-description">: Optional</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$argv</span><span class="var-description">: Optional arguments to pass to methods</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetEncoding" id="setEncoding"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setEncoding</span> (line <span class="line-number">278</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set encoding</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_XmlRpc/Server/Zend_XmlRpc_Server.html">Zend_XmlRpc_Server</a></span>
+		<span class="method-name">
+			setEncoding
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$encoding</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$encoding</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetPersistence" id="setPersistence"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setPersistence</span> (line <span class="line-number">374</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Do nothing; persistence is handled via <a href="../../Zend_XmlRpc/Server/Zend_XmlRpc_Server_Cache.html">Zend_XmlRpc_Server_Cache</a></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setPersistence
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$class</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetRequest" id="setRequest"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setRequest</span> (line <span class="line-number">420</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the request object</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_XmlRpc_Server_Exception on invalid request class or object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_XmlRpc/Server/Zend_XmlRpc_Server.html">Zend_XmlRpc_Server</a></span>
+		<span class="method-name">
+			setRequest
+		</span>
+					(<span class="var-type">string|<a href="../../Zend_XmlRpc/Zend_XmlRpc_Request.html">Zend_XmlRpc_Request</a></span>&nbsp;<span class="var-name">$request</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|<a href="../../Zend_XmlRpc/Zend_XmlRpc_Request.html">Zend_XmlRpc_Request</a></span>
+				<span class="var-name">$request</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetResponseClass" id="setResponseClass"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setResponseClass</span> (line <span class="line-number">589</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the class to use for the response</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if class was set, false if not</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			setResponseClass
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_buildDispatchTable" id="_buildDispatchTable"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_buildDispatchTable</span> (line <span class="line-number">234</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Re/Build the dispatch table</p>
+<p class="description"><p>The dispatch table consists of a an array of method name =&gt;  Zend_Server_Reflection_Function_Abstract pairs</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_buildDispatchTable
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method_fixTypes" id="_fixTypes"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_fixTypes</span> (line <span class="line-number">212</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Map PHP parameter types to XML-RPC types</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_fixTypes
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$method</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_Server/Reflection/Zend_Server_Reflection_Function_Abstract.html">Zend_Server_Reflection_Function_Abstract</a></span>
+				<span class="var-name">$method</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_handle" id="_handle"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_handle</span> (line <span class="line-number">472</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Handle an xmlrpc call (actual work)</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_XmlRpcServer_Exception|Exception  Zend_XmlRpcServer_Exceptions are thrown for internal errors; otherwise,  any other exception may be thrown by the callback</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_XmlRpc/Zend_XmlRpc_Response.html">Zend_XmlRpc_Response</a></span>
+		<span class="method-name">
+			_handle
+		</span>
+					(<span class="var-type"><a href="../../Zend_XmlRpc/Zend_XmlRpc_Request.html">Zend_XmlRpc_Request</a></span>&nbsp;<span class="var-name">$request</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Zend_XmlRpc/Zend_XmlRpc_Request.html">Zend_XmlRpc_Request</a></span>
+				<span class="var-name">$request</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:48:09 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

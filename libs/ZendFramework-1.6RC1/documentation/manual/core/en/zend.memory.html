@@ -1,0 +1,294 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Chapter 29. Zend_Memory</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="index.html" title="Programmer's Reference Guide">
+<link rel="prev" href="zend.measure.types.html" title="28.5. Types of measurements">
+<link rel="next" href="zend.memory.memory-manager.html" title="29.2. Memory Manager">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="section" href="zend.memory.html#zend.memory.overview" title="29.1. Overview">
+<link rel="section" href="zend.memory.memory-manager.html" title="29.2. Memory Manager">
+<link rel="section" href="zend.memory.memory-objects.html" title="29.3. Memory Objects">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">Chapter 29. Zend_Memory</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.measure.types.html">Prev</a> </td>
+<th width="60%" align="center"> </th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.memory.memory-manager.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="chapter" lang="en">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="zend.memory"></a>Chapter 29. Zend_Memory</h2></div></div></div>
+<div class="toc">
+<p><b>Table of Contents</b></p>
+<dl>
+<dt><span class="sect1"><a href="zend.memory.html#zend.memory.overview">29.1. Overview</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.memory.html#zend.memory.introduction">29.1.1. Introduction</a></span></dt>
+<dt><span class="sect2"><a href="zend.memory.html#zend.memory.theory-of-operation">29.1.2. Theory of Operation</a></span></dt>
+<dd><dl>
+<dt><span class="sect3"><a href="zend.memory.html#zend.memory.theory-of-operation.manager">29.1.2.1. Memory manager</a></span></dt>
+<dt><span class="sect3"><a href="zend.memory.html#zend.memory.theory-of-operation.container">29.1.2.2. Memory container</a></span></dt>
+<dt><span class="sect3"><a href="zend.memory.html#zend.memory.theory-of-operation.locked">29.1.2.3. Locked memory</a></span></dt>
+<dt><span class="sect3"><a href="zend.memory.html#zend.memory.theory-of-operation.movable">29.1.2.4. Movable memory</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.memory.memory-manager.html">29.2. Memory Manager</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.memory.memory-manager.html#zend.memory.memory-manager.creation">29.2.1. Creating a Memory Manager</a></span></dt>
+<dt><span class="sect2"><a href="zend.memory.memory-manager.html#zend.memory.memory-manager.objects-management">29.2.2. Managing Memory Objects</a></span></dt>
+<dd><dl>
+<dt><span class="sect3"><a href="zend.memory.memory-manager.html#zend.memory.memory-manager.objects-management.movable">29.2.2.1. Creating Movable Objects</a></span></dt>
+<dt><span class="sect3"><a href="zend.memory.memory-manager.html#zend.memory.memory-manager.objects-management.locked">29.2.2.2. Creating Locked Objects</a></span></dt>
+<dt><span class="sect3"><a href="zend.memory.memory-manager.html#zend.memory.memory-manager.objects-management.destruction">29.2.2.3. Destroying Objects</a></span></dt>
+</dl></dd>
+<dt><span class="sect2"><a href="zend.memory.memory-manager.html#zend.memory.memory-manager.settings">29.2.3. Memory Manager Settings</a></span></dt>
+<dd><dl>
+<dt><span class="sect3"><a href="zend.memory.memory-manager.html#zend.memory.memory-manager.settings.memory-limit">29.2.3.1. Memory Limit</a></span></dt>
+<dt><span class="sect3"><a href="zend.memory.memory-manager.html#zend.memory.memory-manager.settings.min-size">29.2.3.2. MinSize</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.memory.memory-objects.html">29.3. Memory Objects</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.memory.memory-objects.html#zend.memory.memory-objects.movable">29.3.1. Movable</a></span></dt>
+<dt><span class="sect2"><a href="zend.memory.memory-objects.html#zend.memory.memory-objects.locked">29.3.2. Locked</a></span></dt>
+<dt><span class="sect2"><a href="zend.memory.memory-objects.html#zend.memory.memory-objects.value">29.3.3. Memory container 'value' property.</a></span></dt>
+<dt><span class="sect2"><a href="zend.memory.memory-objects.html#zend.memory.memory-objects.api">29.3.4. Memory container interface</a></span></dt>
+<dd><dl>
+<dt><span class="sect3"><a href="zend.memory.memory-objects.html#zend.memory.memory-objects.api.getRef">29.3.4.1. getRef() method</a></span></dt>
+<dt><span class="sect3"><a href="zend.memory.memory-objects.html#zend.memory.memory-objects.api.touch">29.3.4.2. touch() method</a></span></dt>
+<dt><span class="sect3"><a href="zend.memory.memory-objects.html#zend.memory.memory-objects.api.lock">29.3.4.3. lock() method</a></span></dt>
+<dt><span class="sect3"><a href="zend.memory.memory-objects.html#zend.memory.memory-objects.api.unlock">29.3.4.4. unlock() method</a></span></dt>
+<dt><span class="sect3"><a href="zend.memory.memory-objects.html#zend.memory.memory-objects.api.isLocked">29.3.4.5. isLocked() method</a></span></dt>
+</dl></dd>
+</dl></dd>
+</dl>
+</div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.memory.overview"></a>29.1. Overview</h2></div></div></div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.memory.introduction"></a>29.1.1. Introduction</h3></div></div></div>
+<p>
+            The Zend_Memory component is intended to manage data in an
+            environment with limited memory.
+        </p>
+<p>
+            Memory objects (memory containers) are generated by memory manager
+            by request and transparently swapped/loaded when it's necessary.
+        </p>
+<p>
+            For example, if creating or loading a managed object would cause
+            the total memory usage to exceed the limit you specify, some
+            managed objects are copied to cache storage outside of memory.
+            In this way, the total memory used by managed objects does not
+            exceed the limit you need to enforce.
+        </p>
+<p>
+            The memory manager uses
+            <a href="zend.cache.backends.html" title="4.4. Zend_Cache backends">Zend_Cache backends</a>
+            as storage providers.
+        </p>
+<div class="example">
+<a name="zend.memory.introduction.example-1"></a><p class="title"><b>Example 29.1. Using Zend_Memory component</b></p>
+<div class="example-contents">
+<p>
+                <code class="code">Zend_Memory::factory()</code> instantiates the memory
+                manager object with specified backend options.
+            </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Memory.php';
+
+$backendOptions = array(
+    'cache_dir' =&gt; './tmp/' // Directory where to put the swapped memory blocks
+);
+
+$memoryManager = Zend_Memory::factory('File', $backendOptions);
+
+$loadedFiles = array();
+
+for ($count = 0; $count &lt; 10000; $count++) {
+    $f = fopen($fileNames[$count], 'rb');
+    $data = fread($f, filesize($fileNames[$count]));
+    $fclose($f);
+
+    $loadedFiles[] = $memoryManager-&gt;create($data);
+}
+
+echo $loadedFiles[$index1]-&gt;value;
+
+$loadedFiles[$index2]-&gt;value = $newValue;
+
+$loadedFiles[$index3]-&gt;value[$charIndex] = '_';
+            </pre>
+</div>
+</div>
+<br class="example-break">
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.memory.theory-of-operation"></a>29.1.2. Theory of Operation</h3></div></div></div>
+<p>
+            Zend_Memory component operates with the following concepts:
+            </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>Memory manager</p></li>
+<li><p>Memory container</p></li>
+<li><p>Locked memory object</p></li>
+<li><p>Movable memory object</p></li>
+</ul></div>
+<p>
+        </p>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.memory.theory-of-operation.manager"></a>29.1.2.1. Memory manager</h4></div></div></div>
+<p>
+                The memory manager generates memory objects (locked or movable)
+                by request of user application and returns them wrapped into
+                a memory container object.
+            </p>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.memory.theory-of-operation.container"></a>29.1.2.2. Memory container</h4></div></div></div>
+<p>
+                The memory container has a virtual or actual <code class="code">value</code>
+                attribute of string type. This attribute contains the data value
+                specified at memory object creation time.
+            </p>
+<p>
+                You can operate with this <code class="code">value</code> attribute as
+                an object property:
+
+                </p>
+<pre class="programlisting">&lt;?php
+$memObject = $memoryManager-&gt;create($data);
+
+echo $memObject-&gt;value;
+
+$memObject-&gt;value = $newValue;
+
+$memObject-&gt;value[$index] = '_';
+
+echo ord($memObject-&gt;value[$index1]);
+
+$memObject-&gt;value = substr($memObject-&gt;value, $start, $length);
+                </pre>
+<p>
+            </p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+                    If you are using a PHP version earlier than 5.2, use the
+                    <a href="zend.memory.memory-objects.html#zend.memory.memory-objects.api.getRef" title="29.3.4.1. getRef() method">getRef()</a>
+                    method instead of accessing the value property directly.
+                </p></td></tr>
+</table></div>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.memory.theory-of-operation.locked"></a>29.1.2.3. Locked memory</h4></div></div></div>
+<p>
+                Locked memory objects are always stored in memory.
+                Data stored in locked memory are never swapped to the cache
+                backend.
+            </p>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.memory.theory-of-operation.movable"></a>29.1.2.4. Movable memory</h4></div></div></div>
+<p>
+                Movable memory objects are transparently swapped and loaded
+                to/from the cache backend by Zend_Memory when it's necessary.
+            </p>
+<p>
+                The memory manager doesn't swap objects with size less than
+                the specified minimum, due to performance considerations.
+                See <a href="zend.memory.memory-manager.html#zend.memory.memory-manager.settings.min-size" title="29.2.3.2. MinSize">Section 29.2.3.2, “MinSize”</a>
+                for more details.
+            </p>
+</div>
+</div>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.measure.types.html">Prev</a> </td>
+<td width="20%" align="center"> </td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.memory.memory-manager.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">28.5. Types of measurements </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 29.2. Memory Manager</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

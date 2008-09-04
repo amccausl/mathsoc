@@ -1,0 +1,560 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Chapter 7. Zend_Controller</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="index.html" title="Programmer's Reference Guide">
+<link rel="prev" href="zend.console.getopt.configuration.html" title="6.4. Configuring Zend_Console_Getopt">
+<link rel="next" href="zend.controller.basics.html" title="7.2. Zend_Controller Basics">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="section" href="zend.controller.html#zend.controller.quickstart" title="7.1. Zend_Controller Quick Start">
+<link rel="section" href="zend.controller.basics.html" title="7.2. Zend_Controller Basics">
+<link rel="section" href="zend.controller.front.html" title="7.3. The Front Controller">
+<link rel="section" href="zend.controller.request.html" title="7.4. The Request Object">
+<link rel="section" href="zend.controller.router.html" title="7.5. The Standard Router: Zend_Controller_Router_Rewrite">
+<link rel="section" href="zend.controller.dispatcher.html" title="7.6. The Dispatcher">
+<link rel="section" href="zend.controller.action.html" title="7.7. Action Controllers">
+<link rel="section" href="zend.controller.actionhelpers.html" title="7.8. Action Helpers">
+<link rel="section" href="zend.controller.response.html" title="7.9. The Response Object">
+<link rel="section" href="zend.controller.plugins.html" title="7.10. Plugins">
+<link rel="section" href="zend.controller.modular.html" title="7.11. Using a Conventional Modular Directory Structure">
+<link rel="section" href="zend.controller.exceptions.html" title="7.12. MVC Exceptions">
+<link rel="section" href="zend.controller.migration.html" title="7.13. Migrating from Previous Versions">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">Chapter 7. Zend_Controller</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.console.getopt.configuration.html">Prev</a> </td>
+<th width="60%" align="center"> </th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.controller.basics.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="chapter" lang="en">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="zend.controller"></a>Chapter 7. Zend_Controller</h2></div></div></div>
+<div class="toc">
+<p><b>Table of Contents</b></p>
+<dl>
+<dt><span class="sect1"><a href="zend.controller.html#zend.controller.quickstart">7.1. Zend_Controller Quick Start</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.controller.html#zend.controller.quickstart.introduction">7.1.1. Introduction</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.html#zend.controller.quickstart.go">7.1.2. Quick Start</a></span></dt>
+<dd><dl>
+<dt><span class="sect3"><a href="zend.controller.html#zend.controller.quickstart.go.directory">7.1.2.1. Create your filesystem layout</a></span></dt>
+<dt><span class="sect3"><a href="zend.controller.html#zend.controller.quickstart.go.docroot">7.1.2.2. Set your document root</a></span></dt>
+<dt><span class="sect3"><a href="zend.controller.html#zend.controller.quickstart.go.rewrite">7.1.2.3. Create your rewrite rules</a></span></dt>
+<dt><span class="sect3"><a href="zend.controller.html#zend.controller.quickstart.go.bootstrap">7.1.2.4. Create your bootstrap file</a></span></dt>
+<dt><span class="sect3"><a href="zend.controller.html#zend.controller.quickstart.go.controller">7.1.2.5. Create your default action controller</a></span></dt>
+<dt><span class="sect3"><a href="zend.controller.html#zend.controller.quickstart.go.view">7.1.2.6. Create your view script</a></span></dt>
+<dt><span class="sect3"><a href="zend.controller.html#zend.controller.quickstart.go.errorhandler">7.1.2.7. Create your error controller</a></span></dt>
+<dt><span class="sect3"><a href="zend.controller.html#zend.controller.quickstart.go.finish">7.1.2.8. View the site!</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.controller.basics.html">7.2. Zend_Controller Basics</a></span></dt>
+<dt><span class="sect1"><a href="zend.controller.front.html">7.3. The Front Controller</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.controller.front.html#zend.controller.front.overview">7.3.1. Overview</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.front.html#zend.controller.front.methods.primary">7.3.2. Primary Methods</a></span></dt>
+<dd><dl>
+<dt><span class="sect3"><a href="zend.controller.front.html#zend.controller.front.methods.primary.getinstance">7.3.2.1. getInstance()</a></span></dt>
+<dt><span class="sect3"><a href="zend.controller.front.html#zend.controller.front.methods.primary.setcontrollerdirectory">7.3.2.2. setControllerDirectory() and addControllerDirectory</a></span></dt>
+<dt><span class="sect3"><a href="zend.controller.front.html#zend.controller.front.methods.primary.dispatch">7.3.2.3. dispatch()</a></span></dt>
+<dt><span class="sect3"><a href="zend.controller.front.html#zend.controller.front.methods.primary.run">7.3.2.4. run()</a></span></dt>
+</dl></dd>
+<dt><span class="sect2"><a href="zend.controller.front.html#zend.controller.front.methods.environment">7.3.3. Environmental Accessor Methods</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.front.html#zend.controller.front.methods.params">7.3.4. Front Controller Parameters</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.front.html#zend.controller.front.subclassing">7.3.5. Subclassing the Front Controller</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.controller.request.html">7.4. The Request Object</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.controller.request.html#zend.controller.request.introduction">7.4.1. Introduction</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.request.html#zend.controller.request.http">7.4.2. HTTP Requests</a></span></dt>
+<dd><dl>
+<dt><span class="sect3"><a href="zend.controller.request.html#zend.controller.request.http.dataacess">7.4.2.1. Accessing Request Data</a></span></dt>
+<dt><span class="sect3"><a href="zend.controller.request.html#zend.controller.request.http.baseurl">7.4.2.2. Base Url and Subdirectories</a></span></dt>
+<dt><span class="sect3"><a href="zend.controller.request.html#zend.controller.request.http.method">7.4.2.3. Determining the Request Method</a></span></dt>
+<dt><span class="sect3"><a href="zend.controller.request.html#zend.controller.request.http.ajax">7.4.2.4. Detecting AJAX Requests</a></span></dt>
+</dl></dd>
+<dt><span class="sect2"><a href="zend.controller.request.html#zend.controller.request.subclassing">7.4.3. Subclassing the Request Object</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.controller.router.html">7.5. The Standard Router: Zend_Controller_Router_Rewrite</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.controller.router.html#zend.controller.router.introduction">7.5.1. Introduction</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.router.html#zend.controller.router.usage">7.5.2. Using a router</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.router.html#zend.controller.router.basic">7.5.3. Basic Rewrite Router operation</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.router.html#zend.controller.router.default-routes">7.5.4. Default routes</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.router.html#zend.controller.router.rewritebase">7.5.5. Base URL and subdirectories</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.router.html#zend.controller.router.routes">7.5.6. Route Types</a></span></dt>
+<dd><dl>
+<dt><span class="sect3"><a href="zend.controller.router.html#zend.controller.router.routes.standard">7.5.6.1. Zend_Controller_Router_Route</a></span></dt>
+<dd><dl>
+<dt><span class="sect4"><a href="zend.controller.router.html#zend.controller.router.routes.standard.variable-defaults">7.5.6.1.1. Variable defaults</a></span></dt>
+<dt><span class="sect4"><a href="zend.controller.router.html#zend.controller.router.routes.standard.variable-requirements">7.5.6.1.2. Variable requirements</a></span></dt>
+<dt><span class="sect4"><a href="zend.controller.router.html#zend.controller.router.routes.standard.hostname-routing">7.5.6.1.3. Hostname routing</a></span></dt>
+</dl></dd>
+<dt><span class="sect3"><a href="zend.controller.router.html#zend.controller.router.routes.static">7.5.6.2. Zend_Controller_Router_Route_Static</a></span></dt>
+<dt><span class="sect3"><a href="zend.controller.router.html#zend.controller.router.routes.regex">7.5.6.3. Zend_Controller_Router_Route_Regex</a></span></dt>
+</dl></dd>
+<dt><span class="sect2"><a href="zend.controller.router.html#zend.controller.router.add-config">7.5.7. Using Zend_Config with the RewriteRouter</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.router.html#zend.controller.router.subclassing">7.5.8. Subclassing the Router</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.controller.dispatcher.html">7.6. The Dispatcher</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.controller.dispatcher.html#zend.controller.dispatcher.overview">7.6.1. Overview</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.dispatcher.html#zend.controller.dispatcher.subclassing">7.6.2. Subclassing the Dispatcher</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.controller.action.html">7.7. Action Controllers</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.controller.action.html#zend.controller.action.introduction">7.7.1. Introduction</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.action.html#zend.controller.action.initialization">7.7.2. Object initialization</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.action.html#zend.controller.action.prepostdispatch">7.7.3. Pre- and Post-Dispatch Hooks</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.action.html#zend.controller.action.accessors">7.7.4. Accessors</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.action.html#zend.controller.action.viewintegration">7.7.5. View Integration</a></span></dt>
+<dd><dl>
+<dt><span class="sect3"><a href="zend.controller.action.html#zend.controller.action.viewintegration.initview">7.7.5.1. View Initialization</a></span></dt>
+<dt><span class="sect3"><a href="zend.controller.action.html#zend.controller.action.viewintegration.render">7.7.5.2. Rendering Views</a></span></dt>
+</dl></dd>
+<dt><span class="sect2"><a href="zend.controller.action.html#zend.controller.action.utilmethods">7.7.6. Utility Methods</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.action.html#zend.controller.action.subclassing">7.7.7. Subclassing the Action Controller</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.controller.actionhelpers.html">7.8. Action Helpers</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelper.introduction">7.8.1. Introduction</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelper.initialization">7.8.2. Helper Initialization</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelper.broker">7.8.3. The Helper Broker</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelper.stockhelpers">7.8.4. Built-in Action Helpers</a></span></dt>
+<dd><dl>
+<dt><span class="sect3"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelpers.actionstack">7.8.4.1. ActionStack</a></span></dt>
+<dt><span class="sect3"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelpers.autocomplete">7.8.4.2. AutoComplete</a></span></dt>
+<dd><dl>
+<dt><span class="sect4"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelpers.autocomplete.dojo">7.8.4.2.1. AutoCompletion with Dojo</a></span></dt>
+<dt><span class="sect4"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelpers.autocomplete.scriptaculous">7.8.4.2.2. AutoCompletion with Scriptaculous</a></span></dt>
+</dl></dd>
+<dt><span class="sect3"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelpers.contextswitch">7.8.4.3. ContextSwitch and AjaxContext</a></span></dt>
+<dd><dl>
+<dt><span class="sect4"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelpers.contextswitch.contexts">7.8.4.3.1. Default Contexts Available</a></span></dt>
+<dt><span class="sect4"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelpers.contextswitch.custom">7.8.4.3.2. Creating Custom Contexts</a></span></dt>
+<dt><span class="sect4"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelpers.contextswitch.actions">7.8.4.3.3. Setting Contexts Per Action</a></span></dt>
+<dt><span class="sect4"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelpers.contextswitch.initcontext">7.8.4.3.4. Initializing Context Switching</a></span></dt>
+<dt><span class="sect4"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelpers.contextswitch.misc">7.8.4.3.5. Additional Functionality</a></span></dt>
+<dt><span class="sect4"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelpers.contextswitch.ajaxcontext">7.8.4.3.6. AjaxContext Functionality</a></span></dt>
+</dl></dd>
+<dt><span class="sect3"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelpers.flashmessenger">7.8.4.4. FlashMessenger</a></span></dt>
+<dd><dl>
+<dt><span class="sect4"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelper.flashmessenger.introduction">7.8.4.4.1. Introduction</a></span></dt>
+<dt><span class="sect4"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelper.flashmessenger.basicusage">7.8.4.4.2. Basic Usage Example</a></span></dt>
+</dl></dd>
+<dt><span class="sect3"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelpers.json">7.8.4.5. JSON</a></span></dt>
+<dt><span class="sect3"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelpers.redirector">7.8.4.6. Redirector</a></span></dt>
+<dd><dl>
+<dt><span class="sect4"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelper.redirector.introduction">7.8.4.6.1. Introduction</a></span></dt>
+<dt><span class="sect4"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelper.redirector.basicusage">7.8.4.6.2. Basic Usage Examples</a></span></dt>
+</dl></dd>
+<dt><span class="sect3"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelpers.viewrenderer">7.8.4.7. ViewRenderer</a></span></dt>
+<dd><dl>
+<dt><span class="sect4"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelper.viewrenderer.introduction">7.8.4.7.1. Introduction</a></span></dt>
+<dt><span class="sect4"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelper.viewrenderer.api">7.8.4.7.2. API</a></span></dt>
+<dt><span class="sect4"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelper.viewrenderer.basicusage">7.8.4.7.3. Basic Usage Examples</a></span></dt>
+<dt><span class="sect4"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelper.viewrenderer.advancedusage">7.8.4.7.4. Advanced Usage Examples</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="sect2"><a href="zend.controller.actionhelpers.html#zend.controller.actionhelper.writingyourown">7.8.5. Writing Your Own Helpers</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.controller.response.html">7.9. The Response Object</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.controller.response.html#zend.controller.response.usage">7.9.1. Usage</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.response.html#zend.controller.response.headers">7.9.2. Manipulating Headers</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.response.html#zend.controller.response.namedsegments">7.9.3. Named Segments</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.response.html#zend.controller.response.exceptions">7.9.4. Testing for Exceptions in the Response Object</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.response.html#zend.controller.response.subclassing">7.9.5. Subclassing the Response Object</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.controller.plugins.html">7.10. Plugins</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.controller.plugins.html#zend.controller.plugins.introduction">7.10.1. Introduction</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.plugins.html#zend.controller.plugins.writing">7.10.2. Writing Plugins</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.plugins.html#zend.controller.plugins.using">7.10.3. Using Plugins</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.plugins.html#zend.controller.plugins.manipulating">7.10.4. Retrieving and Manipulating Plugins</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.plugins.html#zend.controller.plugins.standard">7.10.5. Plugins Included in the Standard Distribution</a></span></dt>
+<dd><dl>
+<dt><span class="sect3"><a href="zend.controller.plugins.html#zend.controller.plugins.standard.actionstack">7.10.5.1. ActionStack</a></span></dt>
+<dt><span class="sect3"><a href="zend.controller.plugins.html#zend.controller.plugins.standard.errorhandler">7.10.5.2. Zend_Controller_Plugin_ErrorHandler</a></span></dt>
+<dd><dl>
+<dt><span class="sect4"><a href="zend.controller.plugins.html#zend.controller.plugins.standard.errorhandler.fourohfour">7.10.5.2.1. Using the ErrorHandler as a 404 Handler</a></span></dt>
+<dt><span class="sect4"><a href="zend.controller.plugins.html#zend.controller.plugins.standard.errorhandler.buffer">7.10.5.2.2. Handling Previously Rendered Output</a></span></dt>
+<dt><span class="sect4"><a href="zend.controller.plugins.html#zend.controller.plugins.standard.errorhandler.examples">7.10.5.2.3. Plugin Usage Examples</a></span></dt>
+<dt><span class="sect4"><a href="zend.controller.plugins.html#zend.controller.plugins.standard.errorhandler.controllerexamples">7.10.5.2.4. Error Controller Example</a></span></dt>
+</dl></dd>
+</dl></dd>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.controller.modular.html">7.11. Using a Conventional Modular Directory Structure</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.controller.modular.html#zend.controller.modular.introduction">7.11.1. Introduction</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.modular.html#zend.controller.modular.directories">7.11.2. Specifying Module Controller Directories</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.modular.html#zend.controller.modular.router">7.11.3. Routing to modules</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.modular.html#zend.controller.modular.defaultcontroller">7.11.4. Module or Global Default Controller</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.controller.exceptions.html">7.12. MVC Exceptions</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.controller.exceptions.html#zend.controller.exceptions.introduction">7.12.1. Introduction</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.exceptions.html#zend.controller.exceptions.handling">7.12.2. How can you handle exceptions?</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.exceptions.html#zend.controller.exceptions.internal">7.12.3. MVC Exceptions You May Encounter</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="zend.controller.migration.html">7.13. Migrating from Previous Versions</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="zend.controller.migration.html#zend.controller.migration.fromoneohtoonefive">7.13.1. Migrating from 1.0.x to 1.5.0 or newer</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.migration.html#zend.controller.migration.fromzeroninethree">7.13.2. Migrating from 0.9.3 to 1.0.0RC1 or newer</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.migration.html#zend.controller.migration.fromzeroninetwo">7.13.3. Migrating from 0.9.2 to 0.9.3 or newer</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.migration.html#zend.controller.migration.fromzerosix">7.13.4. Migrating from 0.6.0 to 0.8.0 or newer</a></span></dt>
+<dt><span class="sect2"><a href="zend.controller.migration.html#zend.controller.migration.fromzerotwo">7.13.5. Migrating from 0.2.0 or before to 0.6.0</a></span></dt>
+</dl></dd>
+</dl>
+</div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.controller.quickstart"></a>7.1. Zend_Controller Quick Start</h2></div></div></div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.controller.quickstart.introduction"></a>7.1.1. Introduction</h3></div></div></div>
+<p>
+            <code class="code">Zend_Controller</code> is the heart of Zend Framework's MVC
+            system. MVC stands for <a href="http://en.wikipedia.org/wiki/Model-view-controller" target="_top">Model-View-Controller</a>
+            and is a design pattern targeted at separating application logic
+            from display logic. <code class="code">Zend_Controller_Front</code> implements a
+            <a href="http://www.martinfowler.com/eaaCatalog/frontController.html" target="_top">Front
+                Controller</a> pattern, in which all requests are
+            intercepted by the front controller and dispatched to individual
+            Action Controllers based on the URL requested.
+        </p>
+<p>
+            The <code class="code">Zend_Controller</code> system was built with extensibility
+            in mind, either by subclassing the existing classes, writing new
+            classes that implement the various interfaces and abstract classes
+            that form the foundation of the controller family of classes, or
+            writing plugins or action helpers to augment or manipulate the
+            functionality of the system.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.controller.quickstart.go"></a>7.1.2. Quick Start</h3></div></div></div>
+<p>
+            If you need more in-depth information, see the following sections.
+            If you just want to get up and running quickly, read on.
+        </p>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.controller.quickstart.go.directory"></a>7.1.2.1. Create your filesystem layout</h4></div></div></div>
+<p>
+                The first step is to create your file system layout. The typical
+                layout is as follows:
+            </p>
+<pre class="programlisting">
+application/
+    controllers/
+        IndexController.php
+    models/
+    views/
+        scripts/
+            index/
+                index.phtml
+        helpers/
+        filters/
+html/
+    .htaccess
+    index.php
+            </pre>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.controller.quickstart.go.docroot"></a>7.1.2.2. Set your document root</h4></div></div></div>
+<p>
+                In your web server, point your document root to the
+                <code class="code">html</code> directory of the above file system layout.
+            </p>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.controller.quickstart.go.rewrite"></a>7.1.2.3. Create your rewrite rules</h4></div></div></div>
+<p>
+                Edit the <code class="code">html/.htaccess</code> file above to read as
+                follows:
+            </p>
+<pre class="programlisting">
+RewriteEngine on
+RewriteRule !\.(js|ico|gif|jpg|png|css)$ index.php
+            </pre>
+<p>
+                The above rules will route any non-resource (images,
+                stylesheets) requests to the front controller. If there are
+                other extensions you wish to exclude from the front controller
+                (PDFs, text files, etc), add their extensions to the switch, or
+                create your own rewrite rules.
+            </p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+                    The above rewrite rules are for Apache; for examples of
+                    rewrite rules for other web servers, see the <a href="zend.controller.router.html#zend.controller.router.introduction" title="7.5.1. Introduction">router
+                        documentation</a>.
+                </p></td></tr>
+</table></div>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.controller.quickstart.go.bootstrap"></a>7.1.2.4. Create your bootstrap file</h4></div></div></div>
+<p>
+                The bootstrap file is the page all requests are routed through
+                -- <code class="code">html/index.php</code> in this case. Open up
+                <code class="code">html/index.php</code> in the editor of your choice and add
+                the following:
+            </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Controller/Front.php';
+Zend_Controller_Front::run('/path/to/app/controllers');
+            </pre>
+<p>
+                This will instantiate and dispatch the front controller, which
+                will route requests to action controllers.
+            </p>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.controller.quickstart.go.controller"></a>7.1.2.5. Create your default action controller</h4></div></div></div>
+<p>
+                Before discussing action controllers, you should first
+                understand how requests are routed in Zend Framework. By
+                default, the first segment of a URL path maps to a controller,
+                and the second to an action. For example, given the URL
+                <code class="code">http://framework.zend.com/roadmap/components</code>, the
+                path is <code class="code">/roadmap/components</code>, which will map to the
+                controller <code class="code">roadmap</code> and the action
+                <code class="code">components</code>. If no action is provided, the action
+                <code class="code">index</code> is assumed, and if no controller is provided,
+                the controller <code class="code">index</code> is assumed (following the
+                Apache convention that maps a <code class="code">DirectoryIndex</code>
+                automatically).
+            </p>
+<p>
+                <code class="code">Zend_Controller</code>'s dispatcher then takes the
+                controller value and maps it to a class. By default, it
+                Title-cases the controller name and appends the word
+                <code class="code">Controller</code>. Thus, in our example above, the
+                controller <code class="code">roadmap</code> is mapped to the class
+                <code class="code">RoadmapController</code>.
+            </p>
+<p>
+                Similarly, the action value is mapped to a method of the
+                controller class. By default, the value is lower-cased, and the
+                word <code class="code">Action</code> is appended. Thus, in our example
+                above, the action <code class="code">components</code> becomes
+                <code class="code">componentsAction</code>, and the final method called is
+                <code class="code">RoadmapController::componentsAction()</code>.
+            </p>
+<p>
+                So, moving on, let's now create a default action controller and
+                action method. As noted earlier, the default controller and
+                action called are both <code class="code">index</code>. Open the file
+                <code class="code">application/controllers/IndexController.php</code>, and
+                enter the following:
+            </p>
+<pre class="programlisting">&lt;?php
+/** Zend_Controller_Action */
+require_once 'Zend/Controller/Action.php';
+
+class IndexController extends Zend_Controller_Action
+{
+    public function indexAction()
+    {
+    }
+}
+            </pre>
+<p>
+                By default, the <a href="zend.controller.actionhelpers.html#zend.controller.actionhelpers.viewrenderer" title="7.8.4.7. ViewRenderer">ViewRenderer</a>
+                action helper is enabled. What this means is that by simply
+                defining an action method and a corresponding view script, you
+                will immediately get content rendered.  By default,
+                <code class="code">Zend_View</code> is used as the View layer in the MVC. The
+                <code class="code">ViewRenderer</code> does some magic, and uses the
+                controller name (e.g., <code class="code">index</code>) and the current
+                action name (e.g., <code class="code">index</code>) to determine what
+                template to pull. By default, templates end in the
+                <code class="code">.phtml</code> extension, so this means that, in the above
+                example, the template <code class="code">index/index.phtml</code> will be
+                rendered. Additionally, the <code class="code">ViewRenderer</code>
+                automatically assumes that the directory <code class="code">views</code> at
+                the same level as the controller directory will be the base view
+                directory, and that the actual view scripts will be in the
+                <code class="code">views/scripts/</code> subdirectory. Thus, the template
+                rendered will be found in
+                <code class="code">application/views/scripts/index/index.phtml</code>.
+            </p>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.controller.quickstart.go.view"></a>7.1.2.6. Create your view script</h4></div></div></div>
+<p>
+                As mentioned <a href="zend.controller.html#zend.controller.quickstart.go.controller" title="7.1.2.5. Create your default action controller">in the
+                    previous section</a>, view scripts are found in
+                <code class="code">application/views/scripts/</code>; the view script for the
+                default controller and action is in
+                <code class="code">application/views/scripts/index/index.phtml</code>. Create
+                this file, and type in some HTML:
+            </p>
+<pre class="programlisting">
+&lt;!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+  &lt;title&gt;My first Zend Framework App&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.controller.quickstart.go.errorhandler"></a>7.1.2.7. Create your error controller</h4></div></div></div>
+<p>
+                By default, <a href="zend.controller.plugins.html#zend.controller.plugins.standard.errorhandler" title="7.10.5.2. Zend_Controller_Plugin_ErrorHandler">the
+                error handler plugin</a> is registered. This plugin expects
+                that a controller exists to handle errors. By default, it
+                assumes an <code class="code">ErrorController</code> in the default module
+                with an <code class="code">errorAction</code> method:
+            </p>
+<pre class="programlisting">&lt;?php
+/** Zend_Controller_Action */
+require_once 'Zend/Controller/Action.php';
+
+class ErrorController extends Zend_Controller_Action
+{
+    public function errorAction()
+    {
+    }
+}
+            </pre>
+<p>
+                Assuming the already discussed directory layout, this file will
+                go in <code class="code">application/controllers/ErrorController.php</code>.
+                You will also need to create a view script in
+                <code class="code">application/views/scripts/error/error.phtml</code>; sample
+                content might look like:
+            </p>
+<pre class="programlisting">
+&lt;!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+  &lt;title&gt;Error&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;An error occurred&lt;/h1&gt;
+    &lt;p&gt;An error occurred; please try again later.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.controller.quickstart.go.finish"></a>7.1.2.8. View the site!</h4></div></div></div>
+<p>
+                With your first controller and view under your belt, you can now
+                fire up your browser and browse to the site. Assuming
+                <code class="code">example.com</code> is your domain, any of the following
+                URLs will get to the page we've just created:
+            </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p><code class="code">http://example.com/</code></p></li>
+<li><p><code class="code">http://example.com/index</code></p></li>
+<li><p><code class="code">http://example.com/index/index</code></p></li>
+</ul></div>
+<p>
+                You're now ready to start creating more controllers and action
+                methods. Congratulations!
+            </p>
+</div>
+</div>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.console.getopt.configuration.html">Prev</a> </td>
+<td width="20%" align="center"> </td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.controller.basics.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">6.4. Configuring Zend_Console_Getopt </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 7.2. Zend_Controller Basics</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

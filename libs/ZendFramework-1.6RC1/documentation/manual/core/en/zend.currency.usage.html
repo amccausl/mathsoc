@@ -1,0 +1,581 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>8.2. How to work with currencies</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="prev" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="next" href="zend.currency.migration.html" title="8.3. Migrating from Previous Versions">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.currency.usage.html#zend.currency.usage.tocurrency" title="8.2.1. Create output from an currency">
+<link rel="subsection" href="zend.currency.usage.html#zend.currency.usage.setformat" title="8.2.2. Changing the format of a currency">
+<link rel="subsection" href="zend.currency.usage.html#zend.currency.usage.informational" title="8.2.3. Informational methods for Zend_Currency">
+<link rel="subsection" href="zend.currency.usage.html#zend.currency.usage.setlocale" title="8.2.4. Settings new default values">
+<link rel="subsection" href="zend.currency.usage.html#zend.currency.usage.cache" title="8.2.5. Speed up Zend_Currency">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">8.2. How to work with currencies</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.currency.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 8. Zend_Currency</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.currency.migration.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.currency.usage"></a>8.2. How to work with currencies</h2></div></div></div>
+<p>
+        To use <code class="code">Zend_Currency</code> within the own application just create an instance of it without any
+        parameter. This will create an instance of <code class="code">Zend_Currency</code> with the actual locale, and defines
+        the currency which has to be used for this locale.
+    </p>
+<div class="example">
+<a name="zend.currency.usage.example1"></a><p class="title"><b>Example 8.1. Creating an instance of Zend_Currency from the actual locale</b></p>
+<div class="example-contents">
+<p>
+            Expect you have 'en_US' set as actual locale through the users or your environment. By using no
+            parameter while creating the instance you say <code class="code">Zend_Currency</code> to use the actual currency
+            from the locale 'en_US'. This leads to an instance with US Dollar set as actual currency with the
+            formatting rules from 'en_US'.
+        </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Currency.php';
+
+$currency = new Zend_Currency();
+        </pre>
+</div>
+</div>
+<br class="example-break"><div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+                Be aware, that if your system has no default locale, or if the locale of your system can not be
+                detected automatically, <code class="code">Zend_Currency</code> will throw an exception. If you have this
+                behaviour you should set the locale you manually.
+            </p></td></tr>
+</table></div>
+<p>
+        Of course, depending on your needs, several parameters can be given at creation. Each of this parameters
+        is optional and can be suppressed. Even the order of the parameters can be switched. The meaning of each
+        parameter is described in this list:
+    </p>
+<div class="itemizedlist"><ul type="opencircle">
+<li style="list-style-type: circle">
+<p>
+                <span class="strong"><strong>currency</strong></span>:
+            </p>
+<p>
+                A locale can include several currencies. Therefor the first parameter
+                <span class="strong"><strong>'currency'</strong></span> can define which currency should be used by giving
+                the short name or full name of that currency. If that currency in not known in any locale an
+                exception will be thrown. Currency short names are always 3 lettered and written uppercase.
+                Well known currency shortnames are for example <code class="code">USD</code> or <code class="code">EUR</code>.
+                For a list of all known currencies see the informational methods of <code class="code">Zend_Currency</code>.
+            </p>
+</li>
+<li style="list-style-type: circle">
+<p>
+                <span class="strong"><strong>locale</strong></span>:
+            </p>
+<p>
+                The third parameter <span class="strong"><strong>'locale'</strong></span> defines which locale should be
+                used for formatting the currency. The given locale will also be used to get the standard script
+                and currency of this currency if these parameters are not given.
+            </p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+                    Note that Zend_Currency only accepts locales which include a region. This means that all
+                    given locale which only include the language will throw an exception. For example the locale
+                    <span class="strong"><strong>en</strong></span> will throw an exception whereas the locale
+                    <span class="strong"><strong>en_US</strong></span> will return <span class="strong"><strong>USD</strong></span>
+                    as currency.
+                </p></td></tr>
+</table></div>
+</li>
+</ul></div>
+<div class="example">
+<a name="zend.currency.usage.example2"></a><p class="title"><b>Example 8.2. Other examples for creating an instance of Zend_Currency</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+// expect standard locale 'de_AT'
+require_once 'Zend/Currency.php';
+
+// creates an instance from 'en_US' using 'USD' which is default currency for 'en_US'
+$currency = new Zend_Currency('en_US');
+
+// creates an instance from the actual locale ('de_AT') using 'EUR' as currency
+$currency = new Zend_Currency();
+
+// creates an instance using 'EUR' as currency, 'en_US' for number formating
+$currency = new Zend_Currency('en_US', 'EUR');
+        </pre></div>
+</div>
+<br class="example-break"><p>
+        So you can supress any of these parameters if you want to use the default ones. This has no negative effect
+        on handling the currencies. It can be useful f.e. if you don't know the default currency for a region.
+    </p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+            For many countries there are several known currencies. One currency will actually be used and
+            maybe several ancient currencies. If the '<span class="strong"><strong>currency</strong></span>' parameter
+            is suppressed the actual currency will be used. The region '<span class="strong"><strong>de</strong></span>' for
+            example knows the currencies '<span class="strong"><strong>EUR</strong></span>' and
+            '<span class="strong"><strong>DEM</strong></span>'... '<span class="strong"><strong>EUR</strong></span>' is the actual one
+            and will be used if the parameter is suppressed.
+        </p></td></tr>
+</table></div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.currency.usage.tocurrency"></a>8.2.1. Create output from an currency</h3></div></div></div>
+<p>
+            To get an existing value converted to a currency formatted output the method
+            <span class="strong"><strong>toCurrency()</strong></span> can be used. It takes a value which should be converted.
+            The value itself can be any normalized number.
+        </p>
+<p>
+            If you have a localized number you will have to convert it first to an normalized number with
+            <a href="zend.locale.parsing.html#zend.locale.number.normalize" title="25.3.1. Number normalization: getNumber($input, Array $options)">Zend_Locale_Format::getNumber()</a>. Afterwards it can
+            be used with <code class="code">toCurrency()</code> to create an currency output.
+        </p>
+<p>
+            <code class="code">toCurrency(array $options)</code> accepts an array with options which can be used to temporary set another
+            format or currency representation. For details about which options can be used see 
+            <a href="zend.currency.usage.html#zend.currency.usage.setformat" title="8.2.2. Changing the format of a currency">Changing the format of a currency</a>.
+        </p>
+<div class="example">
+<a name="zend.currency.usage.tocurrency.example"></a><p class="title"><b>Example 8.3. Creating output for an currency</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+require_once 'Zend/Currency.php';
+
+// creates an instance with 'en_US' using 'USD' which is the default values for 'en_US'
+$currency = new Zend_Currency('en_US');
+
+// prints '$ 1,000.00'
+echo $currency-&gt;toCurrency(1000);
+
+// prints '$ 1.000,00'
+echo $currency-&gt;toCurrency(1000, array('format' =&gt; 'de_AT'));
+
+// prints '$ ١٬٠٠٠٫٠٠'
+echo $currency-&gt;toCurrency(1000, array('script' =&gt; 'Arab'));
+            </pre></div>
+</div>
+<br class="example-break">
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.currency.usage.setformat"></a>8.2.2. Changing the format of a currency</h3></div></div></div>
+<p>
+            The format which is used by creation of a <code class="code">Zend_Currency</code> instance is of course the
+            standard format. But sometimes it is necessary to change this format for own purposes.
+        </p>
+<p>
+            The format of an currency output includes the following parts:
+        </p>
+<div class="itemizedlist"><ul type="opencircle">
+<li style="list-style-type: circle">
+<p>
+                    <span class="strong"><strong>Currency symbol, shortname or name</strong></span>:
+                </p>
+<p>
+                    The symbol of the currency is normally displayed within an currency output. It can be suppressed
+                    when needed or even overwritten.
+                </p>
+</li>
+<li style="list-style-type: circle">
+<p>
+                    <span class="strong"><strong>Currency position</strong></span>:
+                </p>
+<p>
+                    The position of the currency sign is normally automatically defined by the locale. It can be
+                    changed if necessary.
+                </p>
+</li>
+<li style="list-style-type: circle">
+<p>
+                    <span class="strong"><strong>Script</strong></span>:
+                </p>
+<p>
+                    The script which shall be used to display digits. Detailed information about scripts and their
+                    usage can be found in the documentation of <code class="code">Zend_Locale</code> in
+                    <a href="zend.locale.parsing.html#zend.locale.appendix.numberscripts.supported" title="25.3.10.1. List of supported numeral systems">supported number scripts</a>.
+                </p>
+</li>
+<li style="list-style-type: circle">
+<p>
+                    <span class="strong"><strong>Number formatting</strong></span>:
+                </p>
+<p>
+                    The amount of currency (formally known as value of money) is formatted by the usage of
+                    formatting rules within the locale. For example is in English the ',' sign used as separator for
+                    thousands, and in German the '.' sign.
+                </p>
+</li>
+</ul></div>
+<p>
+            So if you are in need to change the format, you can use the
+            <span class="strong"><strong>setFormat()</strong></span> method. It takes an array which includes all
+            options which you want to change. The <code class="code">options</code> array supports the following
+            settings:
+        </p>
+<div class="itemizedlist"><ul type="opencircle">
+<li style="list-style-type: circle"><p>
+                    <span class="strong"><strong>position</strong></span>: Defines the position at which the currency
+                    description should be displayed. The supported position can be found in
+                    <a href="zend.currency.usage.html#zend.currency.usage.setformat.constantsposition" title="Table 8.2. Constants for the selecting the currency position">this table</a>.
+                </p></li>
+<li style="list-style-type: circle"><p>
+                    <span class="strong"><strong>script</strong></span>: Defined which script has to be used for
+                    displaying digits. The default script for most locales is
+                    <span class="strong"><strong>'Latn'</strong></span>, which includes the digits 0 to 9. Also other
+                    scripts like 'Arab' (Arabian) can be used. All supported scripts can be found in
+                    <a href="zend.locale.parsing.html#zend.locale.appendix.numberscripts.supported" title="25.3.10.1. List of supported numeral systems">this table</a>.
+                </p></li>
+<li style="list-style-type: circle"><p>
+                    <span class="strong"><strong>format</strong></span>: Defines which locale has to be used for displaying
+                    numbers. This number-format includes for example the thousand separator. If no format is set
+                    the locale from the <code class="code">Zend_Currency</code> object will be used. 
+                </p></li>
+<li style="list-style-type: circle"><p>
+                    <span class="strong"><strong>display</strong></span>: Defines which part of the currency has to be
+                    used for displaying the currency representation. There are 4 representations which can be
+                    used and which are all described in
+                    <a href="zend.currency.usage.html#zend.currency.usage.setformat.constantsdescription" title="Table 8.1. Constants for the selecting the currency description">this table</a>.
+                </p></li>
+<li style="list-style-type: circle"><p>
+                    <span class="strong"><strong>precision</strong></span>: Defines the precision which has to be used for
+                    the currency representation. The default value is <span class="strong"><strong>2</strong></span>.
+                </p></li>
+<li style="list-style-type: circle"><p>
+                    <span class="strong"><strong>name</strong></span>: Defines the full currency name which has to be
+                    displayed. This option overwrites any currency name which is set through
+                    the creation of <code class="code">Zend_Currency</code>.
+                </p></li>
+<li style="list-style-type: circle"><p>
+                    <span class="strong"><strong>currency</strong></span>: Defines the international abbreviation which
+                    has to be displayed. This option overwrites any abbreviation which is set through
+                    the creation of <code class="code">Zend_Currency</code>.
+                </p></li>
+<li style="list-style-type: circle"><p>
+                    <span class="strong"><strong>symbol</strong></span>: Defines the currency symbol which has to be
+                    displayed. This option overwrites any symbol which is set through
+                    the creation of <code class="code">Zend_Currency</code>.
+                </p></li>
+</ul></div>
+<div class="table">
+<a name="zend.currency.usage.setformat.constantsdescription"></a><p class="title"><b>Table 8.1. Constants for the selecting the currency description</b></p>
+<div class="table-contents"><table summary="Constants for the selecting the currency description" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="left">constant</th>
+<th align="left">description</th>
+<td class="auto-generated"> </td>
+</tr></thead>
+<tbody>
+<tr>
+<td align="left">NO_SYMBOL</td>
+<td align="left">Do not display any currency representation</td>
+<td class="auto-generated"> </td>
+</tr>
+<tr>
+<td align="left">USE_SYMBOL</td>
+<td align="left">Display the currency symbol</td>
+<td class="auto-generated"> </td>
+</tr>
+<tr>
+<td align="left">USE_SHORTNAME</td>
+<td align="left">Display the 3 lettered international currency abbreviation</td>
+<td class="auto-generated"> </td>
+</tr>
+<tr>
+<td align="left">USE_NAME</td>
+<td align="left">Display the full currency name</td>
+<td class="auto-generated"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<br class="table-break"><div class="table">
+<a name="zend.currency.usage.setformat.constantsposition"></a><p class="title"><b>Table 8.2. Constants for the selecting the currency position</b></p>
+<div class="table-contents"><table summary="Constants for the selecting the currency position" border="1">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th align="left">constant</th>
+<th align="left">description</th>
+<td class="auto-generated"> </td>
+</tr></thead>
+<tbody>
+<tr>
+<td align="left">STANDARD</td>
+<td align="left">Set the standard position as defined within the locale</td>
+<td class="auto-generated"> </td>
+</tr>
+<tr>
+<td align="left">RIGHT</td>
+<td align="left">Display the currency representation at the right side of the value</td>
+<td class="auto-generated"> </td>
+</tr>
+<tr>
+<td align="left">LEFT</td>
+<td align="left">Display the currency representation at the left side of the value</td>
+<td class="auto-generated"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<br class="table-break"><div class="example">
+<a name="zend.currency.usage.setformat.example"></a><p class="title"><b>Example 8.4. Changing the displayed format of a currency</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+require_once 'Zend/Currency.php';
+
+// creates an instance with 'en_US' using 'USD', 'Latin' and 'en_US' as these are the default values from 'en_US'
+$currency = new Zend_Currency('en_US');
+
+// prints 'US$ 1,000.00'
+echo $currency-&gt;toCurrency(1000);
+
+$currency-&gt;setFormat('display' =&gt; Zend_Currency::USE_NAME, 'position' =&gt; Zend_Currency::RIGHT);
+// prints '1.000,00 US Dollar'
+echo $currency-&gt;toCurrency(1000);
+
+$currency-&gt;setFormat('name' =&gt; 'American Dollar');
+// prints '1.000,00 American Dollar'
+echo $currency-&gt;toCurrency(1000);
+            </pre></div>
+</div>
+<br class="example-break">
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.currency.usage.informational"></a>8.2.3. Informational methods for Zend_Currency</h3></div></div></div>
+<p>
+            Of course, <code class="code">Zend_Currency</code> supports also methods to get informations about any existing
+            and many ancient currencies from <code class="code">Zend_Locale</code>. The supported
+            methods are:
+        </p>
+<div class="itemizedlist"><ul type="opencircle">
+<li style="list-style-type: circle">
+<p>
+                    <span class="strong"><strong>getSymbol()</strong></span>:
+                </p>
+<p>
+                    Returns the known sign of the actual currency or a given currency. For example
+                    <span class="strong"><strong>$</strong></span> for the US Dollar within the locale
+                    '<span class="strong"><strong>en_US</strong></span>.
+                </p>
+</li>
+<li style="list-style-type: circle">
+<p>
+                    <span class="strong"><strong>getShortName()</strong></span>:
+                </p>
+<p>
+                    Returns the abbreviation of the actual currency or a given currency.  For example
+                    <span class="strong"><strong>USD</strong></span> for the US Dollar within the locale
+                    '<span class="strong"><strong>en_US</strong></span>.
+                </p>
+</li>
+<li style="list-style-type: circle">
+<p>
+                    <span class="strong"><strong>getName()</strong></span>:
+                </p>
+<p>
+                    Returns the full name of the actual currency of a given currency. For example
+                    <span class="strong"><strong>US Dollar</strong></span> for the US Dollar within the locale
+                    '<span class="strong"><strong>en_US</strong></span>.
+                </p>
+</li>
+<li style="list-style-type: circle">
+<p>
+                    <span class="strong"><strong>getRegionList()</strong></span>:
+                </p>
+<p>
+                    Returns a list of regions where the actual currency or a given one is known to be used.
+                    It is possible that a currency is used within several regions therefor the return value
+                    is always an array.
+                </p>
+</li>
+<li style="list-style-type: circle">
+<p>
+                    <span class="strong"><strong>getCurrencyList()</strong></span>:
+                </p>
+<p>
+                    Returns a list of currencies which are known to be used in the given region.
+                </p>
+</li>
+</ul></div>
+<p>
+            The function <code class="code">getSymbol()</code>, <code class="code">getShortName()</code> and <code class="code">getName()</code> accept
+            two optional parameters. If no parameter is given the expected data will be returned from the actual
+            set currency. The first parameter takes the shortname of a currency. Short names are always three
+            lettered, for example EUR for euro or USD for US Dollar. The second parameter defines from which
+            locale the data should be read. If no locale is given, the actual set locale is used.
+        </p>
+<div class="example">
+<a name="zend.currency.usage.informational.example"></a><p class="title"><b>Example 8.5. Getting informations from currencies</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+require_once 'Zend/Currency.php';
+
+// creates an instance with 'en_US' using 'USD', 'Latin' and 'en_US' as these are the default values from 'en_US'
+$currency = new Zend_Currency('en_US');
+
+// prints '$'
+echo $currency-&gt;getSymbol();
+
+// prints 'EUR'
+echo $currency-&gt;getShortName('EUR');
+
+// prints 'Österreichische Schilling'
+echo $currency-&gt;getName('ATS', 'de_AT');
+
+// returns an array with all regions where USD is used
+print_r($currency-&gt;getRegionList();
+
+// returns an array with all currencies which were ever used in this region
+print_r($currency-&gt;getCurrencyList('de_AT');
+            </pre></div>
+</div>
+<br class="example-break">
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.currency.usage.setlocale"></a>8.2.4. Settings new default values</h3></div></div></div>
+<p>
+            The method <code class="code">setLocale</code> allows to set a new locale for
+            <code class="code">Zend_Currency</code>. When calling this function also all default
+            values for the currency will be overwritten. This includes currency name,
+            abbreviation and symbol.
+        </p>
+<div class="example">
+<a name="zend.currency.usage.setlocale.example"></a><p class="title"><b>Example 8.6. Setting a new locale</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+require_once 'Zend/Currency.php';
+
+// get the currency for US
+$currency = new Zend_Currency('en_US');
+print $currency-&gt;toCurrency(1000);
+
+// get the currency for AT
+$currency-&gt;setLocale('de_AT');
+print $currency-&gt;toCurrency(1000);
+
+            </pre></div>
+</div>
+<br class="example-break">
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.currency.usage.cache"></a>8.2.5. Speed up Zend_Currency</h3></div></div></div>
+<p>
+            The work of <code class="code">Zend_Currency</code> can be speed up by the usage of <code class="code">Zend_Cache</code>.
+            By using the static method <code class="code">Zend_Currency::setCache($cache)</code> which accepts one option, an
+            <code class="code">Zend_Cache</code> adapter. When you set it, the localization data of the methods from
+            Zend_Currency are cached. For convenience there is also static method
+            <code class="code">Zend_Currency::getCache()</code>.
+        </p>
+<div class="example">
+<a name="zend.currency.usage.cache.example"></a><p class="title"><b>Example 8.7. Caching currencies</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+require_once 'Zend/Currency.php';
+require_once 'Zend/Cache.php';
+
+// creating a cache object
+$cache = Zend_Cache::factory('Core', 'File',
+             array('lifetime' =&gt; 120, 'automatic_serialization' =&gt; true),
+             array('cache_dir' =&gt; dirname(__FILE__) . '/_files/'));
+Zend_Currency::setCache($cache);
+            </pre></div>
+</div>
+<br class="example-break">
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.currency.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.currency.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.currency.migration.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">Chapter 8. Zend_Currency </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 8.3. Migrating from Previous Versions</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

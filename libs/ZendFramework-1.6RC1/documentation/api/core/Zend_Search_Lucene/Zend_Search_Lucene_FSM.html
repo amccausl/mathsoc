@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Search_Lucene_FSM</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/AbstractClass_logo.png"
+														alt="Abstract Class"
+														title="Abstract Class"
+														style="vertical-align: middle"> Zend_Search_Lucene_FSM</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|													<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Abstract Finite State Machine</p>
+<p class="description"><p>Take a look on Wikipedia state machine description: http://en.wikipedia.org/wiki/Finite_state_machine</p><p>Any type of Transducers (Moore machine or Mealy machine) also may be implemented by using this abstract FSM.  process() methods invokes a specified actions which may construct FSM output.  Actions may be also used to signal, that we have reached Accept State</p></p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Search---Lucene---FSM.php.html">/Search/Lucene/FSM.php</a> (line <span class="field">43</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_BooleanExpressionRecognizer.html">Zend_Search_Lucene_Search_BooleanExpressionRecognizer</a>
+					</td>
+					<td>
+											
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_QueryParser.html">Zend_Search_Lucene_Search_QueryParser</a>
+					</td>
+					<td>
+											
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_QueryLexer.html">Zend_Search_Lucene_Search_QueryLexer</a>
+					</td>
+					<td>
+											
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																							
+				<div class="method-definition">
+					<img src="../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">Zend_Search_Lucene_FSM</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type">array</span>&nbsp;<span class="var-name">$states</span> = <span class="var-default">array()</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$inputAphabet</span> = <span class="var-default">array()</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$rules</span> = <span class="var-default">array()</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#addEntryAction" title="details" class="method-name">addEntryAction</a>
+											(<span class="var-type">integer|string</span>&nbsp;<span class="var-name">$state</span>, <span class="var-type"><a href="../Zend_Search_Lucene/Zend_Search_Lucene_FSMAction.html">Zend_Search_Lucene_FSMAction</a></span>&nbsp;<span class="var-name">$action</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#addExitAction" title="details" class="method-name">addExitAction</a>
+											(<span class="var-type">integer|string</span>&nbsp;<span class="var-name">$state</span>, <span class="var-type"><a href="../Zend_Search_Lucene/Zend_Search_Lucene_FSMAction.html">Zend_Search_Lucene_FSMAction</a></span>&nbsp;<span class="var-name">$action</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#addInputAction" title="details" class="method-name">addInputAction</a>
+											(<span class="var-type">integer|string</span>&nbsp;<span class="var-name">$state</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$inputSymbol</span>, <span class="var-type"><a href="../Zend_Search_Lucene/Zend_Search_Lucene_FSMAction.html">Zend_Search_Lucene_FSMAction</a></span>&nbsp;<span class="var-name">$action</span>, <span class="var-type">integer|string</span>&nbsp;<span class="var-name">$input</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#addInputSymbol" title="details" class="method-name">addInputSymbol</a>
+											(<span class="var-type">integer|string</span>&nbsp;<span class="var-name">$inputSymbol</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#addInputSymbols" title="details" class="method-name">addInputSymbols</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$inputAphabet</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#addRule" title="details" class="method-name">addRule</a>
+											(<span class="var-type">integer|string</span>&nbsp;<span class="var-name">$sourceState</span>, <span class="var-type">integer|string</span>&nbsp;<span class="var-name">$input</span>, <span class="var-type">integer|string</span>&nbsp;<span class="var-name">$targetState</span>, [<span class="var-type"><a href="../Zend_Search_Lucene/Zend_Search_Lucene_FSMAction.html">Zend_Search_Lucene_FSMAction</a>|null</span>&nbsp;<span class="var-name">$inputAction</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#addRules" title="details" class="method-name">addRules</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$rules</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#addState" title="details" class="method-name">addState</a>
+											(<span class="var-type">integer|string</span>&nbsp;<span class="var-name">$state</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#addStates" title="details" class="method-name">addStates</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$states</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#addTransitionAction" title="details" class="method-name">addTransitionAction</a>
+											(<span class="var-type">integer|string</span>&nbsp;<span class="var-name">$sourceState</span>, <span class="var-type">integer|string</span>&nbsp;<span class="var-name">$targetState</span>, <span class="var-type"><a href="../Zend_Search_Lucene/Zend_Search_Lucene_FSMAction.html">Zend_Search_Lucene_FSMAction</a></span>&nbsp;<span class="var-name">$action</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer|string</span>
+										<a href="#getState" title="details" class="method-name">getState</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#process" title="details" class="method-name">process</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$input</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#reset" title="details" class="method-name">reset</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setState" title="details" class="method-name">setState</a>
+											(<span class="var-type">integer|string</span>&nbsp;<span class="var-name">$state</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">141</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Finite State machine constructor</p>
+<p class="description"><p>$states is an array of integers or strings with a list of possible machine states  constructor treats fist list element as a sturt state (assignes it to $_current state).  It may be reassigned by setState() call.  States list may be empty and can be extended later by addState() or addStates() calls.</p><p>$inputAphabet is the same as $states, but represents input alphabet  it also may be extended later by addInputSymbols() or addInputSymbol() calls.</p><p>$rules parameter describes FSM transitions and has a structure:  array( array(sourseState, input, targetState[, inputAction]),         array(sourseState, input, targetState[, inputAction]),         array(sourseState, input, targetState[, inputAction]),         ...       )  Rules also can be added later by addRules() and addRule() calls.</p><p>FSM actions are very flexible and may be defined by addEntryAction(), addExitAction(),  addInputAction() and addTransitionAction() calls.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Zend_Search_Lucene_FSM</span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type">array</span>&nbsp;<span class="var-name">$states</span> = <span class="var-default">array()</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$inputAphabet</span> = <span class="var-default">array()</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$rules</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$states</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$inputAphabet</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$rules</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_BooleanExpressionRecognizer.html#method__construct">Zend_Search_Lucene_Search_BooleanExpressionRecognizer::__construct()</a>
+								: Object constructor
+							</li>
+					<li>
+				<a href="../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_QueryParser.html#method__construct">Zend_Search_Lucene_Search_QueryParser::__construct()</a>
+								: Parser constructor
+							</li>
+					<li>
+				<a href="../Zend_Search_Lucene/Search/Zend_Search_Lucene_Search_QueryLexer.html#method__construct">Zend_Search_Lucene_Search_QueryLexer::__construct()</a>
+							</li>
+				</ul>
+	</div>
+<a name="methodaddEntryAction" id="addEntryAction"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">addEntryAction</span> (line <span class="line-number">287</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add state entry action.</p>
+<p class="description"><p>Several entry actions are allowed.  Action execution order is defined by addEntryAction() calls</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addEntryAction
+		</span>
+					(<span class="var-type">integer|string</span>&nbsp;<span class="var-name">$state</span>, <span class="var-type"><a href="../Zend_Search_Lucene/Zend_Search_Lucene_FSMAction.html">Zend_Search_Lucene_FSMAction</a></span>&nbsp;<span class="var-name">$action</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer|string</span>
+				<span class="var-name">$state</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Search_Lucene/Zend_Search_Lucene_FSMAction.html">Zend_Search_Lucene_FSMAction</a></span>
+				<span class="var-name">$action</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddExitAction" id="addExitAction"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">addExitAction</span> (line <span class="line-number">308</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add state exit action.</p>
+<p class="description"><p>Several exit actions are allowed.  Action execution order is defined by addEntryAction() calls</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addExitAction
+		</span>
+					(<span class="var-type">integer|string</span>&nbsp;<span class="var-name">$state</span>, <span class="var-type"><a href="../Zend_Search_Lucene/Zend_Search_Lucene_FSMAction.html">Zend_Search_Lucene_FSMAction</a></span>&nbsp;<span class="var-name">$action</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer|string</span>
+				<span class="var-name">$state</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Search_Lucene/Zend_Search_Lucene_FSMAction.html">Zend_Search_Lucene_FSMAction</a></span>
+				<span class="var-name">$action</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddInputAction" id="addInputAction"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">addInputAction</span> (line <span class="line-number">330</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add input action (defined by {state, input} pair).</p>
+<p class="description"><p>Several input actions are allowed.  Action execution order is defined by addInputAction() calls</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addInputAction
+		</span>
+					(<span class="var-type">integer|string</span>&nbsp;<span class="var-name">$state</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$inputSymbol</span>, <span class="var-type"><a href="../Zend_Search_Lucene/Zend_Search_Lucene_FSMAction.html">Zend_Search_Lucene_FSMAction</a></span>&nbsp;<span class="var-name">$action</span>, <span class="var-type">integer|string</span>&nbsp;<span class="var-name">$input</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer|string</span>
+				<span class="var-name">$state</span>			</li>
+					<li>
+				<span class="var-type">integer|string</span>
+				<span class="var-name">$input</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Search_Lucene/Zend_Search_Lucene_FSMAction.html">Zend_Search_Lucene_FSMAction</a></span>
+				<span class="var-name">$action</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$inputSymbol</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddInputSymbol" id="addInputSymbol"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">addInputSymbol</span> (line <span class="line-number">217</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add symbol to the input alphabet</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addInputSymbol
+		</span>
+					(<span class="var-type">integer|string</span>&nbsp;<span class="var-name">$inputSymbol</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer|string</span>
+				<span class="var-name">$inputSymbol</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddInputSymbols" id="addInputSymbols"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">addInputSymbols</span> (line <span class="line-number">205</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add symbols to the input alphabet</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addInputSymbols
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$inputAphabet</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$inputAphabet</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddRule" id="addRule"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">addRule</span> (line <span class="line-number">251</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add symbol to the input alphabet</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Search_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addRule
+		</span>
+					(<span class="var-type">integer|string</span>&nbsp;<span class="var-name">$sourceState</span>, <span class="var-type">integer|string</span>&nbsp;<span class="var-name">$input</span>, <span class="var-type">integer|string</span>&nbsp;<span class="var-name">$targetState</span>, [<span class="var-type"><a href="../Zend_Search_Lucene/Zend_Search_Lucene_FSMAction.html">Zend_Search_Lucene_FSMAction</a>|null</span>&nbsp;<span class="var-name">$inputAction</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer|string</span>
+				<span class="var-name">$sourceState</span>			</li>
+					<li>
+				<span class="var-type">integer|string</span>
+				<span class="var-name">$input</span>			</li>
+					<li>
+				<span class="var-type">integer|string</span>
+				<span class="var-name">$targetState</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Search_Lucene/Zend_Search_Lucene_FSMAction.html">Zend_Search_Lucene_FSMAction</a>|null</span>
+				<span class="var-name">$inputAction</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddRules" id="addRules"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">addRules</span> (line <span class="line-number">235</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add transition rules</p>
+<p class="description"><p>array structure:  array( array(sourseState, input, targetState[, inputAction]),         array(sourseState, input, targetState[, inputAction]),         array(sourseState, input, targetState[, inputAction]),         ...       )</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addRules
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$rules</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$rules</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddState" id="addState"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">addState</span> (line <span class="line-number">165</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add state to the state machine</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addState
+		</span>
+					(<span class="var-type">integer|string</span>&nbsp;<span class="var-name">$state</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer|string</span>
+				<span class="var-name">$state</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddStates" id="addStates"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">addStates</span> (line <span class="line-number">153</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add states to the state machine</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addStates
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$states</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$states</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddTransitionAction" id="addTransitionAction"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">addTransitionAction</span> (line <span class="line-number">358</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add transition action (defined by {state, input} pair).</p>
+<p class="description"><p>Several transition actions are allowed.  Action execution order is defined by addTransitionAction() calls</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addTransitionAction
+		</span>
+					(<span class="var-type">integer|string</span>&nbsp;<span class="var-name">$sourceState</span>, <span class="var-type">integer|string</span>&nbsp;<span class="var-name">$targetState</span>, <span class="var-type"><a href="../Zend_Search_Lucene/Zend_Search_Lucene_FSMAction.html">Zend_Search_Lucene_FSMAction</a></span>&nbsp;<span class="var-name">$action</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer|string</span>
+				<span class="var-name">$sourceState</span>			</li>
+					<li>
+				<span class="var-type">integer|string</span>
+				<span class="var-name">$targetState</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Search_Lucene/Zend_Search_Lucene_FSMAction.html">Zend_Search_Lucene_FSMAction</a></span>
+				<span class="var-name">$action</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetState" id="getState"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getState</span> (line <span class="line-number">195</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get FSM state.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer|string</span>
+		<span class="method-name">
+			getState
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodprocess" id="process"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">process</span> (line <span class="line-number">384</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Process an input</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Search_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			process
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$input</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$input</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodreset" id="reset"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">reset</span> (line <span class="line-number">424</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			reset
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodsetState" id="setState"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setState</span> (line <span class="line-number">181</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set FSM state.</p>
+<p class="description"><p>No any action is invoked</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Search_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setState
+		</span>
+					(<span class="var-type">integer|string</span>&nbsp;<span class="var-name">$state</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer|string</span>
+				<span class="var-name">$state</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:27:05 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

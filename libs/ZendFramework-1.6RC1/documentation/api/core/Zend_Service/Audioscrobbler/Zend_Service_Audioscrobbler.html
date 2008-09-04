@@ -1,0 +1,1656 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Service_Audioscrobbler</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_Service_Audioscrobbler</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Service---Audioscrobbler.php.html">/Service/Audioscrobbler.php</a> (line <span class="field">38</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																								<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../../Zend_Http/Client/Zend_Http_Client.html">Zend_Http_Client</a></span>
+					<a href="#$_client" title="details" class="var-name">$_client</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$_error" title="details" class="var-name">$_error</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$_params" title="details" class="var-name">$_params</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">boolean</span>
+					<a href="#$_testing" title="details" class="var-name">$_testing</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_testingResponse" title="details" class="var-name">$_testingResponse</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																																																																																																																																															
+				<div class="method-definition">
+					<img src="../../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$testing</span> = <span class="var-default">false</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$testingResponse</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#albumGetInfo" title="details" class="method-name">albumGetInfo</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">SimpleXML</span>
+										<a href="#artistGetRelatedArtists" title="details" class="method-name">artistGetRelatedArtists</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">SimpleXML</span>
+										<a href="#artistGetTopAlbums" title="details" class="method-name">artistGetTopAlbums</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">SimpleXML</span>
+										<a href="#artistGetTopFans" title="details" class="method-name">artistGetTopFans</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">SimpleXML</span>
+										<a href="#artistGetTopTags" title="details" class="method-name">artistGetTopTags</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">SimpleXML</span>
+										<a href="#artistGetTopTracks" title="details" class="method-name">artistGetTopTracks</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string|false</span>
+										<a href="#get" title="details" class="method-name">get</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$field</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#groupGetWeeklyAlbumChartList" title="details" class="method-name">groupGetWeeklyAlbumChartList</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$from</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$to</span> = <span class="var-default">NULL</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#groupGetWeeklyArtistChartList" title="details" class="method-name">groupGetWeeklyArtistChartList</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$from</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$to</span> = <span class="var-default">NULL</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#groupGetWeeklyChartList" title="details" class="method-name">groupGetWeeklyChartList</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#groupGetWeeklyTrackChartList" title="details" class="method-name">groupGetWeeklyTrackChartList</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$from</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$to</span> = <span class="var-default">NULL</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Zend_Service/Audioscrobbler/Zend_Service_Audioscrobbler.html">Zend_Service_Audioscrobbler</a></span>
+										<a href="#set" title="details" class="method-name">set</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$field</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#tagGetTopAlbums" title="details" class="method-name">tagGetTopAlbums</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#tagGetTopArtists" title="details" class="method-name">tagGetTopArtists</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#tagGetTopTags" title="details" class="method-name">tagGetTopTags</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#tagGetTopTracks" title="details" class="method-name">tagGetTopTracks</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#trackGetTopFans" title="details" class="method-name">trackGetTopFans</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#trackGetTopTags" title="details" class="method-name">trackGetTopTags</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">SimpleXML</span>
+										<a href="#userGetFriends" title="details" class="method-name">userGetFriends</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">SimpleXML</span>
+										<a href="#userGetNeighbours" title="details" class="method-name">userGetNeighbours</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#userGetProfileInformation" title="details" class="method-name">userGetProfileInformation</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">SimpleXML</span>
+										<a href="#userGetRecentBannedTracks" title="details" class="method-name">userGetRecentBannedTracks</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">SimpleXML</span>
+										<a href="#userGetRecentLovedTracks" title="details" class="method-name">userGetRecentLovedTracks</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">SimpleXML</span>
+										<a href="#userGetRecentTracks" title="details" class="method-name">userGetRecentTracks</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">SimpleXML</span>
+										<a href="#userGetTopAlbums" title="details" class="method-name">userGetTopAlbums</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#userGetTopArtists" title="details" class="method-name">userGetTopArtists</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">SimpleXML</span>
+										<a href="#userGetTopTags" title="details" class="method-name">userGetTopTags</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">SimpleXML</span>
+										<a href="#userGetTopTagsForAlbum" title="details" class="method-name">userGetTopTagsForAlbum</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">SimpleXML</span>
+										<a href="#userGetTopTagsForArtist" title="details" class="method-name">userGetTopTagsForArtist</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">SimpleXML</span>
+										<a href="#userGetTopTagsForTrack" title="details" class="method-name">userGetTopTagsForTrack</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">SimpleXML</span>
+										<a href="#userGetTopTracks" title="details" class="method-name">userGetTopTracks</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">SimpleXML</span>
+										<a href="#userGetWeeklyAlbumChart" title="details" class="method-name">userGetWeeklyAlbumChart</a>
+											([<span class="var-type">integer</span>&nbsp;<span class="var-name">$from</span> = <span class="var-default">NULL</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$to</span> = <span class="var-default">NULL</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">SimpleXML</span>
+										<a href="#userGetWeeklyArtistChart" title="details" class="method-name">userGetWeeklyArtistChart</a>
+											([<span class="var-type">integer</span>&nbsp;<span class="var-name">$from</span> = <span class="var-default">NULL</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$to</span> = <span class="var-default">NULL</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">SimpleXML</span>
+										<a href="#userGetWeeklyChartList" title="details" class="method-name">userGetWeeklyChartList</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">SimpleXML</span>
+										<a href="#userGetWeeklyTrackChart" title="details" class="method-name">userGetWeeklyTrackChart</a>
+											([<span class="var-type">integer</span>&nbsp;<span class="var-name">$from</span> = <span class="var-default">NULL</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$to</span> = <span class="var-default">NULL</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#_errorHandler" title="details" class="method-name">_errorHandler</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$errno</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$errstr</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$errfile</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$errline</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$errcontext</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">SimpleXMLElement</span>
+										<a href="#_getInfo" title="details" class="method-name">_getInfo</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$service</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">null</span>])
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_client" id="$_client"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../../Zend_Http/Client/Zend_Http_Client.html">Zend_Http_Client</a></span>
+			<span class="var-name">$_client</span>
+						(line <span class="line-number">46</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Zend_Http_Client Object</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_error" id="$_error"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_error</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">78</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Holds error information (e.g., for handling simplexml_load_string() warnings)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_params" id="$_params"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_params</span>
+						(line <span class="line-number">54</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Array that contains parameters being used by the webservice</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_testing" id="$_testing"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$_testing</span>
+						(line <span class="line-number">62</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Flag if we're doing testing or not</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_testingResponse" id="$_testingResponse"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_testingResponse</span>
+						(line <span class="line-number">70</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Http response used for testing purposes</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">94</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets up character encoding, instantiates the HTTP client, and assigns the web service version  and testing parameters (if provided).</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$testing</span> = <span class="var-default">false</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$testingResponse</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$testing</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$testingResponse</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodalbumGetInfo" id="albumGetInfo"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">albumGetInfo</span> (line <span class="line-number">503</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			albumGetInfo
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodartistGetRelatedArtists" id="artistGetRelatedArtists"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">artistGetRelatedArtists</span> (line <span class="line-number">449</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Utility function that returns a list of artists similiar to this artist</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> object containing result set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">SimpleXML</span>
+		<span class="method-name">
+			artistGetRelatedArtists
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodartistGetTopAlbums" id="artistGetTopAlbums"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">artistGetTopAlbums</span> (line <span class="line-number">482</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Utility function that returns a list of this artist's top-rated albums</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> object containing result set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">SimpleXML</span>
+		<span class="method-name">
+			artistGetTopAlbums
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodartistGetTopFans" id="artistGetTopFans"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">artistGetTopFans</span> (line <span class="line-number">460</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Utility function that returns a list of this artist's top listeners</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> object containing result set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">SimpleXML</span>
+		<span class="method-name">
+			artistGetTopFans
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodartistGetTopTags" id="artistGetTopTags"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">artistGetTopTags</span> (line <span class="line-number">493</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Utility function that returns a list of this artist's top-rated tags</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> object containing result set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">SimpleXML</span>
+		<span class="method-name">
+			artistGetTopTags
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodartistGetTopTracks" id="artistGetTopTracks"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">artistGetTopTracks</span> (line <span class="line-number">471</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Utility function that returns a list of this artist's top-rated tracks</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> object containing result set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">SimpleXML</span>
+		<span class="method-name">
+			artistGetTopTracks
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodget" id="get"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">get</span> (line <span class="line-number">115</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a field value, or false if the named field does not exist</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string|false</span>
+		<span class="method-name">
+			get
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$field</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$field</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgroupGetWeeklyAlbumChartList" id="groupGetWeeklyAlbumChartList"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">groupGetWeeklyAlbumChartList</span> (line <span class="line-number">592</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			groupGetWeeklyAlbumChartList
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$from</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$to</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$from</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$to</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgroupGetWeeklyArtistChartList" id="groupGetWeeklyArtistChartList"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">groupGetWeeklyArtistChartList</span> (line <span class="line-number">563</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			groupGetWeeklyArtistChartList
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$from</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$to</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$from</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$to</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgroupGetWeeklyChartList" id="groupGetWeeklyChartList"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">groupGetWeeklyChartList</span> (line <span class="line-number">557</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			groupGetWeeklyChartList
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgroupGetWeeklyTrackChartList" id="groupGetWeeklyTrackChartList"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">groupGetWeeklyTrackChartList</span> (line <span class="line-number">578</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			groupGetWeeklyTrackChartList
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$from</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$to</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$from</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$to</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset" id="set"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">set</span> (line <span class="line-number">131</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generic set action for a field in the parameters being used</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Provides a fluent interface</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Zend_Service/Audioscrobbler/Zend_Service_Audioscrobbler.html">Zend_Service_Audioscrobbler</a></span>
+		<span class="method-name">
+			set
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$field</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$field</span><span class="var-description">: name of field to set</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span><span class="var-description">: value to assign to the named field</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtagGetTopAlbums" id="tagGetTopAlbums"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">tagGetTopAlbums</span> (line <span class="line-number">535</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			tagGetTopAlbums
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtagGetTopArtists" id="tagGetTopArtists"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">tagGetTopArtists</span> (line <span class="line-number">541</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			tagGetTopArtists
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtagGetTopTags" id="tagGetTopTags"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">tagGetTopTags</span> (line <span class="line-number">529</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			tagGetTopTags
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtagGetTopTracks" id="tagGetTopTracks"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">tagGetTopTracks</span> (line <span class="line-number">547</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			tagGetTopTracks
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtrackGetTopFans" id="trackGetTopFans"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">trackGetTopFans</span> (line <span class="line-number">513</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			trackGetTopFans
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtrackGetTopTags" id="trackGetTopTags"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">trackGetTopTags</span> (line <span class="line-number">519</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			trackGetTopTags
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoduserGetFriends" id="userGetFriends"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">userGetFriends</span> (line <span class="line-number">307</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Utility function that retrieves this user's list of friends</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> object containing result set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">SimpleXML</span>
+		<span class="method-name">
+			userGetFriends
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoduserGetNeighbours" id="userGetNeighbours"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">userGetNeighbours</span> (line <span class="line-number">318</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Utility function that returns a list of people with similar listening preferences to this user</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> object containing result set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">SimpleXML</span>
+		<span class="method-name">
+			userGetNeighbours
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoduserGetProfileInformation" id="userGetProfileInformation"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">userGetProfileInformation</span> (line <span class="line-number">221</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Utility function to get Audioscrobbler profile information (eg: Name, Gender)</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> containing information</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			userGetProfileInformation
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoduserGetRecentBannedTracks" id="userGetRecentBannedTracks"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">userGetRecentBannedTracks</span> (line <span class="line-number">340</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Utility function that returns a list of the 10 tracks most recently banned by this user</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> object containing result set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">SimpleXML</span>
+		<span class="method-name">
+			userGetRecentBannedTracks
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoduserGetRecentLovedTracks" id="userGetRecentLovedTracks"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">userGetRecentLovedTracks</span> (line <span class="line-number">351</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Utility function that returns a list of the 10 tracks most recently loved by this user</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> object containing result set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">SimpleXML</span>
+		<span class="method-name">
+			userGetRecentLovedTracks
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoduserGetRecentTracks" id="userGetRecentTracks"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">userGetRecentTracks</span> (line <span class="line-number">329</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Utility function that returns a list of the 10 most recent tracks played by this user</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> object containing result set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">SimpleXML</span>
+		<span class="method-name">
+			userGetRecentTracks
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoduserGetTopAlbums" id="userGetTopAlbums"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">userGetTopAlbums</span> (line <span class="line-number">241</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Utility function to get this user's 50 most played albums</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> object containing result set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">SimpleXML</span>
+		<span class="method-name">
+			userGetTopAlbums
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoduserGetTopArtists" id="userGetTopArtists"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">userGetTopArtists</span> (line <span class="line-number">231</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Utility function get this user's 50 most played artists</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> containing info</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			userGetTopArtists
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoduserGetTopTags" id="userGetTopTags"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">userGetTopTags</span> (line <span class="line-number">261</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Utility function to get this user's 50 most used tags</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> object containing result set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">SimpleXML</span>
+		<span class="method-name">
+			userGetTopTags
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoduserGetTopTagsForAlbum" id="userGetTopTagsForAlbum"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">userGetTopTagsForAlbum</span> (line <span class="line-number">284</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Utility function that returns this user's top tags for an album</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> object containing result set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">SimpleXML</span>
+		<span class="method-name">
+			userGetTopTagsForAlbum
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoduserGetTopTagsForArtist" id="userGetTopTagsForArtist"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">userGetTopTagsForArtist</span> (line <span class="line-number">272</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Utility function that returns the user's top tags used most used on a specific artist</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> object containing result set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">SimpleXML</span>
+		<span class="method-name">
+			userGetTopTagsForArtist
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoduserGetTopTagsForTrack" id="userGetTopTagsForTrack"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">userGetTopTagsForTrack</span> (line <span class="line-number">296</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Utility function that returns this user's top tags for a track</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> object containing result set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">SimpleXML</span>
+		<span class="method-name">
+			userGetTopTagsForTrack
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoduserGetTopTracks" id="userGetTopTracks"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">userGetTopTracks</span> (line <span class="line-number">251</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Utility function to get this user's 50 most played tracks</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> object containing resut set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">SimpleXML</span>
+		<span class="method-name">
+			userGetTopTracks
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoduserGetWeeklyAlbumChart" id="userGetWeeklyAlbumChart"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">userGetWeeklyAlbumChart</span> (line <span class="line-number">377</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Utility function that returns weekly album chart data for this user</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> object containing result set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">SimpleXML</span>
+		<span class="method-name">
+			userGetWeeklyAlbumChart
+		</span>
+					([<span class="var-type">integer</span>&nbsp;<span class="var-name">$from</span> = <span class="var-default">NULL</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$to</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$from</span><span class="var-description">: optional UNIX timestamp for start of date range</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$to</span><span class="var-description">: optional UNIX timestamp for end of date range</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoduserGetWeeklyArtistChart" id="userGetWeeklyArtistChart"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">userGetWeeklyArtistChart</span> (line <span class="line-number">398</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Utility function that returns weekly artist chart data for this user</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> object containing result set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">SimpleXML</span>
+		<span class="method-name">
+			userGetWeeklyArtistChart
+		</span>
+					([<span class="var-type">integer</span>&nbsp;<span class="var-name">$from</span> = <span class="var-default">NULL</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$to</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$from</span><span class="var-description">: optional UNIX timestamp for start of date range</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$to</span><span class="var-description">: optional UNIX timestamp for end of date range</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoduserGetWeeklyChartList" id="userGetWeeklyChartList"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">userGetWeeklyChartList</span> (line <span class="line-number">363</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Utility function that returns a list of dates of available weekly charts for a this user</p>
+<p class="description"><p>Should actually be named userGetWeeklyChartDateList() but we have to follow audioscrobbler's naming</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> object containing result set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">SimpleXML</span>
+		<span class="method-name">
+			userGetWeeklyChartList
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoduserGetWeeklyTrackChart" id="userGetWeeklyTrackChart"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">userGetWeeklyTrackChart</span> (line <span class="line-number">419</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Utility function that returns weekly track chart data for this user</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> object containing result set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">SimpleXML</span>
+		<span class="method-name">
+			userGetWeeklyTrackChart
+		</span>
+					([<span class="var-type">integer</span>&nbsp;<span class="var-name">$from</span> = <span class="var-default">NULL</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$to</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$from</span><span class="var-description">: optional UNIX timestamp for start of date range</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$to</span><span class="var-description">: optional UNIX timestamp for end of date range</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_errorHandler" id="_errorHandler"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_errorHandler</span> (line <span class="line-number">616</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Saves the provided error information to this instance</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_errorHandler
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$errno</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$errstr</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$errfile</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$errline</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$errcontext</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$errno</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$errstr</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$errfile</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$errline</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$errcontext</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_getInfo" id="_getInfo"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_getInfo</span> (line <span class="line-number">148</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Protected method that queries REST service and returns SimpleXML response set</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> result set</li>
+				<li><span class="field">throws:</span> Zend_Service_Exception</li>
+				<li><span class="field">throws:</span> Zend_Http_Client_Exception</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">SimpleXMLElement</span>
+		<span class="method-name">
+			_getInfo
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$service</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$service</span><span class="var-description">: name of Audioscrobbler service file we're accessing</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$params</span><span class="var-description">: parameters that we send to the service if needded</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:04:03 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

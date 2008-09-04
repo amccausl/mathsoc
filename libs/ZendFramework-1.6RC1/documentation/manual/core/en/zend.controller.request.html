@@ -1,0 +1,502 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>7.4. The Request Object</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="prev" href="zend.controller.front.html" title="7.3. The Front Controller">
+<link rel="next" href="zend.controller.router.html" title="7.5. The Standard Router: Zend_Controller_Router_Rewrite">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.controller.request.html#zend.controller.request.introduction" title="7.4.1. Introduction">
+<link rel="subsection" href="zend.controller.request.html#zend.controller.request.http" title="7.4.2. HTTP Requests">
+<link rel="subsection" href="zend.controller.request.html#zend.controller.request.subclassing" title="7.4.3. Subclassing the Request Object">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">7.4. The Request Object</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.controller.front.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 7. Zend_Controller</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.controller.router.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.controller.request"></a>7.4. The Request Object</h2></div></div></div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.controller.request.introduction"></a>7.4.1. Introduction</h3></div></div></div>
+<p>
+            The request object is a simple value object that is passed between
+            <code class="code">Zend_Controller_Front</code> and the router, dispatcher, and
+            controller classes.  It packages the names of the requested module,
+            controller, action, and optional parameters, as well as the rest of
+            the request environment, be it HTTP, the CLI, or PHP-GTK.
+        </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                The module name is accessed by
+                <code class="code">getModuleName()</code> and
+                <code class="code">setModuleName()</code>.
+            </p></li>
+<li><p>
+                The controller name is accessed by
+                <code class="code">getControllerName()</code> and
+                <code class="code">setControllerName()</code>.
+            </p></li>
+<li><p>
+                The name of the action to call within that controller is
+                accessed by <code class="code">getActionName()</code> and
+                <code class="code">setActionName()</code>.
+            </p></li>
+<li><p>
+                Parameters to be accessible by the action are an associative array
+                of key/value pairs that are retrieved by <code class="code">getParams()</code>
+                and set with <code class="code">setParams()</code>, or individually by
+                <code class="code">getParam()</code> and <code class="code">setParam()</code>.
+            </p></li>
+</ul></div>
+<p>
+            Based on the type of request, there may be more methods available.
+            The default request used, <code class="code">Zend_Controller_Request_Http</code>,
+            for instance, has methods for retrieving the request URI, path
+            information, <code class="code">$_GET</code> and <code class="code">$_POST</code> parameters,
+            etc.
+        </p>
+<p>
+            The request object is passed to the front controller, or if none is
+            provided, it is instantiated at the beginning of the dispatch
+            process, before routing occurs. It is passed through to every object
+            in the dispatch chain.
+        </p>
+<p>
+            Additionally, the request object is particularly useful in testing.
+            The developer may craft the request environment, including module,
+            controller, action, parameters, URI, etc, and pass the request
+            object to the front controller to test application flow. When paired
+            with the <a href="zend.controller.response.html" title="7.9. The Response Object">response
+                object</a>, elaborate and precise unit testing of MVC
+            applications becomes possible.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.controller.request.http"></a>7.4.2. HTTP Requests</h3></div></div></div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.controller.request.http.dataacess"></a>7.4.2.1. Accessing Request Data</h4></div></div></div>
+<p>
+                <code class="code">Zend_Controller_Request_Http</code> encapsulates access to
+                relevant values such as the key name and value for the
+                controller and action router variables, and all additional
+                parameters parsed from the URI. It additionally allows access to
+                values contained in the superglobals as public members, and
+                manages the current Base URL and Request URI.  Superglobal
+                values cannot be set on a request object, instead use the
+                setParam/getParam methods to set or retrieve user parameters.
+            </p>
+<div class="note"><table border="0" summary="Note: Superglobal data">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Superglobal data</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+                    When accessing superglobal data through
+                    <code class="code">Zend_Controller_Request_Http</code> as public member
+                    properties, it is necessary to keep in mind that the
+                    property name (superglobal array key) is matched to a
+                    superglobal in a specific order of precedence: 1. GET, 2.
+                    POST, 3. COOKIE, 4. SERVER, 5. ENV.
+                </p></td></tr>
+</table></div>
+<p>
+                Specific superglobals can be accessed using a public method as
+                an alternative. For example, the raw value of
+                <code class="code">$_POST['user']</code> can be accessed by calling
+                <code class="code">getPost('user')</code> on the request object. These
+                include <code class="code">getQuery()</code> for retrieving
+                <code class="code">$_GET</code> elements, and <code class="code">getHeader()</code> for
+                retrieving request headers.
+            </p>
+<div class="note"><table border="0" summary="Note: GET and POST data">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">GET and POST data</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+                    Be cautious when accessing data from the request object as
+                    it is not filtered in any way. The router and dispatcher
+                    validate and filter data for use with their tasks, but leave
+                    the data untouched in the request object.
+                </p></td></tr>
+</table></div>
+<div class="note"><table border="0" summary="Note: Retrieve the Raw POST Data, Too!">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Retrieve the Raw POST Data, Too!</th>
+</tr>
+<tr><td align="left" valign="top">
+<p>
+                    As of 1.5.0, you can also retrieve the raw post data via the
+                    <code class="code">getRawBody()</code> method. This method returns false
+                    if no data was submitted in that fashion, but the full body
+                    of the post otherwise.
+                </p>
+<p>
+                    This is primarily useful for accepting content when
+                    developing a RESTful MVC application.
+                </p>
+</td></tr>
+</table></div>
+<p>
+                You may also set user parameters in the request object using
+                <code class="code">setParam()</code> and retrieve these later using
+                <code class="code">getParam()</code>. The router makes use of this
+                functionality to set parameters matched in the request URI into
+                the request object.
+            </p>
+<div class="note"><table border="0" summary="Note: getParam() retrieves more than user params">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">getParam() retrieves more than user params</th>
+</tr>
+<tr><td align="left" valign="top">
+<p>
+                    In order to do some of its work, <code class="code">getParam()</code> actually
+                    retrieves from several sources. In order of priority, these
+                    include: user parameters set via <code class="code">setParam()</code>,
+                    <code class="code">GET</code> parameters, and finally <code class="code">POST</code>
+                    parameters.  Be aware of this when pulling data via this
+                    method.
+                </p>
+<p>
+                    If you wish to pull only from parameters you set via
+                    <code class="code">setParam()</code>, use the <code class="code">getUserParam()</code>.
+                </p>
+<p>
+                    Additionally, as of 1.5.0, you can lock down which parameter
+                    sources will be searched. <code class="code">setParamSources()</code>
+                    allows you to specify an empty array or an array with one or
+                    more of the values '_GET' or '_POST' indicating which
+                    parameter sources are allowed (by default, both are
+                    allowed); if you wish to restrict access to only '_GET'
+                    specify <code class="code">setParamSources(array('_GET'))</code>.
+                </p>
+</td></tr>
+</table></div>
+<div class="note"><table border="0" summary="Note: Apache Quirks">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Apache Quirks</th>
+</tr>
+<tr><td align="left" valign="top">
+<p>
+                    If you are using Apache's 404 handler to pass incoming
+                    requests to the front controller, or using a PT flag with
+                    rewrite rules, <code class="code">$_SERVER['REDIRECT_URL']</code>
+                    contains the URI you need, not
+                    <code class="code">$_SERVER['REQUEST_URI']</code>. If you are using such
+                    a setup and getting invalid routing, you should use the
+                    <code class="code">Zend_Controller_Request_Apache404</code> class instead
+                    of the default Http class for your request object:
+                </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Controller/Request/Apache404.php';
+$request = new Zend_Controller_Request_Apache404();
+$front-&gt;setRequest($request);
+                </pre>
+<p>
+                    This class extends the
+                    <code class="code">Zend_Controller_Request_Http</code> class and simply
+                    modifies the autodiscovery of the request URI. It can be
+                    used as a drop-in replacement.
+                </p>
+</td></tr>
+</table></div>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.controller.request.http.baseurl"></a>7.4.2.2. Base Url and Subdirectories</h4></div></div></div>
+<p>
+                <code class="code">Zend_Controller_Request_Http</code> allows
+                Zend_Controller_Router_Rewrite to be used in subdirectories.
+                Zend_Controller_Request_Http will attempt to automatically
+                detect your base URL and set it accordingly.
+            </p>
+<p>
+                For example, if you keep your <code class="code">index.php</code> in a
+                webserver subdirectory named
+                <code class="code">/projects/myapp/index.php</code>, base URL (rewrite base)
+                should be set to <code class="code">/projects/myapp</code>. This string will
+                then be stripped from the beginning of the path before
+                calculating any route matches. This frees one from the necessity
+                of prepending it to any of your routes. A route of
+                <code class="code">'user/:username'</code> will match URIs like
+                <code class="code">http://localhost/projects/myapp/user/martel</code> and
+                <code class="code">http://example.com/user/martel</code>.
+            </p>
+<div class="note"><table border="0" summary="Note: URL detection is case sensitive">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">URL detection is case sensitive</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+                    Automatic base URL detection is case sensitive, so make sure your URL
+                    will match a subdirectory name in a filesystem (even on Windows
+                    machines). If it doesn't, an exception will be raised.
+                </p></td></tr>
+</table></div>
+<p>
+                Should base URL be detected incorrectly you can override it
+                with your own base path with the help of the
+                <code class="code">setBaseUrl()</code> method of either the
+                <code class="code">Zend_Controller_Request_Http</code> class, or the
+                <code class="code">Zend_Controller_Front</code> class. The easiest
+                method is to set it in <code class="code">Zend_Controller_Front</code>,
+                which will proxy it into the request object. Example usage to
+                set a custom base URL:
+            </p>
+<pre class="programlisting">&lt;?php
+/**
+ * Dispatch Request with custom base URL with Zend_Controller_Front.
+ */
+$router     = new Zend_Controller_Router_Rewrite();
+$controller = Zend_Controller_Front::getInstance();
+$controller-&gt;setControllerDirectory('./application/controllers')
+           -&gt;setRouter($router)
+           -&gt;setBaseUrl('/projects/myapp'); // set the base url!
+$response   = $controller-&gt;dispatch();
+            </pre>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.controller.request.http.method"></a>7.4.2.3. Determining the Request Method</h4></div></div></div>
+<p>
+                <code class="code">getMethod()</code> allows you to determine the HTTP
+                request method used to request the current resource.
+                Additionally, a variety of methods exist that allow you to get
+                boolean responses when asking if a specific type of request has
+                been made:
+            </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p><code class="code">isGet()</code></p></li>
+<li><p><code class="code">isPost()</code></p></li>
+<li><p><code class="code">isPut()</code></p></li>
+<li><p><code class="code">isDelete()</code></p></li>
+<li><p><code class="code">isHead()</code></p></li>
+<li><p><code class="code">isOptions()</code></p></li>
+</ul></div>
+<p>
+                The primary use case for these is for creating RESTful MVC
+                architectures.
+            </p>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.controller.request.http.ajax"></a>7.4.2.4. Detecting AJAX Requests</h4></div></div></div>
+<p>
+                <code class="code">Zend_Controller_Request_Http</code> has a rudimentary
+                method for detecting AJAX requests:
+                <code class="code">isXmlHttpRequest()</code>. This method looks for an
+                HTTP request header <code class="code">X-Requested-With</code> with the value
+                'XMLHttpRequest'; if found, it returns true.
+            </p>
+<p>
+                Currently, this header is known to be passed by default with the
+                following JS libraries:
+            </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>Prototype/Scriptaculous (and libraries derived
+                        from Prototype)</p></li>
+<li><p>Yahoo! UI Library</p></li>
+<li><p>jQuery</p></li>
+<li><p>MochiKit</p></li>
+</ul></div>
+<p>
+                Most AJAX libraries allow you to send custom HTTP request
+                headers; if your library does not send this header, simply add
+                it as a request header to ensure the
+                <code class="code">isXmlHttpRequest()</code> method works for you.
+            </p>
+</div>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.controller.request.subclassing"></a>7.4.3. Subclassing the Request Object</h3></div></div></div>
+<p>
+            The base request class used for all request objects is the abstract
+            class <code class="code">Zend_Controller_Request_Abstract</code>. At its most
+            basic, it defines the following methods:
+        </p>
+<pre class="programlisting">
+abstract class Zend_Controller_Request_Abstract
+{
+    /**
+     * @return string
+     */
+    public function getControllerName();
+
+    /**
+     * @param string $value
+     * @return self
+     */
+    public function setControllerName($value);
+
+    /**
+     * @return string
+     */
+    public function getActionName();
+
+    /**
+     * @param string $value
+     * @return self
+     */
+    public function setActionName($value);
+
+    /**
+     * @return string
+     */
+    public function getControllerKey();
+
+    /**
+     * @param string $key
+     * @return self
+     */
+    public function setControllerKey($key);
+
+    /**
+     * @return string
+     */
+    public function getActionKey();
+
+    /**
+     * @param string $key
+     * @return self
+     */
+    public function setActionKey($key);
+
+    /**
+     * @param string $key
+     * @return mixed
+     */
+    public function getParam($key);
+
+    /**
+     * @param string $key
+     * @param mixed $value
+     * @return self
+     */
+    public function setParam($key, $value);
+
+    /**
+     * @return array
+     */
+     public function getParams();
+
+    /**
+     * @param array $array
+     * @return self
+     */
+    public function setParams(array $array);
+
+    /**
+     * @param boolean $flag
+     * @return self
+     */
+    public function setDispatched($flag = true);
+
+    /**
+     * @return boolean
+     */
+    public function isDispatched();
+}
+        </pre>
+<p>
+            The request object is a container for the request environment. The
+            controller chain really only needs to know how to set and retrieve the
+            controller, action, optional parameters, and dispatched status. By
+            default, the request will search its own parameters using the
+            controller or action keys in order to determine the controller and
+            action.
+        </p>
+<p>
+            Extend this class, or one of its derivatives, when you need the
+            request class to interact with a specific environment in order to
+            retrieve data for use in the above tasks. Examples include <a href="zend.controller.request.html#zend.controller.request.http" title="7.4.2. HTTP Requests">the HTTP
+                environment</a>, a CLI environment, or a PHP-GTK environment.
+        </p>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.controller.front.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.controller.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.controller.router.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">7.3. The Front Controller </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 7.5. The Standard Router: Zend_Controller_Router_Rewrite</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

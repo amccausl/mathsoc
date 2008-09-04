@@ -1,0 +1,982 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Mail_Protocol_Pop3</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_Mail_Protocol_Pop3</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Mail---Protocol---Pop3.php.html">/Mail/Protocol/Pop3.php</a> (line <span class="field">31</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																								<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">null|bool</span>
+					<a href="#$hasTop" title="details" class="var-name">$hasTop</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">null|resource</span>
+					<a href="#$_socket" title="details" class="var-name">$_socket</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">null|string</span>
+					<a href="#$_timestamp" title="details" class="var-name">$_timestamp</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																															
+				<div class="method-definition">
+					<img src="../../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">Zend_Mail_Protocol_Pop3</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$host</span> = <span class="var-default">''</span>], [<span class="var-type">int|null</span>&nbsp;<span class="var-name">$port</span> = <span class="var-default">null</span>], [<span class="var-type">bool|string</span>&nbsp;<span class="var-name">$ssl</span> = <span class="var-default">false</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Destructor.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#__destruct" title="details" class="method-name">__destruct</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#capa" title="details" class="method-name">capa</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#connect" title="details" class="method-name">connect</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$host</span>, [<span class="var-type">int|null</span>&nbsp;<span class="var-name">$port</span> = <span class="var-default">null</span>], [<span class="var-type">string|bool</span>&nbsp;<span class="var-name">$ssl</span> = <span class="var-default">false</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">null</span>
+										<a href="#delete" title="details" class="method-name">delete</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$msgno</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">int|array</span>
+										<a href="#getList" title="details" class="method-name">getList</a>
+											([<span class="var-type">int|null</span>&nbsp;<span class="var-name">$msgno</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#login" title="details" class="method-name">login</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$user</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$tryApop</span> = <span class="var-default">true</span>], <span class="var-type">bool</span>&nbsp;<span class="var-name">$try_apop</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">null</span>
+										<a href="#logout" title="details" class="method-name">logout</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">null</span>
+										<a href="#noop" title="details" class="method-name">noop</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#readResponse" title="details" class="method-name">readResponse</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$multiline</span> = <span class="var-default">false</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#request" title="details" class="method-name">request</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$request</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$multiline</span> = <span class="var-default">false</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#retrieve" title="details" class="method-name">retrieve</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$msgno</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#retrive" title="details" class="method-name">retrive</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$msgno</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">null</span>
+										<a href="#sendRequest" title="details" class="method-name">sendRequest</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$request</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#status" title="details" class="method-name">status</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">&$messages</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$octets</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$messages</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$octets</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#top" title="details" class="method-name">top</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$msgno</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$lines</span> = <span class="var-default">0</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$fallback</span> = <span class="var-default">false</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">null</span>
+										<a href="#undelete" title="details" class="method-name">undelete</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string|array</span>
+										<a href="#uniqueid" title="details" class="method-name">uniqueid</a>
+											([<span class="var-type">int|null</span>&nbsp;<span class="var-name">$msgno</span> = <span class="var-default">null</span>])
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$hasTop" id="$hasTop"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">null|bool</span>
+			<span class="var-name">$hasTop</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">37</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">saves if server supports top</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_socket" id="$_socket"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">null|resource</span>
+			<span class="var-name">$_socket</span>
+						(line <span class="line-number">43</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">socket to pop3</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_timestamp" id="$_timestamp"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">null|string</span>
+			<span class="var-name">$_timestamp</span>
+						(line <span class="line-number">49</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">greeting timestamp for apop</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">60</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Public constructor</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Mail_Protocol_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Zend_Mail_Protocol_Pop3</span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$host</span> = <span class="var-default">''</span>], [<span class="var-type">int|null</span>&nbsp;<span class="var-name">$port</span> = <span class="var-default">null</span>], [<span class="var-type">bool|string</span>&nbsp;<span class="var-name">$ssl</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$host</span><span class="var-description">: hostname of IP address of POP3 server, if given connect() is called</span>			</li>
+					<li>
+				<span class="var-type">int|null</span>
+				<span class="var-name">$port</span><span class="var-description">: port of POP3 server, null for default (110 or 995 for ssl)</span>			</li>
+					<li>
+				<span class="var-type">bool|string</span>
+				<span class="var-name">$ssl</span><span class="var-description">: use ssl? 'SSL', 'TLS' or false</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__destruct" id="__destruct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Destructor.png" />
+		<span class="method-title">Destructor __destruct</span> (line <span class="line-number">71</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Public destructor</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__destruct
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodcapa" id="capa"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">capa</span> (line <span class="line-number">243</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get capabilities from POP3 server</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> list of capabilities</li>
+				<li><span class="field">throws:</span> Zend_Mail_Protocol_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			capa
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodconnect" id="connect"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">connect</span> (line <span class="line-number">86</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Open connection to POP3 server</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> welcome message</li>
+				<li><span class="field">throws:</span> Zend_Mail_Protocol_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			connect
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$host</span>, [<span class="var-type">int|null</span>&nbsp;<span class="var-name">$port</span> = <span class="var-default">null</span>], [<span class="var-type">string|bool</span>&nbsp;<span class="var-name">$ssl</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$host</span><span class="var-description">: hostname of IP address of POP3 server</span>			</li>
+					<li>
+				<span class="var-type">int|null</span>
+				<span class="var-name">$port</span><span class="var-description">: of POP3 server, default is 110 (995 for ssl)</span>			</li>
+					<li>
+				<span class="var-type">string|bool</span>
+				<span class="var-name">$ssl</span><span class="var-description">: use 'SSL', 'TLS' or false</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddelete" id="delete"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">delete</span> (line <span class="line-number">445</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Make a DELE count to remove a message</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Mail_Protocol_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">null</span>
+		<span class="method-name">
+			delete
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$msgno</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$msgno</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetList" id="getList"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getList</span> (line <span class="line-number">300</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Make LIST call for size of message(s)</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> size of given message or list with array(num =&gt; size)</li>
+				<li><span class="field">throws:</span> Zend_Mail_Protocol_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int|array</span>
+		<span class="method-name">
+			getList
+		</span>
+					([<span class="var-type">int|null</span>&nbsp;<span class="var-name">$msgno</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int|null</span>
+				<span class="var-name">$msgno</span><span class="var-description">: number of message, null for all</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodlogin" id="login"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">login</span> (line <span class="line-number">259</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Login to POP3 server. Can use APOP</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Mail_Protocol_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			login
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$user</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$tryApop</span> = <span class="var-default">true</span>], <span class="var-type">bool</span>&nbsp;<span class="var-name">$try_apop</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$user</span><span class="var-description">: username</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$password</span><span class="var-description">: password</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$try_apop</span><span class="var-description">: should APOP be tried?</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$tryApop</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodlogout" id="logout"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">logout</span> (line <span class="line-number">220</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">End communication with POP3 server (also closes socket)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">null</span>
+		<span class="method-name">
+			logout
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodnoop" id="noop"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">noop</span> (line <span class="line-number">433</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Make a NOOP call, maybe needed for keeping the server happy</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Mail_Protocol_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">null</span>
+		<span class="method-name">
+			noop
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodreadResponse" id="readResponse"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">readResponse</span> (line <span class="line-number">158</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">read a response</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> response</li>
+				<li><span class="field">throws:</span> Zend_Mail_Protocol_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			readResponse
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$multiline</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$multiline</span><span class="var-description">: response has multiple lines and should be read until &quot;&lt;nl&gt;.&lt;nl&gt;&quot;</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrequest" id="request"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">request</span> (line <span class="line-number">208</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Send request and get resposne</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> result from readResponse()</li>
+				<li><span class="field">see:</span> <a href="../../Zend_Mail/Protocol/Zend_Mail_Protocol_Pop3.html#methodsendRequest">Zend_Mail_Protocol_Pop3::sendRequest()</a>, <a href="../../Zend_Mail/Protocol/Zend_Mail_Protocol_Pop3.html#methodreadResponse">Zend_Mail_Protocol_Pop3::readResponse()</a></li>
+				<li><span class="field">throws:</span> Zend_Mail_Protocol_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			request
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$request</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$multiline</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$request</span><span class="var-description">: request</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$multiline</span><span class="var-description">: multiline response?</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodretrieve" id="retrieve"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">retrieve</span> (line <span class="line-number">421</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Make a RETR call for retrieving a full message with headers and body</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> message</li>
+				<li><span class="field">throws:</span> Zend_Mail_Protocol_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			retrieve
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$msgno</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$msgno</span><span class="var-description">: message number</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodretrive" id="retrive"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">retrive</span> (line <span class="line-number">408</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Make a RETR call for retrieving a full message with headers and body</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> message</li>
+				<li><span class="field">deprecated:</span> since 1.1.0; this method has a typo - please use retrieve()</li>
+				<li><span class="field">throws:</span> Zend_Mail_Protocol_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			retrive
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$msgno</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$msgno</span><span class="var-description">: message number</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsendRequest" id="sendRequest"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">sendRequest</span> (line <span class="line-number">138</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Send a request</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Mail_Protocol_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">null</span>
+		<span class="method-name">
+			sendRequest
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$request</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$request</span><span class="var-description">: your request without newline</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodstatus" id="status"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">status</span> (line <span class="line-number">283</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Make STAT call for message count and size sum</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Mail_Protocol_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			status
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$messages</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$octets</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$messages</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$octets</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$messages</span><span class="var-description">: out parameter with count of messages</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$octets</span><span class="var-description">: out parameter with size in octects of messages</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$messages</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$octets</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtop" id="top"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">top</span> (line <span class="line-number">368</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Make TOP call for getting headers and maybe some body lines  This method also sets hasTop - before it it's not known if top is supported</p>
+<p class="description"><p>The fallback makes normale RETR call, which retrieves the whole message. Additional  lines are not removed.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> message headers with wanted body lines</li>
+				<li><span class="field">throws:</span> Zend_Mail_Protocol_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			top
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$msgno</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$lines</span> = <span class="var-default">0</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$fallback</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$msgno</span><span class="var-description">: number of message</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$lines</span><span class="var-description">: number of wanted body lines (empty line is inserted after header lines)</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$fallback</span><span class="var-description">: fallback with full retrieve if top is not supported</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodundelete" id="undelete"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">undelete</span> (line <span class="line-number">457</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Make RSET call, which rollbacks delete requests</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Mail_Protocol_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">null</span>
+		<span class="method-name">
+			undelete
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoduniqueid" id="uniqueid"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">uniqueid</span> (line <span class="line-number">329</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Make UIDL call for getting a uniqueid</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> uniqueid of message or list with array(num =&gt; uniqueid)</li>
+				<li><span class="field">throws:</span> Zend_Mail_Protocol_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string|array</span>
+		<span class="method-name">
+			uniqueid
+		</span>
+					([<span class="var-type">int|null</span>&nbsp;<span class="var-name">$msgno</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int|null</span>
+				<span class="var-name">$msgno</span><span class="var-description">: number of message, null for all</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:45:24 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

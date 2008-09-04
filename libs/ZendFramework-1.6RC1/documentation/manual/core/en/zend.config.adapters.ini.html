@@ -1,0 +1,223 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>5.3. Zend_Config_Ini</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="prev" href="zend.config.theory_of_operation.html" title="5.2. Theory of Operation">
+<link rel="next" href="zend.config.adapters.xml.html" title="5.4. Zend_Config_Xml">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">5.3. Zend_Config_Ini</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.config.theory_of_operation.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 5. Zend_Config</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.config.adapters.xml.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.config.adapters.ini"></a>5.3. Zend_Config_Ini</h2></div></div></div>
+<p>
+        <code class="code">Zend_Config_Ini</code> enables developers to store configuration data in a familiar INI format and read
+        them in the application by using nested object property syntax. The INI format is specialized to provide both
+        the ability to have a hierarchy of configuration data keys and inheritance between configuration data sections.
+        Configuration data hierarchies are supported by separating the keys with the dot or period character
+        (<code class="code">.</code>). A section may extend or inherit from another section by following the section name with a
+        colon character (<code class="code">:</code>) and the name of the section from which data are to be inherited.
+    </p>
+<div class="note"><table border="0" summary="Note: parse_ini_file">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">parse_ini_file</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+            <code class="code">Zend_Config_Ini</code> utilizes the
+            <a href="http://php.net/parse_ini_file" target="_top"><code class="code">parse_ini_file()</code></a>
+            PHP function. Please review this documentation to be aware of its specific behaviors,
+            which propagate to <code class="code">Zend_Config_Ini</code>, such as how the special values of
+            <code class="code">true</code>, <code class="code">false</code>, <code class="code">yes</code>, <code class="code">no</code>,
+            and <code class="code">null</code> are handled.
+        </p></td></tr>
+</table></div>
+<div class="note"><table border="0" summary="Note: Key Separator">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Key Separator</th>
+</tr>
+<tr><td align="left" valign="top">
+<p>
+            By default, the key separator character is the period character (<code class="code">.</code>). This can be changed,
+            however, by changing the <code class="code">$options</code> key <code class="code">'nestSeparator'</code> when constructing the
+            <code class="code">Zend_Config_Ini</code> object. For example:
+            </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Config/Ini.php';
+$options['nestSeparator'] = ':';
+$config = new Zend_Config_Ini('/path/to/config.ini', 'staging', $options);
+            </pre>
+<p>
+        </p>
+</td></tr>
+</table></div>
+<div class="example">
+<a name="zend.config.adapters.ini.example.using"></a><p class="title"><b>Example 5.3. Using Zend_Config_Ini</b></p>
+<div class="example-contents">
+<p>
+            This example illustrates a basic use of <code class="code">Zend_Config_Ini</code> for loading configuration data from an
+            INI file. In this example there are configuration data for both a production system and for a staging
+            system. Because the staging system configuration data are very similar to those for production, the staging
+            section inherits from the production section. In this case, the decision is arbitrary and could have been
+            written conversely, with the production section inheriting from the staging section, though this may not be
+            the case for more complex situations. Suppose, then, that the following configuration data are contained in
+            <code class="code">/path/to/config.ini</code>:
+        </p>
+<pre class="programlisting">; Production site configuration data
+[production]
+webhost                  = www.example.com
+database.adapter         = pdo_mysql
+database.params.host     = db.example.com
+database.params.username = dbuser
+database.params.password = secret
+database.params.dbname   = dbname
+
+; Staging site configuration data inherits from production and
+; overrides values as necessary
+[staging : production]
+database.params.host     = dev.example.com
+database.params.username = devuser
+database.params.password = devsecret
+        </pre>
+<p>
+            Next, assume that the application developer needs the staging configuration data from the INI file. It is a
+            simple matter to load these data by specifying the INI file and the staging section:
+        </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Config/Ini.php';
+
+$config = new Zend_Config_Ini('/path/to/config.ini', 'staging');
+
+echo $config-&gt;database-&gt;params-&gt;host;   // prints "dev.example.com"
+echo $config-&gt;database-&gt;params-&gt;dbname; // prints "dbname"
+        </pre>
+</div>
+</div>
+<br class="example-break"><div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top">
+<div class="table">
+<a name="zend.config.adapters.ini.table"></a><p class="title"><b>Table 5.1. Zend_Config_Ini Constructor parameters</b></p>
+<div class="table-contents"><table summary="Zend_Config_Ini Constructor parameters" border="1">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>Parameter</th>
+<th>Notes</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><code class="code">$filename</code></td>
+<td>The INI file to load.</td>
+</tr>
+<tr>
+<td><code class="code">$section</code></td>
+<td>The [section] within the ini file that is to be loaded. Setting
+                        this parameter to null will load all sections. Alternatively, an
+                        array of section names may be supplied to load multiple sections.</td>
+</tr>
+<tr>
+<td><code class="code">$options = false</code></td>
+<td>Options array. The following keys are supported:
+                        <div class="itemizedlist"><ul type="disc">
+<li><p><span class="emphasis"><em>allowModifications</em></span>: Set to true to allow subsequent modification of loaded file. Defaults to false</p></li>
+<li><p><span class="emphasis"><em>nestSeparator</em></span>: Set to the character to be used as the nest separator. Defaults to "."</p></li>
+</ul></div>
+                    </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<br class="table-break">
+</td></tr>
+</table></div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.config.theory_of_operation.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.config.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.config.adapters.xml.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">5.2. Theory of Operation </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 5.4. Zend_Config_Xml</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

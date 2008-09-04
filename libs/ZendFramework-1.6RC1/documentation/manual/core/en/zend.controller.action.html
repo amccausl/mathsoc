@@ -1,0 +1,648 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>7.7. Action Controllers</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="prev" href="zend.controller.dispatcher.html" title="7.6. The Dispatcher">
+<link rel="next" href="zend.controller.actionhelpers.html" title="7.8. Action Helpers">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.controller.action.html#zend.controller.action.introduction" title="7.7.1. Introduction">
+<link rel="subsection" href="zend.controller.action.html#zend.controller.action.initialization" title="7.7.2. Object initialization">
+<link rel="subsection" href="zend.controller.action.html#zend.controller.action.prepostdispatch" title="7.7.3. Pre- and Post-Dispatch Hooks">
+<link rel="subsection" href="zend.controller.action.html#zend.controller.action.accessors" title="7.7.4. Accessors">
+<link rel="subsection" href="zend.controller.action.html#zend.controller.action.viewintegration" title="7.7.5. View Integration">
+<link rel="subsection" href="zend.controller.action.html#zend.controller.action.utilmethods" title="7.7.6. Utility Methods">
+<link rel="subsection" href="zend.controller.action.html#zend.controller.action.subclassing" title="7.7.7. Subclassing the Action Controller">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">7.7. Action Controllers</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.controller.dispatcher.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 7. Zend_Controller</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.controller.actionhelpers.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.controller.action"></a>7.7. Action Controllers</h2></div></div></div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.controller.action.introduction"></a>7.7.1. Introduction</h3></div></div></div>
+<p>
+            <code class="code">Zend_Controller_Action</code> is an abstract class you may use
+            for implementing Action Controllers for use with the Front
+            Controller when building a website based on the
+            Model-View-Controller (MVC) pattern.
+        </p>
+<p>
+            To use <code class="code">Zend_Controller_Action</code>, you will need to
+            subclass it in your actual action controller classes (or subclass it
+            to create your own base class for action controllers). The most
+            basic operation is to subclass it, and create action methods that
+            correspond to the various actions you wish the controller to handle
+            for your site.  Zend_Controller's routing and dispatch handling will
+            autodiscover any methods ending in 'Action' in your class as
+            potential controller actions.
+        </p>
+<p>
+            For example, let's say your class is defined as follows:
+        </p>
+<pre class="programlisting">
+class FooController extends Zend_Controller_Action
+{
+    public function barAction()
+    {
+        // do something
+    }
+
+    public function bazAction()
+    {
+        // do something
+    }
+}
+
+        </pre>
+<p>
+            The above <code class="code">FooController</code> class (controller
+            <code class="code">foo</code>) defines two actions, <code class="code">bar</code> and
+            <code class="code">baz</code>.
+        </p>
+<p>
+            There's much more that can be accomplished than this, such as custom
+            initialization actions, default actions to call should no action (or
+            an invalid action) be specified, pre- and post-dispatch hooks, and a
+            variety of helper methods. This chapter serves as an overview of the
+            action controller functionality
+        </p>
+<div class="note"><table border="0" summary="Note: Default Behaviour">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Default Behaviour</th>
+</tr>
+<tr><td align="left" valign="top">
+<p>
+                By default, the <a href="zend.controller.front.html" title="7.3. The Front Controller">front
+                    controller</a> enables the <a href="zend.controller.actionhelpers.html#zend.controller.actionhelpers.viewrenderer" title="7.8.4.7. ViewRenderer">ViewRenderer</a>
+                action helper. This helper takes care of injecting the view
+                object into the controller, as well as automatically rendering
+                views. You may disable it within your action controller via one
+                of the following methods:
+            </p>
+<pre class="programlisting">&lt;?php
+class FooController extends Zend_Controller_Action
+{
+    public function init()
+    {
+        // Local to this controller only; affects all actions, as loaded in init:
+        $this-&gt;_helper-&gt;viewRenderer-&gt;setNoRender(true);
+
+        // Globally:
+        $this-&gt;_helper-&gt;removeHelper('viewRenderer');
+
+        // Also globally, but would need to be in conjunction with the local
+        // version in order to propagate for this controller:
+        Zend_Controller_Front::getInstance()-&gt;setParam('noViewRenderer', true);
+    }
+}
+            </pre>
+<p>
+                <code class="code">initView()</code>, <code class="code">getViewScript()</code>,
+                <code class="code">render()</code>, and <code class="code">renderScript()</code> each
+                proxy to the <code class="code">ViewRenderer</code> unless the helper is not
+                in the helper broker or the <code class="code">noViewRenderer</code> flag has
+                been set.
+            </p>
+<p>
+                You can also simply disable rendering for an individual view by
+                setting the <code class="code">ViewRenderer</code>'s <code class="code">noRender</code>
+                flag:
+            </p>
+<pre class="programlisting">&lt;?php
+class FooController extends Zend_Controller_Action
+{
+    public function barAction()
+    {
+        // disable autorendering for this action only:
+        $this-&gt;_helper-&gt;viewRenderer-&gt;setNoRender();
+    }
+}
+            </pre>
+<p>
+                The primary reasons to disable the <code class="code">ViewRenderer</code> are
+                if you simply do not need a view object or if you are not
+                rendering via view scripts (for instance, when using an action
+                controller to serve web service protocols such as SOAP, XML-RPC,
+                or REST). In most cases, you will never need to globally disable
+                the <code class="code">ViewRenderer</code>, only selectively within
+                individual controllers or actions.
+            </p>
+</td></tr>
+</table></div>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.controller.action.initialization"></a>7.7.2. Object initialization</h3></div></div></div>
+<p>
+            While you can always override the action controller's constructor,
+            we do not recommend this. Zend_Controller_Action::__construct()
+            performs some important tasks, such as registering the request and
+            response objects, as well as any custom invocation arguments passed
+            in from the front controller. If you must override the constructor,
+            be sure to call <code class="code">parent::__construct($request, $response,
+            $invokeArgs)</code>.
+        </p>
+<p>
+            The more appropriate way to customize instantiation is to use the
+            <code class="code">init()</code> method, which is called as the last task of
+            <code class="code">__construct()</code>.  For example, if you want to connect to
+            a database at instantiation:
+        </p>
+<pre class="programlisting">
+class FooController extends Zend_Controller_Action
+{
+    public function init()
+    {
+        $this-&gt;db = Zend_Db::factory('Pdo_Mysql', array(
+            'host'     =&gt; 'myhost',
+            'username' =&gt; 'user',
+            'password' =&gt; 'XXXXXXX',
+            'dbname'   =&gt; 'website'
+        ));
+    }
+}
+
+        </pre>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.controller.action.prepostdispatch"></a>7.7.3. Pre- and Post-Dispatch Hooks</h3></div></div></div>
+<p>
+            <code class="code">Zend_Controller_Action</code> specifies two methods that may
+            be called to bookend a requested action, <code class="code">preDispatch()</code>
+            and <code class="code">postDispatch()</code>. These can be useful in a variety of
+            ways: verifying authentication and ACLs prior to running an action
+            (by calling <code class="code">_forward()</code> in <code class="code">preDispatch()</code>,
+            the action will be skipped), for instance, or placing generated
+            content in a sitewide template (<code class="code">postDispatch()</code>).
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.controller.action.accessors"></a>7.7.4. Accessors</h3></div></div></div>
+<p>
+            A number of objects and variables are registered with the object,
+            and each has accessor methods.
+        </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                <span class="emphasis"><em>Request Object</em></span>: <code class="code">getRequest()</code>
+                may be used to retrieve the request object used to call the
+                action.
+            </p></li>
+<li>
+<p>
+                    <span class="emphasis"><em>Response Object</em></span>:
+                    <code class="code">getResponse()</code> may be used to retrieve the
+                    response object aggregating the final response. Some typical
+                    calls might look like:
+                </p>
+<pre class="programlisting">
+$this-&gt;getResponse()-&gt;setHeader('Content-Type', 'text/xml');
+$this-&gt;getResponse()-&gt;appendBody($content);
+
+                </pre>
+</li>
+<li><p>
+                    <span class="emphasis"><em>Invocation Arguments</em></span>: the front
+                    controller may push parameters into the router, dispatcher,
+                    and action controller. To retrieve these, use
+                    <code class="code">getInvokeArg($key)</code>; alternatively, fetch the
+                    entire list using <code class="code">getInvokeArgs()</code>.
+                </p></li>
+<li>
+<p>
+                    <span class="emphasis"><em>Request parameters</em></span>: The request object
+                    aggregates request parameters, such as any _GET or _POST
+                    parameters, or user parameters specified in the URL's path
+                    information. To retrieve these, use
+                    <code class="code">_getParam($key)</code> or
+                    <code class="code">_getAllParams()</code>. You may also set request
+                    parameters using <code class="code">_setParam()</code>; this is useful
+                    when forwarding to additional actions.
+                </p>
+<p>
+                    To test whether or not a parameter exists (useful for
+                    logical branching), use <code class="code">_hasParam($key)</code>.
+                </p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top">
+<p>
+                        <code class="code">_getParam()</code> may take an optional second
+                        argument containing a default value to use if the
+                        parameter is not set or is empty. Using it eliminates
+                        the need to call <code class="code">_hasParam()</code> prior to
+                        retrieving a value:
+                    </p>
+<pre class="programlisting">&lt;?php
+// Use default value of 1 if id is not set
+$id = $this-&gt;_getParam('id', 1);
+
+// Instead of:
+if ($this-&gt;_hasParam('id') {
+    $id = $this-&gt;_getParam('id');
+} else {
+    $id = 1;
+}
+                    </pre>
+</td></tr>
+</table></div>
+</li>
+</ul></div>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.controller.action.viewintegration"></a>7.7.5. View Integration</h3></div></div></div>
+<p>
+            <code class="code">Zend_Controller_Action</code> provides a rudimentary and
+            flexible mechanism for view integration. Two methods accomplish
+            this, <code class="code">initView()</code> and <code class="code">render()</code>; the former
+            method lazy-loads the <code class="code">$view</code> public property, and the
+            latter renders a view based on the current requested action, using
+            the directory hierarchy to determine the script path.
+        </p>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.controller.action.viewintegration.initview"></a>7.7.5.1. View Initialization</h4></div></div></div>
+<p>
+                <code class="code">initView()</code> initializes the view object.
+                <code class="code">render()</code> calls <code class="code">initView()</code> in order to
+                retrieve the view object, but it may be initialized at any time;
+                by default it populates the <code class="code">$view</code> property with a
+                <code class="code">Zend_View</code> object, but any class implementing
+                <code class="code">Zend_View_Interface</code> may be used. If
+                <code class="code">$view</code> is already initialized, it simply returns
+                that property.
+            </p>
+<p>
+                The default implementation makes the following assumption of
+                the directory structure:
+            </p>
+<pre class="programlisting">
+applicationOrModule/
+    controllers/
+        IndexController.php
+    views/
+        scripts/
+            index/
+                index.phtml
+        helpers/
+        filters/
+
+            </pre>
+<p>
+                In other words, view scripts are assumed to be in the
+                <code class="code">views/scripts/</code> subdirectory, and the
+                <code class="code">views</code> subdirectory is assumed to contain sibling
+                functionality (helpers, filters). When determining the view
+                script name and path, the <code class="code">views/scripts/</code> directory
+                will be used as the base path, with a directories named after the
+                individual controllers providing a hierarchy of view scripts.
+            </p>
+</div>
+<div class="sect3" lang="en">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="zend.controller.action.viewintegration.render"></a>7.7.5.2. Rendering Views</h4></div></div></div>
+<p>
+                <code class="code">render()</code> has the following signature:
+            </p>
+<pre class="programlisting">&lt;?php
+string render(string $action = null, string $name = null, bool $noController = false);
+            </pre>
+<p>
+                <code class="code">render()</code> renders a view script. If no arguments are
+                passed, it assumes that the script requested is
+                <code class="code">[controller]/[action].phtml</code> (where
+                <code class="code">.phtml</code> is the value of the <code class="code">$viewSuffix</code>
+                property). Passing a value for <code class="code">$action</code> will render
+                that template in the <code class="code">[controller]</code> subdirectory. To
+                override using the <code class="code">[controller]</code> subdirectory, pass
+                a true value for <code class="code">$noController</code>. Finally, templates
+                are rendered into the response object; if you wish to render to
+                a specific <a href="zend.controller.response.html#zend.controller.response.namedsegments" title="7.9.3. Named Segments">named
+                    segment</a> in the response object, pass a value to
+                <code class="code">$name</code>.
+            </p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+                    Since controller and action names may contain word delimiter
+                    characters such as '_', '.', and '-', render() normalizes
+                    these to '-' when determining the script name. Internally,
+                    it uses the dispatcher's word and path delimiters to do this
+                    normalization. Thus, a request to
+                    <code class="code">/foo.bar/baz-bat</code> will render the script
+                    <code class="code">foo-bar/baz-bat.phtml</code>. If your action method
+                    contains camelCasing, please remember that this will result
+                    in '-' separated words when determining the view script
+                    file name.
+            </p></td></tr>
+</table></div>
+<p>
+                Some examples:
+            </p>
+<pre class="programlisting">&lt;?php
+class MyController extends Zend_Controller_Action
+{
+    public function fooAction()
+    {
+        // Renders my/foo.phtml
+        $this-&gt;render();
+
+        // Renders my/bar.phtml
+        $this-&gt;render('bar');
+
+        // Renders baz.phtml
+        $this-&gt;render('baz', null, true);
+
+        // Renders my/login.phtml to the 'form' segment of the response object
+        $this-&gt;render('login', 'form');
+
+        // Renders site.phtml to the 'page' segment of the response object; does
+        // not use the 'my/' subirectory
+        $this-&gt;render('site', 'page', true);
+    }
+
+    public function bazBatAction()
+    {
+        // Renders my/baz-bat.phtml
+        $this-&gt;render();
+    }
+}
+            </pre>
+</div>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.controller.action.utilmethods"></a>7.7.6. Utility Methods</h3></div></div></div>
+<p>
+            Besides the accessors and view integration methods,
+            <code class="code">Zend_Controller_Action</code> has several utility methods for
+            performing common tasks from within your action methods (or from
+            pre-/post-dispatch).
+        </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                    <code class="code">_forward($action, $controller = null, $module = null,
+                        array $params = null)</code>: perform another action. If
+                    called in <code class="code">preDispatch()</code>, the currently
+                    requested action will be skipped in favor of the new one.
+                    Otherwise, after the current action is processed, the action
+                    requested in _forward() will be executed.
+                </p></li>
+<li>
+<p>
+                    <code class="code">_redirect($url, array $options =
+                        array())</code>: redirect to another location. This
+                    method takes a URL and an optional set of options. By
+                    default, it performs an HTTP 302 redirect.
+                </p>
+<p>
+                    The options may include one or more of the following:
+                </p>
+<div class="itemizedlist"><ul type="circle">
+<li>
+<p>
+                            <span class="emphasis"><em>exit:</em></span> whether or not to exit
+                            immediately. If requested, it will cleanly close any
+                            open sessions and perform the redirect.
+                        </p>
+<p>
+                            You may set this option globally within the
+                            controller using the <code class="code">setRedirectExit()</code>
+                            accessor.
+                        </p>
+</li>
+<li>
+<p>
+                            <span class="emphasis"><em>prependBase:</em></span> whether or not to
+                            prepend the base URL registered with the request
+                            object to the URL provided.
+                        </p>
+<p>
+                            You may set this option globally within the
+                            controller using the
+                            <code class="code">setRedirectPrependBase()</code> accessor.
+                        </p>
+</li>
+<li>
+<p>
+                            <span class="emphasis"><em>code:</em></span> what HTTP code to utilize
+                            in the redirect. By default, an HTTP 302 is
+                            utilized; any code between 301 and 306 may be used.
+                        </p>
+<p>
+                            You may set this option globally within the
+                            controller using the
+                            <code class="code">setRedirectCode()</code> accessor.
+                        </p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.controller.action.subclassing"></a>7.7.7. Subclassing the Action Controller</h3></div></div></div>
+<p>
+            By design, <code class="code">Zend_Controller_Action</code> must be subclassed
+            in order to create an action controller. At the minimum, you will
+            need to define action methods that the controller may call.
+        </p>
+<p>
+            Besides creating useful functionality for your web applications, you
+            may also find that you're repeating much of the same setup or
+            utility methods in your various controllers; if so, creating a
+            common base controller class that extends
+            <code class="code">Zend_Controller_Action</code> could solve such redundancy.
+        </p>
+<div class="example">
+<a name="zend.controller.action.subclassing.example-call"></a><p class="title"><b>Example 7.1. How to Handle Non-Existent Actions</b></p>
+<div class="example-contents">
+<p>
+                If a request to a controller is made that includes an undefined
+                action method, <code class="code">Zend_Controller_Action::__call()</code>
+                will be invoked. <code class="code">__call()</code> is, of course, PHP's
+                magic method for method overloading.
+            </p>
+<p>
+                By default, this method throws a
+                <code class="code">Zend_Controller_Action_Exception</code> indicating the
+                requested method was not found in the controller. If the method
+                requested ends in 'Action', the assumption is that an action was
+                requested and does not exist; such errors result in an exception
+                with a code of 404. All other methods result in an exception
+                with a code of 500. This allows you to easily differentiate
+                between page not found and application errors in your error
+                handler.
+            </p>
+<p>
+                You should override this functionality if you wish to perform
+                other operations.  For instance, if you wish to display an error
+                message, you might write something like this:
+            </p>
+<pre class="programlisting">&lt;?php
+class MyController extends Zend_Controller_Action
+{
+    public function __call($method, $args)
+    {
+        if ('Action' == substr($method, -6)) {
+            // If the action method was not found, render the error template
+            return $this-&gt;render('error');
+        }
+
+        // all other methods throw an exception
+        throw new Exception('Invalid method "' . $method . '" called', 500);
+    }
+}
+            </pre>
+<p>
+                Another possibility is that you may want to forward on to a
+                default controller page:
+            </p>
+<pre class="programlisting">&lt;?php
+class MyController extends Zend_Controller_Action
+{
+    public function indexAction()
+    {
+        $this-&gt;render();
+    }
+
+    public function __call($method, $args)
+    {
+        if ('Action' == substr($method, -6)) {
+            // If the action method was not found, forward to the index action
+            return $this-&gt;_forward('index');
+        }
+
+        // all other methods throw an exception
+        throw new Exception('Invalid method "' . $method . '" called', 500);
+    }
+}
+            </pre>
+</div>
+</div>
+<br class="example-break"><p>
+            Besides overriding <code class="code">__call()</code>, each of the
+            initialization, utility, accessor, view, and dispatch hook methods
+            mentioned previously in this chapter may be overridden in order to
+            customize your controllers. As an example, if you are storing your
+            view object in a registry, you may want to modify your
+            <code class="code">initView()</code> method with code resembling the following:
+        </p>
+<pre class="programlisting">&lt;?php
+abstract class My_Base_Controller extends Zend_Controller_Action
+{
+    public function initView()
+    {
+        if (null === $this-&gt;view) {
+            if (Zend_Registry::isRegistered('view')) {
+                $this-&gt;view = Zend_Registry::get('view');
+            } else {
+                $this-&gt;view = new Zend_View();
+                $this-&gt;view-&gt;setBasePath(dirname(__FILE__) . '/../views');
+            }
+        }
+
+        return $this-&gt;view;
+    }
+}
+        </pre>
+<p>
+            Hopefully, from the information in this chapter, you can see the
+            flexibility of this particular component and how you can shape it to
+            your application's or site's needs.
+        </p>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.controller.dispatcher.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.controller.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.controller.actionhelpers.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">7.6. The Dispatcher </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 7.8. Action Helpers</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

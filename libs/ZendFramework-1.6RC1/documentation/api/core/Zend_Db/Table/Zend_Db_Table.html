@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Db_Table</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/AbstractClass_logo.png"
+														alt="Abstract Class"
+														title="Abstract Class"
+														style="vertical-align: middle"> Zend_Db_Table</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-methods">Methods</a>
+						
+											<a href="#sec-consts">Constants</a>
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Class for SQL table interface.</p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">deprecated:</span> since 0.9</li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Db---Table.php.html">/Db/Table.php</a> (line <span class="field">37</span>)
+		</p>
+		
+				
+		<pre><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html">Zend_Db_Table_Abstract</a>
+   |
+   --Zend_Db_Table</pre>
+	
+			</div>
+</div>
+
+
+
+
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<span class="disabled">Vars</span>
+						
+			
+												<a href="#sec-consts">Constants</a>
+							
+										| 
+									<a href="#sec-methods">Methods</a>
+							
+					</div>
+		<div class="info-box-body">
+			
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html">Zend_Db_Table_Abstract</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#var$_cols">Zend_Db_Table_Abstract::$_cols</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#var$_db">Zend_Db_Table_Abstract::$_db</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#var$_defaultDb">Zend_Db_Table_Abstract::$_defaultDb</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#var$_defaultMetadataCache">Zend_Db_Table_Abstract::$_defaultMetadataCache</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#var$_dependentTables">Zend_Db_Table_Abstract::$_dependentTables</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#var$_identity">Zend_Db_Table_Abstract::$_identity</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#var$_metadata">Zend_Db_Table_Abstract::$_metadata</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#var$_metadataCache">Zend_Db_Table_Abstract::$_metadataCache</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#var$_name">Zend_Db_Table_Abstract::$_name</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#var$_primary">Zend_Db_Table_Abstract::$_primary</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#var$_referenceMap">Zend_Db_Table_Abstract::$_referenceMap</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#var$_rowClass">Zend_Db_Table_Abstract::$_rowClass</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#var$_rowsetClass">Zend_Db_Table_Abstract::$_rowsetClass</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#var$_schema">Zend_Db_Table_Abstract::$_schema</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#var$_sequence">Zend_Db_Table_Abstract::$_sequence</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-vars">Vars</a>
+																			<a href="#sec-consts">Constants</a>
+							
+										<span class="disabled">Methods</span>
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html">Zend_Db_Table_Abstract</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#method__construct">Zend_Db_Table_Abstract::__construct()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#methodcreateRow">Zend_Db_Table_Abstract::createRow()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#methoddelete">Zend_Db_Table_Abstract::delete()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#methodfetchAll">Zend_Db_Table_Abstract::fetchAll()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#methodfetchNew">Zend_Db_Table_Abstract::fetchNew()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#methodfetchRow">Zend_Db_Table_Abstract::fetchRow()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#methodfind">Zend_Db_Table_Abstract::find()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#methodgetAdapter">Zend_Db_Table_Abstract::getAdapter()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#methodgetDefaultAdapter">Zend_Db_Table_Abstract::getDefaultAdapter()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#methodgetDefaultMetadataCache">Zend_Db_Table_Abstract::getDefaultMetadataCache()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#methodgetDependentTables">Zend_Db_Table_Abstract::getDependentTables()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#methodgetMetadataCache">Zend_Db_Table_Abstract::getMetadataCache()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#methodgetReference">Zend_Db_Table_Abstract::getReference()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#methodgetRowClass">Zend_Db_Table_Abstract::getRowClass()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#methodgetRowsetClass">Zend_Db_Table_Abstract::getRowsetClass()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#methodinfo">Zend_Db_Table_Abstract::info()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#methodinit">Zend_Db_Table_Abstract::init()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#methodinsert">Zend_Db_Table_Abstract::insert()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#methodselect">Zend_Db_Table_Abstract::select()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#methodsetDefaultAdapter">Zend_Db_Table_Abstract::setDefaultAdapter()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#methodsetDefaultMetadataCache">Zend_Db_Table_Abstract::setDefaultMetadataCache()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#methodsetDependentTables">Zend_Db_Table_Abstract::setDependentTables()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#methodsetReferences">Zend_Db_Table_Abstract::setReferences()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#methodsetRowClass">Zend_Db_Table_Abstract::setRowClass()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#methodsetRowsetClass">Zend_Db_Table_Abstract::setRowsetClass()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#methodupdate">Zend_Db_Table_Abstract::update()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#method_cascadeDelete">Zend_Db_Table_Abstract::_cascadeDelete()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#method_cascadeUpdate">Zend_Db_Table_Abstract::_cascadeUpdate()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#method_fetch">Zend_Db_Table_Abstract::_fetch()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#method_getReferenceMapNormalized">Zend_Db_Table_Abstract::_getReferenceMapNormalized()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#method_order">Zend_Db_Table_Abstract::_order()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#method_setAdapter">Zend_Db_Table_Abstract::_setAdapter()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#method_setMetadataCache">Zend_Db_Table_Abstract::_setMetadataCache()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#method_setSequence">Zend_Db_Table_Abstract::_setSequence()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#method_setup">Zend_Db_Table_Abstract::_setup()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#method_setupAdapter">Zend_Db_Table_Abstract::_setupAdapter()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#method_setupDatabaseAdapter">Zend_Db_Table_Abstract::_setupDatabaseAdapter()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#method_setupMetadata">Zend_Db_Table_Abstract::_setupMetadata()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#method_setupMetadataCache">Zend_Db_Table_Abstract::_setupMetadataCache()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#method_setupPrimaryKey">Zend_Db_Table_Abstract::_setupPrimaryKey()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#method_setupTableName">Zend_Db_Table_Abstract::_setupTableName()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#method_where">Zend_Db_Table_Abstract::_where()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<span class="disabled">Constants</span>
+						
+			
+												<a href="#sec-vars">Vars</a>
+														| 
+									<a href="#sec-methods">Methods</a>
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Constants</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html">Zend_Db_Table_Abstract</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#constADAPTER">Zend_Db_Table_Abstract::ADAPTER</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#constCASCADE">Zend_Db_Table_Abstract::CASCADE</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#constCOLS">Zend_Db_Table_Abstract::COLS</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#constCOLUMNS">Zend_Db_Table_Abstract::COLUMNS</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#constDEPENDENT_TABLES">Zend_Db_Table_Abstract::DEPENDENT_TABLES</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#constMETADATA">Zend_Db_Table_Abstract::METADATA</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#constMETADATA_CACHE">Zend_Db_Table_Abstract::METADATA_CACHE</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#constNAME">Zend_Db_Table_Abstract::NAME</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#constON_DELETE">Zend_Db_Table_Abstract::ON_DELETE</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#constON_UPDATE">Zend_Db_Table_Abstract::ON_UPDATE</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#constPRIMARY">Zend_Db_Table_Abstract::PRIMARY</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#constREFERENCE_MAP">Zend_Db_Table_Abstract::REFERENCE_MAP</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#constREF_COLUMNS">Zend_Db_Table_Abstract::REF_COLUMNS</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#constREF_TABLE_CLASS">Zend_Db_Table_Abstract::REF_TABLE_CLASS</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#constRESTRICT">Zend_Db_Table_Abstract::RESTRICT</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#constROWSET_CLASS">Zend_Db_Table_Abstract::ROWSET_CLASS</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#constROW_CLASS">Zend_Db_Table_Abstract::ROW_CLASS</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#constSCHEMA">Zend_Db_Table_Abstract::SCHEMA</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#constSEQUENCE">Zend_Db_Table_Abstract::SEQUENCE</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Zend_Db/Table/Zend_Db_Table_Abstract.html#constSET_NULL">Zend_Db_Table_Abstract::SET_NULL</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:50:48 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

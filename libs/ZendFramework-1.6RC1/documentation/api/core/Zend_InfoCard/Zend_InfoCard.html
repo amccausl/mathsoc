@@ -1,0 +1,897 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_InfoCard</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_InfoCard</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_InfoCard.php.html">/InfoCard.php</a> (line <span class="field">64</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#DIGEST_SHA1" title="details" class="const-name">DIGEST_SHA1</a> = 					<span class="var-type"> 'http://www.w3.org/2000/09/xmldsig#sha1'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../Zend_InfoCard_Adapter/Zend_InfoCard_Adapter_Interface.html">Zend_InfoCard_Adapter_Interface</a></span>
+					<a href="#$_adapter" title="details" class="var-name">$_adapter</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">Array</span>
+					<a href="#$_keyPairs" title="details" class="var-name">$_keyPairs</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../Zend_InfoCard/Zend_InfoCard_Cipher/Zend_InfoCard_Cipher_Pki_Interface.html">Zend_InfoCard_Cipher_Pki_Interface</a></span>
+					<a href="#$_pkiCipherObj" title="details" class="var-name">$_pkiCipherObj</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../Zend_InfoCard/Zend_InfoCard_Cipher/Zend_InfoCard_Cipher_Symmetric_Interface.html">Zend_InfoCard_Cipher_Symmetric_Interface</a></span>
+					<a href="#$_symCipherObj" title="details" class="var-name">$_symCipherObj</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																															
+				<div class="method-definition">
+					<img src="../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">Zend_InfoCard</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#addCertificatePair" title="details" class="method-name">addCertificatePair</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$private_key_file</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$public_key_file</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">Zend_InfoCard_Cipher::ENC_RSA_OAEP_MGF1P</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$password</span> = <span class="var-default">null</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_InfoCard_Adapter/Zend_InfoCard_Adapter_Interface.html">Zend_InfoCard_Adapter_Interface</a></span>
+										<a href="#getAdapter" title="details" class="method-name">getAdapter</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#getCertificatePair" title="details" class="method-name">getCertificatePair</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$key_id</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_InfoCard/Zend_InfoCard_Cipher/Zend_InfoCard_Cipher_Pki_Interface.html">Zend_InfoCard_Cipher_Pki_Interface</a></span>
+										<a href="#getPkiCipherObject" title="details" class="method-name">getPkiCipherObject</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_InfoCard/Zend_InfoCard_Cipher/Zend_InfoCard_Cipher_Symmetric_Interface.html">Zend_InfoCard_Cipher_Symmetric_Interface</a></span>
+										<a href="#getSymCipherObject" title="details" class="method-name">getSymCipherObject</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Zend_Infocard_Claims</span>
+										<a href="#process" title="details" class="method-name">process</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$strXmlToken</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_InfoCard/Zend_InfoCard.html">Zend_InfoCard</a></span>
+										<a href="#removeCertificatePair" title="details" class="method-name">removeCertificatePair</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$key_id</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_InfoCard/Zend_InfoCard.html">Zend_InfoCard</a></span>
+										<a href="#setAdapter" title="details" class="method-name">setAdapter</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$a</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_InfoCard/Zend_InfoCard.html">Zend_InfoCard</a></span>
+										<a href="#setPkiCipherObject" title="details" class="method-name">setPkiCipherObject</a>
+											(<span class="var-type"><a href="../Zend_InfoCard/Zend_InfoCard_Cipher/Zend_InfoCard_Cipher_Pki_Interface.html">Zend_InfoCard_Cipher_Pki_Interface</a></span>&nbsp;<span class="var-name">$cipherObj</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../Zend_InfoCard/Zend_InfoCard.html">Zend_InfoCard</a></span>
+										<a href="#setSymCipherObject" title="details" class="method-name">setSymCipherObject</a>
+											(<span class="var-type"><a href="../Zend_InfoCard/Zend_InfoCard_Cipher/Zend_InfoCard_Cipher_Symmetric_Interface.html">Zend_InfoCard_Cipher_Symmetric_Interface</a></span>&nbsp;<span class="var-name">$cipherObj</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#_extractSignedToken" title="details" class="method-name">_extractSignedToken</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$strXmlToken</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#_findCertifiatePairByDigest" title="details" class="method-name">_findCertifiatePairByDigest</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$digest</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$digestMethod</span> = <span class="var-default">self::DIGEST_SHA1</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#_getPublicKeyDigest" title="details" class="method-name">_getPublicKeyDigest</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$key_id</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$digestMethod</span> = <span class="var-default">self::DIGEST_SHA1</span>])
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_adapter" id="$_adapter"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../Zend_InfoCard_Adapter/Zend_InfoCard_Adapter_Interface.html">Zend_InfoCard_Adapter_Interface</a></span>
+			<span class="var-name">$_adapter</span>
+						(line <span class="line-number">99</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The InfoCard Adapter to use for callbacks into the application using the component  such as when storing assertions, etc.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_keyPairs" id="$_keyPairs"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">Array</span>
+			<span class="var-name">$_keyPairs</span>
+						(line <span class="line-number">77</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">An array of certificate pair files and optional passwords for them to search  when trying to determine which certificate was used to encrypt the transient key</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_pkiCipherObj" id="$_pkiCipherObj"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../Zend_InfoCard/Zend_InfoCard_Cipher/Zend_InfoCard_Cipher_Pki_Interface.html">Zend_InfoCard_Cipher_Pki_Interface</a></span>
+			<span class="var-name">$_pkiCipherObj</span>
+						(line <span class="line-number">84</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The instance to use to decrypt public-key encrypted data</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_symCipherObj" id="$_symCipherObj"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../Zend_InfoCard/Zend_InfoCard_Cipher/Zend_InfoCard_Cipher_Symmetric_Interface.html">Zend_InfoCard_Cipher_Symmetric_Interface</a></span>
+			<span class="var-name">$_symCipherObj</span>
+						(line <span class="line-number">91</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The instance to use to decrypt symmetric encrypted data</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">107</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">InfoCard Constructor</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_InfoCard_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Zend_InfoCard</span>
+		<span class="method-name">
+			__construct
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodaddCertificatePair" id="addCertificatePair"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">addCertificatePair</span> (line <span class="line-number">221</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add a Certificate Pair to the list of certificates searched by the component</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> A key ID representing this key pair in the component</li>
+				<li><span class="field">throws:</span> Zend_InfoCard_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			addCertificatePair
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$private_key_file</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$public_key_file</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">Zend_InfoCard_Cipher::ENC_RSA_OAEP_MGF1P</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$password</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$private_key_file</span><span class="var-description">: The path to the private key file for the pair</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$public_key_file</span><span class="var-description">: The path to the certificate / public key for the pair</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$type</span><span class="var-description">: (optional) The URI for the type of key pair this is (default RSA with OAEP padding)</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$password</span><span class="var-description">: (optional) The password for the private key file if necessary</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetAdapter" id="getAdapter"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getAdapter</span> (line <span class="line-number">139</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieves the adapter used for callbacks into the application using the component.</p>
+<p class="description"><p>If no adapter was set then an instance of Zend_InfoCard_Adapter_Default is used</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The Adapter instance</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_InfoCard_Adapter/Zend_InfoCard_Adapter_Interface.html">Zend_InfoCard_Adapter_Interface</a></span>
+		<span class="method-name">
+			getAdapter
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetCertificatePair" id="getCertificatePair"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getCertificatePair</span> (line <span class="line-number">267</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return a Certificate Pair from a key ID</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> An array containing the path to the private/public key files,                the type URI and the password if provided</li>
+				<li><span class="field">throws:</span> Zend_InfoCard_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getCertificatePair
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$key_id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$key_id</span><span class="var-description">: The Key ID of the certificate pair in the component</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetPkiCipherObject" id="getPkiCipherObject"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getPkiCipherObject</span> (line <span class="line-number">154</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the Public Key Cipher object used in this instance</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_InfoCard/Zend_InfoCard_Cipher/Zend_InfoCard_Cipher_Pki_Interface.html">Zend_InfoCard_Cipher_Pki_Interface</a></span>
+		<span class="method-name">
+			getPkiCipherObject
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetSymCipherObject" id="getSymCipherObject"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getSymCipherObject</span> (line <span class="line-number">176</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the Symmetric Cipher Object used in this instance</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_InfoCard/Zend_InfoCard_Cipher/Zend_InfoCard_Cipher_Symmetric_Interface.html">Zend_InfoCard_Cipher_Symmetric_Interface</a></span>
+		<span class="method-name">
+			getSymCipherObject
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodprocess" id="process"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">process</span> (line <span class="line-number">419</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Process an input Infomation Card EncryptedData block sent from the client,  validate it, and return the claims contained within it on success or an error message on error</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The Claims object containing the claims, or any errors which occurred</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Zend_Infocard_Claims</span>
+		<span class="method-name">
+			process
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$strXmlToken</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$strXmlToken</span><span class="var-description">: The XML token sent to the server from the client</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodremoveCertificatePair" id="removeCertificatePair"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">removeCertificatePair</span> (line <span class="line-number">200</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Remove a Certificate Pair by Key ID from the search list</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_InfoCard_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_InfoCard/Zend_InfoCard.html">Zend_InfoCard</a></span>
+		<span class="method-name">
+			removeCertificatePair
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$key_id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$key_id</span><span class="var-description">: The Certificate Key ID returned from adding the certificate pair</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetAdapter" id="setAdapter"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setAdapter</span> (line <span class="line-number">127</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the adapter uesd for callbacks into the application using the component, used  when doing things such as storing / retrieving assertions, etc.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The instnace</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_InfoCard/Zend_InfoCard.html">Zend_InfoCard</a></span>
+		<span class="method-name">
+			setAdapter
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$a</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_InfoCard_Adapter/Zend_InfoCard_Adapter_Interface.html">Zend_InfoCard_Adapter_Interface</a></span>
+				<span class="var-name">$a</span><span class="var-description">: The Adapter instance</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetPkiCipherObject" id="setPkiCipherObject"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setPkiCipherObject</span> (line <span class="line-number">165</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the Public Key Cipher Object used in this instance</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_InfoCard/Zend_InfoCard.html">Zend_InfoCard</a></span>
+		<span class="method-name">
+			setPkiCipherObject
+		</span>
+					(<span class="var-type"><a href="../Zend_InfoCard/Zend_InfoCard_Cipher/Zend_InfoCard_Cipher_Pki_Interface.html">Zend_InfoCard_Cipher_Pki_Interface</a></span>&nbsp;<span class="var-name">$cipherObj</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_InfoCard/Zend_InfoCard_Cipher/Zend_InfoCard_Cipher_Pki_Interface.html">Zend_InfoCard_Cipher_Pki_Interface</a></span>
+				<span class="var-name">$cipherObj</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetSymCipherObject" id="setSymCipherObject"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setSymCipherObject</span> (line <span class="line-number">187</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the Symmetric Cipher Object used in this instance</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_InfoCard/Zend_InfoCard.html">Zend_InfoCard</a></span>
+		<span class="method-name">
+			setSymCipherObject
+		</span>
+					(<span class="var-type"><a href="../Zend_InfoCard/Zend_InfoCard_Cipher/Zend_InfoCard_Cipher_Symmetric_Interface.html">Zend_InfoCard_Cipher_Symmetric_Interface</a></span>&nbsp;<span class="var-name">$cipherObj</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_InfoCard/Zend_InfoCard_Cipher/Zend_InfoCard_Cipher_Symmetric_Interface.html">Zend_InfoCard_Cipher_Symmetric_Interface</a></span>
+				<span class="var-name">$cipherObj</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_extractSignedToken" id="_extractSignedToken"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">_extractSignedToken</span> (line <span class="line-number">334</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Extracts the Signed Token from an EncryptedData block</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The XML of the Signed Token inside of the EncryptedData block</li>
+				<li><span class="field">throws:</span> Zend_InfoCard_Exception</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			_extractSignedToken
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$strXmlToken</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$strXmlToken</span><span class="var-description">: The EncryptedData XML block</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_findCertifiatePairByDigest" id="_findCertifiatePairByDigest"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">_findCertifiatePairByDigest</span> (line <span class="line-number">312</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Find a certificate pair based on a digest of its public key / certificate file</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The Key ID of the matching certificate pair or false if not found</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			_findCertifiatePairByDigest
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$digest</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$digestMethod</span> = <span class="var-default">self::DIGEST_SHA1</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$digest</span><span class="var-description">: The digest value of the public key wanted in binary form</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$digestMethod</span><span class="var-description">: The URI of the digest method used to calculate the digest</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_getPublicKeyDigest" id="_getPublicKeyDigest"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">_getPublicKeyDigest</span> (line <span class="line-number">285</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve the digest of a given public key / certificate using the provided digest  method</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The digest value in binary format</li>
+				<li><span class="field">throws:</span> Zend_InfoCard_Exception</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			_getPublicKeyDigest
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$key_id</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$digestMethod</span> = <span class="var-default">self::DIGEST_SHA1</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$key_id</span><span class="var-description">: The certificate key id in the component</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$digestMethod</span><span class="var-description">: The URI of the digest method to use (default SHA1)</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constDIGEST_SHA1" id="DIGEST_SHA1"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DIGEST_SHA1</span>
+			 = <span class="const-default"> 'http://www.w3.org/2000/09/xmldsig#sha1'</span>
+			(line <span class="line-number">69</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">URI for XML Digital Signature SHA1 Digests</p>
+	
+	
+</div>
+						
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:33:51 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

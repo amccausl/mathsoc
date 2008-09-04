@@ -1,0 +1,370 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>38.2. Zend_Service_Akismet</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="prev" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="next" href="zend.service.amazon.html" title="38.3. Zend_Service_Amazon">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.service.akismet.html#zend.service.akismet.introduction" title="38.2.1. Introduction">
+<link rel="subsection" href="zend.service.akismet.html#zend.service.akismet.verifykey" title="38.2.2. Verify an API key">
+<link rel="subsection" href="zend.service.akismet.html#zend.service.akismet.isspam" title="38.2.3. Check for spam">
+<link rel="subsection" href="zend.service.akismet.html#zend.service.akismet.submitspam" title="38.2.4. Submitting known spam">
+<link rel="subsection" href="zend.service.akismet.html#zend.service.akismet.submitham" title="38.2.5. Submitting false positives (ham)">
+<link rel="subsection" href="zend.service.akismet.html#zend.service.akismet.accessors" title="38.2.6. Zend-specific Accessor Methods">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">38.2. Zend_Service_Akismet</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.service.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 38. Zend_Service</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.service.amazon.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.service.akismet"></a>38.2. Zend_Service_Akismet</h2></div></div></div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.service.akismet.introduction"></a>38.2.1. Introduction</h3></div></div></div>
+<p>
+            <code class="code">Zend_Service_Akismet</code> provides a client for the <a href="http://akismet.com/development/api/" target="_top">Akismet API</a>.
+            The Akismet service is used to determine if incoming data is
+            potentially spam; it also exposes methods for submitting data as
+            known spam or as false positives (ham). Originally intended to help
+            categorize and identify spam for Wordpress, it can be used for any
+            type of data.
+        </p>
+<p>
+            Akismet requires an API key for usage. You may get one for signing
+            up for a <a href="http://wordpress.com/" target="_top">WordPress.com</a>
+            account. You do not need to activate a blog; simply acquiring the
+            account will provide you with the API key.
+        </p>
+<p>
+            Additionally, Akismet requires that all requests contain a URL to
+            the resource for which data is being filtered, and, because of
+            Akismet's origins in WordPress, this resource is called the blog
+            url. This value should be passed as the second argument to the
+            constructor, but may be reset at any time using the
+            <code class="code">setBlogUrl()</code> accessor, or overridden by specifying a
+            'blog' key in the various method calls.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.service.akismet.verifykey"></a>38.2.2. Verify an API key</h3></div></div></div>
+<p>
+            <code class="code">Zend_Service_Akismet::verifyKey($key)</code> is used to
+            verify that an Akismet API key is valid. In most cases, you
+            will not need to check, but if you need a sanity check, or
+            to determine if a newly acquired key is active, you may do
+            so with this method.
+        </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Service/Akismet.php';
+
+// Instantiate with the API key and a URL to the application or resource being
+// used
+$akismet = new Zend_Service_Akismet($apiKey, 'http://framework.zend.com/wiki/');
+if ($akismet-&gt;verifyKey($apiKey) {
+echo "Key is valid.\n";
+} else {
+echo "Key is not valid\n";
+}
+        </pre>
+<p>
+            If called with no arguments, <code class="code">verifyKey()</code> uses
+            the API key provided to the constructor.
+        </p>
+<p>
+            <code class="code">verifyKey()</code> implements Akismet's
+            <code class="code">verify-key</code> REST method.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.service.akismet.isspam"></a>38.2.3. Check for spam</h3></div></div></div>
+<p>
+            <code class="code">Zend_Service_Akismet::isSpam($data)</code> is used to
+            determine if the data provided is considered spam by
+            Akismet. It accepts an associative array as the sole
+            argument. That array requires the following keys be set:
+        </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                    <code class="code">user_ip</code>, the IP address of the user
+                    submitting the data (not your IP address, but that
+                    of a user on your site).
+                </p></li>
+<li><p>
+                    <code class="code">user_agent</code>, the reported UserAgent
+                    string (browser and version) of the user submitting
+                    the data.
+                </p></li>
+</ul></div>
+<p>
+            The following keys are also recognized specifically by the
+            API:
+        </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                    <code class="code">blog</code>, the fully qualified URL to the
+                    resource or application. If not specified, the URL
+                    provided to the constructor will be used.
+                </p></li>
+<li><p>
+                    <code class="code">referrer</code>, the content of the
+                    HTTP_REFERER header at the time of submission. (Note
+                    spelling; it does not follow the header name.)
+                </p></li>
+<li><p>
+                    <code class="code">permalink</code>, the permalink location, if
+                    any, of the entry the data was submitted to.
+                </p></li>
+<li><p>
+                    <code class="code">comment_type</code>, the type of data
+                    provided. Values specifically specified in the API
+                    include 'comment', 'trackback', 'pingback', and an
+                    empty string (''), but it may be any value.
+                </p></li>
+<li><p>
+                    <code class="code">comment_author</code>, name of the person
+                    submitting the data.
+                </p></li>
+<li><p>
+                    <code class="code">comment_author_email</code>, email of the
+                    person submitting the data.
+                </p></li>
+<li><p>
+                    <code class="code">comment_author_url</code>, URL or home page of the
+                    person submitting the data.
+                </p></li>
+<li><p>
+                    <code class="code">comment_content</code>, actual data content
+                    submitted.
+                </p></li>
+</ul></div>
+<p>
+            You may also submit any other environmental variables you
+            feel might be a factor in determining if data is spam.
+            Akismet suggests the contents of the entire $_SERVER array.
+        </p>
+<p>
+            The <code class="code">isSpam()</code> method will return either true or
+            false, and throw an exception if the API key is invalid.
+        </p>
+<div class="example">
+<a name="zend.service.akismet.isspam.example-1"></a><p class="title"><b>Example 38.1. isSpam() Usage</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$data = array(
+    'user_ip'              =&gt; '111.222.111.222',
+    'user_agent'           =&gt; 'Mozilla/5.0 (Windows; U; Windows NT 5.2; en-GB; rv:1.8.1) Gecko/20061010 Firefox/2.0',
+    'comment_type'         =&gt; 'contact',
+    'comment_author'       =&gt; 'John Doe',
+    'comment_author_email' =&gt; 'nospam@myhaus.net',
+    'comment_content'      =&gt; "I'm not a spammer, honest!"
+);
+if ($akismet-&gt;isSpam($data)) {
+    echo "Sorry, but we think you're a spammer.";
+} else {
+    echo "Welcome to our site!";
+}
+            </pre></div>
+</div>
+<br class="example-break"><p>
+            <code class="code">isSpam()</code> implements the <code class="code">comment-check</code>
+            Akismet API method.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.service.akismet.submitspam"></a>38.2.4. Submitting known spam</h3></div></div></div>
+<p>
+            Occasionally spam data will get through the filter. If in your
+            review of incoming data you discover spam that you feel should have
+            been caught, you can submit it to Akismet to help improve their
+            filter.
+        </p>
+<p>
+            <code class="code">Zend_Service_Akismet::submitSpam()</code> takes the same data
+            array as passed to <code class="code">isSpam()</code>, but does not return a
+            value. An exception will be raised if the API key used is invalid.
+        </p>
+<div class="example">
+<a name="zend.service.akismet.submitspam.example-1"></a><p class="title"><b>Example 38.2. submitSpam() Usage</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$data = array(
+    'user_ip'              =&gt; '111.222.111.222',
+    'user_agent'           =&gt; 'Mozilla/5.0 (Windows; U; Windows NT 5.2; en-GB; rv:1.8.1) Gecko/20061010 Firefox/2.0',
+    'comment_type'         =&gt; 'contact',
+    'comment_author'       =&gt; 'John Doe',
+    'comment_author_email' =&gt; 'nospam@myhaus.net',
+    'comment_content'      =&gt; "I'm not a spammer, honest!"
+);
+$akismet-&gt;submitSpam($data));
+            </pre></div>
+</div>
+<br class="example-break"><p>
+            <code class="code">submitSpam()</code> implements the <code class="code">submit-spam</code>
+            Akismet API method.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.service.akismet.submitham"></a>38.2.5. Submitting false positives (ham)</h3></div></div></div>
+<p>
+            Occasionally data will be trapped erroneously as spam by Akismet.
+            For this reason, you should probably keep a log of all data
+            trapped as spam by Akismet and review it periodically. If you find
+            such occurrences, you can submit the data to Akismet as "ham", or a
+            false positive (ham is good, spam is not).
+        </p>
+<p>
+            <code class="code">Zend_Service_Akismet::submitHam()</code> takes the same data
+            array as passed to <code class="code">isSpam()</code> or
+            <code class="code">submitSpam()</code>, and, like <code class="code">submitSpam()</code>, does
+            not return a value. An exception will be raised if the API key used
+            is invalid.
+        </p>
+<div class="example">
+<a name="zend.service.akismet.submitham.example-1"></a><p class="title"><b>Example 38.3. submitHam() Usage</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+$data = array(
+    'user_ip'              =&gt; '111.222.111.222',
+    'user_agent'           =&gt; 'Mozilla/5.0 (Windows; U; Windows NT 5.2; en-GB; rv:1.8.1) Gecko/20061010 Firefox/2.0',
+    'comment_type'         =&gt; 'contact',
+    'comment_author'       =&gt; 'John Doe',
+    'comment_author_email' =&gt; 'nospam@myhaus.net',
+    'comment_content'      =&gt; "I'm not a spammer, honest!"
+);
+$akismet-&gt;submitHam($data));
+            </pre></div>
+</div>
+<br class="example-break"><p>
+            <code class="code">submitHam()</code> implements the <code class="code">submit-ham</code>
+            Akismet API method.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.service.akismet.accessors"></a>38.2.6. Zend-specific Accessor Methods</h3></div></div></div>
+<p>
+            While the Akismet API only specifies four methods,
+            <code class="code">Zend_Service_Akismet</code> has several additional accessors
+            that may be used for modifying internal properties.
+        </p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>
+                    <code class="code">getBlogUrl()</code> and <code class="code">setBlogUrl()</code>
+                    allow you to retrieve and modify the blog URL used in
+                    requests.
+                </p></li>
+<li><p>
+                    <code class="code">getApiKey()</code> and <code class="code">setApiKey()</code>
+                    allow you to retrieve and modify the API key used in
+                    requests.
+                </p></li>
+<li><p>
+                    <code class="code">getCharset()</code> and <code class="code">setCharset()</code>
+                    allow you to retrieve and modify the character set used to
+                    make the request.
+                </p></li>
+<li><p>
+                    <code class="code">getPort()</code> and <code class="code">setPort()</code>
+                    allow you to retrieve and modify the TCP port used to make
+                    the request.
+                </p></li>
+<li>
+<p>
+                    <code class="code">getUserAgent()</code> and <code class="code">setUserAgent()</code>
+                    allow you to retrieve and modify the HTTP user agent used to
+                    make the request. Note: this is not the user_agent used in
+                    data submitted to the service, but rather the value provided
+                    in the HTTP User-Agent header when making a request to the
+                    service.
+                </p>
+<p>
+                    The value used to set the user agent should be of the form
+                    <code class="code">some user agent/version | Akismet/version</code>. The
+                    default is <code class="code">Zend Framework/ZF-VERSION | Akismet/1.11</code>, where <code class="code">ZF-VERSION</code> is the current Zend Framework version as stored in the <code class="code">Zend_Framework::VERSION</code> constant.
+                </p>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.service.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.service.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.service.amazon.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">Chapter 38. Zend_Service </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 38.3. Zend_Service_Amazon</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>

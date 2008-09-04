@@ -1,0 +1,931 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_XmlRpc_Value</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/AbstractClass_logo.png"
+														alt="Abstract Class"
+														title="Abstract Class"
+														style="vertical-align: middle"> Zend_XmlRpc_Value</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Represent a native XML-RPC value entity, used as parameters for the methods  called by the Zend_XmlRpc_Client object and as the return value for those calls.</p>
+<p class="description"><p>This object as a very important static function Zend_XmlRpc_Value::getXmlRpcValue, this  function acts likes a factory for the Zend_XmlRpc_Value objects</p><p>Using this function, users/Zend_XmlRpc_Client object can create the Zend_XmlRpc_Value objects  from PHP variables, XML string or by specifing the exact XML-RPC natvie type</p></p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_XmlRpc---Value.php.html">/XmlRpc/Value.php</a> (line <span class="field">75</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/AbstractClass.png"
+								 alt="Abstract class"
+								 title="Abstract class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_XmlRpc/Value/Zend_XmlRpc_Value_Scalar.html">Zend_XmlRpc_Value_Scalar</a>
+					</td>
+					<td>
+											
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/AbstractClass.png"
+								 alt="Abstract class"
+								 title="Abstract class"
+								 style="vertical-align: center"/>
+						<a href="../../Zend_XmlRpc/Value/Zend_XmlRpc_Value_Collection.html">Zend_XmlRpc_Value_Collection</a>
+					</td>
+					<td>
+											
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#AUTO_DETECT_TYPE" title="details" class="const-name">AUTO_DETECT_TYPE</a> = 					<span class="var-type"> 'auto_detect'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#XMLRPC_TYPE_ARRAY" title="details" class="const-name">XMLRPC_TYPE_ARRAY</a> = 					<span class="var-type"> 'array'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#XMLRPC_TYPE_BASE64" title="details" class="const-name">XMLRPC_TYPE_BASE64</a> = 					<span class="var-type"> 'base64'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#XMLRPC_TYPE_BOOLEAN" title="details" class="const-name">XMLRPC_TYPE_BOOLEAN</a> = 					<span class="var-type"> 'boolean'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#XMLRPC_TYPE_DATETIME" title="details" class="const-name">XMLRPC_TYPE_DATETIME</a> = 					<span class="var-type"> 'dateTime.iso8601'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#XMLRPC_TYPE_DOUBLE" title="details" class="const-name">XMLRPC_TYPE_DOUBLE</a> = 					<span class="var-type"> 'double'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#XMLRPC_TYPE_I4" title="details" class="const-name">XMLRPC_TYPE_I4</a> = 					<span class="var-type"> 'i4'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#XMLRPC_TYPE_INTEGER" title="details" class="const-name">XMLRPC_TYPE_INTEGER</a> = 					<span class="var-type"> 'int'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#XMLRPC_TYPE_NIL" title="details" class="const-name">XMLRPC_TYPE_NIL</a> = 					<span class="var-type"> 'nil'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#XMLRPC_TYPE_STRING" title="details" class="const-name">XMLRPC_TYPE_STRING</a> = 					<span class="var-type"> 'string'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#XMLRPC_TYPE_STRUCT" title="details" class="const-name">XMLRPC_TYPE_STRUCT</a> = 					<span class="var-type"> 'struct'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#XML_STRING" title="details" class="const-name">XML_STRING</a> = 					<span class="var-type"> 'xml'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$_as_dom" title="details" class="var-name">$_as_dom</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$_as_xml" title="details" class="var-name">$_as_xml</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$_type" title="details" class="var-name">$_type</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$_value" title="details" class="var-name">$_value</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																			
+				<div class="method-definition">
+					<img src="../../media/images/StaticMethod.png" alt=" "/>
+					static 						<span class="method-result"><a href="../../Zend_XmlRpc/Value/Zend_XmlRpc_Value.html">Zend_XmlRpc_Value</a></span>
+										<a href="#getXmlRpcValue" title="details" class="method-name">getXmlRpcValue</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>, [<span class="var-type">Zend_XmlRpc_Value::constant</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">self::AUTO_DETECT_TYPE</span>])
+									</div>
+																																			
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">DOMElement</span>
+										<a href="#getAsDOM" title="details" class="method-name">getAsDOM</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getType" title="details" class="method-name">getType</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/AbstractMethod.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#getValue" title="details" class="method-name">getValue</a>
+										()
+									</div>
+																							
+				<div class="method-definition">
+					<img src="../../media/images/AbstractMethod.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#saveXML" title="details" class="method-name">saveXML</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#_stripXmlDeclaration" title="details" class="method-name">_stripXmlDeclaration</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$dom</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_as_dom" id="$_as_dom"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_as_dom</span>
+						(line <span class="line-number">99</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">DOMElement representation of object (will be calculated only once)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_as_xml" id="$_as_xml"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_as_xml</span>
+						(line <span class="line-number">94</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">XML code representation of this object (will be calculated only once)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_type" id="$_type"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_type</span>
+						(line <span class="line-number">89</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The native XML-RPC type of this object</p>
+<p class="description"><p>One of the XMLRPC_TYPE_* constants</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_value" id="$_value"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_value</span>
+						(line <span class="line-number">83</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The native XML-RPC representation of this object's value</p>
+<p class="description"><p>If the native type of this object is array or struct, this will be an array  of Zend_XmlRpc_Value objects</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodgetXmlRpcValue" id="getXmlRpcValue"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/StaticMethod.png" />
+		<span class="method-title">static getXmlRpcValue</span> (line <span class="line-number">189</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates a Zend_XmlRpc_Value* object, representing a native XML-RPC value</p>
+<p class="description"><p>A XmlRpcValue object can be created in 3 ways: <ol><li>Autodetecting the native type out of a PHP variable
+    (if $type is not set or equal to Zend_XmlRpc_Value::AUTO_DETECT_TYPE)</li><li>By specifing the native type ($type is one of the Zend_XmlRpc_Value::XMLRPC_TYPE_* constants)</li><li>From a XML string ($type is set to Zend_XmlRpc_Value::XML_STRING)</li></ol>  By default the value type is autodetected according to it's PHP type</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		static <span class="method-result"><a href="../../Zend_XmlRpc/Value/Zend_XmlRpc_Value.html">Zend_XmlRpc_Value</a></span>
+		<span class="method-name">
+			getXmlRpcValue
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>, [<span class="var-type">Zend_XmlRpc_Value::constant</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">self::AUTO_DETECT_TYPE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$value</span>			</li>
+					<li>
+				<span class="var-type">Zend_XmlRpc_Value::constant</span>
+				<span class="var-name">$type</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetAsDOM" id="getAsDOM"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getAsDOM</span> (line <span class="line-number">157</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return DOMElement representation of object</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">DOMElement</span>
+		<span class="method-name">
+			getAsDOM
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetType" id="getType"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getType</span> (line <span class="line-number">131</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the native XML-RPC type (the type is one of the Zend_XmlRpc_Value::XMLRPC_TYPE_* constants)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getType
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetValue" id="getValue"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/AbstractMethod.png" />
+		<span class="method-title">getValue</span> (line <span class="line-number">142</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the value of this object, convert the XML-RPC native value into a PHP variable</p>
+	<ul class="tags">
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getValue
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_XmlRpc/Value/Zend_XmlRpc_Value_Nil.html#methodgetValue">Zend_XmlRpc_Value_Nil::getValue()</a>
+								: Return the value of this object, convert the XML-RPC native nill value into a PHP NULL
+							</li>
+					<li>
+				<a href="../../Zend_XmlRpc/Value/Zend_XmlRpc_Value_DateTime.html#methodgetValue">Zend_XmlRpc_Value_DateTime::getValue()</a>
+								: Return the value of this object as iso8601 dateTime value
+							</li>
+					<li>
+				<a href="../../Zend_XmlRpc/Value/Zend_XmlRpc_Value_Boolean.html#methodgetValue">Zend_XmlRpc_Value_Boolean::getValue()</a>
+								: Return the value of this object, convert the XML-RPC native boolean value into a PHP boolean
+							</li>
+					<li>
+				<a href="../../Zend_XmlRpc/Value/Zend_XmlRpc_Value_Integer.html#methodgetValue">Zend_XmlRpc_Value_Integer::getValue()</a>
+								: Return the value of this object, convert the XML-RPC native integer value into a PHP integer
+							</li>
+					<li>
+				<a href="../../Zend_XmlRpc/Value/Zend_XmlRpc_Value_String.html#methodgetValue">Zend_XmlRpc_Value_String::getValue()</a>
+								: Return the value of this object, convert the XML-RPC native string value into a PHP string  Decode all encoded risky XML entities back to normal characters
+							</li>
+					<li>
+				<a href="../../Zend_XmlRpc/Value/Zend_XmlRpc_Value_Double.html#methodgetValue">Zend_XmlRpc_Value_Double::getValue()</a>
+								: Return the value of this object, convert the XML-RPC native double value into a PHP float
+							</li>
+					<li>
+				<a href="../../Zend_XmlRpc/Value/Zend_XmlRpc_Value_Base64.html#methodgetValue">Zend_XmlRpc_Value_Base64::getValue()</a>
+								: Return the value of this object, convert the XML-RPC native base64 value into a PHP string  We return this value decoded (a normal string)
+							</li>
+					<li>
+				<a href="../../Zend_XmlRpc/Value/Zend_XmlRpc_Value_Collection.html#methodgetValue">Zend_XmlRpc_Value_Collection::getValue()</a>
+								: Return the value of this object, convert the XML-RPC native collection values into a PHP array
+							</li>
+				</ul>
+	</div>
+<a name="methodsaveXML" id="saveXML"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/AbstractMethod.png" />
+		<span class="method-title">saveXML</span> (line <span class="line-number">150</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the XML code that represent a native MXL-RPC value</p>
+	<ul class="tags">
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			saveXML
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_XmlRpc/Value/Zend_XmlRpc_Value_Scalar.html#methodsaveXML">Zend_XmlRpc_Value_Scalar::saveXML()</a>
+								: Return the XML code that represent a scalar native MXL-RPC value
+							</li>
+					<li>
+				<a href="../../Zend_XmlRpc/Value/Zend_XmlRpc_Value_Nil.html#methodsaveXML">Zend_XmlRpc_Value_Nil::saveXML()</a>
+								: Return the XML code representing the nil
+							</li>
+					<li>
+				<a href="../../Zend_XmlRpc/Value/Zend_XmlRpc_Value_Boolean.html#methodsaveXML">Zend_XmlRpc_Value_Boolean::saveXML()</a>
+								: Return the XML-RPC serialization of the boolean value
+							</li>
+					<li>
+				<a href="../../Zend_XmlRpc/Value/Zend_XmlRpc_Value_Base64.html#methodsaveXML">Zend_XmlRpc_Value_Base64::saveXML()</a>
+								: Return the XML code representing the base64-encoded value
+							</li>
+					<li>
+				<a href="../../Zend_XmlRpc/Value/Zend_XmlRpc_Value_Struct.html#methodsaveXML">Zend_XmlRpc_Value_Struct::saveXML()</a>
+								: Return the XML code that represent struct native MXL-RPC value
+							</li>
+					<li>
+				<a href="../../Zend_XmlRpc/Value/Zend_XmlRpc_Value_Array.html#methodsaveXML">Zend_XmlRpc_Value_Array::saveXML()</a>
+								: Return the XML code that represent an array native MXL-RPC value
+							</li>
+				</ul>
+	</div>
+<a name="method_stripXmlDeclaration" id="_stripXmlDeclaration"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_stripXmlDeclaration</span> (line <span class="line-number">168</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_stripXmlDeclaration
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$dom</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">DOMDocument</span>
+				<span class="var-name">$dom</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constAUTO_DETECT_TYPE" id="AUTO_DETECT_TYPE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">AUTO_DETECT_TYPE</span>
+			 = <span class="const-default"> 'auto_detect'</span>
+			(line <span class="line-number">104</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specify that the XML-RPC native type will be auto detected from a PHP variable type</p>
+	
+	
+</div>
+<a name="constXMLRPC_TYPE_ARRAY" id="XMLRPC_TYPE_ARRAY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">XMLRPC_TYPE_ARRAY</span>
+			 = <span class="const-default"> 'array'</span>
+			(line <span class="line-number">121</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constXMLRPC_TYPE_BASE64" id="XMLRPC_TYPE_BASE64"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">XMLRPC_TYPE_BASE64</span>
+			 = <span class="const-default"> 'base64'</span>
+			(line <span class="line-number">120</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constXMLRPC_TYPE_BOOLEAN" id="XMLRPC_TYPE_BOOLEAN"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">XMLRPC_TYPE_BOOLEAN</span>
+			 = <span class="const-default"> 'boolean'</span>
+			(line <span class="line-number">117</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constXMLRPC_TYPE_DATETIME" id="XMLRPC_TYPE_DATETIME"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">XMLRPC_TYPE_DATETIME</span>
+			 = <span class="const-default"> 'dateTime.iso8601'</span>
+			(line <span class="line-number">119</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constXMLRPC_TYPE_DOUBLE" id="XMLRPC_TYPE_DOUBLE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">XMLRPC_TYPE_DOUBLE</span>
+			 = <span class="const-default"> 'double'</span>
+			(line <span class="line-number">116</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constXMLRPC_TYPE_I4" id="XMLRPC_TYPE_I4"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">XMLRPC_TYPE_I4</span>
+			 = <span class="const-default"> 'i4'</span>
+			(line <span class="line-number">114</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">All the XML-RPC native types</p>
+	
+	
+</div>
+<a name="constXMLRPC_TYPE_INTEGER" id="XMLRPC_TYPE_INTEGER"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">XMLRPC_TYPE_INTEGER</span>
+			 = <span class="const-default"> 'int'</span>
+			(line <span class="line-number">115</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constXMLRPC_TYPE_NIL" id="XMLRPC_TYPE_NIL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">XMLRPC_TYPE_NIL</span>
+			 = <span class="const-default"> 'nil'</span>
+			(line <span class="line-number">123</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constXMLRPC_TYPE_STRING" id="XMLRPC_TYPE_STRING"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">XMLRPC_TYPE_STRING</span>
+			 = <span class="const-default"> 'string'</span>
+			(line <span class="line-number">118</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constXMLRPC_TYPE_STRUCT" id="XMLRPC_TYPE_STRUCT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">XMLRPC_TYPE_STRUCT</span>
+			 = <span class="const-default"> 'struct'</span>
+			(line <span class="line-number">122</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constXML_STRING" id="XML_STRING"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">XML_STRING</span>
+			 = <span class="const-default"> 'xml'</span>
+			(line <span class="line-number">109</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specify that the XML-RPC value will be parsed out from a given XML code</p>
+	
+	
+</div>
+						
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:53:18 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

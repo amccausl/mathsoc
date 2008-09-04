@@ -1,0 +1,2446 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_Measure_Energy</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_Measure_Energy</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-methods">Methods</a>
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Class for handling energy conversions</p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Measure---Energy.php.html">/Measure/Energy.php</a> (line <span class="field">38</span>)
+		</p>
+		
+				
+		<pre><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html">Zend_Measure_Abstract</a>
+   |
+   --Zend_Measure_Energy</pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-methods">Methods</a>
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ATTOJOULE" title="details" class="const-name">ATTOJOULE</a> = 					<span class="var-type"> 'ATTOJOULE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BOARD_OF_TRADE_UNIT" title="details" class="const-name">BOARD_OF_TRADE_UNIT</a> = 					<span class="var-type"> 'BOARD_OF_TRADE_UNIT'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BTU" title="details" class="const-name">BTU</a> = 					<span class="var-type"> 'BTU'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BTU_THERMOCHEMICAL" title="details" class="const-name">BTU_THERMOCHEMICAL</a> = 					<span class="var-type"> 'BTU_TERMOCHEMICAL'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CALORIE" title="details" class="const-name">CALORIE</a> = 					<span class="var-type"> 'CALORIE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CALORIE_15C" title="details" class="const-name">CALORIE_15C</a> = 					<span class="var-type"> 'CALORIE_15C'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CALORIE_NUTRITIONAL" title="details" class="const-name">CALORIE_NUTRITIONAL</a> = 					<span class="var-type"> 'CALORIE_NUTRITIONAL'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CALORIE_THERMOCHEMICAL" title="details" class="const-name">CALORIE_THERMOCHEMICAL</a> = 					<span class="var-type"> 'CALORIE_THERMOCHEMICAL'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CELSIUS_HEAT_UNIT" title="details" class="const-name">CELSIUS_HEAT_UNIT</a> = 					<span class="var-type"> 'CELSIUS_HEAT_UNIT'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CENTIJOULE" title="details" class="const-name">CENTIJOULE</a> = 					<span class="var-type"> 'CENTIJOULE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CHEVAL_VAPEUR_HEURE" title="details" class="const-name">CHEVAL_VAPEUR_HEURE</a> = 					<span class="var-type"> 'CHEVAL_VAPEUR_HEURE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DECIJOULE" title="details" class="const-name">DECIJOULE</a> = 					<span class="var-type"> 'DECIJOULE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DEKAJOULE" title="details" class="const-name">DEKAJOULE</a> = 					<span class="var-type"> 'DEKAJOULE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DEKATHERM" title="details" class="const-name">DEKATHERM</a> = 					<span class="var-type"> 'DEKATHERM'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DEKAWATT_HOUR" title="details" class="const-name">DEKAWATT_HOUR</a> = 					<span class="var-type"> 'DEKAWATT_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ELECTRONVOLT" title="details" class="const-name">ELECTRONVOLT</a> = 					<span class="var-type"> 'ELECTRONVOLT'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ERG" title="details" class="const-name">ERG</a> = 					<span class="var-type"> 'ERG'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#EXAJOULE" title="details" class="const-name">EXAJOULE</a> = 					<span class="var-type"> 'EXAJOULE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#EXAWATT_HOUR" title="details" class="const-name">EXAWATT_HOUR</a> = 					<span class="var-type"> 'EXAWATT_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#FEMTOJOULE" title="details" class="const-name">FEMTOJOULE</a> = 					<span class="var-type"> 'FEMTOJOULE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#FOOT_POUND" title="details" class="const-name">FOOT_POUND</a> = 					<span class="var-type"> 'FOOT_POUND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#FOOT_POUNDAL" title="details" class="const-name">FOOT_POUNDAL</a> = 					<span class="var-type"> 'FOOT_POUNDAL'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_UK_AUTOMOTIVE" title="details" class="const-name">GALLON_UK_AUTOMOTIVE</a> = 					<span class="var-type"> 'GALLON_UK_AUTOMOTIVE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_UK_AVIATION" title="details" class="const-name">GALLON_UK_AVIATION</a> = 					<span class="var-type"> 'GALLON_UK_AVIATION'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_UK_DIESEL" title="details" class="const-name">GALLON_UK_DIESEL</a> = 					<span class="var-type"> 'GALLON_UK_DIESEL'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_UK_DISTILATE" title="details" class="const-name">GALLON_UK_DISTILATE</a> = 					<span class="var-type"> 'GALLON_UK_DISTILATE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_UK_KEROSENE" title="details" class="const-name">GALLON_UK_KEROSENE</a> = 					<span class="var-type"> 'GALLON_UK_KEROSINE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_UK_KEROSINE_JET" title="details" class="const-name">GALLON_UK_KEROSINE_JET</a> = 					<span class="var-type"> 'GALLON_UK_KEROSINE_JET'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_UK_LPG" title="details" class="const-name">GALLON_UK_LPG</a> = 					<span class="var-type"> 'GALLON_UK_LPG'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_UK_NAPHTA" title="details" class="const-name">GALLON_UK_NAPHTA</a> = 					<span class="var-type"> 'GALLON_UK_NAPHTA'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_UK_RESIDUAL" title="details" class="const-name">GALLON_UK_RESIDUAL</a> = 					<span class="var-type"> 'GALLON_UK_RESIDUAL'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_US_AUTOMOTIVE" title="details" class="const-name">GALLON_US_AUTOMOTIVE</a> = 					<span class="var-type"> 'GALLON_US_AUTOMOTIVE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_US_AVIATION" title="details" class="const-name">GALLON_US_AVIATION</a> = 					<span class="var-type"> 'GALLON_US_AVIATION'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_US_DIESEL" title="details" class="const-name">GALLON_US_DIESEL</a> = 					<span class="var-type"> 'GALLON_US_DIESEL'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_US_DISTILATE" title="details" class="const-name">GALLON_US_DISTILATE</a> = 					<span class="var-type"> 'GALLON_US_DISTILATE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_US_KEROSENE" title="details" class="const-name">GALLON_US_KEROSENE</a> = 					<span class="var-type"> 'GALLON_US_KEROSINE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_US_KEROSINE_JET" title="details" class="const-name">GALLON_US_KEROSINE_JET</a> = 					<span class="var-type"> 'GALLON_US_KEROSINE_JET'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_US_LPG" title="details" class="const-name">GALLON_US_LPG</a> = 					<span class="var-type"> 'GALLON_US_LPG'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_US_NAPHTA" title="details" class="const-name">GALLON_US_NAPHTA</a> = 					<span class="var-type"> 'GALLON_US_NAPHTA'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GALLON_US_RESIDUAL" title="details" class="const-name">GALLON_US_RESIDUAL</a> = 					<span class="var-type"> 'GALLON_US_RESIDUAL'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GIGACALORIE" title="details" class="const-name">GIGACALORIE</a> = 					<span class="var-type"> 'GIGACALORIE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GIGACALORIE_15C" title="details" class="const-name">GIGACALORIE_15C</a> = 					<span class="var-type"> 'GIGACALORIE_15C'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GIGAELECTRONVOLT" title="details" class="const-name">GIGAELECTRONVOLT</a> = 					<span class="var-type"> 'GIGAELECTRONVOLT'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GIGAJOULE" title="details" class="const-name">GIGAJOULE</a> = 					<span class="var-type"> 'GIGAJOULE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GIGAWATT_HOUR" title="details" class="const-name">GIGAWATT_HOUR</a> = 					<span class="var-type"> 'GIGAWATT_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GRAM_CALORIE" title="details" class="const-name">GRAM_CALORIE</a> = 					<span class="var-type"> 'GRAM_CALORIE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#HARTREE" title="details" class="const-name">HARTREE</a> = 					<span class="var-type"> 'HARTREE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#HECTOJOULE" title="details" class="const-name">HECTOJOULE</a> = 					<span class="var-type"> 'HECTOJOULE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#HECTOWATT_HOUR" title="details" class="const-name">HECTOWATT_HOUR</a> = 					<span class="var-type"> 'HECTOWATT_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#HORSEPOWER_HOUR" title="details" class="const-name">HORSEPOWER_HOUR</a> = 					<span class="var-type"> 'HORSEPOWER_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#HUNDRED_CUBIC_FOOT_GAS" title="details" class="const-name">HUNDRED_CUBIC_FOOT_GAS</a> = 					<span class="var-type"> 'HUNDRED_CUBIC_FOOT_GAS'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#INCH_OUNCE" title="details" class="const-name">INCH_OUNCE</a> = 					<span class="var-type"> 'INCH_OUNCE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#INCH_POUND" title="details" class="const-name">INCH_POUND</a> = 					<span class="var-type"> 'INCH_POUND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#JOULE" title="details" class="const-name">JOULE</a> = 					<span class="var-type"> 'JOULE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#KILOCALORIE" title="details" class="const-name">KILOCALORIE</a> = 					<span class="var-type"> 'KILOCALORIE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#KILOCALORIE_15C" title="details" class="const-name">KILOCALORIE_15C</a> = 					<span class="var-type"> 'KILOCALORIE_15C'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#KILOCALORIE_THERMOCHEMICAL" title="details" class="const-name">KILOCALORIE_THERMOCHEMICAL</a> = 					<span class="var-type"> 'KILOCALORIE_THERMOCHEMICAL'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#KILOELECTRONVOLT" title="details" class="const-name">KILOELECTRONVOLT</a> = 					<span class="var-type"> 'KILOELECTRONVOLT'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#KILOGRAM_CALORIE" title="details" class="const-name">KILOGRAM_CALORIE</a> = 					<span class="var-type"> 'KILOGRAM_CALORIE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#KILOGRAM_FORCE_METER" title="details" class="const-name">KILOGRAM_FORCE_METER</a> = 					<span class="var-type"> 'KILOGRAM_FORCE_METER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#KILOJOULE" title="details" class="const-name">KILOJOULE</a> = 					<span class="var-type"> 'KILOJOULE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#KILOPOND_METER" title="details" class="const-name">KILOPOND_METER</a> = 					<span class="var-type"> 'KILOPOND_METER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#KILOTON" title="details" class="const-name">KILOTON</a> = 					<span class="var-type"> 'KILOTON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#KILOWATT_HOUR" title="details" class="const-name">KILOWATT_HOUR</a> = 					<span class="var-type"> 'KILOWATT_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#LITER_ATMOSPHERE" title="details" class="const-name">LITER_ATMOSPHERE</a> = 					<span class="var-type"> 'LITER_ATMOSPHERE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MEGACALORIE" title="details" class="const-name">MEGACALORIE</a> = 					<span class="var-type"> 'MEGACALORIE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MEGACALORIE_15C" title="details" class="const-name">MEGACALORIE_15C</a> = 					<span class="var-type"> 'MEGACALORIE_15C'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MEGAELECTRONVOLT" title="details" class="const-name">MEGAELECTRONVOLT</a> = 					<span class="var-type"> 'MEGAELECTRONVOLT'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MEGAJOULE" title="details" class="const-name">MEGAJOULE</a> = 					<span class="var-type"> 'MEGAJOULE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MEGALERG" title="details" class="const-name">MEGALERG</a> = 					<span class="var-type"> 'MEGALERG'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MEGATON" title="details" class="const-name">MEGATON</a> = 					<span class="var-type"> 'MEGATON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MEGAWATTHOUR" title="details" class="const-name">MEGAWATTHOUR</a> = 					<span class="var-type"> 'MEGAWATTHOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#METER_KILOGRAM_FORCE" title="details" class="const-name">METER_KILOGRAM_FORCE</a> = 					<span class="var-type"> 'METER_KILOGRAM_FORCE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MICROJOULE" title="details" class="const-name">MICROJOULE</a> = 					<span class="var-type"> 'MICROJOULE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MILLIJOULE" title="details" class="const-name">MILLIJOULE</a> = 					<span class="var-type"> 'MILLIJOULE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MYRIAWATT_HOUR" title="details" class="const-name">MYRIAWATT_HOUR</a> = 					<span class="var-type"> 'MYRIAWATT_HOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#NANOJOULE" title="details" class="const-name">NANOJOULE</a> = 					<span class="var-type"> 'NANOJOULE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#NEWTON_METER" title="details" class="const-name">NEWTON_METER</a> = 					<span class="var-type"> 'NEWTON_METER'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PETAJOULE" title="details" class="const-name">PETAJOULE</a> = 					<span class="var-type"> 'PETAJOULE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PETAWATTHOUR" title="details" class="const-name">PETAWATTHOUR</a> = 					<span class="var-type"> 'PETAWATTHOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PFERDESTAERKENSTUNDE" title="details" class="const-name">PFERDESTAERKENSTUNDE</a> = 					<span class="var-type"> 'PFERDESTAERKENSTUNDE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PICOJOULE" title="details" class="const-name">PICOJOULE</a> = 					<span class="var-type"> 'PICOJOULE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#QUAD" title="details" class="const-name">QUAD</a> = 					<span class="var-type"> 'QUAD'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#Q_UNIT" title="details" class="const-name">Q_UNIT</a> = 					<span class="var-type"> 'Q_UNIT'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#STANDARD" title="details" class="const-name">STANDARD</a> = 					<span class="var-type"> 'JOULE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TERAELECTRONVOLT" title="details" class="const-name">TERAELECTRONVOLT</a> = 					<span class="var-type"> 'TERAELECTRONVOLT'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TERAJOULE" title="details" class="const-name">TERAJOULE</a> = 					<span class="var-type"> 'TERAJOULE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TERAWATTHOUR" title="details" class="const-name">TERAWATTHOUR</a> = 					<span class="var-type"> 'TERAWATTHOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#THERM" title="details" class="const-name">THERM</a> = 					<span class="var-type"> 'THERM'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#THERMIE" title="details" class="const-name">THERMIE</a> = 					<span class="var-type"> 'THERMIE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#THERM_US" title="details" class="const-name">THERM_US</a> = 					<span class="var-type"> 'THERM_US'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TON" title="details" class="const-name">TON</a> = 					<span class="var-type"> 'TON'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TONNE_COAL" title="details" class="const-name">TONNE_COAL</a> = 					<span class="var-type"> 'TONNE_COAL'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TONNE_OIL" title="details" class="const-name">TONNE_OIL</a> = 					<span class="var-type"> 'TONNE_OIL'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#WATTHOUR" title="details" class="const-name">WATTHOUR</a> = 					<span class="var-type"> 'WATTHOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#WATTSECOND" title="details" class="const-name">WATTSECOND</a> = 					<span class="var-type"> 'WATTSECOND'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#YOCTOJOULE" title="details" class="const-name">YOCTOJOULE</a> = 					<span class="var-type"> 'YOCTOJOULE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#YOTTAJOULE" title="details" class="const-name">YOTTAJOULE</a> = 					<span class="var-type"> 'YOTTAJOULE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#YOTTAWATTHOUR" title="details" class="const-name">YOTTAWATTHOUR</a> = 					<span class="var-type"> 'YOTTAWATTHOUR'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ZEPTOJOULE" title="details" class="const-name">ZEPTOJOULE</a> = 					<span class="var-type"> 'ZEPTOJOULE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ZETTAJOULE" title="details" class="const-name">ZETTAJOULE</a> = 					<span class="var-type"> 'ZETTAJOULE'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ZETTAWATTHOUR" title="details" class="const-name">ZETTAWATTHOUR</a> = 					<span class="var-type"> 'ZETTAWATTHOUR'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-methods">Methods</a>
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																								<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$_units" title="details" class="var-name">$_units</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<span class="disabled">Vars</span>
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-methods">Methods</a>
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_units" id="$_units"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_units</span>
+			 = <span class="var-default">array(<br />        'ATTOJOULE'              =&gt; array('1.0e-18',           'aJ'),'BOARD_OF_TRADE_UNIT'=&gt;array('3600000','BOTU'),'BTU'=&gt;array('1055.0559','Btu'),'BTU_TERMOCHEMICAL'=&gt;array('1054.3503','Btu'),'CALORIE'=&gt;array('4.1868','cal'),'CALORIE_15C'=&gt;array('6.1858','cal'),'CALORIE_NUTRITIONAL'=&gt;array('4186.8','cal'),'CALORIE_THERMOCHEMICAL'=&gt;array('4.184','cal'),'CELSIUS_HEAT_UNIT'=&gt;array('1899.1005','Chu'),'CENTIJOULE'=&gt;array('0.01','cJ'),'CHEVAL_VAPEUR_HEURE'=&gt;array('2647795.5','cv heure'),'DECIJOULE'=&gt;array('0.1','dJ'),'DEKAJOULE'=&gt;array('10','daJ'),'DEKAWATT_HOUR'=&gt;array('36000','daWh'),'DEKATHERM'=&gt;array('1.055057e+9','dathm'),'ELECTRONVOLT'=&gt;array('1.6021773e-19','eV'),'ERG'=&gt;array('0.0000001','erg'),'EXAJOULE'=&gt;array('1.0e+18','EJ'),'EXAWATT_HOUR'=&gt;array('3.6e+21','EWh'),'FEMTOJOULE'=&gt;array('1.0e-15','fJ'),'FOOT_POUND'=&gt;array('1.3558179','ft lb'),'FOOT_POUNDAL'=&gt;array('0.04214011','ft poundal'),'GALLON_UK_AUTOMOTIVE'=&gt;array('158237172','gal car gasoline'),'GALLON_US_AUTOMOTIVE'=&gt;array('131760000','gal car gasoline'),'GALLON_UK_AVIATION'=&gt;array('158237172','gal jet gasoline'),'GALLON_US_AVIATION'=&gt;array('131760000','gal jet gasoline'),'GALLON_UK_DIESEL'=&gt;array('175963194','gal diesel'),'GALLON_US_DIESEL'=&gt;array('146520000','gal diesel'),'GALLON_UK_DISTILATE'=&gt;array('175963194','gal destilate fuel'),'GALLON_US_DISTILATE'=&gt;array('146520000','gal destilate fuel'),'GALLON_UK_KEROSINE_JET'=&gt;array('170775090','gal jet kerosine'),'GALLON_US_KEROSINE_JET'=&gt;array('142200000','gal jet kerosine'),'GALLON_UK_LPG'=&gt;array('121005126.0865275','gal lpg'),'GALLON_US_LPG'=&gt;array('100757838.45','gal lpg'),'GALLON_UK_NAPHTA'=&gt;array('160831224','gal jet fuel'),'GALLON_US_NAPHTA'=&gt;array('133920000','gal jet fuel'),'GALLON_UK_KEROSINE'=&gt;array('170775090','gal kerosine'),'GALLON_US_KEROSINE'=&gt;array('142200000','gal kerosine'),'GALLON_UK_RESIDUAL'=&gt;array('189798138','gal residual fuel'),'GALLON_US_RESIDUAL'=&gt;array('158040000','gal residual fuel'),'GIGAELECTRONVOLT'=&gt;array('1.6021773e-10','GeV'),'GIGACALORIE'=&gt;array('4186800000','Gcal'),'GIGACALORIE_15C'=&gt;array('4185800000','Gcal'),'GIGAJOULE'=&gt;array('1.0e+9','GJ'),'GIGAWATT_HOUR'=&gt;array('3.6e+12','GWh'),'GRAM_CALORIE'=&gt;array('4.1858','g cal'),'HARTREE'=&gt;array('4.3597482e-18','Eh'),'HECTOJOULE'=&gt;array('100','hJ'),'HECTOWATT_HOUR'=&gt;array('360000','hWh'),'HORSEPOWER_HOUR'=&gt;array('2684519.5','hph'),'HUNDRED_CUBIC_FOOT_GAS'=&gt;array('108720000','hundred ft� gas'),'INCH_OUNCE'=&gt;array('0.0070615518','in oc'),'INCH_POUND'=&gt;array('0.112984825','in lb'),'JOULE'=&gt;array('1','J'),'KILOCALORIE_15C'=&gt;array('4185.8','kcal'),'KILOCALORIE'=&gt;array('4186','8','kcal'),'KILOCALORIE_THERMOCHEMICAL'=&gt;array('4184','kcal'),'KILOELECTRONVOLT'=&gt;array('1.6021773e-16','keV'),'KILOGRAM_CALORIE'=&gt;array('4185.8','kg cal'),'KILOGRAM_FORCE_METER'=&gt;array('9.80665','kgf m'),'KILOJOULE'=&gt;array('1000','kJ'),'KILOPOND_METER'=&gt;array('9.80665','kp m'),'KILOTON'=&gt;array('4.184e+12','kt'),'KILOWATT_HOUR'=&gt;array('3600000','kWh'),'LITER_ATMOSPHERE'=&gt;array('101.325','l atm'),'MEGAELECTRONVOLT'=&gt;array('1.6021773e-13','MeV'),'MEGACALORIE'=&gt;array('4186800','Mcal'),'MEGACALORIE_15C'=&gt;array('4185800','Mcal'),'MEGAJOULE'=&gt;array('1000000','MJ'),'MEGALERG'=&gt;array('0.1','megalerg'),'MEGATON'=&gt;array('4.184e+15','Mt'),'MEGAWATTHOUR'=&gt;array('3.6e+9','MWh'),'METER_KILOGRAM_FORCE'=&gt;array('9.80665','m kgf'),'MICROJOULE'=&gt;array('0.000001','�J'),'MILLIJOULE'=&gt;array('0.001','mJ'),'MYRIAWATT_HOUR'=&gt;array('3.6e+7','myWh'),'NANOJOULE'=&gt;array('1.0e-9','nJ'),'NEWTON_METER'=&gt;array('1','Nm'),'PETAJOULE'=&gt;array('1.0e+15','PJ'),'PETAWATTHOUR'=&gt;array('3.6e+18','PWh'),'PFERDESTAERKENSTUNDE'=&gt;array('2647795.5','ps h'),'PICOJOULE'=&gt;array('1.0e-12','pJ'),'Q_UNIT'=&gt;array('1.0550559e+21','Q unit'),'QUAD'=&gt;array('1.0550559e+18','quad'),'TERAELECTRONVOLT'=&gt;array('1.6021773e-7','TeV'),'TERAJOULE'=&gt;array('1.0e+12','TJ'),'TERAWATTHOUR'=&gt;array('3.6e+15','TWh'),'THERM'=&gt;array('1.0550559e+8','thm'),'THERM_US'=&gt;array('1.054804e+8','thm'),'THERMIE'=&gt;array('4185800','th'),'TON'=&gt;array('4.184e+9','T explosive'),'TONNE_COAL'=&gt;array('2.93076e+10','T coal'),'TONNE_OIL'=&gt;array('4.1868e+10','T oil'),'WATTHOUR'=&gt;array('3600','Wh'),'WATTSECOND'=&gt;array('1','Ws'),'YOCTOJOULE'=&gt;array('1.0e-24','yJ'),'YOTTAJOULE'=&gt;array('1.0e+24','YJ'),'YOTTAWATTHOUR'=&gt;array('3.6e+27','YWh'),'ZEPTOJOULE'=&gt;array('1.0e-21','zJ'),'ZETTAJOULE'=&gt;array('1.0e+21','ZJ'),'ZETTAWATTHOUR'=&gt;array('3.6e+24','ZWh'),'STANDARD'=&gt;'JOULE')</span>			(line <span class="line-number">149</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Calculations for all energy units</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#var$_units">Zend_Measure_Abstract::$_units</a></dt>
+						<dd>Unit types for this measurement</dd>
+					</dl>
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html">Zend_Measure_Abstract</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#var$_locale">Zend_Measure_Abstract::$_locale</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#var$_type">Zend_Measure_Abstract::$_type</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#var$_value">Zend_Measure_Abstract::$_value</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<span class="disabled">Methods</span>
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html">Zend_Measure_Abstract</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#method__construct">Zend_Measure_Abstract::__construct()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodadd">Zend_Measure_Abstract::add()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodcompare">Zend_Measure_Abstract::compare()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodconvertTo">Zend_Measure_Abstract::convertTo()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodequals">Zend_Measure_Abstract::equals()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodgetConversionList">Zend_Measure_Abstract::getConversionList()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodgetType">Zend_Measure_Abstract::getType()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodgetValue">Zend_Measure_Abstract::getValue()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodsetType">Zend_Measure_Abstract::setType()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodsetValue">Zend_Measure_Abstract::setValue()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodsub">Zend_Measure_Abstract::sub()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#methodtoString">Zend_Measure_Abstract::toString()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_Measure/Zend_Measure_Abstract/Zend_Measure_Abstract.html#method__toString">Zend_Measure_Abstract::__toString()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<span class="disabled">Constants</span>
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-methods">Methods</a>
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constATTOJOULE" id="ATTOJOULE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTOJOULE</span>
+			 = <span class="const-default"> 'ATTOJOULE'</span>
+			(line <span class="line-number">42</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBOARD_OF_TRADE_UNIT" id="BOARD_OF_TRADE_UNIT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BOARD_OF_TRADE_UNIT</span>
+			 = <span class="const-default"> 'BOARD_OF_TRADE_UNIT'</span>
+			(line <span class="line-number">43</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBTU" id="BTU"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BTU</span>
+			 = <span class="const-default"> 'BTU'</span>
+			(line <span class="line-number">44</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constBTU_THERMOCHEMICAL" id="BTU_THERMOCHEMICAL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BTU_THERMOCHEMICAL</span>
+			 = <span class="const-default"> 'BTU_TERMOCHEMICAL'</span>
+			(line <span class="line-number">45</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCALORIE" id="CALORIE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CALORIE</span>
+			 = <span class="const-default"> 'CALORIE'</span>
+			(line <span class="line-number">46</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCALORIE_15C" id="CALORIE_15C"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CALORIE_15C</span>
+			 = <span class="const-default"> 'CALORIE_15C'</span>
+			(line <span class="line-number">47</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCALORIE_NUTRITIONAL" id="CALORIE_NUTRITIONAL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CALORIE_NUTRITIONAL</span>
+			 = <span class="const-default"> 'CALORIE_NUTRITIONAL'</span>
+			(line <span class="line-number">48</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCALORIE_THERMOCHEMICAL" id="CALORIE_THERMOCHEMICAL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CALORIE_THERMOCHEMICAL</span>
+			 = <span class="const-default"> 'CALORIE_THERMOCHEMICAL'</span>
+			(line <span class="line-number">49</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCELSIUS_HEAT_UNIT" id="CELSIUS_HEAT_UNIT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CELSIUS_HEAT_UNIT</span>
+			 = <span class="const-default"> 'CELSIUS_HEAT_UNIT'</span>
+			(line <span class="line-number">50</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCENTIJOULE" id="CENTIJOULE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CENTIJOULE</span>
+			 = <span class="const-default"> 'CENTIJOULE'</span>
+			(line <span class="line-number">51</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCHEVAL_VAPEUR_HEURE" id="CHEVAL_VAPEUR_HEURE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CHEVAL_VAPEUR_HEURE</span>
+			 = <span class="const-default"> 'CHEVAL_VAPEUR_HEURE'</span>
+			(line <span class="line-number">52</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constDECIJOULE" id="DECIJOULE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DECIJOULE</span>
+			 = <span class="const-default"> 'DECIJOULE'</span>
+			(line <span class="line-number">53</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constDEKAJOULE" id="DEKAJOULE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DEKAJOULE</span>
+			 = <span class="const-default"> 'DEKAJOULE'</span>
+			(line <span class="line-number">54</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constDEKATHERM" id="DEKATHERM"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DEKATHERM</span>
+			 = <span class="const-default"> 'DEKATHERM'</span>
+			(line <span class="line-number">56</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constDEKAWATT_HOUR" id="DEKAWATT_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DEKAWATT_HOUR</span>
+			 = <span class="const-default"> 'DEKAWATT_HOUR'</span>
+			(line <span class="line-number">55</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constELECTRONVOLT" id="ELECTRONVOLT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ELECTRONVOLT</span>
+			 = <span class="const-default"> 'ELECTRONVOLT'</span>
+			(line <span class="line-number">57</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERG" id="ERG"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERG</span>
+			 = <span class="const-default"> 'ERG'</span>
+			(line <span class="line-number">58</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constEXAJOULE" id="EXAJOULE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">EXAJOULE</span>
+			 = <span class="const-default"> 'EXAJOULE'</span>
+			(line <span class="line-number">59</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constEXAWATT_HOUR" id="EXAWATT_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">EXAWATT_HOUR</span>
+			 = <span class="const-default"> 'EXAWATT_HOUR'</span>
+			(line <span class="line-number">60</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFEMTOJOULE" id="FEMTOJOULE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FEMTOJOULE</span>
+			 = <span class="const-default"> 'FEMTOJOULE'</span>
+			(line <span class="line-number">61</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFOOT_POUND" id="FOOT_POUND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FOOT_POUND</span>
+			 = <span class="const-default"> 'FOOT_POUND'</span>
+			(line <span class="line-number">62</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFOOT_POUNDAL" id="FOOT_POUNDAL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FOOT_POUNDAL</span>
+			 = <span class="const-default"> 'FOOT_POUNDAL'</span>
+			(line <span class="line-number">63</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_UK_AUTOMOTIVE" id="GALLON_UK_AUTOMOTIVE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_UK_AUTOMOTIVE</span>
+			 = <span class="const-default"> 'GALLON_UK_AUTOMOTIVE'</span>
+			(line <span class="line-number">64</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_UK_AVIATION" id="GALLON_UK_AVIATION"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_UK_AVIATION</span>
+			 = <span class="const-default"> 'GALLON_UK_AVIATION'</span>
+			(line <span class="line-number">66</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_UK_DIESEL" id="GALLON_UK_DIESEL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_UK_DIESEL</span>
+			 = <span class="const-default"> 'GALLON_UK_DIESEL'</span>
+			(line <span class="line-number">68</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_UK_DISTILATE" id="GALLON_UK_DISTILATE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_UK_DISTILATE</span>
+			 = <span class="const-default"> 'GALLON_UK_DISTILATE'</span>
+			(line <span class="line-number">70</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_UK_KEROSENE" id="GALLON_UK_KEROSENE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_UK_KEROSENE</span>
+			 = <span class="const-default"> 'GALLON_UK_KEROSINE'</span>
+			(line <span class="line-number">78</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_UK_KEROSINE_JET" id="GALLON_UK_KEROSINE_JET"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_UK_KEROSINE_JET</span>
+			 = <span class="const-default"> 'GALLON_UK_KEROSINE_JET'</span>
+			(line <span class="line-number">72</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_UK_LPG" id="GALLON_UK_LPG"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_UK_LPG</span>
+			 = <span class="const-default"> 'GALLON_UK_LPG'</span>
+			(line <span class="line-number">74</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_UK_NAPHTA" id="GALLON_UK_NAPHTA"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_UK_NAPHTA</span>
+			 = <span class="const-default"> 'GALLON_UK_NAPHTA'</span>
+			(line <span class="line-number">76</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_UK_RESIDUAL" id="GALLON_UK_RESIDUAL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_UK_RESIDUAL</span>
+			 = <span class="const-default"> 'GALLON_UK_RESIDUAL'</span>
+			(line <span class="line-number">80</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_US_AUTOMOTIVE" id="GALLON_US_AUTOMOTIVE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_US_AUTOMOTIVE</span>
+			 = <span class="const-default"> 'GALLON_US_AUTOMOTIVE'</span>
+			(line <span class="line-number">65</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_US_AVIATION" id="GALLON_US_AVIATION"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_US_AVIATION</span>
+			 = <span class="const-default"> 'GALLON_US_AVIATION'</span>
+			(line <span class="line-number">67</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_US_DIESEL" id="GALLON_US_DIESEL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_US_DIESEL</span>
+			 = <span class="const-default"> 'GALLON_US_DIESEL'</span>
+			(line <span class="line-number">69</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_US_DISTILATE" id="GALLON_US_DISTILATE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_US_DISTILATE</span>
+			 = <span class="const-default"> 'GALLON_US_DISTILATE'</span>
+			(line <span class="line-number">71</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_US_KEROSENE" id="GALLON_US_KEROSENE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_US_KEROSENE</span>
+			 = <span class="const-default"> 'GALLON_US_KEROSINE'</span>
+			(line <span class="line-number">79</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_US_KEROSINE_JET" id="GALLON_US_KEROSINE_JET"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_US_KEROSINE_JET</span>
+			 = <span class="const-default"> 'GALLON_US_KEROSINE_JET'</span>
+			(line <span class="line-number">73</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_US_LPG" id="GALLON_US_LPG"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_US_LPG</span>
+			 = <span class="const-default"> 'GALLON_US_LPG'</span>
+			(line <span class="line-number">75</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_US_NAPHTA" id="GALLON_US_NAPHTA"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_US_NAPHTA</span>
+			 = <span class="const-default"> 'GALLON_US_NAPHTA'</span>
+			(line <span class="line-number">77</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGALLON_US_RESIDUAL" id="GALLON_US_RESIDUAL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GALLON_US_RESIDUAL</span>
+			 = <span class="const-default"> 'GALLON_US_RESIDUAL'</span>
+			(line <span class="line-number">81</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGIGACALORIE" id="GIGACALORIE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GIGACALORIE</span>
+			 = <span class="const-default"> 'GIGACALORIE'</span>
+			(line <span class="line-number">83</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGIGACALORIE_15C" id="GIGACALORIE_15C"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GIGACALORIE_15C</span>
+			 = <span class="const-default"> 'GIGACALORIE_15C'</span>
+			(line <span class="line-number">84</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGIGAELECTRONVOLT" id="GIGAELECTRONVOLT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GIGAELECTRONVOLT</span>
+			 = <span class="const-default"> 'GIGAELECTRONVOLT'</span>
+			(line <span class="line-number">82</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGIGAJOULE" id="GIGAJOULE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GIGAJOULE</span>
+			 = <span class="const-default"> 'GIGAJOULE'</span>
+			(line <span class="line-number">85</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGIGAWATT_HOUR" id="GIGAWATT_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GIGAWATT_HOUR</span>
+			 = <span class="const-default"> 'GIGAWATT_HOUR'</span>
+			(line <span class="line-number">86</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constGRAM_CALORIE" id="GRAM_CALORIE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GRAM_CALORIE</span>
+			 = <span class="const-default"> 'GRAM_CALORIE'</span>
+			(line <span class="line-number">87</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constHARTREE" id="HARTREE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HARTREE</span>
+			 = <span class="const-default"> 'HARTREE'</span>
+			(line <span class="line-number">88</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constHECTOJOULE" id="HECTOJOULE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HECTOJOULE</span>
+			 = <span class="const-default"> 'HECTOJOULE'</span>
+			(line <span class="line-number">89</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constHECTOWATT_HOUR" id="HECTOWATT_HOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HECTOWATT_HOUR</span>
+			 = <span class="const-default"> 'HECTOWATT_HOUR'</span>
+			(line <span class="line-number">90</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constHORSEPOWER_HOUR" id="HORSEPOWER_HOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HORSEPOWER_HOUR</span>
+			 = <span class="const-default"> 'HORSEPOWER_HOUR'</span>
+			(line <span class="line-number">91</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constHUNDRED_CUBIC_FOOT_GAS" id="HUNDRED_CUBIC_FOOT_GAS"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HUNDRED_CUBIC_FOOT_GAS</span>
+			 = <span class="const-default"> 'HUNDRED_CUBIC_FOOT_GAS'</span>
+			(line <span class="line-number">92</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constINCH_OUNCE" id="INCH_OUNCE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">INCH_OUNCE</span>
+			 = <span class="const-default"> 'INCH_OUNCE'</span>
+			(line <span class="line-number">93</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constINCH_POUND" id="INCH_POUND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">INCH_POUND</span>
+			 = <span class="const-default"> 'INCH_POUND'</span>
+			(line <span class="line-number">94</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constJOULE" id="JOULE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">JOULE</span>
+			 = <span class="const-default"> 'JOULE'</span>
+			(line <span class="line-number">95</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constKILOCALORIE" id="KILOCALORIE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">KILOCALORIE</span>
+			 = <span class="const-default"> 'KILOCALORIE'</span>
+			(line <span class="line-number">97</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constKILOCALORIE_15C" id="KILOCALORIE_15C"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">KILOCALORIE_15C</span>
+			 = <span class="const-default"> 'KILOCALORIE_15C'</span>
+			(line <span class="line-number">96</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constKILOCALORIE_THERMOCHEMICAL" id="KILOCALORIE_THERMOCHEMICAL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">KILOCALORIE_THERMOCHEMICAL</span>
+			 = <span class="const-default"> 'KILOCALORIE_THERMOCHEMICAL'</span>
+			(line <span class="line-number">98</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constKILOELECTRONVOLT" id="KILOELECTRONVOLT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">KILOELECTRONVOLT</span>
+			 = <span class="const-default"> 'KILOELECTRONVOLT'</span>
+			(line <span class="line-number">99</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constKILOGRAM_CALORIE" id="KILOGRAM_CALORIE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">KILOGRAM_CALORIE</span>
+			 = <span class="const-default"> 'KILOGRAM_CALORIE'</span>
+			(line <span class="line-number">100</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constKILOGRAM_FORCE_METER" id="KILOGRAM_FORCE_METER"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">KILOGRAM_FORCE_METER</span>
+			 = <span class="const-default"> 'KILOGRAM_FORCE_METER'</span>
+			(line <span class="line-number">101</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constKILOJOULE" id="KILOJOULE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">KILOJOULE</span>
+			 = <span class="const-default"> 'KILOJOULE'</span>
+			(line <span class="line-number">102</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constKILOPOND_METER" id="KILOPOND_METER"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">KILOPOND_METER</span>
+			 = <span class="const-default"> 'KILOPOND_METER'</span>
+			(line <span class="line-number">103</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constKILOTON" id="KILOTON"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">KILOTON</span>
+			 = <span class="const-default"> 'KILOTON'</span>
+			(line <span class="line-number">104</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constKILOWATT_HOUR" id="KILOWATT_HOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">KILOWATT_HOUR</span>
+			 = <span class="const-default"> 'KILOWATT_HOUR'</span>
+			(line <span class="line-number">105</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constLITER_ATMOSPHERE" id="LITER_ATMOSPHERE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">LITER_ATMOSPHERE</span>
+			 = <span class="const-default"> 'LITER_ATMOSPHERE'</span>
+			(line <span class="line-number">106</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMEGACALORIE" id="MEGACALORIE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MEGACALORIE</span>
+			 = <span class="const-default"> 'MEGACALORIE'</span>
+			(line <span class="line-number">108</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMEGACALORIE_15C" id="MEGACALORIE_15C"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MEGACALORIE_15C</span>
+			 = <span class="const-default"> 'MEGACALORIE_15C'</span>
+			(line <span class="line-number">109</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMEGAELECTRONVOLT" id="MEGAELECTRONVOLT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MEGAELECTRONVOLT</span>
+			 = <span class="const-default"> 'MEGAELECTRONVOLT'</span>
+			(line <span class="line-number">107</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMEGAJOULE" id="MEGAJOULE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MEGAJOULE</span>
+			 = <span class="const-default"> 'MEGAJOULE'</span>
+			(line <span class="line-number">110</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMEGALERG" id="MEGALERG"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MEGALERG</span>
+			 = <span class="const-default"> 'MEGALERG'</span>
+			(line <span class="line-number">111</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMEGATON" id="MEGATON"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MEGATON</span>
+			 = <span class="const-default"> 'MEGATON'</span>
+			(line <span class="line-number">112</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMEGAWATTHOUR" id="MEGAWATTHOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MEGAWATTHOUR</span>
+			 = <span class="const-default"> 'MEGAWATTHOUR'</span>
+			(line <span class="line-number">113</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMETER_KILOGRAM_FORCE" id="METER_KILOGRAM_FORCE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">METER_KILOGRAM_FORCE</span>
+			 = <span class="const-default"> 'METER_KILOGRAM_FORCE'</span>
+			(line <span class="line-number">114</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMICROJOULE" id="MICROJOULE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MICROJOULE</span>
+			 = <span class="const-default"> 'MICROJOULE'</span>
+			(line <span class="line-number">115</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMILLIJOULE" id="MILLIJOULE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MILLIJOULE</span>
+			 = <span class="const-default"> 'MILLIJOULE'</span>
+			(line <span class="line-number">116</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMYRIAWATT_HOUR" id="MYRIAWATT_HOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MYRIAWATT_HOUR</span>
+			 = <span class="const-default"> 'MYRIAWATT_HOUR'</span>
+			(line <span class="line-number">117</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constNANOJOULE" id="NANOJOULE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">NANOJOULE</span>
+			 = <span class="const-default"> 'NANOJOULE'</span>
+			(line <span class="line-number">118</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constNEWTON_METER" id="NEWTON_METER"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">NEWTON_METER</span>
+			 = <span class="const-default"> 'NEWTON_METER'</span>
+			(line <span class="line-number">119</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPETAJOULE" id="PETAJOULE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PETAJOULE</span>
+			 = <span class="const-default"> 'PETAJOULE'</span>
+			(line <span class="line-number">120</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPETAWATTHOUR" id="PETAWATTHOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PETAWATTHOUR</span>
+			 = <span class="const-default"> 'PETAWATTHOUR'</span>
+			(line <span class="line-number">121</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPFERDESTAERKENSTUNDE" id="PFERDESTAERKENSTUNDE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PFERDESTAERKENSTUNDE</span>
+			 = <span class="const-default"> 'PFERDESTAERKENSTUNDE'</span>
+			(line <span class="line-number">122</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPICOJOULE" id="PICOJOULE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PICOJOULE</span>
+			 = <span class="const-default"> 'PICOJOULE'</span>
+			(line <span class="line-number">123</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constQUAD" id="QUAD"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">QUAD</span>
+			 = <span class="const-default"> 'QUAD'</span>
+			(line <span class="line-number">125</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constQ_UNIT" id="Q_UNIT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">Q_UNIT</span>
+			 = <span class="const-default"> 'Q_UNIT'</span>
+			(line <span class="line-number">124</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constSTANDARD" id="STANDARD"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">STANDARD</span>
+			 = <span class="const-default"> 'JOULE'</span>
+			(line <span class="line-number">40</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTERAELECTRONVOLT" id="TERAELECTRONVOLT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TERAELECTRONVOLT</span>
+			 = <span class="const-default"> 'TERAELECTRONVOLT'</span>
+			(line <span class="line-number">126</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTERAJOULE" id="TERAJOULE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TERAJOULE</span>
+			 = <span class="const-default"> 'TERAJOULE'</span>
+			(line <span class="line-number">127</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTERAWATTHOUR" id="TERAWATTHOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TERAWATTHOUR</span>
+			 = <span class="const-default"> 'TERAWATTHOUR'</span>
+			(line <span class="line-number">128</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTHERM" id="THERM"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">THERM</span>
+			 = <span class="const-default"> 'THERM'</span>
+			(line <span class="line-number">129</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTHERMIE" id="THERMIE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">THERMIE</span>
+			 = <span class="const-default"> 'THERMIE'</span>
+			(line <span class="line-number">131</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTHERM_US" id="THERM_US"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">THERM_US</span>
+			 = <span class="const-default"> 'THERM_US'</span>
+			(line <span class="line-number">130</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTON" id="TON"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TON</span>
+			 = <span class="const-default"> 'TON'</span>
+			(line <span class="line-number">132</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTONNE_COAL" id="TONNE_COAL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TONNE_COAL</span>
+			 = <span class="const-default"> 'TONNE_COAL'</span>
+			(line <span class="line-number">133</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTONNE_OIL" id="TONNE_OIL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TONNE_OIL</span>
+			 = <span class="const-default"> 'TONNE_OIL'</span>
+			(line <span class="line-number">134</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constWATTHOUR" id="WATTHOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">WATTHOUR</span>
+			 = <span class="const-default"> 'WATTHOUR'</span>
+			(line <span class="line-number">135</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constWATTSECOND" id="WATTSECOND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">WATTSECOND</span>
+			 = <span class="const-default"> 'WATTSECOND'</span>
+			(line <span class="line-number">136</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constYOCTOJOULE" id="YOCTOJOULE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">YOCTOJOULE</span>
+			 = <span class="const-default"> 'YOCTOJOULE'</span>
+			(line <span class="line-number">137</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constYOTTAJOULE" id="YOTTAJOULE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">YOTTAJOULE</span>
+			 = <span class="const-default"> 'YOTTAJOULE'</span>
+			(line <span class="line-number">138</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constYOTTAWATTHOUR" id="YOTTAWATTHOUR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">YOTTAWATTHOUR</span>
+			 = <span class="const-default"> 'YOTTAWATTHOUR'</span>
+			(line <span class="line-number">139</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constZEPTOJOULE" id="ZEPTOJOULE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ZEPTOJOULE</span>
+			 = <span class="const-default"> 'ZEPTOJOULE'</span>
+			(line <span class="line-number">140</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constZETTAJOULE" id="ZETTAJOULE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ZETTAJOULE</span>
+			 = <span class="const-default"> 'ZETTAJOULE'</span>
+			(line <span class="line-number">141</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constZETTAWATTHOUR" id="ZETTAWATTHOUR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ZETTAWATTHOUR</span>
+			 = <span class="const-default"> 'ZETTAWATTHOUR'</span>
+			(line <span class="line-number">142</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:19:55 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

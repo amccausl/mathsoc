@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Zend_InfoCard_Xml_Assertion_Saml</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Zend_InfoCard_Xml_Assertion_Saml</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+                <p class="implements">
+            Implements interfaces:
+            <ul>
+                <li><a href="../../Zend_InfoCard/Zend_InfoCard_Xml/Zend_InfoCard_Xml_Assertion_Interface.html">Zend_InfoCard_Xml_Assertion_Interface</a></li>            </ul>
+        </p>
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">A Xml Assertion Document in SAML Token format</p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_InfoCard---Xml---Assertion---Saml.php.html">/InfoCard/Xml/Assertion/Saml.php</a> (line <span class="field">42</span>)
+		</p>
+		
+				
+		<pre>SimpleXMLElement
+   |
+   --<a href="../../Zend_InfoCard/Zend_InfoCard_Xml/Zend_InfoCard_Xml_Element.html">Zend_InfoCard_Xml_Element</a>
+      |
+      --Zend_InfoCard_Xml_Assertion_Saml</pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CONDITION_AUDIENCE" title="details" class="const-name">CONDITION_AUDIENCE</a> = 					<span class="var-type"> 'AudienceRestrictionCondition'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CONDITION_TIME_ADJ" title="details" class="const-name">CONDITION_TIME_ADJ</a> = 					<span class="var-type"> 3600</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CONFIRMATION_BEARER" title="details" class="const-name">CONFIRMATION_BEARER</a> = 					<span class="var-type"> 'urn:oasis:names:tc:SAML:1.0:cm:bearer'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+									<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getAssertionID" title="details" class="method-name">getAssertionID</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getAssertionURI" title="details" class="method-name">getAssertionURI</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#getAttributes" title="details" class="method-name">getAttributes</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#getConditions" title="details" class="method-name">getConditions</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getConfirmationMethod" title="details" class="method-name">getConfirmationMethod</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer</span>
+										<a href="#getIssuedTimestamp" title="details" class="method-name">getIssuedTimestamp</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#getIssuer" title="details" class="method-name">getIssuer</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer</span>
+										<a href="#getMajorVersion" title="details" class="method-name">getMajorVersion</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer</span>
+										<a href="#getMinorVersion" title="details" class="method-name">getMinorVersion</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#validateConditions" title="details" class="method-name">validateConditions</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$conditions</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#_getServerName" title="details" class="method-name">_getServerName</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#_getServerPort" title="details" class="method-name">_getServerPort</a>
+										()
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodgetAssertionID" id="getAssertionID"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getAssertionID</span> (line <span class="line-number">173</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the Assertion ID of the assertion</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The Assertion ID</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getAssertionID
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Zend_InfoCard/Zend_InfoCard_Xml/Zend_InfoCard_Xml_Assertion_Interface.html#methodgetAssertionID">Zend_InfoCard_Xml_Assertion_Interface::getAssertionID()</a></dt>
+						<dd>Get the Assertion ID of the assertion</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetAssertionURI" id="getAssertionURI"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getAssertionURI</span> (line <span class="line-number">143</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the Assertion URI for this type of Assertion</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the Assertion URI</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getAssertionURI
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Zend_InfoCard/Zend_InfoCard_Xml/Zend_InfoCard_Xml_Assertion_Interface.html#methodgetAssertionURI">Zend_InfoCard_Xml_Assertion_Interface::getAssertionURI()</a></dt>
+						<dd>Get the Assertion URI for this type of Assertion</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetAttributes" id="getAttributes"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getAttributes</span> (line <span class="line-number">266</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return an array of attributes (claims) contained within the assertion</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> An array of attributes / claims within the assertion</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getAttributes
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Zend_InfoCard/Zend_InfoCard_Xml/Zend_InfoCard_Xml_Assertion_Interface.html#methodgetAttributes">Zend_InfoCard_Xml_Assertion_Interface::getAttributes()</a></dt>
+						<dd>Return an array of attributes (claims) contained within the assertion</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetConditions" id="getConditions"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getConditions</span> (line <span class="line-number">204</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return an array of conditions which the assertions are predicated on</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> an array of conditions</li>
+				<li><span class="field">throws:</span> Zend_InfoCard_Xml_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getConditions
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Zend_InfoCard/Zend_InfoCard_Xml/Zend_InfoCard_Xml_Assertion_Interface.html#methodgetConditions">Zend_InfoCard_Xml_Assertion_Interface::getConditions()</a></dt>
+						<dd>Return an array of conditions which the assertions are predicated on</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetConfirmationMethod" id="getConfirmationMethod"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getConfirmationMethod</span> (line <span class="line-number">255</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the Confirmation Method URI used in the Assertion</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The confirmation method URI</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getConfirmationMethod
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetIssuedTimestamp" id="getIssuedTimestamp"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getIssuedTimestamp</span> (line <span class="line-number">193</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the Timestamp of when the assertion was issued</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> a UNIX timestamp representing when the assertion was issued</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getIssuedTimestamp
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetIssuer" id="getIssuer"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getIssuer</span> (line <span class="line-number">183</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the Issuer URI of the assertion</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the URI of the assertion Issuer</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getIssuer
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetMajorVersion" id="getMajorVersion"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getMajorVersion</span> (line <span class="line-number">153</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the Major Version of the SAML Assertion</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The major version number</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getMajorVersion
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetMinorVersion" id="getMinorVersion"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getMinorVersion</span> (line <span class="line-number">163</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The Minor Version of the SAML Assertion</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The minor version number</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getMinorVersion
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodvalidateConditions" id="validateConditions"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">validateConditions</span> (line <span class="line-number">77</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Validate the conditions array returned from the getConditions() call</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Boolean true on success, an array of condition, error message on failure</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			validateConditions
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$conditions</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$conditions</span><span class="var-description">: An array of condtions for the assertion taken from getConditions()</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Zend_InfoCard/Zend_InfoCard_Xml/Zend_InfoCard_Xml_Assertion_Interface.html#methodvalidateConditions">Zend_InfoCard_Xml_Assertion_Interface::validateConditions()</a></dt>
+						<dd>Validate the conditions array returned from the getConditions() call</dd>
+					</dl>
+			
+	</div>
+<a name="method_getServerName" id="_getServerName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_getServerName</span> (line <span class="line-number">63</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_getServerName
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method_getServerPort" id="_getServerPort"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_getServerPort</span> (line <span class="line-number">67</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_getServerPort
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Zend_InfoCard/Zend_InfoCard_Xml/Zend_InfoCard_Xml_Element.html">Zend_InfoCard_Xml_Element</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_InfoCard/Zend_InfoCard_Xml/Zend_InfoCard_Xml_Element.html#methodconvertToDOM">Zend_InfoCard_Xml_Element::convertToDOM()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_InfoCard/Zend_InfoCard_Xml/Zend_InfoCard_Xml_Element.html#methodconvertToObject">Zend_InfoCard_Xml_Element::convertToObject()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Zend_InfoCard/Zend_InfoCard_Xml/Zend_InfoCard_Xml_Element.html#method__toString">Zend_InfoCard_Xml_Element::__toString()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constCONDITION_AUDIENCE" id="CONDITION_AUDIENCE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CONDITION_AUDIENCE</span>
+			 = <span class="const-default"> 'AudienceRestrictionCondition'</span>
+			(line <span class="line-number">50</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Audience Restriction Condition</p>
+	
+	
+</div>
+<a name="constCONDITION_TIME_ADJ" id="CONDITION_TIME_ADJ"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CONDITION_TIME_ADJ</span>
+			 = <span class="const-default"> 3600</span>
+			(line <span class="line-number">61</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The amount of time in seconds to buffer when checking conditions to ensure</p>
+<p class="description"><p>that differences between client/server clocks don't interfer too much</p></p>
+	
+	
+</div>
+<a name="constCONFIRMATION_BEARER" id="CONFIRMATION_BEARER"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CONFIRMATION_BEARER</span>
+			 = <span class="const-default"> 'urn:oasis:names:tc:SAML:1.0:cm:bearer'</span>
+			(line <span class="line-number">55</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The URI for a 'bearer' confirmation</p>
+	
+	
+</div>
+						
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 21 Jul 2008 03:47:34 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

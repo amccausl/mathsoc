@@ -1,0 +1,535 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>39.3. Advanced Usage</title>
+<link rel="stylesheet" href="dbstyle.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.72.0">
+<link rel="start" href="index.html" title="Programmer's Reference Guide">
+<link rel="up" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="prev" href="zend.session.basic_usage.html" title="39.2. Basic Usage">
+<link rel="next" href="zend.session.global_session_management.html" title="39.4. Global Session Management">
+<link rel="chapter" href="introduction.html" title="Chapter 1. Introduction to Zend Framework">
+<link rel="chapter" href="zend.acl.html" title="Chapter 2. Zend_Acl">
+<link rel="chapter" href="zend.auth.html" title="Chapter 3. Zend_Auth">
+<link rel="chapter" href="zend.cache.html" title="Chapter 4. Zend_Cache">
+<link rel="chapter" href="zend.config.html" title="Chapter 5. Zend_Config">
+<link rel="chapter" href="zend.console.getopt.html" title="Chapter 6. Zend_Console_Getopt">
+<link rel="chapter" href="zend.controller.html" title="Chapter 7. Zend_Controller">
+<link rel="chapter" href="zend.currency.html" title="Chapter 8. Zend_Currency">
+<link rel="chapter" href="zend.date.html" title="Chapter 9. Zend_Date">
+<link rel="chapter" href="zend.db.html" title="Chapter 10. Zend_Db">
+<link rel="chapter" href="zend.debug.html" title="Chapter 11. Zend_Debug">
+<link rel="chapter" href="zend.dojo.html" title="Chapter 12. Zend_Dojo">
+<link rel="chapter" href="zend.dom.html" title="Chapter 13. Zend_Dom">
+<link rel="chapter" href="zend.exception.html" title="Chapter 14. Zend_Exception">
+<link rel="chapter" href="zend.feed.html" title="Chapter 15. Zend_Feed">
+<link rel="chapter" href="zend.filter.html" title="Chapter 16. Zend_Filter">
+<link rel="chapter" href="zend.form.html" title="Chapter 17. Zend_Form">
+<link rel="chapter" href="zend.gdata.html" title="Chapter 18. Zend_Gdata">
+<link rel="chapter" href="zend.http.html" title="Chapter 19. Zend_Http">
+<link rel="chapter" href="zend.infocard.html" title="Chapter 20. Zend_InfoCard">
+<link rel="chapter" href="zend.json.html" title="Chapter 21. Zend_Json">
+<link rel="chapter" href="zend.layout.html" title="Chapter 22. Zend_Layout">
+<link rel="chapter" href="zend.ldap.html" title="Chapter 23. Zend_Ldap">
+<link rel="chapter" href="zend.loader.html" title="Chapter 24. Zend_Loader">
+<link rel="chapter" href="zend.locale.html" title="Chapter 25. Zend_Locale">
+<link rel="chapter" href="zend.log.html" title="Chapter 26. Zend_Log">
+<link rel="chapter" href="zend.mail.html" title="Chapter 27. Zend_Mail">
+<link rel="chapter" href="zend.measure.html" title="Chapter 28. Zend_Measure">
+<link rel="chapter" href="zend.memory.html" title="Chapter 29. Zend_Memory">
+<link rel="chapter" href="zend.mime.html" title="Chapter 30. Zend_Mime">
+<link rel="chapter" href="zend.openid.html" title="Chapter 31. Zend_OpenId">
+<link rel="chapter" href="zend.paginator.html" title="Chapter 32. Zend_Paginator">
+<link rel="chapter" href="zend.pdf.html" title="Chapter 33. Zend_Pdf">
+<link rel="chapter" href="zend.registry.html" title="Chapter 34. Zend_Registry">
+<link rel="chapter" href="zend.rest.html" title="Chapter 35. Zend_Rest">
+<link rel="chapter" href="zend.search.lucene.html" title="Chapter 36. Zend_Search_Lucene">
+<link rel="chapter" href="zend.server.html" title="Chapter 37. Zend_Server">
+<link rel="chapter" href="zend.service.html" title="Chapter 38. Zend_Service">
+<link rel="chapter" href="zend.session.html" title="Chapter 39. Zend_Session">
+<link rel="chapter" href="zend.soap.html" title="Chapter 40. Zend_Soap">
+<link rel="chapter" href="zend.test.html" title="Chapter 41. Zend_Test">
+<link rel="chapter" href="zend.text.html" title="Chapter 42. Zend_Text">
+<link rel="chapter" href="zend.timesync.html" title="Chapter 43. Zend_TimeSync">
+<link rel="chapter" href="zend.translate.html" title="Chapter 44. Zend_Translate">
+<link rel="chapter" href="zend.uri.html" title="Chapter 45. Zend_Uri">
+<link rel="chapter" href="zend.validate.html" title="Chapter 46. Zend_Validate">
+<link rel="chapter" href="zend.version.html" title="Chapter 47. Zend_Version">
+<link rel="chapter" href="zend.view.html" title="Chapter 48. Zend_View">
+<link rel="chapter" href="zend.xmlrpc.html" title="Chapter 49. Zend_XmlRpc">
+<link rel="appendix" href="requirements.html" title="Appendix A. Zend Framework Requirements">
+<link rel="appendix" href="coding-standard.html" title="Appendix B. Zend Framework Coding Standard for PHP">
+<link rel="appendix" href="copyrights.html" title="Appendix C. Copyright Information">
+<link rel="index" href="the.index.html" title="Index">
+<link rel="subsection" href="zend.session.advanced_usage.html#zend.session.advanced_usage.starting_a_session" title="39.3.1. Starting a Session">
+<link rel="subsection" href="zend.session.advanced_usage.html#zend.session.advanced_usage.locking" title="39.3.2. Locking Session Namespaces">
+<link rel="subsection" href="zend.session.advanced_usage.html#zend.session.advanced_usage.expiration" title="39.3.3. Namespace Expiration">
+<link rel="subsection" href="zend.session.advanced_usage.html#zend.session.advanced_usage.controllers" title="39.3.4. Session Encapsulation and Controllers">
+<link rel="subsection" href="zend.session.advanced_usage.html#zend.session.advanced_usage.single_instance" title="39.3.5. Preventing Multiple Instances per Namespace">
+<link rel="subsection" href="zend.session.advanced_usage.html#zend.session.advanced_usage.arrays" title="39.3.6. Working with Arrays">
+<link rel="subsection" href="zend.session.advanced_usage.html#zend.session.advanced_usage.objects" title="39.3.7. Using Sessions with Objects">
+<link rel="subsection" href="zend.session.advanced_usage.html#zend.session.advanced_usage.testing" title="39.3.8. Using Sessions with Unit Tests">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader"><table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">39.3. Advanced Usage</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="zend.session.basic_usage.html">Prev</a> </td>
+<th width="60%" align="center">Chapter 39. Zend_Session</th>
+<td width="20%" align="right"> <a accesskey="n" href="zend.session.global_session_management.html">Next</a>
+</td>
+</tr>
+</table></div>
+<div class="sect1" lang="en">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="zend.session.advanced_usage"></a>39.3. Advanced Usage</h2></div></div></div>
+<p>
+        While the basic usage examples are a perfectly acceptable way to utilize Zend Framework sessions, there are some
+        best practices to consider. This section discusses the finer details of session handling and illustrates more
+        advanced usage of the Zend_Session component.
+    </p>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.session.advanced_usage.starting_a_session"></a>39.3.1. Starting a Session</h3></div></div></div>
+<p>
+            If you want all requests to have a session facilitated by Zend_Session, then start the session in the
+            bootstrap file:
+        </p>
+<div class="example">
+<a name="zend.session.advanced_usage.starting_a_session.example"></a><p class="title"><b>Example 39.6. Starting the Global Session</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+require_once 'Zend/Session.php';
+
+Zend_Session::start();
+            </pre></div>
+</div>
+<br class="example-break"><p>
+            By starting the session in the bootstrap file, you avoid the possibility that your session might be started
+            after headers have been sent to the browser, which results in an exception, and possibly a broken page for
+            website viewers. Various advanced features require <code class="code">Zend_Session::start()</code> first. (More on
+            advanced features later.)
+        </p>
+<p>
+            There are four ways to start a session, when using Zend_Session. Two are wrong.
+        </p>
+<div class="orderedlist"><ol type="1">
+<li>
+<p>
+                    Wrong: Do not enable PHP's
+                    <a href="http://www.php.net/manual/en/ref.session.php#ini.session.auto-start" target="_top"><code class="code">                    session.auto_start</code>
+                    setting</a>. If you do not have the ability to disable this setting in
+                    php.ini, you are using mod_php (or equivalent), and the setting is already enabled in
+                    <code class="code">php.ini</code>, then add the following to your <code class="code">.htaccess</code> file (usually in your
+                    HTML document root directory):
+                    </p>
+<pre class="programlisting">php_value session.auto_start 0
+                    </pre>
+<p>
+                </p>
+</li>
+<li><p>
+                    Wrong: Do not use PHP's
+                    <a href="http://www.php.net/session_start" target="_top"><code class="code">session_start()</code></a> function
+                    directly. If you use <code class="code">session_start()</code> directly, and then start using
+                    <code class="code">Zend_Session_Namespace</code>, an exception will be thrown by
+                    <code class="code">Zend_Session::start()</code> ("session has already been started"). If you call
+                    <code class="code">session_start()</code> after using <code class="code">Zend_Session_Namespace</code> or calling
+                    <code class="code">Zend_Session::start()</code>, an error of level <code class="code">E_NOTICE</code> will be generated, and
+                    the call will be ignored.
+                </p></li>
+<li>
+<p>
+                    Correct: Use <code class="code">Zend_Session::start()</code>. If you want all requests to have and use
+                    sessions, then place this function call early and unconditionally in your bootstrap code.
+                    Sessions have some overhead. If some requests need sessions, but other requests will not need to use
+                    sessions, then:
+                </p>
+<div class="itemizedlist"><ul type="opencircle">
+<li style="list-style-type: circle"><p>
+                            Unconditionally set the <code class="code">strict</code> option to <code class="code">true</code> using
+                            <code class="code">Zend_Session::setOptions()</code> in your bootstrap.
+                        </p></li>
+<li style="list-style-type: circle"><p>
+                            Call <code class="code">Zend_Session::start()</code> only for requests that need to use sessions and
+                            before any <code class="code">Zend_Session_Namespace</code> objects are instantiated.
+                        </p></li>
+<li style="list-style-type: circle"><p>
+                            Use "<code class="code">new Zend_Session_Namespace()</code>" normally, where needed, but make sure
+                            <code class="code">Zend_Session::start()</code> has been called previously.
+                        </p></li>
+</ul></div>
+<p>
+                    The <code class="code">strict</code> option prevents <code class="code">new Zend_Session_Namespace()</code> from automatically
+                    starting the session using <code class="code">Zend_Session::start()</code>. Thus, this option helps application
+                    developers enforce a design decision to avoid using sessions for certain requests, since it causes
+                    an exception to be thrown when <code class="code">Zend_Session_Namespace</code> is instantiated before
+                    <code class="code">Zend_Session::start()</code> is called. Developers should carefully consider the impact of
+                    using <code class="code">Zend_Session::setOptions()</code>, since these options have global effect, owing to
+                    their correspondence to the underlying options for ext/session.
+                </p>
+</li>
+<li><p>
+                    Correct: Just instantiate <code class="code">Zend_Session_Namespace</code> whenever needed, and the underlying
+                    PHP session will be automatically started. This offers extremely simple usage that works well in
+                    most situations. However, you then become responsible for ensuring that the first
+                    <code class="code">new Zend_Session_Namespace()</code> happens <span class="strong"><strong>before</strong></span> any
+                    output (e.g., <a href="http://www.php.net/headers_sent" target="_top">HTTP headers</a>) has been sent by
+                    PHP to the client, if you are using the default, cookie-based sessions (strongly recommended). See
+                    <a href="zend.session.global_session_management.html#zend.session.global_session_management.headers_sent" title="39.4.2. Error: Headers Already Sent">Section 39.4.2, “Error: Headers Already Sent”</a> for more information.
+                </p></li>
+</ol></div>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.session.advanced_usage.locking"></a>39.3.2. Locking Session Namespaces</h3></div></div></div>
+<p>
+            Session namespaces can be locked, to prevent further alterations to the data in that namespace. Use
+            <code class="code">lock()</code> to make a specific namespace read-only, <code class="code">unLock()</code> to make a read-only
+            namespace read-write, and <code class="code">isLocked()</code> to test if a namespace has been previously locked. Locks
+            are transient and do not persist from one request to the next. Locking the namespace has no effect on setter
+            methods of objects stored in the namespace, but does prevent the use of the namespace's setter method to
+            remove or replace objects stored directly in the namespace. Similarly, locking
+            <code class="code">Zend_Session_Namespace</code> instances does not prevent the use of symbol table aliases to the same
+            data (see <a href="http://www.php.net/references" target="_top">PHP references</a>).
+        </p>
+<div class="example">
+<a name="zend.session.advanced_usage.locking.example.basic"></a><p class="title"><b>Example 39.7. Locking Session Namespaces</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+require_once 'Zend/Session/Namespace.php';
+
+$userProfileNamespace = new Zend_Session_Namespace('userProfileNamespace');
+
+// marking session as read only locked
+$userProfileNamespace-&gt;lock();
+
+// unlocking read-only lock
+if ($userProfileNamespace-&gt;isLocked()) {
+    $userProfileNamespace-&gt;unLock();
+}
+            </pre></div>
+</div>
+<br class="example-break">
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.session.advanced_usage.expiration"></a>39.3.3. Namespace Expiration</h3></div></div></div>
+<p>
+            Limits can be placed on the longevity of both namespaces and individual keys in namespaces. Common use cases
+            include passing temporary information between requests, and reducing exposure to certain security risks by
+            removing access to potentially sensitive information some time after authentication occurred. Expiration can
+            be based on either elapsed seconds or the number of "hops", where a hop occurs for each successive request
+            that instantiates the namespace at least once.
+        </p>
+<div class="example">
+<a name="zend.session.advanced_usage.expiration.example"></a><p class="title"><b>Example 39.8. Expiration Examples</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+require_once 'Zend/Session/Namespace.php';
+
+$s = new Zend_Session_Namespace('expireAll');
+$s-&gt;a = 'apple';
+$s-&gt;p = 'pear';
+$s-&gt;o = 'orange';
+
+$s-&gt;setExpirationSeconds(5, 'a'); // expire only the key "a" in 5 seconds
+
+// expire entire namespace in 5 "hops"
+$s-&gt;setExpirationHops(5);
+
+$s-&gt;setExpirationSeconds(60);
+// The "expireAll" namespace will be marked "expired" on
+// the first request received after 60 seconds have elapsed,
+// or in 5 hops, whichever happens first.
+            </pre></div>
+</div>
+<br class="example-break"><p>
+            When working with data expiring from the session in the current request, care should be used when retrieving
+            them. Although the data are returned by reference, modifying the data will not make expiring data persist
+            past the current request. In order to "reset" the expiration time, fetch the data into temporary variables,
+            use the namespace to unset them, and then set the appropriate keys again.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.session.advanced_usage.controllers"></a>39.3.4. Session Encapsulation and Controllers</h3></div></div></div>
+<p>
+            Namespaces can also be used to separate session access by controllers to protect variables from
+            contamination. For example, an authentication controller might keep its session state data separate from all
+            other controllers for meeting security requirements.
+        </p>
+<div class="example">
+<a name="zend.session.advanced_usage.controllers.example"></a><p class="title"><b>Example 39.9. Namespaced Sessions for Controllers with Automatic Expiration</b></p>
+<div class="example-contents">
+<p>
+                The following code, as part of a controller that displays a test question, initiates a boolean variable
+                to represent whether or not a submitted answer to the test question should be accepted. In this case,
+                the application user is given 300 seconds to answer the displayed question.
+            </p>
+<pre class="programlisting">&lt;?php
+// ...
+// in the question view controller
+require_once 'Zend/Session/Namespace.php';
+$testSpace = new Zend_Session_Namespace('testSpace');
+$testSpace-&gt;setExpirationSeconds(300, 'accept_answer'); // expire only this variable
+$testSpace-&gt;accept_answer = true;
+//...
+            </pre>
+<p>
+                Below, the controller that processes the answers to test questions determines whether or not to accept
+                an answer based on whether the user submitted the answer within the allotted time:
+            </p>
+<pre class="programlisting">&lt;?php
+// ...
+// in the answer processing controller
+require_once 'Zend/Session/Namespace.php';
+$testSpace = new Zend_Session_Namespace('testSpace');
+if ($testSpace-&gt;accept_answer === true) {
+    // within time
+}
+else {
+    // not within time
+}
+// ...
+            </pre>
+</div>
+</div>
+<br class="example-break">
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.session.advanced_usage.single_instance"></a>39.3.5. Preventing Multiple Instances per Namespace</h3></div></div></div>
+<p>
+            Although <a href="zend.session.advanced_usage.html#zend.session.advanced_usage.locking" title="39.3.2. Locking Session Namespaces">session locking</a> provides a good degree
+            of protection against unintended use of namespaced session data, <code class="code">Zend_Session_Namespace</code> also
+            features the ability to prevent the creation of multiple instances corresponding to a single namespace.
+        </p>
+<p>
+            To enable this behavior, pass <code class="code">true</code> to the second constructor argument when creating the last
+            allowed instance of <code class="code">Zend_Session_Namespace</code>. Any subsequent attempt to instantiate the same
+            namespace would result in a thrown exception.
+        </p>
+<div class="example">
+<a name="zend.session.advanced_usage.single_instance.example"></a><p class="title"><b>Example 39.10. Limiting Session Namespace Access to a Single Instance</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+require_once 'Zend/Session/Namespace.php';
+
+// create an instance of a namespace
+$authSpaceAccessor1 = new Zend_Session_Namespace('Zend_Auth');
+
+// create another instance of the same namespace, but disallow any new instances
+$authSpaceAccessor2 = new Zend_Session_Namespace('Zend_Auth', true);
+
+// making a reference is still possible
+$authSpaceAccessor3 = $authSpaceAccessor2;
+
+$authSpaceAccessor1-&gt;foo = 'bar';
+
+assert($authSpaceAccessor2-&gt;foo, 'bar');
+
+try {
+    $aNamespaceObject = new Zend_Session_Namespace('Zend_Auth');
+} catch (Zend_Session_Exception $e) {
+    echo "Cannot instantiate this namespace since \$authSpaceAccessor2 was created\n";
+}
+            </pre></div>
+</div>
+<br class="example-break"><p>
+            The second parameter in the constructor above tells <code class="code">Zend_Session_Namespace</code> that any future
+            instances with the "<code class="code">Zend_Auth</code>" namespace are not allowed. Attempting to create such an instance
+            causes an exception to be thrown by the constructor. The developer therefore becomes responsible for storing
+            a reference to an instance object (<code class="code">$authSpaceAccessor1</code>, <code class="code">$authSpaceAccessor2</code>, or
+            <code class="code">$authSpaceAccessor3</code> in the example above) somewhere, if access to the session namespace is
+            needed at a later time during the same request. For example, a developer may store the reference in a static
+            variable, add the reference to a
+            <a href="http://www.martinfowler.com/eaaCatalog/registry.html" target="_top">registry</a> (see
+            <a href="zend.registry.html" title="Chapter 34. Zend_Registry">Chapter 34, <i>Zend_Registry</i></a>), or otherwise make it available to other methods that may need access to
+            the session namespace.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.session.advanced_usage.arrays"></a>39.3.6. Working with Arrays</h3></div></div></div>
+<p>
+            Due to the implementation history of PHP magic methods, modifying an array inside a namespace may not work
+            under PHP versions before 5.2.1. If you will only be working with PHP 5.2.1 or later, then you may <a href="zend.session.advanced_usage.html#zend.session.advanced_usage.objects" title="39.3.7. Using Sessions with Objects">skip to the next section</a>.
+        </p>
+<div class="example">
+<a name="zend.session.advanced_usage.arrays.example.modifying"></a><p class="title"><b>Example 39.11. Modifying Array Data with a Session Namespace</b></p>
+<div class="example-contents">
+<p>
+                The following illustrates how the problem may be reproduced:
+            </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Session/Namespace.php';
+$sessionNamespace = new Zend_Session_Namespace();
+$sessionNamespace-&gt;array = array();
+$sessionNamespace-&gt;array['testKey'] = 1; // may not work as expected before PHP 5.2.1
+echo $sessionNamespace-&gt;array['testKey'];
+            </pre>
+</div>
+</div>
+<br class="example-break"><div class="example">
+<a name="zend.session.advanced_usage.arrays.example.building_prior"></a><p class="title"><b>Example 39.12. Building Arrays Prior to Session Storage</b></p>
+<div class="example-contents">
+<p>
+                If possible, avoid the problem altogether by storing arrays into a session namespace only after all
+                desired array values have been set.
+            </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Session/Namespace.php';
+$sessionNamespace = new Zend_Session_Namespace('Foo');
+$sessionNamespace-&gt;array = array('a', 'b', 'c');
+            </pre>
+</div>
+</div>
+<br class="example-break"><p>
+            If you are using an affected version of PHP and need to modify the array after assigning it to a session
+            namespace key, you may use either or both of the following workarounds.
+        </p>
+<div class="example">
+<a name="zend.session.advanced_usage.arrays.example.workaround.reassign"></a><p class="title"><b>Example 39.13. Workaround: Reassign a Modified Array</b></p>
+<div class="example-contents">
+<p>
+                In the code that follows, a copy of the stored array is created, modified, and reassigned to the
+                location from which the copy was created, overwriting the original array.
+            </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Session/Namespace.php';
+$sessionNamespace = new Zend_Session_Namespace();
+
+// assign the initial array
+$sessionNamespace-&gt;array = array('tree' =&gt; 'apple');
+
+// make a copy of the array
+$tmp = $sessionNamespace-&gt;array;
+
+// modfiy the array copy
+$tmp['fruit'] = 'peach';
+
+// assign a copy of the array back to the session namespace
+$sessionNamespace-&gt;array = $tmp;
+
+echo $sessionNamespace-&gt;array['fruit']; // prints "peach"
+            </pre>
+</div>
+</div>
+<br class="example-break"><div class="example">
+<a name="zend.session.advanced_usage.arrays.example.workaround.reference"></a><p class="title"><b>Example 39.14. Workaround: store array containing reference</b></p>
+<div class="example-contents">
+<p>
+                Alternatively, store an array containing a reference to the desired array, and then access it
+                indirectly.
+            </p>
+<pre class="programlisting">&lt;?php
+require_once 'Zend/Session/Namespace.php';
+$myNamespace = new Zend_Session_Namespace('myNamespace');
+$a = array(1, 2, 3);
+$myNamespace-&gt;someArray = array( &amp;$a );
+$a['foo'] = 'bar';
+echo $myNamespace-&gt;someArray['foo']; // prints "bar"
+            </pre>
+</div>
+</div>
+<br class="example-break">
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.session.advanced_usage.objects"></a>39.3.7. Using Sessions with Objects</h3></div></div></div>
+<p>
+            If you plan to persist objects in the PHP session, know that they will be
+            <a href="http://www.php.net/manual/en/language.oop.serialization.php" target="_top">serialized</a> for storage.
+            Thus, any object persisted with the PHP session must be unserialized upon retrieval from storage. The
+            implication is that the developer must ensure that the classes for the persisted objects must have been
+            defined before the object is unserialized from session storage. If an unserialized object's class is not
+            defined, then it becomes an instance of <code class="code">stdClass</code>.
+        </p>
+</div>
+<div class="sect2" lang="en">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="zend.session.advanced_usage.testing"></a>39.3.8. Using Sessions with Unit Tests</h3></div></div></div>
+<p>
+            The Zend Framework relies on PHPUnit to facilitate testing of itself. Many developers extend the existing
+            suite of unit tests to cover the code in their applications. The exception
+            "<span class="strong"><strong>Zend_Session is currently marked as read-only</strong></span>" is thrown while
+            performing unit tests, if any write-related methods are used after ending the session. However, unit tests
+            using Zend_Session require extra attention, because closing (<code class="code">Zend_Session::writeClose()</code>), or
+            destroying a session (<code class="code">Zend_Session::destroy()</code>) prevents any further setting or unsetting of
+            keys in any instance of <code class="code">Zend_Session_Namespace</code>. This behavior is a direct result of the
+            underlying ext/session mechanism and PHP's <code class="code">session_destroy()</code> and
+            <code class="code">session_write_close()</code>, which have no "undo" mechanism to facilitate setup/teardown with unit
+            tests.
+        </p>
+<p>
+            To work around this, see the unit test <code class="code">testSetExpirationSeconds()</code> in
+            <code class="code">SessionTest.php</code> and <code class="code">SessionTestHelper.php</code>, both located in
+            <code class="code">tests/Zend/Session</code>, which make use of PHP's <code class="code">exec()</code> to launch a separate process.
+            The new process more accurately simulates a second, successive request from a browser. The separate process
+            begins with a "clean" session, just like any PHP script execution for a web request. Also, any changes to
+            <code class="code">$_SESSION</code> made in the calling process become available to the child process, provided the
+            parent closed the session before using <code class="code">exec()</code>.
+        </p>
+<div class="example">
+<a name="zend.session.advanced_usage.testing.example"></a><p class="title"><b>Example 39.15. PHPUnit Testing Code Dependent on Zend_Session</b></p>
+<div class="example-contents"><pre class="programlisting">&lt;?php
+// testing setExpirationSeconds()
+require_once 'tests/Zend/Session/SessionTestHelper.php'; // also see SessionTest.php
+$script = 'SessionTestHelper.php';
+$s = new Zend_Session_Namespace('space');
+$s-&gt;a = 'apple';
+$s-&gt;o = 'orange';
+$s-&gt;setExpirationSeconds(5);
+
+Zend_Session::regenerateId();
+$id = Zend_Session::getId();
+session_write_close(); // release session so process below can use it
+sleep(4); // not long enough for things to expire
+exec($script . "expireAll $id expireAll", $result);
+$result = $this-&gt;sortResult($result);
+$expect = ';a === apple;o === orange;p === pear';
+$this-&gt;assertTrue($result === $expect,
+    "iteration over default Zend_Session namespace failed; expecting result === '$expect', but got '$result'");
+
+sleep(2); // long enough for things to expire (total of 6 seconds waiting, but expires in 5)
+exec($script . "expireAll $id expireAll", $result);
+$result = array_pop($result);
+$this-&gt;assertTrue($result === '',
+    "iteration over default Zend_Session namespace failed; expecting result === '', but got '$result')");
+session_start(); // resume artificially suspended session
+
+// We could split this into a separate test, but actually, if anything leftover from above
+// contaminates the tests below, that is also a bug that we want to know about.
+$s = new Zend_Session_Namespace('expireGuava');
+$s-&gt;setExpirationSeconds(5, 'g'); // now try to expire only 1 of the keys in the namespace
+$s-&gt;g = 'guava';
+$s-&gt;p = 'peach';
+$s-&gt;p = 'plum';
+
+session_write_close(); // release session so process below can use it
+sleep(6); // not long enough for things to expire
+exec($script . "expireAll $id expireGuava", $result);
+$result = $this-&gt;sortResult($result);
+session_start(); // resume artificially suspended session
+$this-&gt;assertTrue($result === ';p === plum',
+    "iteration over named Zend_Session namespace failed (result=$result)");
+            </pre></div>
+</div>
+<br class="example-break">
+</div>
+</div>
+<div class="navfooter"><table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="zend.session.basic_usage.html">Prev</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="zend.session.html">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="zend.session.global_session_management.html">Next</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">39.2. Basic Usage </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top"> 39.4. Global Session Management</td>
+</tr>
+</table></div>
+<div class="revinfo"></div>
+</body>
+</html>
