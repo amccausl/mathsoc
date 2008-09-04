@@ -23,7 +23,7 @@ Zend_Loader::loadClass('Zend_Auth');
 
 // load Smarty templating system
 include 'smarty/Smarty.class.php';
-require_once('local/SmartyView.php');
+require_once('SmartyView.php');
 
 $view = new SmartyView( $config->smarty );
 $view->title = 'The Mathematics Society of the University of Waterloo';
