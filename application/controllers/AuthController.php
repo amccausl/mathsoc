@@ -54,6 +54,7 @@ class AuthController extends Zend_Controller_Action
 	public function logoutAction()
 	{	// Remove the authentication session information
 		Zend_Auth::getInstance()->clearIdentity();
+		// TODO: forward to kiwi logout url
 		$this->_redirect('/');
 	}
 }

@@ -33,10 +33,10 @@ $menu = array(
 			"title"	=> "Novelties",
 			"link"	=> "/Novelties",
 			"sub"	=> array()),
-		array(
-			"title"	=> "C&D",
-			"link"	=> "/CandD",
-			"sub"	=> array()),
+		//array(
+		//	"title"	=> "C&D",
+		//	"link"	=> "/CandD",
+		//	"sub"	=> array()),
 		array(
 			"title"	=> "C.I.F.",
 			"link"	=> "/Services/CIF",
@@ -67,8 +67,8 @@ $menu = array(
 		"link"	=> "/Council",
 		"sub"	=> array(
 		array(
-			"title" => "Composition",
-			"link" => "/Council/Members"),
+			"title" => "Representation",
+			"link" => "/Council/Representation"),
 		array(
 			"title" => "Meeting Minutes",
 			"link" => "/Council/minutes"),
