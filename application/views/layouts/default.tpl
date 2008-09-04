@@ -27,5 +27,20 @@
   </style>
   <![endif]-->
 </head>
-{include file="header.tpl"}
+<body>
+<div id='wrapper'>
+  <div id='header'>
+    <div id="logo"><img src='/images/logo.jpg' alt='MathSoc Logo'/></div>
+  </div>
+  <div id="content">
 {include file="menu.tpl"}
+    <div id="main">
+		{$content_data}
+    </div>
+  <!-- TODO: Include javascript calls here -->
+	<div id="footer">
+	</div>
+  </div>
+</div>
+</body>
+</html>

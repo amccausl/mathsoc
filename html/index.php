@@ -19,26 +19,24 @@ $registry = Zend_Registry::getInstance();
 $registry->set('config', $config);
 
 // Todo: load access control
+Zend_Loader::loadClass('Zend_Auth');
 
 // load Smarty templating system
 include 'smarty/Smarty.class.php';
 require_once('local/SmartyView.php');
 
-//Create the view and set the compile dir to template_c
-$view = new SmartyView(array(
-                'compileDir' => '../data/compiled'
-                ));
+$view = new SmartyView( $config->smarty );
 $view->title = 'The Mathematics Society of the University of Waterloo';
 $view->stylesheets = array('/css/main.css');
 
-// Todo: add menu settings
+// Add the menu to the layout
 require_once( '../application/views/helpers/menu.inc' );
 $view->menu = $menu;
 
 //Create a new ViewRenderer helper and assign our newly
 //created SmartyView object as the view instance
 $viewHelper = new Zend_Controller_Action_Helper_ViewRenderer($view);
-$viewHelper->setViewSuffix('tpl');
+$viewHelper->setViewSuffix($config->smarty->suffix);
 
 //Save the helper to the HelperBroker
 Zend_Controller_Action_HelperBroker::addHelper($viewHelper);
@@ -48,10 +46,7 @@ Zend_Controller_Action_HelperBroker::addHelper($viewHelper);
 // setup controller
 $frontController = Zend_Controller_Front::getInstance();
 $frontController->throwExceptions(true);
-$frontController->setControllerDirectory( array(
-		"default" => '../application/controllers',
-		"exambank" => '../application/controllers/exambank') );
-//$frontController->setParam('noViewRenderer', true);
+$frontController->setControllerDirectory('../application/controllers');
 // run!
 $frontController->dispatch();
 

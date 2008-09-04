@@ -2,7 +2,7 @@
 
 require_once 'Zend/Controller/Action.php';
 
-class ExambankController extends Zend_Controller_Action
+class IndexController extends Zend_Controller_Action
 {
 	// Common variables to Exambank system
 
@@ -10,17 +10,19 @@ class ExambankController extends Zend_Controller_Action
 	public function init()
 	{
 		parent::init();
-
-		//parent::finishInit();
 	}
 
 	// Browsing Functions
 	public function indexAction()
 	{	// List the existing exams
+		print("hello world");
 	}
 
 	public function infoAction()
 	{	// Flip with params
+		print( "info action" );
+		print_r( $_SERVER );
+		
 	}
 
 	public function submitAction()

@@ -1,4 +1,3 @@
-{include file="begin.tpl"}
     <div id="main">
       <div id='main-header'><h1></h1></div>
 {foreach from=$posts item=post}
@@ -12,4 +11,3 @@
       <p>This page has no content to display.  If you were expecting content and suspect a problem, try emailing website@mathsoc.uwaterloo.ca to have the situation remedied.  Sorry for the inconvience.
     </div>
 {/foreach}
-{include file="end.tpl"}
