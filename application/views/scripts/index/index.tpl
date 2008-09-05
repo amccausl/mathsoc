@@ -11,3 +11,4 @@
       <p>This page has no content to display.  If you were expecting content and suspect a problem, try emailing website@mathsoc.uwaterloo.ca to have the situation remedied.  Sorry for the inconvience.
     </div>
 {/foreach}
+	</div>

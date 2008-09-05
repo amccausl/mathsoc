@@ -9,8 +9,18 @@ class CouncilController extends Zend_Controller_Action
     }
 
 	public function representationAction()
-	{	// TODO: database call for current members
+	{	require_once( "userDB.inc" );
+		
+		// TODO: database call for current members
 		// TODO: assign variables to template
+	}
+
+	public function positionAction()
+	{	$position = $this->_getParam('position');
+
+		// TODO: load position information from model
+
+		// Display position name, description, comitement, current holder, and application information
 	}
 
 	public function minutesAction()

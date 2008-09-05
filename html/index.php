@@ -18,28 +18,14 @@ $config = new Zend_Config_Ini('../config/main.ini', 'general');
 $registry = Zend_Registry::getInstance();
 $registry->set('config', $config);
 
+// Add database connection
+$db = Zend_Db::factory($config->db);
+Zend_Db_Table::setDefaultAdapter($db);
+
 // Todo: load access control
 Zend_Loader::loadClass('Zend_Auth');
 
-// load Smarty templating system
-include 'smarty/Smarty.class.php';
-require_once('SmartyView.php');
-
-$view = new SmartyView( $config->smarty );
-$view->title = 'The Mathematics Society of the University of Waterloo';
-$view->stylesheets = array('/css/main.css');
-
-// Add the menu to the layout
-require_once( '../application/views/helpers/menu.inc' );
-$view->menu = $menu;
-
-//Create a new ViewRenderer helper and assign our newly
-//created SmartyView object as the view instance
-$viewHelper = new Zend_Controller_Action_Helper_ViewRenderer($view);
-$viewHelper->setViewSuffix($config->smarty->suffix);
-
-//Save the helper to the HelperBroker
-Zend_Controller_Action_HelperBroker::addHelper($viewHelper);
+include_once( '../application/views/helpers/initialize.inc' );
 
 // Todo: add logging information to track users for use-case analysis
 
@@ -47,6 +33,14 @@ Zend_Controller_Action_HelperBroker::addHelper($viewHelper);
 $frontController = Zend_Controller_Front::getInstance();
 $frontController->throwExceptions(true);
 $frontController->setControllerDirectory('../application/controllers');
+
+// Add required routers
+$router = $frontController->getRouter();
+$router->addRoute('council',
+	new Zend_Controller_Router_Route('position/:position', array('controller' => 'council', 'action' => 'positions')));
+$router->addRoute('index',
+	new Zend_Controller_Router_Route('users/:username', array('controller' => 'auth', 'action' => 'profile')));
+
 // run!
 $frontController->dispatch();
 

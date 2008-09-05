@@ -35,7 +35,7 @@
   <div id="content">
 {include file="menu.tpl"}
     <div id="main">
-		{$content_data}
+{$content_data|indent:6}
     </div>
   <!-- TODO: Include javascript calls here -->
 	<div id="footer">

@@ -57,5 +57,14 @@ class AuthController extends Zend_Controller_Action
 		// TODO: forward to kiwi logout url
 		$this->_redirect('/');
 	}
+
+	public function profileAction()
+	{
+		require_once( "userDB.inc" );
+		$db = new UserDB();
+		$user = $db->getProfile( $this->_getParam('username') );
+
+		$this->view->user = $user;
+	}
 }
 
