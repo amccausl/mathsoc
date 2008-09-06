@@ -18,13 +18,6 @@ class ExambankController extends Zend_Controller_Action
 		print("hello world");
 	}
 
-	public function infoAction()
-	{	// Flip with params
-		print( "info action" );
-		print_r( $_SERVER );
-		
-	}
-
 	public function submitAction()
 	{
 	}

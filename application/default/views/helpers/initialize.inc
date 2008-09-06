@@ -16,7 +16,8 @@ $view->title = 'The Mathematics Society of the University of Waterloo';
 $view->stylesheets = array('/css/main.css');
 
 // Add the menu to the layout
-require_once( '../application/views/helpers/menu.inc' );
+//require_once( '../application/views/helpers/menu.inc' );
+include_once( 'menu.inc' );
 $view->menu = $menu;
 
 //Create a new ViewRenderer helper and assign our newly

@@ -70,7 +70,11 @@ class SmartyView extends Zend_View_Abstract
 
         $templateDirs = $this->getScriptPaths();
 
-        $file = substr(func_get_arg(0),strlen($templateDirs[0]));
+		if( $this->_smarty->get_template_vars('template') )
+		{	$file = $this->_smarty->get_template_vars('template');
+		}else
+        {	$file = substr(func_get_arg(0),strlen($templateDirs[0]));
+		}
         $this->_smarty->template_dir = $templateDirs[0];
         $this->_smarty->compile_id = $templateDirs[0];
 

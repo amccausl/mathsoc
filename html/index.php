@@ -8,7 +8,7 @@ date_default_timezone_set('America/Toronto');
 
 // directory setup and class loading
 set_include_path('.' . PATH_SEPARATOR . '../libs/'
-     . PATH_SEPARATOR . '../application/models'
+     . PATH_SEPARATOR . '../application/default/models'
      . PATH_SEPARATOR . get_include_path());
 include "Zend/Loader.php";
 Zend_Loader::registerAutoload();
@@ -25,21 +25,24 @@ Zend_Db_Table::setDefaultAdapter($db);
 // Todo: load access control
 Zend_Loader::loadClass('Zend_Auth');
 
-include_once( '../application/views/helpers/initialize.inc' );
+// Create the view and load in the ViewRenderer
+include_once( '../application/default/views/helpers/initialize.inc' );
 
 // Todo: add logging information to track users for use-case analysis
 
 // setup controller
 $frontController = Zend_Controller_Front::getInstance();
 $frontController->throwExceptions(true);
-$frontController->setControllerDirectory('../application/controllers');
+//$frontController->setControllerDirectory('../application/controllers');
+$frontController->addModuleDirectory('../application/');
 
 // Add required routers
+/*
 $router = $frontController->getRouter();
 $router->addRoute('council',
 	new Zend_Controller_Router_Route('position/:position', array('controller' => 'council', 'action' => 'positions')));
 $router->addRoute('index',
-	new Zend_Controller_Router_Route('users/:username', array('controller' => 'auth', 'action' => 'profile')));
+	new Zend_Controller_Router_Route('users/:username', array('controller' => 'auth', 'action' => 'profile')));*/
 
 // run!
 $frontController->dispatch();
