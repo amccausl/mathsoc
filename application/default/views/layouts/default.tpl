@@ -33,11 +33,11 @@
     <div id="logo"><img src='/images/logo.jpg' alt='MathSoc Logo'/></div>
   </div>
   <div id="content">
-{include file="menu.tpl"}
+{include file="../../../default/views/scripts/menu.tpl"}
     <div id="main">
 {$content_data|indent:6}
     </div>
-  <!-- TODO: Include javascript calls here -->
+    <!-- TODO: Include javascript calls here -->
 	<div id="footer">
 	</div>
   </div>

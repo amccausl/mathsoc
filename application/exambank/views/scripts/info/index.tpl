@@ -13,8 +13,8 @@
   <div class="section">
     <h2>Other links</h2>
     <ul>
-      <li><a href="http://www.ist.uwaterloo.ca/ew/saw/web/uw/">UW Resources for Courses</a>.  A resource for instructors seeking to create course webpages.
-      <li><a href="http://hammer.prohosting.com/~inbred/Calendar/home.htm">The UW CS Student Calendar</a>.  A useful, unofficial guide to CS courses at Waterloo.
+      <li><a href="http://www.ist.uwaterloo.ca/ew/saw/web/uw/">UW Resources for Courses</a>.  A resource for instructors seeking to create course webpages.</li>
+      <li><a href="http://hammer.prohosting.com/~inbred/Calendar/home.htm">The UW CS Student Calendar</a>.  A useful, unofficial guide to CS courses at Waterloo.</li>
     </ul>
   </div>
 

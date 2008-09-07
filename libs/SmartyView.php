@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * This view system wouldn't have been possible without the help of a few tutorials:
+ *
+ * http://www.phpinsider.com/smarty-forum/viewtopic.php?t=1471
+ */
+
 class SmartyView extends Zend_View_Abstract
 {
     protected $_smarty;
@@ -84,7 +91,7 @@ class SmartyView extends Zend_View_Abstract
 		{	$content_data = $this->_smarty->fetch($file);
 			$this->_smarty->assign("content_data",$content_data);
 			if( $layout = $this->_smarty->get_template_vars('layout') )
-			{	echo $this->_smarty->fetch($this->_layout_dir . $layout);
+			{	echo $this->_smarty->fetch($this->_layout_dir . $layout . ".tpl");
 			}else
 			{	echo $this->_smarty->fetch($this->_layout_dir . $this->_default_template);
 			}

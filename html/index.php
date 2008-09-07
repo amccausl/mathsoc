@@ -34,6 +34,10 @@ include_once( '../application/default/views/helpers/initialize.inc' );
 $frontController = Zend_Controller_Front::getInstance();
 $frontController->throwExceptions(true);
 //$frontController->setControllerDirectory('../application/controllers');
+//$frontController->setControllerDirectory(array(
+//    'default' => '../application/default/controllers',
+//    'exambank'    => '../application/exambank/controllers'
+//));
 $frontController->addModuleDirectory('../application/');
 
 // Add required routers

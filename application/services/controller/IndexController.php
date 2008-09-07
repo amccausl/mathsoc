@@ -2,7 +2,7 @@
 
 require_once 'Zend/Controller/Action.php';
 
-class ServicesController extends Zend_Controller_Action
+class Services_IndexController extends Zend_Controller_Action
 {
     public function indexAction()
     {
