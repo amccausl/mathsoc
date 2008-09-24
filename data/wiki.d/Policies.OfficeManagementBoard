@@ -1,0 +1,15 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.6) Gecko/20071008 Ubuntu/7.10 (gutsy) Firefox/2.0.0.6
+author=amccausl
+csum=Initial Checkin of Policies (200611)
+ctime=1038978000
+host=127.0.0.1
+name=Policies.OfficeManagementBoard
+rev=1
+targets=
+text=!! Office Management Board%0a%0a# %25outline%25 Composition%0a## The Office Management Board shall consist of the following:%0a### the Office Manager, who is the chair of the Board;%0a### the Novelties Director%0a### any persons appointed to the Board by the chair or by the Vice-President, Activities and Services; and%0a### the Vice-President, Finances.%0a## The Vice-President, Activities and Services, will also be an ex-officio member of the Board.%0a%0a# Powers & Duties%0a## The Office Management Board shall be charged with the following duties:%0a### maintaining order and general security of the Society office;%0a### arranging office hours;%0a### selling of all items from the Society office;%0a### distributing lockers and removing the lock and contents of illegally taken lockers;%0a### general maintenance of the photocopiers;%0a### ordering and maintaining an adequate stock of office supplies;%0a### training all new office workers; and%0a### reporting to Council on the status of the Office Management Board.%0a%0a# Office Manager%0a## The Office Manager shall be appointed by, shall report to, and shall be responsible to the Vice-President, Activities and Services.%0a
+time=1038978000
+author:1038978000=amccausl
+csum:1038978000=Initial Checkin of Policies (200611)
+diff:1038978000:1038978000:=1,23d0%0a%3c !! Office Management Board%0a%3c %0a%3c # %25outline%25 Composition%0a%3c ## The Office Management Board shall consist of the following:%0a%3c ### the Office Manager, who is the chair of the Board;%0a%3c ### the Novelties Director%0a%3c ### any persons appointed to the Board by the chair or by the Vice-President, Activities and Services; and%0a%3c ### the Vice-President, Finances.%0a%3c ## The Vice-President, Activities and Services, will also be an ex-officio member of the Board.%0a%3c %0a%3c # Powers & Duties%0a%3c ## The Office Management Board shall be charged with the following duties:%0a%3c ### maintaining order and general security of the Society office;%0a%3c ### arranging office hours;%0a%3c ### selling of all items from the Society office;%0a%3c ### distributing lockers and removing the lock and contents of illegally taken lockers;%0a%3c ### general maintenance of the photocopiers;%0a%3c ### ordering and maintaining an adequate stock of office supplies;%0a%3c ### training all new office workers; and%0a%3c ### reporting to Council on the status of the Office Management Board.%0a%3c %0a%3c # Office Manager%0a%3c ## The Office Manager shall be appointed by, shall report to, and shall be responsible to the Vice-President, Activities and Services.%0a
+host:1038978000=127.0.0.1

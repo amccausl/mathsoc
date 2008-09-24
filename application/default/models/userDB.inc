@@ -26,7 +26,7 @@ class UserDB extends Zend_Db_Table
 	//$_SESSION['authenticated'] - a BOOLEAN
 	//$_SESSION['username'] - the username of the authenticated user
 	//$_SESSION['groups'] - an array of groups for which the user is a member.
-	function getGroups( $userid )
+	function getGroups( $userId )
 	{
 		$query = "SELECT CONCAT(units.alias,'-',holders.position)
 			  FROM holders, terms, units
@@ -34,7 +34,7 @@ class UserDB extends Zend_Db_Table
 			    AND holders.unitId = units.id
 			    AND holders.userid = ?;";
 
-		$result = $db->fetchAll($query, $userid);
+		$result = $db->fetchAll($query, $userId);
 
 		$groups = array();
 
@@ -70,7 +70,31 @@ class UserDB extends Zend_Db_Table
 	}
 
 	function getProfile( $userId )
-	{	$user = array(
+	{	// Do an LDAP lookup of the user to determine what position they hold
+		$ch = curl_init("http://kiwi.uwaterloo.ca/user/testLookup");
+		curl_setopt($ch, CURLOPT_POST, true);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, "newLookup=".$userId."&commit=Find");
+		curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.8.1.4) Gecko/20070515 Firefox/2.0.0.4 Test/0.1");
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		$kiwi = curl_exec($ch);
+		curl_close($ch);
+
+		$start = strpos($kiwi, "LDAP:") + 6;
+		$ldap = substr($kiwi, $start, strpos($kiwi, "</span>", $start) - $start);
+
+		if (strpos($ldap, "CN=IdM-HR-faculty") !== false
+		&& strpos($ldap, "CN=IdM-active") !== false)
+			$user['position'] = "professor";
+
+		if (strpos($ldap, "CN=IdM-student") !== false
+		&& strpos($ldap, "CN=IdM-active") !== false)
+			$user['position'] = "student";
+
+		if (strpos($ldap, "CN=IdM-SA-Mathematics") !== false
+		&& strpos($ldap, "CN=IdM-active") !== false)
+			$user['faculty'] = "math";
+
+		$user = array(
 			"name" => "Alex McCausland",
 			"profile" => "I'm a swinging dude",
 			"current" => array(

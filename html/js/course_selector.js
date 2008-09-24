@@ -1,6 +1,6 @@
 // Constants
 
-var COURSE_REQUEST_URL = "course.php";
+var COURSE_REQUEST_URL = "/exambank/courses";
 
 // Helper Functions
 
@@ -102,7 +102,7 @@ SerialRequest.prototype = {
 		this._HTTPRequest = getHTTPRequestObj();
 
 		if( this._HTTPRequest != null) {
-			this._HTTPRequest.open("GET", this._URL + "?" + params, true);
+			this._HTTPRequest.open("GET", this._URL + "/" + params, true);
 			this._HTTPRequest.onreadystatechange = this.onReadyStateChange.bind(this);
 			this._HTTPRequest.send(null);
 		}
@@ -163,7 +163,7 @@ CourseSelector.prototype = {
 		var prefix = this._mainForm.prefix.options[ this._mainForm.prefix.selectedIndex ].value;
 		if( prefix != 0 ) {
 			fillSelectBox( this._mainForm.course, [], "Loading..." );
-			this._request.MakeRequest( PS([["prefix", prefix]]), this.ProcessCourses.bind(this) );
+			this._request.MakeRequest( prefix, this.ProcessCourses.bind(this) );
 		} else {
 			fillSelectBox( this._mainForm.course, []);
 			this.BroadcastChange();
@@ -190,7 +190,7 @@ CourseSelector.prototype = {
 		if( prefix != 0 && course != 0 ) {
 			// Make HTTP request
 			this.descBox.innerHTML = "<i>Loading...</i>";
-			this._request.MakeRequest( PS([["prefix", prefix],["code", course]]), this.ProcessTitle.bind(this) );
+			this._request.MakeRequest( prefix + "/" + course, this.ProcessTitle.bind(this) );
 		} else {
 			this.descBox.innerHTML = "";
 			this.BroadcastChange();

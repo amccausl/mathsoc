@@ -1,0 +1,15 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.6) Gecko/20071008 Ubuntu/7.10 (gutsy) Firefox/2.0.0.6
+author=amccausl
+csum=Initial Checkin of Policies (200611)
+ctime=922165200
+host=127.0.0.1
+name=Policies.SigningAuthority
+rev=1
+targets=
+text=!! Signing Authority%0a%0a# %25outline%25 The signing authority for any and all Society accounts, unless specified in any other duly enacted Policy, whether they be with a chartered bank or similar institution, the University of Waterloo or any department thereof, or other outside agencies shall rest with the President, the Vice-President, Finances, and the Manager of the Coffee and Doughnut Shop. Two of the above shall be required to endorse each cheque.%0a
+time=922165200
+author:922165200=amccausl
+csum:922165200=Initial Checkin of Policies (200611)
+diff:922165200:922165200:=1,3d0%0a%3c !! Signing Authority%0a%3c %0a%3c # %25outline%25 The signing authority for any and all Society accounts, unless specified in any other duly enacted Policy, whether they be with a chartered bank or similar institution, the University of Waterloo or any department thereof, or other outside agencies shall rest with the President, the Vice-President, Finances, and the Manager of the Coffee and Doughnut Shop. Two of the above shall be required to endorse each cheque.%0a
+host:922165200=127.0.0.1

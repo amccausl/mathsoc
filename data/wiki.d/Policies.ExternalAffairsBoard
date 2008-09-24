@@ -1,0 +1,15 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.6) Gecko/20071008 Ubuntu/7.10 (gutsy) Firefox/2.0.0.6
+author=amccausl
+csum=Initial Checking of Policies (200611)
+ctime=1038978000
+host=127.0.0.1
+name=Policies.ExternalAffairsBoard
+rev=1
+targets=
+text=!!External Affairs Board%0a%0a# %25outline%25 Composition%0a## The External Affairs Board shall consist of the following:%0a### the Director of External Affairs, who is the chair of the Board;%0a### any persons appointed to the Board by the chair or by the President.%0a%0a# Powers & Duties%0a## The External Affairs Board shall be charged with the following duties:%0a### acting as a non-academic liaison between the Society and the Federation of Students and the other student societies;%0a### ensuring that the Society is suitably represented on any committee where such representation is available; and%0a### reporting to Council on the status of the External Affairs Board.%0a%0a# Director of External Affairs%0a## The Director of External Affairs shall be appointed by, shall report to, and shall be responsible to the President.%0a
+time=1038978000
+author:1038978000=amccausl
+csum:1038978000=Initial Checking of Policies (200611)
+diff:1038978000:1038978000:=1,15d0%0a%3c !!External Affairs Board%0a%3c %0a%3c # %25outline%25 Composition%0a%3c ## The External Affairs Board shall consist of the following:%0a%3c ### the Director of External Affairs, who is the chair of the Board;%0a%3c ### any persons appointed to the Board by the chair or by the President.%0a%3c %0a%3c # Powers & Duties%0a%3c ## The External Affairs Board shall be charged with the following duties:%0a%3c ### acting as a non-academic liaison between the Society and the Federation of Students and the other student societies;%0a%3c ### ensuring that the Society is suitably represented on any committee where such representation is available; and%0a%3c ### reporting to Council on the status of the External Affairs Board.%0a%3c %0a%3c # Director of External Affairs%0a%3c ## The Director of External Affairs shall be appointed by, shall report to, and shall be responsible to the President.%0a
+host:1038978000=127.0.0.1

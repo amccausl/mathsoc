@@ -1,0 +1,15 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.6) Gecko/20071008 Ubuntu/7.10 (gutsy) Firefox/2.0.0.6
+author=amccausl
+csum=Initial Checkin of Policies (200611)
+ctime=922165200
+host=127.0.0.1
+name=Policies.KeyDistribution
+rev=1
+targets=
+text=!!Key Distribution%0a%0a# %25outline%25 The distribution of keys to any offices controlled in whole by the Society must be approved in writing by a member of the Executive Committee (on an appropriate form) before approval from the Faculty is sought. The Executive Committee shall act as key controller for the Society. Executive Members of the Society shall not be allowed to sign out their own keys.%0a%0a# The distribution of keys to any offices assigned to any club or standing committee recognized by the Math Society must be approved in writing by the chief executive officer of the club or the Chair of the committee. This includes the signing out of the keys to other members of said club or committee as per the Club and Committee Key Form.%0a%0a# The distribution of keys to any resources (internal keys) controlled in whole by the Society (excepting standing committees) must be approved in writing by a member of the Executive Committee (on an appropriate form)%0a%0a# Keys must be returned by the due date identified on the form used to obtain the key.%0a%0a# Upon resignation of any keyholding position with the Society or an affiliated Club or Committee, the permit issued by MathSoc for keys assigned to the vacated position immediately expires, and the keys shall be immediately returned to the Society.%0a
+time=922165200
+author:922165200=amccausl
+csum:922165200=Initial Checkin of Policies (200611)
+diff:922165200:1206075967:=1,11d0%0a%3c !!Key Distribution%0a%3c %0a%3c # %25outline%25 The distribution of keys to any offices controlled in whole by the Society must be approved in writing by a member of the Executive Committee (on an appropriate form) before approval from the Faculty is sought. The Executive Committee shall act as key controller for the Society. Executive Members of the Society shall not be allowed to sign out their own keys.%0a%3c %0a%3c # The distribution of keys to any offices assigned to any club or standing committee recognized by the Math Society must be approved in writing by the chief executive officer of the club or the Chair of the committee. This includes the signing out of the keys to other members of said club or committee as per the Club and Committee Key Form.%0a%3c %0a%3c # The distribution of keys to any resources (internal keys) controlled in whole by the Society (excepting standing committees) must be approved in writing by a member of the Executive Committee (on an appropriate form)%0a%3c %0a%3c # Keys must be returned by the due date identified on the form used to obtain the key.%0a%3c %0a%3c # Upon resignation of any keyholding position with the Society or an affiliated Club or Committee, the permit issued by MathSoc for keys assigned to the vacated position immediately expires, and the keys shall be immediately returned to the Society.%0a
+host:922165200=127.0.0.1

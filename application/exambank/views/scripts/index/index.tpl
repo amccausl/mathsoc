@@ -33,7 +33,7 @@
       {ldelim}
 	    var sched = document.getElementById( 'sched' );
 	    if( prefix != 0 & course != 0 ) {ldelim}
-	      sched.src = 'exams.php?prefix=' + prefix + '&number=' + course;
+	      sched.src = '/exambank/exams/' + prefix + '/' + course;
 	    {rdelim} else {ldelim}
 	      sched.src = '';
 	    {rdelim}

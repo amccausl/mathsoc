@@ -4,35 +4,57 @@ require_once 'Zend/Controller/Action.php';
 
 class CouncilController extends Zend_Controller_Action
 {
-    public function indexAction()
-    {	// TODO: display summary page with 
-    }
+	private $db;
 
-	public function representationAction()
-	{	require_once( "userDB.inc" );
-		
-		// TODO: database call for current members
-		// TODO: assign variables to template
+	public function init()
+	{	parent::init();
+
+		// User must be authenticated to see any of these pages
+		$this->view->baseUrl = $this->_request->getBaseUrl();
+		$this->view->user = Zend_Auth::getInstance()->getIdentity();
+		$this->initView();
 	}
 
-	public function positionAction()
-	{	$position = $this->_getParam('position');
+    function preDispatch()
+	{
+		$auth = Zend_Auth::getInstance();
+		print( "auth = " . $auth->hasIdentity() );
 
-		// TODO: load position information from model
+		if (!$auth->hasIdentity())
+		{	$this->_redirect('auth/login');
+		}
+	}
 
-		// Display position name, description, comitement, current holder, and application information
+	public function indexAction()
+	{	// Display some information about council and a current list of councillors
+	}
+
+	public function policiesAction()
+	{	// Display current policies wiki
 	}
 
 	public function minutesAction()
-	{	// TODO: load wiki minutes module
+	{	// Display minutes wiki
 	}
 
-	public function pinkbookAction()
-	{	// TODO: load wiki policies and bylaws module
+	public function adminAction()
+	{	
+	}
+
+//TODO: consider moving elections material to another controller
+	public function electionsAction()
+	{	
+	}
+
+	public function votingAction()
+	{	// Allow users to vote in available elections
+	}
+
+	public function representationAction()
+	{	
 	}
 
 	public function vacanciesAction()
-	{	// TODO: display available positions, requirements, responsibilities, and application information
+	{	// Display the currently vacant positions
 	}
 }
-

@@ -1,0 +1,15 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.6) Gecko/20071008 Ubuntu/7.10 (gutsy) Firefox/2.0.0.6
+author=amccausl
+csum=1049.Meeting7
+ctime=1100754000
+host=127.0.0.1
+name=Policies.FinancialReviewer
+rev=1
+targets=
+text=!!Financial Reviewer%0a%0a# %25outline%25 Selection%0a## The Financial Reviewer shall be appointed by, shall report to, and shall be responsible to Council.%0a## This appointment shall occur during the first month of the term.%0a## The term of office shall extend until the end of the term or until a replacement is appointed by Council.%0a%0a# Powers and Duties%0a## The Financial Reviewer shall be charged with the following duties:%0a### Perform a financial review promptly after each of the first three months of the term.  This review shall consist of examining and reconciling all financial records of the Society from the previous month, including but not limited to:%0a#### Bank balance%0a#### Cheques%0a#### Ledger or Computer Records%0a#### Safe and float balances%0a#### Invoices%0a#### Photocopier Records%0a#### Income and Expense forms%0a### Submit a report to Council at the end of the term, detailing his findings for the term.  This report shall be made available to members of the Society.%0a### If in the course of their duties the reviewer finds a irregularity he feels is significant, he shall discuss it with the VPF.  If he is not satisfied then he shall report his findings to Council.%0a## The Financial Reviewer shall have full access to view any Society financial statements upon consultation with the VPF.%0a
+time=1100754000
+author:1100754000=amccausl
+csum:1100754000=1049.Meeting7
+diff:1100754000:1100754000:=1,20d0%0a%3c!!Financial Reviewer%0a%3c %0a%3c # %25outline%25 Selection%0a%3c ## The Financial Reviewer shall be appointed by, shall report to, and shall be responsible to Council.%0a%3c ## This appointment shall occur during the first month of the term.%0a%3c ## The term of office shall extend until the end of the term or until a replacement is appointed by Council.%0a%3c %0a%3c # Powers and Duties%0a%3c ## The Financial Reviewer shall be charged with the following duties:%0a%3c ### Perform a financial review promptly after each of the first three months of the term.  This review shall consist of examining and reconciling all financial records of the Society from the previous month, including but not limited to:%0a%3c #### Bank balance%0a%3c #### Cheques%0a%3c #### Ledger or Computer Records%0a%3c #### Safe and float balances%0a%3c #### Invoices%0a%3c #### Photocopier Records%0a%3c #### Income and Expense forms%0a%3c ### Submit a report to Council at the end of the term, detailing his findings for the term.  This report shall be made available to members of the Society.%0a%3c ### If in the course of their duties the reviewer finds a irregularity he feels is significant, he shall discuss it with the VPF.  If he is not satisfied then he shall report his findings to Council.%0a%3c ## The Financial Reviewer shall have full access to view any Society financial statements upon consultation with the VPF.%0a
+host:1100754000=127.0.0.1

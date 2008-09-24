@@ -6,6 +6,9 @@
 {foreach from=$stylesheets item=stylesheet}
   <link rel='stylesheet' type='text/css' href='{$stylesheet}' />
 {/foreach}
+{foreach from=$javascripts item=javascript}
+  <script language='Javascript' type='text/javascript' src='{$javascript}'></script>
+{/foreach}
   <!--[if IE]>
   <style type="text/css" media="screen">
   body {ldelim}

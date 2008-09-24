@@ -1,6 +1,6 @@
 // Constants
 
-var COURSE_REQUEST_URL = "exams.php";
+var COURSE_REQUEST_URL = "/exambank/index/exams";
 
 // Helper Functions
 

@@ -1,0 +1,23 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; en; rv:1.9.0.1) Gecko/20080528 Epiphany/2.22 Firefox/3.0
+author=
+csum=1079.Meeting5
+ctime=922165200
+host=127.0.0.1
+name=Policies.AccessToMathSocFacilities
+rev=3
+targets=
+text=!! Access to MathSoc Facilities%0a%0a# %25outline%25  Abuse of Access%0a## It is the policy of the Math Society to restrict sleeping in the Comfy Lounge to two extended periods a term, and none in the club offices, MC 3038, MC 3028, and MC 3002. Any student ignoring this policy shall be asked to leave.%0a## After significant abuses the offender may be asked not to return for the duration of the term, at the discretion of the Executive Committee, or in the case of a club office, the club executive also have this power. The decision may be appealed by Council. If such a decision is made, Campus Security will be informed immediately.%0a
+time=1221803104
+author:1221803104=
+csum:1221803104=1079.Meeting5
+diff:1221803104:1058760000:=3c3,6%0a%3c # %25outline%25  Abuse of Access%0a---%0a> # %25outline%25 Smoking%0a> ## Smoking is only permitted on the Comfy Lounge (MC 3001) side of the balcony.%0a> %0a> # Abuse of Access%0a
+host:1221803104=127.0.0.1
+author:1058760000=amccausl
+csum:1058760000=1035.Meeting7
+diff:1058760000:922165200:=1,8c1,5%0a%3c !! Access to MathSoc Facilities%0a%3c %0a%3c # %25outline%25 Smoking%0a%3c ## Smoking is only permitted on the Comfy Lounge (MC 3001) side of the balcony.%0a%3c %0a%3c # Abuse of Access%0a%3c ## It is the policy of the Math Society to restrict sleeping in the Comfy Lounge to two extended periods a term, and none in the club offices, MC 3038, MC 3028, and MC 3002. Any student ignoring this policy shall be asked to leave.%0a%3c ## After significant abuses the offender may be asked not to return for the duration of the term, at the discretion of the Executive Committee, or in the case of a club office, the club executive also have this power. The decision may be appealed by Council. If such a decision is made, Campus Security will be informed immediately.%0a---%0a> !! Abuse of Access to the Math Building%0a> %0a> # %25outline%25 It is the policy of the Math Society to restrict sleeping in the Comfy Lounge to two extended periods a term, and none in the club offices, MC 3038, MC 3028, and MC 3002. Any student ignoring this policy shall be asked to leave.%0a> %0a> # After significant abuses the offender may be asked not to return for the duration of the term, at the discretion of the Executive Committee, or in the case of a club office, the club executive also have this power. The decision may be appealed to Council. If such a decision is made, Campus Security will be informed immediately.%0a
+host:1058760000=127.0.0.1
+author:922165200=amccausl
+csum:922165200=Initial Checkin of Policies (200611)
+diff:922165200:1206075154:=1,5d0%0a%3c !! Abuse of Access to the Math Building%0a%3c %0a%3c # %25outline%25 It is the policy of the Math Society to restrict sleeping in the Comfy Lounge to two extended periods a term, and none in the club offices, MC 3038, MC 3028, and MC 3002. Any student ignoring this policy shall be asked to leave.%0a%3c %0a%3c # After significant abuses the offender may be asked not to return for the duration of the term, at the discretion of the Executive Committee, or in the case of a club office, the club executive also have this power. The decision may be appealed to Council. If such a decision is made, Campus Security will be informed immediately.%0a
+host:922165200=127.0.0.1

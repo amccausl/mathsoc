@@ -1,0 +1,15 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.6) Gecko/20071008 Ubuntu/7.10 (gutsy) Firefox/2.0.0.6
+author=amccausl
+csum=Initial Checkin of Policies (200611)
+ctime=1038978000
+host=127.0.0.1
+name=Policies.PublicityBoard
+rev=1
+targets=
+text=!! Publicity Board%0a%0a# %25outline%25 Composition%0a## The Publicity Board shall consist of the following:%0a### the Publicity Director, who is the chair of the Board;%0a### the Postings Director;%0a### the Social Affairs Director; and%0a### the Novelties Director; and%0a### any persons appointed to the Board by the chair or by the Vice-President, Activities and Services.%0a## The Vice-President, Activities and Services, will also be an ex-officio member of the Board.%0a%0a# Powers & Duties%0a## The Publicity Board shall be charged with the following duties:%0a### creating advertising pertaining to the Society and any function sponsored by the Society;%0a### distributing information pertaining to said advertising; and%0a### reporting to Council on the status of the Publicity Board.%0a%0a# Publicity Director%0a## The Publicity Director shall be appointed by, shall report to, and shall be responsible to the Vice-President, Activities and Services.%0a
+time=1038978000
+author:1038978000=amccausl
+csum:1038978000=Initial Checkin of Policies (200611)
+diff:1038978000:1038978000:=1,19d0%0a%3c !! Publicity Board%0a%3c %0a%3c # %25outline%25 Composition%0a%3c ## The Publicity Board shall consist of the following:%0a%3c ### the Publicity Director, who is the chair of the Board;%0a%3c ### the Postings Director;%0a%3c ### the Social Affairs Director; and%0a%3c ### the Novelties Director; and%0a%3c ### any persons appointed to the Board by the chair or by the Vice-President, Activities and Services.%0a%3c ## The Vice-President, Activities and Services, will also be an ex-officio member of the Board.%0a%3c %0a%3c # Powers & Duties%0a%3c ## The Publicity Board shall be charged with the following duties:%0a%3c ### creating advertising pertaining to the Society and any function sponsored by the Society;%0a%3c ### distributing information pertaining to said advertising; and%0a%3c ### reporting to Council on the status of the Publicity Board.%0a%3c %0a%3c # Publicity Director%0a%3c ## The Publicity Director shall be appointed by, shall report to, and shall be responsible to the Vice-President, Activities and Services.%0a
+host:1038978000=127.0.0.1

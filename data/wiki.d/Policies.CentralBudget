@@ -1,0 +1,27 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.6) Gecko/20071008 Ubuntu/7.10 (gutsy) Firefox/2.0.0.6
+author=amccausl
+csum=1071.Meeting5
+ctime=922165200
+host=127.0.0.1
+name=Policies.CentralBudget
+rev=4
+targets=Policies.CapitalImprovementsFund
+text=!!Central Budget%0a%0a# %25outline%25 Approval%0a## All non budgeted expenses must be approved by members of the Executive Committee or the Society Council as follows.%0a### For expenses under $20.00, the approval of a single member of the Executive Committee is required;%0a### For expenses between $20.00 and $100.00, the approval of two members of the Executive Committee, one of which must be the Vice-President, Finances, is required.%0a### The Math Society Council must approve all expenditures over $100.00.%0a## Budgeted expenditures must be approved by the appropriate member of the Executive Committee. The Vice-President, Finances, must be informed of the approval as soon as possible.%0a%0a# Reimbursement%0a## Expenses incurred in the course of organizing, planning, and executing items of business for the Society are recoverable as long as the above conditions were met.%0a## All expense requests must be accompanied by a receipt to be approved.%0a## A record of expenditures to be reimbursed are to be submitted to the Executive Committee within one week following the event. If exact values for the event are not known, an upper estimate should be provided immediately, and an event summary will be provided with appropriate figures as soon as possible. If this is not complied with the expenditure may not be reimbursed.%0a%0a# Income%0a## Income earned in the course of executing society business shall be counted and recorded on an appropriate income form and submitted to the VPF.%0a%0a#Appropriate Use of Funds%0a## Funds collected or managed by the Society or any organization directly responsible to the Society may not be used to purchase alcoholic beverages of any kind.%0a%0a#Surplus%0a## Fifty percent of actual surpluses in the Central Budget each term will be allocated to the principle portion of the [[Capital Improvements Fund]].%0a
+time=1173157200
+author:1173157200=amccausl
+csum:1173157200=1071.Meeting5
+diff:1173157200:1164603600:=20,22d19%0a%3c %0a%3c #Surplus%0a%3c ## Fifty percent of actual surpluses in the Central Budget each term will be allocated to the principle portion of the [[Capital Improvements Fund]].%0a
+host:1173157200=127.0.0.1
+author:1164603600=amccausl
+csum:1164603600=1069.Meeting8
+diff:1164603600:1100754000:=17,19d16%0a%3c %0a%3c #Appropriate Use of Funds%0a%3c ## Funds collected or managed by the Society or any organization directly responsible to the Society may not be used to purchase alcoholic beverages of any kind.%0a
+host:1164603600=127.0.0.1
+author:1100754000=amccausl
+csum:1100754000=1049.Meeting7
+diff:1100754000:922165200:=14,16d13%0a%3c %0a%3c # Income%0a%3c ## Income earned in the course of executing society business shall be counted and recorded on an appropriate income form and submitted to the VPF.%0a
+host:1100754000=127.0.0.1
+author:922165200=amccausl
+csum:922165200=Initial Checkin of Policies (200611)
+diff:922165200:922165200:=1,13d0%0a%3c !!Central Budget%0a%3c %0a%3c # %25outline%25 Approval%0a%3c ## All non budgeted expenses must be approved by members of the Executive Committee or the Society Council as follows.%0a%3c ### For expenses under $20.00, the approval of a single member of the Executive Committee is required;%0a%3c ### For expenses between $20.00 and $100.00, the approval of two members of the Executive Committee, one of which must be the Vice-President, Finances, is required.%0a%3c ### The Math Society Council must approve all expenditures over $100.00.%0a%3c ## Budgeted expenditures must be approved by the appropriate member of the Executive Committee. The Vice-President, Finances, must be informed of the approval as soon as possible.%0a%3c %0a%3c # Reimbursement%0a%3c ## Expenses incurred in the course of organizing, planning, and executing items of business for the Society are recoverable as long as the above conditions were met.%0a%3c ## All expense requests must be accompanied by a receipt to be approved.%0a%3c ## A record of expenditures to be reimbursed are to be submitted to the Executive Committee within one week following the event. If exact values for the event are not known, an upper estimate should be provided immediately, and an event summary will be provided with appropriate figures as soon as possible. If this is not complied with the expenditure may not be reimbursed.%0a
+host:922165200=127.0.0.1

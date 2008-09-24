@@ -4,6 +4,8 @@ require_once 'Zend/Controller/Action.php';
 
 class Exambank_AdminController extends Zend_Controller_Action
 {
+	// TODO: add authentication and authorization for all these pages
+
 	// Browsing Functions
 	public function indexAction()
 	{	// List the existing exams

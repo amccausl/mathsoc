@@ -1,0 +1,15 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.6) Gecko/20071008 Ubuntu/7.10 (gutsy) Firefox/2.0.0.6
+author=amccausl
+csum=1045.Meeting8
+ctime=1091246400
+host=127.0.0.1
+name=Policies.EquipmentBookings
+rev=1
+targets=
+text=!!Equipment Bookings%0a%0a# %25outline%25 Any piece of equipment, in the following list, may be loaned to an affiliate of the Mathematics Society or other party at the discretion of the Executive Committee.%0a** Projector*%0a** Speakers*%0a** VCR%0a** DVD Player%0a%0a# The equipment borrower must be a student in the Faculty of Mathematics.%0a%0a# The borrower must sign an equipment loan contract with a member of the Executive Committee at least seven days prior to the beginning of the equipment loan time.  The person shall, along with a copy of the contract, entrust the Executive Committee with a deposit equal to 10%25 of the original cost of the equipment.  This deposit should be provided as a cheque.%0a%0a# The borrower agrees to be the sole operator of the equipment, or to be present at all times during its use.%0a%0a# Items marked with an asterisk require the borrower to attend a training session to ensure correct usage of the equipment.  If the borrower has previously attended a training session with regards to requested equipment, this requirement may be waived at the discretion of the Executive Committee.%0a
+time=1091246400
+author:1091246400=amccausl
+csum:1091246400=1045.Meeting8
+diff:1091246400:1091246400:=1,15d0%0a%3c!!Equipment Bookings%0a%3c %0a%3c # %25outline%25 Any piece of equipment, in the following list, may be loaned to an affiliate of the Mathematics Society or other party at the discretion of the Executive Committee.%0a%3c ** Projector*%0a%3c ** Speakers*%0a%3c ** VCR%0a%3c ** DVD Player%0a%3c %0a%3c # The equipment borrower must be a student in the Faculty of Mathematics.%0a%3c %0a%3c # The borrower must sign an equipment loan contract with a member of the Executive Committee at least seven days prior to the beginning of the equipment loan time.  The person shall, along with a copy of the contract, entrust the Executive Committee with a deposit equal to 10%25 of the original cost of the equipment.  This deposit should be provided as a cheque.%0a%3c %0a%3c # The borrower agrees to be the sole operator of the equipment, or to be present at all times during its use.%0a%3c %0a%3c # Items marked with an asterisk require the borrower to attend a training session to ensure correct usage of the equipment.  If the borrower has previously attended a training session with regards to requested equipment, this requirement may be waived at the discretion of the Executive Committee.%0a
+host:1091246400=127.0.0.1
