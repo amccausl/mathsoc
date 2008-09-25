@@ -2,6 +2,9 @@
 
 require_once 'Zend/Controller/Action.php';
 
+// Load the database model for the election system
+require_once '../application/default/models/electionDB.inc';
+
 class ElectionController extends Zend_Controller_Action
 {
 	private $db;

@@ -61,9 +61,12 @@ $router->addRoute('exams1',
 $router->addRoute('council',
 	new Zend_Controller_Router_Route('council/minutes/:page',
 		array('module' => 'council', 'controller' => 'index', 'action' => 'minutes')));
-$router->addRoute('council1',
+$router->addRoute('council-policies',
 	new Zend_Controller_Router_Route('council/policies/:page',
-		array('module' => 'council', 'controller' => 'index', 'action' => 'policies')));
+		array('module' => 'council', 'controller' => 'policies', 'action' => 'display')));
+$router->addRoute('council-policies1',
+	new Zend_Controller_Router_Route('council/policies/diff/:version1/:version2',
+		array('module' => 'council', 'controller' => 'policies', 'action' => 'diff')));
 
 /*
 $router->addRoute('council',
