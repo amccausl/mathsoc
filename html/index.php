@@ -65,7 +65,7 @@ $router->addRoute('council-policies',
 	new Zend_Controller_Router_Route('council/policies/:page',
 		array('module' => 'council', 'controller' => 'policies', 'action' => 'display')));
 $router->addRoute('council-policies1',
-	new Zend_Controller_Router_Route('council/policies/diff/:version1/:version2',
+	new Zend_Controller_Router_Route('council/policies/diff/:page/:version1/:version2',
 		array('module' => 'council', 'controller' => 'policies', 'action' => 'diff')));
 
 /*

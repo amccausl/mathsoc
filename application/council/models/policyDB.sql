@@ -2,9 +2,14 @@ use mathsoc;
 
 -- DEFINE UNDERLYING STRUCTURE FOR POLICY STORAGE
 
+-- id is an identifier for a policy
+-- approved is the date this policy was approved
+-- operation is the operation that created this policy and parameters (create, replace, merge, split)
+
 CREATE TABLE policies (
 	id		 SMALLINT		NOT NULL AUTO_INCREMENT,
 	approved DATE			NOT NULL,
+	operation VARCHAR(128),
 	name	 VARCHAR(128)	NOT NULL,
 	content	 TEXT			NOT NULL,
 
@@ -22,7 +27,7 @@ CREATE TABLE policies_index (
 
 CREATE VIEW policies_current as
 SELECT
-	@num := @num + 1 as num,
+	policies_index.id as num,
 	policies.name as name,
 	policies.approved as approved,
 	policies.content as content

@@ -41,6 +41,10 @@ class SmartyView extends Zend_View_Abstract
         $this->_smarty->assign($key,$val);
     }
 
+	public function __get($key)
+	{	return $this->_smarty->get_template_vars($key);
+	}
+
     public function __isset($key)
     {
         $var = $this->_smarty->get_template_vars($key);

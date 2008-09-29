@@ -1,5 +1,11 @@
-{* This is to display the differences between two versions of a policy *}
-<h2>{$policy.name}</h2>
-<ol>
-{$policy.content|indent:2}
-</ol>
+<div class="section">
+{if $content}
+  <h2>{$name}</h2>
+  <ol id='policies'>
+{$content|replace:'&lt;':'<'|replace:'&gt;':'>'|indent:4}
+  </ol>
+{else}
+  <h2></h2>
+  <p>The policy you're looking for doesn't exist.</p>
+{/if}
+</div>

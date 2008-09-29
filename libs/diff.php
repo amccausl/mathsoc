@@ -42,29 +42,23 @@ class diff extends Text_MappedDiff {
     foreach ($difference as $op) {
       // $op is the operation getDiff() has calculated.
       // You can tell which operation (add, delete or change) $op is by checking which class the object is
-      if (is_a(&$op,'Text_Diff_Op_copy')) {
-      #if ($op instanceof Text_Diff_Op_copy) { // This uses the instanceof operator which is only in PHP5+, in PHP4 you can use is_a()
+      if ($op instanceof Text_Diff_Op_copy) { // This uses the instanceof operator which is only in PHP5+, in PHP4 you can use is_a()
         // Text was copied (not changed), add it to the rendered difference unmodified
         $render .= implode('',$op->final);
-      } elseif (is_a(&$op,'Text_Diff_Op_delete')) {
-      #} elseif ($op instanceof Text_Diff_Op_delete) {
+      } elseif ($op instanceof Text_Diff_Op_delete) {
         // Text was deleted, add it to the rendered difference in red
         $render .= '<span style="background-color: #FF0000;">' . implode('',$op->orig) . '</span>';
-      } elseif (is_a(&$op,'Text_Diff_Op_add')) {
-      #} elseif ($op instanceof Text_Diff_Op_add) {
+      } elseif ($op instanceof Text_Diff_Op_add) {
         // Text was added, add it to the rendered difference in green
         $render .= '<span style="background-color: #00FF00;">' . implode('',$op->final) . '</span>';
-      } elseif (is_a(&$op,'Text_Diff_Op_change')) {
-      #} elseif ($op instanceof Text_Diff_Op_change) {
+      } elseif ($op instanceof Text_Diff_Op_change) {
         // Text was modified, add it to the rendered difference as if the original text was deleted and the new text was added
         $render .= '<span style="background-color: #FF0000;">' . implode('',$op->orig) . '</span>' . 
           '<span style="background-color: #00FF00;">' . implode('',$op->final) . '</span>';
       }
     }
-    
     return $render;
   }
-
 }
 
 ?>
