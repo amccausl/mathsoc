@@ -1,7 +1,3 @@
-// Constants
-
-var COURSE_REQUEST_URL = "/exambank/courses";
-
 // Helper Functions
 
 /**
@@ -126,7 +122,7 @@ SerialRequest.prototype = {
 var CourseSelector = Class.create();
 CourseSelector.prototype = {
 		// Constructor
-		initialize : function( formID ) {
+		initialize : function( formID, COURSE_REQUEST_URL ) {
 		// Get the main form object
 		this._mainForm = document.getElementById( formID );
 

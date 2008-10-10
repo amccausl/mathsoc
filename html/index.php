@@ -56,7 +56,7 @@ $router->addRoute('exams',
 	new Zend_Controller_Router_Route('exambank/exams/:prefix/:number',
 		array('module' => 'exambank', 'controller' => 'index', 'action' => 'exams')));
 $router->addRoute('exams1',
-	new Zend_Controller_Router_Route('exambank/exams/:prefix/:number/:term/:type',
+	new Zend_Controller_Router_Route('exambank/exams/:prefix/:number/:term/:id/:type/',
 		array('module' => 'exambank', 'controller' => 'index', 'action' => 'exams')));
 $router->addRoute('council',
 	new Zend_Controller_Router_Route('council/minutes/:page',

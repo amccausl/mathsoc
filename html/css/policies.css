@@ -5,3 +5,6 @@ ol.policies ol ol ol { list-style-type:decimal; }
 ol.policies ol ol ol ol { list-style-type:lower-roman; }
 ol.policies ol ol ol ol ol { list-style-type:lower-alpha; }
 ol.policies ol ol ol ol ol ol { list-style-type:lower-roman; }
+ol.policies li {
+  padding: 3px 0;
+}

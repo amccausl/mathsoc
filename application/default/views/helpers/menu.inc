@@ -74,7 +74,7 @@ $menu = array(
 			"link" => "/Council/minutes"),
 		array(
 			"title" => "Bylaws & Policies",
-			"link" => "/Council/Pinkbook"),
+			"link" => "/Council/policies"),
 		array(
 			"title" => "Available Positions",
 			"link" => "/Council/Vacancies"),
@@ -115,6 +115,6 @@ $menu = array(
 		"title"	=> "Contact Info",
 		"link"	=> "/Contact"));
 
-// Todo: determine where the user is from the URL
+// Todo: determine where the user is from the URL, generate specialized menu
 // Todo: Switch links to call the URL generator function
 // Todo: Add page specific cacheing

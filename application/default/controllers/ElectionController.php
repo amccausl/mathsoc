@@ -19,9 +19,12 @@ class ElectionController extends Zend_Controller_Action
 
 		$this->db = new ElectionDB();
 
-		//$this->view->javascripts = array(
-		//	$this->getRequest()->getBaseUrl() . "/js/prototype");
-
+		if( $javascripts = $this->view->javascripts )
+		{	array_push( $javascripts, $this->getRequest()->getBaseUrl() . "/js/prototype" );
+		}else
+		{	$javascripts = array( $this->getRequest()->getBaseUrl() . "/js/prototype" );
+		}
+		$this->view->javascripts = $javascripts;
 	}
 
     function preDispatch()

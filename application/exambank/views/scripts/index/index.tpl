@@ -1,4 +1,3 @@
-<div id='main'>
   <div id='main-header'><h1></h1></div>
   <div class="section">
     <h2>Exambank</h2>
@@ -6,7 +5,7 @@
       <script language='Javascript' type='text/javascript'>
         // Create a new 'CourseSelector' object
         // Pass it the id of the form
-        var selector = new CourseSelector('courses');
+        var selector = new CourseSelector('courses', '{$baseUrl}/exambank/courses');
 
         document.write('<p>');
 
@@ -33,11 +32,10 @@
       {ldelim}
 	    var sched = document.getElementById( 'sched' );
 	    if( prefix != 0 & course != 0 ) {ldelim}
-	      sched.src = '/exambank/exams/' + prefix + '/' + course;
+	      sched.src = '{$baseUrl}/exambank/exams/' + prefix + '/' + course;
 	    {rdelim} else {ldelim}
 	      sched.src = '';
 	    {rdelim}
       {rdelim};
     </script>
   </div>
-</div>
