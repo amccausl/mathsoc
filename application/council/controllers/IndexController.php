@@ -43,17 +43,6 @@ class Council_IndexController extends Zend_Controller_Action
 	{
 	}
 
-	public function policiesAction()
-	{	// Display current policies wiki
-		// TODO: extract params, call wikiPage
-		ob_start();
-
-        // Render content from wiki
-        include( 'pmwiki-latest/pmwiki.php' );
-
-        $this->view->content_data = ob_get_clean();
-	}
-
 	public function minutesAction()
 	{
 		// TODO: extract params, call wikiPage
