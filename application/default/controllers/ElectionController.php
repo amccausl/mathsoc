@@ -33,9 +33,9 @@ class ElectionController extends Zend_Controller_Action
 		$auth = Zend_Auth::getInstance();
 		print( "auth = " . $auth->hasIdentity() );
 
-		if (!$auth->hasIdentity())
-		{	$this->_redirect('auth/login');
-		}
+		//if (!$auth->hasIdentity())
+		//{	$this->_redirect('auth/login');
+		//}
 	}
 
 	// Browsing Functions
@@ -47,10 +47,6 @@ class ElectionController extends Zend_Controller_Action
 	// Cast a ballot in an election
 	public function castAction()
 	{
-		if( !$auth->hasIdentity() )
-		{
-		}
-
 		// Ensure that the desired fields are set
 		$electionId = substr( $this->_getParam('electionId'), 8 );
 
@@ -71,10 +67,67 @@ class ElectionController extends Zend_Controller_Action
 	// Declare an election
 	public function declareAction()
 	{
+		require_once( "../application/default/views/helpers/form.inc" );
+
+		$positions = $this->db->getPositions();
+		//$positions is array of alias, name, description
+		//$position_options = array_push, positions and new
+		//$this->view->position_options = 
+		// TODO: initialize options array
+		$position_options = array();
+		foreach( $positions as $position )
+		{
+		}
+
+		// Set default nomination and voting days
+		if( date('m') == 9 )
+		{	// Set 10 day nomination
+			$nominations_open = strtotime( "next Monday", mktime( 0, 0, 0, 10, 1 ) ) + 30600;
+			$nominations_close = $nominations_open + 979200;
+		}else
+		{	$nominations_open = mktime( 8, 30 );
+			if( $nominations_open < time() )
+				$nominations_open += 86400;
+			$nominations_close = strtotime( "next Saturday", $nominations_open );
+			$nominations_close = strtotime( "next Friday", $nominations_close ) + 59400;
+		}
+
+		// Set default form fields
+		$default = array(
+			'nominations_open' => $nominations_open,
+			'nominations_close' => $nominations_close,
+			// Leave 7 days to campaign, vote for 2 days
+			'polls_open' => $nominations_close + 925200,
+			'polls_close' => $nominations_close + 1040400
+		);
+
+		//TODO: parse date and time to timestamp and set values for variables in the post
+
+		// Include form validation
+		$smarty = $this->view->getEngine();
+		if( empty( $_POST ) )
+		{	SmartyValidate::connect($smarty, true);
+			SmartyValidate::register_validator('prefix_element','course_prefix','notEmpty');
+		}else
+		{	SmartyValidate::connect($smarty);
+			if(SmartyValidate::is_valid($_POST))
+			{	//TODO: check the voters file and the timing for the dates
+				//TODO: if problem, set error messages
+
+				//TODO: else, disconnect and create election
+				SmartyValidate::disconnect();
+			}
+		}
+
+		$smarty->assign($default);
 	}
 
 	// tally the ballots in a given election, display the results
 	public function tallyAction()
-	{
+	{	// Display all the elections that are public or this user is the CRO of
+
+		require_once '../application/default/models/BC-STV.inc';
+
+		
 	}
 }
