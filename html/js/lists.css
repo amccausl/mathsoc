@@ -1,0 +1,128 @@
+/*
+ * Styles for the actual elections interface
+ */
+
+/* Standard clear-floats box */
+.clear {
+    clear: both;
+}
+
+/* Box containing the whole election */
+.election {
+    /* other styles */
+    border: solid 1px black;
+    margin-bottom: 2em;
+    padding: 1em 1em;
+}
+
+/* Box containing the ballot and candidates box */
+.centerInterface {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+/* Box containing the submit button */
+.submitter {
+    text-align: center;
+}
+
+/* Boxes displaying "Thanks for voting" and "Election Closed" */
+.votedBox {
+    background: #FFFFCF;
+}
+.expiredBox {
+    background: #DDDDDD;
+    border: solid 2px #FF0000;
+}
+.voted, .expired  {
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+}
+.voted {
+    color: #008800;
+}
+.expired {
+    color: #EE0000;
+}
+
+/* All draggable lists */
+.sortable {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+ol.sortable li, ul.sortable li {
+    position: relative;
+    margin-bottom: 0.5em;
+    margin-right: 1em;
+    padding: 0.2em;
+}
+
+.candidInfo {
+    font-variant: small-caps;
+    font-size: smaller;
+    text-align: right;
+}
+
+/* Ballot list and items */
+
+ol.ballot {
+    float: left;
+    border: solid 1px blue;
+}
+ol.ballot li {
+    cursor: move;
+    margin-left: 2em;
+    border: 1px solid #00c;
+    background-color: #eee;
+}
+
+/* Candidates box and items */
+ul.candidates {
+    list-style: none;
+    border: solid 1px red;
+}
+ul.candidates li {
+    cursor: move;
+    margin-left: 1em;
+    border: 1px solid #c00;
+    background-color: #eee;
+}
+
+/* Titles in ballot and candidates box */
+.sortable h3 {
+    margin: 0 0.3em 0.3em 0.3em;
+    text-align: center;
+    color: #888888;
+    font-family: sans-serif;
+}
+
+/*
+ * Styles for the rest of the election page
+ */
+
+h1 {
+    text-align: center;
+    font-family: sans-serif;
+    margin-bottom: 1em;
+}
+
+#instructions {
+    margin-bottom: 2em;
+}
+
+div.electionHead {
+    margin: 1em;
+}
+
+.electionHead h2 {
+    font-family: sans-serif;
+    text-align: center;
+    color: #000088;
+    margin: 0;
+}
+
+.electionHead p {
+    color: #880000;
+}

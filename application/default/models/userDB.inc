@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 // Load database module
 
@@ -6,20 +6,44 @@
 
 */
 
-class UserDB extends Zend_Db_Table
+class UserDB
 {
-	protected $_name = 'user_management';
+	private $_db;
 
-	function getPositions( $userId, $unit = "mathsoc" )
-	{	$db = Zend_Db::factory('Pdo_Mysql', Zend_Registry::getInstance()->get('config')->db);
+	function __construct()
+	{	$config = new Zend_Config_Ini('../config/main.ini', 'user_management');
+		$this->_db = Zend_Db::factory($config->db);
+	}
 
-		$query = "SELECT holders.position
-			  FROM holders, terms
-			  WHERE holders.term = terms.current_term
-			    AND holders.unitId = ?
-			    AND holders.userid = ?;";
+	function getPositions( $userId = "", $unit = "mathsoc" )
+	{
+		if( $userId != "" )
+		{	$query = "SELECT positions.alias, positions.name, positions.description
+					  FROM holders, terms, positions
+					  WHERE positions.alias = holders.position
+						AND holders.term = terms.current_term
+					    AND holders.unitId = ?
+					    AND holders.userid = ?";
+			return $this->_db->fetchAll($query, array($unit, $userid));
+		}else
+		{	$query = "SELECT positions.alias, positions.name, positions.description
+					  FROM positions, units
+					  WHERE units.id = positions.unitId
+						AND units.alias = ?
+					  ORDER BY positions.name";
+			return $this->_db->fetchAll($query, $unit);
+		}
+	}
 
-		return $db->fetchAll($query, $unit, $userid);
+	function getElectionPositions()
+	{	$query = "SELECT positions.alias, positions.name, positions.description
+				  FROM positions, units
+				  WHERE units.id = positions.unitId
+					AND units.alias = 'mathsoc'
+					AND (positions.category = 'EXC' OR positions.category = 'REP')
+					AND potitions.alias != ''
+				  ORDER BY positions.name";
+		return $this->_db->fetchAll($query);
 	}
 
 	// authenticate uses uwdir and mathsocs database to authenticate users
@@ -34,7 +58,7 @@ class UserDB extends Zend_Db_Table
 			    AND holders.unitId = units.id
 			    AND holders.userid = ?;";
 
-		$result = $db->fetchAll($query, $userId);
+		$result = $this->_db->fetchAll($query, $userId);
 
 		$groups = array();
 
@@ -52,7 +76,7 @@ class UserDB extends Zend_Db_Table
 			  WHERE refunds.userId = ?
 			  AND refunds.term = terms.current_term;";
 
-		$result = $db->fetchCol($query, $userId);
+		$result = $this->_db->fetchCol($query, $userId);
 
 		if( empty( $result ) )
 		{	
@@ -60,7 +84,7 @@ class UserDB extends Zend_Db_Table
 				  FROM refunds, terms
 				  WHERE refunds.userId = ?
 				  AND refunds.term = terms.last_term;";
-			$result = $db->fetchCol($query, $userId);
+			$result = $this->_db->fetchCol($query, $userId);
 
 			if( empty( $result ) )
 			{	return true;

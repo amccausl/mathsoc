@@ -8,40 +8,32 @@
 
 class ElectionDB
 {
-	// Return a list of elections the given user is eligable to vote in
+	protected $_db;
+
+	function __construct()
+	{	$config = new Zend_Config_Ini('../config/main.ini', 'voting');
+		$this->_db = Zend_Db::factory($config->db);
+	}
+
+	// Return a list of elections the given user is eligible to vote in
 	function getElections( $userId, $unit = 'mathsoc' )
-	{	$db = Zend_Db::factory('Pdo_Mysql', Zend_Registry::getInstance()->get('config')->db);
+	{	if( isset( $userId ) )
+		{
+			$query = "SELECT e.electionId as id, e.position, e.description, e.CRO
+					  FROM elections e, voters v
+					  WHERE v.userId = ?
+						AND e.electionId = v.electionId
+						AND NOW() BETWEEN e.voting_open AND e.voting_close";
+			$elections = $this->_db->fetchAll( $query, $userId );
+		}else
+		{
+			$query = "SELECT electionId as id, position, description, CRO
+					  FROM elections
+					  WHERE NOW() BETWEEN voting_open AND voting_close";
+			$elections = $this->_db->fetchAll( $query );
+		}
 
-		$query = "SELECT holders.position
-			  FROM holders, terms
-			  WHERE holders.term = terms.current_term
-			    AND holders.unitId = ?
-			    AND holders.userid = ?;";
-
-		return $db->fetchAll($query, $unit, $userid);
-	}
-
-	function getPositions()
-	{	$db = Zend_Db::factory('Pdo_Mysql', Zend_Registry::getInstance()->get('config')->db);
-		$query = "SELECT alias, name, description
-			  FROM position
-			  WHERE category = 'EXC'
-				OR category = 'REP'
-				AND alias != ''
-			  ORDER BY category, name";
-		return $db->fetchAll($query);
-	}
-
-	// TODO: fix this function
-	function getPositionOptions()
-	{	$db = Zend_Db::factory('Pdo_Mysql', Zend_Registry::getInstance()->get('config')->db);
-		$query = "SELECT alias, name, description
-			  FROM position
-			  WHERE category = 'EXC'
-				OR category = 'REP'
-				AND alias != ''
-			  ORDER BY category, name";
-		return array($db->getCol($query), $db->getCol($query))
+		return $elections;
 	}
 
 //TODO export this to the user model
@@ -84,37 +76,6 @@ function lookup( $userid )
 }
 
 //TODO
-/** getElections - Return a list of elections that a given user can vote in. */
-function getElections( $userId="" )
-{	
-	if( !isset( $userId ) )
-		$userId = Zend_Auth::getInstance()->getIdentity();
-	if( !isset( $userId ) )
-		return false;
-
-	$query = "SELECT e.electionId
-		  FROM elections e, voters v
-		  WHERE v.userId = '$userId'
-			AND e.electionId = v.electionId
-			AND NOW() BETWEEN e.voting_open AND e.voting_close";
-
-	// Run the given query
-	if( !( $result = @ mysql_query( $query ) ) )
-	{	
-		echo mysql_error();
-		return false;
-	}
-
-	$elections = array();
-
-	while( $row = mysql_fetch_array( $result ) )
-	{	array_push( $elections, $row[0] );
-	}
-
-	return $elections;
-}
-
-//TODO
 function getNominations( $userId="" )
 {	
 	if( !isset( $userId ) )
@@ -143,14 +104,12 @@ function getNominations( $userId="" )
 }
 
 //TODO
-function getElection( $electionId, $username="" )
-{
-	// Get the information about the requested election
-	$query = "SELECT *
-		  FROM elections
-		  WHERE electionId = '{$electionId}'";
-		  
-	$row = mysql_fetch_assoc( $result );
+	function getElection( $electionId, $username="" )
+	{	// Get the information about the requested election
+		$query = "SELECT *
+				  FROM elections
+				  WHERE electionId = ?";
+		$election = $this->_db->query( $query, $electionId );
 
 	$election = array( 'id' => $row['electionId'],
 			'position' => $row['position'],
@@ -211,7 +170,7 @@ function getElection( $electionId, $username="" )
 				  WHERE electionId = ?
 					AND userId = ?";
 
-		$result = $this->$db->fetch( $query, $election, $userId );
+		$result = $this->_db->fetch( $query, $election, $userId );
 	}
 
 	function vote( $election, $username, $ballot )
@@ -222,7 +181,7 @@ function getElection( $electionId, $username="" )
 				  WHERE electionId = ?
 					AND userid = ?";
 
-		$result = $this->db->fetchOne( $query, array( $election, $username ) );
+		$result = $this->_db->fetchOne( $query, array( $election, $username ) );
 		if( !isset( $result ) )
 		{	// The user isn't an eligible voter for this election
 			return false;
@@ -233,29 +192,29 @@ function getElection( $electionId, $username="" )
 		}
 
 		// Create changes concurrently to ensure consistentcy
-		$this->db->beginTransaction();
+		$this->_db->beginTransaction();
 		try {
 			// Add ballot to the election table
 			$query = "INSERT INTO votes (electionId, vote) VALUES (?, ?)";
-			$this->db->query( $query, array( $election, serialize($ballot) ) );
+			$this->_db->query( $query, array( $election, serialize($ballot) ) );
 
 			// Mark the user as having voted
 			$query = "UPDATE voters
 					  SET voted = 1
 					  WHERE electionId = ?
 						AND userId = ?";
-			$this->db->query( $query, array( $election, $username ) );
+			$this->_db->query( $query, array( $election, $username ) );
 
 			// If all succeed, commit the transaction and all changes
 			// are committed at once.
-		    $this->db->commit();
+		    $this->_db->commit();
 
 		} catch (Exception $e)
 		{	// If any of the queries failed and threw an exception,
 			// we want to roll back the whole transaction, reversing
 			// changes made in the transaction, even those that succeeded.
 			// Thus all changes are committed together, or none are.
-			$this->db->rollBack();
+			$this->_db->rollBack();
 			echo $e->getMessage();
 			return false;
 		}
@@ -267,7 +226,7 @@ function getElection( $electionId, $username="" )
 		$query = "SELECT CRO_ballot
 			  FROM elections
 			  WHERE electionId = ?";
-		$result = $this->db->query( $query, $election );
+		$result = $this->_db->query( $query, $election );
 		if( !$row = $result->fetch() )
 		{	return false;
 		}
@@ -280,7 +239,7 @@ function getElection( $electionId, $username="" )
 			  WHERE electionId = ?";
 
 		// Add all the votes to the array
-		foreach( $this->db->fetchAll($query, $election) as $vote )
+		foreach( $this->_db->fetchAll($query, $election) as $vote )
 		{	array_push( $votes, unserialize( $vote[0] ) );
 		}
 
@@ -288,7 +247,10 @@ function getElection( $electionId, $username="" )
 		$query = "SELECT
 					(SELECT COUNT(userId) FROM voters WHERE electionId = ? AND voted = 1) AS voters,
 					(SELECT COUNT(vote) FROM votes WHERE electionId = ?) AS votes";
-		$this->db->fetch( $query, array( $election, $election ) );
+		$validation = $this->_db->fetch( $query, array( $election, $election ) );
+
+		if( $validation['votes'] != $validation['voters'] )
+			return false;
 
 		// Return the votes in the election
 		return $votes;

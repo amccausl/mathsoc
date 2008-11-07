@@ -31,7 +31,7 @@ class ElectionController extends Zend_Controller_Action
 	{
 		// User must be authenticated to use this system
 		$auth = Zend_Auth::getInstance();
-		print( "auth = " . $auth->hasIdentity() );
+		//print( "auth = " . $auth->hasIdentity() );
 
 		//if (!$auth->hasIdentity())
 		//{	$this->_redirect('auth/login');
@@ -40,8 +40,12 @@ class ElectionController extends Zend_Controller_Action
 
 	// Browsing Functions
 	public function indexAction()
-	{	// Present the existing elections
+	{	// Grab the authenticated userid
+		$user = Zend_Auth::getInstance()->hasIdentity();
+		$user = null;
 
+		// Present the existing elections
+		$this->view->elections = $this->db->getElections( $user );
 	}
 
 	// Cast a ballot in an election
@@ -69,15 +73,17 @@ class ElectionController extends Zend_Controller_Action
 	{
 		require_once( "../application/default/views/helpers/form.inc" );
 
-		$positions = $this->db->getPositions();
-		//$positions is array of alias, name, description
-		//$position_options = array_push, positions and new
-		//$this->view->position_options = 
-		// TODO: initialize options array
-		$position_options = array();
+		require_once( "../application/default/models/userDB.inc" );
+		$db = new UserDB();
+
+		//$positions is array of alias, name, description from the user management database
+		$positions = $db->getElectionPositions();
+		$this->view->positions = $positions;
+		$position_options = array('new' => 'Create New Position');
 		foreach( $positions as $position )
-		{
+		{	$position_options[$position['alias']] = $position['name'];
 		}
+		$this->view->position_options = $position_options;
 
 		// Set default nomination and voting days
 		if( date('m') == 9 )

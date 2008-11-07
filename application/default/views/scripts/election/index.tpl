@@ -4,14 +4,14 @@
 <head>
 <title>MathSoc Online Voting</title>
 
-<link rel="stylesheet" href="js/lists.css" type="text/css"/>
+<link rel="stylesheet" href="{$baseUrl}/js/lists.css" type="text/css"/>
 <script language="javascript" type="text/javascript" 
             src="firebug/firebug.js"></script>
-<script language="JavaScript" type="text/javascript" src="js/coordinates.js"></script>
-<script language="JavaScript" type="text/javascript" src="js/prototype.js"></script>
-<script language="JavaScript" type="text/javascript" src="js/drag.js"></script>
-<script language="JavaScript" type="text/javascript" src="js/request.js"></script>
-<script language="JavaScript" type="text/javascript" src="js/election.js"></script>
+<script language="JavaScript" type="text/javascript" src="{$baseUrl}/js/coordinates.js"></script>
+<script language="JavaScript" type="text/javascript" src="{$baseUrl}/js/prototype.js"></script>
+<script language="JavaScript" type="text/javascript" src="{$baseUrl}/js/drag.js"></script>
+<script language="JavaScript" type="text/javascript" src="{$baseUrl}/js/request.js"></script>
+<script language="JavaScript" type="text/javascript" src="{$baseUrl}/js/election.js"></script>
 <script language="JavaScript" type="text/javascript"><!--
   window.onload = function() {ldelim}
 {foreach from=$elections item=election}
@@ -27,7 +27,7 @@
     var election{$election.id} = new Election( 'election{$election.id}', null, false, false );
   {/foreach}
 {/foreach}
-{ldelim};
+{rdelim};
   //-->
 </script>
 </head>

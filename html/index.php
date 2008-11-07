@@ -20,8 +20,6 @@ $config = new Zend_Config_Ini('../config/main.ini', 'general');
 $registry = Zend_Registry::getInstance();
 $registry->set('config', $config);
 
-$config = new Zend_Config_Ini('../config/main.ini', 'exambank');
-
 // Add database connection
 $db = Zend_Db::factory($config->db);
 Zend_Db_Table::setDefaultAdapter($db);

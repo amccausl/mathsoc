@@ -12,15 +12,8 @@ class ExamDB
 	protected $_db;
 
 	function __construct()
-	{
-		$params = array(
-		    'host'           => '127.0.0.1',
-		    'username'       => 'webuser',
-		    'password'       => 'TroutIsGood',
-		    'dbname'         => 'exambank_test'
-		);
-
-		$this->_db = Zend_Db::factory('Pdo_Mysql', $params);
+	{	$config = new Zend_Config_Ini('../config/main.ini', 'exambank');
+		$this->_db = Zend_Db::factory($config->db);
 	}
 
 	/** getExam - Retrieve an exam from the exambank

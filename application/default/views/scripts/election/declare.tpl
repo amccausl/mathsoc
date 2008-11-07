@@ -28,7 +28,9 @@
     you would like nominations to open and close, when you would like
     voting to start and close, and you must have a file that contains all
     the uwuserids of the people you would like to be able to vote for as a
-    CSV (or comma separated values).</p>
+    CSV (or comma separated values).  Anyone on the voters list is also
+	eligable to run for an election or nominate a candidate.  Any further
+	verification must be done by hand.</p>
   <div class='form-container'>
     <form action='{$smarty.server.REQUEST_URI}' method='post'>
     <fieldset>
