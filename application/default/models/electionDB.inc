@@ -15,6 +15,10 @@ class ElectionDB
 		$this->_db = Zend_Db::factory($config->db);
 	}
 
+	function lookup( $userId = "" )
+	{	return false;
+	}
+
 	// Return a list of elections the given user is eligible to vote in
 	function getElections( $userId, $unit = 'mathsoc' )
 	{	if( isset( $userId ) )
@@ -46,13 +50,14 @@ class ElectionDB
 				$results = $this->_db->fetchAll( $query, $election['id'] );
 				foreach( $results as $result )
 				{	$user = array();
-					if( $user = lookup( $result['candidateId'] ) )
+					if( $user = $this->lookup( $result['candidateId'] ) )
 					{
 						$user['name'] = $result['candidateId'];
 						$user['link'] = $result['link'];
 					}else
 					{	// USER DOESN'T EXIST, THIS IS A PROBLEM
-						$user = array();
+						$user['name'] = $result['candidateId'];
+						$user['link'] = $result['link'];
 					}
 					$candidates[$result['candidateId']] = $user;
 				}
@@ -211,7 +216,4 @@ class ElectionDB
 		return $votes;
 	}
 
-	function lookup( $userId = "" )
-	{	return false;
-	}
 }

@@ -42,7 +42,6 @@ class ElectionController extends Zend_Controller_Action
 	public function indexAction()
 	{	// Grab the authenticated userid
 		$user = Zend_Auth::getInstance()->hasIdentity();
-		$user = "amccausl";
 
 		// Present the existing elections
 		$this->view->elections = $this->db->getElections( $user );
@@ -54,6 +53,8 @@ class ElectionController extends Zend_Controller_Action
 		// Ensure that the desired fields are set
 		$electionId = substr( $this->_getParam('electionId'), 8 );
 
+		$user = Zend_Auth::getInstance()->hasIdentity();
+
 		// Determine how the user voted
 		$vote = array();
 		for( $key = 0; isset( $_POST["c$key"] ); $key++ )
@@ -61,11 +62,7 @@ class ElectionController extends Zend_Controller_Action
 		}
 
 		// Add the users vote to the system
-		if( $this->db->vote( $electionId, $_SESSION['username'], $vote ) )
-		{   print( "( success : true )" );
-		}else
-		{   print( "( success : false )" );
-		}
+		$this->view->success = $this->db->vote( $electionId, $user, $vote );
 	}
 
 	// Declare an election

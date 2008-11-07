@@ -1,6 +1,6 @@
 // Constants
 
-var VOTE_REQUEST_URL = "cast.php";
+var VOTE_REQUEST_URL = "cast";
 
 // Helper Functions
 
