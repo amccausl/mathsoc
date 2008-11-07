@@ -31,17 +31,16 @@ class ElectionController extends Zend_Controller_Action
 	{
 		// User must be authenticated to use this system
 		$auth = Zend_Auth::getInstance();
-		//print( "auth = " . $auth->hasIdentity() );
 
-		//if (!$auth->hasIdentity())
-		//{	$this->_redirect('auth/login');
-		//}
+		if (!$auth->hasIdentity())
+		{	$this->_redirect('auth/login');
+		}
 	}
 
 	// Browsing Functions
 	public function indexAction()
 	{	// Grab the authenticated userid
-		$user = Zend_Auth::getInstance()->hasIdentity();
+		$user = Zend_Auth::getInstance()->getIdentity();
 
 		// Present the existing elections
 		$this->view->elections = $this->db->getElections( $user );
@@ -51,9 +50,9 @@ class ElectionController extends Zend_Controller_Action
 	public function castAction()
 	{
 		// Ensure that the desired fields are set
-		$electionId = substr( $this->_getParam('electionId'), 8 );
+		$electionId = substr( $this->_getParam('electionID'), 8 );
 
-		$user = Zend_Auth::getInstance()->hasIdentity();
+		$user = Zend_Auth::getInstance()->getIdentity();
 
 		// Determine how the user voted
 		$vote = array();

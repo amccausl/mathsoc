@@ -159,15 +159,15 @@ class ElectionDB
 			$this->_db->query( $query, array( $election, serialize($ballot) ) );
 
 			// Mark the user as having voted
-			$query = "UPDATE voters
-					  SET voted = 1
-					  WHERE electionId = ?
-						AND userId = ?";
-			$this->_db->query( $query, array( $election, $username ) );
-
-			// If all succeed, commit the transaction and all changes
-			// are committed at once.
-		    $this->_db->commit();
+			if( $this->_db->update( 'voters', array( "voted" => "1" ), array("userId = '$username'", "electionId = '$election'") ) == 1 )
+			{
+				// If all succeed, commit the transaction and all changes
+				// are committed at once.
+			    $this->_db->commit();
+			}else
+			{	$this->_db->rollBack();
+				return false;
+			}
 
 		} catch (Exception $e)
 		{	// If any of the queries failed and threw an exception,
