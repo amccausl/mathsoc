@@ -42,7 +42,7 @@ class ElectionController extends Zend_Controller_Action
 	public function indexAction()
 	{	// Grab the authenticated userid
 		$user = Zend_Auth::getInstance()->hasIdentity();
-		$user = null;
+		$user = "amccausl";
 
 		// Present the existing elections
 		$this->view->elections = $this->db->getElections( $user );

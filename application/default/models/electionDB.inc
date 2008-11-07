@@ -19,102 +19,57 @@ class ElectionDB
 	function getElections( $userId, $unit = 'mathsoc' )
 	{	if( isset( $userId ) )
 		{
-			$query = "SELECT e.electionId as id, e.position, e.description, e.CRO
+			$query = "SELECT e.electionId as id, e.position, e.description, e.CRO, voted
 					  FROM elections e, voters v
 					  WHERE v.userId = ?
 						AND e.electionId = v.electionId
-						AND NOW() BETWEEN e.voting_open AND e.voting_close";
+						AND NOW() BETWEEN e.voting_open AND e.voting_close
+					  ORDER BY e.electionId";
 			$elections = $this->_db->fetchAll( $query, $userId );
 		}else
 		{
-			$query = "SELECT electionId as id, position, description, CRO
+			$query = "SELECT electionId as id, position, description, CRO, 1 as voted
 					  FROM elections
 					  WHERE NOW() BETWEEN voting_open AND voting_close";
 			$elections = $this->_db->fetchAll( $query );
 		}
 
+		$count = 0;
+		foreach( $elections as $election )
+		{	$candidates = array();
+
+			if( $election['voted'] == 0 )
+			{	$query = "SELECT candidateId, link
+						  FROM candidates
+						  WHERE electionId = ?
+						  ORDER BY candidateId";
+				$results = $this->_db->fetchAll( $query, $election['id'] );
+				foreach( $results as $result )
+				{	$user = array();
+					if( $user = lookup( $result['candidateId'] ) )
+					{
+						$user['name'] = $result['candidateId'];
+						$user['link'] = $result['link'];
+					}else
+					{	// USER DOESN'T EXIST, THIS IS A PROBLEM
+						$user = array();
+					}
+					$candidates[$result['candidateId']] = $user;
+				}
+			}
+			$elections[$count]['candidates'] = $candidates;
+			$count++;
+		}
 		return $elections;
 	}
-
-//TODO export this to the user model
-/** lookup - UWDir a user to determine more information
- * Borrowed from mathsoc.inc (had to copy for php4 compatibility)
- */
-function lookup( $userid )
-{
-	// Define a user to be returned
-	$user = array();
-
-	// Run uwdir query and parse the results
-	exec( "uwdir userid=" . escapeshellarg( $userid ), $output );
-	array_pop( $output );
-	array_shift( $output );
-	foreach( $output as $line )
-	{       $line = explode( ":", $line );
-	        $user[trim( $line[0] )] = trim( $line[1] );
-	}
-	$name = explode( ", ", $user['name'] );
-	$user['name'] = "{$name[1]} {$name[0]}";
-
-	// Do an LDAP lookup of the user to determine what position they hold
-	$ch = curl_init("http://kiwi.uwaterloo.ca/user/testLookup");
-	curl_setopt($ch, CURLOPT_POST, true);
-	curl_setopt($ch, CURLOPT_POSTFIELDS, "newLookup={$userid}&commit=Find");
-	curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.8.1.4) Gecko/20070515 Firefox/2.0.0.4 Test/0.1");
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	$kiwi = curl_exec($ch);
-	curl_close($ch);
-
-	$start = strpos($kiwi, "LDAP:") + 6;
-	$ldap = substr($kiwi, $start, strpos($kiwi, "</span>", $start) - $start);
-
-	if (strpos($ldap, "CN=UWdir-HR-faculty") !== false
-	 && strpos($ldap, "CN=UWdir-active") !== false)
-	         $user['position'] = "professor";
-
-	return $user;
-}
-
-//TODO
-function getNominations( $userId="" )
-{	
-	if( !isset( $userId ) )
-		$userId = Zend_Auth::getInstance()->getIdentity();
-	if( !isset( $userId ) )
-		return false;
-
-	$query = "SELECT e.electionId
-		  FROM elections e, voters v
-		  WHERE v.userId = '$userId'
-			AND e.electionId = v.electionId
-			AND NOW() BETWEEN e.nomination_open AND e.nomination_close";
-
-	// Run the given query
-	if( !( $result = @ mysql_query( $query ) ) )
-	{	return false;
-	}
-
-	$elections = array();
-
-	while( $row = mysql_fetch_array( $result ) )
-	{	array_push( $elections, $row[0] );
-	}
-
-	return $elections;
-}
 
 //TODO
 	function getElection( $electionId, $username="" )
 	{	// Get the information about the requested election
-		$query = "SELECT *
+		$query = "SELECT electionId as id, position, description, CRO
 				  FROM elections
 				  WHERE electionId = ?";
 		$election = $this->_db->query( $query, $electionId );
-
-	$election = array( 'id' => $row['electionId'],
-			'position' => $row['position'],
-			'description' => $row['description'],
-			'CRO' => $row['CRO'] );
 
 	// If a user is requesting an election, only return candidates
 	// if the user has not yet voted.
@@ -254,5 +209,9 @@ function getNominations( $userId="" )
 
 		// Return the votes in the election
 		return $votes;
+	}
+
+	function lookup( $userId = "" )
+	{	return false;
 	}
 }
