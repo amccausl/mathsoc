@@ -74,27 +74,30 @@ class UserDB
 		$query = "SELECT *
 			  FROM refunds, terms
 			  WHERE refunds.userId = ?
-			  AND refunds.term = terms.current_term;";
+				AND (refunds.term = terms.current_term
+				OR refunds.term = terms.last_term)";
 
 		$result = $this->_db->fetchCol($query, $userId);
 
 		if( empty( $result ) )
-		{	
-			$query = "SELECT *
-				  FROM refunds, terms
-				  WHERE refunds.userId = ?
-				  AND refunds.term = terms.last_term;";
-			$result = $this->_db->fetchCol($query, $userId);
-
-			if( empty( $result ) )
-			{	return true;
-			}
+		{	return true;
 		}
 		return false;
 	}
 
 	function getProfile( $userId )
-	{	// Do an LDAP lookup of the user to determine what position they hold
+	{
+		$user = self::lookup( $userId );
+
+		// TODO: lookup user from local database to return local data
+
+		return $user;
+	}
+
+	public static function lookup( $userId )
+	{	$user = array("userId" => $userId);
+
+		// Do an LDAP lookup of the user to determine what position they hold
 		$ch = curl_init("http://kiwi.uwaterloo.ca/user/testLookup");
 		curl_setopt($ch, CURLOPT_POST, true);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, "newLookup=".$userId."&commit=Find");
@@ -102,6 +105,12 @@ class UserDB
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		$kiwi = curl_exec($ch);
 		curl_close($ch);
+
+		if( preg_match( '/<b>(.*)<\/b>/', $kiwi, $matches ) )
+		{	$user['name'] = $matches[1];
+		}else
+		{	return false;
+		}
 
 		$start = strpos($kiwi, "LDAP:") + 6;
 		$ldap = substr($kiwi, $start, strpos($kiwi, "</span>", $start) - $start);
@@ -117,14 +126,6 @@ class UserDB
 		if (strpos($ldap, "CN=IdM-SA-Mathematics") !== false
 		&& strpos($ldap, "CN=IdM-active") !== false)
 			$user['faculty'] = "math";
-
-		$user = array(
-			"name" => "Alex McCausland",
-			"profile" => "I'm a swinging dude",
-			"current" => array(
-				array( "name" => "Website Director" )),
-			"past" => array(
-				array( "name" => "Website Director" )));
 
 		return $user;
 	}

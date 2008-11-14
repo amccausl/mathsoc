@@ -6,11 +6,14 @@ CREATE TABLE elections (
   description	  TEXT,
   CRO		  CHAR(8)	NOT NULL,
   CRO_ballot	  VARCHAR(128),
+  position_needed	INT(8)	DEFAULT 1	NOT NULL,
   nomination_needed INT(8),
   nomination_open DATETIME,
   nomination_close DATETIME,
   voting_open	  DATETIME,
   voting_close	  DATETIME,
+  term_start	  DATETIME,
+  term_end		  DATETIME,
 
   PRIMARY KEY (electionId)
 );

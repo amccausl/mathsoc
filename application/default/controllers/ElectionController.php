@@ -19,11 +19,8 @@ class ElectionController extends Zend_Controller_Action
 
 		$this->db = new ElectionDB();
 
-		if( $javascripts = $this->view->javascripts )
-		{	array_push( $javascripts, $this->getRequest()->getBaseUrl() . "/js/prototype" );
-		}else
-		{	$javascripts = array( $this->getRequest()->getBaseUrl() . "/js/prototype" );
-		}
+		$javascripts = $this->view->javascripts ? $this->view->javascripts : array();
+		array_push( $javascripts, $this->getRequest()->getBaseUrl() . "/js/prototype" );
 		$this->view->javascripts = $javascripts;
 	}
 
@@ -41,7 +38,6 @@ class ElectionController extends Zend_Controller_Action
 	public function indexAction()
 	{	// Grab the authenticated userid
 		$user = Zend_Auth::getInstance()->getIdentity();
-
 		// Present the existing elections
 		$this->view->elections = $this->db->getElections( $user );
 	}
@@ -60,7 +56,7 @@ class ElectionController extends Zend_Controller_Action
 		{   array_push( $vote, $_POST["c$key"] );
 		}
 
-		// Add the users vote to the system
+		// Add the users vote to the system, display result to user
 		$this->view->success = $this->db->vote( $electionId, $user, $vote );
 	}
 
@@ -124,12 +120,31 @@ class ElectionController extends Zend_Controller_Action
 		$smarty->assign($default);
 	}
 
+	public function manageAction()
+	{	// Display all the elections and their status
+	}
+
 	// tally the ballots in a given election, display the results
 	public function tallyAction()
-	{	// Display all the elections that are public or this user is the CRO of
+	{	require_once( "../application/default/models/BC-STV.inc" );
+		require_once( "../application/default/models/userDB.inc" );
 
-		require_once '../application/default/models/BC-STV.inc';
+		// Grab the votes for the election
+		$election = $this->db->getVotes($this->_getParam('electionId'));
+		$election['vote_count'] = count( $election['votes'] );
 
-		
+		// Calculate the outcome of the election
+		$results = BC_STV( $election['votes'], $election['position_needed'], 1 );
+		$election['details'] = $results['details'];
+
+		// Grab information for the winners
+		$winners = array();
+		foreach( $results['outcome'] as $winner )
+		{	array_push( $winners, UserDB::lookup( $winner ) );
+		}
+		$election['winners'] = $winners;
+
+		$this->view->election = $election;
+		$this->view->winners = $winners;
 	}
 }

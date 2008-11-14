@@ -58,7 +58,9 @@ function BC_STV_tally( $sum, $vote )
  * @return		An array with the number of votes cast and the winner(s) of the election
  */
 function BC_STV( $votes, $position_count = 1, $validate=false )
-{
+{	ob_start();
+	$outcome = array();
+
 	// Element 0 in the array is the CROs vote
 	$CRO_ballot = array_shift( $votes );
 
@@ -69,18 +71,14 @@ function BC_STV( $votes, $position_count = 1, $validate=false )
 	// Declare the transfer values for all the votes
 	array_walk( $votes, 'BC_STV_reweight' );
 
-	// Initialize the outcome of the election
-	// The first element of $outcome is the number of votes cast
-	$outcome = array( count( $votes ) );
-
 	// Calculate the number of votes needed for election
 	$votes_needed = (int)( count( $votes ) / ( $position_count + 1 ) ) + 1;
 
 	// Initialize tally with candidates
-	$tally = array_fill_keys( $candidates, array() );
+	$tally = array_fill_keys( $candidates, array() );	
 
 	if( $validate )
-	{	print( "# of votes: {$outcome[0]}\n" );
+	{	print( "# of votes: " . count($votes) . "\n");
 		print( "# of positions: {$position_count}\n" );
 		print( "votes needed: {$votes_needed}\n" );
 	}
@@ -97,12 +95,12 @@ function BC_STV( $votes, $position_count = 1, $validate=false )
 	}
 
 	// Run loop while there are positions to be filled
-	while( count( $outcome ) <= $position_count )
+	while( count( $outcome ) < $position_count )
 	{
 		// If there are enough positions for candidates, they can be acclaimed
 		if( count( $candidates ) == 0 )
 		{	return $outcome;
-		}elseif( count( $candidates ) <= $position_count - count( $outcome ) + 1 )
+		}elseif( count( $candidates ) <= $position_count - count( $outcome ) )
 		{	return array_merge( $outcome, $candidates );
 		}
 
@@ -198,11 +196,11 @@ function BC_STV( $votes, $position_count = 1, $validate=false )
 			$vote['transfer'] = array_pop( $vote );
 
 			// while the first ranking isn't a candidate anymore, keep removing them
-			while( !in_array( $vote[0], $candidates ) && !empty( $vote ) )
+			while( !empty( $vote ) && !in_array( $vote[0], $candidates ) )
 				array_shift( $vote );
 				
 			// double check sanity and add users vote to their new preferences tally
-			if( in_array( $vote[0], $candidates ) && isset( $tally[$vote[0]] ) )
+			if( !empty( $vote ) && in_array( $vote[0], $candidates ) && isset( $tally[$vote[0]] ) )
 				array_push( $tally[$vote[0]], $vote );
 		}
 
@@ -215,7 +213,8 @@ function BC_STV( $votes, $position_count = 1, $validate=false )
 		}
 	}
 
-	return $outcome;
+	// Return the results of the counting process
+	return array( "details" => ob_get_clean(), "outcome" => $outcome );
 }
 
 /* TESTING SUITE FOR VOTE TALLYING

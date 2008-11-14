@@ -15,13 +15,11 @@ class ElectionDB
 		$this->_db = Zend_Db::factory($config->db);
 	}
 
-	function lookup( $userId = "" )
-	{	return false;
-	}
-
 	// Return a list of elections the given user is eligible to vote in
 	function getElections( $userId, $unit = 'mathsoc' )
-	{	if( isset( $userId ) )
+	{	$logger = Zend_Registry::get('logger');
+
+		if( isset( $userId ) )
 		{
 			$query = "SELECT e.electionId as id, e.position, e.description, e.CRO, voted
 					  FROM elections e, voters v
@@ -32,9 +30,17 @@ class ElectionDB
 			$elections = $this->_db->fetchAll( $query, $userId );
 		}else
 		{
-			$query = "SELECT electionId as id, position, description, CRO, 1 as voted
+			$query = "SELECT electionId as id, position, description, CRO, 'polls open' as status
 					  FROM elections
-					  WHERE NOW() BETWEEN voting_open AND voting_close";
+					  WHERE NOW() BETWEEN voting_open AND voting_close
+						UNION
+					  SELECT electionId as id, position, description, CRO, 'polls closed' as status
+					  FROM elections
+					  WHERE NOW() > voting_close
+						UNION
+					  SELECT electionId as id, position, description, CRO, 'queued' as status
+					  FROM elections
+					  WHERE NOW() < voting_open";
 			$elections = $this->_db->fetchAll( $query );
 		}
 
@@ -50,10 +56,9 @@ class ElectionDB
 				$results = $this->_db->fetchAll( $query, $election['id'] );
 				foreach( $results as $result )
 				{	$user = array();
-					if( $user = $this->lookup( $result['candidateId'] ) )
-					{
-						$user['name'] = $result['candidateId'];
-						$user['link'] = $result['link'];
+					require_once( "../application/default/models/userDB.inc" );
+					if( $user = UserDB::lookup( $result['candidateId'] ) )
+					{	$user['link'] = $result['link'];
 					}else
 					{	// USER DOESN'T EXIST, THIS IS A PROBLEM
 						$user['name'] = $result['candidateId'];
@@ -68,88 +73,41 @@ class ElectionDB
 		return $elections;
 	}
 
-//TODO
-	function getElection( $electionId, $username="" )
-	{	// Get the information about the requested election
-		$query = "SELECT electionId as id, position, description, CRO
-				  FROM elections
-				  WHERE electionId = ?";
-		$election = $this->_db->query( $query, $electionId );
-
-	// If a user is requesting an election, only return candidates
-	// if the user has not yet voted.
-	if( $username )
-	{	$query = "SELECT voted
-			  FROM voters
-			  WHERE electionId = '$electionId'
-				AND userId = '{$username}'";
-		if( !( $result = @ mysql_query( $query ) ) )
-		{	return false;
-		}
-		$row = mysql_fetch_array( $result );
-		if( $row[0] == 1 )
-		{	$election['candidates'] = array();
-			return $election;
-		}
-	}
-
-	// Retrieve a list of candidates for that election
-	$query = "SELECT candidateId, link
-		  FROM candidates
-		  WHERE electionId = '{$electionId}'";
-	
-	// Run the given query
-	if( !( $result = @ mysql_query( $query ) ) )
-	{	return false;
-	}elseif( mysql_num_rows( $result ) == 0 )
-	{	return false;
-	}
-
-	$candidates = array();
-
-	while( $row = mysql_fetch_array( $result ) )
-	{	$user = lookup( $row[0] );
-		$candidates[$row[0]] = array('name' => $user['name'], 'link' => $row[1]);
-	}
-
-	$election['candidates'] = $candidates;
-
-	return $election;
-}
-
 	/** isEligible - Determine if a user is allowed to vote in a given election */
 	function isEligible( $election, $userId="" )
-	{
+	{	$logger = Zend_Registry::get('logger');
+
 		if( !isset( $userId ) )
 			$userId = Zend_Auth::getInstance()->getIdentity();
 		if( !isset( $userId ) )
 			return false;
 
-		$query = "SELECT *
-				  FROM voters
-				  WHERE electionId = ?
-					AND userId = ?";
-
-		$result = $this->_db->fetch( $query, $election, $userId );
-	}
-
-	function vote( $election, $username, $ballot )
-	{
 		// Determine if the user has already voted in the selected election
 		$query = "SELECT voted
 				  FROM voters
 				  WHERE electionId = ?
 					AND userid = ?";
 
-		$result = $this->_db->fetchOne( $query, array( $election, $username ) );
+		$result = $this->_db->fetchOne( $query, array( $election, $userId ) );
 		if( !isset( $result ) )
 		{	// The user isn't an eligible voter for this election
+			$logger->log("$userId is ineligible to vote in election $election", Zend_Log::INFO);
 			return false;
 		}elseif( $result == 1 )
 		{	// The user has already voted
-			print( "already voted" );
+			$logger->log("$userId has already voted in election $election", Zend_Log::INFO);
 			return false;
 		}
+		return true;
+	}
+
+	function vote( $election, $username, $ballot )
+	{	// Determine if the user is eligible for voting in this election
+		if( !$this->isEligible( $election, $username ) )
+		{	return false;
+		}
+
+		$logger = Zend_Registry::get('logger');
 
 		// Create changes concurrently to ensure consistentcy
 		$this->_db->beginTransaction();
@@ -159,13 +117,16 @@ class ElectionDB
 			$this->_db->query( $query, array( $election, serialize($ballot) ) );
 
 			// Mark the user as having voted
-			if( $this->_db->update( 'voters', array( "voted" => "1" ), array("userId = '$username'", "electionId = '$election'") ) == 1 )
+			if( $this->_db->update( 'voters',
+					array( "voted" => "1" ),
+					array( "userId = '$username'", "electionId = '$election'", "voted = '0'" ) ) == 1 )
 			{
 				// If all succeed, commit the transaction and all changes
 				// are committed at once.
 			    $this->_db->commit();
 			}else
 			{	$this->_db->rollBack();
+				$logger->log("database has failed when $userId voting in election $election", Zend_Log::ERROR);
 				return false;
 			}
 
@@ -175,45 +136,47 @@ class ElectionDB
 			// changes made in the transaction, even those that succeeded.
 			// Thus all changes are committed together, or none are.
 			$this->_db->rollBack();
-			echo $e->getMessage();
+			$logger->log($e->getMessage() . " has prevented $userId from voting in election $election", Zend_Log::ERROR);
 			return false;
 		}
 		return true;
 	}
 
-	function getVotes( $election )
-	{
-		$query = "SELECT CRO_ballot
+	function getVotes( $electionId )
+	{	$logger = Zend_Registry::get('logger');
+
+		$query = "SELECT *
 			  FROM elections
 			  WHERE electionId = ?";
-		$result = $this->_db->query( $query, $election );
-		if( !$row = $result->fetch() )
-		{	return false;
-		}
+		$election = $this->_db->fetchAll( $query, $electionId );
+		$election = $election[0];
 
 		// Add the CRO ballot as the first ballot in the votes array
-		$votes = array( unserialize( $row[0] ) );
+		$votes = array( unserialize( $election['CRO_ballot'] ) );
 
 		$query = "SELECT vote
 			  FROM votes
 			  WHERE electionId = ?";
 
 		// Add all the votes to the array
-		foreach( $this->_db->fetchAll($query, $election) as $vote )
-		{	array_push( $votes, unserialize( $vote[0] ) );
+		foreach( $this->_db->fetchCol($query, $electionId) as $vote )
+		{	array_push( $votes, unserialize( $vote ) );
 		}
+		$election['votes'] = $votes;
 
 		// Compare the cardinality of the votes with the voters for that election as a sanity check
 		$query = "SELECT
 					(SELECT COUNT(userId) FROM voters WHERE electionId = ? AND voted = 1) AS voters,
 					(SELECT COUNT(vote) FROM votes WHERE electionId = ?) AS votes";
-		$validation = $this->_db->fetch( $query, array( $election, $election ) );
+		$validation = $this->_db->fetchAll( $query, array( $electionId, $electionId ) );
+		$validation = $validation[0];
 
 		if( $validation['votes'] != $validation['voters'] )
+		{	$logger->log("$userId has already voted in election $electionId", Zend_Log::ERROR);
 			return false;
+		}
 
 		// Return the votes in the election
-		return $votes;
+		return $election;
 	}
-
 }

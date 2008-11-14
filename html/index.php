@@ -17,8 +17,7 @@ Zend_Loader::registerAutoload();
 
 // load configuration
 $config = new Zend_Config_Ini('../config/main.ini', 'general');
-$registry = Zend_Registry::getInstance();
-$registry->set('config', $config);
+Zend_Registry::set('config', $config);
 
 // Add database connection
 $db = Zend_Db::factory($config->db);
@@ -31,6 +30,10 @@ Zend_Loader::loadClass('Zend_Auth');
 include_once( '../application/default/views/helpers/initialize.inc' );
 
 // Todo: add logging information to track users for use-case analysis
+$logger = new Zend_Log();
+$writer = new Zend_Log_Writer_Firebug();
+$logger->addWriter($writer);
+Zend_Registry::set('logger',$logger);
 
 // setup controller
 $frontController = Zend_Controller_Front::getInstance();
