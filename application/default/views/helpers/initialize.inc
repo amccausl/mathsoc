@@ -13,7 +13,7 @@ require_once('SmartyView.php');
 
 $view = new SmartyView( $config->smarty );
 $view->title = 'The Mathematics Society of the University of Waterloo';
-$view->stylesheets = array('/css/main.css');
+$view->stylesheets = array(Zend_Controller_Front::getInstance()->getBaseUrl() . '/css/main.css');
 
 // Add the menu to the layout
 //require_once( '../application/views/helpers/menu.inc' );
