@@ -9,7 +9,6 @@ class ServicesController extends Zend_Controller_Action
 	}
 
 	// Present prewritten pages
-	public function cifAction() {}
 	public function mathleticsAction() {}
 	public function spaceAction() {}
 }

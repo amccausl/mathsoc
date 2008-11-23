@@ -1,11 +1,11 @@
 <?php
 
-require_once 'Zend/Controller/Action.php';
+require_once 'MathSocAction.inc';
 
 // Load the database model for the exam storage
 require_once '../application/exambank/models/examDB.inc';
 
-class Exambank_IndexController extends Zend_Controller_Action
+class Exambank_IndexController extends MathSoc_Controller_Action
 {
 	private $db;
 
@@ -99,7 +99,6 @@ class Exambank_IndexController extends Zend_Controller_Action
 	{
 		session_start();
 		require_once( "../application/default/views/helpers/form.inc" );
-		require_once( "smarty/SmartyValidate.class.php" );
 
 		// Generate HTML elements for the form
 		$this->view->prefix_options = $this->db->getCourses(null, null, true);
@@ -130,12 +129,12 @@ class Exambank_IndexController extends Zend_Controller_Action
 			SmartyValidate::connect($smarty);
 			// validate after a POST
 			if(SmartyValidate::is_valid($_POST)) {
-				// no errors, done with SmartyValidate
-				//SmartyValidate::disconnect();
-
 				// TODO: insert entry to database
 
 				// TODO: set success message
+
+				// no errors, done with SmartyValidate
+				//SmartyValidate::disconnect();
 			}
 			
 			$this->view->assign($_POST);

@@ -22,7 +22,7 @@ class ExamDB
 	 * if the exam is not found.
 	 *
 	 * @param   id	The id for the exam desired
-	 * @return		return a associative array with the exams information
+	 * @return		return an associative array with the exams information
 	 */
 	function getExam( $id )
 	{
@@ -62,4 +62,5 @@ class ExamDB
 		$query = "SELECT title FROM courses WHERE prefix = ? AND code = ?";
 		return $this->_db->fetchRow( $query, array( $prefix, $code ) );
 	}
+
 }
