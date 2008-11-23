@@ -3,35 +3,39 @@
 /** Generate the menu for rendering in the sidebar.
  */
 
-$menu = array(
+function getMenu( $request = null )
+{
+	$menu = array(
 	array(
 		"title"	=> "Announcements",
 		"link"	=> "",
 		"sub"	=> array(
 		array(
 			"title" => "Events Calendar",
-			"link" => "/Events"))),
+			"link" => $request->getBaseUrl() . "/Events"))),
 	array(
 		"title"	=> "Services",
-		"link"	=> "/Services",
-		"status"=> "active",
+		"link"	=> $request->getBaseUrl() . "/Services",
+		"module" => "default",
+		"controller" => "index",
+		"action" => "index",
 		"sub"	=> array(
 		array(
 			"title"	=> "Exambank",
-			"link"	=> "/Exambank",
+			"link"	=> $request->getBaseUrl() . "/Exambank",
 			"status"=> "selected",
 			"sub"	=> array()),
 		array(
 			"title"	=> "Lockers",
-			"link"	=> "/Lockers",
+			"link"	=> $request->getBaseUrl() . "/Lockers",
 			"sub"	=> array()),
 		array(
 			"title"	=> "Office",
-			"link"	=> "/Office",
+			"link"	=> $request->getBaseUrl() . "/Office",
 			"sub"	=> array()),
 		array(
 			"title"	=> "Novelties",
-			"link"	=> "/Novelties",
+			"link"	=> $request->getBaseUrl() . "/Novelties",
 			"sub"	=> array()),
 		//array(
 		//	"title"	=> "C&D",
@@ -39,45 +43,45 @@ $menu = array(
 		//	"sub"	=> array()),
 		array(
 			"title"	=> "C.I.F.",
-			"link"	=> "/Services/CIF",
+			"link"	=> $request->getBaseUrl() . "/Services/CIF",
 			"sub"	=> array()),
 		array(
 			"title"	=> "Mathletics",
-			"link"	=> "/Mathletics",
+			"link"	=> $request->getBaseUrl() . "/Services/Mathletics",
 			"sub"	=> array()),
 		array(
 			"title"	=> "Student Space",
-			"link"	=> "/Services/Space",
+			"link"	=> $request->getBaseUrl() . "/Services/Space",
 			"sub"	=> array()))),
 	array(
 		"title"	=> "Academics",
-		"link"	=> "/Academics",
+		"link"	=> $request->getBaseUrl() . "/Academics",
 		"sub"	=> array(
 		array(
 			"title" => "School Committees",
-			"link" => "/Academics/Committees"),
+			"link" => $request->getBaseUrl() . "/Academics/Committees"),
 		array(
 			"title" => "Representation",
-			"link" => "/Academics/Reps"),
+			"link" => $request->getBaseUrl() . "/Academics/Reps"),
 		array(
 			"title" => "Further Information",
-			"link" => "/Academics/Info"))),
+			"link" => $request->getBaseUrl() . "/Academics/Info"))),
 	array(
 		"title"	=> "Council",
-		"link"	=> "/Council",
+		"link"	=> $request->getBaseUrl() . "/Council",
 		"sub"	=> array(
 		array(
 			"title" => "Representation",
-			"link" => "/Council/Representation"),
+			"link" => $request->getBaseUrl() . "/Council/Representation"),
 		array(
 			"title" => "Meeting Minutes",
-			"link" => "/Council/minutes"),
+			"link" => $request->getBaseUrl() . "/Council/minutes"),
 		array(
 			"title" => "Bylaws & Policies",
-			"link" => "/Council/policies"),
+			"link" => $request->getBaseUrl() . "/Council/policies"),
 		array(
 			"title" => "Available Positions",
-			"link" => "/Council/Vacancies"),
+			"link" => $request->getBaseUrl() . "/Council/Vacancies"),
 		array(
 			"title" => "Join the Mailing List",
 			"link" => "http://www.mathsoc.uwaterloo.ca/cgi-bin/mailman/listinfo/council"))),
@@ -87,20 +91,20 @@ $menu = array(
 		"sub"	=> array(
 		array(
 			"title"	=> "Join a Club",
-			"link"	=> "/Clubs/join"),
+			"link"	=> $request->getBaseUrl() . "/Clubs/join"),
 		array(
 			"title"	=> "",
 			"link"	=> ""))),
 	array(
 		"title"	=> "Volunteers",
-		"link"	=> "/Volunteers",
+		"link"	=> $request->getBaseUrl() . "/Volunteers",
 		"sub"	=> array(
 		array(
 			"title" => "How to get Involved",
-			"link"	=> "/Volunteers/GetInvolved"))),
+			"link"	=> $request->getBaseUrl() . "/Volunteers/GetInvolved"))),
 	array(
 		"title"	=> "Committees",
-		"link"	=> "/Committees",
+		"link"	=> $request->getBaseUrl() . "/Committees",
 		"sub"	=> array(
 		array(
 			"title"	=> "Math Orientation",
@@ -113,8 +117,32 @@ $menu = array(
 			"link"	=> "http://www.student.math.uwaterloo.ca/"))),
 	array(
 		"title"	=> "Contact Info",
-		"link"	=> "/Contact"));
+		"link"	=> $request->getBaseUrl() . "/Contact"));
+
+	if( isset( $request ) )
+	{	$module = $request->getModuleName();
+		if( !isset( $module ) )
+		{	$module = Zend_Controller_Front::getInstance()->getDispatcher()->getDefaultModule();
+		}
+
+		print( "using module '$module'\n" );
+
+		foreach( $menu as $index1 => $menuitem1 )
+		{	if( (isset( $menuitem['module'] )
+					&& $menuitem['module'] == strtolower($module))
+				|| strtolower($module) == 'default' )
+			{
+				foreach( $menuitem1['sub'] as $index2 => $menuitem2 )
+				{	if( isset( $menuitem2['controller'] )
+					$menu[$index]['status'] = 'active';
+				}
+				// TODO: recurse on the sub array
+			}
+		}
+	}
 
 // Todo: determine where the user is from the URL, generate specialized menu
-// Todo: Switch links to call the URL generator function
+// Todo: Switch links to call the URL generator function or use preset module, controller etc
 // Todo: Add page specific cacheing
+	return $menu;
+}

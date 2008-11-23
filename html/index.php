@@ -26,9 +26,6 @@ Zend_Db_Table::setDefaultAdapter($db);
 // Todo: load access control
 Zend_Loader::loadClass('Zend_Auth');
 
-// Create the view and load in the ViewRenderer
-include_once( '../application/default/views/helpers/initialize.inc' );
-
 // Todo: add logging information to track users for use-case analysis
 $logger = new Zend_Log();
 $writer = new Zend_Log_Writer_Firebug();
@@ -37,8 +34,12 @@ Zend_Registry::set('logger',$logger);
 
 // setup controller
 $frontController = Zend_Controller_Front::getInstance();
+//$frontController->setBaseUrl("/~amccausl/zend/html");
 $frontController->throwExceptions(true);
 $frontController->addModuleDirectory('../application/');
+
+// Create the view and load in the ViewRenderer
+include_once( '../application/default/views/helpers/initialize.inc' );
 
 // Add required routers
 $router = $frontController->getRouter();

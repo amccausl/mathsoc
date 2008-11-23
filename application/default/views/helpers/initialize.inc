@@ -15,11 +15,6 @@ $view = new SmartyView( $config->smarty );
 $view->title = 'The Mathematics Society of the University of Waterloo';
 $view->stylesheets = array(Zend_Controller_Front::getInstance()->getBaseUrl() . '/css/main.css');
 
-// Add the menu to the layout
-//require_once( '../application/views/helpers/menu.inc' );
-include_once( 'menu.inc' );
-$view->menu = $menu;
-
 //Create a new ViewRenderer helper and assign our newly
 //created SmartyView object as the view instance
 $viewHelper = new Zend_Controller_Action_Helper_ViewRenderer($view);
