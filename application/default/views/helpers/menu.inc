@@ -133,7 +133,7 @@ function getMenu( $request = null )
 				|| strtolower($module) == 'default' )
 			{
 				foreach( $menuitem1['sub'] as $index2 => $menuitem2 )
-				{	if( isset( $menuitem2['controller'] )
+				{	if( isset( $menuitem2['controller'] ) )
 					$menu[$index]['status'] = 'active';
 				}
 				// TODO: recurse on the sub array

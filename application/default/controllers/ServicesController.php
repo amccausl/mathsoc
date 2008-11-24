@@ -1,8 +1,8 @@
 <?php
 
-require_once 'Zend/Controller/Action.php';
+require_once 'MathSocAction.inc';
 
-class ServicesController extends Zend_Controller_Action
+class ServicesController extends MathSoc_Controller_Action
 {
 	public function indexAction()
 	{
