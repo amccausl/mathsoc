@@ -1,4 +1,3 @@
--- Todo:  Include functionality to nominate candidates in the next version
 
 CREATE TABLE elections (
   electionId	  INT(8)	NOT NULL	AUTO_INCREMENT,

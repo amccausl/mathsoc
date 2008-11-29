@@ -132,11 +132,14 @@ function getMenu( $request = null )
 					&& $menuitem['module'] == strtolower($module))
 				|| strtolower($module) == 'default' )
 			{
-				foreach( $menuitem1['sub'] as $index2 => $menuitem2 )
-				{	if( isset( $menuitem2['controller'] ) )
-					$menu[$index]['status'] = 'active';
+				if( isset( $menuitem1['sub'] ) )
+				{
+					foreach( $menuitem1['sub'] as $index2 => $menuitem2 )
+					{	if( isset( $menuitem2['controller'] ) )
+						$menu[$index]['status'] = 'active';
+					}
+					// TODO: recurse on the sub array
 				}
-				// TODO: recurse on the sub array
 			}
 		}
 	}

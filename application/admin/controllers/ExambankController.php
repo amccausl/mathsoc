@@ -2,7 +2,7 @@
 
 require_once 'MathSocAction.inc';
 
-class Exambank_AdminController extends MathSoc_Controller_Action
+class Admin_ExambankController extends MathSoc_Controller_Action
 {
 	// TODO: add authentication and authorization for all these pages
 

@@ -1,14 +1,13 @@
 <?php
 
-require_once 'Zend/Controller/Action.php';
+require_once 'MathSocAction.inc';
 
-class LockersController extends Zend_Controller_Action
+class LockersController extends MathSoc_Controller_Action
 {
 	private $db;
 
 	public function init()
 	{	parent::init();
-		$this->view->baseUrl = $this->_request->getBaseUrl();
 		$this->view->username = Zend_Auth::getInstance()->getIdentity();
 		$this->db = new LockerDB();
 	}
@@ -19,6 +18,27 @@ class LockersController extends Zend_Controller_Action
     public function indexAction()
     {
     }
+
+	/** Displays a map the user can choose where they want their locker
+	 * 
+	 */
+	public function mapAction()
+	{
+	}
+
+	/** Displays a map the user can choose where they want their locker
+	 * 
+	 */
+	public function blockAction()
+	{
+	}
+
+	/** Display a message explaining that the system is currently locked
+	 * 
+	 */
+	public function lockedAction()
+	{
+	}
 
 	/**
 	 * Allow students to sign up for lockers
@@ -42,7 +62,7 @@ class LockersController extends Zend_Controller_Action
 		$smarty = $this->view->getEngine();
 		if(empty($_POST))
 		{	SmartyValidate::connect($smarty, true);
-			//SmartyValidate::register_validator('prefix_element','course_prefix','notEmpty');
+			SmartyValidate::register_validator('email_element','email','notEmpty');
 		}else
 		{	SmartyValidate::connect($smarty);
 			// validate after a POST
@@ -68,13 +88,6 @@ class LockersController extends Zend_Controller_Action
         }
 
 		}
-	}
-
-	/**
-	 * This displays information on all expiring lockers to the office manager.
-	 */
-	public function adminAction()
-	{
 	}
 }
 

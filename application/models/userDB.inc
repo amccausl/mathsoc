@@ -41,7 +41,7 @@ class UserDB
 				  WHERE units.id = positions.unitId
 					AND units.alias = 'mathsoc'
 					AND (positions.category = 'EXC' OR positions.category = 'REP')
-					AND potitions.alias != ''
+					AND positions.alias != ''
 				  ORDER BY positions.name";
 		return $this->_db->fetchAll($query);
 	}

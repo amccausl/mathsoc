@@ -1,11 +1,12 @@
 <?php
 
-require_once 'Zend/Controller/Action.php';
+require_once 'MathSocAction.inc';
 
 // Load the database model for the election system
 require_once '../application/default/models/electionDB.inc';
+require_once '../application/default/models/userDB.inc' ;
 
-class ElectionController extends Zend_Controller_Action
+class ElectionController extends MathSoc_Controller_Action
 {
 	private $db;
 
@@ -65,7 +66,6 @@ class ElectionController extends Zend_Controller_Action
 	{
 		require_once( "../application/default/views/helpers/form.inc" );
 
-		require_once( "../application/default/models/userDB.inc" );
 		$db = new UserDB();
 
 		//$positions is array of alias, name, description from the user management database
@@ -105,6 +105,7 @@ class ElectionController extends Zend_Controller_Action
 		$smarty = $this->view->getEngine();
 		if( empty( $_POST ) )
 		{	SmartyValidate::connect($smarty, true);
+			SmartyValidate::register_validator();
 			SmartyValidate::register_validator('prefix_element','course_prefix','notEmpty');
 		}else
 		{	SmartyValidate::connect($smarty);
@@ -127,7 +128,6 @@ class ElectionController extends Zend_Controller_Action
 	// tally the ballots in a given election, display the results
 	public function tallyAction()
 	{	require_once( "../application/default/models/BC-STV.inc" );
-		require_once( "../application/default/models/userDB.inc" );
 
 		// Grab the votes for the election
 		$election = $this->db->getVotes($this->_getParam('electionId'));

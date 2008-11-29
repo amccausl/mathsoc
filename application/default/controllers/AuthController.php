@@ -47,8 +47,11 @@ class AuthController extends Zend_Controller_Action
 		}elseif( $auth->hasIdentity() )
 		{	$status = "You are logged-in as " . $auth->getIdentity() . "<br>\n";
 		}else
-		{	// TODO: add source url as a callback
-			$this->_redirect($this->loginUrl . "?__kiwi_referer__=http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}");
+		{	if( $this->_getParam( "referer" ) )
+			{	$this->_redirect($this->loginUrl . "?__kiwi_referer__=" . $this->_getParam("referer"));
+			}else
+			{	$this->_redirect($this->loginUrl . "?__kiwi_referer__=http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}");
+			}
 		}
 	}
 

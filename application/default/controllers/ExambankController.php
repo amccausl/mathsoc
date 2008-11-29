@@ -1,8 +1,8 @@
 <?php
 
-require_once 'Zend/Controller/Action.php';
+require_once 'MathSocAction.inc';
 
-class ExambankController extends Zend_Controller_Action
+class ExambankController extends MathSoc_Controller_Action
 {
 	// Common variables to Exambank system
 

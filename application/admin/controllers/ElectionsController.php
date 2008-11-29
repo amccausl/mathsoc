@@ -3,9 +3,9 @@
 require_once 'MathSocAction.inc';
 
 // Load the database model for the exam storage
-require_once '../application/exambank/models/examDB.inc';
+require_once '../application/models/electionsDB.inc';
 
-class Exambank_IndexController extends MathSoc_Controller_Action
+class Admin_ElectionsController extends MathSoc_Controller_Action
 {
 	private $db;
 

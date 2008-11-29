@@ -1,8 +1,6 @@
 <?php
 
-//require_once( "database/mathsocDB.inc" );
 require_once( "mathsocDB.inc" );
-require_once( "mathsoc.inc" );
 
 /***** lockerDB.inc -- Version 0.1 *****
  * Writen by Alex McCausland
@@ -14,34 +12,15 @@ require_once( "mathsoc.inc" );
  * Future Improvements:
  *    - Make work
  *
- * Structure:
- *
- * The locker system has 1 table storing:
- *
- * The lockers table stored the lockers on a term by term basis.
- * The columns are:
- *   lockerNum	The actual number for the locker
- *   combo	The combo for this locker
-
-  CREATE TABLE `lockers` (
-    `lockerId`       INT(10) NOT NULL,
-    `current_userId` CHAR(8),
-    `current_phone`  CHAR(12),
-    `last_userId`    CHAR(8),
-    `last_phone`     CHAR(12),
-    `expires`        DATETIME,
-    `combo`          VARCHAR(10),
-    PRIMARY KEY (`lockerId`)
-  ) TYPE=MyISAM;
-
 */
 
 class LockerDB extends MathSocDB
 {
-	private $database = "mathsoc";
+	protected $_db;
 
 	function __construct()
-	{	parent::__construct( $this->database );
+	{	parent::__construct( Zend_Registry::getInstance()->get('config')->db->params->dbname );
+		$this->_db = Zend_Db::factory(Zend_Registry::getInstance()->get('config')->db);
 	}
 
 /*** USER FUNCTIONS ***/

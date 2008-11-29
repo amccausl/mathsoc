@@ -2,10 +2,10 @@
 
 require_once 'MathSocAction.inc';
 
-// Load the database model for the exam storage
-require_once '../application/exambank/models/examDB.inc';
+// Load the database model for CIF information storage
+require_once '../application/models/cifDB.inc';
 
-class Exambank_IndexController extends MathSoc_Controller_Action
+class Admin_CifController extends MathSoc_Controller_Action
 {
 	private $db;
 
@@ -16,7 +16,7 @@ class Exambank_IndexController extends MathSoc_Controller_Action
 		$this->initView();
 		//$this->view->user = Zend_Auth::getInstance()->getIdentity();
 
-		$this->db = new ExamDB();
+		$this->db = new CifDB();
 	}
 /*
     function preDispatch()

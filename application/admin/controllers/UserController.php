@@ -5,9 +5,13 @@ require_once 'MathSocAction.inc';
 // Load the database model for the exam storage
 require_once '../application/exambank/models/examDB.inc';
 
-class Exambank_IndexController extends MathSoc_Controller_Action
+class Admin_UserController extends MathSoc_Controller_Action
 {
+	// The database object to retrieve information from
 	private $db;
+
+	// The groups that are an admin of this system
+	private $admins = array();
 
 	public function init()
 	{	parent::init();

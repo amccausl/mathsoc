@@ -101,6 +101,9 @@ class ElectionDB
 		return true;
 	}
 
+	/** vote - Records a users vote in a given election.
+	 *
+	 */
 	function vote( $election, $username, $ballot )
 	{	// Determine if the user is eligible for voting in this election
 		if( !$this->isEligible( $election, $username ) )
@@ -112,24 +115,29 @@ class ElectionDB
 		// Create changes concurrently to ensure consistentcy
 		$this->_db->beginTransaction();
 		try {
-			// Add ballot to the election table
-			$query = "INSERT INTO votes (electionId, vote) VALUES (?, ?)";
-			$this->_db->query( $query, array( $election, serialize($ballot) ) );
-
-			// Mark the user as having voted
-			if( $this->_db->update( 'voters',
-					array( "voted" => "1" ),
-					array( "userId = '$username'", "electionId = '$election'", "voted = '0'" ) ) == 1 )
-			{
-				// If all succeed, commit the transaction and all changes
-				// are committed at once.
-			    $this->_db->commit();
+			if( $this->_db->update( 'elections',
+					array( "CRO_ballot" => serialize($ballot) ),
+					array( "electionId = '$election'", "CRO = '$username'" )) == 1 )
+			{	// User is the CRO of the election
 			}else
-			{	$this->_db->rollBack();
-				$logger->log("database has failed when $userId voting in election $election", Zend_Log::ERROR);
-				return false;
-			}
+			{	// Add ballot to the election table
+				$query = "INSERT INTO votes (electionId, vote) VALUES (?, ?)";
+				$this->_db->query( $query, array( $election, serialize($ballot) ) );
 
+				// Mark the user as having voted
+				if( $this->_db->update( 'voters',
+						array( "voted" => "1" ),
+						array( "userId = '$username'", "electionId = '$election'", "voted = '0'" ) ) == 1 )
+				{
+					// If all succeed, commit the transaction and all changes
+					// are committed at once.
+				    $this->_db->commit();
+				}else
+				{	$this->_db->rollBack();
+					$logger->log("database has failed when $userId voting in election $election", Zend_Log::ERROR);
+					return false;
+				}
+			}
 		} catch (Exception $e)
 		{	// If any of the queries failed and threw an exception,
 			// we want to roll back the whole transaction, reversing

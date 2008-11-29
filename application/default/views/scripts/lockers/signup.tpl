@@ -1,3 +1,7 @@
+{if $validate.default.is_error}
+{validate id="email_element" message="You must provide a valid email address<br/>"}
+{/if}
+
 <div class='form-container'>
 <form action='{$smarty.server.REQUEST_URI}' method='post'>
 <fieldset>

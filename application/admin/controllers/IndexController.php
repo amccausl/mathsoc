@@ -2,10 +2,7 @@
 
 require_once 'MathSocAction.inc';
 
-// Load the database model for the exam storage
-require_once '../application/exambank/models/examDB.inc';
-
-class Exambank_IndexController extends MathSoc_Controller_Action
+class Admin_IndexController extends MathSoc_Controller_Action
 {
 	private $db;
 
@@ -15,10 +12,8 @@ class Exambank_IndexController extends MathSoc_Controller_Action
 		// User must be authenticated to see any of these pages
 		$this->initView();
 		//$this->view->user = Zend_Auth::getInstance()->getIdentity();
-
-		$this->db = new ExamDB();
 	}
-/*
+
     function preDispatch()
 	{
 		$auth = Zend_Auth::getInstance();
@@ -27,7 +22,7 @@ class Exambank_IndexController extends MathSoc_Controller_Action
 		{	$this->_redirect('auth/login');
 		}
 	}
-*/
+
 	// Browsing Functions
 	public function indexAction()
 	{	// List the existing exams

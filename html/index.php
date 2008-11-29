@@ -23,6 +23,10 @@ Zend_Registry::set('config', $config);
 $db = Zend_Db::factory($config->db);
 Zend_Db_Table::setDefaultAdapter($db);
 
+// Temporary measure to allow older database methods to function as is
+// TODO: remove this line when all database modules are fully ported
+require_once( "mathsocDB.inc" );
+
 // Todo: load access control
 Zend_Loader::loadClass('Zend_Auth');
 
