@@ -8,7 +8,7 @@ function getMenu( $request = null )
 	$menu = array(
 	array(
 		"title"	=> "Announcements",
-		"link"	=> "",
+		"link"	=> $request->getBaseUrl() . "/",
 		"sub"	=> array(
 		array(
 			"title" => "Events Calendar",
@@ -62,10 +62,10 @@ function getMenu( $request = null )
 			"link" => $request->getBaseUrl() . "/Academics/Committees"),
 		array(
 			"title" => "Representation",
-			"link" => $request->getBaseUrl() . "/Academics/Reps"),
+			"link" => $request->getBaseUrl() . "/Academics/Representation"),
 		array(
-			"title" => "Further Information",
-			"link" => $request->getBaseUrl() . "/Academics/Info"))),
+			"title" => "Talks",
+			"link" => $request->getBaseUrl() . "/Academics/Talks"))),
 	array(
 		"title"	=> "Council",
 		"link"	=> $request->getBaseUrl() . "/Council",
@@ -87,7 +87,7 @@ function getMenu( $request = null )
 			"link" => "http://www.mathsoc.uwaterloo.ca/cgi-bin/mailman/listinfo/council"))),
 	array(
 		"title"	=> "Clubs",
-		"link"	=> "/Clubs",
+		"link"	=> $request->getBaseUrl() .  "/Clubs",
 		"sub"	=> array(
 		array(
 			"title"	=> "Join a Club",
@@ -125,7 +125,17 @@ function getMenu( $request = null )
 		{	$module = Zend_Controller_Front::getInstance()->getDispatcher()->getDefaultModule();
 		}
 
-		print( "using module '$module'\n" );
+		$controller = $request->getControllerName();
+		if( !isset( $controller ) )
+		{	$controller = Zend_Controller_Front::getInstance()->getDispatcher()->getDefaultController();
+		}
+
+		$action = $request->getActionName();
+		if( !isset( $action ) )
+		{	$action = Zend_Controller_Front::getInstance()->getDispatcher()->getDefaultAction();
+		}
+
+		print( "using module '$module', controller '$controller', action '$action'\n" );
 
 		foreach( $menu as $index1 => $menuitem1 )
 		{	if( (isset( $menuitem['module'] )
