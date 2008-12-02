@@ -9,7 +9,7 @@ date_default_timezone_set('America/Toronto');
 
 // directory setup and class loading
 set_include_path('.' . PATH_SEPARATOR . '../libs/'
-     . PATH_SEPARATOR . '../application/default/models'
+     . PATH_SEPARATOR . '../application/models'
      . PATH_SEPARATOR . get_include_path());
 
 include "Zend/Loader.php";
@@ -22,10 +22,6 @@ Zend_Registry::set('config', $config);
 // Add database connection
 $db = Zend_Db::factory($config->db);
 Zend_Db_Table::setDefaultAdapter($db);
-
-// Temporary measure to allow older database methods to function as is
-// TODO: remove this line when all database modules are fully ported
-require_once( "mathsocDB.inc" );
 
 // Todo: load access control
 Zend_Loader::loadClass('Zend_Auth');

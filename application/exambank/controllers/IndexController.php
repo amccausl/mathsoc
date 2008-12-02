@@ -3,7 +3,7 @@
 require_once 'MathSocAction.inc';
 
 // Load the database model for the exam storage
-require_once '../application/exambank/models/examDB.inc';
+require_once 'examDB.inc';
 
 class Exambank_IndexController extends MathSoc_Controller_Action
 {

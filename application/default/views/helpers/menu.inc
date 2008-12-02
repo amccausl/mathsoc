@@ -43,11 +43,11 @@ function getMenu( $request = null )
 		//	"sub"	=> array()),
 		array(
 			"title"	=> "C.I.F.",
-			"link"	=> $request->getBaseUrl() . "/Services/CIF",
+			"link"	=> $request->getBaseUrl() . "/CIF",
 			"sub"	=> array()),
 		array(
 			"title"	=> "Mathletics",
-			"link"	=> $request->getBaseUrl() . "/Services/Mathletics",
+			"link"	=> $request->getBaseUrl() . "/Mathletics",
 			"sub"	=> array()),
 		array(
 			"title"	=> "Student Space",
@@ -101,7 +101,10 @@ function getMenu( $request = null )
 		"sub"	=> array(
 		array(
 			"title" => "How to get Involved",
-			"link"	=> $request->getBaseUrl() . "/Volunteers/GetInvolved"))),
+			"link"	=> $request->getBaseUrl() . "/Volunteers/GetInvolved"),
+		array(
+			"title"	=> "Administration",
+			"link"	=> $request->getBaseUrl() . "/Admin"))),
 	array(
 		"title"	=> "Committees",
 		"link"	=> $request->getBaseUrl() . "/Committees",

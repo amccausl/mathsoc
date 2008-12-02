@@ -9,7 +9,6 @@ class ServicesController extends MathSoc_Controller_Action
 	}
 
 	// Present prewritten pages
-	public function mathleticsAction() {}
 	public function spaceAction() {}
 }
 

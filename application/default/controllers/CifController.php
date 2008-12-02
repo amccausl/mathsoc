@@ -1,6 +1,6 @@
 <?php
 
-require_once 'MathSocAction.php';
+require_once 'MathSocAction.inc';
 
 class CifController extends MathSoc_Controller_Action
 {
@@ -18,6 +18,6 @@ class CifController extends MathSoc_Controller_Action
 	 */
 	public function requestAction()
 	{
-	|
+	}
 }
 

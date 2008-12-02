@@ -1,12 +1,12 @@
 <?php
 
-require_once 'Zend/Controller/Action.php';
+require_once 'MathSocAction.inc';
 
 /**
  * This page should contain some general information about meetings and some Speaker and Secretary convience functions.
  */
 
-class Council_MeetingController extends Zend_Controller_Action
+class Council_MeetingController extends MathSoc_Controller_Action
 {
 	private $db;
 

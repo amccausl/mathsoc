@@ -1,8 +1,8 @@
 <?php
 
-require_once 'Zend/Controller/Action.php';
+require_once 'MathSocAction.inc';
 
-require_once '../application/council/models/policyDB.inc';
+require_once 'policyDB.inc';
 
 // Include module to display version differences
 require_once 'diff.php';
@@ -10,7 +10,7 @@ include_once "Text/Diff.php";
 include_once "Text/Diff/Renderer.php";
 include_once "Text/Diff/Renderer/inline.php";
 
-class Council_PoliciesController extends Zend_Controller_Action
+class Council_PoliciesController extends MathSoc_Controller_Action
 {
 	private $db;
 

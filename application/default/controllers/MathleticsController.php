@@ -1,11 +1,11 @@
 <?php
 
-require_once 'MathSocAction.inc';
+require_once 'MathSocAction.php';
 
 class MathleticsController extends MathSoc_Controller_Action
 {
-    public function indexAction()
-    {
-    }
+	/** indexAction - Displays general information about the fund.
+	 */
+	public function indexAction() {}
 }
 
