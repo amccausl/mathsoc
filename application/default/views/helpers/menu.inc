@@ -3,6 +3,8 @@
 /** Generate the menu for rendering in the sidebar.
  */
 
+//TODO: if user authenticated, include custom admin section
+
 function getMenu( $request = null )
 {
 	$menu = array(
@@ -138,7 +140,7 @@ function getMenu( $request = null )
 		{	$action = Zend_Controller_Front::getInstance()->getDispatcher()->getDefaultAction();
 		}
 
-		print( "using module '$module', controller '$controller', action '$action'\n" );
+		//print( "using module '$module', controller '$controller', action '$action'\n" );
 
 		foreach( $menu as $index1 => $menuitem1 )
 		{	if( (isset( $menuitem['module'] )

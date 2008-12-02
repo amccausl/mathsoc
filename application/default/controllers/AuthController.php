@@ -1,10 +1,10 @@
 <?php
 
-require_once 'Zend/Controller/Action.php';
-require_once 'Zend/Auth.php';
+require_once 'MathSocAction.inc';
+//require_once 'Zend/Auth.php';
 require_once 'KiwiId.php';
 
-class AuthController extends Zend_Controller_Action
+class AuthController extends MathSoc_Controller_Action
 {
 	private $loginUrl = "https://strobe.uwaterloo.ca/cpadev/kiwi/user/login/";
 
