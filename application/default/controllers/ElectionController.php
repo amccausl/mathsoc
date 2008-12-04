@@ -31,7 +31,7 @@ class ElectionController extends MathSoc_Controller_Action
 		$auth = Zend_Auth::getInstance();
 
 		if (!$auth->hasIdentity())
-		{	$this->_redirect('auth/login');
+		{	$this->_redirect('user/login');
 		}
 	}
 

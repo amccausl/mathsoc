@@ -24,7 +24,7 @@ function getMenu( $request = null )
 		"sub"	=> array(
 		array(
 			"title"	=> "Exambank",
-			"link"	=> $request->getBaseUrl() . "/Exambank",
+			"link"	=> $request->getBaseUrl() . "/exambank",
 			"status"=> "selected",
 			"sub"	=> array()),
 		array(
@@ -70,20 +70,20 @@ function getMenu( $request = null )
 			"link" => $request->getBaseUrl() . "/Academics/Talks"))),
 	array(
 		"title"	=> "Council",
-		"link"	=> $request->getBaseUrl() . "/Council",
+		"link"	=> $request->getBaseUrl() . "/council",
 		"sub"	=> array(
 		array(
 			"title" => "Representation",
-			"link" => $request->getBaseUrl() . "/Council/Representation"),
+			"link" => $request->getBaseUrl() . "/council/Representation"),
 		array(
 			"title" => "Meeting Minutes",
-			"link" => $request->getBaseUrl() . "/Council/minutes"),
+			"link" => $request->getBaseUrl() . "/council/minutes"),
 		array(
 			"title" => "Bylaws & Policies",
-			"link" => $request->getBaseUrl() . "/Council/policies"),
+			"link" => $request->getBaseUrl() . "/council/policies"),
 		array(
 			"title" => "Available Positions",
-			"link" => $request->getBaseUrl() . "/Council/Vacancies"),
+			"link" => $request->getBaseUrl() . "/council/Vacancies"),
 		array(
 			"title" => "Join the Mailing List",
 			"link" => "http://www.mathsoc.uwaterloo.ca/cgi-bin/mailman/listinfo/council"))),
@@ -106,7 +106,7 @@ function getMenu( $request = null )
 			"link"	=> $request->getBaseUrl() . "/Volunteers/GetInvolved"),
 		array(
 			"title"	=> "Administration",
-			"link"	=> $request->getBaseUrl() . "/Admin"))),
+			"link"	=> $request->getBaseUrl() . "/admin"))),
 	array(
 		"title"	=> "Committees",
 		"link"	=> $request->getBaseUrl() . "/Committees",

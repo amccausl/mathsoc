@@ -4,16 +4,23 @@ require_once 'MathSocAction.inc';
 //require_once 'Zend/Auth.php';
 require_once 'KiwiId.php';
 
-class AuthController extends MathSoc_Controller_Action
+class UserController extends MathSoc_Controller_Action
 {
 	private $loginUrl = "https://strobe.uwaterloo.ca/cpadev/kiwi/user/login/";
 
 	public function init()
-	{	// If user not authenticated and query not set
-		//if( !$request->isGet() && !isset( $request->getQuery('__kiwi_id__') ) )
-		//{	// Forward to kiwi login URL
-		//	$this->_redirect( $loginUrl . "?__kiwi_referer__=http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}" );
-		//}
+	{
+		$referer = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+			
+		if( $this->_request->getParam('referer') )
+		{	$referer = $this->_request->getParam('referer');
+		}
+
+		// If user not authenticated and query not set
+		if( !$this->_request->isGet() && !$this->_request->getQuery('__kiwi_id__') )
+		{	// Forward to kiwi login URL
+			$this->_redirect( $loginUrl . "?__kiwi_referer__={$referer}" );
+		}
 	}
 
     public function indexAction()
@@ -36,7 +43,7 @@ class AuthController extends MathSoc_Controller_Action
 			{	// If the authentication is valid
 				$status = "You are logged-in as " . $auth->getIdentity() . "<br>\n";
 				// Do database lookup for groups the user returned by kiwi check is a part of
-				$this->_redirect('/auth');
+				$this->_redirect('/user');
 			}else
 			{	// If authentication is invalid, remove user
 				$auth->clearIdentity();

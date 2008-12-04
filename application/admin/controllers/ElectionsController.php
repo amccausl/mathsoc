@@ -31,67 +31,6 @@ class Admin_ElectionsController extends MathSoc_Controller_Action
 	// Browsing Functions
 	public function indexAction()
 	{	// List the existing exams
-
-		// Add the javascripts to layout for DHTML interface
-		$this->view->javascripts = array(
-			$this->getRequest()->getBaseUrl() . '/js/prototype.js',
-			$this->getRequest()->getBaseUrl() . '/js/course_selector.js');
-	}
-
-	// Javascript Callback Functions
-	public function coursesAction()
-	{	// Used by ajax to list the courses with exams
-		if( $this->_getParam('number') )
-		{	// Display course title information
-			$this->view->values = $this->db->getCourses($this->_getParam('prefix'), $this->_getParam('number'));
-		}elseif( $this->_getParam('prefix') )
-		{	// Display course numbers for prefix
-			$this->view->values = $this->db->getCourses($this->_getParam('prefix'));
-		}else
-		{	// Display all the prefixes available
-			$this->view->values = $this->db->getCourses();
-		}
-	}
-
-	/** /exambank/exams/:prefix/:number or /exambank/exams/:prefix/:number/:term/:id/:type/
-	 *
-	 */
-	public function examsAction()
-	{	// Used to retrieve exams search results in iframe
-		if( $this->_getParam('type') )
-		{	// Disable view renderer so output can be created manually
-			Zend_Controller_Front::getInstance()->setParam('noViewRenderer', true);
-
-			// Lookup exam in system
-			$exam = $this->db->getExam( $this->_getParam('id') );
-
-			// Ensure the type of exam we're looking for exists
-			if( !$filename = $exam[$this->_getParam('type') . "_path"] )
-			{	print( "The exam you're looking for doesn't exist" );
-				exit;
-			}
-			$filename = Zend_Registry::getInstance()->get('config')->examDir . $filename;
-
-			// Display the exam to the user
-			if( $buffer = file_get_contents( $filename ) )
-			{
-				header("Content-type: {$exam[$this->_getParam('type') . '_type']}");
-
-				// Grab the file extension from the mime type
-				$ext = split('/',$exam[$this->_getParam('type') . '_type']);
-				$ext = $ext[1];
-
-				header("Content-Length: ".strlen($buffer));
-				header("Content-Disposition: inline; filename={$exam['course']}-{$exam['term']}-{$exam['type']}{$exam['number']}_{$this->_getParam('type')}.{$ext}");
-
-				print( $buffer );
-				exit;
-			}
-		}elseif( $this->_getParam('prefix') && $this->_getParam('number') )
-		{	// Load the "exams" array to the view
-			// Must set exam.id, exam.course, exam.term, exam.file_path, exam.sol_path
-			$this->view->exams = $this->db->getExams( $this->_getParam('prefix'), $this->_getParam('number') );
-		}
 	}
 
 	public function submitAction()

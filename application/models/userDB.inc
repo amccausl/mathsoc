@@ -72,10 +72,8 @@ class UserDB
 	function isMember( $userId )
 	{
 		$query = "SELECT *
-			  FROM refunds, terms
-			  WHERE refunds.userId = ?
-				AND (refunds.term = terms.current_term
-				OR refunds.term = terms.last_term)";
+			  FROM refunds_users
+			  WHERE userId = ?";
 
 		$result = $this->_db->fetchCol($query, $userId);
 
@@ -83,6 +81,28 @@ class UserDB
 		{	return true;
 		}
 		return false;
+	}
+
+	function getRefunds( $status = null, $term = null )
+	{	if( isset( $term ) )
+		{	$query = "SELECT userId
+					  FROM refunds_users
+					  WHERE term = ?
+						AND status = ?";
+			return $this->_db->fetchCol( $query, array($term, $status) );
+		}
+
+		$query = "SELECT userId
+				  FROM refunds_users, terms
+				  WHERE term = terms.current_term
+					AND status = ?";
+		return $this->_db->fetchCol( $query, $status );
+	}
+
+	function getTrend()
+	{	$query = "SELECT *
+				  FROM refunds_trends";
+		return $this->_db->fetchAll($query);
 	}
 
 	function getProfile( $userId )

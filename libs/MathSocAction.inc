@@ -20,3 +20,12 @@ class MathSoc_Controller_Action extends Zend_Controller_Action
 		$this->view->menu = getMenu($this->getRequest());
 	}
 }
+
+// TODO: this redirect should include the requester so the user can be forwarded back once authenticated
+class MathSocAuth_Controller_Action extends MathSoc_Controller_Action
+{	function preDispatch()
+	{	if( !Zend_Auth::getInstance()->hasIdentity() )
+		{	$this->_redirect('user/login');
+		}
+	}
+}

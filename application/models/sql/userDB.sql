@@ -207,8 +207,8 @@ INSERT INTO mail_aliases (`domainId`,`alias`,`destination`) VALUES
 
 -- Create an easy way to get the current term.
 CREATE VIEW terms AS
-SELECT CONCAT((YEAR(CURDATE()) - 1900), MONTH(CURDATE()) - MOD(MONTH(CURDATE()),4) + 1) as current_term,
-  CONCAT((YEAR(CURDATE() - INTERVAL 4 MONTH) - 1900), MONTH(CURDATE() - INTERVAL 4 MONTH) - MOD(MONTH(CURDATE() - INTERVAL 4 MONTH),4) + 1) as last_term;
+SELECT CONCAT((YEAR(CURDATE()) - 1900), FLOOR((MONTH(CURDATE()) - 1) / 4) * 4 + 1) as current_term,
+  CONCAT((YEAR(CURDATE() - INTERVAL 4 MONTH) - 1900), FLOOR((MONTH(CURDATE() - INTERVAL 4 MONTH) - 1) / 4) * 4 + 1) as last_term;
 
 CREATE VIEW user_emails AS
   SELECT users.userId, users.email
