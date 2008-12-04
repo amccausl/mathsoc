@@ -83,17 +83,18 @@ class UserDB
 		return false;
 	}
 
-	function getRefunds( $status = null, $term = null )
-	{	if( isset( $term ) )
+	function getRefunds( $status = 'RECEIVED', $term = null )
+	{
+		if( isset( $term ) )
 		{	$query = "SELECT userId
-					  FROM refunds_users
+					  FROM refunds
 					  WHERE term = ?
 						AND status = ?";
 			return $this->_db->fetchCol( $query, array($term, $status) );
 		}
 
 		$query = "SELECT userId
-				  FROM refunds_users, terms
+				  FROM refunds, terms
 				  WHERE term = terms.current_term
 					AND status = ?";
 		return $this->_db->fetchCol( $query, $status );
@@ -103,6 +104,39 @@ class UserDB
 	{	$query = "SELECT *
 				  FROM refunds_trends";
 		return $this->_db->fetchAll($query);
+	}
+
+	function allowRefund($userId)
+	{	// Set term to the last term
+		$term = (date('Y') - 1900) * 10 + floor((date('m') - 1) / 4) * 4 + 1;
+		if( $term % 10 == 1 )
+		{	$term -= 2;
+		}else
+		{	$term -= 4;
+		}
+
+		// Update the entry in table to 'REGULAR'
+		if( $this->_db->update( 'refunds',
+				array( 'status' => 'REGULAR' ),
+				array( "userId = '$userId'", "term = '$term'", "status = 'RECEIVED'" ) ) == 1 )
+		{	return true;
+		}else
+		{	return false;
+		}
+	}
+
+	function rejectRefund($userId, $reason)
+	{	// Set the term 
+		$term = (date('Y') - 1900) * 10 + floor((date('m') - 1) / 4) * 4 + 1;
+
+		// Update the entry for this terms user to 'REJECTED'
+		if( $this->_db->update( 'refunds',
+				array( 'status' => 'REJECTED', 'reason' => $reason ),
+				array( "status = 'REQUESTED'", "userId = '$userId'" ) ) )
+		{	return true;
+		}else
+		{	return false;
+		}
 	}
 
 	function getProfile( $userId )

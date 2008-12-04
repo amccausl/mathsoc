@@ -22,6 +22,8 @@ class Admin_RefundsController extends MathSocAuth_Controller_Action
 		$this->initView();
 		//$this->view->user = Zend_Auth::getInstance()->getIdentity();
 		$this->db = new UserDB();
+
+		// TODO: ensure that the current user is an admin of the system (ie. the VPF)
 	}
 
 	/** /admin/refunds/ - 
@@ -36,35 +38,58 @@ class Admin_RefundsController extends MathSocAuth_Controller_Action
 	/** /admin/refunds/reject - allow the VPF to reject a user.
 	 */
 	public function rejectAction()
-	{	// TODO: add form css & javascript
+	{	require_once( 'form.inc' );
 
-		//if( isset( $this->_getParam('userId') ) )
-		//{
-		//}
+		if( $this->_getParam('user') && $this->_getParam('user_reason') )
+		{	// TODO: validate and write entry to database
+			// TODO: add success message to view
+			if( $this->db->rejectRefund( $this->_getParam('user'), $this->_getParam('user_reason') ) )
+			{
+			}else
+			{
+			}
+		}
 
 		// TODO: If the refunds period has closed, parse request logs against refund list, update rejected users
-		// TODO: display dropdown for all 'REQUESTED' users requesting and reason text box
-		//$this->view->select_options = $this->db->getRefunds('REQUESTED');
+		// TODO: add logging on all services to parse
+		$this->view->user_options = $this->db->getRefunds('REQUESTED');
 	}
 
 	/** /admin/refunds/allow - allow the VPF to allow access to a user who was mistakenly denied
 	 */
 	public function allowAction()
-	{	// TODO: add list of users from last term of status 'REGULAR'
-		// TODO: add dropdown with all users whos status is REGULAR for the past term
-		$allowed = $this->db->getRefunds('REGULAR');
-		// TODO: add last term as a parameter to below
-		$select_options = $this->db->getRefunds('RECEIVED');
-		// TODO: if post set, update status of ID and term to 'REGULAR'
+	{	require_once( 'form.inc' );
+
+		if( $this->_getParam('user') )
+		{	if( $this->db->allowRefund($this->_getParam('user')) )
+			{
+			}else
+			{
+			}
+		}
+
+		// Calculate the number for the past term
+		$term = (date('Y') - 1900) * 10 + floor((date('m') - 1) / 4) * 4 + 1;
+		if( $term % 10 == 1 )
+		{	$term -= 2;
+		}else
+		{	$term -= 4;
+		}
+
+		// Add list of people who already have been enabled
+		$this->view->user_allowed = implode( ", ", $this->db->getRefunds('REGULAR', $term));
+
+		// Add list of users who got their refunds last term
+		$this->view->user_options = $this->db->getRefunds('RECEIVED', $term);
 	}
 
 	/** /admin/refunds/trend - display information for past terms and current progress
 	 */
 	public function trendAction()
-	{	$trend = $this->db->getTrend();
-		$return = array();
-		foreach( $trend as $row )
-		{	$return = array_merge( $return, array_values($row) );
+	{	$result = $this->db->getTrend();
+		$trend = array();
+		foreach( $result as $row )
+		{	$trend = array_merge( $trend, array_values($row) );
 		}
 		
 		$this->view->trend = $return;

@@ -9,7 +9,8 @@ date_default_timezone_set('America/Toronto');
 
 // directory setup and class loading
 set_include_path('.' . PATH_SEPARATOR . '../libs/'
-     . PATH_SEPARATOR . '../application/models'
+     . PATH_SEPARATOR . '../application/models/'
+     . PATH_SEPARATOR . '../application/default/views/helpers/'
      . PATH_SEPARATOR . get_include_path());
 
 include "Zend/Loader.php";
