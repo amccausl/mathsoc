@@ -18,14 +18,10 @@ function getMenu( $request = null )
 	array(
 		"title"	=> "Services",
 		"link"	=> $request->getBaseUrl() . "/Services",
-		"module" => "default",
-		"controller" => "index",
-		"action" => "index",
 		"sub"	=> array(
 		array(
 			"title"	=> "Exambank",
 			"link"	=> $request->getBaseUrl() . "/exambank",
-			"status"=> "selected",
 			"sub"	=> array()),
 		array(
 			"title"	=> "Lockers",
@@ -39,10 +35,10 @@ function getMenu( $request = null )
 			"title"	=> "Novelties",
 			"link"	=> $request->getBaseUrl() . "/Novelties",
 			"sub"	=> array()),
-		//array(
-		//	"title"	=> "C&D",
-		//	"link"	=> "/CandD",
-		//	"sub"	=> array()),
+		array(
+			"title"	=> "C&D",
+			"link"	=> $request->getBaseUrl() . "/RightAngleCafe",
+			"sub"	=> array()),
 		array(
 			"title"	=> "C.I.F.",
 			"link"	=> $request->getBaseUrl() . "/CIF",
@@ -110,6 +106,9 @@ function getMenu( $request = null )
 	array(
 		"title"	=> "Committees",
 		"link"	=> $request->getBaseUrl() . "/Committees",
+		"module" => "default",
+		"controller" => "committees",
+		"action" => "index",
 		"sub"	=> array(
 		array(
 			"title"	=> "Math Orientation",
@@ -122,45 +121,79 @@ function getMenu( $request = null )
 			"link"	=> "http://www.student.math.uwaterloo.ca/"))),
 	array(
 		"title"	=> "Contact Info",
+		"module" => "default",
+		"controller" => "index",
+		"action" => "index",
 		"link"	=> $request->getBaseUrl() . "/Contact"));
 
+	$requestUrl = $request->getBaseUrl() . "/";
 	if( isset( $request ) )
 	{	$module = $request->getModuleName();
 		if( !isset( $module ) )
 		{	$module = Zend_Controller_Front::getInstance()->getDispatcher()->getDefaultModule();
+		}
+		if( $module != Zend_Controller_Front::getInstance()->getDispatcher()->getDefaultModule() )
+		{	$requestUrl .= $module . "/";
 		}
 
 		$controller = $request->getControllerName();
 		if( !isset( $controller ) )
 		{	$controller = Zend_Controller_Front::getInstance()->getDispatcher()->getDefaultController();
 		}
+		if( $controller != "index" )
+		{	$requestUrl .= $controller . "/";
+		}
 
 		$action = $request->getActionName();
 		if( !isset( $action ) )
 		{	$action = Zend_Controller_Front::getInstance()->getDispatcher()->getDefaultAction();
+		}else
+		{	if( !isset( $action ) )
+			{	$action = "index";
+			}
 		}
+		if( $action != "index" )
+		{	$requestUrl .= $action . "/";
+		}
+		
+		$requestUrl = substr( strtolower( $requestUrl ), 0, -1 );
 
 		//print( "using module '$module', controller '$controller', action '$action'\n" );
 
+		$active1 = false;
+		$active2 = false;
 		foreach( $menu as $index1 => $menuitem1 )
-		{	if( (isset( $menuitem['module'] )
-					&& $menuitem['module'] == strtolower($module))
-				|| strtolower($module) == 'default' )
-			{
-				if( isset( $menuitem1['sub'] ) )
-				{
-					foreach( $menuitem1['sub'] as $index2 => $menuitem2 )
-					{	if( isset( $menuitem2['controller'] ) )
-						$menu[$index]['status'] = 'active';
+		{
+			if( isset( $menuitem1['sub'] ) )
+			{	foreach( $menuitem1['sub'] as $index2 => $menuitem2 )
+				{	if( isset( $menuitem2['sub'] ) )
+					{	foreach( $menuitem2['sub'] as $index3 => $menuitem3 )
+						{	if( strtolower($menuitem3['link']) == $requestUrl )
+							{	$menu[$index1]['status'] = 'active';
+								$menu[$index1]['sub'][$index2]['status'] = 'active';
+								$menu[$index1]['sub'][$index2]['sub'][$index3]['status'] = 'selected';
+							}
+						}
 					}
-					// TODO: recurse on the sub array
+					if( strtolower($menuitem2['link']) == $requestUrl )
+					{	$menu[$index1]['status'] = 'active';
+						$menu[$index1]['sub'][$index2]['status'] = 'selected';
+					}
 				}
+			}
+			if( strtolower($menuitem1['link']) == $requestUrl )
+			{	$menu[$index1]['status'] = 'selected';
 			}
 		}
 	}
-
-// Todo: determine where the user is from the URL, generate specialized menu
+/*
+	print( "<pre>" );
+	print( "requestUrl = $requestUrl\n" );
+	print_r( $menu );
+	print( "</pre>" );
+*/
 // Todo: Switch links to call the URL generator function or use preset module, controller etc
 // Todo: Add page specific cacheing
+// Todo: Add dynamic menu based on permissions
 	return $menu;
 }

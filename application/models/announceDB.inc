@@ -1,6 +1,6 @@
 <?php
 
-require_once("database/mathsocDB.inc");
+require_once("mathsocDB.inc");
 
 /***** announceDB.inc -- Version 0.1 *****
  * Writen by Alex McCausland
@@ -54,7 +54,7 @@ class AnnounceDB extends MathSocDB
 		$query = "SELECT title, event_date, content
 					 FROM announcement;";
 
-		return this->queryAsHash( $query );
+		return $this->queryAsHash( $query );
 	}
 }
 

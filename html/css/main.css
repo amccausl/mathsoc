@@ -100,11 +100,11 @@ text-decoration: none;
 }
 
 div#menu a,
-div#menu li#selected ul li a,
+div#menu li.selected ul li a,
 div#menu li.active ul li a,
 div#menu ul li.active ul li a,
 div#menu ul li.active ul li.active li a,
-div#menu li.active ul li#selected ul li a {
+div#menu li.active ul li.selected ul li a {
 display: block;
 border-width: 1px;
 background: #cbe4ff url(/images/bluebox0.jpg) repeat-y;
@@ -123,17 +123,17 @@ color: #000;
 }*/
 
 div#menu a:hover,
-div#menu ul li#selected ul li a:hover,
+div#menu ul li.selected ul li a:hover,
 div#menu li.active ul li a:hover,
 div#menu ul li.active ul li.active li a:hover,
-div#menu li.active ul li#selected ul li a:hover {
+div#menu li.active ul li.selected ul li a:hover {
 background: #3E4053 url(/images/bluebox1.jpg) no-repeat;
 font: bold;
 color: #99caff;
 }
 
-div#menu ul li#selected a:hover,
-div#menu ul li.active ul li#selected a:hover {
+div#menu ul li.selected a:hover,
+div#menu ul li.active ul li.selected a:hover {
 font: bold;
 color: #ff99cb;
 background: #3E4053 url(/images/pinkbox1.jpg) no-repeat;
@@ -149,7 +149,7 @@ position: relative;
 }
 
 div#menu ul ul,
-div#menu ul li#selected ul {
+div#menu ul li.selected ul {
 position: absolute;
 top: 0;
 left: 100%;
@@ -157,13 +157,13 @@ width: 100%;
 display: none;
 }
 
-div#menu ul li#selected {
+div#menu ul li.selected {
 background: url(/images/pinkbox0.jpg) repeat-y;
 color: #000;
 }
 
 /* Add current section markup */
-div#menu ul li#selected ul,
+div#menu ul li.selected ul,
 div#menu ul li.active ul {
 display: block;
 position: relative;
@@ -172,22 +172,22 @@ margin-left: 11px;
 width: 183px;
 }
 
-div#menu ul ul li#selected ul,
+div#menu ul ul li.selected ul,
 div#menu ul ul li.active ul {
 width: 172px;
 }
 
-div#menu ul li#selected a,
-div#menu ul li.active ul li#selected a {
+div#menu ul li.selected a,
+div#menu ul li.active ul li.selected a {
 display: block;
 background: #ffcce5 url(/images/pinkbox0.jpg) repeat-y;
 color: #000;
 }
 
-div#menu ul li#selected a,
+div#menu ul li.selected a,
 div#menu ul li.active a,
 div#menu ul li.active ul li.active a,
-div#menu ul li.active ul li#selected a {
+div#menu ul li.active ul li.selected a {
 border-width: 1px 1px 0px 0px;
 }
 

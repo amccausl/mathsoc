@@ -9,7 +9,7 @@ class UserController extends MathSoc_Controller_Action
 	private $loginUrl = "https://strobe.uwaterloo.ca/cpadev/kiwi/user/login/";
 
 	public function init()
-	{
+	{	parent::init();
 		$referer = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
 			
 		if( $this->_request->getParam('referer') )

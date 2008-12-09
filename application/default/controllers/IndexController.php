@@ -1,7 +1,7 @@
 <?php
 
 require_once 'MathSocAction.inc';
-require_once '../application/models/announceDB.inc';
+//require_once 'announceDB.inc';
 
 class IndexController extends MathSoc_Controller_Action
 {
@@ -10,11 +10,11 @@ class IndexController extends MathSoc_Controller_Action
 
 	public function init()
 	{	parent::init();
-		$this->db = $this->db = new AnnounceDB();
+		//$this->db = $this->db = new AnnounceDB();
 	}
 
 	public function indexAction()
-	{	$this->view->posts = $this->db->getAnnouncements();
+	{	//$this->view->posts = $this->db->getAnnouncements();
 	}
 }
 
