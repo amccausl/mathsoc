@@ -67,6 +67,12 @@ class SmartyView extends Zend_View_Abstract
             $this->_smarty->assign($spec,$value);
     }
 
+	// Add a given element to an array if it exists
+	public function array_push( $key, $value )
+	{	$array = $this->__isset($key) ? $this->__get($key) : array();
+		array_push( $array, $value );
+		$this->__set($key, $array);
+	}
     
     public function clearVars()
     {

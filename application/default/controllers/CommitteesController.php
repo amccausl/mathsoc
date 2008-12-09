@@ -1,8 +1,8 @@
 <?php
 
-require_once 'Zend/Controller/Action.php';
+require_once 'MathSocAction.inc';
 
-class CommitteesController extends Zend_Controller_Action
+class CommitteesController extends MathSoc_Controller_Action
 {
     public function indexAction()
     {

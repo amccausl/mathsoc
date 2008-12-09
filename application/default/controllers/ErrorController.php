@@ -1,8 +1,8 @@
 <?php
 /** Zend_Controller_Action */
-require_once 'Zend/Controller/Action.php';
+require_once 'MathSocAction.inc';
 
-class ErrorController extends Zend_Controller_Action
+class ErrorController extends MathSoc_Controller_Action
 {
     public function errorAction()
     {

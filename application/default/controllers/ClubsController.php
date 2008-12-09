@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Zend/Controller/Action.php';
+require_once 'MathSocAction.inc';
 
 /**
  * Allows users access to common functions for a club interaction
@@ -9,7 +9,7 @@ require_once 'Zend/Controller/Action.php';
  * @package    Zend_Controller
  * @subpackage Zend_Controller_Action
  */
-class ClubsController extends Zend_Controller_Action
+class ClubsController extends MathSoc_Controller_Action
 {
 	/**
 	 * Display information about clubs.

@@ -38,7 +38,8 @@ class LockersController extends MathSoc_Controller_Action
 	 * 
 	 */
 	public function imageAction()
-	{
+	{	Zend_Controller_Front::getInstance()->setParam('noViewRenderer', true);
+		
 	}
 
 	/** Display a message explaining that the system is currently locked
@@ -93,8 +94,6 @@ class LockersController extends MathSoc_Controller_Action
 
 			$this->view->assign($default);
 			$this->view->assign($_POST);
-        }
-
 		}
 	}
 }
