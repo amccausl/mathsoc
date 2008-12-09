@@ -5,7 +5,7 @@ require_once 'MathSocAction.inc';
 // Load the database model for CIF information storage
 require_once 'cifDB.inc';
 
-class Admin_CifController extends MathSoc_Controller_Action
+class Admin_CifController extends MathSocAuth_Controller_Action
 {
 	private $db;
 
@@ -18,16 +18,7 @@ class Admin_CifController extends MathSoc_Controller_Action
 
 		$this->db = new CifDB();
 	}
-/*
-    function preDispatch()
-	{
-		$auth = Zend_Auth::getInstance();
 
-		if (!$auth->hasIdentity())
-		{	$this->_redirect('auth/login');
-		}
-	}
-*/
 	// Browsing Functions
 
 	/** /admin/cif/ - Display current status of system and list proposals

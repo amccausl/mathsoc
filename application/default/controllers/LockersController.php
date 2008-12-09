@@ -1,6 +1,7 @@
 <?php
 
 require_once 'MathSocAction.inc';
+require_once 'lockerDB.inc';
 
 class LockersController extends MathSoc_Controller_Action
 {
@@ -26,10 +27,17 @@ class LockersController extends MathSoc_Controller_Action
 	{
 	}
 
-	/** Displays a map the user can choose where they want their locker
+	/** Displays a block of lockers and an imagemap
 	 * 
 	 */
 	public function blockAction()
+	{
+	}
+
+	/** Displays an image of a block of lockers or map
+	 * 
+	 */
+	public function imageAction()
 	{
 	}
 

@@ -1,9 +1,8 @@
 <div class="section">
-<!-- TODO: display outcome of election -->
   electionid = {$election.electionId}<br/>
   position = {$election.position}<br/>
   vote count = {$election.vote_count}<br/>
-  winners =
+  winners =<br/>
   {foreach from=$winners item=candidate}
     {$candidate.name}<br/>
   {/foreach}

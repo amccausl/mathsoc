@@ -2,7 +2,7 @@
 
 require_once 'MathSocAction.inc';
 
-class Admin_LockersController extends MathSocAuth_Controller_Action
+class Admin_MathleticsController extends MathSocAuth_Controller_Action
 {
 	private $db;
 
@@ -12,8 +12,6 @@ class Admin_LockersController extends MathSocAuth_Controller_Action
 		// User must be authenticated to see any of these pages
 		$this->initView();
 		//$this->view->user = Zend_Auth::getInstance()->getIdentity();
-
-		$this->db = new ExamDB();
 	}
 
 	// Browsing Functions

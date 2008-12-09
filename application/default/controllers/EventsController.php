@@ -3,9 +3,8 @@
 require_once 'MathSocAction.inc';
 require_once '../application/models/announceDB.inc';
 
-class IndexController extends MathSoc_Controller_Action
+class EventsController extends MathSoc_Controller_Action
 {
-	// TODO: initialize announcement database
 	private $db;
 
 	public function init()

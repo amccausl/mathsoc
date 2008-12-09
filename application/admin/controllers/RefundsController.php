@@ -33,6 +33,7 @@ class Admin_RefundsController extends MathSocAuth_Controller_Action
 		// TODO: form to add users or file of users
 		// TODO: add drop down of all users
 		// TODO: add links to other refunds actions
+		// TODO: include bulk add of users
 	}
 
 	/** /admin/refunds/reject - allow the VPF to reject a user.
@@ -92,6 +93,6 @@ class Admin_RefundsController extends MathSocAuth_Controller_Action
 		{	$trend = array_merge( $trend, array_values($row) );
 		}
 		
-		$this->view->trend = $return;
+		$this->view->trend = $trend;
 	}
 }
