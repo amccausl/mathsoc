@@ -7,14 +7,19 @@ CREATE TABLE office_hours (
   start    TIME      NOT NULL,
 
   PRIMARY KEY (hourId)
-) type=MyISAM;
+) ENGINE=INNODB;
 
 CREATE TABLE office_workers (
   term     SMALLINT  NOT NULL,
-  userId   int(11)   NOT NULL,
+  userId   CHAR(8)   NOT NULL,
   hourId   SMALLINT  NOT NULL,
   added    TIMESTAMP,
 
-  PRIMARY KEY (term, userId, hourId)
-) type=MyISAM;
+  PRIMARY KEY (term, userId, hourId),
+  FOREIGN KEY (hourId) REFERENCES office_hours(hourId)
+    ON UPDATE CASCADE,
+  FOREIGN KEY (userId) REFERENCES users(userId)
+    ON DELETE CASCADE
+) ENGINE=INNODB;
 
+-- TODO: populate office_hours

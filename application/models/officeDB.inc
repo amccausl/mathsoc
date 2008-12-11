@@ -110,11 +110,13 @@ class OfficeDB
 	
 	/** TODO signup - Signup a user to a given hour
 	 *
+	 * This function assumes the user is already a volunteer, this check should
+	 * happen on the front end.
+	 *
 	 * @param	user	
 	 * @param	hour	
 	 * @return		True if the operation was successful, false otherwise
 	 */
-/*
 	function signup($user, $hour)
 	{
 		// Create an array to be entered as a signup
@@ -183,5 +185,4 @@ class OfficeDB
 		// Signup the office worker
 		return $this->insert( "office_workers", $signup );
 	}
-*/
 }

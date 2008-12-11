@@ -13,9 +13,33 @@ class OfficeController extends MathSoc_Controller_Action
 		$this->db = new OfficeDB();
 	}
 
-    public function indexAction()
-    {
-    }
+	/** Present information about the services offered in the office
+	 *
+	 */
+	public function indexAction()
+	{
+	}
+
+	/** Present a clickable image of the office worker schedule and form for user information if necessary
+	 *
+	 */
+	public function signupAction()
+	{	// Authenticate the user
+		$auth = Zend_Auth::getInstance();
+		if( !$auth->hasIdentity() )
+		{	$this->_redirect('auth/login');
+		}
+
+		// TODO: if the user hasn't volunteered before, present form
+
+		// TODO: Present imagemap
+
+		// TODO: Process post, if user information set, insert/update user
+
+		// Sign the user up for the hour
+		// TODO: add result to view
+		$this->db->signup( $auth->getIdentity(), $this->_getParam('hourid') );
+	}
 
 	/** Display an image of the office hour schedule
 	 *
