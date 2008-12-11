@@ -132,13 +132,6 @@ INSERT INTO `positions` (`unitId`,`name`,`alias`,`category`,`description`) VALUE
 (1, 'Games Director', 'games', 'DIR', NULL),
 (1, 'Internal Financial Reviewer', 'reviewer', 'APP', 'Ensure the accountability of the VPF by independently reviewing the finances periodically throughout the term, and reporting to Council.');
 
-CREATE TABLE refunds (
-  userId	CHAR(8)		NOT NULL,
-  term	   SMALLINT UNSIGNED	NOT NULL,
-
-  PRIMARY KEY( userId, term )
-);
-
 CREATE TABLE `users` (
   userId	CHAR(8)		NOT NULL,
   password	VARCHAR(40)	NOT NULL,

@@ -1,6 +1,7 @@
-<iframe id='week'
-       name='week'
-            src='{$baseUrl}/phpicalendar/week.php'
+<!--<iframe id='upcoming'
+       name='upcoming'
+            src='{$baseUrl}/phpicalendar/upcoming.php'
             width='800'
-            height='1000' align=left scrolling=no frameborder=0>
-</iframe>
+            height='1300' align=left scrolling=no frameborder=0>
+</iframe>-->
+{$contents}

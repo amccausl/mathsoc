@@ -17,9 +17,9 @@ $day_end				= '2300';			// End time for day grid
 $gridLength 			= '15';				// Grid distance in minutes for day view, multiples of 15 preferred
 $num_years 				= '1';				// Number of years (up and back) to display in 'Jump to'
 $month_event_lines 		= '1';				// Number of lines to wrap each event title in month view, 0 means display all lines.
-$tomorrows_events_lines = '1';				// Number of lines to wrap each event title in the 'Tommorrow's events' box, 0 means display all lines.
-$allday_week_lines 		= '1';				// Number of lines to wrap each event title in all-day events in week view, 0 means display all lines.
-$week_events_lines 		= '1';				// Number of lines to wrap each event title in the 'Tommorrow's events' box, 0 means display all lines.
+$tomorrows_events_lines = '0';				// Number of lines to wrap each event title in the 'Tommorrow's events' box, 0 means display all lines.
+$allday_week_lines 		= '0';				// Number of lines to wrap each event title in all-day events in week view, 0 means display all lines.
+$week_events_lines 		= '0';				// Number of lines to wrap each event title in the 'Tommorrow's events' box, 0 means display all lines.
 $timezone 				= '';				// Set timezone. Read TIMEZONES file for more information
 $calendar_path 			= '';				// Leave this blank on most installs, place your full FILE SYSTEM PATH to calendars if they are outside the phpicalendar folder.
 $second_offset			= '';				// The time in seconds between your time and your server's time.
@@ -34,8 +34,8 @@ $allow_webcals 			= 'yes';			// Allow http:// and webcal:// prefixed URLs to be 
 $this_months_events 	= 'yes';			// Display "This month's events" at the bottom off the month page.
 $enable_rss				= 'yes';			// Enable RSS access to your calendars (good thing).
 $rss_link_to_event		= '';				// Set to yes to have links in the feed popup an event window.  Default is to link to day.php
-$show_search			= 'yes';			// Show the search box in the sidebar.
-$allow_preferences		= 'yes';			// Allow visitors to change various preferences via cookies.
+$show_search			= 'no';				// Show the search box in the sidebar.
+$allow_preferences		= 'no';				// Allow visitors to change various preferences via cookies.
 $printview_default		= 'no';				// Set print view as the default view. day, week, and month only supported views for $default_view (listed well above).
 $show_todos				= 'no';				// Show your todo list on the side of day and week view.
 $show_completed			= 'no';				// Show completed todos on your todo list.
@@ -45,15 +45,15 @@ $support_ical			= 'no';			// Set to yes to support the Apple iCal calendar datab
 $recursive_path			= 'no';			// Set to yes to recurse into subdirectories of the calendar path.
 
 // Calendar Caching (decreases page load times)
-$save_parsed_cals 		= 'no';				// Saves a copy of the cal in /tmp after it's been parsed. Improves performance.
-$tmp_dir				= '/tmp';			// The temporary directory on your system (/tmp is fine for UNIXes including Mac OS X). Any php-writable folder works.
+$save_parsed_cals 		= 'yes';			// Saves a copy of the cal in /tmp after it's been parsed. Improves performance.
+$tmp_dir				= '../../data/cache';	// The temporary directory on your system (/tmp is fine for UNIXes including Mac OS X). Any php-writable folder works.
 $webcal_hours			= '24';				// Number of hours to cache webcals. Setting to '0' will always re-parse webcals.
 
 // Webdav style publishing
 $phpicalendar_publishing = '';				// Set to '1' to enable remote webdav style publish. See 'calendars/publish.php' for complete information;
 
 // Administration settings (/admin/)
-$allow_admin			= 'yes';			// Set to yes to allow the admin page - remember to change the default password if using 'internal' as the $auth_method			
+$allow_admin			= 'no';			// Set to yes to allow the admin page - remember to change the default password if using 'internal' as the $auth_method			
 $auth_method			= 'internal';			// Valid values are: 'ftp', 'internal', or 'none'. 'ftp' uses the ftp server's username and password as well as ftp commands to delete and copy files. 'internal' uses $auth_internal_username and $auth_internal_password defined below - CHANGE the password. 'none' uses NO authentication - meant to be used with another form of authentication such as http basic.
 $auth_internal_username	= 'admin';			// Only used if $auth_method='internal'. The username for the administrator.
 $auth_internal_password	= 'admin';			// Only used if $auth_method='internal'. The password for the administrator.
@@ -83,7 +83,7 @@ $list_webcals[] = '';						// $allow_webcals does *not* need to be "yes" for the
 
 #$more_webcals['cpath'][] = ''				//add webcals that will show up only for a particular cpath.
 
-$locked_cals[] = 'work';						// Fill in-between the quotes the names of the calendars you wish to hide
+$locked_cals[] = '';						// Fill in-between the quotes the names of the calendars you wish to hide
 $locked_cals[] = '';						// unless unlocked by a username/password login. This should be the
 $locked_cals[] = '';						// exact calendar filename without the .ics suffix.
 $locked_cals[] = '';						//

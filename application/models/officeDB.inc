@@ -1,8 +1,5 @@
 <?php
 
-require_once("database/mathsocDB.inc");
-require_once("mathsoc.inc");
-
 /***** officeDB.inc -- Version 0.1 *****
  *
  * ChangeLog:
@@ -14,10 +11,13 @@ require_once("mathsoc.inc");
  *
 */
 
-class OfficeDB extends MathSocDB
+class OfficeDB
 {
+	protected $_db;
+
 	function __construct( $database = "mathsoc" )
-	{	parent::__construct( $database );		// initializes a connection with the MathSoc database
+	{	$config = new Zend_Config_Ini('../config/main.ini', 'user_management');
+		$this->_db = Zend_Db::factory($config->db);
 	}
 
 	/** getEmails - function for office managers to get workers email addresses
@@ -27,53 +27,36 @@ class OfficeDB extends MathSocDB
 	function getEmails($term = null)
 	{
 		if(!$term)
-		{	$term = current_term();
+		{	$query = "SELECT v.userId, v.name, e.email
+					  FROM volunteers v, user_emails e, office_workers w, terms t
+					  WHERE v.userId = w.userId
+						AND e.userId = v.userId
+						AND w.term = t.current_term
+					  ORDER BY v.name";
+			return $this->_db->fetchAll($query);
+		}else
+		{	$query = "SELECT v.userId, v.name, e.email
+					  FROM volunteers v, user_emails e, office_workers w
+					  WHERE v.userId = w.userId
+						AND e.userId = v.userId
+						AND w.term = ?
+					  ORDER BY v.name";
+			return $this->_db->fetchAll($query, array($term));
 		}
-		$return = array();
-
-		$query = "SELECT r.userid, r.name, r.alternate_email
-				FROM resourcelist r, office_workers w 
-				WHERE w.term = $term AND w.userId = r.id
-				ORDER BY r.name";
-		$users = array();
-		$result = mysql_query($query, $this->connection);
-		while($row = mysql_fetch_array($result))
-		{
-			if(!$row['alternate_email'])
-			{	$return[$row['name']] = $row['userid']."@uwaterloo.ca";	
-			}else
-			{	$return[$row['name']] = $row['alternate_email'];
-			}
-		}
-
-		return $return;
 	}
 
 	/** missingHours - Determine which council members should have an hour and don't
-	*/
+	 */
 	function missingHours()
 	{
-		$return = array();
-		$query = "SELECT DISTINCT r.userid, r.name, r.alternate_email
-			  FROM position p, link l, resourcelist r
-			  WHERE p.category IN ('DIR', 'REP')
-				AND l.res_id = r.id AND l.pos_id = p.id
-				AND r.alternate_email != 'prez@mathsoc.uwaterloo.ca'
-				AND r.id NOT IN (SELECT userId FROM office_workers WHERE term = " . current_term() . ")";
-		$result = mysql_query($query, $this->connection);
-		while( $row = mysql_fetch_array( $result ) )
-		{
-			if( !$row[2] )
-			{	$return[$row[1]] = $row[0] . "@uwaterloo.ca";
-			}else
-			{	$return[$row[1]] = $row[2];
-			}
-		}
-		$workers = $this->getEmails();
-		foreach( $workers as $name => $email )
-		{	unset( $return[$name] );
-		}
-		return $return;
+		$query = "SELECT DISTINCT h.userId, v.name, e.email
+				  FROM position p, holders h, terms t, volunteers v, user_emails e
+				  WHERE h.term = t.current_term
+					AND e.userId = h.userId
+					AND p.category IN ('DIR', 'REP')
+					AND p.alias = h.position
+					AND h.userId NOT IN (SELECT userId FROM office_workers, terms WHERE term = terms.current_term)";
+		return $this->_db->fetchAll($query);
 	}
 	
 	/** getSchedule - Get the office worker schedule for the current term
@@ -84,16 +67,28 @@ class OfficeDB extends MathSocDB
 	function getSchedule($term = null)
 	{
 		if( !$term )
-			$term = current_term();
+		{	$query = "SELECT v.name, v.userId AS id, e.email, h.day, h.start, h.duration
+					  FROM office_hours h, office_workers w, terms t, user_emails e, volunteers v
+					  WHERE v.userId = e.userId
+						AND w.hourId = h.hourId
+						AND w.term = t.current_term
+						AND w.userId = e.userId
+					  ORDER BY h.day, h.hours";
+			$result = $this->_db->fetchAll( $query );
+		}else
+		{	$query = "SELECT v.name, v.userId AS id, e.email, h.day, h.start, h.duration
+					  FROM office_hours h, office_workers w, terms t, user_emails e, volunteers v
+					  WHERE v.userId = e.userId
+						AND w.hourId = h.hourId
+						AND w.userId = e.userId
+						AND w.term = ?
+					  ORDER BY h.day, h.hours";
+			$result = $this->_db->fetchAll( $query, array($term) );
+		}
 
 		$return = array();
 
-		$query = "SELECT r.name, r.userid, r.alternate_email, h.day, h.start, h.duration
-			  FROM office_hours h, office_workers w, resourcelist r
-			  WHERE h.hourId = w.hourId AND w.term = $term AND w.userId = r.id
-			  ORDER BY h.day, h.start";
-		$result = mysql_query( $query, $this->connection );
-		while( $row = mysql_fetch_assoc( $result ) )
+		foreach( $result as $row )
 		{
 			if( !isset( $return[$row['day']] ) )
 				$return[$row['day']] = array();
@@ -103,12 +98,9 @@ class OfficeDB extends MathSocDB
 				$return[$row['day']][$hour] = array();
 
 			$user = array();
-			$user['id'] = $row['userid'];
+			$user['id'] = $row['id'];
 			$user['name'] = $row['name'];
-			if( $row['alternate_email'] )
-				$user['email'] = $row['alternate_email'];
-			else
-				$user['email'] = $row['userid'] . "@uwaterloo.ca";
+			$user['email'] = $row['email'];
 
 			array_push( $return[$row['day']][$hour], $user );
 		}
@@ -116,12 +108,13 @@ class OfficeDB extends MathSocDB
 		return $return;
 	}
 	
-	/** signup - Signup a user to a given hour
+	/** TODO signup - Signup a user to a given hour
 	 *
 	 * @param	user	
 	 * @param	hour	
 	 * @return		True if the operation was successful, false otherwise
 	 */
+/*
 	function signup($user, $hour)
 	{
 		// Create an array to be entered as a signup
@@ -190,18 +183,5 @@ class OfficeDB extends MathSocDB
 		// Signup the office worker
 		return $this->insert( "office_workers", $signup );
 	}
+*/
 }
-
-if( eregi( basename(__FILE__), $_SERVER['PHP_SELF'] ) )
-{
-	// Load database
-	print_r($database = new OfficeDB());
-
-	print_r( $database->getSchedule() );
-
-	// Test contents
-	//$user['id'] = "amccausl";
-	//$hour['id'] = 4;
-	//$database->signup( $user, $hour );
-}
-?>

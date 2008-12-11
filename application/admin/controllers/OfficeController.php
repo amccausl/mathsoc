@@ -30,6 +30,12 @@ class Admin_OfficeController extends MathSoc_Controller_Action
 */
 	// Browsing Functions
 	public function indexAction()
-	{	// List the existing exams
+	{
+	}
+
+	/** Retrieve a list of the email address of the office workers for the term
+	 */
+	public function emailAction()
+	{
 	}
 }

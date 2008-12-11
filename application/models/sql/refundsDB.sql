@@ -6,7 +6,6 @@ use user_management;
 -- approved is the date this policy was approved
 -- operation is the operation that created this policy and parameters (create, replace, merge, split)
 
-
 CREATE TABLE `refunds` (
   userId	CHAR(8)		NOT NULL,
   term		INT(8)		NOT NULL,

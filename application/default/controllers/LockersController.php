@@ -39,7 +39,41 @@ class LockersController extends MathSoc_Controller_Action
 	 */
 	public function imageAction()
 	{	Zend_Controller_Front::getInstance()->setParam('noViewRenderer', true);
-		
+
+		$start = $_GET['start'];	// First locker in a block
+		$end = $_GET['end'];		// Last locker in a block
+		$height = 6; 				// Height of locker bank
+		$width = ceil( ( $end - $start ) / $height );
+
+		$filled = $database->taken( $start, $end );
+
+		// create the image
+		$img_handle = ImageCreate(($width)*50 + 30, ($height)*50 + 30) or die ("Cannot Create image"); 
+		$white = imagecolorallocate($img_handle, 255,255,255);	// First color is the background color
+		$black = imagecolorallocate($img_handle, 0,0,0);	// Make black and red
+		$red = imagecolorallocate($img_handle, 255,0,0);
+
+		// Draw the lockers and fill them.
+		$count = $start-1;
+		for ($x=0;$x <= $width-1; $x++)
+		{
+			for ($y=0;$y <= $height-1; $y++)
+			{
+				$count++;
+
+				// Draw the outlines
+				imagerectangle($img_handle, $x*50,$y*50,($x+1)*50,($y+1)*50, $black);
+				// Fill them red if they are signed out.
+				if( $filled[$count] )
+				{	imagefilledrectangle($img_handle, $x*50+1,$y*50+1,($x+1)*50-1,($y+1)*50-1, $red);
+				}
+				ImageString ($img_handle, 31, $x*50 + 15, $y*50 + 15, ($x*$height + $y + $start), $black);
+			}
+		}
+
+		// Output image
+		header ("Content-type: image/png");
+		ImagePng( $img_handle );
 	}
 
 	/** Display a message explaining that the system is currently locked

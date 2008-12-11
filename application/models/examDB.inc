@@ -1,8 +1,5 @@
 <?php 
 
-// Load database module
-require_once 'Zend/Db.php';
-
 /* This is a system to be coupled with a uwdir authentication scheme
 
 */
