@@ -1,3 +1,4 @@
+<div class="section">
 {if $validate.default.is_error}
 {validate id="email_element" message="You must provide a valid email address<br/>"}
 {/if}
@@ -25,4 +26,5 @@
   <input name='change' type='submit' value='Change Locker' class='button'/> 
 </div>
 </form>
+</div>
 </div>

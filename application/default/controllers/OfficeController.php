@@ -38,7 +38,11 @@ class OfficeController extends MathSoc_Controller_Action
 
 		// Sign the user up for the hour
 		// TODO: add result to view
-		$this->db->signup( $auth->getIdentity(), $this->_getParam('hourid') );
+		if( $this->db->signup( $auth->getIdentity(), $this->_getParam('hourid') ) )
+		{
+		}else
+		{
+		}
 	}
 
 	/** Display an image of the office hour schedule
