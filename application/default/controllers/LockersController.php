@@ -21,7 +21,7 @@ class LockersController extends MathSoc_Controller_Action
     }
 
 	/** Displays a map the user can choose where they want their locker
-	 * 
+	 * This action is static in the template file.
 	 */
 	public function mapAction()
 	{
@@ -82,9 +82,9 @@ class LockersController extends MathSoc_Controller_Action
 			{
 				imagerectangle($img_handle, $coords[0], $coords[1], $coords[2], $coords[3], $black);
 				// Fill them red if they are signed out.
-				if( $filled[$count] )
-				{	imagefilledrectangle($img_handle, $coords[0]+1,$coords[1]+1,$coords[2]-1,$coords[3]-1, $red);
-				}
+				//if( $filled[$count] )
+				//{	imagefilledrectangle($img_handle, $coords[0]+1,$coords[1]+1,$coords[2]-1,$coords[3]-1, $red);
+				//}
 				ImageString ($img_handle, 31, $coords[0] + 15, $coords[1] + 15, $number, $black);
 			}
 
