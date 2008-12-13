@@ -4,7 +4,7 @@ require_once 'MathSocAction.inc';
 require_once 'lockerDB.inc';
 
 //class LockersController extends MathSocAuth_Controller_Action
-class LockersController extends MathSoc_Controller_Action
+class LockersController extends MathSocAuth_Controller_Action
 {
 	private $db;
 
@@ -13,6 +13,9 @@ class LockersController extends MathSoc_Controller_Action
 		// TODO: check if system is locked (ie. locks being cut today), if it is, forward to the locked action
 
 		parent::init();
+
+		// TODO: set active and selected portions of menu
+
 		$this->view->username = Zend_Auth::getInstance()->getIdentity();
 		$this->db = new LockerDB();
 	}
@@ -36,6 +39,8 @@ class LockersController extends MathSoc_Controller_Action
 	 */
 	public function blockAction()
 	{
+		// TODO: break large blocks in half
+
 		switch( $_GET['block'] )
 		{	case 1:		$start = 1;		$end = 48;	break;
 			case 2:		$start = 49;	$end = 96;	break;
@@ -74,7 +79,7 @@ class LockersController extends MathSoc_Controller_Action
 		if( $this->_getParam('format') )
 		{	Zend_Controller_Front::getInstance()->setParam('noViewRenderer', true);
 
-			//$filled = $this->db->taken( $start, $end );
+			$filled = $this->db->taken( $start, $end );
 
 			// create the image
 			$img_handle = ImageCreate(($width)*50 + 30, ($height)*50 + 30) or die ("Cannot Create image"); 
@@ -86,9 +91,10 @@ class LockersController extends MathSoc_Controller_Action
 			{
 				imagerectangle($img_handle, $coords[0], $coords[1], $coords[2], $coords[3], $black);
 				// Fill them red if they are signed out.
-				//if( $filled[$count] )
-				//{	imagefilledrectangle($img_handle, $coords[0]+1,$coords[1]+1,$coords[2]-1,$coords[3]-1, $red);
-				//}
+				if( $filled[$number] )
+				{	imagefilledrectangle($img_handle, $coords[0]+1,$coords[1]+1,$coords[2]-1,$coords[3]-1, $red);
+				}
+				// Write the locker number in the center of each box
 				ImageString ($img_handle, 31, $coords[0] + 15, $coords[1] + 15, $number, $black);
 			}
 
@@ -124,6 +130,7 @@ class LockersController extends MathSoc_Controller_Action
 			'locker_combo' => '',
 			'locker_expires' => strftime($format, locker_expires())
 		);
+		$this->view->assign($default);
 
 		// Include form validation
 		$smarty = $this->view->getEngine();
@@ -150,7 +157,6 @@ class LockersController extends MathSoc_Controller_Action
 				// TODO: forward to index
 			}
 
-			$this->view->assign($default);
 			$this->view->assign($_POST);
 		}
 	}
