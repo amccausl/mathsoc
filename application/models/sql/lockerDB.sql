@@ -1,6 +1,6 @@
 
 CREATE TABLE `lockers` (
-    `lockerId`       INT(10) NOT NULL,
+    `id`             INT(10) NOT NULL,
     `current_userId` CHAR(8),
     `current_phone`  CHAR(12),
     `last_userId`    CHAR(8),

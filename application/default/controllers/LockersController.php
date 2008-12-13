@@ -3,12 +3,16 @@
 require_once 'MathSocAction.inc';
 require_once 'lockerDB.inc';
 
+//class LockersController extends MathSocAuth_Controller_Action
 class LockersController extends MathSoc_Controller_Action
 {
 	private $db;
 
 	public function init()
-	{	parent::init();
+	{
+		// TODO: check if system is locked (ie. locks being cut today), if it is, forward to the locked action
+
+		parent::init();
 		$this->view->username = Zend_Auth::getInstance()->getIdentity();
 		$this->db = new LockerDB();
 	}
@@ -150,5 +154,25 @@ class LockersController extends MathSoc_Controller_Action
 			$this->view->assign($_POST);
 		}
 	}
+}
+
+function locker_expires()
+{   // This method worked in all cases I tested (2007,2008)
+    // Not garenteed correct!
+
+    // Determine the month that starts the next term
+    $start = ( ceil( date("m") / 4 ) % 3 ) * 4 + 1;
+
+    // If January, increment year
+    $expires = mktime( 0, 0, 0, $start, 1, date("Y") + ($start == 1) );
+
+    // If September, first week is frosh week
+    if( $start == 9 )
+        $expires = strtotime( "next Monday", $expires );
+
+    // Determine the end of the first week of school
+    $expires = strtotime( "next Monday", $expires ) + 378000;
+
+    return $expires;
 }
 

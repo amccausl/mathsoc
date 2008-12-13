@@ -1,7 +1,5 @@
 <?php
 
-require_once( "mathsocDB.inc" );
-
 /***** lockerDB.inc -- Version 0.1 *****
  * Writen by Alex McCausland
  *
@@ -14,26 +12,19 @@ require_once( "mathsocDB.inc" );
  *
 */
 
-class LockerDB extends MathSocDB
+class LockerDB
 {
 	protected $_db;
 
 	function __construct()
-	{	parent::__construct( Zend_Registry::getInstance()->get('config')->db->params->dbname );
-		$this->_db = Zend_Db::factory(Zend_Registry::getInstance()->get('config')->db);
+	{	$this->_db = Zend_Db::factory(Zend_Registry::getInstance()->get('config')->db);
 	}
 
-/*** USER FUNCTIONS ***/
-/*takes in a locker number and returns all information associated with said
-*that locker in an associative array
-*/
+	/** lookup - Returns all information for a given locker
+	 */
 	function lookup( $lockerId )
-	{	$query = "SELECT * FROM `lockers` WHERE `lockerId` = {$lockerId}";
-		if( !( $result = @ mysql_query( $query, $this->connection ) ) )
-		{	return false;
-		}elseif( $row = mysql_fetch_assoc( $result ) )
-		{	return $row;
-		}
+	{	$query = "SELECT * FROM `lockers` WHERE `id` = ?";
+		return $this->_db->fetchRow($query);
 	}
 
 	/** taken - Return the status of a given set of lockers
@@ -44,20 +35,14 @@ class LockerDB extends MathSocDB
 		if( $end == -1 )
 			$end = $start;
 
-		$return = array();
-
-		$query = "SELECT lockerId, current_userId FROM lockers WHERE lockerId >= $start AND lockerId <= $end ORDER BY lockerId";
-		$query = mysql_query( $query, $this->connection );
-		while( $row = mysql_fetch_row( $query ) )
-		{	$return[$row[0]] = $row[1];
-		}
-
-		return $return;
+		$query = "SELECT id, (current_userId IS NOT NULL) AS taken FROM lockers WHERE id >= ? AND id <= ? ORDER BY id";
+		return $this->_db->fetchPairs($query, array( $start, $end ) );
 	}
 
 	/** signup - Enters the given info as the owner of the given locker
 	 *
 	 */
+/*
 	function signup( $lockerNum, $info )
 	{
 		// Search for locker, if holder, expire_lockers()
@@ -80,7 +65,7 @@ class LockerDB extends MathSocDB
 		else
 			$query .= ", expires = NULL";
 				
-		$query .= "\nWHERE lockerId = '{$lockerNum}'";
+		$query .= "\nWHERE id = '{$lockerNum}'";
 
 		if( !( $result = @ mysql_query( $query, $this->connection ) ) )
 		{	return false;
@@ -91,7 +76,7 @@ class LockerDB extends MathSocDB
 	function renew( $lockerId )
 	{	$mysql_format = "Y-m-d H:i:s";
 		$expires = date( $mysql_format, locker_expires() );
-		$query = "UPDATE lockers SET expires = '{$expires}' WHERE `lockerId` = {$lockerId}";
+		$query = "UPDATE lockers SET expires = '{$expires}' WHERE `id` = {$lockerId}";
 		if( !( $result = @ mysql_query( $query, $this->connection ) ) )
 		{	return false;
 		}
@@ -99,7 +84,7 @@ class LockerDB extends MathSocDB
 	}
 
 	function find_locker( $userId )
-	{	$query = "SELECT lockerId FROM `lockers` WHERE `current_userId` = '{$userId}'";
+	{	$query = "SELECT id FROM `lockers` WHERE `current_userId` = '{$userId}'";
 		if( !( $result = @ mysql_query( $query, $this->connection ) ) )
 		{	return false;
 		}elseif( $row = mysql_fetch_array( $result ) )
@@ -120,7 +105,7 @@ class LockerDB extends MathSocDB
 			$query = "UPDATE lockers a, lockers b
 				  SET a.current_userId = b.current_userId, a.current_phone = b.current_phone, a.combo = b.combo, a.expires = b.expires,
 					b.current_userId = NULL, b.current_phone = NULL, b.combo = NULL, b.expires = NULL
-				  WHERE a.lockerId = {$new_locker} AND b.lockerId = {$cur_locker}";
+				  WHERE a.id = {$new_locker} AND b.id = {$cur_locker}";
 			if( !( $result = @ mysql_query( $query, $this->connection ) ) )
 			{	return false;
 			}
@@ -133,20 +118,21 @@ class LockerDB extends MathSocDB
 		takes in an info array with $info['phone'] and $info['combo']and a locker id $id
 		and updates the database at locker number $id with the phone and combination data
 	*/
+/*
 	function update($id , $info )
 	{	
 		$info['phone'] = mysql_real_escape_string($info['phone']);
 		$info['combo'] = mysql_real_escape_string($info['combo']);
 	    preg_match_all("/[0-9]+/", $info['phone'], $phoneNums);
 		$info['phone'] = implode($phoneNums[0]);
-		$query = "UPDATE lockers SET current_phone = '{$info['phone']}', combo = '{$info['combo']}' WHERE lockerId = {$id}";
+		$query = "UPDATE lockers SET current_phone = '{$info['phone']}', combo = '{$info['combo']}' WHERE id = {$id}";
 		$ret_val = mysql_query($query, $this->connection);
 		return $ret_val;
 	}
 
 	function free( $lockerId )
 	{	// Free up a locker for use by other users
-		$query = "UPDATE lockers SET current_userId = NULL, current_phone = NULL, combo = NULL, expires = NULL WHERE lockerId = {$lockerId}";
+		$query = "UPDATE lockers SET current_userId = NULL, current_phone = NULL, combo = NULL, expires = NULL WHERE id = {$lockerId}";
 		if( !( $result = @ mysql_query( $query, $this->connection ) ) )
 		{	return false;
 		}
