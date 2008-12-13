@@ -8,7 +8,7 @@
 <fieldset>
   <legend>Locker Information</legend>
   <label for='locker_id'>Locker Number:</label>
-    <input name='locker_id' type='text' length='4' disabled='true' value='{$locker_id}' /><br/>
+    <input name='locker_id' type='text' length='4' value='{$locker_id}' /><br/>
   <label for='username'>Username:</label>
     <input name='username' type='text' length='8' disabled='true' value='{$username}' /><br/>
   <label for='email'>Email:</label>

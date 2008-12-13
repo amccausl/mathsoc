@@ -22,17 +22,21 @@ class LockerDB
 
 	/** lookup - Returns all information for a given locker
 	 */
-	function lookup( $lockerId )
-	{	$query = "SELECT * FROM `lockers` WHERE `id` = ?";
-		return $this->_db->fetchRow($query);
+	function lookup( $id )
+	{	if( $id > 0 )
+		{	$query = "SELECT * FROM `lockers` WHERE `id` = ?";
+		}else
+		{	$query = "SELECT * FROM `lockers` WHERE `current_userId` = ?";
+		}
+		return $this->_db->fetchRow($query, array($id) );
 	}
 
 	/** taken - Return the status of a given set of lockers
 	 *
 	 */
-	function taken( $start, $end=-1 )
+	function taken( $start, $end = null )
 	{
-		if( $end == -1 )
+		if( $end == null )
 			$end = $start;
 
 		$query = "SELECT id, (current_userId IS NOT NULL) AS taken FROM lockers WHERE id >= ? AND id <= ? ORDER BY id";
@@ -73,14 +77,14 @@ class LockerDB
 		return true;
 	}
 
-	function renew( $lockerId )
+	function renew( $id )
 	{	$mysql_format = "Y-m-d H:i:s";
-		$expires = date( $mysql_format, locker_expires() );
-		$query = "UPDATE lockers SET expires = '{$expires}' WHERE `id` = {$lockerId}";
-		if( !( $result = @ mysql_query( $query, $this->connection ) ) )
-		{	return false;
+		$data = array( "expires" => date( $mysql_format, locker_expires() ) );
+		if( $id > 0 )
+		{	return $this->_db->update('lockers', $data, "id = {$id}" );
+		}else
+		{	return $this->_db->update('lockers', $data, "current_userId = {$id}" );
 		}
-		return true;
 	}
 
 	function find_locker( $userId )
@@ -94,26 +98,6 @@ class LockerDB
 		}
 	}
 
-	function swap( $userId, $new_locker, $info )
-	{	// Switch user's locker to new locker
-		$cur_locker = find_locker( $userId );
-		if( $cur_locker )
-		{
-			$taken = $this->taken( $new_locker );
-			$taken = $taken[$new_locker];
-
-			$query = "UPDATE lockers a, lockers b
-				  SET a.current_userId = b.current_userId, a.current_phone = b.current_phone, a.combo = b.combo, a.expires = b.expires,
-					b.current_userId = NULL, b.current_phone = NULL, b.combo = NULL, b.expires = NULL
-				  WHERE a.id = {$new_locker} AND b.id = {$cur_locker}";
-			if( !( $result = @ mysql_query( $query, $this->connection ) ) )
-			{	return false;
-			}
-			return true;
-		}else
-		{	return false;
-		}
-	}
 	/**
 		takes in an info array with $info['phone'] and $info['combo']and a locker id $id
 		and updates the database at locker number $id with the phone and combination data
@@ -194,27 +178,3 @@ function locker_expires()
 	return $expires;
 }
 
-if( eregi( basename(__FILE__), $_SERVER['PHP_SELF'] ) )
-{
-	print( "<pre>" );
-	$database = new LockerDB();
-
-	$locker = $database->find_locker("amccausl");
-	print( "\nlocker number for amccausl:\n" );
-	print_r( $locker );
-
-	print( "\n locker info for $locker:\n" );
-	$locker = $database->lookup( $locker );
-	print_r( $locker );
-
-	print( "\n expires on: $expires" );
-
-	if( $database->free( "1" ) )
-	{	print( "\nlocker #1 free" );
-	}else
-	{	print( "\nfailed to free locker #1" );
-	}
-
-	print( "</pre>" );
-}
-?>
