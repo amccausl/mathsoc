@@ -36,9 +36,9 @@ class MathSocAuth_Controller_Action extends MathSoc_Controller_Action
 
 		if( !$auth->hasIdentity() )
 		{	// If user not authenticated and query not set
-			if( !$this->_request->isGet() && !$this->_request->getQuery('__kiwi_id__') )
+			if( !$this->_request->isGet() || !$this->_request->getQuery('__kiwi_id__') )
 			{	// Forward to kiwi login URL
-				$this->_redirect( $loginUrl . "?__kiwi_referer__={$referer}" );
+				$this->_redirect( $this->loginUrl . "?__kiwi_referer__={$referer}" );
 			}else
 			{	// If authentication information is set
 				// Attempt to use it to authenticate

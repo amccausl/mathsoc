@@ -87,17 +87,6 @@ class LockerDB
 		}
 	}
 
-	function find_locker( $userId )
-	{	$query = "SELECT id FROM `lockers` WHERE `current_userId` = '{$userId}'";
-		if( !( $result = @ mysql_query( $query, $this->connection ) ) )
-		{	return false;
-		}elseif( $row = mysql_fetch_array( $result ) )
-		{	return $row[0];
-		}else
-		{	return false;
-		}
-	}
-
 	/**
 		takes in an info array with $info['phone'] and $info['combo']and a locker id $id
 		and updates the database at locker number $id with the phone and combination data
