@@ -12,5 +12,7 @@
 Hours:<br/>
 8-9 (Mon - Thurs)<br/>
 8-4 Friday<br/>
-Phone Number: ##########
+Phone Number:<br/>
+(519) 888-4567 x36521 (Cafe)<br/>
+(519) 888-4567 x36373 (Manager)
 </div>

@@ -44,16 +44,24 @@ class LockersController extends MathSocAuth_Controller_Action
 		switch( $_GET['block'] )
 		{	case 1:		$start = 1;		$end = 48;	break;
 			case 2:		$start = 49;	$end = 96;	break;
-			case 3:		$start = 97;	$end = 186;	break;
+			case 3:		$start = 97;	$end = 141;	break;
+			//case 4:	$start = 142;	$end = 186; break;
 			case 4:		$start = 187;	$end = 198;	break;
-			case 5:		$start = 199;	$end = 270;	break;
-			case 6:		$start = 271;	$end = 354;	break;
-			case 7:		$start = 355;	$end = 414;	break;
-			case 8:		$start = 415;	$end = 492;	break;
-			case 9:		$start = 493;	$end = 570;	break;
+			case 5:		$start = 199;	$end = 234;	break;
+			//case 5:	$start = 235;	$end = 270;	break;
+			case 6:		$start = 271;	$end = 307;	break;
+			//case 6:	$start = 308;	$end = 354;	break;
+			case 7:		$start = 355;	$end = 384;	break;
+			//case 7:	$start = 385;	$end = 414;	break;
+			case 8:		$start = 415;	$end = 452;	break;
+			//case 8:	$start = 453;	$end = 492;	break;
+			case 9:		$start = 493;	$end = 530;	break;
+			//case 9:	$start = 531;	$end = 570;	break;
 			case 10:	$start = 571;	$end = 594;	break;
-			case 11:	$start = 595;	$end = 668;	break;
-			case 12:	$start = 669;	$end = 732;	break;
+			case 11:	$start = 595;	$end = 631;	break;
+			//case 11:	$start = 632;	$end = 668;	break;
+			case 12:	$start = 669;	$end = 700;	break;
+			//case 12:	$start = 701;	$end = 732;	break;
 			case 13:	$start = 733;	$end = 786;	break;
 		}
 
