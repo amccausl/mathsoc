@@ -4,7 +4,7 @@ require_once 'MathSocAction.inc';
 require_once 'lockerDB.inc';
 
 //class LockersController extends MathSocAuth_Controller_Action
-class LockersController extends MathSocAuth_Controller_Action
+class LockersController extends MathSoc_Controller_Action
 {
 	private $db;
 
@@ -39,29 +39,27 @@ class LockersController extends MathSocAuth_Controller_Action
 	 */
 	public function blockAction()
 	{
-		// TODO: break large blocks in half
-
 		switch( $_GET['block'] )
 		{	case 1:		$start = 1;		$end = 48;	break;
 			case 2:		$start = 49;	$end = 96;	break;
-			case 3:		$start = 97;	$end = 141;	break;
-			//case 4:	$start = 142;	$end = 186; break;
+			case "3a":	$start = 97;	$end = 141;	break;
+			case "3b":	$start = 142;	$end = 186; break;
 			case 4:		$start = 187;	$end = 198;	break;
-			case 5:		$start = 199;	$end = 234;	break;
-			//case 5:	$start = 235;	$end = 270;	break;
-			case 6:		$start = 271;	$end = 307;	break;
-			//case 6:	$start = 308;	$end = 354;	break;
-			case 7:		$start = 355;	$end = 384;	break;
-			//case 7:	$start = 385;	$end = 414;	break;
-			case 8:		$start = 415;	$end = 452;	break;
-			//case 8:	$start = 453;	$end = 492;	break;
-			case 9:		$start = 493;	$end = 530;	break;
-			//case 9:	$start = 531;	$end = 570;	break;
+			case "5a":	$start = 199;	$end = 234;	break;
+			case "5b":	$start = 235;	$end = 270;	break;
+			case "6a":	$start = 271;	$end = 307;	break;
+			case "6b":	$start = 308;	$end = 354;	break;
+			case "7a":	$start = 355;	$end = 384;	break;
+			case "7b":	$start = 385;	$end = 414;	break;
+			case "8a":	$start = 415;	$end = 452;	break;
+			case "8b":	$start = 453;	$end = 492;	break;
+			case "9a":	$start = 493;	$end = 530;	break;
+			case "9b":	$start = 531;	$end = 570;	break;
 			case 10:	$start = 571;	$end = 594;	break;
-			case 11:	$start = 595;	$end = 631;	break;
-			//case 11:	$start = 632;	$end = 668;	break;
-			case 12:	$start = 669;	$end = 700;	break;
-			//case 12:	$start = 701;	$end = 732;	break;
+			case "11a":	$start = 595;	$end = 631;	break;
+			case "11b":	$start = 632;	$end = 668;	break;
+			case "12a":	$start = 669;	$end = 700;	break;
+			case "12b":	$start = 701;	$end = 732;	break;
 			case 13:	$start = 733;	$end = 786;	break;
 		}
 
@@ -87,7 +85,7 @@ class LockersController extends MathSocAuth_Controller_Action
 		if( $this->_getParam('format') )
 		{	Zend_Controller_Front::getInstance()->setParam('noViewRenderer', true);
 
-			$filled = $this->db->taken( $start, $end );
+			//$filled = $this->db->taken( $start, $end );
 
 			// create the image
 			$img_handle = ImageCreate(($width)*50 + 30, ($height)*50 + 30) or die ("Cannot Create image"); 
@@ -99,9 +97,9 @@ class LockersController extends MathSocAuth_Controller_Action
 			{
 				imagerectangle($img_handle, $coords[0], $coords[1], $coords[2], $coords[3], $black);
 				// Fill them red if they are signed out.
-				if( $filled[$number] )
-				{	imagefilledrectangle($img_handle, $coords[0]+1,$coords[1]+1,$coords[2]-1,$coords[3]-1, $red);
-				}
+				//if( $filled[$number] )
+				//{	imagefilledrectangle($img_handle, $coords[0]+1,$coords[1]+1,$coords[2]-1,$coords[3]-1, $red);
+				//}
 				// Write the locker number in the center of each box
 				ImageString ($img_handle, 31, $coords[0] + 15, $coords[1] + 15, $number, $black);
 			}
