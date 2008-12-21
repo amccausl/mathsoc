@@ -1,7 +1,5 @@
 <?php
 
-require_once("mathsocDB.inc");
-
 /***** announceDB.inc -- Version 0.1 *****
  * Writen by Alex McCausland
  *
@@ -13,34 +11,15 @@ require_once("mathsocDB.inc");
  *    Initial Release
  *
  * Future Improvements:
- *    - don't show expired events
  *
- * Structure:
- *
- * The announcements table stores the announcements to give to people
- * The columns are:
- *   id		
- *   title	The title of the announcement
- *   event_date	
- *   content	
-
-  CREATE TABLE announcement (
-    id		int(11)		NOT NULL,
-    title	varchar(255)	NOT NULL,
-    event_date	datetime,
-    content	text,
-
-    PRIMARY KEY (id)
-  ) type=MyISAM;
-
  */
 
-class AnnounceDB extends MathSocDB
+class AnnounceDB
 {
-	private $database = "announcement_test";
+	private $_db;
 
 	function __construct()
-	{	parent::__construct( $this->database );
+	{	$this->_db = Zend_Db::factory(Zend_Registry::getInstance()->get('config')->db);
 	}
 
 	/** getAnnouncements - Retrieve the announcements that should be displayed
@@ -51,10 +30,13 @@ class AnnounceDB extends MathSocDB
 	 */
 	function getAnnouncements()
 	{
-		$query = "SELECT title, event_date, content
-					 FROM announcement;";
+		$query = "SELECT event_date, title, content
+				  FROM announcement
+				  WHERE NOW() <= DATE_ADD(event_date,INTERVAL 30 DAY)
+					OR event_date IS NULL
+				  ORDER BY event_date ASC";
 
-		return $this->queryAsHash( $query );
+		return $this->_db->fetchAll( $query );
 	}
 }
 
