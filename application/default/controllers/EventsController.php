@@ -144,7 +144,13 @@ class EventsController extends MathSoc_Controller_Action
 		$page->output();
 
 		$this->view->contents = ob_get_contents();
+	}
 
+	/** signup - Allow users to signup for certain events
+	 *
+	 */
+	public function signup()
+	{
 	}
 }
 
