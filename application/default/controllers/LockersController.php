@@ -4,7 +4,7 @@ require_once 'MathSocAction.inc';
 require_once 'lockerDB.inc';
 
 //class LockersController extends MathSocAuth_Controller_Action
-class LockersController extends MathSoc_Controller_Action
+class LockersController extends MathSocAuth_Controller_Action
 {
 	private $db;
 
@@ -14,10 +14,25 @@ class LockersController extends MathSoc_Controller_Action
 
 		parent::init();
 
-		// TODO: set active and selected portions of menu
-
 		$this->view->username = Zend_Auth::getInstance()->getIdentity();
 		$this->db = new LockerDB();
+
+		$menu = $this->view->menu;
+
+		for( $i = 0; $i < count( $menu ); $i++ )
+		{	if( $menu[$i]['title'] == 'Services' )
+			{	$menu[$i]['status'] = 'active';
+				for( $j = 0; $j < count( $menu[$i]['sub'] ); $j++ )
+				{	if( $menu[$i]['sub'][$j]['title'] == 'Lockers' )
+					{	$menu[$i]['sub'][$j]['status'] = 'selected';
+					}
+				}
+			}else
+			{	unset( $menu[$i]['status'] );
+			}
+		}
+
+		$this->view->menu = $menu;
 	}
 
 	/**
@@ -85,7 +100,7 @@ class LockersController extends MathSoc_Controller_Action
 		if( $this->_getParam('format') )
 		{	Zend_Controller_Front::getInstance()->setParam('noViewRenderer', true);
 
-			//$filled = $this->db->taken( $start, $end );
+			$filled = $this->db->taken( $start, $end );
 
 			// create the image
 			$img_handle = ImageCreate(($width)*50 + 30, ($height)*50 + 30) or die ("Cannot Create image"); 
@@ -97,9 +112,9 @@ class LockersController extends MathSoc_Controller_Action
 			{
 				imagerectangle($img_handle, $coords[0], $coords[1], $coords[2], $coords[3], $black);
 				// Fill them red if they are signed out.
-				//if( $filled[$number] )
-				//{	imagefilledrectangle($img_handle, $coords[0]+1,$coords[1]+1,$coords[2]-1,$coords[3]-1, $red);
-				//}
+				if( $filled[$number] )
+				{	imagefilledrectangle($img_handle, $coords[0]+1,$coords[1]+1,$coords[2]-1,$coords[3]-1, $red);
+				}
 				// Write the locker number in the center of each box
 				ImageString ($img_handle, 31, $coords[0] + 15, $coords[1] + 15, $number, $black);
 			}

@@ -49,9 +49,12 @@ class MathSocAuth_Controller_Action extends MathSoc_Controller_Action
 				{	// If the authentication is valid
 					$status = "You are logged-in as " . $auth->getIdentity() . "<br>\n";
 					// Do database lookup for groups the user returned by kiwi check is a part of
+
+					// TODO: log access to database
 				}else
 				{	// If authentication is invalid, remove user
 					$auth->clearIdentity();
+					$this->_redirect( $this->loginUrl . "?__kiwi_referer__={$referer}" );
 				}
 
 				// Add authentication messages to status

@@ -17,7 +17,6 @@ class Admin_UserController extends MathSocAuth_Controller_Action
 		$this->initView();
 		//$this->view->user = Zend_Auth::getInstance()->getIdentity();
 
-		$this->db = new ExamDB();
 	}
 
 	// Browsing Functions

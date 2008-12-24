@@ -1,4 +1,4 @@
-use user_management;
+use mathsoc;
 
 -- DEFINE UNDERLYING STRUCTURE FOR REFUNDS STORAGE (to be used by userDB)
 
@@ -14,7 +14,15 @@ CREATE TABLE `refunds` (
   reason	TEXT,
 
   PRIMARY KEY (term, userId)
-);
+)ENGINE=INNODB;
+
+CREATE TABLE `access_logging` (
+  time		DATETIME	NOT NULL,
+  userId	CHAR(8)		NOT NULL,
+  system	VARCHAR(256) NOT NULL,
+
+  PRIMARY KEY (userId,time,system)
+)ENGINE=INNODB;
 
 CREATE VIEW `refunds_users` AS
 SELECT userId, term
