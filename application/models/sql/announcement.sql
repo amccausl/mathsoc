@@ -5,28 +5,29 @@ CREATE TABLE announcement (
   content     text,
 
   PRIMARY KEY (id)
-) type=MyISAM;
+)ENGINE=INNODB;
 
-CREATE TABLE `signup_events` (
-  `Event` int(10) unsigned NOT NULL auto_increment,
-  `UniqueId` enum('userid','watcard') NOT NULL default 'userid',
+CREATE TABLE `events` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `UniqueId` enum('userid','watcard') default 'userid',
   `UserInfo` text,
   `Name` varchar(64) NOT NULL default '',
   `Description` text,
-  PRIMARY KEY  (`Event`)
-) TYPE=MyISAM AUTO_INCREMENT=3 ;
+  PRIMARY KEY  (`id`)
+)ENGINE=INNODB AUTO_INCREMENT=3 ;
 
-INSERT INTO `signup_events` (`Event`, `UniqueId`, `UserInfo`, `Name`, `Description`) VALUES 
+INSERT INTO `events` (`id`, `UniqueId`, `UserInfo`, `Name`, `Description`) VALUES 
 (1, 'watcard', 'Name:=text|Student Id:=id|Faculty:=select(Applied Health Sciences,Arts,Engineering,Environmnental Studies,[Mathematics],Science,Multiple faculties)', 'Retro Dance Party', '<p>Retro Dance Party will be at Fed Hall from 9PM to 1AM on March 25th (Tuesday).</p>\r\n<p>Since you''re signing up early, it''s free!  If you had waited to get your tickets at the door, it would have cost you $2.  Tell your friends!  Plus, you can <a href="http://www.phatalbert.ca/retrodanceparty.html">request songs to be played</a>.</p>\r\n<p>Be sure to bring your Watcard.</p>');
 
-CREATE TABLE `signup` (
+CREATE TABLE `events_signup` (
   `Event` int(10) unsigned NOT NULL default '0',
   `UniqueId` varchar(8) NOT NULL default '',
   `UserInfo` varchar(255) default NULL,
-  PRIMARY KEY  (`Event`,`UniqueId`)
-) TYPE=MyISAM;
+  PRIMARY KEY  (`Event`,`UniqueId`),
+  FOREIGN KEY (Event) REFERENCES events(id)
+)ENGINE=INNODB;
 
-INSERT INTO `signup` (`Event`, `UniqueId`, `UserInfo`) VALUES 
+INSERT INTO `events_signup` (`Event`, `UniqueId`, `UserInfo`) VALUES 
 (1, '12345678', 'name:Test User;id:12345678;faculty:Engineering'),
 (1, '66666662', 'name:Master Tarfal, Underlord of Pain;id:66666662;faculty:Mathematics'),
 (1, '20138973', 'name:Natalie Owen;id:20138973;faculty:Mathematics'),

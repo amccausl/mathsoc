@@ -15,9 +15,8 @@ class OfficeDB
 {
 	protected $_db;
 
-	function __construct( $database = "mathsoc" )
-	{	$config = new Zend_Config_Ini('../config/main.ini', 'user_management');
-		$this->_db = Zend_Db::factory($config->db);
+	function __construct()
+	{	$this->_db = Zend_Db::factory(Zend_Registry::getInstance()->get('config')->db);
 	}
 
 	/** getEmails - function for office managers to get workers email addresses
@@ -73,7 +72,7 @@ class OfficeDB
 						AND w.hourId = h.hourId
 						AND w.term = t.current_term
 						AND w.userId = e.userId
-					  ORDER BY h.day, h.hours";
+					  ORDER BY h.day, h.hourId";
 			$result = $this->_db->fetchAll( $query );
 		}else
 		{	$query = "SELECT v.name, v.userId AS id, e.email, h.day, h.start, h.duration

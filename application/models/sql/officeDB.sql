@@ -1,4 +1,3 @@
-use user_management;
 
 CREATE TABLE office_hours (
   hourId   SMALLINT  NOT NULL AUTO_INCREMENT,
@@ -22,4 +21,3 @@ CREATE TABLE office_workers (
     ON DELETE CASCADE
 ) ENGINE=INNODB;
 
--- TODO: populate office_hours

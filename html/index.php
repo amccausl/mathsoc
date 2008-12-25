@@ -35,7 +35,7 @@ Zend_Registry::set('logger',$logger);
 
 // setup controller
 $frontController = Zend_Controller_Front::getInstance();
-//$frontController->setBaseUrl("/~amccausl/zend/html");
+//$frontController->setBaseUrl("/zend/html");
 $frontController->throwExceptions(true);
 $frontController->addModuleDirectory('../application/');
 

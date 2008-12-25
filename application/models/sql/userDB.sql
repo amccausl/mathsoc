@@ -205,15 +205,8 @@ SELECT CONCAT((YEAR(CURDATE()) - 1900), FLOOR((MONTH(CURDATE()) - 1) / 4) * 4 + 
 
 CREATE VIEW user_emails AS
   SELECT users.userId, users.email
-  FROM users, holders, terms
-  WHERE holders.term = terms.current_term
-    AND users.email IS NOT NULL
-UNION
-  SELECT holders.userId, CONCAT(holders.userId,'@','uwaterloo.ca')
-  FROM holders
-  WHERE holders.userId NOT IN (
-    SELECT users.userId
-    FROM users)
+  FROM users
+  WHERE users.email IS NOT NULL
 UNION
   SELECT users.userId, CONCAT(users.userId,'@','uwaterloo.ca')
   FROM users

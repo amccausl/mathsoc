@@ -70,7 +70,8 @@ class Exambank_IndexController extends MathSoc_Controller_Action
 			{	print( "The exam you're looking for doesn't exist" );
 				exit;
 			}
-			$filename = Zend_Registry::getInstance()->get('config')->examDir . $filename;
+			$config = new Zend_Config_Ini('../config/main.ini', 'exambank');
+			$filename = $config->examDir . $filename;
 
 			// Display the exam to the user
 			if( $buffer = file_get_contents( $filename ) )

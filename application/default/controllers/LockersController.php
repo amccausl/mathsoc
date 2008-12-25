@@ -39,7 +39,7 @@ class LockersController extends MathSocAuth_Controller_Action
 	 * Checks to ensure that the system is active and displays information for the student's current locker
 	 */
     public function indexAction()
-    {
+    {	
     }
 
 	/** Displays a map the user can choose where they want their locker
@@ -57,8 +57,8 @@ class LockersController extends MathSocAuth_Controller_Action
 		switch( $_GET['block'] )
 		{	case 1:		$start = 1;		$end = 48;	break;
 			case 2:		$start = 49;	$end = 96;	break;
-			case "3a":	$start = 97;	$end = 141;	break;
-			case "3b":	$start = 142;	$end = 186; break;
+			case "3a":	$start = 97;	$end = 144;	break;
+			case "3b":	$start = 145;	$end = 186;	break;
 			case 4:		$start = 187;	$end = 198;	break;
 			case "5a":	$start = 199;	$end = 234;	break;
 			case "5b":	$start = 235;	$end = 270;	break;

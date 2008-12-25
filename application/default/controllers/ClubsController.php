@@ -18,11 +18,18 @@ class ClubsController extends MathSoc_Controller_Action
     {
     }
 
+	/** /clubs/faq/
+	 * Display a few common questions about clubs and their answers.
+	 */
+	public function faqAction()
+	{
+	}
+
 	/**
 	 * Allow users to join a club.
 	 */
 	public function joinAction()
 	{	// TODO: ensure user is logged in
-	}	
+	}
 }
 

@@ -49,12 +49,43 @@ class OfficeController extends MathSoc_Controller_Action
 	 *
 	 */
 	public function imageAction()
-	{	Zend_Controller_Front::getInstance()->setParam('noViewRenderer', true);
-		require_once( 'schedule.inc' );
+	{
+/*
+    // Set information for the schedule image
+    $height = 350;
+    $width = 562;
+    //$height = .7*800;     //For printing
+    //$width = .7*1035;
+    $x['start'] = 40;
+    $y['start'] = 20;
+    $x['delta'] = 145 - $x['start'];
+    $y['delta'] = 37;
+    $x['entries'] = 5;
+    $y['entries'] = 9;
 
-		$days = $this->db->getSchedule();
+    // Create image map for the image as created by schedule.php5
+    $key = 0;
 
-		$xml = 
+    for( $u = 0; $u < $x['entries']; $u++ )
+    {
+        for( $v = 0; $v < $y['entries']; $v++ )
+        {   $key++;
+        $x_1 = $x['start'] + ( $x['delta'] * $u );
+        $x_2 = $x['start'] + ( $x['delta'] * ($u+1) );
+        $y_1 = $y['start'] + ( $y['delta'] * $v );
+        $y_2 = $y['start'] + ( $y['delta'] * ($v+1) );
+        $map .= "  <area shape='rect' href='signup.php5?hour={$key}' coords='{$x_1},{$y_1} {$x_2},{$y_2}'/>";
+        }
+    }
+*/
+
+		if( $this->_getParam('format') )
+		{	Zend_Controller_Front::getInstance()->setParam('noViewRenderer', true);
+			require_once( 'schedule.inc' );
+
+			$days = $this->db->getSchedule();
+
+			$xml = 
 "<?xml version='1.0' encoding='ISO-8859-1' ?>
 <schedule blocks='8:25,9:25,10:25,11:25,12:25,13:25,14:25,15:25,16:25' days='Monday,Tuesday,Wednesday,Thursday,Friday'>
   <settings>
@@ -66,58 +97,67 @@ class OfficeController extends MathSoc_Controller_Action
   </settings>
 ";
 
-		if( isset( $_GET['names'] ) )
-		{
-			foreach( $days as $day => $hours )
+			if( isset( $_GET['names'] ) )
 			{
-				$xml .= "  <day number='{$day}'>\n";
-				foreach($hours as $hour => $users)
+				foreach( $days as $day => $hours )
 				{
-					$start = $hour - 7;
-					$xml .= "    <block at='{$start}' bgcolor='#FFC0FF' alpha='30%'>";
-
-					$names = array();
-					foreach($users as $user)
-					{	$name = split( " ", $user['name'] );
-						array_push($names, $name[0]);
+					$xml .= "  <day number='{$day}'>\n";
+					foreach($hours as $hour => $users)
+					{
+						$start = $hour - 7;
+						$xml .= "    <block at='{$hour}' blockoffset='-{$span}' blockspan='0' bgcolor='#FFC0FF' alpha='30%' name='";
+						$names = array();
+						foreach($users as $people)
+						{	$name = split( " ", $people['name'] );
+							array_push($names, $name[0]);
+						}
+						$xml .= implode( ", ", $names);
+						$xml .= "'/>\n";
 					}
-					$xml .= implode( ", ", $names);
-
-					$xml .= "</block>\n";
+					$xml .= "  </day>\n";
 				}
-				$xml .= "  </day>\n";
+			}else
+			{
+				foreach( $days as $day => $hours )
+				{
+					$xml .= "  <day number='{$day}'>\n";
+
+					$start = -1;
+					$span = 1;
+
+					foreach($hours as $hour => $users)
+					{
+						$hour = $hour - 7;
+						if( $start + $span == $hour )
+						{	$span++;
+						}else
+						{	$hour++;
+							$xml .= "    <block at='{$hour}' blockoffset='-{$span}' blockspan='0' bgcolor='#FFC0FF' alpha='30%' name='";
+							$names = array();
+							foreach($users as $people)
+							{	$name = split( " ", $people['name'] );
+								array_push($names, $name[0]);
+							}
+							$xml .= implode( '\n', $names);
+
+							$xml .= "'/>\n";
+							$span = 1;
+						}
+					}
+					$xml .= "  </day>\n";
+				}
 			}
+
+			$xml .= "</schedule>";
+
+			$sch = new Schedule($xml, false);
+			// change size of image
+			$sch->width = isset($_GET['width']) ? $_GET['width'] : 500;
+			$sch->height = isset($_GET['height']) ? $_GET['height'] : 500;
+			// now draw ;)
+			$sch->Draw();
 		}else
 		{
-			foreach( $days as $day => $hours )
-			{
-				$xml .= "  <day number='{$day}'>\n";
-
-				$start = -1;
-				$span = 1;
-
-				foreach($hours as $hour => $users)
-				{
-					$hour = $hour - 7;
-					if( $start + $span == $hour )
-					{	$span++;
-					}else
-					{	$hour++;
-						$xml .= "    <block at='{$hour}' blockoffset='-{$span}' blockspan='0' bgcolor='#FFC0FF' alpha='30%'></block>\n";
-						$span = 1;
-					}
-				}
-				$xml .= "  </day>\n";
-			}
 		}
-
-		$xml .= "</schedule>";
-
-		$sch = new Schedule($xml, false);
-		// change size of image
-		$sch->width = $_GET['width'];
-		$sch->height = $_GET['height'];
-		// now draw ;)
-		$sch->Draw();
 	}
 }
