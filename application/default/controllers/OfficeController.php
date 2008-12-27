@@ -50,34 +50,36 @@ class OfficeController extends MathSoc_Controller_Action
 	 */
 	public function imageAction()
 	{
-/*
-    // Set information for the schedule image
-    $height = 350;
-    $width = 562;
-    //$height = .7*800;     //For printing
-    //$width = .7*1035;
-    $x['start'] = 40;
-    $y['start'] = 20;
-    $x['delta'] = 145 - $x['start'];
-    $y['delta'] = 37;
-    $x['entries'] = 5;
-    $y['entries'] = 9;
+		// Set information for the schedule image
+		$height = 350;
+		$width = 562;
+		//$height = .7*800;     //For printing
+		//$width = .7*1035;
+		$x['start'] = 40;
+		$y['start'] = 20;
+		$x['delta'] = 145 - $x['start'];
+		$y['delta'] = 37;
+		$x['entries'] = 5;
+		$y['entries'] = 9;
 
-    // Create image map for the image as created by schedule.php5
-    $key = 0;
+		$map = array();
 
-    for( $u = 0; $u < $x['entries']; $u++ )
-    {
-        for( $v = 0; $v < $y['entries']; $v++ )
-        {   $key++;
-        $x_1 = $x['start'] + ( $x['delta'] * $u );
-        $x_2 = $x['start'] + ( $x['delta'] * ($u+1) );
-        $y_1 = $y['start'] + ( $y['delta'] * $v );
-        $y_2 = $y['start'] + ( $y['delta'] * ($v+1) );
-        $map .= "  <area shape='rect' href='signup.php5?hour={$key}' coords='{$x_1},{$y_1} {$x_2},{$y_2}'/>";
-        }
-    }
-*/
+		// Create image map for the image as created by schedule.php5
+		$key = 0;
+
+		for( $u = 0; $u < $x['entries']; $u++ )
+		{
+			for( $v = 0; $v < $y['entries']; $v++ )
+			{	$key++;
+				$x_1 = $x['start'] + ( $x['delta'] * $u );
+				$x_2 = $x['start'] + ( $x['delta'] * ($u+1) );
+				$y_1 = $y['start'] + ( $y['delta'] * $v );
+				$y_2 = $y['start'] + ( $y['delta'] * ($v+1) );
+				$map[$key] = array( $x_1, $y_1, $x_2, $y_2 );
+			}
+		}
+
+		$this->view->map = $map;
 
 		if( $this->_getParam('format') )
 		{	Zend_Controller_Front::getInstance()->setParam('noViewRenderer', true);
@@ -152,8 +154,8 @@ class OfficeController extends MathSoc_Controller_Action
 
 			$sch = new Schedule($xml, false);
 			// change size of image
-			$sch->width = isset($_GET['width']) ? $_GET['width'] : 500;
-			$sch->height = isset($_GET['height']) ? $_GET['height'] : 500;
+			$sch->width = isset($_GET['width']) ? $_GET['width'] : $width;
+			$sch->height = isset($_GET['height']) ? $_GET['height'] : $height;
 			// now draw ;)
 			$sch->Draw();
 		}else

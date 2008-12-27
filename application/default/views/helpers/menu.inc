@@ -10,7 +10,7 @@ function getMenu( $request = null )
 	$menu = array(
 	array(
 		"title"	=> "Announcements",
-		"link"	=> $request->getBaseUrl() . "/",
+		"link"	=> $request->getBaseUrl() . "",
 		"sub"	=> array(
 		array(
 			"title" => "Events Calendar",
@@ -89,10 +89,7 @@ function getMenu( $request = null )
 		"sub"	=> array(
 		array(
 			"title"	=> "Join a Club",
-			"link"	=> $request->getBaseUrl() . "/Clubs/join"),
-		array(
-			"title"	=> "",
-			"link"	=> ""))),
+			"link"	=> $request->getBaseUrl() . "/Clubs/join"))),
 	array(
 		"title"	=> "Volunteers",
 		"link"	=> $request->getBaseUrl() . "/Volunteers",
