@@ -47,3 +47,12 @@ SELECT DISTINCT
 FROM refunds r
 ORDER BY term DESC;
 
+CREATE TRIGGER access_logging_ai
+AFTER INSERT ON access_logging
+FOR EACH ROW
+  UPDATE LOW_PRIORITY refunds
+  SET status = 'REJECTED', reason = NEW.system
+  WHERE refunds.userId = NEW.userId
+	AND refunds.term = CONCAT((YEAR(NEW.time) - 1900), FLOOR((MONTH(NEW.time) - 1) / 4) * 4 + 1)
+	AND refunds.status = 'REQUESTED';
+

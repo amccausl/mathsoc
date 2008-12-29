@@ -19,7 +19,7 @@ CREATE TABLE `units` (
   url		VARCHAR(255),
 
   PRIMARY KEY (id)
-);
+)ENGINE=INNODB;
 
 INSERT INTO `units` (`alias`,`name`,`url`) VALUES
 ('MathSoc','Mathematics Society','http://mathsoc.uwaterloo.ca');
@@ -30,10 +30,11 @@ CREATE TABLE `clubs` (
   phone		INT,
   room		CHAR(6),
   membership	FLOAT(4,2)	DEFAULT '0',
+  description	TEXT,
 
   PRIMARY KEY(id),
   FOREIGN KEY (id) REFERENCES units(id) ON DELETE CASCADE
-);
+)ENGINE=INNODB;
 
 -- Our virtual domains are the domains we're accepting email for.
 CREATE TABLE `virtual_domains` (
@@ -41,7 +42,7 @@ CREATE TABLE `virtual_domains` (
   name	VARCHAR(50)	NOT NULL,
 
   PRIMARY KEY (id)
-);
+)ENGINE=INNODB;
 
 INSERT INTO `virtual_domains` (name) VALUES
 ('mathsoc.uwaterloo.ca');
@@ -54,7 +55,7 @@ CREATE TABLE `domain_map` (
   PRIMARY KEY (unitId,domainId),
   FOREIGN KEY (unitId) REFERENCES units(id) ON DELETE CASCADE,
   FOREIGN KEY (domainId) REFERENCES virtual_domains(id) ON DELETE CASCADE
-);
+)ENGINE=INNODB;
 
 INSERT INTO `domain_map` (`unitId`, `domainId`) VALUES
 ('1','1');
@@ -80,7 +81,7 @@ CREATE TABLE `positions` (
 
   PRIMARY KEY (`unitId`,`alias`),
   FOREIGN KEY (unitId) REFERENCES units(id) ON DELETE CASCADE
-);
+)ENGINE=INNODB;
 
 INSERT INTO `positions` (`unitId`,`name`,`alias`,`category`,`description`) VALUES
 (1, 'President', 'prez', 'EXC', '<p>The President of the Math Society is the CEO of the Society and an <i>ex-officio</i> member of all committees and Boards of the Society.  The Presidents duties include:</p><ul><li>to preside over General Meetings of the Society</li><li>to provide for Society representation at official functions and on public occasions</li><li>to be responsible for Society public relations</li><li>to know and interpret the bylaws of the Society</li><li>to appoint members to act as representatives of the Society on committees external thereto</li></ul>'),
@@ -138,7 +139,7 @@ CREATE TABLE `users` (
   email		VARCHAR(255),
 
   PRIMARY KEY( userId )
-);
+)ENGINE=INNODB;
 
 -- This is the users table.  It stores information about users.
 CREATE TABLE `volunteers` (
@@ -147,11 +148,12 @@ CREATE TABLE `volunteers` (
   description	TEXT,
   photo		VARCHAR(255),
   photo_data	BLOB,
-  photo_type	SMALLINT(6),
+  photo_type	ENUM('png','jpeg','gif'),
   office_trained BOOL		NOT NULL	DEFAULT '0',
 
-  PRIMARY KEY( userId )
-);
+  PRIMARY KEY( userId ),
+  FOREIGN KEY (userId) REFERENCES users(userId) ON UPDATE CASCADE
+)ENGINE=INNODB;
 
 INSERT INTO `users` (`userId`,`password`,`email`) VALUES
 ('amccausl',MD5('password'),'alex.mccausland@gmail.com'),
@@ -177,9 +179,9 @@ CREATE TABLE `holders` (
   email		BOOL		NOT NULL	DEFAULT '0',
 
   PRIMARY KEY(term,unitId,userId,position),
-  FOREIGN KEY (unitId) REFERENCES units(id) ON DELETE CASCADE,
-  FOREIGN KEY (position) REFERENCES positions(alias) ON DELETE CASCADE
-);
+  FOREIGN KEY (unitId) REFERENCES positions(unitId) ON UPDATE CASCADE,
+  FOREIGN KEY (userId) REFERENCES users(userId) ON UPDATE CASCADE
+)ENGINE=INNODB;
 
 INSERT INTO holders (`term`,`unitId`,userId,position,email) VALUES
 (1081,1,'amccausl','website',1);
@@ -190,8 +192,9 @@ CREATE TABLE mail_aliases (
   alias		VARCHAR(31)	NOT NULL,
   destination	VARCHAR(127)	NOT NULL,
 
-  PRIMARY KEY( domainId,alias )
-);
+  PRIMARY KEY( domainId,alias ),
+  FOREIGN KEY (domainId) REFERENCES virtual_domains(id) ON UPDATE CASCADE
+)ENGINE=INNODB;
 
 INSERT INTO mail_aliases (`domainId`,`alias`,`destination`) VALUES
 ('1','president','prez@mathsoc.uwaterloo.ca');

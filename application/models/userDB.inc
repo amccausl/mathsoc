@@ -22,8 +22,8 @@ class UserDB
 					  FROM holders, terms, positions
 					  WHERE positions.alias = holders.position
 						AND holders.term = terms.current_term
-					    AND holders.unitId = ?
-					    AND holders.userid = ?";
+						AND holders.unitId = ?
+						AND holders.userid = ?";
 			return $this->_db->fetchAll($query, array($unit, $userid));
 		}else
 		{	$query = "SELECT positions.alias, positions.name, positions.description

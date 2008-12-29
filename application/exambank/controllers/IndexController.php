@@ -5,7 +5,7 @@ require_once 'MathSocAction.inc';
 // Load the database model for the exam storage
 require_once 'examDB.inc';
 
-class Exambank_IndexController extends MathSoc_Controller_Action
+class Exambank_IndexController extends MathSocAuth_Controller_Action
 {
 	private $db;
 
