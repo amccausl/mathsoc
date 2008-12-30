@@ -48,7 +48,7 @@ class OfficeController extends MathSoc_Controller_Action
 	/** Display an image of the office hour schedule
 	 *
 	 */
-	public function imageAction()
+	public function hoursAction()
 	{
 		// Set information for the schedule image
 		$height = 350;
@@ -64,7 +64,7 @@ class OfficeController extends MathSoc_Controller_Action
 
 		$map = array();
 
-		// Create image map for the image as created by schedule.php5
+		// Create image map for the image
 		$key = 0;
 
 		for( $u = 0; $u < $x['entries']; $u++ )
@@ -134,15 +134,7 @@ class OfficeController extends MathSoc_Controller_Action
 						{	$span++;
 						}else
 						{	$hour++;
-							$xml .= "    <block at='{$hour}' blockoffset='-{$span}' blockspan='0' bgcolor='#FFC0FF' alpha='30%' name='";
-							$names = array();
-							foreach($users as $people)
-							{	$name = split( " ", $people['name'] );
-								array_push($names, $name[0]);
-							}
-							$xml .= implode( '\n', $names);
-
-							$xml .= "'/>\n";
+							$xml .= "    <block at='{$hour}' blockoffset='-{$span}' blockspan='0' bgcolor='#FFC0FF' alpha='30%' name=''/>\n";
 							$span = 1;
 						}
 					}

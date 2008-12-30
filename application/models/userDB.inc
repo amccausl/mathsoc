@@ -11,8 +11,7 @@ class UserDB
 	private $_db;
 
 	function __construct()
-	{	$config = new Zend_Config_Ini('../config/main.ini', 'user_management');
-		$this->_db = Zend_Db::factory($config->db);
+	{	$this->_db = Zend_Db::factory(Zend_Registry::getInstance()->get('config')->db);
 	}
 
 	function getPositions( $userId = "", $unit = "mathsoc" )
