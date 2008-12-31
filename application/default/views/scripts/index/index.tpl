@@ -1,8 +1,8 @@
 <div id='main-header'><h1></h1></div>
 {foreach from=$posts item=post}
 <div class="section">
-  <h2>{$post->title}</h2>
-      {$post->content}
+  <h2>{$post.title}</h2>
+      {$post.content}
 </div>
 {foreachelse}
 <div class="section">

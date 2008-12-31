@@ -14,7 +14,8 @@ class IndexController extends MathSoc_Controller_Action
 	}
 
 	public function indexAction()
-	{	$this->view->posts = $this->db->getAnnouncements();
+	{	$posts = $this->db->getAnnouncements();
+		$this->view->posts = $posts;
 	}
 }
 

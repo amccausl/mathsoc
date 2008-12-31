@@ -32,7 +32,8 @@ class AnnounceDB
 	{
 		$query = "SELECT event_date, title, content
 				  FROM announcement
-				  WHERE NOW() <= DATE_ADD(event_date,INTERVAL 30 DAY)
+				  WHERE (NOW() <= DATE_ADD(event_date,INTERVAL 1 DAY)
+					AND DATE_SUB(event_date, INTERVAL 30 DAY) <= NOW())
 					OR event_date IS NULL
 				  ORDER BY event_date ASC";
 
