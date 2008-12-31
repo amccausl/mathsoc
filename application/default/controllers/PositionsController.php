@@ -28,8 +28,8 @@ class PositionsController extends MathSoc_Controller_Action
 	/** /positions/details/:name - display detailed information for a given position
 	 */
 	public function detailsAction()
-	{	// TODO: include position description, vacancies, how to apply, past holders?, 
-		$this->view->position = $this->db->getPosition( 'prez' );
+	{	$position = $this->db->getPosition( $this->_getParam('position') );
+		$this->view->position = $position;
 	}
 }
 

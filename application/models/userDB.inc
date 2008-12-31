@@ -15,16 +15,22 @@ class UserDB
 	}
 
 	function getPosition( $alias )
-	{	$query = "SELECT positions.alias, positions.name, positions.description, positions.desired AS number, positions.email, 
+	{	$query = "SELECT positions.alias, positions.name, positions.description, positions.desired AS number, positions.email, positions.default_email 
 				  FROM positions
 				  WHERE positions.unitId = 1
 					AND positions.alias = ?";
 
 		$position = $this->_db->fetchRow( $query, $alias );
 
+		if( empty( $position ) )
+		{	return $position;
+		}
+
 		// This works because we restrict it to unit 1 (mathsoc)
 		if( $position['email'] )
 		{	$position['email'] = $position['alias'] . '@mathsoc.uwaterloo.ca';
+		}else
+		{	unset( $position['email'] );
 		}
 
 		$query = "SELECT holders.term,
@@ -45,7 +51,8 @@ class UserDB
 		$terms = array();
 
 		foreach( $results as $result )
-		{	$users = array();
+		{	$current = array();
+			$users = array();
 
 			$names = split(',', $result['name']);
 			$include_emails = split(',', $result['include_email']);
@@ -53,37 +60,31 @@ class UserDB
 
 			for( $i = 0; $i < count( $names ); $i++ )
 			{	if( $include_emails == 1 )
-				{	array_push( $users, array("name" => $names[$i], "email" => $emails[$i]) );
+				{	array_push( $current, array("name" => $names[$i], "email" => $emails[$i]) );
 				}else
-				{	array_push( $users, array("name" => $names[$i]) );
+				{	array_push( $current, array("name" => $names[$i]) );
 				}
+				array_push( $users, $names[$i] );
 			}
 
 			$terms[$result['term']] = $users;
 
 			if( $result['term'] == $result['current_term'] )
-			{	$position['current'] = $users;
+			{	$position['current'] = $current;
+				$position['current_count'] = count( $users );
 			}
+		}
+
+		if( !isset( $position['number'] ) )
+		{	$position['number'] = 1;
+		}
+		if( !isset( $position['current_count'] ) )
+		{	$position['current_count'] = 0;
 		}
 
 		$position['holders'] = $terms;
 
-		print_r( $position );
-
-		$position = array(
-			"alias" => "prez",
-			"name" => "president",
-			"number" => 1,
-			"email" => prez@mathsoc.uwaterloo.ca,
-			"description" => "prez rocks",
-			"current" => array(array("name" => "Chris Neal", "email" => "cneal@uwaterloo.ca")),
-			"holders" => array(
-				"Fall 2008" => array(array("name" => "Alex McCausland", "email" => "amccausl@uwaterloo.ca" ) ),
-				"Spring 2008" => array(array("name" => "Clare Park", "email" => "s9park@uwaterloo.ca" ) )
-				)
-			);
-
-		print_r( $position );
+		return $position;
 	}
 
 	function getPositions( $userId = "", $unit = "mathsoc" )
