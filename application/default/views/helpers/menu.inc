@@ -114,6 +114,9 @@ function getMenu( $request = null )
 			"title"	=> "<i>math</i><b>NEWS</b>",
 			"link"	=> "http://mathnews.uwaterloo.ca"),
 		array(
+			"title"	=> "WIM Undergrad Committee",
+			"link"	=> "http://www.student.math.uwaterloo.ca/~wimugrad"),
+		array(
 			"title"	=> "Math Grad Committee",
 			"link"	=> "http://www.student.math.uwaterloo.ca/"))),
 	array(

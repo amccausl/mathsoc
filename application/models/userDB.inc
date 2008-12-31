@@ -14,6 +14,78 @@ class UserDB
 	{	$this->_db = Zend_Db::factory(Zend_Registry::getInstance()->get('config')->db);
 	}
 
+	function getPosition( $alias )
+	{	$query = "SELECT positions.alias, positions.name, positions.description, positions.desired AS number, positions.email, 
+				  FROM positions
+				  WHERE positions.unitId = 1
+					AND positions.alias = ?";
+
+		$position = $this->_db->fetchRow( $query, $alias );
+
+		// This works because we restrict it to unit 1 (mathsoc)
+		if( $position['email'] )
+		{	$position['email'] = $position['alias'] . '@mathsoc.uwaterloo.ca';
+		}
+
+		$query = "SELECT holders.term,
+						GROUP_CONCAT(volunteers.name SEPARATOR ',') AS name,
+						GROUP_CONCAT(holders.email SEPARATOR ',') AS include_email,
+						GROUP_CONCAT(user_emails.email SEPARATOR ',') AS email,
+						terms.current_term
+				  FROM holders, user_emails, volunteers, terms
+				  WHERE holders.unitId = 1
+					AND holders.position = ?
+					AND holders.userId = user_emails.userId
+					AND holders.userId = volunteers.userId
+					AND holders.term > (terms.last_term - 30)
+				  GROUP BY holders.term
+				  ORDER BY holders.term DESC";
+		$results = $this->_db->fetchAll($query, $alias);
+
+		$terms = array();
+
+		foreach( $results as $result )
+		{	$users = array();
+
+			$names = split(',', $result['name']);
+			$include_emails = split(',', $result['include_email']);
+			$emails = split(',', $result['email']);
+
+			for( $i = 0; $i < count( $names ); $i++ )
+			{	if( $include_emails == 1 )
+				{	array_push( $users, array("name" => $names[$i], "email" => $emails[$i]) );
+				}else
+				{	array_push( $users, array("name" => $names[$i]) );
+				}
+			}
+
+			$terms[$result['term']] = $users;
+
+			if( $result['term'] == $result['current_term'] )
+			{	$position['current'] = $users;
+			}
+		}
+
+		$position['holders'] = $terms;
+
+		print_r( $position );
+
+		$position = array(
+			"alias" => "prez",
+			"name" => "president",
+			"number" => 1,
+			"email" => prez@mathsoc.uwaterloo.ca,
+			"description" => "prez rocks",
+			"current" => array(array("name" => "Chris Neal", "email" => "cneal@uwaterloo.ca")),
+			"holders" => array(
+				"Fall 2008" => array(array("name" => "Alex McCausland", "email" => "amccausl@uwaterloo.ca" ) ),
+				"Spring 2008" => array(array("name" => "Clare Park", "email" => "s9park@uwaterloo.ca" ) )
+				)
+			);
+
+		print_r( $position );
+	}
+
 	function getPositions( $userId = "", $unit = "mathsoc" )
 	{
 		if( $userId != "" )
