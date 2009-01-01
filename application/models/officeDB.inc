@@ -19,6 +19,40 @@ class OfficeDB
 	{	$this->_db = Zend_Db::factory(Zend_Registry::getInstance()->get('config')->db);
 	}
 
+	/** getHours - return the hours held by a given user for this term
+	 */
+	function getHours( $userId, $term = null )
+	{
+		if(!$term)
+	 	{	$query = "SELECT h.hourId, h.day, h.start, h.duration
+					  FROM office_hours h, office_workers w, terms t
+					  WHERE h.hourId = w.hourId
+						AND w.term = t.current_term
+						AND userId = ?
+					  ORDER BY h.day, h.hourId";
+            $result = $this->_db->fetchAll( $query, $userId );
+		}else
+		{	//TODO: add case
+			return;
+		}
+
+		$response = array();
+		$days = array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday");
+		foreach( $result as $row )
+		{
+			if( !isset( $response[$days[$row['day']]] ) )
+				$response[$days[$row['day']]] = array();
+
+			// TODO determine display hour
+			$hour = $row['start'];
+
+			$response[$days[$row['day']]][$row['hourId']] = $hour;
+		}
+
+		print_r( $response );
+		return $response;
+	}
+
 	/** getEmails - function for office managers to get workers email addresses
 	*
 	* @param	term	the term for which you want office worker emails
@@ -107,7 +141,7 @@ class OfficeDB
 		return $return;
 	}
 	
-	/** TODO signup - Signup a user to a given hour
+	/** signup - Signup a user to a given hour
 	 *
 	 * This function assumes the user is already a volunteer, this check should
 	 * happen on the front end.
@@ -116,72 +150,47 @@ class OfficeDB
 	 * @param	hour	
 	 * @return		True if the operation was successful, false otherwise
 	 */
-	function signup($user, $hour)
+	function signup($userId, $hourId)
 	{
+		// Check that the user exists in the system
+		$query = "select userId from volunteers where userId = ?";
+		if( !$this->_db->fetchOne($query, $userId) )
+		{
+			require_once( 'userDB.inc' );
+
+			// Ensure the user exists in the volunteers table
+			$user = array( "userId" => $userId );
+			$this->_db->insert('users', $user);
+
+			$lookup = UserDB::lookup($userId);
+			$user['name'] = $lookup['name'];
+
+			$this->_db->insert('volunteers', $user);
+		}
+	
 		// Create an array to be entered as a signup
-		$signup = array();
-		$signup['term'] = current_term();
-		
-		// Determine which user is signing up
-		if(!isset($user['id']))
-		{	$user['id'] = $_SESSION['username'];
-		}
-		if(!isset($user['id']))
-		{	return false;
-		}
-		
-		//check if user is in resource list table
-		$query = "SELECT id FROM resourcelist WHERE userid='{$user['id']}'";
-		if( !( $result = @ mysql_query( $query, $this->connection ) ) )
-		{	
-			// There has been a database error
+		$signup = array(
+			'term'	=> new Zend_Db_Expr('CONCAT((YEAR(CURDATE()) - 1900), FLOOR((MONTH(CURDATE()) - 1) / 4) * 4 + 1)'),
+			'userId'=> $userId,
+			'hourId'=> $hourId
+		);
+
+		try {
+			return $this->_db->insert('office_workers', $signup);
+		} catch (Exception $e) {
 			return false;
-
-		}elseif( mysql_num_rows( $result ) == 1 )
-		{
-			// The user has volunteered before and is known
-			$row = mysql_fetch_array( $result );
-			$signup['userId'] = $row[0];
-
-		}else
-		{
-			// The user is not yet known, must insert entry into resourcelist
-			$insert = array();
-			$insert['userid'] = $user['id'];
-			$insert['name'] = $user['name'];
-			
-			// Add user to the system
-			$this->insert( "resourcelist", $insert );
-
-			// Retrieve the new users key from the database
-			if( !( $result = @ mysql_query( $query, $this->connection ) ) )
-			{	return false;
-			}elseif( mysql_num_rows( $result ) != 1 )
-			{	return false;
-			}elseif( $row = mysql_fetch_array( $result ) )
-			{	$signup['userId'] = $row[0];
-			}else
-			{	return false;
-			}
 		}
+	}
 
-		// Determine which hour the user is signing up for
-		if( isset( $hour['id'] ) )
-		{	$signup['hourId'] = $hour['id'];
-		}else
-		{	$query = "SELECT hourId FROM office_hours WHERE day = '{$hour['day']}' AND start = '{$hour['time']}:00'";
-			if( !( $result = @ mysql_query( $query, $this->connection ) ) )
-			{	return false;
-			}elseif( mysql_num_rows( $result ) != 1 )
-			{	return false;
-			}elseif( $row = mysql_fetch_array( $result ) )
-			{	$signup['hourId'] = $row[0];
-			}else
-			{	return false;
-			}
-		}
-
-		// Signup the office worker
-		return $this->insert( "office_workers", $signup );
+	function dropHour( $userId, $hourId )
+	{
+		$where[] = "userId = '$userId'";
+		$where[] = "hourId = '$hourId'";
+		$where[] = "term = (SELECT current_term FROM terms)";
+	
+		$n = $this->_db->delete( 'office_workers', $where );
+		if( $n == 1 )
+			return true;
+		return false;
 	}
 }

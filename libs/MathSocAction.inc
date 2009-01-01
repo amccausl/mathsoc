@@ -10,7 +10,10 @@ require_once 'KiwiId.php';
  */
 
 class MathSoc_Controller_Action extends Zend_Controller_Action
-{	public function init()
+{
+	private $loginUrl = "https://strobe.uwaterloo.ca/cpadev/kiwi/user/login/";
+
+	public function init()
 	{	parent::init();
 
 		// Set the baseUrl as a variable that can be used by the view
@@ -20,14 +23,9 @@ class MathSoc_Controller_Action extends Zend_Controller_Action
 		require_once( '../application/default/views/helpers/menu.inc' );
 		$this->view->menu = getMenu($this->getRequest());
 	}
-}
 
-class MathSocAuth_Controller_Action extends MathSoc_Controller_Action
-{
-	private $loginUrl = "https://strobe.uwaterloo.ca/cpadev/kiwi/user/login/";
-
-	public function init()
-	{	parent::init();
+	protected function secure()
+	{
 		$referer = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
 
 		// If the user is returning from Kiwi, authenticate them
@@ -64,10 +62,13 @@ class MathSocAuth_Controller_Action extends MathSoc_Controller_Action
 			}
 		}
 	}
+}
 
-	function preDispatch()
-	{
+class MathSocAuth_Controller_Action extends MathSoc_Controller_Action
+{
+	public function init()
+	{	parent::init();
+		$this->secure();
 	}
-
 }
 
