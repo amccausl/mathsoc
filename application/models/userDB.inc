@@ -123,13 +123,12 @@ class UserDB
 						p.alias,
 						p.name,
 						p.email,
-						(SELECT GROUP_CONCAT(volunteers.name SEPARATOR ',') AS holders_name,
-								GROUP_CONCAT(volunteers.userId SEPARATOR ',') AS holders_id
+						(SELECT GROUP_CONCAT(CONCAT_WS(':',volunteers.userId,volunteers.name) SEPARATOR ';')
 						 FROM volunteers, holders, terms
 						 WHERE terms.current_term = holders.term
 							AND holders.userId = volunteers.userId
 							AND p.alias = holders.position
-						 GROUP BY holders.position)
+						 GROUP BY holders.position) AS holders
 				  FROM positions p
 				  WHERE p.category != 'LIST'
 				  ORDER BY p.name";
@@ -141,6 +140,16 @@ class UserDB
 		{	if( !isset($return[$row['category']]) )
 				$return[$row['category']] = array();
 
+			$holders = array();
+			if( $row['holders'] )
+			{	$temp = explode(";", $row['holders']);
+				foreach( $temp as $entry )
+				{	$temp2 = explode(":", $entry);
+					$holders[$temp2[0]] = $temp2[1];
+				}
+			}
+
+			$row['holders'] = $holders;
 			array_push( $return[$row['category']], $row );
 		}
 

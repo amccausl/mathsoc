@@ -13,8 +13,8 @@ class UserController extends MathSocAuth_Controller_Action
 	public function logoutAction()
 	{	// Remove the authentication session information
 		Zend_Auth::getInstance()->clearIdentity();
-		// TODO: forward to kiwi logout url
-		$this->_redirect('/');
+		$this->_redirect('https://strobe.uwaterloo.ca/cpadev/kiwi/user/out?__kiwi_referer__='
+								. $_SERVER["HTTP_REFERER"]);
 	}
 
 	public function profileAction()

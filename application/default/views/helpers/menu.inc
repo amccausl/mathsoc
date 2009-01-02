@@ -10,7 +10,7 @@ function getMenu( $request = null )
 	$menu = array(
 	array(
 		"title"	=> "Announcements",
-		"link"	=> $request->getBaseUrl() . "",
+		"link"	=> $request->getBaseUrl() . "/",
 		"sub"	=> array(
 		array(
 			"title" => "Events Calendar",
@@ -58,12 +58,12 @@ function getMenu( $request = null )
 		array(
 			"title" => "School Committees",
 			"link" => $request->getBaseUrl() . "/Academics/Committees"),
+		//array(
+		//	"title" => "Talks",
+		//	"link" => $request->getBaseUrl() . "/Academics/Talks"),
 		array(
 			"title" => "Representation",
-			"link" => $request->getBaseUrl() . "/Academics/Representation"),
-		array(
-			"title" => "Talks",
-			"link" => $request->getBaseUrl() . "/Academics/Talks"))),
+			"link" => $request->getBaseUrl() . "/Academics/Representation"))),
 	array(
 		"title"	=> "Council",
 		"link"	=> $request->getBaseUrl() . "/council",
@@ -125,6 +125,14 @@ function getMenu( $request = null )
 		"controller" => "index",
 		"action" => "index",
 		"link"	=> $request->getBaseUrl() . "/Contact"));
+
+	if( Zend_Auth::getInstance()->hasIdentity() )
+	{	array_push( $menu, array(
+				"title"	=> "Logout",
+				"link"	=> $request->getBaseUrl() . "/User/Logout"
+				) );
+			
+	}
 
 	$requestUrl = $request->getBaseUrl() . "/";
 	if( isset( $request ) )

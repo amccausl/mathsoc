@@ -1,21 +1,19 @@
 <div class="section">
   <h3>Executive</h3>
-  <p>The Executives of the society represent the interests of math students.  They are elected for winter and fall or summer of a calendar year.</p>
+  <p>The Executives of the society are elected by math students and entrusted to run the society on their behalf.  They are elected for either the winter and fall or summer terms of a calendar year.</p>
   <h4>Winter/Fall Executives</h4>
   <ul>
 {foreach from=$EXC item=position}
-	{implode subject=position.holders glue=', ' assign=holders}
-    <li><a href="{$baseUrl}/positions/{$position.alias}">{$position.name}</a> : {$holders}</li>
- {foreach from=$position.holders item=holder}{$holder.name} - {mailto address=$holder.email}{/foreach}
+    <li><a href="{$baseUrl}/positions/details?position={$position.alias}">{$position.name}</a> : 
+  {foreach from=$position.holders item=holder}{$holder}{foreachelse}Position Vacant{/foreach}</li>
 {/foreach}
   </ul>
 
   <h4>Summer Executives</h4>
   <ul>
 {foreach from=$OEX item=position}
-	{implode subject=position.holders glue=', ' assign=holders}
-    <li><a href="{$baseUrl}/positions/{$position.alias}">{$position.name}</a> : {$holders}</li>
- {foreach from=$position.holders item=holder}{$holder.name} - {mailto address=$holder.email}{/foreach}
+    <li><a href="{$baseUrl}/positions/details?position={$position.alias}">{$position.name}</a> : 
+  {foreach from=$position.holders item=holder}{$holder}{foreachelse}Position Vacant{/foreach}</li>
 {/foreach}
   </ul>
 
@@ -23,9 +21,8 @@
   <p></p>
   <ul>
 {foreach from=$DIR item=position}
-	{implode subject=position.holders glue=', ' assign=holders}
-    <li><a href="{$baseUrl}/positions/{$position.alias}">{$position.name}</a> : {$holders}</li>
- {foreach from=$position.holders item=holder}{$holder.name} - {mailto address=$holder.email}{/foreach}
+    <li><a href="{$baseUrl}/positions/details?position={$position.alias}">{$position.name}</a> : 
+  {foreach from=$position.holders item=holder}{$holder}{foreachelse}Position Vacant{/foreach}</li>
 {/foreach}
   </ul>
 
@@ -33,9 +30,8 @@
   <p></p>
   <ul>
 {foreach from=$REP item=position}
-	{implode subject=position.holders glue=', ' assign=holders}
-    <li><a href="{$baseUrl}/positions/{$position.alias}">{$position.name}</a> : {$holders}</li>
- {foreach from=$position.holders item=holder}{$holder.name} - {mailto address=$holder.email}{/foreach}
+    <li><a href="{$baseUrl}/positions/details?position={$position.alias}">{$position.name}</a> : 
+  {foreach from=$position.holders item=holder}{$holder}{foreachelse}Position Vacant{/foreach}</li>
 {/foreach}
   </ul>
  
@@ -43,22 +39,18 @@
   <p></p>
   <ul>
 {foreach from=$APP item=position}
-	{implode subject=position.holders glue=', ' assign=holders}
-    <li><a href="{$baseUrl}/positions/{$position.alias}">{$position.name}</a> : {$holders}</li>
- {foreach from=$position.holders item=holder}{$holder.name} - {mailto address=$holder.email}{/foreach}
+    <li><a href="{$baseUrl}/positions/details?position={$position.alias}">{$position.name}</a> : 
+  {foreach from=$position.holders item=holder}{$holder}{foreachelse}Position Vacant{/foreach}</li>
 {/foreach}
   </ul>
  
-</div>
   <h3>Affiliates</h3>
   <p></p>
   <ul>
 {foreach from=$AFF item=position}
-	{implode subject=position.holders glue=', ' assign=holders}
-    <li><a href="{$baseUrl}/positions/{$position.alias}">{$position.name}</a> : {$holders}</li>
- {foreach from=$position.holders item=holder}{$holder.name} - {mailto address=$holder.email}{/foreach}
+    <li><a href="{$baseUrl}/positions/details?position={$position.alias}">{$position.name}</a> : 
+  {foreach from=$position.holders item=holder}{$holder}{foreachelse}Position Vacant{/foreach}</li>
 {/foreach}
   </ul>
  
-</div>
 </div>
