@@ -12,7 +12,7 @@ CREATE TABLE office_workers (
   term     SMALLINT  NOT NULL,
   userId   CHAR(8)   NOT NULL,
   hourId   SMALLINT  NOT NULL,
-  added    TIMESTAMP,
+  added    TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP,
 
   PRIMARY KEY (term, userId, hourId),
   FOREIGN KEY (hourId) REFERENCES office_hours(hourId)

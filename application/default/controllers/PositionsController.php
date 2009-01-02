@@ -18,11 +18,11 @@ class PositionsController extends MathSoc_Controller_Action
 	 *
 	 */
 	public function indexAction()
-	{	// Display user information
+	{	// Lookup current positions from database
+		$positions = $this->db->getPositionsByCategory();
 
-		// TODO: include switch statement for name = directors, councillors, exec, available, filled, or all
-		// TODO: grab current positions holders from database, add to view.
-		$this->view->positions = array( array( 'name' => 'hello', 'holders' => array('steve', 'bill')));
+		// Add positions to the view
+		$this->view->assign($positions);
 	}
 
 	/** /positions/details/:name - display detailed information for a given position

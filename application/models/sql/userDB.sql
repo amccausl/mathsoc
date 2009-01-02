@@ -135,8 +135,9 @@ INSERT INTO `positions` (`unitId`,`name`,`alias`,`category`,`description`) VALUE
 
 CREATE TABLE `users` (
   userId	CHAR(8)		NOT NULL,
-  password	VARCHAR(40)	NOT NULL,
+  password	VARCHAR(40),
   email		VARCHAR(255),
+  added		DATETIME	NOT NULL	DEFAULT CURRENT_TIMESTAMP,
 
   PRIMARY KEY( userId )
 )ENGINE=INNODB;

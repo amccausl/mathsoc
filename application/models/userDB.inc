@@ -118,6 +118,35 @@ class UserDB
 		return $this->_db->fetchAll($query);
 	}
 
+	function getPositionsByCategory()
+	{	$query = "SELECT p.category,
+						p.alias,
+						p.name,
+						p.email,
+						(SELECT GROUP_CONCAT(volunteers.name SEPARATOR ',') AS holders_name,
+								GROUP_CONCAT(volunteers.userId SEPARATOR ',') AS holders_id
+						 FROM volunteers, holders, terms
+						 WHERE terms.current_term = holders.term
+							AND holders.userId = volunteers.userId
+							AND p.alias = holders.position
+						 GROUP BY holders.position)
+				  FROM positions p
+				  WHERE p.category != 'LIST'
+				  ORDER BY p.name";
+		$result = $this->_db->fetchAll($query);
+
+		$return = array();
+
+		foreach( $result as $row )
+		{	if( !isset($return[$row['category']]) )
+				$return[$row['category']] = array();
+
+			array_push( $return[$row['category']], $row );
+		}
+
+		return $return;
+	}
+
 	// authenticate uses uwdir and mathsocs database to authenticate users
 	//$_SESSION['authenticated'] - a BOOLEAN
 	//$_SESSION['username'] - the username of the authenticated user

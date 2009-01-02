@@ -46,70 +46,46 @@ class LockerDB
 	/** signup - Enters the given info as the owner of the given locker
 	 *
 	 */
-/*
 	function signup( $lockerNum, $info )
 	{
-		// Search for locker, if holder, expire_lockers()
+		// TODO: check that the system is currently active
 
+		// Determine if the user can claim the locker
+		$query = "SELECT current_userId FROM lockers WHERE id = ?";
+		$holder = $this->_db->fetchOne($query, $lockerNum);
+
+		if( $holder && $holder != $info['user'] )
+			return false;
+
+		// Check that the user doesn't have another locker
+		$query = "SELECT id FROM lockers WHERE current_userId = ?";
+		$locker = $this->_db->fetchOne($query, $info['user']);
+
+		if( $locker && $locker != $lockerNum )
+		{	$n = $this->_db->update('lockers', array("current_userId" => "", "last_userId" => $info['user']), "id = {$locker}");
+			if( $n != 1 )
+				return false;
+		}
+
+		$data = array();
+
+		$data['current_userId'] = $info['user'];
+
+		// Set expiry date for the locker
 		$mysql_format = "Y-m-d H:i:s";
 		$expires = date( $mysql_format, $info['expires'] );
+		$data['expires'] = date( $mysql_format, locker_expires() );
 
-		$query = "UPDATE lockers\n";
-		$query .= "SET current_userId = '{$info['user']}'";
 		if( $info['phone'] )
-			$query .= ", current_phone = '{$info['phone']}'";
-		else
-			$query .= ", current_phone = NULL";
+			$data['current_phone'] = $info['phone'];
 		if( $info['combo'] )
-			$query .= ", combo = '{$info['combo']}'";
-		else
-			$query .= ", combo = NULL";
-		if( $info['expires'] )
-			$query .= ", expires = '{$expires}'";
-		else
-			$query .= ", expires = NULL";
-				
-		$query .= "\nWHERE id = '{$lockerNum}'";
+			$data['current_combo'] = $info['combo'];
 
-		if( !( $result = @ mysql_query( $query, $this->connection ) ) )
-		{	return false;
-		}
-		return true;
-	}
+		$n = $this->_db->update('lockers', $data, "id = {$lockerNum}");
 
-	function renew( $id )
-	{	$mysql_format = "Y-m-d H:i:s";
-		$data = array( "expires" => date( $mysql_format, locker_expires() ) );
-		if( $id > 0 )
-		{	return $this->_db->update('lockers', $data, "id = {$id}" );
-		}else
-		{	return $this->_db->update('lockers', $data, "current_userId = {$id}" );
-		}
-	}
-
-	/**
-		takes in an info array with $info['phone'] and $info['combo']and a locker id $id
-		and updates the database at locker number $id with the phone and combination data
-	*/
-/*
-	function update($id , $info )
-	{	
-		$info['phone'] = mysql_real_escape_string($info['phone']);
-		$info['combo'] = mysql_real_escape_string($info['combo']);
-	    preg_match_all("/[0-9]+/", $info['phone'], $phoneNums);
-		$info['phone'] = implode($phoneNums[0]);
-		$query = "UPDATE lockers SET current_phone = '{$info['phone']}', combo = '{$info['combo']}' WHERE id = {$id}";
-		$ret_val = mysql_query($query, $this->connection);
-		return $ret_val;
-	}
-
-	function free( $lockerId )
-	{	// Free up a locker for use by other users
-		$query = "UPDATE lockers SET current_userId = NULL, current_phone = NULL, combo = NULL, expires = NULL WHERE id = {$lockerId}";
-		if( !( $result = @ mysql_query( $query, $this->connection ) ) )
-		{	return false;
-		}
-		return true;
+		if( $n == 1 )
+			return true;
+		return false;
 	}
 
 /*** OFFICE MANAGER FUNCTIONS ***/
