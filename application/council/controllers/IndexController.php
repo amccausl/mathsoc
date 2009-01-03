@@ -1,6 +1,7 @@
 <?php
 
 require_once 'MathSocAction.inc';
+require_once 'userDB.inc';
 
 class Council_IndexController extends MathSoc_Controller_Action
 {

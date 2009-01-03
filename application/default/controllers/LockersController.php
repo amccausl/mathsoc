@@ -4,7 +4,7 @@ require_once 'MathSocAction.inc';
 require_once 'lockerDB.inc';
 
 //class LockersController extends MathSocAuth_Controller_Action
-class LockersController extends MathSocAuth_Controller_Action
+class LockersController extends MathSoc_Controller_Action
 {
 	private $db;
 
@@ -14,7 +14,6 @@ class LockersController extends MathSocAuth_Controller_Action
 
 		parent::init();
 
-		$this->view->username = Zend_Auth::getInstance()->getIdentity();
 		$this->db = new LockerDB();
 
 		$menu = $this->view->menu;
@@ -139,6 +138,8 @@ class LockersController extends MathSocAuth_Controller_Action
 	 */
 	public function signupAction()
 	{
+		$this->secure();
+		$this->view->username = Zend_Auth::getInstance()->getIdentity();
 		require_once( "../application/default/views/helpers/form.inc" );
 
 		// Initialize default form values
@@ -165,11 +166,7 @@ class LockersController extends MathSocAuth_Controller_Action
 			{	// no errors, done with SmartyValidate
 				//SmartyValidate::disconnect();
 
-				if( $_POST['renew'] )
-				{
-				}elseif( $_POST['update'] )
-				{
-				}elseif( $_POST['change'] )
+				if( $_POST['submit'] )
 				{
 				}
 

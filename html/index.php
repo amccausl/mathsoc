@@ -70,6 +70,9 @@ $router->addRoute('council-policies',
 $router->addRoute('council-policies1',
 	new Zend_Controller_Router_Route('council/policies/diff/:page/:version1/:version2',
 		array('module' => 'council', 'controller' => 'policies', 'action' => 'diff')));
+$router->addRoute('council-bylaws',
+	new Zend_Controller_Router_Route('council/bylaws/:page',
+		array('module' => 'council', 'controller' => 'bylaws', 'action' => 'display')));
 
 /*
 $router->addRoute('council',

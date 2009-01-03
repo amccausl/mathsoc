@@ -7,4 +7,6 @@
   <p>The <a href="http://mathnews.uwaterloo.ca"><i>math</i><b>NEWS</b> committee</a> produces issues of last bastion of erudite thought known as <i>math</i><b>NEWS</b> biweekly.</p>
 
   <p>The <a href="http://www.student.math.uwaterloo.ca/~wimugrad">WIMUgrad Committee</a> is the student chapter of the Women In Math faculty committee.  It's run by the WIMUgrad chair and they run events to help women in the math faculty.</p>
+
+  <p>The <a href="http://www.mgc.uwaterloo.ca/">Math Graduation Committee</a> organize a yearbook and ball each year for the graduating class.</p>
 </div>

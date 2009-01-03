@@ -23,6 +23,7 @@ class UserController extends MathSocAuth_Controller_Action
 		$db = new UserDB();
 		$user = $db->getProfile( $this->_getParam('username') );
 
+		print_r( $user );
 		$this->view->user = $user;
 	}
 }

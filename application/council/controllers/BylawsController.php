@@ -79,11 +79,8 @@ class Council_BylawsController extends MathSoc_Controller_Action
 	// Add a new version for a given bylaw
 	public function updateAction()
 	{
+		$this->secure();
 		$auth = Zend_Auth::getInstance();
 		print( "auth = " . $auth->hasIdentity() );
-
-		if (!$auth->hasIdentity())
-		{	$this->_redirect('auth/login');
-		}
 	}
 }

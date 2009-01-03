@@ -161,21 +161,27 @@ class UserDB
 		$query = "SELECT *
 				  FROM volunteers_current
 				  WHERE positions IS NOT NULL OR office_worker IS NOT NULL
-				  ORDER BY volunteers.name";
-		$users = $this->_db->fetchAll($query);
+				  ORDER BY volunteers_current.name";
+		$result = $this->_db->fetchAll($query);
 
-		for( $i = 0; $i < count( $users ); $i++ )
+		$users = array();
+		foreach( $result as $row )
 		{
-			if( $users[$i]['positions'] )
-			{	$positions = explode( ";", $users[$i]['positions'] );
-				$users[$i]['positions'] = array();
+			$user = array(
+				"name"	=> $row['name'],
+				"positions" => array());
+
+			if( $row['positions'] )
+			{	$positions = explode( ";", $row['positions'] );
 				foreach( $positions as $position )
 				{	$position = explode( ":", $position );
-					$users[$i]['positions'][$position[0]] = $position[1];
+					$user['positions'][$position[0]] = $position[1];
 				}
 			}
-			if( $users[$i]['office_worker'] )
-				$users[$i]['positions']['office worker'] = "Office Worker";
+
+			if( $row['office_worker'] )
+				$user['positions']['office worker'] = "Office Worker";
+			$users[$row['userId']] = $user;
 		}
 
 		return $users;
@@ -276,9 +282,54 @@ class UserDB
 
 	function getProfile( $userId )
 	{
-		$user = self::lookup( $userId );
+		$user = array();
 
-		// TODO: lookup user from local database to return local data
+		$query = "SELECT *
+				  FROM volunteers_current v
+				  WHERE v.userId = ?";
+		$row = $this->_db->fetchRow( $query, $userId );
+
+		$user['name'] = $row['name'];
+		$user['current'] = array();
+
+		if( $row['positions'] )
+		{	$positions = explode( ";", $row['positions'] );
+			foreach( $positions as $position )
+			{	$position = explode( ":", $position );
+				$user['current'][$position[0]] = $position[1];
+			}
+		}
+
+		if( $row['office_worker'] )
+			$user['current']['office worker'] = "Office Worker";
+
+		$query = "SELECT holders.term,
+						GROUP_CONCAT(positions.alias SEPARATOR ';') AS alias,
+						GROUP_CONCAT(positions.name SEPARAtor ';') AS name
+				  FROM holders, positions, terms
+				  WHERE holders.unitId = 1
+					AND holders.position = positions.alias
+					AND holders.userId = ?
+					AND holders.term > (terms.last_term - 30)
+				  GROUP BY holders.term
+				  ORDER BY holders.term DESC";
+		$results = $this->_db->fetchAll($query, $userId);
+
+		$terms = array();
+
+		foreach( $results as $row )
+		{	$positions = array();
+
+			$aliases = explode(';', $row['alias']);
+			$names = explode(';', $row['name']);
+
+			for( $i = 0; $i < count( $names ); $i++ )
+			{	$positions[$aliases[$i]] = $names[$i];
+			}
+
+			$terms[$row['term']] = $positions;
+		}
+		$user['terms'] = $terms;
 
 		return $user;
 	}

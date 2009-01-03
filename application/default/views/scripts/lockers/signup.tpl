@@ -9,7 +9,7 @@
 <fieldset>
   <legend>Locker Information</legend>
   <label for='locker_id'>Locker Number:</label>
-    <input name='locker_id' type='text' length='4' value='{$locker_id}' /><br/>
+    <input name='locker_id' type='text' length='4' value='{$locker_id}' /> <a href="{$baseUrl}/lockers/map">Pick a Locker</a><br/>
   <label for='username'>Username:</label>
     <input name='username' type='text' length='8' disabled='true' value='{$username}' /><br/>
   <label for='email'>Email:</label>
@@ -22,9 +22,7 @@
     <input name='locker_expires' type='text' length='15' disabled='true' value='{$locker_expires}' /><br/>
 </fieldset>
 <div class='buttonrow'>
-  <input name='renew' type='submit' value='Renew Locker' class='button'/> 
-  <input name='update' type='submit' value='Update Information' class='button'/> 
-  <input name='change' type='submit' value='Change Locker' class='button'/> 
+  <input name='submit' type='submit' value='Sign up For Locker' class='button'/> 
 </div>
 </form>
 </div>

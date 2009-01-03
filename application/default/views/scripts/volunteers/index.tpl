@@ -6,8 +6,10 @@
 
   <ul>
 {foreach from=$volunteers key=userId item=user}
-{implode subject=$user.positions glue=", " assign=$positions}
-    <li><a href="{$baseUrl}/user/profile/?username={$userId}">{$user.name}</a> - {$position}</li>
+{implode subject=$user.positions glue=", " assign=positions}
+    <li><a href="{$baseUrl}/user/profile/?username={$userId}">{$user.name}</a> - {$positions}</li>
 {/foreach}
   </ul>
+
+  <p>If you would be interested in helping out too, you can <a href="{$baseUrl}/Volunteers/GetInvolved">get more information about volunteering</a>.</p>
 </div>

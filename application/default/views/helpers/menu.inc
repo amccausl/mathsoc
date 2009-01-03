@@ -75,7 +75,10 @@ function getMenu( $request = null )
 			"title" => "Meeting Minutes",
 			"link" => $request->getBaseUrl() . "/council/minutes"),
 		array(
-			"title" => "Bylaws & Policies",
+			"title" => "Bylaws",
+			"link" => $request->getBaseUrl() . "/council/bylaws"),
+		array(
+			"title" => "Policies",
 			"link" => $request->getBaseUrl() . "/council/policies"),
 		array(
 			"title" => "Available Positions",
@@ -87,6 +90,9 @@ function getMenu( $request = null )
 		"title"	=> "Clubs",
 		"link"	=> $request->getBaseUrl() .  "/Clubs",
 		"sub"	=> array(
+		array(
+			"title"	=> "F.A.Q.",
+			"link"	=> $request->getBaseUrl() . "/Clubs/FAQ"),
 		array(
 			"title"	=> "Join a Club",
 			"link"	=> $request->getBaseUrl() . "/Clubs/join"))),
@@ -118,7 +124,7 @@ function getMenu( $request = null )
 			"link"	=> "http://www.student.math.uwaterloo.ca/~wimugrad"),
 		array(
 			"title"	=> "Math Grad Committee",
-			"link"	=> "http://www.student.math.uwaterloo.ca/"))),
+			"link"	=> "http://www.mgc.uwaterloo.ca/"))),
 	array(
 		"title"	=> "Contact Info",
 		"module" => "default",
