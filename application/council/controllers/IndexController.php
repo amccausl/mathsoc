@@ -23,24 +23,14 @@ class Council_IndexController extends MathSoc_Controller_Action
 
 		// User must be authenticated to see any of these pages
 		$this->view->baseUrl = $this->_request->getBaseUrl();
-		$this->view->user = Zend_Auth::getInstance()->getIdentity();
+		$this->db = new UserDB();
 		$this->initView();
 	}
 
-/*
-    function preDispatch()
-	{
-		$auth = Zend_Auth::getInstance();
-		print( "auth = " . $auth->hasIdentity() );
-
-		if (!$auth->hasIdentity())
-		{	$this->_redirect('auth/login');
-		}
-	}
-*/
-
 	public function indexAction()
 	{
+		$positions = $this->db->getPositionsBycategory();
+		$this->view->assign($positions);
 	}
 
 	public function minutesAction()

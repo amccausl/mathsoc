@@ -1,3 +1,4 @@
+<div id='main-header'><h1></h1></div>
 <div class="section">
   <h2>{$user.name}</h2>
 {$user.profile|indent:4}

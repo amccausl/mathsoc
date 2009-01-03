@@ -277,3 +277,20 @@ UNION
   FROM holders, terms
   WHERE holders.term = terms.current_term
     AND holders.position = 'mail-members';
+
+CREATE VIEW volunteers_current AS
+  SELECT volunteers.userId,
+	volunteers.name,
+	(	SELECT GROUP_CONCAT(CONCAT_WS(':',positions.alias,positions.name) SEPARATOR ';')
+		FROM positions, holders
+		WHERE holders.term = terms.current_term
+			AND positions.alias = holders.position
+			AND holders.userId = volunteers.userId
+			GROUP BY volunteers.userId
+	) AS positions,
+	(	SELECT DISTINCT 1
+		FROM office_workers
+		WHERE term = terms.current_term
+			AND volunteers.userId = office_workers.userId
+	) AS office_worker
+  FROM volunteers, terms;

@@ -156,6 +156,31 @@ class UserDB
 		return $return;
 	}
 
+	public function getUsers()
+	{
+		$query = "SELECT *
+				  FROM volunteers_current
+				  WHERE positions IS NOT NULL OR office_worker IS NOT NULL
+				  ORDER BY volunteers.name";
+		$users = $this->_db->fetchAll($query);
+
+		for( $i = 0; $i < count( $users ); $i++ )
+		{
+			if( $users[$i]['positions'] )
+			{	$positions = explode( ";", $users[$i]['positions'] );
+				$users[$i]['positions'] = array();
+				foreach( $positions as $position )
+				{	$position = explode( ":", $position );
+					$users[$i]['positions'][$position[0]] = $position[1];
+				}
+			}
+			if( $users[$i]['office_worker'] )
+				$users[$i]['positions']['office worker'] = "Office Worker";
+		}
+
+		return $users;
+	}
+
 	// authenticate uses uwdir and mathsocs database to authenticate users
 	//$_SESSION['authenticated'] - a BOOLEAN
 	//$_SESSION['username'] - the username of the authenticated user

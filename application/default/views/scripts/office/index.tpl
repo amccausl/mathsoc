@@ -1,4 +1,4 @@
-<!--<div id='main-header'><h1></h1></div>-->
+<div id='main-header'><h1></h1></div>
 <div class="section">
   <p>
     MathSoc offers many handy services, both academic and recreational, out of our

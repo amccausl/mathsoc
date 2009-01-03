@@ -1,3 +1,4 @@
+<div id='main-header'><h1></h1></div>
 <div class="section">
   MathSoc's club listing:
   <ul>

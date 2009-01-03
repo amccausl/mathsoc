@@ -1,3 +1,4 @@
+<div id='main-header'><h1></h1></div>
 <div class="section">
   <p>Every undergrad student in math or computer science contributes $12.50 each term to the Mathematics Society.  This contribution allows us to provide many useful services to students of the faculty or other societies.  These services include:</p>
   <ul>

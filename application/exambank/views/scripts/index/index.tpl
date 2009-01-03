@@ -1,8 +1,8 @@
-  <div id='main-header'><h1></h1></div>
-  <div class="section">
-    <h2>Exambank</h2>
-    <form id='courses'>
-      <script language='Javascript' type='text/javascript'>
+<div id='main-header'><h1></h1></div>
+<div class="section">
+  <h2>Exambank</h2>
+  <form id='courses'>
+    <script language='Javascript' type='text/javascript'>
         // Create a new 'CourseSelector' object
         // Pass it the id of the form
         var selector = new CourseSelector('courses', '{$baseUrl}/exambank/courses');
@@ -21,12 +21,12 @@
         selector.makeTitleLine();
 
         document.write('</p>');
-      </script>
-    </form>
+    </script>
+  </form>
 
-    <iframe width='400' height='400' src='' id='sched' style='border:0px'></iframe>
+  <iframe width='400' height='400' src='' id='sched' style='border:0px'></iframe>
 
-    <script language='Javascript' type='text/javascript' >
+  <script language='Javascript' type='text/javascript' >
       // selector.onChange gets called whenever the course selection changes
       selector.onChange = function ( prefix, course )
       {ldelim}
@@ -37,5 +37,5 @@
 	      sched.src = '';
 	    {rdelim}
       {rdelim};
-    </script>
-  </div>
+  </script>
+</div>

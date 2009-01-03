@@ -1,3 +1,4 @@
+<div id='main-header'><h1></h1></div>
 <div class="section">
   <p>The C&amp;D offers a cheap food alternative on campus. They are located on the third floor of the MC right next to the Comfy Lounge. They take cash and they also have a debit machine.</p>
 

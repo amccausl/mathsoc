@@ -1,3 +1,4 @@
+<div id='main-header'><h1></h1></div>
 <div class="section">
   <p>MathSoc has many different volunteer opportunities available depending on what you're interested in doing and how much time you have to contribute.  Some of these are included below, ordered by time commitment.  Note that this is not a complete list, so if you don't see something that perks your interest, try emailing {mailto address="VPAS@mathsoc.uwaterloo.ca" encode="javascript_charcode"} or just drop by MC3039 and talk to one of the executive to learn about other positions.</p>
 
