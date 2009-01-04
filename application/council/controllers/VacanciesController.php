@@ -1,6 +1,7 @@
 <?php
 
 require_once 'MathSocAction.inc';
+require_once 'userDB.inc';
 
 class Council_VacanciesController extends MathSoc_Controller_Action
 {
@@ -17,6 +18,7 @@ class Council_VacanciesController extends MathSoc_Controller_Action
 	}
 
 	public function indexAction()
-	{
+	{	$positions = $this->db->getAvailablePositions();
+		$this->view->assign($positions);
 	}
 }

@@ -62,7 +62,7 @@ class LockerDB
 		$locker = $this->_db->fetchOne($query, $info['user']);
 
 		if( $locker && $locker != $lockerNum )
-		{	$n = $this->_db->update('lockers', array("current_userId" => "", "last_userId" => $info['user']), "id = {$locker}");
+		{	$n = $this->_db->update('lockers', array("current_userId" => new Zend_Db_Expr('NULL'), "last_userId" => $info['user']), "id = {$locker}");
 			if( $n != 1 )
 				return false;
 		}

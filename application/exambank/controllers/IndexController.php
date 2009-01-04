@@ -18,16 +18,7 @@ class Exambank_IndexController extends MathSocAuth_Controller_Action
 
 		$this->db = new ExamDB();
 	}
-/*
-    function preDispatch()
-	{
-		$auth = Zend_Auth::getInstance();
 
-		if (!$auth->hasIdentity())
-		{	$this->_redirect('auth/login');
-		}
-	}
-*/
 	// Browsing Functions
 	public function indexAction()
 	{	// List the existing exams
@@ -85,7 +76,8 @@ class Exambank_IndexController extends MathSocAuth_Controller_Action
 				header("Content-Length: ".strlen($buffer));
 				header("Content-Disposition: inline; filename={$exam['course']}-{$exam['term']}-{$exam['type']}{$exam['number']}_{$this->_getParam('type')}.{$ext}");
 
-				print( $buffer );
+				//print( $buffer );
+				readfile($filename);
 				exit;
 			}
 		}elseif( $this->_getParam('prefix') && $this->_getParam('number') )

@@ -156,6 +156,36 @@ class UserDB
 		return $return;
 	}
 
+	public function getAvailablePositions()
+	{	$query = "SELECT positions.category,
+						positions.alias,
+						positions.name,
+						positions.desired
+				  FROM positions
+				  WHERE positions.desired > 
+					( SELECT COUNT(holders.userId)
+					  FROM holders, terms
+					  WHERE holders.unitId = 1
+						AND holders.term = terms.current_term
+						AND holders.position = positions.alias
+					  GROUP BY holders.position
+					)
+					OR positions.desired IS NULL
+				  GROUP BY positions.alias
+				  ORDER BY positions.name";
+		$result = $this->_db->fetchAll($query);
+
+		$return = array();
+		foreach( $result as $row )
+		{	if( !isset($return[$row['category']]) )
+				$return[$row['category']] = array();
+
+			array_push( $return[$row['category']], $row );
+		}
+
+		return $return;
+	}
+
 	public function getUsers()
 	{
 		$query = "SELECT *

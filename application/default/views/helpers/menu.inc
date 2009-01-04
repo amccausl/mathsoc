@@ -55,9 +55,9 @@ function getMenu( $request = null )
 		"title"	=> "Academics",
 		"link"	=> $request->getBaseUrl() . "/Academics",
 		"sub"	=> array(
-		array(
-			"title" => "School Committees",
-			"link" => $request->getBaseUrl() . "/Academics/Committees"),
+		//array(
+		//	"title" => "School Committees",
+		//	"link" => $request->getBaseUrl() . "/Academics/Committees"),
 		//array(
 		//	"title" => "Talks",
 		//	"link" => $request->getBaseUrl() . "/Academics/Talks"),
@@ -68,9 +68,9 @@ function getMenu( $request = null )
 		"title"	=> "Council",
 		"link"	=> $request->getBaseUrl() . "/council",
 		"sub"	=> array(
-		array(
-			"title" => "Representation",
-			"link" => $request->getBaseUrl() . "/council/Representation"),
+		//array(
+		//	"title" => "Representation",
+		//	"link" => $request->getBaseUrl() . "/council/Representation"),
 		array(
 			"title" => "Meeting Minutes",
 			"link" => $request->getBaseUrl() . "/council/minutes"),

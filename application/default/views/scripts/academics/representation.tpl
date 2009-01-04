@@ -1,6 +1,6 @@
 <div id='main-header'><h1></h1></div>
 <div class="section">
-  <p>Math students hold seats on many different councils and boards on campus.  The sheer volume of administration makes it difficult to figure out where a specific academic concerns should be raised.  This is the job of the VPA.  They coordinate math seats on various councils to make sure your opinions and questions get to the person representing you on the issue.  If you ever have an academic concern, drop an email to {mailto address="vpa@mathsoc.uwaterloo.ca"} and he/she can help get it resolved.</p>
+  <p>Math students hold seats on many different councils and boards on campus.  The volume of administration makes it difficult to figure out where a specific academic concerns should be raised.  This is the job of the VPA.  They coordinate math seats on various councils to make sure your opinions and questions get to the person representing you on the issue.  If you ever have an academic concern, drop an email to {mailto address="vpa@mathsoc.uwaterloo.ca"} and he/she can help get it resolved.</p>
 
   <p>You should also email the VPA if your interested in representing students on academic issues.  This system only works if we have a voice to fill each seat.  If you think you'd be interested but you're wondering what some of these bodies are and what they do, continue reading.</p>
 

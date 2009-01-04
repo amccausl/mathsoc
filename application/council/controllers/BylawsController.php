@@ -26,6 +26,11 @@ class Council_BylawsController extends MathSoc_Controller_Action
 		$this->view->stylesheets = $stylesheets;
 		$this->initView();
 		$this->db = new BylawDB();
+
+		$menu = $this->view->menu;
+		$menu[3]['status'] = "active";
+		$menu[3]['sub'][2]['status'] = "selected";
+		$this->view->menu = $menu;
 	}
 
 	// Display an table of contents for the bylaws

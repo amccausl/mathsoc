@@ -140,43 +140,60 @@ class LockersController extends MathSoc_Controller_Action
 	{
 		$this->secure();
 		$this->view->username = Zend_Auth::getInstance()->getIdentity();
+		$locker = $this->db->lookup( Zend_Auth::getInstance()->getIdentity() );
 		require_once( "../application/default/views/helpers/form.inc" );
+
+		if( $locker )
+		{	$id = $this->_getParam('locker_id') ? $this->_getParam('locker_id') : $locker['id'];
+			$phone = $locker['current_phone'];
+			$combo = $locker['combo'];
+		}else
+		{	$id = $this->_getParam('locker_id');
+			$phone = "";
+			$combo = "";
+		}
 
 		// Initialize default form values
 		$format = "%Y-%m-%d %H:%M:%S";
 		$default = array(
-			'locker_id' => $this->_getParam('locker_id'),
+			'locker_id' => $id,
 			'username' => Zend_Auth::getInstance()->getIdentity(),
 			'email' => Zend_Auth::getInstance()->getIdentity() . '@uwaterloo.ca',
-			'locker_current_phone' => '',
-			'locker_combo' => '',
+			'locker_current_phone' => $phone,
+			'locker_combo' => $combo,
 			'locker_expires' => strftime($format, locker_expires())
 		);
 		$this->view->assign($default);
 
 		// Include form validation
 		$smarty = $this->view->getEngine();
-		if(empty($_POST))
-		{	SmartyValidate::connect($smarty, true);
-			SmartyValidate::register_validator('email_element','email','notEmpty');
-		}else
-		{	SmartyValidate::connect($smarty);
+		//if(empty($_POST))
+		//{	SmartyValidate::connect($smarty, true);
+		//	SmartyValidate::register_validator('email_element','email','notEmpty');
+		//}else
+		//{	SmartyValidate::connect($smarty);
 			// validate after a POST
-			if(SmartyValidate::is_valid($_POST))
-			{	// no errors, done with SmartyValidate
-				//SmartyValidate::disconnect();
+		//	if(SmartyValidate::is_valid($_POST))
+		//	{	// no errors, done with SmartyValidate
+		//		SmartyValidate::disconnect();
 
-				if( $_POST['submit'] )
-				{
+				if( isset($_POST['submit']) )
+				{	$info = array(
+						"user"	=> $default['username'],
+						"expires" => $default['expires'],
+						"phone"	=> $_POST['locker_current_phone'],
+						"combo"	=> $_POST['locker_combo']
+						);
+					if( $this->db->signup($_POST['locker_id'], $info) )
+					{	$this->view->message = "You have successfully signed up for locker #{$_POST['locker_id']}.";
+					}else
+					{	$this->view->message = "The system has failed to sign you up for the locker.  Please try again later.";
+					}
 				}
-
-				// TODO: insert entry to database
-
-				// TODO: forward to index
-			}
+			//}
 
 			$this->view->assign($_POST);
-		}
+		//}
 	}
 }
 
