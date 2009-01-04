@@ -73,10 +73,9 @@ class Exambank_IndexController extends MathSocAuth_Controller_Action
 				$ext = split('/',$exam[$this->_getParam('type') . '_type']);
 				$ext = $ext[1];
 
-				header("Content-Length: ".strlen($buffer));
-				header("Content-Disposition: inline; filename={$exam['course']}-{$exam['term']}-{$exam['type']}{$exam['number']}_{$this->_getParam('type')}.{$ext}");
+				//header("Content-Length: ".strlen($buffer));
+				//header("Content-Disposition: inline; filename={$exam['course']}-{$exam['term']}-{$exam['type']}{$exam['number']}_{$this->_getParam('type')}.{$ext}");
 
-				//print( $buffer );
 				readfile($filename);
 				exit;
 			}

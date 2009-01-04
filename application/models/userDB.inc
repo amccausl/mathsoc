@@ -160,17 +160,15 @@ class UserDB
 	{	$query = "SELECT positions.category,
 						positions.alias,
 						positions.name,
-						positions.desired
+	 					positions.desired,
+						( SELECT COUNT(holders.userId)
+						  FROM holders, terms
+						  WHERE holders.unitId = 1
+							AND holders.term = terms.current_term
+							AND holders.position = positions.alias
+						  GROUP BY holders.position
+						) AS holders
 				  FROM positions
-				  WHERE positions.desired > 
-					( SELECT COUNT(holders.userId)
-					  FROM holders, terms
-					  WHERE holders.unitId = 1
-						AND holders.term = terms.current_term
-						AND holders.position = positions.alias
-					  GROUP BY holders.position
-					)
-					OR positions.desired IS NULL
 				  GROUP BY positions.alias
 				  ORDER BY positions.name";
 		$result = $this->_db->fetchAll($query);
@@ -180,7 +178,11 @@ class UserDB
 		{	if( !isset($return[$row['category']]) )
 				$return[$row['category']] = array();
 
-			array_push( $return[$row['category']], $row );
+			$holders = isset( $row['holders'] ) ? $row['holders'] : 0;
+			$desired = isset( $row['desired'] ) ? $row['desired'] : 1;
+
+			if( $holders < $desired )
+				array_push( $return[$row['category']], $row );
 		}
 
 		return $return;

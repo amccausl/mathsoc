@@ -29,7 +29,7 @@ class Council_BylawsController extends MathSoc_Controller_Action
 
 		$menu = $this->view->menu;
 		$menu[3]['status'] = "active";
-		$menu[3]['sub'][2]['status'] = "selected";
+		$menu[3]['sub'][1]['status'] = "selected";
 		$this->view->menu = $menu;
 	}
 
