@@ -31,5 +31,11 @@ class PositionsController extends MathSoc_Controller_Action
 	{	$position = $this->db->getPosition( $this->_getParam('position') );
 		$this->view->position = $position;
 	}
+
+	public function directorshipsAction()
+	{	$positions = $this->db->getAvailablePositions();
+		$directorships = $positions['DIR'];
+		$this->view->directorships = $directorships;
+	}
 }
 

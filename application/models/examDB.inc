@@ -42,16 +42,21 @@ class ExamDB
 	 */
 	function getCourses( $prefix = null, $code = null, $returnAll = false )
 	{
-		// TODO: respect returnAll parameter
 		// If prefix isn't set, return a list of prefix
 		if( $prefix == null )
-		{	$query = "SELECT DISTINCT prefix FROM exams_view ORDER BY prefix";
+		{	if( $returnAll )
+				$query = "SELECT DISTINCT prefix FROM courses ORDER BY prefix";
+			else
+				$query = "SELECT DISTINCT prefix FROM exams_view ORDER BY prefix";
 			return $this->_db->fetchCol( $query );
 		}
 
 		// If code isn't set, return codes for the given prefix
 		if( $code == null )
-		{	$query = "SELECT DISTINCT code FROM exams_view WHERE prefix = ? ORDER BY code";
+		{	if( $returnAll )
+				$query = "SELECT DISTINCT code FROM courses WHERE prefix = ? ORDER BY code";
+			else
+				$query = "SELECT DISTINCT code FROM exams_view WHERE prefix = ? ORDER BY code";
 			return $this->_db->fetchCol( $query, $prefix );
 		}
 
@@ -60,4 +65,11 @@ class ExamDB
 		return $this->_db->fetchRow( $query, array( $prefix, $code ) );
 	}
 
+	function getTypes()
+	{	return array('Assignment', 'Final', 'Midterm', 'Practice', 'Quiz', 'Test');
+	}
+
+	function addExam( $exam )
+	{	return $this->_db->insert('exams', $exam);
+	}
 }

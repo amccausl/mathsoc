@@ -1,12 +1,12 @@
 <div class="section">
   <p>Please ensure that you have permission share your exam before you post it.  If you have any problems with the submission form, you can email <a href='mailto:exambank@mathsoc.uwaterloo.ca'>exambank@mathsoc</a> for help.</p>
   <p style='color:{$colour}; font-weight:bold'>
+  {$error}
   {if $validate.default.is_error}
   {validate id="prefix_element" message="You must select a course prefix<br/>"}
   {validate id="code_element" message="You must select a valid course code<br/>"}
   {validate id="term_element" message="You must select the term for the exam<br/>"}
   {else}
-  Your exam has been successfully submitted.
   {/if}
   </p>
   <form action='{$smarty.server.REQUEST_URI}' enctype='multipart/form-data' method='post'>
