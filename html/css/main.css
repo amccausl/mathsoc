@@ -139,7 +139,9 @@ color: #ff99cb;
 background: #3E4053 url(/images/pinkbox1.jpg) no-repeat;
 }
 
-div#menu ul li:hover ul {
+div#menu ul li:hover ul,
+div#menu ul ul li:hover ul,
+div#menu ul ul ul li:hover ul {
 display: block;
 }
 
@@ -149,13 +151,20 @@ position: relative;
 }
 
 div#menu ul ul,
-div#menu ul li.selected ul {
+/*div#menu ul li:hover ul ul,*/
+div#menu ul li.selected ul,
+div#menu ul ul ul{
 position: absolute;
 top: 0;
 left: 100%;
 width: 100%;
 display: none;
 }
+/*
+div#menu ul li.selected:hover ul ul,
+div#menu ul li.active:hover ul ul {
+display: block;
+}*/
 
 div#menu ul li.selected {
 background: url(/images/pinkbox0.jpg) repeat-y;
@@ -189,6 +198,10 @@ div#menu ul li.active a,
 div#menu ul li.active ul li.active a,
 div#menu ul li.active ul li.selected a {
 border-width: 1px 1px 0px 0px;
+}
+
+div#menu ul li.selected ul ul {
+display: none;
 }
 
 /* News */

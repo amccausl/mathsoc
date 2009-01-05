@@ -2,9 +2,9 @@
 
 <div class="section">
   <h2>Introduction</h2>
-  <p>As you probably already know, MathSoc offers a service to math students by keeping a bank of old copies of exams from which to read and study. We\'ve now expanded this service by offering copies of of old exams in a variety of electronic formats, <I>freely</I> downloadable here.</p>
+  <p>As you probably already know, MathSoc offers a service to math students by keeping a bank of old copies of exams from which to read and study. We\'ve now expanded this service by offering copies of of old exams in a variety of electronic formats, <I>freely</I> downloadable <a href="{$baseUrl}/exambank">here.</a></p>
   <p>As you may not know, the physical exambank is no longer available.  All the recent exams were scanned and will be up in the online exambank soon. If the exam you seek is not online, have a talk with your professor about uploading some.</p>
-  <p>Also, we\'re always grateful for submissions to our Exambank.  If you have exams to contribute, whether they\'re old or new, electronic or hardcopy, please do. Drop off hardcopies at the MathSoc office and make electronic submissions to <a href="mailto:exambank@mathsoc.uwaterloo.ca">exambank@mathsoc.uwaterloo.ca</a>.</p>
+  <p>Also, we're always grateful for submissions to our Exambank.  If you have exams to contribute, whether they're old or new, electronic or hardcopy, please do. Drop off hardcopies at the MathSoc office and make electronic submissions to {mailto address='exambank@mathsoc.uwaterloo.ca'}.</p>
 </div>
 
 <div class="section">

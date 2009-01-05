@@ -1,3 +1,4 @@
+<div id='main-header'><h1></h1></div>
 <div class="section">
   <p>Please ensure that you have permission share your exam before you post it.  If you have any problems with the submission form, you can email <a href='mailto:exambank@mathsoc.uwaterloo.ca'>exambank@mathsoc</a> for help.</p>
   <p style='color:{$colour}; font-weight:bold'>

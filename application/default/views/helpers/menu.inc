@@ -22,7 +22,25 @@ function getMenu( $request = null )
 		array(
 			"title"	=> "Exambank",
 			"link"	=> $request->getBaseUrl() . "/exambank",
-			"sub"	=> array()),
+			"sub"	=> array(
+			array(
+				"title"	=> "Introduction",
+				"link"	=> $request->getBaseUrl() . "/exambank/info/"),
+			array(
+				"title"	=> "What is an Exam?",
+				"link"	=> $request->getBaseUrl() . "/exambank/info/exam"),
+			array(
+				"title"	=> "How to Study for Exam?",
+				"link"	=> $request->getBaseUrl() . "/exambank/info/howto"),
+			array(
+				"title"	=> "Can't Find an Exam?",
+				"link"	=> $request->getBaseUrl() . "/exambank/info/find"),
+			array(
+				"title"	=> "Thanks",
+				"link"	=> $request->getBaseUrl() . "/exambank/info/thanks"),
+			array(
+				"title"	=> "Submit an Exam",
+				"link"	=> $request->getBaseUrl() . "/exambank/index/submit"))),
 		array(
 			"title"	=> "Lockers",
 			"link"	=> $request->getBaseUrl() . "/Lockers",

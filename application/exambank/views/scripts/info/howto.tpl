@@ -1,7 +1,7 @@
 <div id='main-header'><h1></h1></div>
 <div class="section">
   <h2>How To Best Study for an Exam</h2>
-  <p>From <a href='info_exam.php'>'What is an Exam'</a>, we can determine that the best way to use old final exams is in a simulation of your upcoming exam, late in your studying. Put aside the time required for the old exam, and then sit down and write out complete solutions, as if the old exam were your exam. Because courses change from term to term, some of the old questions may not be appropriate, and you will have to skip them and adjust your time accordingly.</p>
+  <p>From <a href='{$baseUrl}/exambank/info/exam'>'What is an Exam'</a>, we can determine that the best way to use old final exams is in a simulation of your upcoming exam, late in your studying. Put aside the time required for the old exam, and then sit down and write out complete solutions, as if the old exam were your exam. Because courses change from term to term, some of the old questions may not be appropriate, and you will have to skip them and adjust your time accordingly.</p>
 
   <p>If a course has recently been revised and the old final exams are not useful, you can get together with a friend, each of you making up questions for the other. The act of making up questions will itself help reveal any potential weaknesses in your understanding. Then swap question sheets and do a simulation as above. Finally, compare answers, and resolve any differences.</p>
 

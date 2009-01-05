@@ -19,7 +19,7 @@
 
   <p>How do instructors make up final exams? Exam questions can't look too much like assignment questions, because they must distinguish students who just memorize assignment solutions but don't really understand the material from students who have learned and understood the material. So exam questions tend to rely on new situations, or modifications to old situations, but where it is clear that the concepts and techniques learned in the course can be applied. Instructors can also check the exam bank to see what old exams are there, just as students can. So the final exam is unlikely to be almost identical to previous final exams, to the midterm or previous midterms, or to assignments in the course.</p>
 
-  Continued in '<a href='info_howto.php'>How To Best Study For An Exam</a>'<br />
+  Continued in '<a href='{$baseUrl}/exambank/info/howto'>How To Best Study For An Exam</a>'<br />
   <br />
   Prabhakar Ragde<br />
   Professor, School of Computer Science

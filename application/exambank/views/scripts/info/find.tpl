@@ -7,5 +7,5 @@
     <li><a href="http://engsoc.uwaterloo.ca/www/exambank/">Engineering Society Exambank</a></li>
   </ul>
 
-  <p>If that turns up nothing you can check out the course webpage (usually appears on your course sylabus) to see if your professor has posted an exam.  If they haven\'t, there\'s no garentee that they are not willing to.  If you manage to find an exam that isn\'t online here, you can submit it <a href="submit.php">here</a> as long as you have the consent of the course instructor.</p>
+  <p>If that turns up nothing you can check out the course webpage (usually appears on your course sylabus) to see if your professor has posted an exam.  If they haven't, there's no garentee that they are not willing to.  If you manage to find an exam that isn't online here, you can <a href="{$baseUrl}/exambank/index/submit">submit it here</a> as long as you have the consent of the course instructor.</p>
 </div>
