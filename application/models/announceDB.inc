@@ -37,7 +37,16 @@ class AnnounceDB
 					OR event_date IS NULL
 				  ORDER BY event_date ASC";
 
-		return $this->_db->fetchAll( $query );
+		$events = $this->_db->fetchAll( $query );
+
+		for( $i = 0; $i < count( $events ); $i++ )
+		{	$date = $events[$i]['event_date'];
+			$date = strptime( $date, "%Y-%m-%d %H:%M:%S" );
+			$date = strftime( "%Y-%m-%d", $date );
+			$events[$i]['event_date'] = $date;
+		}
+
+		return $events;
 	}
 }
 
