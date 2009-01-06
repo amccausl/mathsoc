@@ -2,7 +2,7 @@
 <div class="section">
   <h2>MathSoc Council Minutes</h2>
 {foreach from=$minutes key=term item=meetings}
-  <h3>{$term}</h3>
+  <h3>{term id=$term display="long"}</h3>
   <ul>
   {foreach from=$meetings key=id item=meeting}
     <li><a href="{$baseUrl}/council/minutes/{$id}">Meeting {$meeting.meeting_number} ({$meeting.meeting_date})</a></li>

@@ -14,7 +14,7 @@
   <ul>
 {foreach from=$user.terms key=term item=positions}
 	{implode subject=$positions glue=', ' assign=positions}
-    <li>{$term} - {$positions}</li>
+    <li>{term id=$term display="long"} - {$positions}</li>
 {foreachelse}
     <li>User has held no positions</li>
 {/foreach}
