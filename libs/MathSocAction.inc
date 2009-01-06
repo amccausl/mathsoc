@@ -61,6 +61,18 @@ class MathSoc_Controller_Action extends Zend_Controller_Action
 				}
 			}
 		}
+		// TODO: LOG TO 
+		$request = $this->getRequest();
+		$module = $request->getModuleName();
+		if( !isset( $module ) )
+		{	$module = Zend_Controller_Front::getInstance()->getDispatcher()->getDefaultModule();
+		}
+		$controller = $request->getControllerName();
+		if( !isset( $controller ) )
+		{	$controller = Zend_Controller_Front::getInstance()->getDispatcher()->getDefaultController();
+		}
+		$term = (date('Y') - 1900) . (1 + 4*(ceil(date('m') / 4) - 1));
+		$filename = "$module-$controller-$term";
 	}
 }
 

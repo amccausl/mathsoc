@@ -147,6 +147,8 @@ class LockersController extends MathSoc_Controller_Action
 		{	$id = $this->_getParam('locker_id') ? $this->_getParam('locker_id') : $locker['id'];
 			$phone = $locker['current_phone'];
 			$combo = $locker['combo'];
+
+			$this->view->current_locker = $locker['id'];
 		}else
 		{	$id = $this->_getParam('locker_id');
 			$phone = "";
