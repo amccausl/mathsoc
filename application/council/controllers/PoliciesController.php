@@ -14,13 +14,11 @@ class Council_PoliciesController extends MathSoc_Controller_Action
 {
 	private $db;
 
-	public function init()
-	{	parent::init();
+	public function init($secure = false)
+	{	parent::init($secure);
 
 		set_time_limit(0);
 
-		// User must be authenticated to see any of these pages
-		$this->view->baseUrl = $this->_request->getBaseUrl();
 		$stylesheets = $this->view->stylesheets;
 		array_push( $stylesheets, $this->_request->getBaseUrl() . "/css/policies.css" );
 		$this->view->stylesheets = $stylesheets;
@@ -83,12 +81,6 @@ class Council_PoliciesController extends MathSoc_Controller_Action
 
 	// Add a new version for a given policy
 	public function updateAction()
-	{
-		$auth = Zend_Auth::getInstance();
-		print( "auth = " . $auth->hasIdentity() );
-
-		if (!$auth->hasIdentity())
-		{	$this->_redirect('auth/login');
-		}
+	{	$this->secure();
 	}
 }

@@ -48,7 +48,11 @@ function getMenu( $request = null )
 		array(
 			"title"	=> "Office",
 			"link"	=> $request->getBaseUrl() . "/Office",
-			"sub"	=> array()),
+			"sub"	=> array(
+			array(
+				"title"	=> "Signup For Office Hour",
+				"link"	=> $request->getBaseUrl() . "/Office/Signup"
+			))),
 		array(
 			"title"	=> "Novelties",
 			"link"	=> $request->getBaseUrl() . "/Novelties",
@@ -203,18 +207,18 @@ function getMenu( $request = null )
 						{	if( strtolower($menuitem3['link']) == $requestUrl )
 							{	$menu[$index1]['status'] = 'active';
 								$menu[$index1]['sub'][$index2]['status'] = 'active';
-								$menu[$index1]['sub'][$index2]['sub'][$index3]['status'] = 'selected';
+								$menu[$index1]['sub'][$index2]['sub'][$index3]['status'] = 'active selected';
 							}
 						}
 					}
 					if( strtolower($menuitem2['link']) == $requestUrl )
 					{	$menu[$index1]['status'] = 'active';
-						$menu[$index1]['sub'][$index2]['status'] = 'selected';
+						$menu[$index1]['sub'][$index2]['status'] = 'active selected';
 					}
 				}
 			}
 			if( strtolower($menuitem1['link']) == $requestUrl )
-			{	$menu[$index1]['status'] = 'selected';
+			{	$menu[$index1]['status'] = 'active selected';
 			}
 		}
 	}

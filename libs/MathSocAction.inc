@@ -13,11 +13,16 @@ class MathSoc_Controller_Action extends Zend_Controller_Action
 {
 	private $loginUrl = "https://strobe.uwaterloo.ca/cpadev/kiwi/user/login/";
 
-	public function init()
+	public function init($secure = false)
 	{	parent::init();
 
 		// Set the baseUrl as a variable that can be used by the view
 		$this->view->baseUrl = $this->getRequest()->getBaseUrl();
+
+		if( $secure )
+		{	$this->secure();
+		}
+		$this->log();
 
 		// Initialize the context-based menu
 		require_once( '../application/default/views/helpers/menu.inc' );
@@ -76,24 +81,18 @@ class MathSoc_Controller_Action extends Zend_Controller_Action
 		if( !isset( $module ) )
 		{	$module = Zend_Controller_Front::getInstance()->getDispatcher()->getDefaultModule();
 		}
+		$module = strtolower($module);
 		$controller = $request->getControllerName();
 		if( !isset( $controller ) )
 		{	$controller = Zend_Controller_Front::getInstance()->getDispatcher()->getDefaultController();
 		}
+		$controller = strtolower( $controller );
 		$term = (date('Y') - 1900) . (1 + 4*(ceil(date('m') / 4) - 1));
 		$filename = "$module-$controller-$term";
 
 		$fh = fopen( "../data/hits/$filename", "a" );
 		fputs( $fh, date("m/d H:i:s") . " - " . $auth->getIdentity() . " - {$_SERVER['REMOTE_ADDR']} ({$_SERVER['REQUEST_URI']})\n" );
 		fclose( $fh );
-	}
-}
-
-class MathSocAuth_Controller_Action extends MathSoc_Controller_Action
-{
-	public function init()
-	{	parent::init();
-		$this->secure();
 	}
 }
 

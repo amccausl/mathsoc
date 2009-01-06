@@ -5,7 +5,6 @@ require_once 'MathSocAction.inc';
 class AcademicsController extends MathSoc_Controller_Action
 {
 	/* /Academics/ - 
-	 * TODO
 	 */
     public function indexAction()
     {	
@@ -18,8 +17,7 @@ class AcademicsController extends MathSoc_Controller_Action
 	{	
 	}
 
-	/* /Academics/Representation - 
-	 * TODO
+	/* /Academics/Representation - Display information about the places where math students have representation.
 	 */
 	public function representationAction()
 	{	

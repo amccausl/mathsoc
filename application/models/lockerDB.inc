@@ -48,8 +48,6 @@ class LockerDB
 	 */
 	function signup( $lockerNum, $info )
 	{
-		// TODO: check that the system is currently active
-
 		// Determine if the user can claim the locker
 		$query = "SELECT current_userId FROM lockers WHERE id = ?";
 		$holder = $this->_db->fetchOne($query, $lockerNum);
@@ -79,7 +77,7 @@ class LockerDB
 		if( $info['phone'] )
 			$data['current_phone'] = $info['phone'];
 		if( $info['combo'] )
-			$data['current_combo'] = $info['combo'];
+			$data['combo'] = $info['combo'];
 
 		$n = $this->_db->update('lockers', $data, "id = {$lockerNum}");
 
@@ -109,7 +107,7 @@ class LockerDB
 	{
 	}
 	
-	function is_active()
+	function isActive()
 	{	
 		// Find the day things used to expire
 		$start = ( ceil( (date("m") - 1) / 4 ) % 3 ) * 4 + 1;

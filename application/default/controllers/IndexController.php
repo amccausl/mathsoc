@@ -5,11 +5,10 @@ require_once 'announceDB.inc';
 
 class IndexController extends MathSoc_Controller_Action
 {
-	// TODO: initialize announcement database
 	private $db;
 
-	public function init()
-	{	parent::init();
+	public function init($secure = false)
+	{	parent::init($secure);
 		$this->db = new AnnounceDB();
 	}
 

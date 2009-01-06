@@ -19,13 +19,9 @@ class Council_IndexController extends MathSoc_Controller_Action
 		$this->view->content_data = ob_get_clean();
 	}
 
-	public function init()
-	{	parent::init();
-
-		// User must be authenticated to see any of these pages
-		$this->view->baseUrl = $this->_request->getBaseUrl();
+	public function init($secure = false)
+	{	parent::init($secure);
 		$this->db = new UserDB();
-		$this->initView();
 	}
 
 	public function indexAction()

@@ -8,8 +8,8 @@ class PositionsController extends MathSoc_Controller_Action
 {
 	private $db;
 
-	public function init()
-	{	parent::init();
+	public function init($secure = false)
+	{	parent::init($secure);
 
 		$this->db = new UserDB();
 	}

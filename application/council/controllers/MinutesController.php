@@ -10,13 +10,8 @@ class Council_MinutesController extends MathSoc_Controller_Action
 {
 	private $db;
 
-	public function init()
-	{	parent::init();
-
-		// User must be authenticated to see any of these pages
-		$this->view->baseUrl = $this->_request->getBaseUrl();
-		$this->view->user = Zend_Auth::getInstance()->getIdentity();
-		$this->initView();
+	public function init($secure = false)
+	{	parent::init($secure);
 
 		$this->db = new MinutesDB();
 	}

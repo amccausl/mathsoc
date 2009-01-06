@@ -5,12 +5,12 @@ require_once 'MathSocAction.inc';
 // Load the database model for the election system
 require_once 'electionDB.inc';
 
-class ElectionController extends MathSocAuth_Controller_Action
+class ElectionController extends MathSoc_Controller_Action
 {
 	private $db;
 
-	public function init()
-	{	parent::init();
+	public function init($secure = true)
+	{	parent::init($secure);
 
 		// User must be authenticated to see any of these pages
 		$this->initView();

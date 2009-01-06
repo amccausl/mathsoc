@@ -1,12 +1,13 @@
 <div id='main-header'><h1></h1></div>
 <div class="section">
-{if $current_locker}
+{if $message}
+  <p>{$message}</p>
+{elseif $current_locker}
   <p>You are currently signed up for locker #{$current_locker}.</p>
 {else}
   <p>You are not currently signed up for a locker.</p>
 {/if}
 
-  <p>{$message}</p>
 {if $validate.default.is_error}
 {validate id="email_element" message="You must provide a valid email address<br/>"}
 {/if}

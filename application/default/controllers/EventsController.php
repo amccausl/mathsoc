@@ -6,8 +6,8 @@ class EventsController extends MathSoc_Controller_Action
 {
 	private $db;
 
-	public function init()
-	{	parent::init();
+	public function init($secure = false)
+	{	parent::init($secure);
 		//$this->db = $this->db = new AnnounceDB();
 	}
 

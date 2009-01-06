@@ -8,11 +8,8 @@ class LockersController extends MathSoc_Controller_Action
 {
 	private $db;
 
-	public function init()
-	{
-		// TODO: check if system is locked (ie. locks being cut today), if it is, forward to the locked action
-
-		parent::init();
+	public function init($secure = false)
+	{	parent::init($secure);
 
 		$this->db = new LockerDB();
 
@@ -23,11 +20,9 @@ class LockersController extends MathSoc_Controller_Action
 			{	$menu[$i]['status'] = 'active';
 				for( $j = 0; $j < count( $menu[$i]['sub'] ); $j++ )
 				{	if( $menu[$i]['sub'][$j]['title'] == 'Lockers' )
-					{	$menu[$i]['sub'][$j]['status'] = 'selected';
+					{	$menu[$i]['sub'][$j]['status'] = 'active selected';
 					}
 				}
-			}else
-			{	unset( $menu[$i]['status'] );
 			}
 		}
 
@@ -137,7 +132,11 @@ class LockersController extends MathSoc_Controller_Action
 	 * Allow students to sign up for lockers
 	 */
 	public function signupAction()
-	{
+	{	// If locks are being cut, don't allow login
+		if( !$this->db->isActive() )
+		{	$this->_redirect("/Lockers/locked");
+		}
+
 		$this->secure();
 		$this->view->username = Zend_Auth::getInstance()->getIdentity();
 		$locker = $this->db->lookup( Zend_Auth::getInstance()->getIdentity() );
