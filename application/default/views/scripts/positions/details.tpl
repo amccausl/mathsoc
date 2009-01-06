@@ -31,7 +31,7 @@
   <ul>
 	{foreach from=$position.holders key=term item=holders}
 	{implode subject=$holders glue=', ' assign=holders}
-    <li>{$term} -> {$holders}</li>
+    <li>{$term} -&gt; {$holders}</li>
 	{/foreach}
   </ul>
 {else}

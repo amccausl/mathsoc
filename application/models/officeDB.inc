@@ -49,7 +49,6 @@ class OfficeDB
 			$response[$days[$row['day']]][$row['hourId']] = $hour;
 		}
 
-		print_r( $response );
 		return $response;
 	}
 

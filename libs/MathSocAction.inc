@@ -48,7 +48,12 @@ class MathSoc_Controller_Action extends Zend_Controller_Action
 					$status = "You are logged-in as " . $auth->getIdentity() . "<br>\n";
 					// Do database lookup for groups the user returned by kiwi check is a part of
 
-					// TODO: log access to database
+					require_once( "userDB.inc" );
+					$db = new UserDB();
+					if( !$db->isMember($auth->getIdentity()) )
+					{	$auth->clearIdentity();
+						$this->_redirect( "/user/refund/" );
+					}
 				}else
 				{	// If authentication is invalid, remove user
 					$auth->clearIdentity();
@@ -61,7 +66,11 @@ class MathSoc_Controller_Action extends Zend_Controller_Action
 				}
 			}
 		}
-		// TODO: LOG TO 
+		$this->log();
+	}
+
+	protected function log()
+	{	$auth = Zend_Auth::getInstance();
 		$request = $this->getRequest();
 		$module = $request->getModuleName();
 		if( !isset( $module ) )
@@ -73,6 +82,10 @@ class MathSoc_Controller_Action extends Zend_Controller_Action
 		}
 		$term = (date('Y') - 1900) . (1 + 4*(ceil(date('m') / 4) - 1));
 		$filename = "$module-$controller-$term";
+
+		$fh = fopen( "../data/hits/$filename", "a" );
+		fputs( $fh, date("m/d H:i:s") . " - " . $auth->getIdentity() . " - {$_SERVER['REMOTE_ADDR']} ({$_SERVER['REQUEST_URI']})\n" );
+		fclose( $fh );
 	}
 }
 

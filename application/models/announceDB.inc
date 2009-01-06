@@ -30,7 +30,7 @@ class AnnounceDB
 	 */
 	function getAnnouncements()
 	{
-		$query = "SELECT event_date, title, content
+		$query = "SELECT DATE_FORMAT(event_date, '%Y-%m-%d'), title, content
 				  FROM announcement
 				  WHERE (NOW() <= DATE_ADD(event_date,INTERVAL 1 DAY)
 					AND DATE_SUB(event_date, INTERVAL 30 DAY) <= NOW())
@@ -38,13 +38,6 @@ class AnnounceDB
 				  ORDER BY event_date ASC";
 
 		$events = $this->_db->fetchAll( $query );
-
-		for( $i = 0; $i < count( $events ); $i++ )
-		{	$date = $events[$i]['event_date'];
-			$date = strptime( $date, "%Y-%m-%d %H:%M:%S" );
-			$date = strftime( "%Y-%m-%d", $date );
-			$events[$i]['event_date'] = $date;
-		}
 
 		return $events;
 	}

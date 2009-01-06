@@ -120,10 +120,10 @@ function getMenu( $request = null )
 		"sub"	=> array(
 		array(
 			"title" => "How to get Involved",
-			"link"	=> $request->getBaseUrl() . "/Volunteers/GetInvolved"))),
-		//array(
-		//	"title"	=> "Administration",
-		//	"link"	=> $request->getBaseUrl() . "/admin"))),
+			"link"	=> $request->getBaseUrl() . "/Volunteers/GetInvolved"),
+		array(
+			"title" => "Volunteer Positions",
+			"link"	=> $request->getBaseUrl() . "/Positions"))),
 	array(
 		"title"	=> "Committees",
 		"link"	=> $request->getBaseUrl() . "/Committees",

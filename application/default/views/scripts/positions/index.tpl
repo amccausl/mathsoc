@@ -6,7 +6,8 @@
   <ul>
 {foreach from=$EXC item=position}
     <li><a href="{$baseUrl}/positions/details?position={$position.alias}">{$position.name}</a> : 
-  {foreach from=$position.holders item=holder}{$holder}{foreachelse}Position Vacant{/foreach}</li>
+{implode subject=$position.holders glue=', ' assign=holders}
+  {if $holders}{$holders}{else}Position Vacant{/if}</li>
 {/foreach}
   </ul>
 
@@ -14,16 +15,18 @@
   <ul>
 {foreach from=$OEX item=position}
     <li><a href="{$baseUrl}/positions/details?position={$position.alias}">{$position.name}</a> : 
-  {foreach from=$position.holders item=holder}{$holder}{foreachelse}Position Vacant{/foreach}</li>
+{implode subject=$position.holders glue=', ' assign=holders}
+  {if $holders}{$holders}{else}Position Vacant{/if}</li>
 {/foreach}
   </ul>
 
   <h3>Directors</h3>
-  <p></p>
+  <p>The Directorships are appointed by the executives of the society.</p>
   <ul>
 {foreach from=$DIR item=position}
     <li><a href="{$baseUrl}/positions/details?position={$position.alias}">{$position.name}</a> : 
-  {foreach from=$position.holders item=holder}{$holder}{foreachelse}Position Vacant{/foreach}</li>
+{implode subject=$position.holders glue=', ' assign=holders}
+  {if $holders}{$holders}{else}Position Vacant{/if}</li>
 {/foreach}
   </ul>
 
@@ -32,19 +35,21 @@
   <ul>
 {foreach from=$REP item=position}
     <li><a href="{$baseUrl}/positions/details?position={$position.alias}">{$position.name}</a> : 
-  {foreach from=$position.holders item=holder}{$holder}{foreachelse}Position Vacant{/foreach}</li>
+{implode subject=$position.holders glue=', ' assign=holders}
+  {if $holders}{$holders}{else}Position Vacant{/if}</li>
 {/foreach}
   </ul>
- 
+
   <h3>Appointed Positions</h3>
-  <p></p>
+  <p>These positions are appointed by council on a termly basis.</p>
   <ul>
 {foreach from=$APP item=position}
     <li><a href="{$baseUrl}/positions/details?position={$position.alias}">{$position.name}</a> : 
-  {foreach from=$position.holders item=holder}{$holder}{foreachelse}Position Vacant{/foreach}</li>
+{implode subject=$position.holders glue=', ' assign=holders}
+  {if $holders}{$holders}{else}Position Vacant{/if}</li>
 {/foreach}
   </ul>
- 
+<!--
   <h3>Affiliates</h3>
   <p></p>
   <ul>
@@ -53,5 +58,5 @@
   {foreach from=$position.holders item=holder}{$holder}{foreachelse}Position Vacant{/foreach}</li>
 {/foreach}
   </ul>
- 
+-->
 </div>
