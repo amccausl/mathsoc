@@ -30,7 +30,7 @@ class AnnounceDB
 	 */
 	function getAnnouncements()
 	{
-		$query = "SELECT DATE_FORMAT(event_date, '%Y-%m-%d'), title, content
+		$query = "SELECT DATE_FORMAT(event_date, '%Y-%m-%d') as event_date, title, content
 				  FROM announcement
 				  WHERE (NOW() <= DATE_ADD(event_date,INTERVAL 1 DAY)
 					AND DATE_SUB(event_date, INTERVAL 30 DAY) <= NOW())
