@@ -45,6 +45,6 @@
     volunteer you can <a href='{$baseUrl}/Office/signup'>signup for your very own office hour</a>
     to help us continue to offer services to the students of UW. If you have any questions or
     concerns we can be contacted by <a href='{$baseUrl}/Contact'>phone</a> or by email at
-    {mailto address="office@mathsoc.uwaterloo.ca" encode="javascript_charcode"}.
+    {mailto address="office@mathsoc.uwaterloo.ca"}.
   </p>
 </div>
