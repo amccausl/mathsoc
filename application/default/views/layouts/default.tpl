@@ -33,7 +33,7 @@
 <body>
 <div id='wrapper'>
   <div id='header'>
-    <div id="logo"><img src='{$baseUrl}/images/logo.jpg' alt='MathSoc Logo'/></div>
+    <div id="logo"><a href="{$baseUrl}/"><img src='{$baseUrl}/images/logo.jpg' alt='MathSoc Logo'/></a></div>
   </div>
   <div id="content">
 {include file="../../../default/views/scripts/menu.tpl"}

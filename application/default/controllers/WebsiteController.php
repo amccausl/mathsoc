@@ -19,7 +19,7 @@ class WebsiteController extends MathSoc_Controller_Action
 			unset( $_POST['submit'] );
 			
 			$fh = fopen( "../data/comments", "a" );
-			fputs( $fh, serialize( $_POST ) );
+			fputs( $fh, serialize( $_POST ) . "\n");
 			fclose( $fh );
 		}
 	}
