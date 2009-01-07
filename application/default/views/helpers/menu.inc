@@ -200,25 +200,33 @@ function getMenu( $request = null )
 		$active2 = false;
 		foreach( $menu as $index1 => $menuitem1 )
 		{
+			if( strtolower($menuitem1['link']) == $requestUrl )
+			{	$menu[$index1]['status'] = 'active selected';
+			}else
+			{	$menu[$index1]['status'] = 'inactive';
+			}
+			
 			if( isset( $menuitem1['sub'] ) )
 			{	foreach( $menuitem1['sub'] as $index2 => $menuitem2 )
-				{	if( isset( $menuitem2['sub'] ) )
+				{	if( strtolower($menuitem2['link']) == $requestUrl )
+					{	$menu[$index1]['status'] = 'active';
+						$menu[$index1]['sub'][$index2]['status'] = 'active selected';
+					}else
+					{	$menu[$index1]['sub'][$index2]['status'] = 'inactive';
+					}
+					
+					if( isset( $menuitem2['sub'] ) )
 					{	foreach( $menuitem2['sub'] as $index3 => $menuitem3 )
 						{	if( strtolower($menuitem3['link']) == $requestUrl )
 							{	$menu[$index1]['status'] = 'active';
 								$menu[$index1]['sub'][$index2]['status'] = 'active';
 								$menu[$index1]['sub'][$index2]['sub'][$index3]['status'] = 'active selected';
+							}else
+							{	$menu[$index1]['sub'][$index2]['sub'][$index3]['status'] = 'inactive';
 							}
 						}
 					}
-					if( strtolower($menuitem2['link']) == $requestUrl )
-					{	$menu[$index1]['status'] = 'active';
-						$menu[$index1]['sub'][$index2]['status'] = 'active selected';
-					}
 				}
-			}
-			if( strtolower($menuitem1['link']) == $requestUrl )
-			{	$menu[$index1]['status'] = 'active selected';
 			}
 		}
 	}

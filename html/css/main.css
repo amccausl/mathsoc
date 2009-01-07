@@ -128,13 +128,13 @@ div#menu li.active ul li a:hover,
 div#menu ul li.active ul li.active li a:hover,
 div#menu li.active ul li.selected ul li a:hover {
 background: #3E4053 url(/images/bluebox1.jpg) no-repeat;
-font: bold;
+font-weight:bold;
 color: #99caff;
 }
 
 div#menu ul li.selected a:hover,
 div#menu ul li.active ul li.selected a:hover {
-font: bold;
+font-weight:bold;
 color: #ff99cb;
 background: #3E4053 url(/images/pinkbox1.jpg) no-repeat;
 }
@@ -153,7 +153,8 @@ position: relative;
 div#menu ul ul,
 /*div#menu ul li:hover ul ul,*/
 div#menu ul li.selected ul,
-div#menu ul ul ul{
+div#menu ul ul ul,
+div#menu ul li.active ul li.inactive:hover ul{
 position: absolute;
 top: 0;
 left: 100%;
@@ -166,7 +167,8 @@ div#menu ul li.active:hover ul ul {
 display: block;
 }*/
 
-div#menu ul li.selected {
+div#menu ul li.selected,
+div#menu ul li.active ul li.active ul li.selected{
 background: url(/images/pinkbox0.jpg) repeat-y;
 color: #000;
 }
@@ -187,7 +189,8 @@ width: 172px;
 }
 
 div#menu ul li.selected a,
-div#menu ul li.active ul li.selected a {
+div#menu ul li.active ul li.selected a,
+div#menu ul li.active ul li.active ul li.selected a{
 display: block;
 background: #ffcce5 url(/images/pinkbox0.jpg) repeat-y;
 color: #000;
@@ -200,8 +203,20 @@ div#menu ul li.active ul li.selected a {
 border-width: 1px 1px 0px 0px;
 }
 
-div#menu ul li.selected ul ul {
+div#menu ul li.selected ul ul,
+div#menu ul li.active ul li.inactive ul,
+div#menu ul:hover ul ul{
 display: none;
+}
+
+div#menu ul:hover ul li.selected ul,
+div#menu ul:hover ul li.active ul,
+div#menu ul li.active ul li.inactive:hover ul{
+display: block;
+}
+
+div#menu ul li.active ul li.inactive:hover ul{
+margin-left: 0px;
 }
 
 /* News */
