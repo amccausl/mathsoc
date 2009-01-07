@@ -3,8 +3,9 @@
 // Todo: load below from config
 // Todo: move load config and load template to separate files
 
-error_reporting(E_ALL|E_STRICT);
-ini_set('display_errors', 1);
+//error_reporting(E_ALL|E_STRICT);
+//ini_set('display_errors', 1);
+ini_set('display_errors', 0);
 date_default_timezone_set('America/Toronto');
 
 // directory setup and class loading
