@@ -71,6 +71,7 @@ class MathSoc_Controller_Action extends Zend_Controller_Action
 				}
 			}
 		}
+		$this->view->user = Zend_Auth::getInstance()->getIdentity();
 		$this->log();
 	}
 

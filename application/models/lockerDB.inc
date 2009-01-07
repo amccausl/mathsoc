@@ -71,7 +71,6 @@ class LockerDB
 
 		// Set expiry date for the locker
 		$mysql_format = "Y-m-d H:i:s";
-		$expires = date( $mysql_format, $info['expires'] );
 		$data['expires'] = date( $mysql_format, locker_expires() );
 
 		if( $info['phone'] )
@@ -105,8 +104,60 @@ class LockerDB
 	 */
 	function getUsage()
 	{
+		$mysql_format = "Y-m-d H:i:s";
+		// Find the day things used to expire
+		$start = ( ceil( (date("m") - 1) / 4 ) % 3 ) * 4 + 1;
+		$expires = mktime( 0, 0, 0, $start, 1, date("Y") + ($start == 1) );
+		if( $start == 9 )
+			$expires = strtotime( "next Monday", $expires );
+		$expires = strtotime( "next Monday", $expires ) + 378000;
+		$expires = date( $mysql_format, $expires );
+
+		$query = "SELECT
+					(SELECT COUNT(id) FROM lockers WHERE current_userId IS NOT NULL) AS used_lockers,
+					(SELECT COUNT(id) FROM lockers WHERE expires < NOW() AND current_userId IS NOT NULL) AS expired_lockers,
+					(SELECT COUNT(id) FROM lockers WHERE expires = ? AND current_userId IS NOT NULL) AS expiring_lockers,
+					(SELECT COUNT(id) FROM lockers) AS total_lockers";
+		$usage = $this->_db->fetchRow( $query, $expires );
+
+		$usage['isActive'] = $this->isActive();
+		$usage['expiring'] = $expires;
+		return $usage;
 	}
-	
+
+	/** getEmptyLockers - Return the lockers that are supposed to be empty.
+	 */
+	function getEmptyLockers()
+	{
+		// If the system is inactive, we can expire the old lockers
+		if( !$this->isActive() )
+		{
+			$update = array(
+				"last_userId"	=> new Zend_Db_Expr('current_userId'),
+				"last_phone"	=> new Zend_Db_Expr('current_userId'),
+				"current_userId"=> new Zend_Db_Expr('NULL'),
+				"current_phone"	=> new Zend_Db_Expr('NULL')
+			);
+
+			$where = array(
+				"expires <= NOW()",
+				"current_userId IS NOT NULL"
+			);
+
+			$n = $this->_db->update('lockers', $update, $where);
+
+			print( "$n lockers expired" );
+		}
+
+		// Since lockers were just expired, this list should be all available lockers.
+		$query = "SELECT id, last_userId, last_phone, combo
+				  FROM lockers
+				  WHERE current_userId IS NULL";
+		$lockers = $this->_db->fetchAll($query);
+
+		return $lockers;
+	}
+
 	function isActive()
 	{	
 		// Find the day things used to expire
