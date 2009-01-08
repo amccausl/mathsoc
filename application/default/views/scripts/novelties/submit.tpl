@@ -1,5 +1,8 @@
 <div id="main-header"><h1></h1></div>
 <div class="section">
+{if $message}
+  <p>{$message}</p>
+{/if}
   <p>Welcome to MathSoc's t-shirt design contest.  By submitting a design to our contest, you are transferring ownership to the Math Society.</p>
   <div class="form-container">
     <form action="{$smarty.server.REQUEST_URI}" enctype="multipart/form-data" method="post">
@@ -10,11 +13,11 @@
       <label for="name">Design Name:</label>
         <input name="name" type="text" length="31" value="{$name}" /><br/>
       <label for="description">Description for your submission:</label>
-        <textarea name="description" cols="40" rows="5">{$description}</textarea>
+        <textarea name="description" cols="40" rows="5">{$description}</textarea><br/>
       <label for="tshirt_front">T-Shirt Image (Front)</label>
-        <input type="file" name="tshirt_front" size="20" value="{$tshirt_front}" />
+        <input type="file" name="tshirt_front" size="20" value="{$tshirt_front}" /><br/>
       <label for="tshirt_back">T-Shirt Image (Back)</label>
-        <input type="file" name="tshirt_back" size="20" value="{$tshirt_back}" />
+        <input type="file" name="tshirt_back" size="20" value="{$tshirt_back}" /><br/>
       <input type="hidden" name="notes" value="MathSoc T-Shirt Design Contest (Winter 2009)"/>
     </fieldset>
 

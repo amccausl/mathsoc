@@ -15,6 +15,8 @@ class NoveltiesController extends MathSoc_Controller_Action
 	public function submitAction()
 	{	require_once( "../application/default/views/helpers/form.inc" );
 		$this->secure();
+		
+		$this->view->email = Zend_Auth::getInstance()->getIdentity() . '@uwaterloo.ca';
 
 		$novelty = array(
 				'submitter'	=> Zend_Auth::getInstance()->getIdentity(),
@@ -34,6 +36,8 @@ class NoveltiesController extends MathSoc_Controller_Action
 					'image'	=> file_get_contents( $_FILES['tshirt_front']['tmp_name'] )
 				);
 				array_push( $novelty['images'], $front );
+			}else
+			{	$this->view->message = "There was a problem uploading your front image";
 			}
 
 			if( $_FILES['tshirt_back']['error'] == UPLOAD_ERR_OK )
@@ -43,6 +47,8 @@ class NoveltiesController extends MathSoc_Controller_Action
 					'image'	=> file_get_contents( $_FILES['tshirt_back']['tmp_name'] )
 				);
 				array_push( $novelty['images'], $back );
+			}else
+			{	$this->view->message = "There was a problem uploading your back image";
 			}
 
 			$this->db->submitNovelty( $novelty );
