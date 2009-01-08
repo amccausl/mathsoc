@@ -1,6 +1,7 @@
 <?php
 
 require_once 'MathSocAction.inc';
+require_once 'clubsDB.inc';
 
 /**
  * Allows users access to common functions for a club interaction
@@ -11,11 +12,19 @@ require_once 'MathSocAction.inc';
  */
 class ClubsController extends MathSoc_Controller_Action
 {
+	protected $db;
+
+	public function init( $secure = false )
+	{	parent::init( $secure );
+
+		$this->db = new ClubsDB();
+	}
+
 	/**
 	 * Display information about clubs.
 	 */
     public function indexAction()
-    {
+    {	$this->view->clubs = $this->db->getClubs();
     }
 
 	/** /clubs/faq/

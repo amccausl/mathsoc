@@ -111,7 +111,7 @@ class Exambank_IndexController extends MathSoc_Controller_Action
 		{
 			// Create exam object to add
 			$exam = array();
-			$exam['uploader'] = $_SESSION['username'];
+			$exam['uploader'] = Zend_Auth::getInstance()->getIdentity();
 
 			// Must validate all form info and translate to $exam
 
