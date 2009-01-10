@@ -85,17 +85,6 @@ class LockerDB
 		return false;
 	}
 
-/*** OFFICE MANAGER FUNCTIONS ***/
-
-	// Should mostly be run by cron jobs, but must be well documented
-	function expire_lockers()
-	{	// Find all lockers with a expiry date that has passed
-		// Transfer current to last and set expires to null
-		$query = "UPDATE lockers
-			  SET last_userid = current_userId, last_phone = current_phone, current_userId = null, current_phone = null, expires = null
-			  WHERE expires <= NOW()";
-	}
-
 /*** DEMOGRAPHIC FUNCTIONS ***/
 
 	/** getUsage - Retrieve some usage statistics for the system
@@ -124,6 +113,8 @@ class LockerDB
 		$usage['expiring'] = $expires;
 		return $usage;
 	}
+
+/*** OFFICE MANAGER FUNCTIONS ***/
 
 	/** getEmptyLockers - Return the lockers that are supposed to be empty.
 	 */
@@ -159,10 +150,12 @@ class LockerDB
 	}
 
 	function isActive()
-	{	
+	{
+		$then = date("U") - 2592000;
+
 		// Find the day things used to expire
-		$start = ( ceil( (date("m") - 1) / 4 ) % 3 ) * 4 + 1;
-		$expires = mktime( 0, 0, 0, $start, 1, date("Y") + ($start == 1) );
+		$start = ( ceil( date("m", $then) / 4 ) % 3 ) * 4 + 1;
+		$expires = mktime( 0, 0, 0, $start, 1, date("Y", $then) + ($start == 1) );
 		if( $start == 9 )
 			$expires = strtotime( "next Monday", $expires );
 		$expires = strtotime( "next Monday", $expires ) + 378000;

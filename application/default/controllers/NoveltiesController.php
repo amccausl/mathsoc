@@ -1,17 +1,58 @@
 <?php
 
 require_once 'MathSocAction.inc';
+require_once 'noveltiesDB.inc';
 
 class NoveltiesController extends MathSoc_Controller_Action
 {
+	private $db;
+
+	public function init($secure = false)
+	{	parent::init($secure);
+
+		$this->db = new NoveltiesDB();
+	}
+
+	/** /novelties - Give details about novelties.
+	 */
 	public function indexAction()
 	{
 	}
 
+	/** /novelties/contest - Give active contest details, currently hardcoded
+	 */
 	public function contestAction()
 	{
 	}
 
+	/** /novelties/display - Display an existing novelty from the database
+	 */
+	public function displayAction()
+	{
+		if( $this->_getParam( 'id' ) )
+		{	// Grab the novelty from the database
+			$novelty = $this->db->getNovelty( $this->_getParam( 'id' ) );
+
+			if( $this->_getParam( 'image' ) )
+			{	$images = $novelty['images'];
+				foreach( $images as $image )
+				{	if( $image['name'] == $this->_getParam( 'image' ) )
+					{	Zend_Controller_Front::getInstance()->setParam('noViewRenderer', true);
+						header("Content-type: {$image['type']}");
+						print( $image['image'] );
+					}
+				}
+			}
+
+			$this->view->novelty = $novelty;
+		}
+
+		$this->view->novelties = $this->db->getNovelties();
+
+	}
+
+	/** /novelties/submit - Used to submit new novelties to the system.
+	 */
 	public function submitAction()
 	{	require_once( "../application/default/views/helpers/form.inc" );
 		$this->secure();

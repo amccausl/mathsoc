@@ -36,10 +36,10 @@
     <div id="logo"><a href="{$baseUrl}/"><img src='{$baseUrl}/images/logo.jpg' alt='MathSoc Logo'/></a></div>
   </div>
   <div id="content">
-{include file="../../../default/views/scripts/menu.tpl"}
     <div id="main">
 {$content_data|indent:6}
     </div>
+{include file="../../../default/views/scripts/menu.tpl"}
     <!-- TODO: Include javascript calls here -->
 	<div id="footer">
 	</div>

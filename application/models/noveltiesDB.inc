@@ -31,7 +31,7 @@ class NoveltiesDB
 
 		$novelty['images'] = $images;
 
-		return $novelties;
+		return $novelty;
 	}
 
 	function submitNovelty( $novelty )
@@ -41,7 +41,7 @@ class NoveltiesDB
 		unset( $novelty['images'] );
 
 		// Insert the novelty to the database
-		$this->_db->insert('novelties', $data);
+		$this->_db->insert('novelties', $novelty);
 
 		$id = $this->_db->lastInsertId();
 
