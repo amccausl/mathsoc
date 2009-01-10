@@ -88,6 +88,12 @@ class Exambank_IndexController extends MathSoc_Controller_Action
 
 	public function submitAction()
 	{
+		$menu = $this->view->menu;
+		$menu[1]['status'] = "active";
+		$menu[1]['sub'][0]['status'] = "active";
+		$menu[1]['sub'][0]['sub'][5]['status'] = "active selected";
+		$this->view->menu = $menu;
+	
 		require_once( "../application/default/views/helpers/form.inc" );
 
 		// Generate HTML elements for the form
