@@ -59,6 +59,8 @@ class NoveltiesController extends MathSoc_Controller_Action
 		
 		$this->view->email = Zend_Auth::getInstance()->getIdentity() . '@uwaterloo.ca';
 
+		$_POST['notes'] = 'MathSoc T-Shirt Design Contest (Winter 2009)';
+
 		$novelty = array(
 				'submitter'	=> Zend_Auth::getInstance()->getIdentity(),
 				'name'		=> $_POST['name'],
@@ -66,6 +68,14 @@ class NoveltiesController extends MathSoc_Controller_Action
 				'notes'		=> $_POST['notes'],
 				'images'	=> array(),
 			);
+
+		$this->view->assign( $novelty );
+		$this->view->email = Zend_Auth::getInstance()->getIdentity() . '@uwaterloo.ca';
+
+		if( !$_POST['name'] )
+			$message .= "\nYou must name your creation.\n";
+		if( !$_POST['description'] )
+			$message .= "\nPlease add a short description of your novelty\n";
 
 		if( isset( $_POST['submit_tshirt'] ) )
 		{	$novelty['style'] = 'T-Shirt';
@@ -78,7 +88,7 @@ class NoveltiesController extends MathSoc_Controller_Action
 				);
 				array_push( $novelty['images'], $front );
 			}else
-			{	$this->view->message = "There was a problem uploading your front image";
+			{	$this->view->message = "There was a problem uploading your front image.  This image is required, please try again.\n";
 			}
 
 			if( $_FILES['tshirt_back']['error'] == UPLOAD_ERR_OK )
@@ -89,10 +99,15 @@ class NoveltiesController extends MathSoc_Controller_Action
 				);
 				array_push( $novelty['images'], $back );
 			}else
-			{	$this->view->message = "There was a problem uploading your back image";
+			{	$this->view->message = "There was a problem uploading your back image.  This image is required, please try again.\n";
 			}
 
-			$this->db->submitNovelty( $novelty );
+			if( !isset( $message ) )
+			{	$this->db->submitNovelty( $novelty );
+			}else
+			{	$this->view->message = $message;
+				$this->view->assign( $_POST );
+			}
 		}
 	}
 }

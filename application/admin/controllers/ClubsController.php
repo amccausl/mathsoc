@@ -1,30 +1,19 @@
 <?php
 
 require_once 'MathSocAction.inc';
+require_once 'clubsDB.inc';
 
-class Admin_ClubsController extends MathSocAuth_Controller_Action
+class Admin_ClubsController extends MathSoc_Controller_Action
 {
 	private $db;
 
-	public function init()
-	{	parent::init();
+	public function init($secure = true)
+	{	parent::init($secure);
 
-		// User must be authenticated to see any of these pages
-		$this->initView();
-		//$this->view->user = Zend_Auth::getInstance()->getIdentity();
+		$this->db = new ClubsDB();
 	}
-/*
-    function preDispatch()
-	{
-		$auth = Zend_Auth::getInstance();
 
-		if (!$auth->hasIdentity())
-		{	$this->_redirect('auth/login');
-		}
-	}
-*/
-	// Browsing Functions
 	public function indexAction()
-	{	// List the existing exams
+	{	
 	}
 }

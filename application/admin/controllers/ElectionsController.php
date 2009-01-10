@@ -6,9 +6,14 @@ require_once 'MathSocAction.inc';
 require_once 'electionDB.inc';
 require_once 'userDB.inc' ;
 
-class Admin_ElectionsController extends MathSocAuth_Controller_Action
+class Admin_ElectionsController extends MathSoc_Controller_Action
 {
 	private $db;
+
+	public function init($secure = true)
+	{	parent::init($secure);
+		$this->db = new ElectionsDB();
+	}
 
 	public function indexAction()
 	{	// Display all the elections and their status

@@ -11,16 +11,13 @@ require_once 'userDB.inc';
  *
  */
 
-class Admin_RefundsController extends MathSocAuth_Controller_Action
+class Admin_RefundsController extends MathSoc_Controller_Action
 {
 	private $db;
 
-	public function init()
-	{	parent::init();
+	public function init($secure = true)
+	{	parent::init($secure);
 
-		// User must be authenticated to see any of these pages
-		$this->initView();
-		//$this->view->user = Zend_Auth::getInstance()->getIdentity();
 		$this->db = new UserDB();
 
 		// TODO: ensure that the current user is an admin of the system (ie. the VPF)
@@ -52,7 +49,6 @@ class Admin_RefundsController extends MathSocAuth_Controller_Action
 		}
 
 		// TODO: If the refunds period has closed, parse request logs against refund list, update rejected users
-		// TODO: add logging on all services to parse
 		$this->view->user_options = $this->db->getRefunds('REQUESTED');
 	}
 

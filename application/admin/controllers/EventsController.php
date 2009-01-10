@@ -8,15 +8,10 @@ class Admin_EventsController extends MathSocAuth_Controller_Action
 {
 	private $db;
 
-	public function init()
-	{	parent::init();
+	public function init($secure = true)
+	{	parent::init($secure);
 
-		// User must be authenticated to see any of these pages
-		$this->initView();
-		//$this->view->user = Zend_Auth::getInstance()->getIdentity();
 	}
-
-	// Browsing Functions
 
 	/** /admin/events/ - Display current status of system and list proposals
 	 *

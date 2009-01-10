@@ -2,20 +2,20 @@
 
 require_once 'MathSocAction.inc';
 
-class Admin_IndexController extends MathSocAuth_Controller_Action
+class Admin_IndexController extends MathSoc_Controller_Action
 {
 	private $db;
 
-	public function init()
-	{	parent::init();
+	public function init($secure = true)
+	{	parent::init($secure);
 
-		// User must be authenticated to see any of these pages
-		$this->initView();
-		//$this->view->user = Zend_Auth::getInstance()->getIdentity();
+		// TODO: set menu admin item dynamically depending on the user positions
 	}
 
-	// Browsing Functions
+	/** /admin/ 
+	 *
+	 */
 	public function indexAction()
-	{	// List the existing exams
+	{
 	}
 }

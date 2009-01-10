@@ -2,20 +2,21 @@
 
 require_once 'MathSocAction.inc';
 
-class Admin_MathleticsController extends MathSocAuth_Controller_Action
+class Admin_MathleticsController extends MathSoc_Controller_Action
 {
 	private $db;
 
-	public function init()
-	{	parent::init();
+	public function init($secure = true)
+	{	parent::init($secure);
 
 		// User must be authenticated to see any of these pages
-		$this->initView();
-		//$this->view->user = Zend_Auth::getInstance()->getIdentity();
+		// TODO: check that the user is mathletics director or above
 	}
 
-	// Browsing Functions
+	/** /admin/mathletics - Display current applications for funding
+	 *
+	 */
 	public function indexAction()
-	{	// List the existing exams
+	{
 	}
 }

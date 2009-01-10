@@ -4,12 +4,16 @@
   <p>{$message}</p>
 {/if}
   <p>Welcome to MathSoc's t-shirt design contest.  By submitting a design to our contest, you are transferring ownership to the Math Society.</p>
+{if $message}
+  <p>{$message}</p>
+  <p>Your upload has failed.  If the problem persists, you can also email your novelty to {mailto address="novelties@mathsoc.uwaterloo.ca"}.</p>
+{/if}
   <div class="form-container">
     <form action="{$smarty.server.REQUEST_URI}" enctype="multipart/form-data" method="post">
     <fieldset>
       <legend>Novelty Design Submission</legend>
       <label for="email">Email:</label>
-        <input name="email" type="text" length="30" disabled="true" value="{$email}" /><br/>
+        <input name="email" type="text" length="21" disabled="true" value="{$email}" /><br/>
       <label for="name">Design Name:</label>
         <input name="name" type="text" length="31" value="{$name}" /><br/>
       <label for="description">Description for your submission:</label>
@@ -18,7 +22,7 @@
         <input type="file" name="tshirt_front" size="20" value="{$tshirt_front}" /><br/>
       <label for="tshirt_back">T-Shirt Image (Back)</label>
         <input type="file" name="tshirt_back" size="20" value="{$tshirt_back}" /><br/>
-      <input type="hidden" name="notes" value="MathSoc T-Shirt Design Contest (Winter 2009)"/>
+      <input type="hidden" name="notes" value="{$notes}"/>
     </fieldset>
 
     <div class="buttonrow">

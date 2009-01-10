@@ -2,38 +2,27 @@
 
 require_once 'MathSocAction.inc';
 
-// Load the database model for the exam storage
-require_once '../application/exambank/models/examDB.inc';
+require_once 'officeDB.inc';
 
 class Admin_OfficeController extends MathSoc_Controller_Action
 {
 	private $db;
 
-	public function init()
-	{	parent::init();
+	public function init($secure = true)
+	{	parent::init($secure);
 
-		// User must be authenticated to see any of these pages
-		$this->initView();
-		//$this->view->user = Zend_Auth::getInstance()->getIdentity();
-
-		$this->db = new ExamDB();
+		$this->db = new OfficeDB();
 	}
-/*
-    function preDispatch()
-	{
-		$auth = Zend_Auth::getInstance();
 
-		if (!$auth->hasIdentity())
-		{	$this->_redirect('auth/login');
-		}
-	}
-*/
-	// Browsing Functions
+	/** /admin/office
+	 *
+	 */
 	public function indexAction()
 	{
 	}
 
-	/** Retrieve a list of the email address of the office workers for the term
+	/** /admin/office/emails - Retrieve a list of the email address of the office workers for the term
+	 * TODO: in the long run this should be a mail list
 	 */
 	public function emailAction()
 	{
