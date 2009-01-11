@@ -56,7 +56,11 @@ function getMenu( $request = null )
 		array(
 			"title"	=> "Novelties",
 			"link"	=> $request->getBaseUrl() . "/Novelties",
-			"sub"	=> array()),
+			"sub"	=> array(
+			array(
+				"title"	=> "Design Competition",
+				"link"	=> $request->getBaseUrl() . "/Novelties/contest"
+			))),
 		array(
 			"title"	=> "C&amp;D",
 			"link"	=> $request->getBaseUrl() . "/RightAngleCafe",
