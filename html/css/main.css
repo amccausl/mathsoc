@@ -43,7 +43,7 @@ a:hover {
 }
 
 #main-header h1, #main-header h2, #main-header h3 {
-	margin: -75px 0 0;
+	/* margin: -75px 0 0; */
 	padding: 10px 0 0 20px;
 }
 
@@ -65,6 +65,7 @@ a:hover {
 
 #main {
 	float: right;
+	margin: -75px 0 0;
 	width: 510px;
 	padding: 0 30px 0 0;
 }
