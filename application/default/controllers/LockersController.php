@@ -138,7 +138,6 @@ class LockersController extends MathSoc_Controller_Action
 		}
 
 		$this->secure();
-		$this->view->username = Zend_Auth::getInstance()->getIdentity();
 		$locker = $this->db->lookup( Zend_Auth::getInstance()->getIdentity() );
 		require_once( "../application/default/views/helpers/form.inc" );
 
@@ -162,7 +161,7 @@ class LockersController extends MathSoc_Controller_Action
 			'email' => Zend_Auth::getInstance()->getIdentity() . '@uwaterloo.ca',
 			'locker_current_phone' => $phone,
 			'locker_combo' => $combo,
-			'locker_expires' => strftime($format, locker_expires())
+			'expires' => strftime($format, locker_expires())
 		);
 		$this->view->assign($default);
 
@@ -185,10 +184,8 @@ class LockersController extends MathSoc_Controller_Action
 						"phone"	=> $_POST['locker_current_phone'],
 						"combo"	=> $_POST['locker_combo']
 						);
-					if( $this->db->signup($_POST['locker_id'], $info) )
-					{	$this->view->message = "You have successfully signed up for locker #{$_POST['locker_id']}.";
-					}else
-					{	$this->view->message = "The system has failed to sign you up for the locker.  Please try again later.";
+					if( $message = $this->db->signup($_POST['locker_id'], $info) )
+					{	$this->view->message = $message;
 					}
 				}
 			//}

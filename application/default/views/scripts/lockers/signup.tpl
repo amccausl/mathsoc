@@ -26,8 +26,8 @@
     <input name='locker_current_phone' type='text' length='12' value='{$locker_current_phone}' /><br/>
   <label for='locker_combo'>Combo: (Optional)</label>
     <input name='locker_combo' type='text' length='10' value='{$locker_combo}' /><br/>
-  <label for='locker_expires'>Expires:</label>
-    <input name='locker_expires' type='text' length='15' disabled='true' value='{$locker_expires}' /><br/>
+  <label for='expires'>Expires:</label>
+    <input name='expires' type='text' length='15' disabled='true' value='{$expires}' /><br/>
 </fieldset>
 <div class='buttonrow'>
   <input name='submit' type='submit' value='Sign up For Locker' class='button'/> 

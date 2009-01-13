@@ -24,6 +24,27 @@ class Admin_LockersController extends MathSoc_Controller_Action
 		$this->view->assign( $usage );
 	}
 
+	public function lookupAction()
+	{
+		$lockers = $this->db->lookup();
+
+		// Must dump associative array to single array
+		$cols = "";
+		$data = array();
+
+		foreach( $lockers as $locker )
+		{
+			if( !$cols )
+				$cols = implode(",", array_keys( $locker ));
+			foreach( $locker as $col )
+				array_push( $data, $col );
+		}
+
+		// Add results to view to create table
+		$this->view->cols = $cols;
+		$this->view->data = $data;
+	}
+
 	public function emptyAction()
 	{	// Call getEmptyLockers() to expire lockers and return empty ones
 		$lockers = $this->db->getEmptyLockers();

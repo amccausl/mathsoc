@@ -22,8 +22,14 @@ class LockerDB
 
 	/** lookup - Returns all information for a given locker
 	 */
-	function lookup( $id )
-	{	if( $id > 0 )
+	function lookup( $id = null )
+	{	if( $id == null )
+		{	$query = "SELECT id, current_userId, current_phone, expires, last_userId, last_phone
+					  FROM lockers
+					  WHERE current_userId IS NOT NULL
+					  ORDER BY id";
+			return $this->_db->fetchAll( $query );
+		}elseif( $id > 0 )
 		{	$query = "SELECT * FROM `lockers` WHERE `id` = ?";
 		}else
 		{	$query = "SELECT * FROM `lockers` WHERE `current_userId` = ?";
@@ -53,7 +59,7 @@ class LockerDB
 		$holder = $this->_db->fetchOne($query, $lockerNum);
 
 		if( $holder && $holder != $info['user'] )
-			return false;
+			return "The locker you are trying to sign up for is already held by someone else.  Please try another locker.";
 
 		// Check that the user doesn't have another locker
 		$query = "SELECT id FROM lockers WHERE current_userId = ?";
@@ -62,7 +68,7 @@ class LockerDB
 		if( $locker && $locker != $lockerNum )
 		{	$n = $this->_db->update('lockers', array("current_userId" => new Zend_Db_Expr('NULL'), "last_userId" => $info['user']), "id = {$locker}");
 			if( $n != 1 )
-				return false;
+				return "You are already signed up for locker #{$locker} and the system can't free that locker.  You are only allowed to have one locker, so please try to sign up again later.";
 		}
 
 		$data = array();
@@ -73,16 +79,19 @@ class LockerDB
 		$mysql_format = "Y-m-d H:i:s";
 		$data['expires'] = date( $mysql_format, locker_expires() );
 
-		if( $info['phone'] )
-			$data['current_phone'] = $info['phone'];
-		if( $info['combo'] )
-			$data['combo'] = $info['combo'];
+		$data['current_phone'] = $info['phone'];
+		$data['combo'] = $info['combo'];
 
 		$n = $this->_db->update('lockers', $data, "id = {$lockerNum}");
 
 		if( $n == 1 )
-			return true;
-		return false;
+		{	if( $locker == $lockerNum )
+			{	return "Your locker information has been updated successfully.";
+			}else
+			{	return "You have successfully signed up for locker #{$lockerNum}.";
+			}
+		}
+		return "The system has failed to sign you up for the locker.  Please try again later.";
 	}
 
 /*** DEMOGRAPHIC FUNCTIONS ***/
@@ -94,9 +103,11 @@ class LockerDB
 	function getUsage()
 	{
 		$mysql_format = "Y-m-d H:i:s";
+		$then = date("U") - 2592000;
+
 		// Find the day things used to expire
-		$start = ( ceil( (date("m") - 1) / 4 ) % 3 ) * 4 + 1;
-		$expires = mktime( 0, 0, 0, $start, 1, date("Y") + ($start == 1) );
+		$start = ( ceil( date("m", $then) / 4 ) % 3 ) * 4 + 1;
+		$expires = mktime( 0, 0, 0, $start, 1, date("Y", $then) + ($start == 1) );
 		if( $start == 9 )
 			$expires = strtotime( "next Monday", $expires );
 		$expires = strtotime( "next Monday", $expires ) + 378000;
@@ -143,7 +154,8 @@ class LockerDB
 		// Since lockers were just expired, this list should be all available lockers.
 		$query = "SELECT id, last_userId, last_phone, combo
 				  FROM lockers
-				  WHERE current_userId IS NULL";
+				  WHERE current_userId IS NULL
+				  ORDER BY id";
 		$lockers = $this->_db->fetchAll($query);
 
 		return $lockers;
