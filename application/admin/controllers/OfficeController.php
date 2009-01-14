@@ -21,10 +21,18 @@ class Admin_OfficeController extends MathSoc_Controller_Action
 	{
 	}
 
-	/** /admin/office/emails - Retrieve a list of the email address of the office workers for the term
+	/** /admin/office/workers - Retrieve a list of the email address of the office workers for the term
 	 * TODO: in the long run this should be a mail list
 	 */
-	public function emailAction()
-	{
+	public function workersAction()
+	{	$workers = $this->db->getEmails();
+		$this->view->workers = $workers;
+	}
+
+	/** /admin/office/missing
+	 */
+	public function missingAction()
+	{	$missing = $this->db->missingHours();
+		$this->view->missing = $missing;
 	}
 }

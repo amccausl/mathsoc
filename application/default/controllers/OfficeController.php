@@ -130,7 +130,7 @@ class OfficeController extends MathSoc_Controller_Action
 							$name = $name[0] . " " . substr(array_pop($name), 0, 1) . ".";
 							array_push($names, $name);
 						}
-						$xml .= implode( ", ", $names);
+						$xml .= implode( ",\n", $names);
 						$xml .= "'/>\n";
 					}else
 					{	$xml .= "    <block at='{$hour}' blockoffset='-{$span}' blockspan='0' bgcolor='#FFC0FF' alpha='30%' name=''/>\n";

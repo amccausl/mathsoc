@@ -60,10 +60,10 @@ class OfficeDB
 	{
 		if(!$term)
 		{	$query = "SELECT v.userId, v.name, e.email
-					  FROM volunteers v, user_emails e, office_workers w, terms t
+					  FROM volunteers v, user_emails e, office_workers w, terms
 					  WHERE v.userId = w.userId
 						AND e.userId = v.userId
-						AND w.term = t.current_term
+						AND w.term = terms.current_term
 					  ORDER BY v.name";
 			return $this->_db->fetchAll($query);
 		}else
@@ -81,13 +81,17 @@ class OfficeDB
 	 */
 	function missingHours()
 	{
-		$query = "SELECT DISTINCT h.userId, v.name, e.email
-				  FROM position p, holders h, terms t, volunteers v, user_emails e
-				  WHERE h.term = t.current_term
+		$query = "SELECT DISTINCT h.userId, v.name, e.email, GROUP_CONCAT(p.name SEPARATOR ',') AS positions
+				  FROM positions p, holders h, terms, volunteers v, user_emails e
+				  WHERE h.term = terms.current_term
+					AND p.unitId = '1'
 					AND e.userId = h.userId
+					AND v.userId = h.userId
 					AND p.category IN ('DIR', 'REP')
 					AND p.alias = h.position
-					AND h.userId NOT IN (SELECT userId FROM office_workers, terms WHERE term = terms.current_term)";
+					AND h.userId NOT IN (SELECT userId FROM office_workers, terms WHERE term = terms.current_term)
+				  GROUP BY h.userId
+				  ORDER BY v.name";
 		return $this->_db->fetchAll($query);
 	}
 	
