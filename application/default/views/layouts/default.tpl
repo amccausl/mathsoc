@@ -29,6 +29,13 @@
   {rdelim}
   </style>
   <![endif]-->
+  <!--[if lt IE 7]>
+  <style type="text/css" media="screen">
+  #main {ldelim}
+  margin: 0 0 0;
+  {rdelim}
+  </style>
+  <![endif]-->
 </head>
 <body>
 <div id='wrapper'>
