@@ -4,6 +4,7 @@
   <p>{$message}</p>
 {/if}
   <p>Welcome to MathSoc's t-shirt design contest.  By submitting a design to our contest, you are transferring ownership to the Math Society.</p>
+  <p>If you don't have a digital version of the image, there is a public use scanner in the MathSoc office that you can use.</p>
 {if $message}
   <p>{$message}</p>
   <p>Your upload has failed.  If the problem persists, you can also email your novelty to {mailto address="novelties@mathsoc.uwaterloo.ca"}.</p>

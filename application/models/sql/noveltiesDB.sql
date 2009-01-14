@@ -6,6 +6,7 @@ CREATE TABLE novelties (
     name        VARCHAR(31)     NOT NULL,
     description TEXT,
     notes       TEXT,
+    price       FLOAT(4,2),
     
     PRIMARY KEY (id)
 )ENGINE=INNODB;
