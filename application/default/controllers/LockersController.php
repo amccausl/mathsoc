@@ -145,12 +145,14 @@ class LockersController extends MathSoc_Controller_Action
 		{	$id = $this->_getParam('locker_id') ? $this->_getParam('locker_id') : $locker['id'];
 			$phone = $locker['current_phone'];
 			$combo = $locker['combo'];
+			$expires = $locker['expires'];
 
 			$this->view->current_locker = $locker['id'];
 		}else
 		{	$id = $this->_getParam('locker_id');
 			$phone = "";
 			$combo = "";
+			$expires = strftime($format, locker_expires());
 		}
 
 		// Initialize default form values
@@ -161,7 +163,7 @@ class LockersController extends MathSoc_Controller_Action
 			'email' => Zend_Auth::getInstance()->getIdentity() . '@uwaterloo.ca',
 			'locker_current_phone' => $phone,
 			'locker_combo' => $combo,
-			'expires' => strftime($format, locker_expires())
+			'expires' => $expires
 		);
 		$this->view->assign($default);
 
@@ -180,12 +182,13 @@ class LockersController extends MathSoc_Controller_Action
 				if( isset($_POST['submit']) )
 				{	$info = array(
 						"user"	=> $default['username'],
-						"expires" => $default['expires'],
+						"expires" => strftime($format, locker_expires()),
 						"phone"	=> $_POST['locker_current_phone'],
 						"combo"	=> $_POST['locker_combo']
 						);
 					if( $message = $this->db->signup($_POST['locker_id'], $info) )
 					{	$this->view->message = $message;
+						$_POST['expires'] = $info['expires'];
 					}
 				}
 			//}

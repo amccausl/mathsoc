@@ -3,7 +3,7 @@
 {if $message}
   <p>{$message}</p>
 {elseif $current_locker}
-  <p>You are currently signed up for locker #{$current_locker}.</p>
+  <p>You are currently signed up for locker #{$current_locker}.  If your locker is about to expire, you can renew it by clicking 'Sign up For Locker'.</p>
 {else}
   <p>You are not currently signed up for a locker.</p>
 {/if}
