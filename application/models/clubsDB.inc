@@ -15,7 +15,7 @@ class ClubsDB
 	}
 
 	public function getClubs()
-	{	$query = "SELECT *
+	{	$query = "SELECT alias, name, url, room, phone, membership, description
 				  FROM clubs, units
 				  WHERE clubs.id = units.id";
 		$clubs = $this->_db->fetchAll( $query );
@@ -25,9 +25,9 @@ class ClubsDB
 
 	public function getClub($id)
 	{	if( $id > 0 )
-		{	$query = "SELECT * FROM clubs, units WHERE clubs.id = ? AND clubs.id = units.id";
+		{	$query = "SELECT alias, name, url, room, phone, membership, description FROM clubs, units WHERE clubs.id = ? AND clubs.id = units.id";
 		}else
-		{	$query = "SELECT * FROM clubs, units WHERE units.alias = ? AND clubs.id = units.id";
+		{	$query = "SELECT alias, name, url, room, phone, membership, description FROM clubs, units WHERE units.alias = ? AND clubs.id = units.id";
 		}
 
 		$club = $this->_db->fetchRow( $query, $id );

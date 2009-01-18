@@ -30,7 +30,7 @@ class ExamDB
 	}
 
 	function getExams( $prefix, $code )
-	{	$query = "SELECT *
+	{	$query = "SELECT id, course, prefix, code, term, type, exam_path, solutions_path, approved
 			FROM exams_view
 			WHERE prefix = ?
 				AND code = ?";
@@ -71,5 +71,44 @@ class ExamDB
 
 	function addExam( $exam )
 	{	return $this->_db->insert('exams', $exam);
+	}
+
+	function getUnapprovedExams()
+	{
+		$query = "SELECT examId AS id,
+					CONCAT(c.prefix, ' ', c.code) as course,
+					e.term,
+					e.uploader,
+					e.type,
+					e.number,
+					e.practise,
+					(e.exam_path IS NOT NULL) AS has_questions
+					(e.solutions_path IS NOT NULL) AS has_solutions
+				  FROM exams e, courses c
+				  WHERE e.visible = 1
+					AND e.approved = 0
+					AND e.courseId = c.courseId";
+		$exams = $this->_db->fetchAll( $query );
+		return $exams;
+	}
+
+	function getUnapprovedExam($id)
+	{
+		$query = "SELECT examId AS id,
+					CONCAT(c.prefix, ' ', c.code) as course,
+					e.term,
+					e.uploader,
+					e.type,
+					e.number,
+					e.practise,
+					(e.exam_path IS NOT NULL) AS has_questions
+					(e.solutions_path IS NOT NULL) AS has_solutions
+				  FROM exams e, courses c
+				  WHERE e.visible = 1
+					AND e.approved = 0
+					AND e.courseId = c.courseId
+					AND e.examId = ?";
+		$exam = $this->_db->fetchRow( $query, $id );
+		return $exam;
 	}
 }

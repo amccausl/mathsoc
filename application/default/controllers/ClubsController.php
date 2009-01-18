@@ -39,6 +39,7 @@ class ClubsController extends MathSoc_Controller_Action
 	 */
 	public function joinAction()
 	{	// TODO: ensure user is logged in
+		$this->view->clubs = $this->db->getClubs();
 	}
 }
 

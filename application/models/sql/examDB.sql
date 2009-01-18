@@ -15,8 +15,9 @@ CREATE TABLE exams (
     visible	bool				DEFAULT 1,
     approved	bool				DEFAULT 0,
     
-    PRIMARY KEY (examId)
-) type=MyISAM;
+    PRIMARY KEY (examId),
+	FOREIGN KEY (courseId) REFERENCES courses(courseId)
+)ENGINE=INNODB;
 
 CREATE TABLE courses (
     courseId	SMALLINT UNSIGNED	NOT NULL	AUTO_INCREMENT,
@@ -25,7 +26,7 @@ CREATE TABLE courses (
     title	varchar(255)		NOT NULL,
 
     PRIMARY KEY (courseId,prefix,code)
-) type=MyISAM;
+)ENGINE=INNODB;
 
 CREATE VIEW exams_view as
 SELECT
