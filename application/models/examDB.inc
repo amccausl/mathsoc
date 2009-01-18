@@ -98,7 +98,7 @@ class ExamDB
 
 	function getUnapprovedExams()
 	{
-		$query = "SELECT examId AS id,
+		$query = "SELECT e.id,
 					CONCAT(c.prefix, ' ', c.code) as course,
 					e.term,
 					e.uploader,
@@ -117,13 +117,13 @@ class ExamDB
 
 	function getUnapprovedExam($id)
 	{
-		$query = "SELECT examId AS id,
+		$query = "SELECT e.id,
 					CONCAT(c.prefix, ' ', c.code) as course,
 					e.term,
 					e.uploader,
 					e.type,
 					e.number,
-					e.practise,
+					e.practice,
 					(e.exam_path IS NOT NULL) AS has_questions
 					(e.solutions_path IS NOT NULL) AS has_solutions
 				  FROM exams e, courses c
