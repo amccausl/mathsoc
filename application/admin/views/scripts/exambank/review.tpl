@@ -1,7 +1,7 @@
-<div id='main-header'><h1></h1></div>
-<div class="section">
-  <form action='{$smarty.server.REQUEST_URI}' method='post'>
-  <table>
+<div id="main-header"><h1></h1></div>
+<div class="section" style="width: 700px">
+  <form action="{$smarty.server.REQUEST_URI}" method="post">
+  <table width="700">
     <caption>Unapproved Exams</caption>
     <thead><tr>
       <th scope="col">Course</th>

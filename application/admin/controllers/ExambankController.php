@@ -32,7 +32,7 @@ class Admin_ExambankController extends MathSoc_Controller_Action
 		{	Zend_Controller_Front::getInstance()->setParam('noViewRenderer', true);
 
 			$req = $this->_getParam('exam') ? 'exam' : 'solutions';
-			$exam = $this->db->getUnapprovedExam( $this->getParam($req) );
+			$exam = $this->db->getUnapprovedExam( $this->_getParam($req) );
 			if( !$filename = $exam[$req . '_path'] )
 			{	echo( 'The exam you\'re looking for doesn\'t exist' );
 				exit;
