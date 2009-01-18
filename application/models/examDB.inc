@@ -23,18 +23,40 @@ class ExamDB
 	 */
 	function getExam( $id )
 	{
-		$query = "SELECT *
-			FROM exams_view
-			WHERE id = ?";
+		$query = "SELECT e.id,
+					CONCAT(c.prefix, ' ', c.code) AS course,
+					c.prefix,
+					c.code,
+					e.term,
+					e.type,
+					e.exam_path,
+					e.exam_type,
+					e.solutions_path,
+					e.solutions_type,
+					e.approved
+				  FROM exams e, courses c
+				  WHERE e.id = ?
+					AND e.courseId = c.id";
 		return $this->_db->fetchRow( $query, $id );
 	}
 
 	function getExams( $prefix, $code )
 	{
-		$query = "SELECT id, course, prefix, code, term, type, number, exam_path, solutions_path, approved
-			FROM exams_view
-			WHERE prefix = ?
-				AND code = ?";
+		$query = "SELECT e.id,
+					CONCAT(c.prefix, ' ', c.code) AS course,
+					c.prefix,
+					c.code,
+					e.term,
+					e.type,
+					e.exam_path,
+					e.exam_type,
+					e.solutions_path,
+					e.solutions_type,
+					e.approved
+			FROM exams e, courses c
+			WHERE c.id = e.courseId
+				AND c.prefix = ?
+				AND c.code = ?";
 		return $this->_db->fetchAll( $query, array( $prefix, $code ) );
 	}
 
@@ -48,7 +70,7 @@ class ExamDB
 		{	if( $returnAll )
 				$query = "SELECT DISTINCT prefix FROM courses ORDER BY prefix";
 			else
-				$query = "SELECT DISTINCT prefix FROM exams_view ORDER BY prefix";
+				$query = "SELECT DISTINCT prefix FROM exams, courses WHERE courses.id = exams.courseId AND exams.visible = 1 ORDER BY prefix";
 			return $this->_db->fetchCol( $query );
 		}
 
@@ -57,7 +79,7 @@ class ExamDB
 		{	if( $returnAll )
 				$query = "SELECT DISTINCT code FROM courses WHERE prefix = ? ORDER BY code";
 			else
-				$query = "SELECT DISTINCT code FROM exams_view WHERE prefix = ? ORDER BY code";
+				$query = "SELECT DISTINCT code FROM exams, courses WHERE prefix = ? AND courses.id = exams.courseId AND exams.visible = 1 ORDER BY code";
 			return $this->_db->fetchCol( $query, $prefix );
 		}
 
