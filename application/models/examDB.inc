@@ -30,7 +30,8 @@ class ExamDB
 	}
 
 	function getExams( $prefix, $code )
-	{	$query = "SELECT id, course, prefix, code, term, type, exam_path, solutions_path, approved
+	{
+		$query = "SELECT id, course, prefix, code, term, type, number, exam_path, solutions_path, approved
 			FROM exams_view
 			WHERE prefix = ?
 				AND code = ?";
@@ -61,12 +62,12 @@ class ExamDB
 		}
 
 		// If both prefix and code are set, return course title
-		$query = "SELECT title FROM courses WHERE prefix = ? AND code = ?";
+		$query = "SELECT courseId AS id, title FROM courses WHERE prefix = ? AND code = ?";
 		return $this->_db->fetchRow( $query, array( $prefix, $code ) );
 	}
 
 	function getTypes()
-	{	return array('Assignment', 'Final', 'Midterm', 'Practice', 'Quiz', 'Test');
+	{	return array('Final', 'Midterm', 'Quiz', 'Test', 'Assignment');
 	}
 
 	function addExam( $exam )
@@ -81,7 +82,7 @@ class ExamDB
 					e.uploader,
 					e.type,
 					e.number,
-					e.practise,
+					e.practice,
 					(e.exam_path IS NOT NULL) AS has_questions
 					(e.solutions_path IS NOT NULL) AS has_solutions
 				  FROM exams e, courses c

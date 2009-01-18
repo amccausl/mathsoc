@@ -95,9 +95,11 @@ class Exambank_IndexController extends MathSoc_Controller_Action
 		$this->view->menu = $menu;
 	
 		require_once( "../application/default/views/helpers/form.inc" );
+		$this->view->array_push( 'stylesheets', $this->getRequest()->getBaseUrl() . '/css/form.css' );
 
 		// Generate HTML elements for the form
-		$this->view->prefix_options = $this->db->getCourses(null, null, true);
+		$prefixes = $this->db->getCourses(null, null, true);
+		$this->view->prefix_options = array_combine( $prefixes, $prefixes );
 
 		$terms = array();
 		$term = (date('Y') - 1900) . (1 + 4*(ceil(date('m') / 4) - 1));
@@ -113,8 +115,14 @@ class Exambank_IndexController extends MathSoc_Controller_Action
 		}
 		$this->view->term_options = $terms;
 
+		$types = $this->db->getTypes();
+		$this->view->type_options = array_combine( $types, $types );
+
 		if( isset( $_POST['submit'] ) )
 		{
+			$error = "";
+			$success = false;
+
 			// Create exam object to add
 			$exam = array();
 			$exam['uploader'] = Zend_Auth::getInstance()->getIdentity();
@@ -125,40 +133,23 @@ class Exambank_IndexController extends MathSoc_Controller_Action
 			if( !isset( $_POST['course_prefix'] ) )
 			{	// Prefix has not been set, but is manditory
 				$error .= "You must enter the prefix for the course.<br />";
-			}elseif ( !isset( $_POST['course_prefix'] ) )
-			{	// Prefix is not a valid prefix
-				$error .= "You must include a valid prefix<br />";
 			}else
-			{	//if( !in_array( strtoupper( $_POST['course_prefix'] ), $database->getPrefixes() ) )
-				//{	// Given prefix is unknown
-				//	$error .= "The prefix you have chosen is unknown.<br />";
-				//}else
-				//{	// Check number exists and is valid
-				//	if( !isset( $_POST['course_number'] ) )
-				//	{	// Course number has not been included
-				//		$error .= "You must enter the number of the course.<br />";
-				//	}elseif( !sanitize( $_POST['course_number'], "course_number" ) )
-				//	{	// Course number included is not a course number
-				//		$error .= "You must include a valid course number.<br />";
-				//	}else
-				//	{	// Ensure the course exists
-					if( !$course = $database->getCourses( strtoupper( $_POST['course_prefix'] ), $_POST['course_number'], true ) )
-					{	// The course doesn't exist in the database
-						$error .= "The course you have selected was not found in the database.<br />";
-					}else
-					{	$exam['courseId'] = $course['id'];
-					}
-				//	}
-				//}
+			{	$course = $this->db->getCourses( strtoupper( $_POST['course_prefix'] ), $_POST['course_code'], true );
+				if( !$course )
+				{	// The course doesn't exist in the database
+					$error .= "The course you have selected was not found in the database.<br />";
+				}else
+				{	$exam['courseId'] = $course['id'];
+				}
 			}
 
-			$exam['term'] = $_POST['term'];
+			$exam['term'] = $_POST['course_term'];
 
 			// Check if type exists and is valid
-			if( !isset( $_POST['type'] ) )
+			if( !isset( $_POST['exam_type'] ) )
 			{	$error .= "You must select the type of the exam<br />";
 			}else
-			{	$exam['type'] = $_POST['type'];
+			{	$exam['type'] = $_POST['exam_type'];
 			}
 
 			// Add index if valid
@@ -167,68 +158,54 @@ class Exambank_IndexController extends MathSoc_Controller_Action
 			}
 
 			// Check status of practice checkbox
-			if( $_POST['practice'] )
+			if( isset($_POST['practice']) )
 				$exam['practice'] = 1;		
 
-			if( !isset( $error ) )
+			if( !$error )
 			{
-				if( $database->getExam($exam) )
-				{	// exam already exists in the system
-					$error .= "The exam you are trying to submit already exists in the system<br />";
-				}else
+				$exam_file = file_upload( 'exam_file', $this->examDir );
+				switch( $exam_file[0] )
 				{
-					// Check if user has attempted to upload an exam or solution
-					if( $_FILES['exam']['error'] !== UPLOAD_ERR_NO_FILE || $_FILES['solutions']['error'] !== UPLOAD_ERR_NO_FILE )
-					{
-						if( $_FILES['exam']['error'] === UPLOAD_ERR_OK )
-						{	$uploadExam = hash_file( "md5", $_FILES['exam']['tmp_name'] );
-			
-							if( move_uploaded_file( $_FILES['exam']['tmp_name'], $this->examDir . $uploadExam ) )
-							{	$exam['file_path'] = $uploadExam;
-								$exam['file_type'] = $_FILES['exam']['type'];
-								chmod( $examDir . $uploadExam, 0575 );
-							}
-						}elseif( $_FILES['exam']['error'] === UPLOAD_ERR_INI_SIZE || $_FILES['exam']['error'] === UPLOAD_ERR_FORM_SIZE )
-						{	// File is too large to be uploaded
-							$error .= "The exam you are submitting is too large to be submitted in this manor.  We are very sorry of the inconvience.  Please email your exam to <a href='mailto:exambank@mathsoc.uwaterloo.ca'>exambank@mathsoc.uwaterloo.ca</a><br />";
-						}elseif( $_FILES['exam']['error'] === UPLOAD_ERR_PARTIAL )
-						{	$error .= "There was an error in the transmission of your exam.  Please try again.  If the problem persists, please email your exam to <a href='mailto:exambank@mathsoc.uwaterloo.ca'>exambank@mathsoc.uwaterloo.ca</a><br />";
-						}else
-						{	// No Exam submitted
-						}
-
-						if( $_FILES['solutions']['error'] === UPLOAD_ERR_OK )
-						{	$uploadSol = hash_file( "md5", $_FILES['solutions']['tmp_name'] );
-
-							if( move_uploaded_file( $_FILES['solutions']['tmp_name'], $this->examDir . $uploadSol ) )
-							{	$exam['sol_path'] = $uploadSol;
-								$exam['sol_type'] = $_FILES['solutions']['type'];
-								chmod( $this->examDir . $uploadSol, 0575 );
-							}
-						}elseif( $_FILES['solutions']['error'] === UPLOAD_ERR_INI_SIZE || $_FILES['solutions']['error'] === UPLOAD_ERR_FORM_SIZE )
-						{	// File is too large to be uploaded
-								$error .= "The solutions you are submitting are too large to be submitted in this manor.  We are very sorry of the inconvience.  Please email your exam to <a href='mailto:exambank@mathsoc.uwaterloo.ca'>exambank@mathsoc.uwaterloo.ca</a><br />";
-						}elseif( $_FILES['solutions']['error'] === UPLOAD_ERR_PARTIAL )
-						{	$error .= "There was an error in the transmission of your solutions.  Please try again.  If the problem persists, please email your solutions to <a href='mailto:exambank@mathsoc.uwaterloo.ca'>exambank@mathsoc.uwaterloo.ca</a><br />";
-						}else
-						{	// No solutions submitted
-						}
-					}else
-					{	// No exam
-						$error .= "You must include an exam with your submission<br />";
-					}
-
-					// Add exam to the database
-					if( $error || !$database->addExam($exam) )
-					{	// Failed to add exam.  Should output error
-						$error .= "Database upload has failed<br />";
-					}else
-					{	$error .= "Your exam has been submitted without problems<br />";
-						$success = true;
-					}
+					case UPLOAD_ERR_OK:
+						$exam['exam_path'] = $exam_file[1];
+						$exam['exam_type'] = $_FILES['exam_file']['tmp_name'];
+						break;
+					case UPLOAD_ERR_INI_SIZE:
+					case UPLOAD_ERR_FORM_SIZE:
+						$error .= "The exam you are submitting is too large to be submitted in this manor.  We are very sorry of the inconvience.  Please email your exam to <a href='mailto:exambank@mathsoc.uwaterloo.ca'>exambank@mathsoc.uwaterloo.ca</a><br />";
+						break;
+					case UPLOAD_ERR_PARTIAL:
+						$error .= "There was an error in the transmission of your exam.  Please try again.  If the problem persists, please email your exam to <a href='mailto:exambank@mathsoc.uwaterloo.ca'>exambank@mathsoc.uwaterloo.ca</a><br />";
+						break;
 				}
-			}else
-			{	// Exam upload has failed
+
+				$solutions_file = file_upload( 'solutions_file', $this->examDir );
+				switch( $solutions_file[0] )
+				{
+					case UPLOAD_ERR_OK:
+						$exam['solutions_path'] = $solutions_file[1];
+						$exam['solutions_type'] = $_FILES['solutions_file']['tmp_name'];
+						break;
+					case UPLOAD_ERR_INI_SIZE:
+					case UPLOAD_ERR_FORM_SIZE:
+						$error .= "The solutions you are submitting are too large to be submitted in this manor.  We are very sorry of the inconvience.  Please email your exam to <a href='mailto:exambank@mathsoc.uwaterloo.ca'>exambank@mathsoc.uwaterloo.ca</a><br />";
+						break;
+					case UPLOAD_ERR_PARTIAL:
+						$error .= "There was an error in the transmission of your solutions.  Please try again.  If the problem persists, please email your solutions to <a href='mailto:exambank@mathsoc.uwaterloo.ca'>exambank@mathsoc.uwaterloo.ca</a><br />";
+						break;
+				}
+
+				if( !isset( $exam['exam_path'] ) && !isset( $exam['solutions_path'] ) )
+					$error .= "You must include an exam with your submission<br />";
+
+				// Add exam to the database
+				if( $error || !$this->db->addExam($exam) )
+				{	// Failed to add exam.  Should output error
+					$error .= "Database upload has failed<br />";
+				}else
+				{	$error .= "Your exam has been submitted without problems<br />";
+					$success = true;
+				}
 			}
 
 			if( $success )
