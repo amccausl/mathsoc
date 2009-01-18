@@ -53,6 +53,17 @@ class Admin_ExambankController extends MathSoc_Controller_Action
 		// Display all unapproved exams to the user
 		$exams = $this->db->getUnapprovedExams();
 		$this->view->exams = $exams;
+
+		// Process user input if necessary
+		foreach( $exams as $exam )
+		{	if( isset( $_POST['approve_' . $exam['id']] ) )
+			{	$this->db->approveExam( $exam['id'] );
+			}elseif( isset( $_POST['reject_' . $exam['id']] ) )
+			{	$this->db->rejectExam( $exam['id'] );
+			}elseif( isset( $_POST['update_' . $exam['id']] ) )
+			{	$this->_redirect( '/admin/exambank/update/id/' . $exam['id'] );
+			}
+		}
 	}
 
 	public function updateAction()

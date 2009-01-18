@@ -25,7 +25,6 @@
           <input type="submit" name="approve_{$exam.id}" value="Approve" />
           <input type="submit" name="reject_{$exam.id}" value="Reject" />
           <input type="submit" name="update_{$exam.id}" value="Update" />
-          <input type="submit" name="delete_{$exam.id}" value="Delete" />
         </td>
       </tr>
 {/foreach}

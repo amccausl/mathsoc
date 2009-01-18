@@ -138,4 +138,28 @@ class ExamDB
 		$exam = $this->_db->fetchRow( $query, $id );
 		return $exam;
 	}
+
+	function approveExam($id)
+	{	$n = $this->_db->update( 'exams', array('approved' => 1), "id = $id" );
+		if( $n == 1 )
+		{	return true;
+		}
+		return false;
+	}
+
+	function rejectExam($id)
+	{	$n = $this->_db->update( 'exams', array('visible' => 0), "id = $id" );
+		if( $n == 1 )
+		{	return true;
+		}
+		return false;
+	}
+
+	function updateExam($exam)
+	{	$n = $this->_db->update( 'exams', $exam, "id = {$exam['id']}" );
+		if( $n == 1 )
+		{	return true;
+		}
+		return false;
+	}
 }
