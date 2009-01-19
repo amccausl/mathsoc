@@ -105,7 +105,7 @@ class ExamDB
 					e.type,
 					e.number,
 					e.practice,
-					(e.exam_path IS NOT NULL) AS has_questions
+					(e.exam_path IS NOT NULL) AS has_questions,
 					(e.solutions_path IS NOT NULL) AS has_solutions
 				  FROM exams e, courses c
 				  WHERE e.visible = 1
@@ -127,8 +127,8 @@ class ExamDB
 					e.exam_path,
 					e.exam_type,
 					e.solutions_path,
-					e.solutions_type
-					(e.exam_path IS NOT NULL) AS has_questions
+					e.solutions_type,
+					(e.exam_path IS NOT NULL) AS has_questions,
 					(e.solutions_path IS NOT NULL) AS has_solutions
 				  FROM exams e, courses c
 				  WHERE e.visible = 1
