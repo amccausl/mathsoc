@@ -10,10 +10,7 @@ CREATE TABLE exams (
     exam_type       varchar(24),
     solutions_path  varchar(128),
     solutions_type  varchar(24),
-    on_campus       bool		DEFAULT 0,
-    in_math         bool		DEFAULT 0,
-    visible         bool		DEFAULT 1,
-    approved        bool		DEFAULT 0,
+    status          ENUM('approved', 'rejected'),
     added           TIMESTAMP   DEFAULT CURRENT_TIMESTAMP,
     
     PRIMARY KEY (id),
@@ -37,10 +34,10 @@ SELECT
 	c.code,
 	e.term,
 	e.type,
+	e.number,
 	e.exam_path,
-	e.solutions_path,
-	e.approved
+	e.solutions_path
 FROM exams e, courses c
 WHERE c.id = e.courseId
-	AND e.visible = 1
+	AND e.status = 'approved'
 ORDER BY e.term DESC;

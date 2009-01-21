@@ -55,7 +55,7 @@ class Exambank_IndexController extends MathSoc_Controller_Action
 			Zend_Controller_Front::getInstance()->setParam('noViewRenderer', true);
 
 			// Lookup exam in system
-			$exam = $this->db->getExam( $this->_getParam('id') );
+			$exam = $this->db->getApprovedExam( $this->_getParam('id') );
 
 			// Ensure the type of exam we're looking for exists
 			if( !$filename = $exam[$this->_getParam('type') . "_path"] )
@@ -67,22 +67,28 @@ class Exambank_IndexController extends MathSoc_Controller_Action
 			// Display the exam to the user
 			if( $buffer = file_get_contents( $filename ) )
 			{
-				header("Content-type: {$exam[$this->_getParam('type') . '_type']}");
-
 				// Grab the file extension from the mime type
 				$ext = split('/',$exam[$this->_getParam('type') . '_type']);
 				$ext = $ext[1];
 
-				//header("Content-Length: ".strlen($buffer));
-				//header("Content-Disposition: inline; filename={$exam['course']}-{$exam['term']}-{$exam['type']}{$exam['number']}_{$this->_getParam('type')}.{$ext}");
+				// Output file information to browser
+				header("Content-type: {$exam[$this->_getParam('type') . '_type']}");
+				header("Content-Length: ".strlen($buffer));
+				header("Content-Disposition: inline; filename={$exam['course']}-{$exam['term']}-{$exam['type']}{$exam['number']}_{$this->_getParam('type')}.{$ext}");
 
-				readfile($filename);
+				echo($buffer);
 				exit;
 			}
 		}elseif( $this->_getParam('prefix') && $this->_getParam('number') )
 		{	// Load the "exams" array to the view
 			// Must set exam.id, exam.course, exam.term, exam.file_path, exam.sol_path
-			$this->view->exams = $this->db->getExams( $this->_getParam('prefix'), $this->_getParam('number') );
+			$params = array(
+						'course_prefix'	=> $this->_getParam('prefix'),
+						'course_code'	=> $this->_getParam('number'),
+						'status'		=> 'approved'
+						);
+			$exams = $this->db->getExams( $params );
+			$this->view->exams = $exams;
 		}
 	}
 

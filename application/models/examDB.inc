@@ -21,43 +21,86 @@ class ExamDB
 	 * @param   id	The id for the exam desired
 	 * @return		return an associative array with the exams information
 	 */
-	function getExam( $id )
+	function getApprovedExam( $id )
 	{
-		$query = "SELECT e.id,
-					CONCAT(c.prefix, ' ', c.code) AS course,
-					c.prefix,
-					c.code,
+		$query = 'SELECT e.id,
+					GROUP_CONCAT(CONCAT(c.prefix, " ", c.code) SEPARATOR "/") AS course,
 					e.term,
+					e.uploader,
 					e.type,
+					e.number,
+					e.practice,
 					e.exam_path,
 					e.exam_type,
 					e.solutions_path,
-					e.solutions_type,
-					e.approved
+					e.solutions_type
 				  FROM exams e, courses c
 				  WHERE e.id = ?
-					AND e.courseId = c.id";
+					AND e.status = "approved"
+					AND e.courseId = c.id';
 		return $this->_db->fetchRow( $query, $id );
 	}
 
-	function getExams( $prefix, $code )
+	function getExam($id)
 	{
-		$query = "SELECT e.id,
-					CONCAT(c.prefix, ' ', c.code) AS course,
-					c.prefix,
-					c.code,
+		$query = 'SELECT e.id,
+					GROUP_CONCAT(CONCAT(c.prefix, " ", c.code) SEPARATOR "/") AS course,
 					e.term,
+					e.uploader,
 					e.type,
+					e.number,
+					e.practice,
 					e.exam_path,
 					e.exam_type,
 					e.solutions_path,
-					e.solutions_type,
-					e.approved
-			FROM exams e, courses c
-			WHERE c.id = e.courseId
-				AND c.prefix = ?
-				AND c.code = ?";
-		return $this->_db->fetchAll( $query, array( $prefix, $code ) );
+					e.solutions_type
+				  FROM exams e, courses c
+				  WHERE e.id = ?
+					AND e.courseId = c.id
+				  GROUP BY e.id';
+		$exam = $this->_db->fetchRow( $query, $id );
+		return $exam;
+	}
+
+	function getExams( $param, $page = 1 )
+	{	$page_size = 30;
+
+		$where = array();
+
+		// TODO: add escaping
+		// Add parameters to query
+		if( $param['course_prefix'] )
+			$where[] = 'c.prefix = ' . $param['course_prefix'];
+		if( $param['course_code'] )
+			$where[] = 'c.code = ' . $param['course_code'];
+		if( $param['term'] )
+			$where[] = 'e.term = ' . $param['term'];
+		if( $param['status'] == 'pending' )
+		{	$where[] = 'e.status IS NULL';
+		}elseif( $param['status'] == 'approved' )
+		{	$where[] = 'e.status = "approved"';
+		}elseif( $param['status'] == 'rejected' )
+		{	$where[] = 'e.status = "rejected"';
+		}else
+		{	$where[] = 'e.status != "deleted"';
+		}
+
+		$query = 'SELECT e.id,
+					GROUP_CONCAT(CONCAT(c.prefix, " ", c.code) SEPARATOR "/") as course,
+					e.term,
+					e.uploader,
+					e.type,
+					e.number,
+					e.practice,
+					(e.exam_path IS NOT NULL) AS has_questions,
+					(e.solutions_path IS NOT NULL) AS has_solutions
+				  FROM exams e, courses c
+				  WHERE' . implode( ' AND ', $where ) . "
+				  GROUP BY e.id
+				  LIMIT {($page - 1) * $page_size}, {$page_size}";
+
+		$exams = $this->_db->fetchAll( $query );
+		return $exams;
 	}
 
 	/** getCourses - Retrieve a list of courses that contain exams
@@ -68,24 +111,24 @@ class ExamDB
 		// If prefix isn't set, return a list of prefix
 		if( $prefix == null )
 		{	if( $returnAll )
-				$query = "SELECT DISTINCT prefix FROM courses ORDER BY prefix";
+				$query = 'SELECT DISTINCT prefix FROM courses ORDER BY prefix';
 			else
-				$query = "SELECT DISTINCT prefix FROM exams, courses WHERE courses.id = exams.courseId AND exams.visible = 1 ORDER BY prefix";
+				$query = 'SELECT DISTINCT prefix FROM exams, courses WHERE courses.id = exams.courseId AND exams.status = "approved" ORDER BY prefix';
 			return $this->_db->fetchCol( $query );
 		}
 
 		// If code isn't set, return codes for the given prefix
 		if( $code == null )
 		{	if( $returnAll )
-				$query = "SELECT DISTINCT code FROM courses WHERE prefix = ? ORDER BY code";
+				$query = 'SELECT DISTINCT code FROM courses WHERE prefix = ? ORDER BY code';
 			else
-				$query = "SELECT DISTINCT code FROM exams, courses WHERE prefix = ? AND courses.id = exams.courseId AND exams.visible = 1 ORDER BY code";
+				$query = 'SELECT DISTINCT code FROM exams, courses WHERE prefix = ? AND courses.id = exams.courseId AND exams.status = "approved" ORDER BY code';
 			return $this->_db->fetchCol( $query, $prefix );
 		}
 
 		// If both prefix and code are set, return course title
-		$query = "SELECT id, title FROM courses WHERE prefix = ? AND code = ?";
-		return $this->_db->fetchRow( $query, array( $prefix, $code ) );
+		$query = 'SELECT title FROM courses WHERE prefix = ? AND code = ?';
+		return $this->_db->fetchOne( $query, array( $prefix, $code ) );
 	}
 
 	function getTypes()
@@ -96,51 +139,8 @@ class ExamDB
 	{	return $this->_db->insert('exams', $exam);
 	}
 
-	function getUnapprovedExams()
-	{
-		$query = "SELECT e.id,
-					CONCAT(c.prefix, ' ', c.code) as course,
-					e.term,
-					e.uploader,
-					e.type,
-					e.number,
-					e.practice,
-					(e.exam_path IS NOT NULL) AS has_questions,
-					(e.solutions_path IS NOT NULL) AS has_solutions
-				  FROM exams e, courses c
-				  WHERE e.visible = 1
-					AND e.approved = 0
-					AND e.courseId = c.id";
-		$exams = $this->_db->fetchAll( $query );
-		return $exams;
-	}
-
-	function getUnapprovedExam($id)
-	{
-		$query = "SELECT e.id,
-					CONCAT(c.prefix, ' ', c.code) as course,
-					e.term,
-					e.uploader,
-					e.type,
-					e.number,
-					e.practice,
-					e.exam_path,
-					e.exam_type,
-					e.solutions_path,
-					e.solutions_type,
-					(e.exam_path IS NOT NULL) AS has_questions,
-					(e.solutions_path IS NOT NULL) AS has_solutions
-				  FROM exams e, courses c
-				  WHERE e.visible = 1
-					AND e.approved = 0
-					AND e.courseId = c.id
-					AND e.examId = ?";
-		$exam = $this->_db->fetchRow( $query, $id );
-		return $exam;
-	}
-
 	function approveExam($id)
-	{	$n = $this->_db->update( 'exams', array('approved' => 1), "id = $id" );
+	{	$n = $this->_db->update( 'exams', array('status' => 'approved'), "id = $id" );
 		if( $n == 1 )
 		{	return true;
 		}
@@ -148,7 +148,15 @@ class ExamDB
 	}
 
 	function rejectExam($id)
-	{	$n = $this->_db->update( 'exams', array('visible' => 0), "id = $id" );
+	{	$n = $this->_db->update( 'exams', array('status' => 'rejected'), "id = $id" );
+		if( $n == 1 )
+		{	return true;
+		}
+		return false;
+	}
+
+	function deleteExam($id)
+	{	$n = $this->_db->update( 'exams', array('status' => 'deleted'), "id = $id" );
 		if( $n == 1 )
 		{	return true;
 		}
