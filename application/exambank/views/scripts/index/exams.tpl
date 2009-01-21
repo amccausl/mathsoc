@@ -20,14 +20,14 @@
     <tr class="odd">
   {/if}
       <th scope='row'>{$exam.course}</th>
-      <td>{$exam.term}</td>
+      <td>{term id=$exam.term}</td>
       <td>{$exam.type}</td>
-  {if $exam.exam_path}
+  {if $exam.has_questions}
       <td><a href='{$baseUrl}/exambank/exams/{$exam.prefix}/{$exam.code}/{$exam.term}/{$exam.id}/exam' target='_blank' title='Download the {$exam.term} exam'>Download</a></td>
   {else}
       <td></td>
   {/if}
-  {if $exam.solutions_path}
+  {if $exam.has_solutions}
       <td><a href='{$baseUrl}/exambank/exams/{$exam.prefix}/{$exam.code}/{$exam.term}/{$exam.id}/solutions' target='_blank' title='Download the {$exam.term} exam solution'>Download</a></td>
   {else}
       <td></td>

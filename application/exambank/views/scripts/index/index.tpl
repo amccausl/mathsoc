@@ -24,7 +24,7 @@
     </script>
   </form>
 
-  <iframe width='400' height='400' src='' id='sched' style='border:0px'></iframe>
+  <iframe width='500' height='400' src='' id='sched' style='border:0px; padding:0px; margin:0px;'></iframe>
 
   <script language='Javascript' type='text/javascript' >
       // selector.onChange gets called whenever the course selection changes

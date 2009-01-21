@@ -24,7 +24,7 @@ class ExamDB
 	function getApprovedExam( $id )
 	{
 		$query = 'SELECT e.id,
-					GROUP_CONCAT(CONCAT(c.prefix, " ", c.code) SEPARATOR "/") AS course,
+					GROUP_CONCAT(CONCAT(c.prefix, \' \', c.code) SEPARATOR \'/\') AS course,
 					e.term,
 					e.uploader,
 					e.type,
@@ -36,7 +36,7 @@ class ExamDB
 					e.solutions_type
 				  FROM exams e, courses c
 				  WHERE e.id = ?
-					AND e.status = "approved"
+					AND e.status = \'approved\'
 					AND e.courseId = c.id';
 		return $this->_db->fetchRow( $query, $id );
 	}
@@ -62,27 +62,27 @@ class ExamDB
 		return $exam;
 	}
 
-	function getExams( $param, $page = 1 )
+	function getExams( $param, $page = 0 )
 	{	$page_size = 30;
 
 		$where = array();
 
 		// TODO: add escaping
 		// Add parameters to query
-		if( $param['course_prefix'] )
-			$where[] = 'c.prefix = ' . $param['course_prefix'];
-		if( $param['course_code'] )
-			$where[] = 'c.code = ' . $param['course_code'];
-		if( $param['term'] )
-			$where[] = 'e.term = ' . $param['term'];
-		if( $param['status'] == 'pending' )
+		if( isset($param['course_prefix']) )
+			$where[] = "c.prefix = '{$param['course_prefix']}'";
+		if( isset($param['course_code']) )
+			$where[] = "c.code = '{$param['course_code']}'";
+		if( isset($param['term']) )
+			$where[] = "e.term = '{$param['term']}'";
+		if( !isset( $param['status'] ) )
+		{	$where[] = 'e.status != \'deleted\'';
+		}elseif( $param['status'] == 'pending' )
 		{	$where[] = 'e.status IS NULL';
 		}elseif( $param['status'] == 'approved' )
-		{	$where[] = 'e.status = "approved"';
+		{	$where[] = 'e.status = \'approved\'';
 		}elseif( $param['status'] == 'rejected' )
-		{	$where[] = 'e.status = "rejected"';
-		}else
-		{	$where[] = 'e.status != "deleted"';
+		{	$where[] = 'e.status = \'rejected\'';
 		}
 
 		$query = 'SELECT e.id,
@@ -93,11 +93,13 @@ class ExamDB
 					e.number,
 					e.practice,
 					(e.exam_path IS NOT NULL) AS has_questions,
-					(e.solutions_path IS NOT NULL) AS has_solutions
+					(e.solutions_path IS NOT NULL) AS has_solutions,
+					e.status
 				  FROM exams e, courses c
-				  WHERE' . implode( ' AND ', $where ) . "
+				  WHERE e.courseId = c.id AND ' . implode( ' AND ', $where ) . '
 				  GROUP BY e.id
-				  LIMIT {($page - 1) * $page_size}, {$page_size}";
+				  ORDER BY e.term DESC
+				  LIMIT ' . ($page * $page_size) . ", {$page_size}";
 
 		$exams = $this->_db->fetchAll( $query );
 		return $exams;
@@ -113,7 +115,7 @@ class ExamDB
 		{	if( $returnAll )
 				$query = 'SELECT DISTINCT prefix FROM courses ORDER BY prefix';
 			else
-				$query = 'SELECT DISTINCT prefix FROM exams, courses WHERE courses.id = exams.courseId AND exams.status = "approved" ORDER BY prefix';
+				$query = 'SELECT DISTINCT prefix FROM exams, courses WHERE courses.id = exams.courseId AND exams.status = \'approved\' ORDER BY prefix';
 			return $this->_db->fetchCol( $query );
 		}
 
@@ -122,7 +124,7 @@ class ExamDB
 		{	if( $returnAll )
 				$query = 'SELECT DISTINCT code FROM courses WHERE prefix = ? ORDER BY code';
 			else
-				$query = 'SELECT DISTINCT code FROM exams, courses WHERE prefix = ? AND courses.id = exams.courseId AND exams.status = "approved" ORDER BY code';
+				$query = 'SELECT DISTINCT code FROM exams, courses WHERE prefix = ? AND courses.id = exams.courseId AND exams.status = \'approved\' ORDER BY code';
 			return $this->_db->fetchCol( $query, $prefix );
 		}
 
