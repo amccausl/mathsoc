@@ -25,6 +25,8 @@ class ExamDB
 	{
 		$query = 'SELECT e.id,
 					GROUP_CONCAT(CONCAT(c.prefix, \' \', c.code) SEPARATOR \'/\') AS course,
+					c.prefix,
+					c.code,
 					e.term,
 					e.uploader,
 					e.type,
@@ -37,7 +39,8 @@ class ExamDB
 				  FROM exams e, courses c
 				  WHERE e.id = ?
 					AND e.status = \'approved\'
-					AND e.courseId = c.id';
+					AND e.courseId = c.id
+				  GROUP BY e.id';
 		return $this->_db->fetchRow( $query, $id );
 	}
 
@@ -87,6 +90,8 @@ class ExamDB
 
 		$query = 'SELECT e.id,
 					GROUP_CONCAT(CONCAT(c.prefix, " ", c.code) SEPARATOR "/") as course,
+					c.prefix,
+					c.code,
 					e.term,
 					e.uploader,
 					e.type,

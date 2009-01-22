@@ -91,7 +91,7 @@ class LockerDB
 			{	return "You have successfully signed up for locker #{$lockerNum}.";
 			}
 		}
-		return "The system has failed to sign you up for the locker.  Please try again later.";
+		return "There was no change to the locker information in your request.  The information has not been updated";
 	}
 
 /*** DEMOGRAPHIC FUNCTIONS ***/
