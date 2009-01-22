@@ -121,6 +121,20 @@ INSERT INTO `positions` (`unitId`,`name`,`alias`,`category`,`description`) VALUE
 (1, 'Games Director', 'games', 'DIR', NULL),
 (1, 'Internal Financial Reviewer', 'reviewer', 'APP', 'Ensure the accountability of the VPF by independently reviewing the finances periodically throughout the term, and reporting to Council.');
 
+-- Contain information about who a position defaults to
+CREATE TABLE `positions_rules` (
+  ruler_unit      INT(8)      NOT NULL,
+  ruler_position  VARCHAR(31) NOT NULL,
+  ruled_unit      INT(8)      NOT NULL,
+  ruled_position  VARCHAR(31) NOT NULL,
+
+  PRIMARY KEY (ruler_unit, ruler_position, ruled_unit, ruled_position),
+  FOREIGN KEY (ruler_unit) REFERENCES units(id) ON UPDATE CASCADE,
+  FOREIGN KEY (ruler_position) REFERENCES postions(alias) ON UPDATE CASCADE,
+  FOREIGN KEY (ruled_unit) REFERENCES units(id) ON UPDATE CASCADE,
+  FOREIGN KEY (ruled_position) REFERENCES postions(alias) ON UPDATE CASCADE
+)ENGINE=INNODB;
+
 CREATE TABLE `users` (
   userId	CHAR(8)		NOT NULL,
   password	VARCHAR(40),
@@ -167,7 +181,7 @@ CREATE TABLE `holders` (
   userId	CHAR(8)		NOT NULL,
   email		BOOL		NOT NULL	DEFAULT '0',
 
-  PRIMARY KEY(term,unitId,userId,position),
+  PRIMARY KEY(unitId,term,userId,position),
   FOREIGN KEY (unitId) REFERENCES positions(unitId) ON UPDATE CASCADE,
   FOREIGN KEY (userId) REFERENCES users(userId) ON UPDATE CASCADE
 )ENGINE=INNODB;

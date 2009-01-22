@@ -225,21 +225,77 @@ class UserDB
 	//$_SESSION['groups'] - an array of groups for which the user is a member.
 	function getGroups( $userId )
 	{
-		$query = "SELECT CONCAT(units.alias,'-',holders.position)
+		$query = "SELECT CONCAT(units.alias,'-',holders.position,'-current')
 			  FROM holders, terms, units
 			  WHERE holders.term = terms.current_term
 			    AND holders.unitId = units.id
 			    AND holders.userid = ?;";
 
-		$result = $this->_db->fetchAll($query, $userId);
+		$groups = $this->_db->fetchAll($query, $userId);
+		return $groups;
+	}
 
-		$groups = array();
+	/**
+	 * Determine if the given user is a current member of the current_groups or was ever a member of the past_groups
+	 */
+	function isGroup( $userId, $groups )
+	{
+		$query = '(SELECT units1.alias AS unit,
+						holders1.position,
+						positions1.category,
+						(holders1.term = terms1.current_term) AS current
+				  FROM units units1, holders holders1, positions positions1, terms terms1
+				  WHERE holders1.userId = ?
+					AND holders1.unitId = units1.id
+					AND holders1.position = positions1.alias)
+				UNION DISTINCT
+				  (SELECT units2.alias AS unit,
+						positions2.alias AS position,
+						positions2.category,
+						(holders2.term = terms2.current_term) AS current
+				  FROM positions_rules r, holders holders2, positions positions2, units units2, terms terms2
+				  WHERE holders2.userId = ?
+					AND holders2.unitId = r.ruler_unit
+					AND holders2.position = r.ruler_position
+					AND positions2.alias = r.ruled_position
+					AND positions2.unitId = r.ruled_unit
+					AND units2.id = r.ruled_unit)';
+		$result = $this->_db->fetchAll( $query, array($userId, $userId) );
 
-		foreach( $result as $row )
-		{	array_push( $groups, $row[0] );
+		// If the group is unset, give everyone who has ever held any position access
+		if( !$groups )
+		{	return !empty( $result );
 		}
 
-		return $groups;
+		// Otherwise, process the units
+		foreach( $groups as $unit => $positions )
+		{
+			if( !$positions )
+			{	foreach( $result AS $row )
+				{	if( strtolower($row['unit']) == $unit )
+						return true;
+				}
+			}
+
+			foreach( $positions as $position => $terms )
+			{
+				if( !$terms )
+				{	foreach( $result AS $row )
+					{	if( strtolower($row['unit']) == $unit && ($row['position'] == $position || $row['category'] == $position))
+							return true;
+					}
+				}elseif( $terms == 'current' )
+				{	foreach( $result AS $row )
+					{	if( strtolower($row['unit']) == $unit && ($row['position'] == $position || $row['category'] == $position) && $row['current'])
+							return true;
+					}
+				}else
+				{	// Code should not get here
+				}
+			}
+		}
+
+		return false;
 	}
 
 	function isMember( $userId )

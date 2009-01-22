@@ -29,7 +29,7 @@ class MathSoc_Controller_Action extends Zend_Controller_Action
 		$this->view->menu = getMenu($this->getRequest());
 	}
 
-	protected function secure()
+	protected function secure( $groups = array() )
 	{
 		$referer = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
 
@@ -59,6 +59,14 @@ class MathSoc_Controller_Action extends Zend_Controller_Action
 					{	$auth->clearIdentity();
 						$this->_redirect( "/user/refund/" );
 					}
+
+					// Add group check to ensure that the user is able to access the desired system
+					if( !empty( $groups ) )
+					{	$authorized = $db->isGroup( $auth->getIdentity(), $groups );
+						if( !authorized )
+							$this->_redirect( '/user/access_denied' . "?referer={$_SERVER ['HTTP_REFERER']}" );
+					}
+
 				}else
 				{	// If authentication is invalid, remove user
 					$auth->clearIdentity();
@@ -72,6 +80,8 @@ class MathSoc_Controller_Action extends Zend_Controller_Action
 			}
 		}
 		$this->view->user = Zend_Auth::getInstance()->getIdentity();
+
+		// Log the system access for refunds and usage purposes
 		$this->log();
 	}
 
@@ -92,7 +102,7 @@ class MathSoc_Controller_Action extends Zend_Controller_Action
 		$filename = "$module-$controller-$term";
 
 		$fh = fopen( "../data/hits/$filename", "a" );
-		fputs( $fh, date("m/d H:i:s") . " - " . $auth->getIdentity() . " - {$_SERVER['REMOTE_ADDR']} ({$_SERVER['REQUEST_URI']})\n" );
+		fputs( $fh, date("m/d H:i:s") . " - " . $auth->getIdentity() . " - {$_SERVER['REMOTE_ADDR']} ({$_SERVER['REQUEST_URI']}) - {$_SERVER['HTTP_USER_AGENT']} - {$_SERVER ["HTTP_REFERER"]}\n" );
 		fclose( $fh );
 	}
 }
