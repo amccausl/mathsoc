@@ -15,12 +15,13 @@ class Admin_RefundsController extends MathSoc_Controller_Action
 {
 	private $db;
 
-	public function init($secure = true)
-	{	parent::init($secure);
+	public function init()
+	{	parent::init();
 
 		$this->db = new UserDB();
 
-		// TODO: ensure that the current user is an admin of the system (ie. the VPF)
+		$this->admins = array( 'mathsoc' => array( 'vpf' => 'current' ) );
+		$this->secure();
 	}
 
 	/** /admin/refunds/ - 

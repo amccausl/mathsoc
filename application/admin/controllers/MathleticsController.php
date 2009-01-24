@@ -6,11 +6,12 @@ class Admin_MathleticsController extends MathSoc_Controller_Action
 {
 	private $db;
 
-	public function init($secure = true)
-	{	parent::init($secure);
+	public function init()
+	{	parent::init();
 
 		// User must be authenticated to see any of these pages
-		// TODO: check that the user is mathletics director or above
+		$this->admins = array( 'mathsoc' => array( 'mathletics' => 'current' ) );
+		$this->secure();
 	}
 
 	/** /admin/mathletics - Display current applications for funding

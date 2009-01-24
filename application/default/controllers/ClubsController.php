@@ -14,8 +14,8 @@ class ClubsController extends MathSoc_Controller_Action
 {
 	protected $db;
 
-	public function init( $secure = false )
-	{	parent::init( $secure );
+	public function init()
+	{	parent::init();
 
 		$this->db = new ClubsDB();
 	}
@@ -38,7 +38,7 @@ class ClubsController extends MathSoc_Controller_Action
 	 * Allow users to join a club.
 	 */
 	public function joinAction()
-	{	// TODO: ensure user is logged in
+	{	$this->secure();
 		$this->view->clubs = $this->db->getClubs();
 	}
 }

@@ -66,6 +66,8 @@ CREATE TABLE `positions` (
   email		BOOL		NOT NULL	DEFAULT '0',
   imap		BOOL		NOT NULL	DEFAULT '0',
   shell		BOOL		NOT NULL	DEFAULT '0',
+  chosen	ENUM('selected','elected','appointed'),
+  duration	ENUM('term', 'year')	DEFAULT 'term',
 
   PRIMARY KEY (`unitId`,`alias`),
   FOREIGN KEY (unitId) REFERENCES units(id) ON DELETE CASCADE
@@ -188,6 +190,42 @@ CREATE TABLE `holders` (
 
 INSERT INTO holders (`term`,`unitId`,userId,position,email) VALUES
 (1081,1,'amccausl','website',1);
+
+-- The questions to ask a user who is applying
+CREATE TABLE questions (
+  id		INT(8)		NOT NULL	AUTO_INCREMENT,
+  key		VARCHAR(31)	NOT NULL,
+  text		TEXT		NOT NULL,
+  type		ENUM('text')	NOT NULL,
+  type_params TEXT,
+  default	TEXT,
+  PRIMARY KEY( id )
+)ENGINE=INNODB;
+
+-- map positions to the questions asked to those applying
+CREATE TABLE positions_questions (
+  position	VARCHAR(31)	NOT NULL,
+  question	INT(8)		NOT NULL,
+
+  PRIMARY KEY (position, question ),
+  FOREIGN KEY (position) REFERENCES positions(alias) ON UPDATE CASCADE,
+  FOREIGN KEY (question) REFERENCES questions(id) ON UPDATE CASCADE
+)ENGINE=INNODB;
+
+CREATE TABLE positions_applications (
+  id		INT(8)		NOT NULL	AUTO_INCREMENT,
+  term		INT			NOT NULL,
+  unit		INT(8)		NOT NULL,
+  position	VARCHAR(31)	NOT NULL,
+  user		CHAR(8)		NOT NULL,
+  questions	TEXT,
+  applied	TIMESTAMP	DEFAULT CURRENT_TIMESTAMP,
+
+  PRIMARY KEY( id ),
+  FOREIGN KEY (unit) REFERENCES units(id) ON UPDATE CASCASE,
+  FOREIGN KEY (position) REFERENCES positions(alias) ON UPDATE CASCADE,
+  FOREIGN KEY (user) REFERENCES users(userId) ON UPDATE CASCADE
+)ENGINE=INNODB;
 
 -- Mail aliases are set outside of the user system to do forwarding and such
 CREATE TABLE mail_aliases (

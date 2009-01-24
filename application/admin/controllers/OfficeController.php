@@ -8,10 +8,13 @@ class Admin_OfficeController extends MathSoc_Controller_Action
 {
 	private $db;
 
-	public function init($secure = true)
-	{	parent::init($secure);
+	public function init()
+	{	parent::init();
 
 		$this->db = new OfficeDB();
+
+		$this->admins = array( 'mathsoc' => array( 'office' => 'current' ) );
+		$this->secure();
 	}
 
 	/** /admin/office

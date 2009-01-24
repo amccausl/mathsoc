@@ -10,9 +10,10 @@ class Exambank_IndexController extends MathSoc_Controller_Action
 	private $db;
 	private $examDir;
 
-	public function init($secure = true)
-	{	parent::init($secure);
+	public function init()
+	{	parent::init();
 		// User must be authenticated to see any of these pages
+		$this->secure();
 
 		$config = new Zend_Config_Ini('../config/main.ini', 'exambank');
 		$this->examDir = $config->examDir;

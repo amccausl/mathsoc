@@ -167,7 +167,8 @@ class UserDB
 							AND holders.term = terms.current_term
 							AND holders.position = positions.alias
 						  GROUP BY holders.position
-						) AS holders
+						) AS holders,
+						positions.chosen
 				  FROM positions
 				  GROUP BY positions.alias
 				  ORDER BY positions.name";
@@ -225,7 +226,7 @@ class UserDB
 	//$_SESSION['groups'] - an array of groups for which the user is a member.
 	function getGroups( $userId )
 	{
-		$query = "SELECT CONCAT(units.alias,'-',holders.position,'-current')
+		$query = "SELECT DISTINCT CONCAT(units.alias,'-',holders.position,'-current')
 			  FROM holders, terms, units
 			  WHERE holders.term = terms.current_term
 			    AND holders.unitId = units.id
@@ -420,6 +421,34 @@ class UserDB
 		$user['terms'] = $terms;
 
 		return $user;
+	}
+
+	public function getPositionQuestions( $alias )
+	{	$query = 'SELECT q.key, q.type, q.type_params, q.text
+				  FROM questions q, positions_questions p
+				  WHERE q.id = p.question
+					AND p.position = ?';
+
+		$questions = $this->_db->fetchAll( $query, $alias );
+		return $questions;
+	}
+
+	/** Return the current position application
+	 */
+	public function getApplications()
+	{
+	}
+
+	/** Return a given application
+	 */
+	public function getApplication( $id )
+	{	
+	}
+
+	/** Add an application
+	 */
+	public function addApplication( $application )
+	{	
 	}
 
 	public static function lookup( $userId )

@@ -69,15 +69,21 @@ class ExamDB
 	{	$page_size = 30;
 
 		$where = array();
+		$params = array();
 
-		// TODO: add escaping
 		// Add parameters to query
 		if( isset($param['course_prefix']) )
-			$where[] = "c.prefix = '{$param['course_prefix']}'";
+		{	$where[] = 'c.prefix = ?';
+			$params[] = $param['course_prefix'];
+		}
 		if( isset($param['course_code']) )
-			$where[] = "c.code = '{$param['course_code']}'";
+		{	$where[] = 'c.code = ?';
+			$params[] = $param['course_code'];
+		}
 		if( isset($param['term']) )
-			$where[] = "e.term = '{$param['term']}'";
+		{	$where[] = 'e.term = ?';
+			$params[] = $param['term'];
+		}
 		if( !isset( $param['status'] ) )
 		{	$where[] = 'e.status != \'deleted\'';
 		}elseif( $param['status'] == 'pending' )
@@ -104,9 +110,9 @@ class ExamDB
 				  WHERE e.courseId = c.id AND ' . implode( ' AND ', $where ) . '
 				  GROUP BY e.id
 				  ORDER BY e.term DESC
-				  LIMIT ' . ($page * $page_size) . ", {$page_size}";
+				  LIMIT ' . (intval($page) * $page_size) . ", {$page_size}";
 
-		$exams = $this->_db->fetchAll( $query );
+		$exams = $this->_db->fetchAll( $query, $params );
 		return $exams;
 	}
 

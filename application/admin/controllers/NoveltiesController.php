@@ -8,10 +8,13 @@ class Admin_NoveltiesController extends MathSoc_Controller_Action
 {
 	private $db;
 
-	public function init($secure = true)
-	{	parent::init($secure);
+	public function init()
+	{	parent::init();
 
 		$this->db = new NoveltiesDB();
+
+		$this->admins = array( 'mathsoc' => array( 'novelties' => 'current', 'office' => 'current' ) );
+		$this->secure();
 	}
 
 	/** /admin/novelties - used to review existing novelties and submissions

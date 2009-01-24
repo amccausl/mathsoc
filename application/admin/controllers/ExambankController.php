@@ -8,13 +8,17 @@ class Admin_ExambankController extends MathSoc_Controller_Action
 	protected $db;
 	protected $examDir;
 
-	public function init($secure = true)
-	{	parent::init($secure);
+	public function init()
+	{	parent::init();
 
 		$config = new Zend_Config_Ini('../config/main.ini', 'exambank');
 		$this->examDir = $config->examDir;
 
 		$this->db = new ExamDB();
+
+		// Initialize admins array
+		$this->admins = array( 'mathsoc' => array( 'resources' => 'current' ) );
+		$this->secure();
 	}
 
 	// Browsing Functions

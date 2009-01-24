@@ -12,8 +12,9 @@ require_once 'KiwiId.php';
 class MathSoc_Controller_Action extends Zend_Controller_Action
 {
 	private $loginUrl = "https://strobe.uwaterloo.ca/cpadev/kiwi/user/login/";
+	protected $admins = array();
 
-	public function init($secure = false)
+	public function init()
 	{	parent::init();
 
 		// Set the baseUrl as a variable that can be used by the view
@@ -21,8 +22,9 @@ class MathSoc_Controller_Action extends Zend_Controller_Action
 
 		if( $secure )
 		{	$this->secure();
+		}else
+		{	$this->log();
 		}
-		$this->log();
 
 		// Initialize the context-based menu
 		require_once( '../application/default/views/helpers/menu.inc' );
@@ -62,6 +64,9 @@ class MathSoc_Controller_Action extends Zend_Controller_Action
 
 					// Add group check to ensure that the user is able to access the desired system
 					if( !empty( $groups ) )
+					{	$groups = $this->admins;
+					}
+					if( !empty( $groups ) )
 					{	$authorized = $db->isGroup( $auth->getIdentity(), $groups );
 						if( !authorized )
 							$this->_redirect( '/user/access_denied' . "?referer={$_SERVER ['HTTP_REFERER']}" );
@@ -78,11 +83,18 @@ class MathSoc_Controller_Action extends Zend_Controller_Action
 				{	$status .= "$message<br>\n";
 				}
 			}
+		}else
+		{	// Add group check to ensure that the user is able to access the desired system
+			if( !empty( $groups ) )
+			{	$groups = $this->admins;
+			}
+			if( !empty( $groups ) )
+			{	$authorized = $db->isGroup( $auth->getIdentity(), $groups );
+				if( !authorized )
+					$this->_redirect( '/user/access_denied' . "?referer={$_SERVER ['HTTP_REFERER']}" );
+			}
 		}
 		$this->view->user = Zend_Auth::getInstance()->getIdentity();
-
-		// Log the system access for refunds and usage purposes
-		$this->log();
 	}
 
 	protected function log()
@@ -102,8 +114,16 @@ class MathSoc_Controller_Action extends Zend_Controller_Action
 		$filename = "$module-$controller-$term";
 
 		$fh = fopen( "../data/hits/$filename", "a" );
-		fputs( $fh, date("m/d H:i:s") . " - " . $auth->getIdentity() . " - {$_SERVER['REMOTE_ADDR']} ({$_SERVER['REQUEST_URI']}) - {$_SERVER['HTTP_USER_AGENT']} - {$_SERVER ["HTTP_REFERER"]}\n" );
+		if( isset( $_SERVER['HTTP_REFERER'] ) )
+			fputs( $fh, date("m/d H:i:s") . " - " . $auth->getIdentity() . " - {$_SERVER['REMOTE_ADDR']} ({$_SERVER['REQUEST_URI']}) - {$_SERVER['HTTP_USER_AGENT']} - {$_SERVER ["HTTP_REFERER"]}\n" );
+		else
+			fputs( $fh, date("m/d H:i:s") . " - " . $auth->getIdentity() . " - {$_SERVER['REMOTE_ADDR']} ({$_SERVER['REQUEST_URI']}) - {$_SERVER['HTTP_USER_AGENT']}\n" );
 		fclose( $fh );
+	}
+
+	function __destruct()
+	{	// Log the system access for refunds and usage purposes
+		$this->log();
 	}
 }
 

@@ -7,13 +7,15 @@ class Admin_LockersController extends MathSoc_Controller_Action
 {
 	private $db;
 
-	public function init($secure = true)
-	{	parent::init($secure);
+	public function init()
+	{	parent::init();
 
 		// User must be authenticated to see any of these pages
-		// TODO: check to ensure that the user is office manager or exec
 
 		$this->db = new LockerDB();
+
+		$this->admins = array( 'mathsoc' => array( 'office' => 'current' ) );
+		$this->secure();
 	}
 
 	// Browsing Functions
