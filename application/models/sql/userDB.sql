@@ -193,12 +193,12 @@ INSERT INTO holders (`term`,`unitId`,userId,position,email) VALUES
 
 -- The questions to ask a user who is applying
 CREATE TABLE questions (
-  id		INT(8)		NOT NULL	AUTO_INCREMENT,
-  key		VARCHAR(31)	NOT NULL,
-  text		TEXT		NOT NULL,
-  type		ENUM('text')	NOT NULL,
-  type_params TEXT,
-  default	TEXT,
+  `id`			INT(8)		NOT NULL	AUTO_INCREMENT,
+  `key`			VARCHAR(31)	NOT NULL,
+  `text`		TEXT		NOT NULL,
+  `type`		ENUM('text')	NOT NULL,
+  `type_params` TEXT,
+  `default`		TEXT,
   PRIMARY KEY( id )
 )ENGINE=INNODB;
 

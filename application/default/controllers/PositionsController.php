@@ -74,7 +74,7 @@ class PositionsController extends MathSoc_Controller_Action
 		{	// Process the form
 			$application = array(
 							'term' => $_POST['term'],
-							'unit' => 'mathsoc',
+							'unit' => 1,
 							'position' => $_POST['position'],
 							'user' => Zend_Auth::getInstance()->getIdentity());
 
@@ -87,7 +87,11 @@ class PositionsController extends MathSoc_Controller_Action
 
 			$application['questions'] = serialize( $questions );
 
-			$this->db->addApplication( $application );
+			if( $this->db->addApplication( $application ) )
+			{	$this->view->message = "Your application has been submitted.  You will get a response to your uw email account as soon as your application is processed by the executive of the society.";	
+			}else
+			{	$this->view->message = "Your application has failed to be processed at this time.  If the problem persists, please email the responses to the questions to prez@mathsoc.uwaterloo.ca.  We are very sorry for the inconvience.";
+			}
 		}
 	}
 }
