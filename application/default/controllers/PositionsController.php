@@ -43,13 +43,8 @@ class PositionsController extends MathSoc_Controller_Action
 	 */
 	public function applyAction()
 	{
-		if( !$this->_getParam( 'position' ) )
-		{	// Present available positions
-			$positions = $this->db->getAvailablePositions();
-			$this->view->positions =  $positions;
-		}else
-		{	// Add information for the default fields
-			$terms = array();
+		if( !isset( $_POST['term'] ) )
+		{	$terms = array();
 			$term = (date('Y') - 1900) . (1 + 4*(ceil(date('m') / 4) - 1));
 			$seasons = array( "W", "S", "F" );
 			for( $i = 0; $i < 3; $i++ )
@@ -59,23 +54,35 @@ class PositionsController extends MathSoc_Controller_Action
 				else
 					$term += 4;
 			}
-			$this->view->term_options = $terms
+			$this->view->term_options = $terms;
+		}elseif( !isset( $_POST['position'] ) )
+		{	// Present available positions
+			$positions = $this->db->getAvailablePositions( $_POST['term'] );
+			$positions = $positions['DIR'];
+			$this->view->positions =  $positions;
 
-			// Add fields for the position from the database
+			$options = array();
+			foreach( $positions as $position )
+			{	$options[$position['alias']] = $position['name'];
+			}
+			$this->view->positions_options = $options;
+		}elseif( !isset( $_POST['submit'] ) )
+		{	// Add fields for the position from the database
 			$questions = $this->db->getPositionQuestions( $this->_getParam( 'position' ) );
 			$this->view->questions = $questions;
-		}
-
-		if( isset( $_POST['submit'] ) )
+		}else
 		{	// Process the form
-			$application = array();
-
-			// Grab the default values
+			$application = array(
+							'term' => $_POST['term'],
+							'unit' => 'mathsoc',
+							'position' => $_POST['position'],
+							'user' => Zend_Auth::getInstance()->getIdentity());
 
 			// Grab the answers to the custom questions
 			$questions = array();
 			foreach( $_POST as $key => $value )
-			{
+			{	if( substr( $key, 0, 2 ) == 'q_' )
+					$questions[ substr( $key, 2 ) ] = $value;
 			}
 
 			$application['questions'] = serialize( $questions );

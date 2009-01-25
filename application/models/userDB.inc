@@ -156,23 +156,43 @@ class UserDB
 		return $return;
 	}
 
-	public function getAvailablePositions()
-	{	$query = "SELECT positions.category,
-						positions.alias,
-						positions.name,
-	 					positions.desired,
-						( SELECT COUNT(holders.userId)
-						  FROM holders, terms
-						  WHERE holders.unitId = 1
-							AND holders.term = terms.current_term
-							AND holders.position = positions.alias
-						  GROUP BY holders.position
-						) AS holders,
-						positions.chosen
-				  FROM positions
-				  GROUP BY positions.alias
-				  ORDER BY positions.name";
-		$result = $this->_db->fetchAll($query);
+	public function getAvailablePositions( $term = null )
+	{	if( $term )
+		{	$query = "SELECT positions.category,
+							positions.alias,
+							positions.name,
+							positions.description,
+	 						positions.desired,
+							( SELECT COUNT(holders.userId)
+							  FROM holders
+							  WHERE holders.unitId = 1
+								AND holders.term = ?
+								AND holders.position = positions.alias
+							  GROUP BY holders.position
+							) AS holders,
+							positions.chosen
+					  FROM positions
+					  GROUP BY positions.alias
+					  ORDER BY positions.name";
+			$result = $this->_db->fetchAll($query, $term);
+		}else
+		{	$query = "SELECT positions.category,
+							positions.alias,
+							positions.name,
+	 						positions.desired,
+							( SELECT COUNT(holders.userId)
+							  FROM holders, terms
+							  WHERE holders.unitId = 1
+								AND holders.term = terms.current_term
+								AND holders.position = positions.alias
+							  GROUP BY holders.position
+							) AS holders,
+							positions.chosen
+					  FROM positions
+					  GROUP BY positions.alias
+					  ORDER BY positions.name";
+			$result = $this->_db->fetchAll($query);
+		}
 
 		$return = array();
 		foreach( $result as $row )
@@ -448,7 +468,7 @@ class UserDB
 	/** Add an application
 	 */
 	public function addApplication( $application )
-	{	
+	{	return $this->_db->insert( 'positions_applications', $application );
 	}
 
 	public static function lookup( $userId )

@@ -30,7 +30,7 @@
         <td>
           <input type="submit" name="approve_{$exam.id}" value="Approve" {if $exam.status == 'approved'}disabled="disabled"{/if}/>
           <input type="submit" name="reject_{$exam.id}" value="Reject" {if $exam.status == 'rejected'}disabled="disabled"{/if}/>
-          <input type="submit" name="update_{$exam.id}" value="Update" />
+          <input type="submit" name="update_{$exam.id}" value="Update" disabled="disabled"/>
         </td>
       </tr>
 {/foreach}
