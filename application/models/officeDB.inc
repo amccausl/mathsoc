@@ -24,16 +24,21 @@ class OfficeDB
 	function getHours( $userId, $term = null )
 	{
 		if(!$term)
-	 	{	$query = "SELECT h.hourId, h.day, h.start, h.duration
+	 	{	$query = 'SELECT h.hourId, h.day, h.start, h.duration
 					  FROM office_hours h, office_workers w, terms t
 					  WHERE h.hourId = w.hourId
 						AND w.term = t.current_term
 						AND userId = ?
-					  ORDER BY h.day, h.hourId";
+					  ORDER BY h.day, h.hourId';
             $result = $this->_db->fetchAll( $query, $userId );
 		}else
-		{	//TODO: add case
-			return;
+	 	{	$query = 'SELECT h.hourId, h.day, h.start, h.duration
+					  FROM office_hours h, office_workers w
+					  WHERE h.hourId = w.hourId
+						AND userId = ?
+						AND w.term = ?
+					  ORDER BY h.day, h.hourId';
+			$result = $this->_db->fetchAll( $query, array( $userId, $term ) );
 		}
 
 		$response = array();
@@ -59,20 +64,20 @@ class OfficeDB
 	function getEmails($term = null)
 	{
 		if(!$term)
-		{	$query = "SELECT v.userId, v.name, e.email
+		{	$query = 'SELECT DISTINCT v.userId, v.name, e.email
 					  FROM volunteers v, user_emails e, office_workers w, terms
 					  WHERE v.userId = w.userId
 						AND e.userId = v.userId
 						AND w.term = terms.current_term
-					  ORDER BY v.name";
+					  ORDER BY v.name';
 			return $this->_db->fetchAll($query);
 		}else
-		{	$query = "SELECT v.userId, v.name, e.email
+		{	$query = 'SELECT DISTINCT v.userId, v.name, e.email
 					  FROM volunteers v, user_emails e, office_workers w
 					  WHERE v.userId = w.userId
 						AND e.userId = v.userId
 						AND w.term = ?
-					  ORDER BY v.name";
+					  ORDER BY v.name';
 			return $this->_db->fetchAll($query, array($term));
 		}
 	}
@@ -81,17 +86,17 @@ class OfficeDB
 	 */
 	function missingHours()
 	{
-		$query = "SELECT DISTINCT h.userId, v.name, e.email, GROUP_CONCAT(p.name SEPARATOR ',') AS positions
+		$query = 'SELECT DISTINCT h.userId, v.name, e.email, GROUP_CONCAT(p.name SEPARATOR \',\') AS positions
 				  FROM positions p, holders h, terms, volunteers v, user_emails e
 				  WHERE h.term = terms.current_term
-					AND p.unitId = '1'
+					AND p.unitId = \'1\'
 					AND e.userId = h.userId
 					AND v.userId = h.userId
-					AND p.category IN ('DIR', 'REP')
+					AND p.category IN (\'DIR\', \'REP\')
 					AND p.alias = h.position
 					AND h.userId NOT IN (SELECT userId FROM office_workers, terms WHERE term = terms.current_term)
 				  GROUP BY h.userId
-				  ORDER BY v.name";
+				  ORDER BY v.name';
 		return $this->_db->fetchAll($query);
 	}
 	
@@ -103,22 +108,22 @@ class OfficeDB
 	function getSchedule($term = null)
 	{
 		if( !$term )
-		{	$query = "SELECT v.name, v.userId AS id, e.email, h.day, h.start, h.duration
+		{	$query = 'SELECT v.name, v.userId AS id, e.email, h.day, h.start, h.duration
 					  FROM office_hours h, office_workers w, terms t, user_emails e, volunteers v
 					  WHERE v.userId = e.userId
 						AND w.hourId = h.hourId
 						AND w.term = t.current_term
 						AND w.userId = e.userId
-					  ORDER BY h.day, h.hourId";
+					  ORDER BY h.day, h.hourId';
 			$result = $this->_db->fetchAll( $query );
 		}else
-		{	$query = "SELECT v.name, v.userId AS id, e.email, h.day, h.start, h.duration
+		{	$query = 'SELECT v.name, v.userId AS id, e.email, h.day, h.start, h.duration
 					  FROM office_hours h, office_workers w, terms t, user_emails e, volunteers v
 					  WHERE v.userId = e.userId
 						AND w.hourId = h.hourId
 						AND w.userId = e.userId
 						AND w.term = ?
-					  ORDER BY h.day, h.hours";
+					  ORDER BY h.day, h.hours';
 			$result = $this->_db->fetchAll( $query, array($term) );
 		}
 
