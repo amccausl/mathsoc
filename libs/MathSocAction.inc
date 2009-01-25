@@ -12,6 +12,7 @@ require_once 'KiwiId.php';
 class MathSoc_Controller_Action extends Zend_Controller_Action
 {
 	private $loginUrl = "https://strobe.uwaterloo.ca/cpadev/kiwi/user/login/";
+	private $_cwd;
 	protected $admins = array();
 
 	public function init()
@@ -19,12 +20,7 @@ class MathSoc_Controller_Action extends Zend_Controller_Action
 
 		// Set the baseUrl as a variable that can be used by the view
 		$this->view->baseUrl = $this->getRequest()->getBaseUrl();
-
-		if( $secure )
-		{	$this->secure();
-		}else
-		{	$this->log();
-		}
+		$this->_cwd = getcwd();
 
 		// Initialize the context-based menu
 		require_once( '../application/default/views/helpers/menu.inc' );
@@ -113,7 +109,7 @@ class MathSoc_Controller_Action extends Zend_Controller_Action
 		$term = (date('Y') - 1900) . (1 + 4*(ceil(date('m') / 4) - 1));
 		$filename = "$module-$controller-$term";
 
-		$fh = fopen( "../data/hits/$filename", "a" );
+		$fh = fopen( "{$this->_cwd}/../data/hits/$filename", "a" );
 		if( isset( $_SERVER['HTTP_REFERER'] ) )
 			fputs( $fh, date("m/d H:i:s") . " - " . $auth->getIdentity() . " - {$_SERVER['REMOTE_ADDR']} ({$_SERVER['REQUEST_URI']}) - {$_SERVER['HTTP_USER_AGENT']} - {$_SERVER ["HTTP_REFERER"]}\n" );
 		else
