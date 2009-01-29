@@ -22,7 +22,32 @@ class Admin_PositionsController extends MathSoc_Controller_Action
 	 * Display current position applications
 	 */
 	public function indexAction()
-	{	// TODO: get applications should limit applications for the specific exec position and terms for the user
-		$application = $this->db->getApplications();
+	{
+	}
+
+	/** /admin/positions/new - Create a new position
+	 */
+	public function newAction()
+	{
+	}
+
+	/** /admin/positions/edit - Edit an existing position
+	 */
+	public function editAction()
+	{
+	}
+
+	/** /admin/positions/select - Select someone to hold the given position
+	 */
+	public function applicationsAction()
+	{
+		if( $this->_getParam('id') )
+		{	$application = $this->db->getApplication( $this->_getParam('id') );
+			$this->view->application = $application;
+		}
+
+		// TODO: get applications should limit applications for the specific exec position and terms for the user
+		$applications = $this->db->getApplications();
+		$this->view->applications = $applications;
 	}
 }
