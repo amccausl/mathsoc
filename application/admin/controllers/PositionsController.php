@@ -1,7 +1,7 @@
 <?php
 
 require_once 'MathSocAction.inc';
-require_once 'userDB.inc';
+require_once 'positionsDB.inc';
 
 class Admin_PositionsController extends MathSoc_Controller_Action
 {
@@ -11,7 +11,7 @@ class Admin_PositionsController extends MathSoc_Controller_Action
 	public function init()
 	{	parent::init();
 
-		$this->db = new UserDB();
+		$this->db = new PositionsDB();
 
 		// User must be an admin to see any of these pages
 		$this->admins = array('mathsoc' => array('exec' => 'current'));
@@ -41,13 +41,19 @@ class Admin_PositionsController extends MathSoc_Controller_Action
 	 */
 	public function applicationsAction()
 	{
-		if( $this->_getParam('id') )
-		{	$application = $this->db->getApplication( $this->_getParam('id') );
-			$this->view->application = $application;
-		}
-
 		// TODO: get applications should limit applications for the specific exec position and terms for the user
 		$applications = $this->db->getApplications();
 		$this->view->applications = $applications;
+
+		foreach( $applications as $application )
+		{	if( isset( $_POST["view_{$application['id']}"] ) )
+			{	$application = $this->db->getApplication( $application['id'] );
+				$this->view->application = $application;
+			}elseif( isset( $_POST["select_{$application['id']}"] ) )
+			{	$this->db->selectApplication( $application['id'] );
+			}elseif( isset( $_POST["reject_{$application['id']}"] ) )
+			{	$this->db->rejectApplication( $application['id'] );
+			}
+		}
 	}
 }

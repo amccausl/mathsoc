@@ -205,17 +205,18 @@ class PositionsDB
 	{	$query = 'SELECT p_a.id,
 					p_a.term,
 					p_a.unit,
-					p_a.position,
+					p.name as position,
 					p_a.user,
-					p_a.questions,
 					p_a.applied,
-					p_r.ruled_unit,
-					p_r.ruled_position
+					p_r.ruler_unit,
+					p_r.ruler_position
 				  FROM positions_applications p_a, positions_rules p_r, positions p
-				  WHERE p_a.unit = p.unit
+				  WHERE p_a.unit = p.unitId
 					AND p_a.position = p.alias
-					AND p_r.ruled_unit = p.unit
-					AND p_r.ruled_position = p.alias';
+					AND p_a.status IS NULL
+					AND p_r.ruled_unit = p.unitId
+					AND p_r.ruled_position = p.alias
+				  ORDER BY p_a.term, p_a.unit, p.name';
 		$results = $this->_db->fetchAll( $query );
 		return $results;
 	}
@@ -223,23 +224,24 @@ class PositionsDB
 	/** Return a given application
 	 */
 	public function getApplication( $id )
-	{	$query = 'SELECT p_a.id, p_a.term, p_a.unit, p_a.position, p_a.user, p_a.questions, p_a.applied
-				  FROM positions_applications p_a, positions_rules p_r, positions p, positions_questions p_q, questions q
-				  WHERE p_a.unit = p.unit
+	{	$query = 'SELECT p_a.id, p_a.term, p_a.unit, p.alias, p.name as position, v.name, p_a.questions, p_a.applied
+				  FROM positions_applications p_a, positions_rules p_r, positions p, positions_questions p_q, questions q, volunteers v
+				  WHERE p_a.unit = p.unitId
 					AND p_a.position = p.alias
-					AND p_r.ruled_unit = p.unit
+					AND p_r.ruled_unit = p.unitId
 					AND p_r.ruled_position = p.alias
+					AND v.userId = p_a.user
 					AND p_a.id = ?';
 		$result = $this->_db->fetchRow( $query, $id );
 		$answers = unserialize( $result['questions'] );
 		$result['questions'] = array();
 
-		$query = 'SELECT key, text
+		$query = 'SELECT q.key, q.text
 				  FROM questions q, positions_questions p_q
 				  WHERE p_q.question = q.id
 					AND p_q.unit = ?
 					AND p_q.position = ?';
-		$questions = $this->_db->fetchPairs( $query, array( $result['unit'], $result['position'] ) );
+		$questions = $this->_db->fetchPairs( $query, array( $result['unit'], $result['alias'] ) );
 
 		foreach( $questions as $key => $question )
 		{	$result['questions'][$question] = $answers[$key];
