@@ -55,8 +55,6 @@ class NoveltiesController extends MathSoc_Controller_Action
 	 */
 	public function submitAction()
 	{	require_once( "../application/default/views/helpers/form.inc" );
-		$this->secure();
-		
 		$this->view->email = Zend_Auth::getInstance()->getIdentity() . '@uwaterloo.ca';
 
 		$_POST['notes'] = 'MathSoc T-Shirt Design Contest (Winter 2009)';

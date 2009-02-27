@@ -137,7 +137,6 @@ class LockersController extends MathSoc_Controller_Action
 		{	$this->_redirect("/Lockers/locked");
 		}
 
-		$this->secure();
 		$locker = $this->db->lookup( Zend_Auth::getInstance()->getIdentity() );
 		require_once( "../application/default/views/helpers/form.inc" );
 

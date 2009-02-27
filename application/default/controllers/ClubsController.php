@@ -38,7 +38,7 @@ class ClubsController extends MathSoc_Controller_Action
 	 * Allow users to join a club.
 	 */
 	public function joinAction()
-	{	$this->secure();
+	{
 		$this->view->clubs = $this->db->getClubs();
 	}
 }

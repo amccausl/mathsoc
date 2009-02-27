@@ -3,9 +3,9 @@
 // Todo: load below from config
 // Todo: move load config and load template to separate files
 
-//error_reporting(E_ALL|E_STRICT);
-//ini_set('display_errors', 1);
+error_reporting(E_ALL|E_STRICT);
 ini_set('display_errors', 0);
+ini_set('display_errors', 1);
 date_default_timezone_set('America/Toronto');
 
 // directory setup and class loading
@@ -28,7 +28,6 @@ Zend_Db_Table::setDefaultAdapter($db);
 // Todo: load access control
 Zend_Loader::loadClass('Zend_Auth');
 
-// Todo: add logging information to track users for use-case analysis
 $logger = new Zend_Log();
 $writer = new Zend_Log_Writer_Firebug();
 $logger->addWriter($writer);
@@ -47,21 +46,19 @@ include_once( '../application/default/views/helpers/initialize.inc' );
 $router = $frontController->getRouter();
 
 // Add routers for the ajax calls in the exambank
-$router->addRoute('courses',
-	new Zend_Controller_Router_Route('exambank/courses',
-		array('module' => 'exambank', 'controller' => 'index', 'action' => 'courses')));
 $router->addRoute('courses1',
 	new Zend_Controller_Router_Route('exambank/courses/:prefix',
-		array('module' => 'exambank', 'controller' => 'index', 'action' => 'courses')));
+		array('module' => 'default', 'controller' => 'exambank', 'action' => 'courses')));
 $router->addRoute('courses2',
 	new Zend_Controller_Router_Route('exambank/courses/:prefix/:number',
-		array('module' => 'exambank', 'controller' => 'index', 'action' => 'courses')));
+		array('module' => 'default', 'controller' => 'exambank', 'action' => 'courses')));
 $router->addRoute('exams',
 	new Zend_Controller_Router_Route('exambank/exams/:prefix/:number',
-		array('module' => 'exambank', 'controller' => 'index', 'action' => 'exams')));
+		array('module' => 'default', 'controller' => 'exambank', 'action' => 'exams')));
 $router->addRoute('exams1',
 	new Zend_Controller_Router_Route('exambank/exams/:prefix/:number/:term/:id/:type/',
-		array('module' => 'exambank', 'controller' => 'index', 'action' => 'exams')));
+		array('module' => 'default', 'controller' => 'exambank', 'action' => 'exams')));
+// Add routers for the ajax calls in the exambank
 $router->addRoute('council',
 	new Zend_Controller_Router_Route('council/minutes/:id',
 		array('module' => 'council', 'controller' => 'minutes', 'action' => 'display')));
@@ -74,12 +71,6 @@ $router->addRoute('council-policies1',
 $router->addRoute('council-bylaws',
 	new Zend_Controller_Router_Route('council/bylaws/:page',
 		array('module' => 'council', 'controller' => 'bylaws', 'action' => 'display')));
-
-/*
-$router->addRoute('council',
-	new Zend_Controller_Router_Route('position/:position', array('controller' => 'council', 'action' => 'positions')));
-$router->addRoute('index',
-	new Zend_Controller_Router_Route('users/:username', array('controller' => 'auth', 'action' => 'profile')));*/
 
 // run!
 $frontController->dispatch();

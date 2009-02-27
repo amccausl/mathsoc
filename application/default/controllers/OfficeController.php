@@ -25,14 +25,12 @@ class OfficeController extends MathSoc_Controller_Action
 	 */
 	public function signupAction()
 	{	// Authenticate the user
-		$this->secure();
 		$auth = Zend_Auth::getInstance();
 
 		// Sign the user up for the hour
-		if( $this->_getParam('hour') && $this->db->signup( $auth->getIdentity(), $this->_getParam('hour') ) )
+		if( $this->_getParam('hour') && 
+			!$this->db->signup( $auth->getIdentity(), $this->_getParam('hour') ) )
 		{	//TODO: add message to view
-		}else
-		{
 		}
 
 		// Add information about current hours to view

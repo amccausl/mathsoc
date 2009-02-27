@@ -5,8 +5,7 @@ require_once 'MathSocAction.inc';
 class UserController extends MathSoc_Controller_Action
 {
     public function indexAction()
-	{	$this->secure();
-	
+	{
 		// Display user information
 		
 		// Access to email, clubs, sections for positions held
@@ -20,8 +19,7 @@ class UserController extends MathSoc_Controller_Action
 	}
 
 	public function profileAction()
-	{	$this->secure();
-	
+	{
 		require_once( "userDB.inc" );
 		$db = new UserDB();
 		$user = $db->getProfile( $this->_getParam('username') );

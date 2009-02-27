@@ -12,8 +12,6 @@ class ElectionController extends MathSoc_Controller_Action
 	public function init()
 	{	parent::init();
 
-		$this->secure();
-
 		// Initialize the elections database
 		$this->db = new ElectionDB();
 
