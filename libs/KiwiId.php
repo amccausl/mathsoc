@@ -52,6 +52,7 @@ class Zend_Auth_Adapter_KiwiId implements Zend_Auth_Adapter_Interface
      * @var string
      */
 	private $loginUrl = "https://strobe.uwaterloo.ca/cpadev/kiwi/user/login/";
+	// Set the API key to use the kiwi system (see jrodgers@uwaterloo.ca to get one)
 	private $kiwiKey = "1a9e0ea4-e5c4-4f66-a1fa-cd722aa982e7";
 	private $checkUrl = "http://kiwi.uwaterloo.ca/user/check";
 

@@ -11,7 +11,7 @@ require_once 'KiwiId.php';
 
 class MathSoc_Controller_Action extends Zend_Controller_Action
 {
-	private $loginUrl = "https://strobe.uwaterloo.ca/cpadev/kiwi/user/login/";
+	private $_loginUrl = "https://strobe.uwaterloo.ca/cpadev/kiwi/user/login/";
 	private $_cwd;
 	protected $admins = array();
 
@@ -22,9 +22,82 @@ class MathSoc_Controller_Action extends Zend_Controller_Action
 		$this->view->baseUrl = $this->getRequest()->getBaseUrl();
 		$this->_cwd = getcwd();
 
+		// Load authentication and authorization module
+		$this->authorization();
+		
+		// Force the user to authenticate if authentication is required for this page
+
 		// Initialize the context-based menu
-		require_once( '../application/default/views/helpers/menu.inc' );
+		require( '../application/default/views/helpers/menu.inc' );
 		$this->view->menu = getMenu($this->getRequest());
+	}
+
+	protected function getModule()
+	{
+		$request = $this->getRequest();
+		$module = $request->getModuleName();
+		if( !isset( $module ) )
+		{	$module = Zend_Controller_Front::getInstance()->getDispatcher()->getDefaultModule();
+		}
+		return $module;
+	}
+
+	protected function getController()
+	{
+		$request = $this->getRequest();
+		$controller = $request->getControllerName();
+		if( !isset( $controller) )
+		{	$controller = Zend_Controller_Front::getInstance()->getDispatcher()->getDefaultController();
+		}
+		return $controller;
+	}
+
+	protected function getAction()
+	{
+		$request = $this->getRequest();
+		$action = $request->getActionName();
+		if( !isset( $action ) )
+		{	$action = Zend_Controller_Front::getInstance()->getDispatcher()->getDefaultAction();
+		}
+		return $action;
+	}
+
+	protected function authorization()
+	{	// Grab request information from the request object
+		$module = $this->getModule();
+		$controller = $this->getController();
+		$action = $this->getAction();
+
+		// Load the config from the registry
+		$config = Zend_Registry::getInstance()->get('config');
+
+		// Determine if the current page is authenticated and who for
+		$secure = 1;
+
+		$module = $config->auth->$module;
+		if( isset($module->secure) )
+		{	$secure = $module->secure;
+			$controller = $module->$controller;
+			if( isset( $controller->secure ) )
+			{	$secure = $controller->secure;
+				$action = $controller->$action;
+				if( isset( $action->secure ) )
+				{	$secure = $action->secure;
+				}
+			}
+		}
+
+		if( is_numeric( $secure ) )
+		{	// $secure is a binary flag
+			if( $secure )
+			{	$this->secure();
+			}
+		}else
+		{	// Secure is a ';' delimited string of positions that should have access
+			// ex 'mathsoc/office:current;novelties:current'
+			$this->admins = split(';', $secure);
+			$this->secure();
+		}
 	}
 
 	protected function secure( $groups = array() )
@@ -39,7 +112,7 @@ class MathSoc_Controller_Action extends Zend_Controller_Action
 		{	// If user not authenticated and query not set
 			if( !$this->_request->isGet() || !$this->_request->getQuery('__kiwi_id__') )
 			{	// Forward to kiwi login URL
-				$this->_redirect( $this->loginUrl . "?__kiwi_referer__={$referer}" );
+				$this->_redirect( $this->_loginUrl . "?__kiwi_referer__={$referer}" );
 			}else
 			{	// If authentication information is set
 				// Attempt to use it to authenticate
@@ -71,7 +144,7 @@ class MathSoc_Controller_Action extends Zend_Controller_Action
 				}else
 				{	// If authentication is invalid, remove user
 					$auth->clearIdentity();
-					$this->_redirect( $this->loginUrl . "?__kiwi_referer__={$referer}" );
+					$this->_redirect( $this->_loginUrl . "?__kiwi_referer__={$referer}" );
 				}
 
 				// Add authentication messages to status

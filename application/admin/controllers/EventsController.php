@@ -8,8 +8,8 @@ class Admin_EventsController extends MathSocAuth_Controller_Action
 {
 	private $db;
 
-	public function init($secure = true)
-	{	parent::init($secure);
+	public function init()
+	{	parent::init();
 
 	}
 

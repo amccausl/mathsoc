@@ -12,9 +12,6 @@ class Admin_OfficeController extends MathSoc_Controller_Action
 	{	parent::init();
 
 		$this->db = new OfficeDB();
-
-		$this->admins = array( 'mathsoc' => array( 'office' => 'current' ) );
-		$this->secure();
 	}
 
 	/** /admin/office
@@ -28,8 +25,13 @@ class Admin_OfficeController extends MathSoc_Controller_Action
 	 * TODO: in the long run this should be a mail list
 	 */
 	public function workersAction()
-	{	$workers = $this->db->getEmails();
-		$this->view->workers = $workers;
+	{	if( $this->_getParam("hour") )
+		{	// If this user has requested a specific hour, return the holders
+			// TODO
+		}else
+		{	$workers = $this->db->getEmails();
+			$this->view->workers = $workers;
+		}
 	}
 
 	/** /admin/office/missing

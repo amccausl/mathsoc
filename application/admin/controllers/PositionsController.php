@@ -12,10 +12,6 @@ class Admin_PositionsController extends MathSoc_Controller_Action
 	{	parent::init();
 
 		$this->db = new PositionsDB();
-
-		// User must be an admin to see any of these pages
-		$this->admins = array('mathsoc' => array('exec' => 'current'));
-		$this->secure();
 	}
 
 	/** /admin/positions

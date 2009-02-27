@@ -13,8 +13,6 @@ class Admin_ElectionsController extends MathSoc_Controller_Action
 	public function init()
 	{	parent::init();
 
-		$this->secure();
-
 		$this->db = new ElectionsDB();
 	}
 

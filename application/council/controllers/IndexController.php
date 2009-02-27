@@ -19,8 +19,8 @@ class Council_IndexController extends MathSoc_Controller_Action
 		$this->view->content_data = ob_get_clean();
 	}
 
-	public function init($secure = false)
-	{	parent::init($secure);
+	public function init()
+	{	parent::init();
 		$this->db = new UserDB();
 	}
 

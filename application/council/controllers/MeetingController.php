@@ -10,8 +10,8 @@ class Council_MeetingController extends MathSoc_Controller_Action
 {
 	private $db;
 
-	public function init($secure = false)
-	{	parent::init($secure);
+	public function init()
+	{	parent::init();
 	}
 
 	public function indexAction()

@@ -253,7 +253,8 @@ class PositionsDB
 	/** Add an application
 	 */
 	public function addApplication( $application )
-	{	return $this->_db->insert('positions_applications', $application);
+	{	// TODO: check that the user exists in the database
+		return $this->_db->insert('positions_applications', $application);
 	}
 
 	public function selectApplication( $id )

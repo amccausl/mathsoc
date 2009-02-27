@@ -5,15 +5,13 @@ require_once 'MathSocAction.inc';
 // Load the database model for the exam storage
 require_once 'examDB.inc';
 
-class Exambank_IndexController extends MathSoc_Controller_Action
+class ExambankController extends MathSoc_Controller_Action
 {
 	private $db;
 	private $examDir;
 
 	public function init()
 	{	parent::init();
-		// User must be authenticated to see any of these pages
-		$this->secure();
 
 		$config = new Zend_Config_Ini('../config/main.ini', 'exambank');
 		$this->examDir = $config->examDir;
@@ -95,12 +93,6 @@ class Exambank_IndexController extends MathSoc_Controller_Action
 
 	public function submitAction()
 	{
-		$menu = $this->view->menu;
-		$menu[1]['status'] = "active";
-		$menu[1]['sub'][0]['status'] = "active";
-		$menu[1]['sub'][0]['sub'][5]['status'] = "active selected";
-		$this->view->menu = $menu;
-	
 		require_once( "../application/default/views/helpers/form.inc" );
 		$this->view->array_push( 'stylesheets', $this->getRequest()->getBaseUrl() . '/css/form.css' );
 
@@ -225,5 +217,26 @@ class Exambank_IndexController extends MathSoc_Controller_Action
 		}
 
 		$this->view->assign($_POST);
+	}
+
+	// Add a few static pages
+	public function infoAction()
+	{
+	}
+
+	public function examAction()
+	{
+	}
+
+	public function howtoAction()
+	{
+	}
+
+	public function findAction()
+	{
+	}
+
+	public function thanksAction()
+	{
 	}
 }

@@ -14,8 +14,8 @@ class Council_PoliciesController extends MathSoc_Controller_Action
 {
 	private $db;
 
-	public function init($secure = false)
-	{	parent::init($secure);
+	public function init()
+	{	parent::init();
 
 		set_time_limit(0);
 
@@ -77,10 +77,5 @@ class Council_PoliciesController extends MathSoc_Controller_Action
 		$content = $renderer->render($diff);
 		$content = strtr( $content, array( "&lt;" => "<", "&gt;" => ">"));
 		$this->view->content = strtr( $content, array( "<del><li>" => "<li><del>", "</li></del>" => "</del></li>" ) );
-	}
-
-	// Add a new version for a given policy
-	public function updateAction()
-	{	$this->secure();
 	}
 }

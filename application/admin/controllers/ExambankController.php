@@ -15,10 +15,6 @@ class Admin_ExambankController extends MathSoc_Controller_Action
 		$this->examDir = $config->examDir;
 
 		$this->db = new ExamDB();
-
-		// Initialize admins array
-		$this->admins = array( 'mathsoc' => array( 'resources' => 'current' ) );
-		$this->secure();
 	}
 
 	// Browsing Functions
