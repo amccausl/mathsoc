@@ -41,6 +41,10 @@
   </ul>
 
   <p>
+    <a href="/documents/gameslist.txt">Click here</a> to see a complete listing of available board games.
+  </p>
+
+  <p>
     All these wonderful services are offered to you by volunteers.  If you would like to
     volunteer you can <a href='{$baseUrl}/Office/signup'>signup for your very own office hour</a>
     to help us continue to offer services to the students of UW. If you have any questions or
