@@ -8,7 +8,7 @@
   <ul>
 {foreach from=$EXC item=position}
     <li><a href="{$baseUrl}/positions/details?position={$position.alias}">{$position.name}</a> :
-  {foreach from=$position.holders item=holder}{$holder}{foreachelse}Position Vacant{/foreach}</li>
+  {foreach from=$position.holders item=holder}{$holder}, {foreachelse}Position Vacant{/foreach}</li>
 {/foreach}
   </ul>
 
@@ -16,16 +16,15 @@
   <ul>
 {foreach from=$OEX item=position}
     <li><a href="{$baseUrl}/positions/details?position={$position.alias}">{$position.name}</a> :
-  {foreach from=$position.holders item=holder}{$holder}{foreachelse}Position Vacant{/foreach}</li>
+  {foreach from=$position.holders item=holder}{$holder}, {foreachelse}Position Vacant{/foreach}</li>
 {/foreach}
   </ul>
-
   <h3>Student Representatives</h3>
   <p></p>
   <ul>
 {foreach from=$REP item=position}
     <li><a href="{$baseUrl}/positions/details?position={$position.alias}">{$position.name}</a> :
-  {foreach from=$position.holders item=holder}{$holder}{foreachelse}Position Vacant{/foreach}</li>
+  {foreach from=$position.holders item=holder}{$holder}, {foreachelse}Position Vacant{/foreach}</li>
 {/foreach}
   </ul>
 
@@ -34,7 +33,7 @@
   <ul>
 {foreach from=$APP item=position}
     <li><a href="{$baseUrl}/positions/details?position={$position.alias}">{$position.name}</a> :
-  {foreach from=$position.holders item=holder}{$holder}{foreachelse}Position Vacant{/foreach}</li>
+  {foreach from=$position.holders item=holder}{$holder}, {foreachelse}Position Vacant{/foreach}</li>
 {/foreach}
   </ul>
 
