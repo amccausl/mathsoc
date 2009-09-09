@@ -16,31 +16,38 @@
 
 class AnnounceDB
 {
-	private $_db;
+  private $_db;
 
-	function __construct()
-	{	$this->_db = Zend_Db::factory(Zend_Registry::getInstance()->get('config')->db);
-	}
+  function __construct()
+  {	
+    $this->_db = Zend_Db::factory(Zend_Registry::getInstance()->get('config')->db);
+  }
 
-	/** getAnnouncements - Retrieve the announcements that should be displayed
-	 *
-	 * Queries the database for current announcements
-	 *
-	 * @return		returns an array of announcements
-	 */
-	function getAnnouncements()
-	{
-		$query = "SELECT DATE_FORMAT(event_date, '%Y-%m-%d') as event_date, title, content
+  /** getAnnouncements - Retrieve the announcements that should be displayed
+   *
+   * Queries the database for current announcements
+   *
+   * @return		returns an array of announcements
+   */
+  function getAnnouncements($StartDate=false)
+  {
+    $fmtStartDate = "1901-01-01 00:00:01";
+
+    if( $StartDate ) {
+      $fmtStartDate = date( 'Y-m-d H:i:s', $StartDate );
+    }
+
+    $query = "SELECT DATE_FORMAT(event_date, '%Y-%m-%d') as event_date, title, content
 				  FROM announcement
-				  WHERE (NOW() <= DATE_ADD(event_date,INTERVAL 1 DAY)
-					AND DATE_SUB(event_date, INTERVAL 30 DAY) <= NOW())
+				  WHERE (NOW() >= DATE_ADD(event_date,INTERVAL 0 DAY)
+					AND event_date > '$fmtStartDate')
 					OR event_date IS NULL
-				  ORDER BY event_date ASC";
+				  ORDER BY event_date DESC";
 
-		$events = $this->_db->fetchAll( $query );
-
-		return $events;
-	}
+    $events = $this->_db->fetchAll( $query );
+    
+    return $events;
+  }
 }
 
 ?>

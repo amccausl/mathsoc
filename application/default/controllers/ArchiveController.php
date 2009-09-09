@@ -3,7 +3,7 @@
 require_once 'MathSocAction.inc';
 require_once 'announceDB.inc';
 
-class IndexController extends MathSoc_Controller_Action
+class ArchiveController extends MathSoc_Controller_Action
 {
   private $db;
   
@@ -15,7 +15,7 @@ class IndexController extends MathSoc_Controller_Action
 
   public function indexAction()
   {
-    $posts = $this->db->getAnnouncements( mktime( 0, 0, 0, 9, 1, 2009 ) );
+    $posts = $this->db->getAnnouncements();
     $this->view->posts = $posts;
   }
 
