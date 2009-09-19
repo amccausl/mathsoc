@@ -49,6 +49,8 @@
 {include file="../../../default/views/scripts/menu.tpl"}
     <!-- TODO: Include javascript calls here -->
 	<div id="footer">
+	  <p><a href="http://www.facebook.com/mathsoc"><img src="{$baseUrl}/images/facebook_small.gif" alt="Follow on Facebook" title="Follow on Twitter"></a>
+	  <a href="http://twitter.com/mathsoc"><img src="{$baseUrl}/images/twitter_small.gif" alt="Follow on Twitter" title="Follow on Twitter"></a></p>
 	</div>
   </div>
 </div>

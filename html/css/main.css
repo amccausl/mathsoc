@@ -207,3 +207,15 @@ div#menu ul li.active ul li.inactive:hover ul{
 margin-left: 0px;
 }
 
+
+div#footer { 
+width: 194px;
+float: left;
+padding: 1em;
+text-align: center;
+}
+
+div#footer img { 
+  padding: 5px;
+}
+
