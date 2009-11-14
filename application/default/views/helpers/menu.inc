@@ -14,7 +14,10 @@ function getMenu( $request = null )
 		"sub"	=> array(
 		array(
 			"title" => "Events Calendar",
-			"link" => $request->getBaseUrl() . "/Events"))),
+			"link" => $request->getBaseUrl() . "/Events"),
+		array(
+			"title" => "Archive",
+			"link" => $request->getBaseUrl() . "/Archive"))),
 	array(
 		"title"	=> "Services",
 		"link"	=> $request->getBaseUrl() . "/Services",
@@ -25,7 +28,7 @@ function getMenu( $request = null )
 			"sub"	=> array(
 			array(
 				"title"	=> "Introduction",
-				"link"	=> $request->getBaseUrl() . "/exambank/info"),
+				"link"	=> $request->getBaseUrl() . "/exambank/intro"),
 			array(
 				"title"	=> "What is an Exam?",
 				"link"	=> $request->getBaseUrl() . "/exambank/exam"),
@@ -101,11 +104,14 @@ function getMenu( $request = null )
 			"title" => "Meeting Minutes",
 			"link" => $request->getBaseUrl() . "/council/minutes"),
 		array(
+			"title" => "Policies &amp; Bylaws",
+			"link" => $request->getBaseUrl() . "/council/documents"),
+		/*array(
 			"title" => "Bylaws",
 			"link" => $request->getBaseUrl() . "/council/bylaws"),
 		array(
 			"title" => "Policies",
-			"link" => $request->getBaseUrl() . "/council/policies"),
+			"link" => $request->getBaseUrl() . "/council/policies"),*/
 		array(
 			"title" => "Available Positions",
 			"link" => $request->getBaseUrl() . "/council/Vacancies"),
@@ -147,7 +153,7 @@ function getMenu( $request = null )
 			"link"	=> "http://mathnews.uwaterloo.ca"),
 		array(
 			"title"	=> "WIM Undergrad Committee",
-			"link"	=> "http://www.student.math.uwaterloo.ca/~wimugrad"),
+			"link"	=> "http://women.math.uwaterloo.ca/undergrad_women.shtml"),
 		array(
 			"title"	=> "Math Grad Committee",
 			"link"	=> "http://www.mgc.uwaterloo.ca/"))),
