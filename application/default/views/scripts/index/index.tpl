@@ -6,7 +6,9 @@
 </div>
 {foreachelse}
 <div class="section">
-  <h2>Page Content Missing</h2>
-  <p>This page has no content to display.  If you were expecting content and suspect a problem, try emailing website@mathsoc.uwaterloo.ca to have the situation remedied.  Sorry for the inconvience.
+<p>There are no recent announcements.</p>
 </div>
 {/foreach}
+<div class="section">
+<p>To view older news, <a href="/Archive">click here</a>.</p>
+</div>

@@ -45,7 +45,7 @@ class LockerDB
 		if( $end == null )
 			$end = $start;
 
-		$query = "SELECT id, (current_userId IS NOT NULL) AS taken FROM lockers WHERE id >= ? AND id <= ? ORDER BY id";
+		$query = "SELECT id, (current_userId IS NOT NULL AND expires > now()) AS taken FROM lockers WHERE id >= ? AND id <= ? ORDER BY id";
 		return $this->_db->fetchPairs($query, array( $start, $end ) );
 	}
 
@@ -57,12 +57,14 @@ class LockerDB
 		// Determine if the user can claim the locker
 		$query = "SELECT current_userId FROM lockers WHERE id = ?";
 		$holder = $this->_db->fetchOne($query, $lockerNum);
+		$query = "SELECT expires FROM lockers WHERE id = ?";
+		$expires = $this->_db->fetchOne($query, $lockerNum);
 
-		if( $holder && $holder != $info['user'] )
+		if( $holder && $holder != $info['user'] && $expires > date("Y-m-d H:i:s") )
 			return "The locker you are trying to sign up for is already held by someone else.  Please try another locker.";
 
 		// Check that the user doesn't have another locker
-		$query = "SELECT id FROM lockers WHERE current_userId = ?";
+		$query = "SELECT id FROM lockers WHERE current_userId = ? AND expires > '" . date("Y-m-d H:i:s") . "'";
 		$locker = $this->_db->fetchOne($query, $info['user']);
 
 		if( $locker && $locker != $lockerNum )
@@ -72,6 +74,7 @@ class LockerDB
 		}
 
 		$data = array();
+		$data['last_userId'] = $holder;
 
 		$data['current_userId'] = $info['user'];
 
@@ -88,7 +91,7 @@ class LockerDB
 		{	if( $locker == $lockerNum )
 			{	return "Your locker information has been updated successfully.";
 			}else
-			{	return "You have successfully signed up for locker #{$lockerNum}.";
+			{	return "You have successfully signed up for locker #{$lockerNum}, which expires on " . $data['expires'] . ".";
 			}
 		}
 		return "There was no change to the locker information in your request.  The information has not been updated";

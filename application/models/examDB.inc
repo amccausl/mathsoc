@@ -38,7 +38,6 @@ class ExamDB
 					e.solutions_type
 				  FROM exams e, courses c
 				  WHERE e.id = ?
-					AND e.status = \'approved\'
 					AND e.courseId = c.id
 				  GROUP BY e.id';
 		return $this->_db->fetchRow( $query, $id );
@@ -140,7 +139,7 @@ class ExamDB
 		}
 
 		// If both prefix and code are set, return course title
-		$query = 'SELECT title FROM courses WHERE prefix = ? AND code = ?';
+		$query = 'SELECT * FROM courses WHERE prefix = ? AND code = ?';
 		return $this->_db->fetchOne( $query, array( $prefix, $code ) );
 	}
 

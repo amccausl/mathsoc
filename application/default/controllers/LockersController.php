@@ -9,7 +9,7 @@ class LockersController extends MathSoc_Controller_Action
 	private $db;
 
 	public function init()
-	{	parent::init();
+	{	parent::init(true);
 
 		$this->db = new LockerDB();
 

@@ -19,6 +19,7 @@ class ElectionDB
 	function getElections( $userId, $unit = 'mathsoc' )
 	{	$logger = Zend_Registry::get('logger');
 
+
 		if( isset( $userId ) )
 		{
 			$query = "SELECT e.electionId as id, e.position, e.description, e.CRO, voted
@@ -44,6 +45,7 @@ class ElectionDB
 			$elections = $this->_db->fetchAll( $query );
 		}
 
+
 		$count = 0;
 		foreach( $elections as $election )
 		{	$candidates = array();
@@ -54,9 +56,11 @@ class ElectionDB
 						  WHERE electionId = ?
 						  ORDER BY candidateId";
 				$results = $this->_db->fetchAll( $query, $election['id'] );
+
 				foreach( $results as $result )
 				{	$user = array();
-					require_once( "../application/default/models/userDB.inc" );
+require_once('userDB.inc');
+//					require_once( "../application/default/models/userDB.inc" );
 					if( $user = UserDB::lookup( $result['candidateId'] ) )
 					{	$user['link'] = $result['link'];
 					}else

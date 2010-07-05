@@ -5,13 +5,14 @@ require_once 'MathSocAction.inc';
 // Load the database model for the exam storage
 require_once 'examDB.inc';
 
-class ExambankController extends MathSoc_Controller_Action
+class Exambank_IndexController extends MathSoc_Controller_Action
 {
 	private $db;
 	private $examDir;
 
-	public function init()
-	{	parent::init(true);
+	public function init($secure = true)
+	{	parent::init($secure);
+		// User must be authenticated to see any of these pages
 
 		$config = new Zend_Config_Ini('../config/main.ini', 'exambank');
 		$this->examDir = $config->examDir;
@@ -61,9 +62,7 @@ class ExambankController extends MathSoc_Controller_Action
 			{	print( "The exam you're looking for doesn't exist" );
 				exit;
 			}
-
 			$filename = $this->examDir . $filename;
-
 
 			// Display the exam to the user
 			if( $buffer = file_get_contents( $filename ) )
@@ -74,8 +73,8 @@ class ExambankController extends MathSoc_Controller_Action
 
 				// Output file information to browser
 				header("Content-type: {$exam[$this->_getParam('type') . '_type']}");
-				header("Content-Length: ".strlen($buffer));
-				header("Content-Disposition: inline; filename={$exam['course']}-{$exam['term']}-{$exam['type']}{$exam['number']}_{$this->_getParam('type')}.{$ext}");
+				//header("Content-Length: ".strlen($buffer));
+				//header("Content-Disposition: inline; filename={$exam['course']}-{$exam['term']}-{$exam['type']}{$exam['number']}_{$this->_getParam('type')}.{$ext}");
 
 				echo($buffer);
 				exit;
@@ -95,6 +94,12 @@ class ExambankController extends MathSoc_Controller_Action
 
 	public function submitAction()
 	{
+		$menu = $this->view->menu;
+		$menu[1]['status'] = "active";
+		$menu[1]['sub'][0]['status'] = "active";
+		$menu[1]['sub'][0]['sub'][5]['status'] = "active selected";
+		$this->view->menu = $menu;
+	
 		require_once( "../application/default/views/helpers/form.inc" );
 		$this->view->array_push( 'stylesheets', $this->getRequest()->getBaseUrl() . '/css/form.css' );
 
@@ -140,7 +145,7 @@ class ExambankController extends MathSoc_Controller_Action
 				{	// The course doesn't exist in the database
 					$error .= "The course you have selected was not found in the database.<br />";
 				}else
-				{	$exam['courseId'] = $course;
+				{	$exam['courseId'] = $course['id'];
 				}
 			}
 
@@ -155,7 +160,7 @@ class ExambankController extends MathSoc_Controller_Action
 
 			// Add index if valid
 			if( ereg( "^[0-9]+$", $_POST['index'] ) )
-			{	$exam['number'] = $_POST['index'];
+			{	$exam['index'] = $_POST['index'];
 			}
 
 			// Check status of practice checkbox
@@ -164,16 +169,12 @@ class ExambankController extends MathSoc_Controller_Action
 
 			if( !$error )
 			{
-				$filename = $exam['courseId'] . "-" . $exam['term'] . "-" . $exam['type'][0] . (isset($exam['number']) ? $exam['number'] : '') . (isset($exam['practice']) ? 'P' : '') . "_" . hash_file("md5", $_FILES['exam_file']['tmp_name']) . "." . substr($_FILES['exam_file']['name'],-3);
-				$sol_name = $exam['courseId'] . "-" . $exam['term'] . "-" . $exam['type'][0] . (isset($exam['number']) ? $exam['number'] : '') . (isset($exam['practice']) ? 'P' : '') . "_" . hash_file("md5", $_FILES['solutions_file']['tmp_name']) . "-soln." . substr($_FILES['solutions_file']['name'],-3);
-				$exam_file = file_upload( 'exam_file', $this->examDir, $filename );
+				$exam_file = file_upload( 'exam_file', $this->examDir );
 				switch( $exam_file[0] )
 				{
 					case UPLOAD_ERR_OK:
-						//$exam['exam_path'] = $exam_file[1];
-						//$exam['exam_type'] = $_FILES['exam_file']['tmp_name'];
-						$exam['exam_path'] = $filename;
-						$exam['exam_type'] = $_FILES['exam_file']['type'];
+						$exam['exam_path'] = $exam_file[1];
+						$exam['exam_type'] = $_FILES['exam_file']['tmp_name'];
 						break;
 					case UPLOAD_ERR_INI_SIZE:
 					case UPLOAD_ERR_FORM_SIZE:
@@ -184,14 +185,12 @@ class ExambankController extends MathSoc_Controller_Action
 						break;
 				}
 
-				$solutions_file = file_upload( 'solutions_file', $this->examDir, $sol_name );
+				$solutions_file = file_upload( 'solutions_file', $this->examDir );
 				switch( $solutions_file[0] )
 				{
 					case UPLOAD_ERR_OK:
-						//$exam['solutions_path'] = $solutions_file[1];
-						//$exam['solutions_type'] = $_FILES['solutions_file']['tmp_name'];
-						$exam['solutions_path'] = $sol_name;
-						$exam['solutions_type'] = $_FILES['solutions_file']['type'];
+						$exam['solutions_path'] = $solutions_file[1];
+						$exam['solutions_type'] = $_FILES['solutions_file']['tmp_name'];
 						break;
 					case UPLOAD_ERR_INI_SIZE:
 					case UPLOAD_ERR_FORM_SIZE:
@@ -225,26 +224,5 @@ class ExambankController extends MathSoc_Controller_Action
 		}
 
 		$this->view->assign($_POST);
-	}
-
-	// Add a few static pages
-	public function introAction()
-	{
-	}
-
-	public function examAction()
-	{
-	}
-
-	public function howtoAction()
-	{
-	}
-
-	public function findAction()
-	{
-	}
-
-	public function thanksAction()
-	{
 	}
 }

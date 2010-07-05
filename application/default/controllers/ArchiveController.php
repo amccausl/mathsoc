@@ -21,3 +21,4 @@ class ArchiveController extends MathSoc_Controller_Action
 
 }
 
+?>

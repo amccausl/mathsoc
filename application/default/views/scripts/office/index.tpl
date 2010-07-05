@@ -21,7 +21,7 @@
   </ul>
 
   <p>
-    On the recreational side we have a selection of MathNEWS, frisbees, cool math
+    On the recreational side we have a selection of <i>math</i><font face="Arial">NEWS</font>, frisbees, cool math
     novelties and board games for use including:
   </p>
 

@@ -1,4 +1,5 @@
 <div id='main-header'><h1></h1></div>
+{*<div class="section">Locker signups will become available on Monday, January 11th.</div>*}
 <div class="section">
 {if $message}
   <p>{$message}</p>
@@ -32,6 +33,6 @@
 <div class='buttonrow'>
   <input name='submit' type='submit' value='Sign up For Locker' class='button'/> 
 </div>
+
 </form>
-</div>
 </div>

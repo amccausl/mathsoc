@@ -8,5 +8,5 @@
   </map>
   <img usemap='#damap' src='{$smarty.server.REQUEST_URI}&format=.png' border=0 />
   <br/>
-  <a href='{$baseUrl}/Lockers'>Return</a>
+  <a href='{$baseUrl}/Lockers/signup'>Return</a>
 </div>

@@ -25,7 +25,10 @@ class ElectionController extends MathSoc_Controller_Action
 		$user = Zend_Auth::getInstance()->getIdentity();
 		// Present the existing elections
 		$this->view->elections = $this->db->getElections( $user );
+                //$this->view->elections = array();
 	}
+
+ public function voteAction() {}
 
 	// Cast a ballot in an election
 	public function castAction()

@@ -2,7 +2,7 @@
 <div class="section">
   <h3>Executive</h3>
   <p>The Executives of the society are elected by math students and entrusted to run the society on their behalf.  They are elected for either the winter and fall or summer terms of a calendar year.</p>
-  <h4>Winter/Fall Executives</h4>
+  <h4>Spring Executives</h4>
   <ul>
 {foreach from=$EXC item=position}
     <li><a href="{$baseUrl}/positions/details?position={$position.alias}">{$position.name}</a> : 
@@ -11,7 +11,7 @@
 {/foreach}
   </ul>
 
-  <h4>Summer Executives</h4>
+  <h4>Fall Executives</h4>
   <ul>
 {foreach from=$OEX item=position}
     <li><a href="{$baseUrl}/positions/details?position={$position.alias}">{$position.name}</a> : 
