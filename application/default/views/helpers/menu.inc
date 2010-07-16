@@ -81,6 +81,18 @@ function getMenu( $request = null )
 			"link"	=> $request->getBaseUrl() . "/Services/Space",
 			"sub"	=> array()))),
 	array(
+			"title" => "First Year Students",
+			"link"  => $request->getBaseUrl() . "/Firstyear",
+			"sub"   => array(
+				array(
+					"title" => "First Year Home",
+					"link" => $request->getBaseUrl() . "/FirstYear",
+					"sub" => array()),
+				array(
+					"title" => "FAQ",
+					"link" => $request->getBaseUrl() . "/FirstYear/faq",
+					"sub" => array()))),
+	array(
 		"title"	=> "Academics",
 		"link"	=> $request->getBaseUrl() . "/Academics",
 		"sub"	=> array(

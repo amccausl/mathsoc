@@ -69,13 +69,15 @@ class ExambankController extends MathSoc_Controller_Action
 			if( $buffer = file_get_contents( $filename ) )
 			{
 				// Grab the file extension from the mime type
-				$ext = split('/',$exam[$this->_getParam('type') . '_type']);
-				$ext = $ext[1];
+				//$ext = split('/',$exam[$this->_getParam('type') . '_type']);
+				//$ext = $ext[1];
+				$ext = `cat /etc/mime.types | grep application/pdf | awk 'BEGIN {FS=" ";} {print $2}'`;
+				$course = str_replace(" ", "-", $exam['course']);
 
 				// Output file information to browser
 				header("Content-type: {$exam[$this->_getParam('type') . '_type']}");
 				header("Content-Length: ".strlen($buffer));
-				header("Content-Disposition: inline; filename={$exam['course']}-{$exam['term']}-{$exam['type']}{$exam['number']}_{$this->_getParam('type')}.{$ext}");
+				header("Content-Disposition: attachment; filename={$course}-{$exam['term']}-{$exam['type']}{$exam['number']}_{$this->_getParam('type')}.{$ext}");
 
 				echo($buffer);
 				exit;

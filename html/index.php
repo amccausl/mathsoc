@@ -62,6 +62,9 @@ $router->addRoute('exams',
 $router->addRoute('exams1',
 	new Zend_Controller_Router_Route('exambank/exams/:prefix/:number/:term/:id/:type/',
 		array('module' => 'default', 'controller' => 'exambank', 'action' => 'exams')));
+$router->addRoute('prof-eval',
+	new Zend_Controller_Router_Route('courseevals/:page/:term',
+		array('module' => 'default', 'controller' => 'courseevals', 'action' => 'display')));
 $router->addRoute('council',
 	new Zend_Controller_Router_Route('council/minutes/:id',
 		array('module' => 'council', 'controller' => 'minutes', 'action' => 'display')));
