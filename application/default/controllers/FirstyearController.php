@@ -8,7 +8,17 @@ class FirstYearController extends MathSoc_Controller_Action
 	 */
 	public function indexAction() {}
 
-	public function faqAction() {}
+	public function clubsAction() {}
+
+	public function calculatorsAction() {}
+
+	public function academicsAction() {}
+
+	public function readinesstestAction() {}
+
+	public function elpeAction() {}
+
+	public function assignmentAction() {}
 }
 
 

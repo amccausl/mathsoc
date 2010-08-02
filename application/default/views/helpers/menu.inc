@@ -89,8 +89,28 @@ function getMenu( $request = null )
 					"link" => $request->getBaseUrl() . "/FirstYear",
 					"sub" => array()),
 				array(
-					"title" => "FAQ",
-					"link" => $request->getBaseUrl() . "/FirstYear/faq",
+					"title" => "Student Clubs",
+					"link" => $request->getBaseUrl() . "/FirstYear/clubs",
+					"sub" => array()),
+				array(
+					"title" => "Calculator Policy",
+					"link" => $request->getBaseUrl() . "/FirstYear/calculators",
+					"sub" => array()),
+				array(
+					"title" => "Academic Information",
+					"link" => $request->getBaseUrl() . "/FirstYear/academics",
+					"sub" => array()),
+				array(
+					"title" => "Math Readiness Test",
+					"link" => $request->getBaseUrl() . "/FirstYear/readinesstest",
+					"sub" => array()),
+				array(
+					"title" => "ELPE",
+					"link" => $request->getBaseUrl() . "/FirstYear/elpe",
+					"sub" => array()),
+				array(
+					"title" => "Sample Assignments",
+					"link" => $request->getBaseUrl() . "/FirstYear/assignment",
 					"sub" => array()))),
 	array(
 		"title"	=> "Academics",
@@ -104,7 +124,10 @@ function getMenu( $request = null )
 		//	"link" => $request->getBaseUrl() . "/Academics/Talks"),
 		array(
 			"title" => "Representation",
-			"link" => $request->getBaseUrl() . "/Academics/Representation"))),
+			"link" => $request->getBaseUrl() . "/Academics/Representation"),
+		array(
+			"title" => "Course Evaluations",
+			"link" => $request->getBaseUrl() . "/Courseevals"))),
 	array(
 		"title"	=> "Council",
 		"link"	=> $request->getBaseUrl() . "/council",
@@ -174,7 +197,10 @@ function getMenu( $request = null )
 		"module" => "default",
 		"controller" => "index",
 		"action" => "index",
-		"link"	=> $request->getBaseUrl() . "/Contact"));
+		"link"	=> $request->getBaseUrl() . "/Contact"),
+	array(
+		"title" => "Admin Console",
+		"link"  => "http://sine.mathsoc.uwaterloo.ca/"));
 
 	if( Zend_Auth::getInstance()->hasIdentity() )
 	{	array_push( $menu, array(
