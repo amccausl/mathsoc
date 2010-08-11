@@ -111,6 +111,10 @@ function getMenu( $request = null )
 				array(
 					"title" => "Sample Assignments",
 					"link" => $request->getBaseUrl() . "/FirstYear/assignment",
+					"sub" => array()),
+				array(
+					"title" => "Missed Student Life 101?",
+					"link" => $request->getBaseUrl() . "/FirstYear/slides",
 					"sub" => array()))),
 	array(
 		"title"	=> "Academics",

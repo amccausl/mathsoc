@@ -19,6 +19,8 @@ class FirstYearController extends MathSoc_Controller_Action
 	public function elpeAction() {}
 
 	public function assignmentAction() {}
+
+	public function slidesAction() {}
 }
 
 

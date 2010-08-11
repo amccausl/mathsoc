@@ -26,6 +26,8 @@
  */
 require_once 'Zend/Auth/Adapter/Interface.php';
 
+require_once 'CAS-1.1.2/CAS.php';
+
 
 /**
  * A Zend_Auth Authentication Adapter allowing the use of KiwiID protocol as an
@@ -40,21 +42,13 @@ require_once 'Zend/Auth/Adapter/Interface.php';
 class Zend_Auth_Adapter_KiwiId implements Zend_Auth_Adapter_Interface
 {
     /**
-     * The kiwi key for the identity
-     *
-     * @var string
-     */
-    private $_id = null;
-
-    /**
      * UW Kiwi specific settings
      *
      * @var string
      */
-	private $loginUrl = "https://strobe.uwaterloo.ca/cpadev/kiwi/user/login/";
-	// Set the API key to use the kiwi system (see jrodgers@uwaterloo.ca to get one)
-	private $kiwiKey = "1a9e0ea4-e5c4-4f66-a1fa-cd722aa982e7";
-	private $checkUrl = "http://kiwi.uwaterloo.ca/user/check";
+	//private $loginUrl = "https://strobe.uwaterloo.ca/cpadev/kiwi/user/login/";
+	//private $kiwiKey = "1a9e0ea4-e5c4-4f66-a1fa-cd722aa982e7";
+	//private $checkUrl = "http://kiwi.uwaterloo.ca/user/check";
 
     /**
      * Constructor
@@ -63,7 +57,6 @@ class Zend_Auth_Adapter_KiwiId implements Zend_Auth_Adapter_Interface
      * @return void
      */
     public function __construct($id = null) {
-        $this->_id = $id;
     }
 
     /**
@@ -87,39 +80,8 @@ class Zend_Auth_Adapter_KiwiId implements Zend_Auth_Adapter_Interface
      */
     public function authenticate()
 	{
-/*
-		$username = "amccausl";
-		return new Zend_Auth_Result(Zend_Auth_Result::SUCCESS,$username,array("success"));
-*/
-        $id = $this->_id;
-        if (!empty($id))
-		{
-			// Load validation XML
-			$doc = new DOMDocument();
-			if( !$doc->load( $this->checkUrl . "?id={$id}&__kiwi_code__={$this->kiwiKey}" ) )
-			{	// Kiwi is down
-				return new Zend_Auth_Result(
-						Zend_Auth_Result::FAILURE,
-						$id,
-						array("Kiwi is down"));
-			}
-
-			// Grab the user node
-			$user = $doc->getElementsByTagName( "user" )->item(0);
-
-			// Grab the username from the node
-			if( $username = $user->attributes->getNamedItem('username')->nodeValue )
-			{	return new Zend_Auth_Result(
-						Zend_Auth_Result::SUCCESS,
-						$username,
-						array("Authentication successful"));
-			}
-
-			return new Zend_Auth_Result(
-					Zend_Auth_Result::FAILURE,
-					$id,
-					array("Authentication failed"));
-		}
+		$username = phpCAS::getUser();
+		return new Zend_Auth_Result(Zend_Auth_Result::SUCCESS, $username, array("success"));
     }
 }
 

@@ -1,4 +1,4 @@
-<div class='section' id='main-header'>
+<div class='section'>
 <h2>Sample Assignments</h2>
 
 <p>MATH 137 is a first-year Math course that (nearly) all Math students take. Professor Zorzitto, who taught the course last year, has generously provided the first three assignments for students to look over. You can use these assignments as an indicator as to what to expect at UW Math.</p>

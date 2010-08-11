@@ -157,5 +157,6 @@ class Zend_Auth
     public function clearIdentity()
     {
         $this->getStorage()->clear();
+	phpCAS::logout();
     }
 }

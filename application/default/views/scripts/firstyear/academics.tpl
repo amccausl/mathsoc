@@ -1,4 +1,4 @@
-<div class='section' id='main-header'>
+<div class='section'>
 <h2>Academic Information</h2>
 
 <p>For academic information, please contact one of the <a href="http://www.math.uwaterloo.ca/navigation/Current/yearoneadvising.shtml" target="_blank" style="color:blue">First-Year Advisors</a>.</p>

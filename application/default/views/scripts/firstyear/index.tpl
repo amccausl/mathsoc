@@ -1,4 +1,4 @@
-<div class='section' id='main-header'>
+<div class='section'>
 <h2>Welcome, First Years!</h2>
 
 <p>Welcome to the University of Waterloo's Faculty of Mathematics! Soon, you will have the opportunity to study among the largest concentration of mathematical and computer science talent in the world. Despite the pressures and challenges that you will face, ready to support you along the way is the Mathematics Society.</p>

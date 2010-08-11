@@ -1,4 +1,4 @@
-<div class='section' id='main-header'>
+<div class='section'>
 <h2>Student Clubs</h2>
 
 <p>Mathsoc is host to a variety of clubs that provide representation and support to incoming students. To contact the club that represents you, see the <a href="/Clubs" style="color:blue;">Mathsoc Clubs page</a>. For information on all the clubs together, <a href="/documents/Clubs and Affiliates of Mathsoc.pdf" style="color:blue;">click here</a>.</p>
