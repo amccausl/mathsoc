@@ -1,5 +1,5 @@
 <div id='main-header'><h1></h1></div>
-<div class="section">
+<div class="section" style="width:560px">
   <p>
     MathSoc offers many handy services, both academic and recreational, out of our
     office in MC 3038.  Some things you may find important for classes:
@@ -51,4 +51,7 @@
     concerns we can be contacted by <a href='{$baseUrl}/Contact'>phone</a> or by email at
     {mailto address="office@mathsoc.uwaterloo.ca"}.
   </p>
+
+  <p><b>Our Hours:</b><br/>
+  <img src='{$baseUrl}/Office/hours?names&format=.png'/></p>
 </div>
