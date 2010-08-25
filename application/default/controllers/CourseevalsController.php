@@ -47,7 +47,8 @@ class CourseevalsController extends MathSoc_Controller_Action
 
 				if ($buffer = file_get_contents($this->examDir . $file))
 				{
-					$ext = `cat /etc/mime.types | grep application/pdf | awk 'BEGIN {FS=" ";} {print $2}'`;
+					$ext = explode("\t", `cat /etc/mime.types | grep $type | awk 'BEGIN {FS=" ";} {print $2}'`);
+					$ext = $ext[count($ext)-1];
 					header("Content-type: ".$type);
 					header("Content-Disposition: attachment; filename={$term}{$page}.{$ext}");
 					echo ($buffer);

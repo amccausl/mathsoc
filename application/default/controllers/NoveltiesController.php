@@ -54,7 +54,9 @@ class NoveltiesController extends MathSoc_Controller_Action
 	/** /novelties/submit - Used to submit new novelties to the system.
 	 */
 	public function submitAction()
-	{	require_once( "../application/default/views/helpers/form.inc" );
+	{	
+		$this->secure();
+		require_once( "../application/default/views/helpers/form.inc" );
 		$this->view->email = Zend_Auth::getInstance()->getIdentity() . '@uwaterloo.ca';
 
 		$_POST['notes'] = 'MathSoc T-Shirt Design Contest (Winter 2009)';

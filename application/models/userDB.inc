@@ -472,38 +472,20 @@ class UserDB
 	}
 
 	public static function lookup( $userId )
-	{	$user = array("userId" => $userId);
+	{	$userDetails = array("userId" => $userId);
 
-		// Do an LDAP lookup of the user to determine what position they hold
-		$ch = curl_init("http://kiwi.uwaterloo.ca/user/testLookup");
-		curl_setopt($ch, CURLOPT_POST, true);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, "newLookup=".$userId."&commit=Find");
-		curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.8.1.4) Gecko/20070515 Firefox/2.0.0.4 Test/0.1");
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		$kiwi = curl_exec($ch);
-		curl_close($ch);
+    		$safeusername = escapeshellarg($userId);
 
-		if( preg_match( '/<b>(.*)<\/b>/', $kiwi, $matches ) )
-		{	$user['name'] = $matches[1];
-		}else
-		{	return false;
-		}
+    		ob_start();
+    		system("ldapsearch -x -h uwldap.uwaterloo.ca -b dc=uwaterloo,dc=ca uid=$safeusername | grep ^cn: | head -n 1 | awk '{print substr(\$0, 5) }'");
+    		$userDetails['name'] = trim(ob_get_contents());
+    		ob_end_clean();
 
-		$start = strpos($kiwi, "LDAP:") + 6;
-		$ldap = substr($kiwi, $start, strpos($kiwi, "</span>", $start) - $start);
+    		ob_start();
+    		system("ldapsearch -x -h uwldap.uwaterloo.ca -b dc=uwaterloo,dc=ca uid=$safeusername | grep ^mail: | head -n 1 | awk '{print substr(\$0, 7) }'");
+    		$userDetails['email'] = trim(ob_get_contents());
+    		ob_end_clean();
 
-		if (strpos($ldap, "CN=IdM-HR-faculty") !== false
-		&& strpos($ldap, "CN=IdM-active") !== false)
-			$user['position'] = "professor";
-
-		if (strpos($ldap, "CN=IdM-student") !== false
-		&& strpos($ldap, "CN=IdM-active") !== false)
-			$user['position'] = "student";
-
-		if (strpos($ldap, "CN=IdM-SA-Mathematics") !== false
-		&& strpos($ldap, "CN=IdM-active") !== false)
-			$user['faculty'] = "math";
-
-		return $user;
+    		return $userDetails;
 	}
 }

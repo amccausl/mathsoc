@@ -26,6 +26,7 @@ class OfficeController extends MathSoc_Controller_Action
 	public function signupAction()
 	{	// Authenticate the user
 		$auth = Zend_Auth::getInstance();
+		$this->secure();
 
 		// Sign the user up for the hour
 		if( $this->_getParam('hour') && 
