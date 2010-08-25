@@ -522,12 +522,16 @@
             $y = $y1 + $this->block['padding_top'];
             $this->block['align_title'] = 'left';
         }
-        $this->DrawText($x, $y,
+	$names = explode(',', $block['NAME']);
+	for ($name = 0; $name < min(3, count($names)); $name++)
+	{
+        $this->DrawText($x, $y+10*$name,
                         $this->block['font_title'],
-                        $block['NAME'],
+                        trim($names[$name]),
                         $this->im_block_color_title,
                         $this->block['align_title'],
                         'top');
+	}
 
         // block description
         if (strlen($blocks[$i]['data']) > 0)
